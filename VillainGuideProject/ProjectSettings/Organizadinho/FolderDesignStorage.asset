@@ -30,21 +30,21 @@ MonoBehaviour:
   - guid: b6b92980e3b498a4ea986a1a47cfdc64
     hasColor: 1
     propagateChildren: 1
-    colorMode: 0
-    hue: 0.5
+    colorMode: 1
+    hue: 0.5464286
     customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
     iconGuid: 
   - guid: 2d3b6fcdf71d98b44981cc7daa9c343e
     hasColor: 1
     propagateChildren: 1
-    colorMode: 0
+    colorMode: 1
     hue: 0.5
     customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
     iconGuid: 
   - guid: 0220aab0833d04faeb927d84ca6cc40c
     hasColor: 1
     propagateChildren: 1
-    colorMode: 0
+    colorMode: 1
     hue: 0.5
     customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
     iconGuid: 
