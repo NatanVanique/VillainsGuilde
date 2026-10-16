@@ -7,6 +7,20 @@
       "dependencies": {},
       "hash": "ac2b413dead01ea495d646ababa9aba49a5af1f9"
     },
+    "com.bisc8.simplefmod": {
+      "version": "https://github.com/Bisc8Studio/com.bisc8.simplefmod.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.timeline": "1.8.10",
+        "com.unity.ugui": "2.0.0",
+        "com.unity.modules.animation": "1.0.0",
+        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.physics2d": "1.0.0"
+      },
+      "hash": "629710adb7c4162bbaed360077a2f09b80e51bdc"
+    },
     "com.unity.2d.animation": {
       "version": "13.0.4",
       "depth": 0,
