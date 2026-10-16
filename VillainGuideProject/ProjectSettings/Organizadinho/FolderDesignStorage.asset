@@ -12,5 +12,222 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e92fa927cfeb4777baa473f855ed84ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Organizadinho.Editor::Organizadinho.Editor.Storage.FolderDesignStorage
-  entries: []
+  entries:
+  - guid: a4aa72c016ca36e4893e6b919da6f404
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 3
+    hue: 0.096428566
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 
+  - guid: af9f69a3f5ae1c4499c5d971437bf1dc
+    hasColor: 1
+    propagateChildren: 0
+    colorMode: 0
+    hue: 0.85
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 
+  - guid: b6b92980e3b498a4ea986a1a47cfdc64
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 0
+    hue: 0.5
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 
+  - guid: 2d3b6fcdf71d98b44981cc7daa9c343e
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 0
+    hue: 0.5
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 
+  - guid: 0220aab0833d04faeb927d84ca6cc40c
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 0
+    hue: 0.5
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 
+  - guid: 109e9bdd0fcc649c5bc59085c35bdc83
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 0
+    hue: 0.85
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 
+  - guid: cc84d7151e50f9748bc2b8915129ff93
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 0
+    hue: 0.85
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 
+  - guid: 6662e2c0168658044ab3096c826da571
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 0
+    hue: 0.85
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 
+  - guid: 3ca1e17b5f7d05345969cb90c94a446f
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 0
+    hue: 0.17857143
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 
+  - guid: bce06f1e3bf55a44889f70658a93c163
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 0
+    hue: 0.85
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 
+  - guid: 9872299340a85b343a2375a57578e004
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 4
+    hue: 0.85
+    customColor: {r: 0.4584905, g: 0.79407525, b: 1, a: 1}
+    iconGuid: 
+  - guid: 92121a9b530e2184eb7b4405497bc159
+    hasColor: 1
+    propagateChildren: 0
+    colorMode: 0
+    hue: 0.85
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 
+  - guid: 3f5321b6fdaa4ca4987b32e7cdc3af83
+    hasColor: 1
+    propagateChildren: 0
+    colorMode: 0
+    hue: 0.85
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 
+  - guid: 1be6d0c68e60cf4408251d66cf09fcc4
+    hasColor: 1
+    propagateChildren: 0
+    colorMode: 0
+    hue: 0.85
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 
+  - guid: e511a71a399320845afa2a86fc046650
+    hasColor: 1
+    propagateChildren: 0
+    colorMode: 0
+    hue: 0.85
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 
+  - guid: c46fe5f830bb15d428410da356d1e90a
+    hasColor: 1
+    propagateChildren: 0
+    colorMode: 0
+    hue: 0.85
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 
+  - guid: 08b70d20f088e524ca6c4ed1bbffd383
+    hasColor: 1
+    propagateChildren: 0
+    colorMode: 0
+    hue: 0.85
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 
+  - guid: 9fe3a073c657d2748ba6b6fbc6df226c
+    hasColor: 1
+    propagateChildren: 0
+    colorMode: 0
+    hue: 0.85
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 
+  - guid: 5a14407a0a8ae5a439f9b00bcfc0ea0f
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 4
+    hue: 0.58
+    customColor: {r: 0.6250694, g: 0.9547169, b: 0.6765768, a: 1}
+    iconGuid: 
+  - guid: ce575edfb598bff428a1f155b645c9a8
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 4
+    hue: 0.85
+    customColor: {r: 0.4584905, g: 0.79407525, b: 1, a: 1}
+    iconGuid: 
+  - guid: 8f7a85fa4fcb37b41b1b27c2b8fdcfe8
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 4
+    hue: 0.85
+    customColor: {r: 0.4584905, g: 0.79407525, b: 1, a: 1}
+    iconGuid: 
+  - guid: ff76846c5eb2d704d810655ed3d92fd6
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 4
+    hue: 0.85
+    customColor: {r: 0.4584905, g: 0.79407525, b: 1, a: 1}
+    iconGuid: 
+  - guid: 8f5f574741fe4704494cc6a1c0a0a303
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 4
+    hue: 0.85
+    customColor: {r: 0.4584905, g: 0.79407525, b: 1, a: 1}
+    iconGuid: 
+  - guid: 63314c9f8b5a191488cc1e1429d14cf8
+    hasColor: 1
+    propagateChildren: 0
+    colorMode: 4
+    hue: 0.85
+    customColor: {r: 0.4584905, g: 0.79407525, b: 1, a: 1}
+    iconGuid: 
+  - guid: 073ba8e128b1167448c515287501e733
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 4
+    hue: 0.85
+    customColor: {r: 0.4584905, g: 0.79407525, b: 1, a: 1}
+    iconGuid: 
+  - guid: 826f8acaecea4aa4d9eb5b16b009f3ce
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 4
+    hue: 0.58
+    customColor: {r: 0.6250694, g: 0.9547169, b: 0.6765768, a: 1}
+    iconGuid: 
+  - guid: 8cb34f6842a57ff46b49d220648ef21e
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 4
+    hue: 0.58
+    customColor: {r: 0.6250694, g: 0.9547169, b: 0.6765768, a: 1}
+    iconGuid: 
+  - guid: 8d1bde386f301424bb1f65d1c01a37af
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 4
+    hue: 0.58
+    customColor: {r: 0.6250694, g: 0.9547169, b: 0.6765768, a: 1}
+    iconGuid: 
+  - guid: e0bab4462f6598143822cc8ee2063f71
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 4
+    hue: 0.58
+    customColor: {r: 0.6250694, g: 0.9547169, b: 0.6765768, a: 1}
+    iconGuid: 
+  - guid: fdcdc39f78de03c469cec24eb835b924
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 4
+    hue: 0.58
+    customColor: {r: 0.6250694, g: 0.9547169, b: 0.6765768, a: 1}
+    iconGuid: 
+  - guid: dc5d7816a8d08e248889b93da1d0356d
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 4
+    hue: 0.58
+    customColor: {r: 0.6250694, g: 0.9547169, b: 0.6765768, a: 1}
+    iconGuid: 
   _storageVersion: 4
