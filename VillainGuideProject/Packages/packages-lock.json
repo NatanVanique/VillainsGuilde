@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.bisc8.organizadinho": {
+      "version": "https://github.com/Bisc8Studio/com.bisc8.organizadinho.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "ac2b413dead01ea495d646ababa9aba49a5af1f9"
+    },
     "com.unity.2d.animation": {
       "version": "13.0.4",
       "depth": 0,
