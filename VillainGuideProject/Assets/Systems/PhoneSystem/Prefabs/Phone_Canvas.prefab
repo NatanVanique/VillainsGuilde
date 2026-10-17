@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: 223}
+  m_AnchoredPosition: {x: -5, y: 267}
   m_SizeDelta: {x: 22.2557, y: 116.5523}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6719677948376152419
@@ -290,8 +290,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -619, y: -336}
-  m_SizeDelta: {x: 212.5557, y: 116.5523}
+  m_AnchoredPosition: {x: 666, y: -327.7597}
+  m_SizeDelta: {x: 300.4521, y: 209.9423}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6060533797511686088
 CanvasRenderer:
@@ -388,4 +388,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhoneController
   exclamationIcon: {fileID: 4891299010607724670}
-  missionPopupPrefab: {fileID: 3909813352276662109, guid: 5246ccc42e69d6346b6e4687163d403f, type: 3}
