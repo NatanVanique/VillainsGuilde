@@ -5,17 +5,30 @@ using DG.Tweening;
 
 public class PhoneController : MonoBehaviour
 {
+    public static PhoneController Instance { get; private set; }
+
     [Header("Components")]
     [SerializeField] private GameObject exclamationIcon;
     private Button phoneButton;
     private float animationDuration = 0.5f;
     private bool phoneAnswered = false;
 
-    public void Start()
+    public void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        Instance = this;
+
         phoneButton = GetComponent<Button>();
         exclamationIcon.SetActive(false);
-        StartCoroutine(PhoneRing());
+    }
+    public void Start()
+    {
+        new WaitForSeconds(3f);
+        PhoneRing();
     }
 
     private void AnswerPhone()
@@ -38,14 +51,22 @@ public class PhoneController : MonoBehaviour
         SingleEntryPoint.Instance.UiManager.MissionsScreenController.SetupQuests();
     }
 
-    private IEnumerator PhoneRing()
+    public void ResetPhone()
     {
-        yield return new WaitForSeconds(3f);
+        StopAllCoroutines();
+        phoneButton.onClick.RemoveListener(AnswerPhone);
+        phoneAnswered = false;
+        exclamationIcon.transform.DOKill();
+        exclamationIcon.SetActive(false);
+    }
 
+    public void PhoneRing()
+    {
         if (phoneAnswered)
-            yield break;
+            return;
 
         phoneButton.onClick.AddListener(AnswerPhone);
+
         exclamationIcon.transform.localScale = Vector3.zero;
         exclamationIcon.SetActive(true);
 
@@ -54,27 +75,4 @@ public class PhoneController : MonoBehaviour
             .SetEase(Ease.OutBack);
     }
 
-    //PARA TOCAR O TELEFONE SEM A CORROUTINA, DEPOIS DE LER O JORNAL
-
-    //public void PhoneRing()
-    //{
-    //    if (phoneAnswered)
-    //        return;
-
-    //    phoneButton.onClick.AddListener(AnswerPhone);
-
-    //    exclamationIcon.transform.localScale = Vector3.zero;
-    //    exclamationIcon.SetActive(true);
-
-    //    exclamationIcon.transform
-    //        .DOScale(Vector3.one, animationDuration)
-    //        .SetEase(Ease.OutBack);
-    //}
-
-    //private IEnumerator PhoneRingDelay()
-    //{
-    //    yield return new WaitForSeconds(3f);
-
-    //    PhoneRing();
-    //}
 }

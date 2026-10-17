@@ -17,24 +17,18 @@ public class ManagerManager : MonoBehaviour
     {
         if (questMngPrefab != null)
         {
-            questMngPrefab = Instantiate(questMngPrefab);
+            questMngPrefab = Instantiate(questMngPrefab, transform);
             QuestSelectionManager = questMngPrefab.GetComponent<QuestSelectionManager>();
         }
         if(questSelectorMngPrefab != null)
         {
-            questSelectorMngPrefab = Instantiate(questSelectorMngPrefab);
+            questSelectorMngPrefab = Instantiate(questSelectorMngPrefab, transform);
             QuestSelector = questSelectorMngPrefab.GetComponent<QuestSelector>();
         }
         if(daySysPrefab != null)
         {
-            daySysPrefab = Instantiate(daySysPrefab);
+            daySysPrefab = Instantiate(daySysPrefab, transform);
             DaySystem = daySysPrefab.GetComponent<DaySystem>();
         }
-    }
-
-    public void AdvanceDay()
-    {
-        SingleEntryPoint.Instance.ManagerManager.DaySystem.AdvanceDay();
-        SingleEntryPoint.Instance.UiManager.MissionsScreenController.SetupQuests();
     }
 }
