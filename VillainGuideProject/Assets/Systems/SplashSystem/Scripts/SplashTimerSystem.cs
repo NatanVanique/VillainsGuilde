@@ -14,7 +14,7 @@ public class SplashTimerSystem : MonoBehaviour
 
     public void EndSplash()
     {
-        TransitionManager.Instance.LoadSceneAsync("01_MenuScene");
+        TransitionManager.Instance.LoadSceneAsync("02_GameScene");
     }
 
     public IEnumerator SplashTimer()

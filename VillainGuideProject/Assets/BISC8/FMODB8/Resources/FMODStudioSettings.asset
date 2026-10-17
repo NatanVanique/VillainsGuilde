@@ -171,7 +171,7 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     Overlay:
-      Value: 1
+      Value: 0
       HasValue: 1
     OverlayPosition:
       Value: 0
@@ -236,8 +236,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: 
-  sourceBankPath: 
+  sourceProjectPath: FmodProject/VillainsGuide_FmodProject/VillainsGuilde_FmodProject.fspro
+  sourceBankPath: FmodProject/VillainsGuide_FmodProject/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -259,8 +259,10 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
-  Banks: []
+  MasterBanks:
+  - Master
+  Banks:
+  - Music
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
@@ -276,9 +278,9 @@ MonoBehaviour:
   HideSetupWizard: 1
   LastEventReferenceScanVersion: 131859
   Platforms:
-  - {fileID: -3594572527733915183}
   - {fileID: -6835333905230668191}
   - {fileID: -6301884615784839363}
+  - {fileID: -3594572527733915183}
   - {fileID: 6723283944998785533}
   MigratedPlatforms: 080000000a0000000200000001000000
 --- !u!114 &6723283944998785533

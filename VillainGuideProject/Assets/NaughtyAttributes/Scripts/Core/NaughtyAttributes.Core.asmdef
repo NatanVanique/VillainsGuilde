@@ -1,6 +1,8 @@
 {
     "name": "NaughtyAttributes.Core",
-    "references": [],
+    "references": [
+    "BISC8.FMODB8.Runtime"
+  ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
