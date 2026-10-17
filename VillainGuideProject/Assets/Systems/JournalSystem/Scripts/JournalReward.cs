@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 
 public class JournalReward : MonoBehaviour
 {
-    [SerializeField] private JournalRegister rewardsRegister;
+    private JournalRegister rewardsRegister;
 
     public struct RewardResult
     {
@@ -22,9 +23,9 @@ public class JournalReward : MonoBehaviour
     public float TotalMoney { get; private set; }
     public int TotalCharacters { get; private set; }
 
-    private void Awake()
+    private void Start()
     {
-        CalculateRewards();
+        rewardsRegister = gameObject.GetComponent<JournalRegister>();
     }
 
     public void CollectRewards()
