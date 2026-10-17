@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragItem : MonoBehaviour, IPointerDownHandler, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     Canvas canvas;
     CanvasGroup canvasGroup;
@@ -20,16 +20,6 @@ public class DragItem : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
 
         startParent = transform.parent;
         startPosition = transform.localPosition;
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        eventData.Use();
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        eventData.Use();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
