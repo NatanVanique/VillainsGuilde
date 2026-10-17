@@ -11,12 +11,10 @@ public class PhoneController : MonoBehaviour
     private float animationDuration = 0.5f;
     private bool phoneAnswered = false;
 
-    private void Start()
+    public void Start()
     {
         phoneButton = GetComponent<Button>();
-
         exclamationIcon.SetActive(false);
-
         StartCoroutine(PhoneRing());
     }
 
@@ -36,8 +34,8 @@ public class PhoneController : MonoBehaviour
                 exclamationIcon.SetActive(false);
             });
 
-        MissionsScreenController.Instance.ShowMissionsScreen();
-        MissionsScreenController.Instance.SetupQuests();
+        SingleEntryPoint.Instance.UiManager.MissionsScreenController.ShowMissionsScreen();
+        SingleEntryPoint.Instance.UiManager.MissionsScreenController.SetupQuests();
     }
 
     private IEnumerator PhoneRing()
@@ -55,4 +53,28 @@ public class PhoneController : MonoBehaviour
             .DOScale(Vector3.one, animationDuration)
             .SetEase(Ease.OutBack);
     }
+
+    //PARA TOCAR O TELEFONE SEM A CORROUTINA, DEPOIS DE LER O JORNAL
+
+    //public void PhoneRing()
+    //{
+    //    if (phoneAnswered)
+    //        return;
+
+    //    phoneButton.onClick.AddListener(AnswerPhone);
+
+    //    exclamationIcon.transform.localScale = Vector3.zero;
+    //    exclamationIcon.SetActive(true);
+
+    //    exclamationIcon.transform
+    //        .DOScale(Vector3.one, animationDuration)
+    //        .SetEase(Ease.OutBack);
+    //}
+
+    //private IEnumerator PhoneRingDelay()
+    //{
+    //    yield return new WaitForSeconds(3f);
+
+    //    PhoneRing();
+    //}
 }
