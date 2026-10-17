@@ -4,7 +4,7 @@ using System.Collections;
 
 public class SplashTimerSystem : MonoBehaviour
 {
-    int splashDuration = 3;
+    int splashDuration = 6;
     public void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
