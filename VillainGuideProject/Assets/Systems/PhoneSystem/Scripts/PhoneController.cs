@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class PhoneController : MonoBehaviour
 {
     [SerializeField] GameObject exclamationIcon;
+    [SerializeField] GameObject missionPopupPrefab;
     void Start()
     {
         gameObject.GetComponent<Button>().onClick.AddListener(AnswerPhone);
@@ -13,6 +14,7 @@ public class PhoneController : MonoBehaviour
     void AnswerPhone()
     {
         exclamationIcon.SetActive(false);
+        Instantiate(missionPopupPrefab);
     }
 
     IEnumerator PhoneRing()
