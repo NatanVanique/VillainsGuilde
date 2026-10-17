@@ -13,27 +13,42 @@ public class JournalRegister : MonoBehaviour
     }
     
     private List<QuestData> QuestsDone; // Isso calcula o que vocÊ recebe
-    [SerializeField] private JournalPageInfo[] JournalPage; //Isso calcula a página inicial
+    private JournalPageInfo JournalPage; //Isso calcula a página inicial
     
     public void RegisterResult(bool playerWins, QuestData questScriptable)
     {
         if (playerWins)
         {
-            if (questScriptable.QuestType == Emergency)
+            if (questScriptable.Type == QuestType.Emergency)
             {
-                dailyNews.Add(questScriptable);
+                QuestsDone.Add(questScriptable);
+                JournalPage.BigNew = questScriptable;
             }
-            else if (questScriptable.QuestType == Mistery)
+            else if (questScriptable.Type == QuestType.Mistery)
             {
-                
+                SmallNewReplace(questScriptable);
             }
         }
         else
         {
-            if (questScriptable.QuestType != Classic)
+            if (questScriptable.Type == QuestType.Emergency)
             {
-                dailyNews.Add(questScriptable);
+                QuestsDone.Add(questScriptable);
+                JournalPage.BigNew = questScriptable;
+            }
+            else if (questScriptable.Type == QuestType.Mistery)
+            {
+                QuestsDone.Add(questScriptable);
+                SmallNewReplace(questScriptable);
             }
         }
+    }
+
+    public void SmallNewReplace(QuestData questScriptable)
+    {
+        if (JournalPage.SmallNew == null) 
+            JournalPage.SmallNew = questScriptable;
+        else if (//(questScriptable.xp + questScriptable.money) >=(JournalPage.SmallNew.xp + JournalPage.SmallNew.money))
+            JournalPage.SmallNew = questScriptable;
     }
 }
