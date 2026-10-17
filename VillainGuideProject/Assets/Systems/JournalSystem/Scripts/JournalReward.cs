@@ -16,6 +16,9 @@ public class JournalReward : MonoBehaviour
 
         private void CalculeRewards()
         {
+            totalXp == rewardsRegistred.QuestsWinned.xp - rewardsRegistred.QuestsLosed.xp;
+            totalCoins == rewardsRegistred.QuestsWinned.coins - rewardsRegistred.QuestsLosed.coins;
+            finalChars == rewardsRegistred.QuestsWinned.chars - rewardsRegistred.QuestsLosed.chars;
         }
     }
 }
