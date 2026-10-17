@@ -28,6 +28,9 @@ public class QuestData : ScriptableObject {
     [ShowIf(nameof(HasXP))] public float XPReward;
     public bool HasCharacters;
     [ShowIf(nameof(HasCharacters))] public List<int> ListOfCharacters;
+    public bool HasConsequence;
+    [ShowIf(nameof(HasConsequence))] public int AmountOfConsequenceEvents;
+
 }
 
 [Serializable]
@@ -38,6 +41,7 @@ public struct TipData {
 
 }
 
-public enum QuestType { Emergency, Mistery, Classic }
+public enum QuestType { Emergency, Mysterius, Classic, Rescue }
 public enum TipType { Day, Night, Flying }
 public enum QuestRewardType { Character, XP, Money }
+public enum QuestLine { Mayor, Second, Third }
