@@ -3,12 +3,7 @@ using UnityEngine;
 
 public class QuestSelectionManager : MonoBehaviour
 {
-
-    [Header("Mission Selection")]
-    [SerializeField, Min(0)] private int maxAcceptedMissions = 1;
-
     private readonly List<QuestCardSelection> selectedCards = new();
-    public int MaxAcceptedMissions => maxAcceptedMissions;
     public IReadOnlyList<QuestCardSelection> SelectedCards => selectedCards.AsReadOnly();
 
     public void Setup()
@@ -36,9 +31,6 @@ public class QuestSelectionManager : MonoBehaviour
 
         if (selectedCards.Contains(card))
             return true;
-
-        if (selectedCards.Count >= maxAcceptedMissions)
-            return false;
 
         selectedCards.Add(card);
         card.SetSelected(true);

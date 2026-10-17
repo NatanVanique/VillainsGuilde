@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1751b7e3956d2f743b55af6f6bb01a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonstersManagers
+  initialMonster: {fileID: 11400000, guid: ffd4e75a0b8be704eb61bdaf31bad526, type: 2}
   ListOfRegisteredMonsters: []
   references:
     version: 2

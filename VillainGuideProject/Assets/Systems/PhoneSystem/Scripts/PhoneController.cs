@@ -49,6 +49,7 @@ public class PhoneController : MonoBehaviour
 
         SingleEntryPoint.Instance.UiManager.MissionsScreenController.ShowMissionsScreen();
         SingleEntryPoint.Instance.UiManager.MissionsScreenController.SetupQuests();
+        SingleEntryPoint.Instance.UiManager.MissionsScreenController.SetupIcons();
     }
 
     public void ResetPhone()

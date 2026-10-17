@@ -30,7 +30,7 @@ public class JournalRegister : MonoBehaviour
             {
                 JournalPage.BigNew = questScriptable;
             }
-            else if (questScriptable.Type == QuestType.Mistery)
+            else if (questScriptable.Type == QuestType.Mysterius)
             {
                 RegisterSmallNews(questScriptable);
             }
@@ -45,7 +45,7 @@ public class JournalRegister : MonoBehaviour
             {
                 JournalPage.BigNew = questScriptable;
             }
-            else if (questScriptable.Type == QuestType.Mistery)
+            else if (questScriptable.Type == QuestType.Mysterius)
             {
                 RegisterSmallNews(questScriptable);
             }

@@ -4,8 +4,8 @@ using UnityEngine.UI;
 public class QuestCardSelection : MonoBehaviour
 {
     [Header("Components")]
-    [SerializeField] private Button cardButton;
     [SerializeField] private GameObject selectedBorder;
+    [SerializeField] QuestCard questCard;
 
     public bool IsSelected { get; private set; }
 
@@ -15,22 +15,14 @@ public class QuestCardSelection : MonoBehaviour
     }
     private void OnEnable()
     {
-        cardButton.onClick.AddListener(ToggleSelection);
         RefreshBorder();
     }
 
     private void OnDisable()
     {
-        cardButton.onClick.RemoveListener(ToggleSelection);
         SingleEntryPoint.Instance.ManagerManager.QuestSelectionManager.Deselect(this);
-
         IsSelected = false;
         RefreshBorder();
-    }
-
-    private void ToggleSelection()
-    {
-        SingleEntryPoint.Instance.ManagerManager.QuestSelectionManager.ToggleSelection(this);
     }
 
     public bool TrySelect()
@@ -53,5 +45,23 @@ public class QuestCardSelection : MonoBehaviour
     private void RefreshBorder()
     {
         selectedBorder.SetActive(IsSelected);
+    }
+
+    public void AddMonsterToTheCard(MonsterInfo info)
+    {
+        questCard.AddMonster(info);
+    }
+
+    public void RemoveMonsterFromTheCard(MonsterInfo info)
+    {
+        questCard.RemoveMonster(info);
+        int amountOfMonsters = questCard._listOfMonsters.Count;
+
+        if(amountOfMonsters == 0)
+        {
+            SingleEntryPoint.Instance.ManagerManager.QuestSelectionManager.Deselect(this);
+            IsSelected = false;
+            RefreshBorder();
+        }
     }
 }
