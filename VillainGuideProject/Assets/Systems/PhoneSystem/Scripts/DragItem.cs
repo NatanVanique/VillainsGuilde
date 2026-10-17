@@ -43,9 +43,16 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
         if (!dropped)
         {
-            transform.SetParent(startParent);
-            transform.localPosition = startPosition;
+            ReturnToOrigin();
         }
+    }
+
+    public void ReturnToOrigin()
+    {
+        dropped = false;
+        canvasGroup.blocksRaycasts = true;
+        transform.SetParent(startParent);
+        transform.localPosition = startPosition;
     }
 
     public void Drop(Transform slot)

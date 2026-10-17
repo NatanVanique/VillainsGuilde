@@ -4,6 +4,22 @@ using UnityEngine;
 
 public class QuestSelector : MonoBehaviour {
 
+    public static QuestSelector Instance { get; private set; }
+
+    public List<QuestData> SelectedQuests => _selectedQuests;
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
     #region Variables
 
     [SerializeField, SerializedDictionary("day", "day info")] SerializedDictionary<int, DayQuestsData> dictionaryOfDayInfo = new();

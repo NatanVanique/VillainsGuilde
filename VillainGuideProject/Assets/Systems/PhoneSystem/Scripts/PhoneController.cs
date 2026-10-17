@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class PhoneController : MonoBehaviour
 {
+    [Header("Components")]
     [SerializeField] private GameObject exclamationIcon;
     private Button phoneButton;
     private float animationDuration = 0.5f;
@@ -25,7 +26,6 @@ public class PhoneController : MonoBehaviour
             return;
 
         phoneAnswered = true;
-
         phoneButton.onClick.RemoveListener(AnswerPhone);
 
         exclamationIcon.transform
@@ -37,11 +37,12 @@ public class PhoneController : MonoBehaviour
             });
 
         MissionsScreenController.Instance.ShowMissionsScreen();
+        MissionsScreenController.Instance.SetupQuests();
     }
 
     private IEnumerator PhoneRing()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(3f);
 
         if (phoneAnswered)
             yield break;
