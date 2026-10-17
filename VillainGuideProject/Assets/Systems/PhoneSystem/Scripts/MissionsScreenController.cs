@@ -5,7 +5,10 @@ public class MissionsScreenController : MonoBehaviour
 {
     public static MissionsScreenController Instance { get; private set; }
 
+    [Header("Screen")]
     [SerializeField] private GameObject missionsScreen;
+
+    [Header("Animation")]
     [SerializeField] private float animationDuration = 0.5f;
     [SerializeField] private Ease animationEase = Ease.OutCubic;
 

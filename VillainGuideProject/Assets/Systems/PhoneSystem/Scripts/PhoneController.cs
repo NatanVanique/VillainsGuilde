@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class PhoneController : MonoBehaviour
 {
+    [Header("Components")]
     [SerializeField] private GameObject exclamationIcon;
     private Button phoneButton;
     private float animationDuration = 0.5f;
