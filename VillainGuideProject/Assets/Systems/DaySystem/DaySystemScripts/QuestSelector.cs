@@ -14,6 +14,14 @@ public class QuestSelector : MonoBehaviour {
 
     #endregion
 
+    #region Test
+
+    private void Start() {
+        Setup();
+    }
+
+    #endregion
+
     #region Setup
 
     public void Setup() {
@@ -29,6 +37,7 @@ public class QuestSelector : MonoBehaviour {
     }
 
     void HandleDayChanged(int newDay) {
+        Debug.Log(newDay);
         if (!dictionaryOfDayInfo.ContainsKey(newDay)) return;
 
         _selectedQuests.Clear();
@@ -36,6 +45,7 @@ public class QuestSelector : MonoBehaviour {
         DayQuestsData newDayQuestData = dictionaryOfDayInfo[newDay];
 
         int totalAmountOfQuestsLefts = newDayQuestData.totalAmountOfQuests;
+        int amountOfMysteriusLeft = newDayQuestData.totalAmountOfMysterious;
 
         if (newDayQuestData.IsEmergency) { // VERIFICANDO SE É UMA EMERGÊNCIA
             _selectedQuests.Add(newDayQuestData.DictionaryOfMandatoryQuests[_currentLine]);
@@ -61,13 +71,21 @@ public class QuestSelector : MonoBehaviour {
                     List<QuestData> listOsRescueQuests = newDayQuestData.DictionaryOfPossibleQuests[QuestType.Rescue];
                     AddRandomQuestFromList(listOsRescueQuests);
                     _hasFoundCharacter = true;
-                }
-
-                else { // Não encontrou
-                    List<QuestData> listOfClassicQuests = newDayQuestData.DictionaryOfPossibleQuests[QuestType.Classic];
-                    AddRandomQuestFromList(listOfClassicQuests);
+                    continue;
                 }
             }
+
+            List<QuestData> listOfQuestsToChoose;
+
+            if (amountOfMysteriusLeft > 0) { // Precisa ser uma misteriosa
+                listOfQuestsToChoose = newDayQuestData.DictionaryOfPossibleQuests[QuestType.Mysterius];
+                amountOfMysteriusLeft--;
+            }
+            else { // Clássica
+                listOfQuestsToChoose = newDayQuestData.DictionaryOfPossibleQuests[QuestType.Classic];
+            }
+
+            AddRandomQuestFromList(listOfQuestsToChoose);
 
         }
 

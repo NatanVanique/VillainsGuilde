@@ -30,6 +30,8 @@ public class DaySystem : MonoBehaviour
     #region Main Logic
 
     public void AdvanceDay() {
+        if (_currentDay >= maxAmountOfDays) return;
+
         _currentDay++;
         OnCurrentDayChanged?.Invoke(_currentDay);
     }

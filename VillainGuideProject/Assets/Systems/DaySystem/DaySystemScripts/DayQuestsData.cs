@@ -12,6 +12,7 @@ public class DayQuestsData : ScriptableObject {
 
     [Header("Random Quests")]
     public int totalAmountOfQuests;
+    public int totalAmountOfMysterious;
     public SerializedDictionary<QuestType, List<QuestData>> DictionaryOfPossibleQuests = new();
 
     [Header("Settings")]
