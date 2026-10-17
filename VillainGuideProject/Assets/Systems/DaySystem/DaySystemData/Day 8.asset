@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 494458519c2b4bd46b3c77db8517f559, type: 3}
+  m_Name: Day 8
+  m_EditorClassIdentifier: Assembly-CSharp::DayQuestsData
+  IsEmergency: 0
+  DictionaryOfMandatoryQuests:
+    _serializedList: []
+  totalAmountOfQuests: 8
+  totalAmountOfMysterious: 5
+  DictionaryOfPossibleQuests:
+    _serializedList:
+    - Key: 1
+      Value:
+      - {fileID: 11400000, guid: 442aa393e75a69444b09b7ca31f33f51, type: 2}
+    - Key: 2
+      Value:
+      - {fileID: 11400000, guid: 7d027383ee43ee847a242697beb62755, type: 2}
+    - Key: 3
+      Value:
+      - {fileID: 11400000, guid: 9b30ea94a7b66694d8fea20fbe6951f9, type: 2}
+  CanFindRescue: 0
+  ResetCharacter: 0

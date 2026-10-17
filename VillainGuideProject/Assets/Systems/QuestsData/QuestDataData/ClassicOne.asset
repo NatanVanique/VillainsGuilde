@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36254ada68b428d429f1011fe9509544, type: 3}
-  m_Name: QuestOne
+  m_Name: ClassicOne
   m_EditorClassIdentifier: Assembly-CSharp::QuestData
   Type: 2
   QuestIcon: {fileID: 21300000, guid: e08b6f5b8213f4040ad1a79c95af9105, type: 3}

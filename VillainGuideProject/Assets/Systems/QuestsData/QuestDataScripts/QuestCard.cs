@@ -24,9 +24,9 @@ public class QuestCard : MonoBehaviour
 
     #region Setup
 
-    private void Start() {
-        Setup(dataTest);
-    }
+    //private void Start() {
+    //    Setup(dataTest);
+    //}
 
     public void Setup(QuestData data) {
         _data = data;
