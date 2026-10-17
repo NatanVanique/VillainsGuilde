@@ -38,6 +38,7 @@ public struct TipData {
 
 }
 
-public enum QuestType { Emergency, Mistery, Classic }
+public enum QuestType { Emergency, Mistery, Classic, Rescue }
 public enum TipType { Day, Night, Flying }
 public enum QuestRewardType { Character, XP, Money }
+public enum QuestLine { Mayor, Second, Third }
