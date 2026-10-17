@@ -896,106 +896,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1021556656}
     m_Modifications:
-    - target: {fileID: 755896719747871643, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 755896719747871643, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 755896719747871643, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 755896719747871643, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 755896719747871643, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 755896719747871643, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1066110067386450250, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_fontSize
-      value: 19.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754945463236356227, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754945463236356227, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754945463236356227, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754945463236356227, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754945463236356227, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754945463236356227, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702024032095776501, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702024032095776501, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702024032095776501, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702024032095776501, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702024032095776501, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702024032095776501, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5041243818823179300, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_fontSize
-      value: 19.95
-      objectReference: {fileID: 0}
     - target: {fileID: 6999763977553149977, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
       propertyPath: m_Name
       value: QuestCardPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 7615847320124671804, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: m_fontSize
-      value: 19.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434513335273905093, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: dictionaryOfTips._serializedList.Array.data[0].Value
-      value: 
-      objectReference: {fileID: 2369387969905607436}
-    - target: {fileID: 8434513335273905093, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: dictionaryOfTips._serializedList.Array.data[1].Value
-      value: 
-      objectReference: {fileID: 2369387969905607435}
-    - target: {fileID: 8434513335273905093, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-      propertyPath: dictionaryOfTips._serializedList.Array.data[2].Value
-      value: 
-      objectReference: {fileID: 2369387969905607434}
     - target: {fileID: 9214598288682587692, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1081,39 +985,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
---- !u!114 &2369387969905607434 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3529321348205284483, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-  m_PrefabInstance: {fileID: 2369387969905607433}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
---- !u!114 &2369387969905607435 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6305552596322437877, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-  m_PrefabInstance: {fileID: 2369387969905607433}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
---- !u!114 &2369387969905607436 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2070634741140821915, guid: 2babb7f705934af4197ce16b47317dc6, type: 3}
-  m_PrefabInstance: {fileID: 2369387969905607433}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
