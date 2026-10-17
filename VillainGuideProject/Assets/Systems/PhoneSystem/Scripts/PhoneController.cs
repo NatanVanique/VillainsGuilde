@@ -26,7 +26,6 @@ public class PhoneController : MonoBehaviour
             return;
 
         phoneAnswered = true;
-
         phoneButton.onClick.RemoveListener(AnswerPhone);
 
         exclamationIcon.transform
@@ -38,6 +37,7 @@ public class PhoneController : MonoBehaviour
             });
 
         MissionsScreenController.Instance.ShowMissionsScreen();
+        MissionsScreenController.Instance.SetupQuests();
     }
 
     private IEnumerator PhoneRing()
