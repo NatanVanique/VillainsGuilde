@@ -15,13 +15,13 @@ public class MonsterCardPrefab : MonoBehaviour {
     [SerializeField] LocalizeStringEvent nameText;
     [SerializeField] Button infoButton;
 
-    MonsterTips _selectedMonsterTips;
+    ListOfTips _selectedMonsterTips;
     MonsterData _selectedData;
 
     [Header("Test")]
     [SerializeField] MonsterData data;
 
-    public static event Action<MonsterData, MonsterTips> OnMonsterCardInfoButtonPressed;
+    public static event Action<MonsterData, ListOfTips> OnMonsterCardInfoButtonPressed;
 
     #endregion
 
@@ -53,7 +53,7 @@ public class MonsterCardPrefab : MonoBehaviour {
     #endregion
 
     #region Main Logic
-    MonsterTips ChooseRandomTips() {
+    ListOfTips ChooseRandomTips() {
 
         List<TipData> listOfTips = new();
 
@@ -74,7 +74,7 @@ public class MonsterCardPrefab : MonoBehaviour {
             }
         }
 
-        MonsterTips monsterTips = new(listOfTips);
+        ListOfTips monsterTips = new(listOfTips);
 
         return monsterTips;
     }
@@ -93,10 +93,10 @@ public class MonsterCardPrefab : MonoBehaviour {
 }
 
 [Serializable]
-public struct MonsterTips {
+public struct ListOfTips {
     public SerializedDictionary<int, TipData> SelectedTips;
 
-    public MonsterTips(List<TipData> listOfTips) {
+    public ListOfTips(List<TipData> listOfTips) {
         SelectedTips = new() {
             [1] = listOfTips[0],
             [2] = listOfTips[1],

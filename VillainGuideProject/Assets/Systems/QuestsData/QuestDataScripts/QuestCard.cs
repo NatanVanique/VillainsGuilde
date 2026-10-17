@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using AYellowpaper.SerializedCollections;
 using UnityEngine.Localization.Components;
 using System.Collections.Generic;
+using System;
 
 public class QuestCard : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class QuestCard : MonoBehaviour
     [Header("Components")]
     [SerializeField] Image questIcon;
     [SerializeField] LocalizeStringEvent title;
+    [SerializeField] Button moreInfoButton;
     [SerializeField, SerializedDictionary("index", "text")] SerializedDictionary<int, LocalizeStringEvent> dictionaryOfTips;
     [SerializeField, SerializedDictionary("amount", "container")] SerializedDictionary<int, GameObject> dictionaryOfAmountOfCharacters;
     [SerializeField, SerializedDictionary("type", "icons")] SerializedDictionary<QuestRewardType, GameObject> dictionaryOfRewardIcons;
@@ -19,19 +21,31 @@ public class QuestCard : MonoBehaviour
     [SerializeField] QuestData dataTest;
 
     QuestData _data;
+    ListOfTips _listOfTips;
+
+    public static event Action<QuestData, ListOfTips> OnQuestCardInfoPressed;
 
     #endregion
 
     #region Setup
 
-    //private void Start() {
-    //    Setup(dataTest);
-    //}
-
     public void Setup(QuestData data) {
         _data = data;
 
         SetVisuals();
+        SetButtons();
+    }
+
+    #endregion
+
+    #region Buttons
+
+    void SetButtons() {
+        moreInfoButton.onClick.AddListener(MoreInfoButton);
+    }
+
+    void MoreInfoButton() {
+        OnQuestCardInfoPressed?.Invoke(_data, _listOfTips);
     }
 
     #endregion
@@ -62,13 +76,20 @@ public class QuestCard : MonoBehaviour
     }
 
     void ChangeTips() {
+        List<TipData> listOfTips = new();
+
         foreach (var pair in dictionaryOfTips) {
             if (!_data.DictionaryOfTipData.ContainsKey(pair.Key)) continue;
 
             List<TipData> listOfData = _data.DictionaryOfTipData[pair.Key];
-            int randomTip = Random.Range(0, listOfData.Count);
-            pair.Value.StringReference = listOfData[randomTip].TipText;
+            int randomTip = UnityEngine.Random.Range(0, listOfData.Count);
+            TipData data = listOfData[randomTip];
+            pair.Value.StringReference = data.TipText;
+
+            listOfTips.Add(data);
         }
+
+        _listOfTips = new(listOfTips);
     }
 
     void SetRewardsIcons() {
