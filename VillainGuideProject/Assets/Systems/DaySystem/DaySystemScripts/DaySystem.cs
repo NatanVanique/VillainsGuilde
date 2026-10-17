@@ -9,7 +9,8 @@ public class DaySystem : MonoBehaviour
     [SerializeField] int maxAmountOfDays;
 
     // private variables
-    int _currentDay = 0;
+    int _currentDay = 1;
+    public int CurrentDay => _currentDay;
 
     // events
     /// <summary>

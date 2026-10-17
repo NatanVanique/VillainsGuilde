@@ -20,7 +20,7 @@ public class QuestSelector : MonoBehaviour {
 
     private void Start() {
         Setup();
-        HandleDayChanged(1);
+        HandleDayChanged(Mathf.Max(1, SingleEntryPoint.Instance.ManagerManager.DaySystem.CurrentDay));
     }
 
     #endregion

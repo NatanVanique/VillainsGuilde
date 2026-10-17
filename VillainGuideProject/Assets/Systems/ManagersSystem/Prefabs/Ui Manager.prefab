@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UiManager
   MissionsScreenController: {fileID: 34746710034179707, guid: 5246ccc42e69d6346b6e4687163d403f, type: 3}
   missionsScreenMngPrefab: {fileID: 3909813352276662109, guid: 5246ccc42e69d6346b6e4687163d403f, type: 3}
+  JournalManager: {fileID: 5764119548556489998, guid: 0022358a80dcea44cbde45287982c873, type: 3}
+  journalPrefab: {fileID: 3014633977119238038, guid: 0022358a80dcea44cbde45287982c873, type: 3}

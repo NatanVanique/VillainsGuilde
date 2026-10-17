@@ -31,6 +31,23 @@ public class TransitionManager : MonoBehaviour
             StartCoroutine(TransitionRoutine(sceneName));
     }
 
+    public void ReloadSceneTransitionIn()
+    {
+        GameObject transition = Instantiate(transitionPrefab);
+        Animator animator = transition.GetComponentInChildren<Animator>();
+        animator.SetTrigger(inTrigger);
+
+    }
+
+    public void ReloadSceneTransitionOut()
+    {
+        GameObject transition = Instantiate(transitionPrefab);
+        Animator animator = transition.GetComponentInChildren<Animator>();
+        animator.SetTrigger(outTrigger);
+
+        new WaitForSeconds(transitionDuration);
+        Destroy(transition);
+    }
     IEnumerator TransitionRoutine(string sceneName)
     {
         transitioning = true;
@@ -49,10 +66,8 @@ public class TransitionManager : MonoBehaviour
         SceneManager.SetActiveScene(newScene);
 
         yield return SceneManager.UnloadSceneAsync(oldScene);
-
         animator.SetTrigger(outTrigger);
         yield return new WaitForSeconds(transitionDuration);
-
         Destroy(transition);
         transitioning = false;
     }
