@@ -4,6 +4,20 @@ public class JournalReward : MonoBehaviour
 {
     [SerializeField] private JournalRegister rewardsRegister;
 
+    public struct RewardResult
+    {
+        public int Characters;
+        public float Money;
+        public float XP;
+
+        public RewardResult(int characters, float money, float xp)
+        {
+            Characters = characters;
+            Money = money;
+            XP = xp;
+        }
+    }
+
     public float TotalXP { get; private set; }
     public float TotalMoney { get; private set; }
     public int TotalCharacters { get; private set; }
@@ -13,17 +27,23 @@ public class JournalReward : MonoBehaviour
         CalculateRewards();
     }
 
-    public void CalculateRewards()
+    public void CollectRewards()
     {
-        TotalXP = 0f;
+    }
+
+    public RewardResult CalculateRewards()
+    {
         TotalMoney = 0f;
+        TotalXP = 0f;
         TotalCharacters = 0;
 
         if (rewardsRegister == null)
-            return;
+            return new RewardResult();
 
         AddRewards(rewardsRegister.QuestsWinned, 1);
         AddRewards(rewardsRegister.QuestsLosed, -1);
+
+        return new RewardResult(TotalCharacters,TotalMoney,TotalXP);
     }
 
     private void AddRewards(System.Collections.Generic.List<QuestData> quests, int multiplier)
