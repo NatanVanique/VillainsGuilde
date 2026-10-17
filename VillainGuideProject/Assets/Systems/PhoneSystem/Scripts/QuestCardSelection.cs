@@ -7,14 +7,14 @@ public class QuestCardSelection : MonoBehaviour
     [SerializeField] private Button cardButton;
     [SerializeField] private GameObject selectedBorder;
 
-    [Header("Selection")]
-    [SerializeField] private QuestSelectionManager selectionManager;
-
     public bool IsSelected { get; private set; }
 
+    public void Setup()
+    {
+
+    }
     private void OnEnable()
     {
-        selectionManager = QuestSelectionManager.Instance;
         cardButton.onClick.AddListener(ToggleSelection);
         RefreshBorder();
     }
@@ -22,7 +22,7 @@ public class QuestCardSelection : MonoBehaviour
     private void OnDisable()
     {
         cardButton.onClick.RemoveListener(ToggleSelection);
-        selectionManager.Deselect(this);
+        SingleEntryPoint.Instance.ManagerManager.QuestSelectionManager.Deselect(this);
 
         IsSelected = false;
         RefreshBorder();
@@ -30,15 +30,12 @@ public class QuestCardSelection : MonoBehaviour
 
     private void ToggleSelection()
     {
-        selectionManager.ToggleSelection(this);
+        SingleEntryPoint.Instance.ManagerManager.QuestSelectionManager.ToggleSelection(this);
     }
 
     public bool TrySelect()
     {
-        if (selectionManager == null)
-            selectionManager = QuestSelectionManager.Instance;
-
-        return selectionManager.TrySelect(this);
+        return SingleEntryPoint.Instance.ManagerManager.QuestSelectionManager.TrySelect(this);
     }
 
     internal void SetSelected(bool selected)

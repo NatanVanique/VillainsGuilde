@@ -15,6 +15,7 @@ public class QuestCardHover : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     private void Awake()
     {
         cardButton = GetComponent<Button>();
+
     }
 
     public void OnPointerEnter(PointerEventData eventData)
