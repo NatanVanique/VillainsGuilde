@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 780440471573966534}
   - component: {fileID: 4509012481895883793}
   m_Layer: 5
-  m_Name: CharacterCardPrefab
+  m_Name: MonsterCardPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -340,9 +340,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eea00d971b2bf04b9b8bfa6a0fcbc53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterCardPrefab
-  SplashArt: {fileID: 2099128999088780054}
+  splashArt: {fileID: 2099128999088780054}
   Background: {fileID: 7117889194474703419}
-  Name: {fileID: 357352526327035298}
+  nameText: {fileID: 357352526327035298}
+  infoButton: {fileID: 3307445739530241975}
   data: {fileID: 11400000, guid: ffd4e75a0b8be704eb61bdaf31bad526, type: 2}
 --- !u!1 &5241110143115381031
 GameObject:

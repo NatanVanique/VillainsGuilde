@@ -1,4 +1,5 @@
 using AYellowpaper.SerializedCollections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Components;
@@ -6,33 +7,59 @@ using UnityEngine.UI;
 
 public class MonsterCardPrefab : MonoBehaviour {
 
+    #region Variables
+
     [Header("Components")]
-    [SerializeField] Image SplashArt;
+    [SerializeField] Image splashArt;
     [SerializeField] Image Background;
-    [SerializeField] LocalizeStringEvent Name;
-    //[SerializeField, SerializedDictionary("index", "localize string event")] SerializedDictionary<int, LocalizeStringEvent> dictionaryOfTipTexts = new();
+    [SerializeField] LocalizeStringEvent nameText;
+    [SerializeField] Button infoButton;
 
     MonsterTips _selectedMonsterTips;
+    MonsterData _selectedData;
 
     [Header("Test")]
     [SerializeField] MonsterData data;
 
+    public static event Action<MonsterData, MonsterTips> OnMonsterCardInfoButtonPressed;
+
+    #endregion
+
+    #region Setup
     private void Start() {
         Setup(data);
     }
 
     public void Setup(MonsterData data) {
-        _selectedMonsterTips = ChooseRandomTips(data);
-        SetVisual(data);
+        _selectedData = data;
+        _selectedMonsterTips = ChooseRandomTips();
+        SetVisual();
+
+        SetButtons();
     }
 
-    MonsterTips ChooseRandomTips(MonsterData data) {
+    #endregion
+
+    #region Buttons
+
+    void SetButtons() {
+        infoButton.onClick.AddListener(InfoButton);
+    }
+
+    void InfoButton() {
+        OnMonsterCardInfoButtonPressed?.Invoke(_selectedData, _selectedMonsterTips);
+    }
+
+    #endregion
+
+    #region Main Logic
+    MonsterTips ChooseRandomTips() {
 
         List<TipData> listOfTips = new();
 
-        foreach (var pair in data.DictionaryOfTips) {
+        foreach (var pair in _selectedData.DictionaryOfTips) {
             List<TipData> listOsTips = pair.Value;
-            int randomIndex = Random.Range(0, listOsTips.Count);
+            int randomIndex = UnityEngine.Random.Range(0, listOsTips.Count);
             TipData newTip = listOsTips[randomIndex];
             switch (pair.Key) {
                 case 1:
@@ -52,19 +79,22 @@ public class MonsterCardPrefab : MonoBehaviour {
         return monsterTips;
     }
 
-    void SetVisual(MonsterData data) {
-        if (data.SplashArt != null) SplashArt.sprite = data.SplashArt;
-        if (data.Name != null) Name.StringReference = data.Name;
-        if (data.Background != null) Background.sprite = data.Background;
+    #endregion
 
-        //foreach (var pair in dictionaryOfTipTexts) {
-        //    pair.Value.StringReference = _selectedMonsterTips.SelectedTips[pair.Key].TipText;
-        //}
+    #region Visuals
+
+    void SetVisual() {
+        if (_selectedData.SplashArt != null) splashArt.sprite = _selectedData.SplashArt;
+        if (_selectedData.Name != null) nameText.StringReference = _selectedData.Name;
+        if (_selectedData.Background != null) Background.sprite = _selectedData.Background;
     }
+
+    #endregion
 }
 
+[Serializable]
 public struct MonsterTips {
-    public Dictionary<int, TipData> SelectedTips;
+    public SerializedDictionary<int, TipData> SelectedTips;
 
     public MonsterTips(List<TipData> listOfTips) {
         SelectedTips = new() {
