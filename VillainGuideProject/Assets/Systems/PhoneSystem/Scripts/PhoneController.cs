@@ -53,6 +53,7 @@ public class PhoneController : MonoBehaviour
 
     public void ResetPhone()
     {
+        StopAllCoroutines();
         phoneButton.onClick.RemoveListener(AnswerPhone);
         phoneAnswered = false;
         exclamationIcon.transform.DOKill();

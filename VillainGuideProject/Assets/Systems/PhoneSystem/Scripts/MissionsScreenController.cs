@@ -54,11 +54,8 @@ public class MissionsScreenController : MonoBehaviour
             {
                 missionsScreen.SetActive(false);
                 TransitionManager.Instance.ReloadSceneTransitionIn();
-                SingleEntryPoint.Instance.ManagerManager.AdvanceDay();
-                Setup();
-                FindFirstObjectByType<PhoneController>().ResetPhone();
             });
-        SingleEntryPoint.Instance.UiManager.Setup();
+
     }
 
     public void SetupQuests()

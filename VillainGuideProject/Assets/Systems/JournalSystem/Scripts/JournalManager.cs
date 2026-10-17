@@ -1,46 +1,57 @@
 using UnityEngine;
-using Unity.Collections;
-using UnityEngine.UI;
 using DG.Tweening;
 
 public class JournalManager : MonoBehaviour
 {
-    [SerializeField] GameObject journalPrefab;
+    [SerializeField] private GameObject journalPrefab;
 
     [Header("Animation")]
     [SerializeField] private float animationDuration = 0.5f;
 
     [Header("Ui Components")]
-    private Button closeJournalButton;
+    private JournalView journalInstance;
+    private Vector3 openScale;
+    private bool closing;
 
     public void Setup()
     {
-        Instantiate(journalPrefab);
-        closeJournalButton = journalPrefab.GetComponentInChildren<Button>();
-        closeJournalButton.onClick.AddListener(DeactiveJournal);
+        journalInstance = Instantiate(journalPrefab, transform).GetComponent<JournalView>();
+        openScale = journalInstance.AnimationTarget.localScale;
+        journalInstance.CloseButton.onClick.AddListener(DeactiveJournal);
+        journalInstance.gameObject.SetActive(false);
     }
 
     public void ActiveJournal()
     {
-        journalPrefab.SetActive(true);
-        journalPrefab.transform.localScale = Vector3.zero;
-        journalPrefab.transform
-            .DOScale(Vector3.one, animationDuration)
-            .SetEase(Ease.OutCubic);
+        closing = false;
+        journalInstance.AnimationTarget.DOKill();
+        journalInstance.AnimationTarget.localScale = Vector3.zero;
+        journalInstance.gameObject.SetActive(true);
+        journalInstance.AnimationTarget.DOScale(openScale, animationDuration).SetEase(Ease.OutCubic);
     }
 
     public void DeactiveJournal()
     {
-        journalPrefab.transform.DOKill();
-        journalPrefab.transform
-            .DOScale(Vector3.zero, animationDuration)
+        if (!journalInstance.gameObject.activeSelf || closing)
+            return;
+
+        closing = true;
+        journalInstance.AnimationTarget.DOKill();
+        journalInstance.AnimationTarget.DOScale(Vector3.zero, animationDuration)
             .SetEase(Ease.InCubic)
             .OnComplete(() =>
             {
-                journalPrefab.SetActive(false);
+                journalInstance.gameObject.SetActive(false);
+                TransitionManager.Instance.ReloadSceneTransitionOut();
             });
+    }
 
-        new WaitForSeconds(3f);
-        PhoneController.Instance.PhoneRing();
+    private void OnDestroy()
+    {
+        if (journalInstance != null)
+        {
+            journalInstance.AnimationTarget.DOKill();
+            journalInstance.CloseButton.onClick.RemoveListener(DeactiveJournal);
+        }
     }
 }

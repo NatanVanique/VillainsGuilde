@@ -13,6 +13,7 @@ public class SingleEntryPoint : MonoBehaviour
         if (Instance != null && Instance != this)
         {
             Destroy(this);
+            return;
         }
         else
         {

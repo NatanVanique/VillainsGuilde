@@ -13,8 +13,9 @@ public class UiManager : MonoBehaviour
 
     public void Setup()
     {
-        MissionsScreenController = Instantiate(missionsScreenMngPrefab).GetComponentInChildren<MissionsScreenController>(true);
+        MissionsScreenController = Instantiate(missionsScreenMngPrefab, transform).GetComponentInChildren<MissionsScreenController>(true);
         MissionsScreenController.Setup();
-        JournalManager = Instantiate(journalPrefab).GetComponent<JournalManager>();
+        JournalManager = Instantiate(journalPrefab, transform).GetComponent<JournalManager>();
+        JournalManager.Setup();
     }
 }
