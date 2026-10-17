@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 public class MissionsScreenController : MonoBehaviour
 {
+    public static MissionsScreenController Instance { get; private set; }
+
     [Header("Screen")]
     [SerializeField] private GameObject missionsScreen;
     [SerializeField] private Transform missionsTranform;
-    [SerializeField] private Transform content;
-    public Transform Content => content;
 
     [Header("Animation")]
     [SerializeField] private float animationDuration = 0.5f;
@@ -17,14 +17,9 @@ public class MissionsScreenController : MonoBehaviour
     [Header("Quests")]
     [SerializeField] private GameObject questCardPrefab;
 
-    private void Start()
+    private void Awake()
     {
-        missionsScreen.SetActive(false);
-    }
-
-    public void Setup()
-    {
-
+        Instance = this;
     }
 
     public void ShowMissionsScreen()
@@ -50,22 +45,11 @@ public class MissionsScreenController : MonoBehaviour
 
     public void SetupQuests()
     {
-        SingleEntryPoint.Instance.ManagerManager.QuestSelectionManager.ClearSelection();
-        foreach (Transform child in content)
-        {
-            if (child.GetComponent<QuestCard>() != null)
-            {
-                child.gameObject.SetActive(false);
-                Destroy(child.gameObject);
-            }
-        }
+        List<QuestData> selectedQuests = QuestSelector.Instance.SelectedQuests;
 
-        List<QuestData> selectedQuests =
-            SingleEntryPoint.Instance.ManagerManager.QuestSelector.SelectedQuests;
-
-        foreach (var data in selectedQuests)
+        foreach(var data in selectedQuests)
         {
-            GameObject questCard = Instantiate(questCardPrefab, content);
+            GameObject questCard = Instantiate(questCardPrefab, missionsTranform);
             questCard.GetComponent<QuestCard>().Setup(data);
         }
     }
