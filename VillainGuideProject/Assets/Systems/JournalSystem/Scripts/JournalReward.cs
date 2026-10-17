@@ -5,6 +5,11 @@ public class JournalReward : MonoBehaviour
 {
     private JournalRegister rewardsRegister;
 
+    private void Awake()
+    {
+        Setup();
+    }
+
     public struct RewardResult
     {
         public int Characters;
@@ -23,7 +28,7 @@ public class JournalReward : MonoBehaviour
     public float TotalMoney { get; private set; }
     public int TotalCharacters { get; private set; }
 
-    private void Start()
+    public void Setup()
     {
         rewardsRegister = gameObject.GetComponent<JournalRegister>();
     }
