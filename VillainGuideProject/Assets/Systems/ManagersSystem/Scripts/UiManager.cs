@@ -6,8 +6,16 @@ public class UiManager : MonoBehaviour
     public MissionsScreenController MissionsScreenController;
     [SerializeField] GameObject missionsScreenMngPrefab;
 
+    [Header("Journal")]
+    public JournalManager JournalManager;   
+    [SerializeField] GameObject journalPrefab;
+
+
     public void Setup()
     {
-        MissionsScreenController = Instantiate(missionsScreenMngPrefab).GetComponentInChildren<MissionsScreenController>(true);
+        MissionsScreenController = Instantiate(missionsScreenMngPrefab, transform).GetComponentInChildren<MissionsScreenController>(true);
+        MissionsScreenController.Setup();
+        JournalManager = Instantiate(journalPrefab, transform).GetComponent<JournalManager>();
+        JournalManager.Setup();
     }
 }

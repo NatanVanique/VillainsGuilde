@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class MissionsScreenController : MonoBehaviour
@@ -17,14 +18,16 @@ public class MissionsScreenController : MonoBehaviour
     [Header("Quests")]
     [SerializeField] private GameObject questCardPrefab;
 
-    private void Start()
-    {
-        missionsScreen.SetActive(false);
-    }
+    [Header("Ui Components")]
+    [SerializeField] private Button acceptButton;
+
+    private bool closing;
+
 
     public void Setup()
     {
-
+        closing = false;
+        missionsScreen.SetActive(false);
     }
 
     public void ShowMissionsScreen()
@@ -39,13 +42,20 @@ public class MissionsScreenController : MonoBehaviour
 
     public void HideMissionsScreen()
     {
+        if (closing || !missionsScreen.activeSelf)
+            return;
+
+        closing = true;
+        missionsScreen.transform.DOKill();
         missionsScreen.transform
             .DOScale(Vector3.zero, animationDuration)
             .SetEase(Ease.InCubic)
             .OnComplete(() =>
             {
                 missionsScreen.SetActive(false);
+                TransitionManager.Instance.ReloadSceneTransitionIn();
             });
+
     }
 
     public void SetupQuests()

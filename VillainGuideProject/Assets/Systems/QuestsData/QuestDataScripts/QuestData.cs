@@ -11,6 +11,7 @@ public class QuestData : ScriptableObject {
     [Header("Quest")]
     public QuestType Type;
     public Sprite QuestIcon;
+    public Sprite QuestSplashArt;
     public LocalizedString QuestTitle;
 
     [Space(10)]
@@ -38,6 +39,7 @@ public struct TipData {
 
     public LocalizedString TipText;
     public TipType Type;
+    Color TipColor;
 
 }
 

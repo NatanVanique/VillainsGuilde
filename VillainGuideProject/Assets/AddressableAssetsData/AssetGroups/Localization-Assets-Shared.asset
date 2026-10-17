@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_GUID: 63fd679662c1e794488ddccd7d338cb5
   m_SerializeEntries:
+  - m_GUID: 4e60a01ba90df1344a9a72be5523c31b
+    m_Address: Assets/Systems/LocalizationSystem/MonsterName Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 836df008699bda44d972b23c0fd6b731
     m_Address: Assets/Systems/LocalizationSystem/QuestsTitles Shared Data.asset
     m_ReadOnly: 1
@@ -22,6 +27,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a9d541e9444e580478269ea8347ec80b
     m_Address: Assets/Systems/LocalizationSystem/Quests Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef3bb184878c4254b9ffc2766646f4fc
+    m_Address: Assets/Systems/LocalizationSystem/MonsterTips Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

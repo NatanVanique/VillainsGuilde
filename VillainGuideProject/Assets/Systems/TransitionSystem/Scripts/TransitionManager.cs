@@ -31,6 +31,42 @@ public class TransitionManager : MonoBehaviour
             StartCoroutine(TransitionRoutine(sceneName));
     }
 
+    private GameObject reloadTransition;
+
+    public void ReloadSceneTransitionIn()
+    {
+        if (!transitioning)
+            StartCoroutine(ReloadInRoutine());
+    }
+
+    private IEnumerator ReloadInRoutine()
+    {
+        transitioning = true;
+        reloadTransition = Instantiate(transitionPrefab, transform);
+        reloadTransition.GetComponentInChildren<Animator>().SetTrigger(inTrigger);
+        yield return new WaitForSeconds(transitionDuration);
+        SingleEntryPoint.Instance.ManagerManager.DaySystem.AdvanceDay();
+        SingleEntryPoint.Instance.UiManager.MissionsScreenController.Setup();
+        PhoneController.Instance.ResetPhone();
+        SingleEntryPoint.Instance.UiManager.JournalManager.ActiveJournal();
+    }
+
+    public void ReloadSceneTransitionOut()
+    {
+        if (reloadTransition != null)
+            StartCoroutine(ReloadOutRoutine());
+    }
+
+    private IEnumerator ReloadOutRoutine()
+    {
+        reloadTransition.GetComponentInChildren<Animator>().SetTrigger(outTrigger);
+        yield return new WaitForSeconds(transitionDuration);
+        Destroy(reloadTransition);
+        reloadTransition = null;
+        transitioning = false;
+        PhoneController.Instance.ResetPhone();
+        PhoneController.Instance.PhoneRing();
+    }
     IEnumerator TransitionRoutine(string sceneName)
     {
         transitioning = true;
@@ -49,10 +85,8 @@ public class TransitionManager : MonoBehaviour
         SceneManager.SetActiveScene(newScene);
 
         yield return SceneManager.UnloadSceneAsync(oldScene);
-
         animator.SetTrigger(outTrigger);
         yield return new WaitForSeconds(transitionDuration);
-
         Destroy(transition);
         transitioning = false;
     }

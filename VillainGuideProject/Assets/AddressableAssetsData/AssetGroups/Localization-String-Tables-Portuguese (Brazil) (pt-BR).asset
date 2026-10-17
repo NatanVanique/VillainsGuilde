@@ -22,8 +22,22 @@ MonoBehaviour:
     - Locale-pt-BR
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d98b6ff1d88388740af1b43e65aebe91
+    m_Address: MonsterTips_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dd5eefa01aea45e49a98d015d07f4f58
     m_Address: QuestsTitles_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6ceebaf0ab61c24a9dca22103fca0e0
+    m_Address: MonsterName_pt-BR
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pt-BR

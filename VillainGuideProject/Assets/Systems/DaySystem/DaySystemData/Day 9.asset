@@ -16,7 +16,7 @@ MonoBehaviour:
   DictionaryOfMandatoryQuests:
     _serializedList:
     - Key: 0
-      Value: {fileID: 11400000, guid: 442aa393e75a69444b09b7ca31f33f51, type: 2}
+      Value: {fileID: 11400000, guid: c7ca7d645fe13a44a88b374ffbf8f1af, type: 2}
   totalAmountOfQuests: 9
   totalAmountOfMysterious: 5
   DictionaryOfPossibleQuests:
@@ -30,5 +30,5 @@ MonoBehaviour:
     - Key: 3
       Value:
       - {fileID: 11400000, guid: 9b30ea94a7b66694d8fea20fbe6951f9, type: 2}
-  CanFindRescue: 0
-  ResetCharacter: 0
+  CanFindRescue: 1
+  ResetCharacter: 1
