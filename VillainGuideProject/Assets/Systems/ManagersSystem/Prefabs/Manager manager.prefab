@@ -50,3 +50,5 @@ MonoBehaviour:
   questSelectorMngPrefab: {fileID: 5005786551659728775, guid: 203f68f4863f5234c8b9a8c4fedfe331, type: 3}
   DaySystem: {fileID: 4325533219602774310, guid: 8d84f38b8eaf2564c8c18ea33f48c7e7, type: 3}
   daySysPrefab: {fileID: 6036483835593088368, guid: 8d84f38b8eaf2564c8c18ea33f48c7e7, type: 3}
+  MonsterMan: {fileID: 0}
+  MonsterManPrefab: {fileID: 3669958675432794786, guid: 8a4f5c0b24d874048a8ce4de2d6e3e76, type: 3}
