@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f9df6a92cb89a449b578ae9b3346d2a, type: 3}
+  m_Name: Dracula
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterData
+  Name:
+    m_TableReference:
+      m_TableCollectionName: GUID:4e60a01ba90df1344a9a72be5523c31b
+    m_TableEntryReference:
+      m_KeyId: 10743271424
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SplashArt: {fileID: 21300000, guid: 529ed2257a7f4894abaf10f882f43615, type: 3}
+  Icon: {fileID: 21300000, guid: 16458e94a78b20e4cbb461bdd553b091, type: 3}
+  Background: {fileID: 0}
+  DictionaryOfTips:
+    _serializedList:
+    - Key: 1
+      Value:
+      - TipText:
+          m_TableReference:
+            m_TableCollectionName: GUID:ef3bb184878c4254b9ffc2766646f4fc
+          m_TableEntryReference:
+            m_KeyId: 11506634752
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        Type: 0
+    - Key: 2
+      Value:
+      - TipText:
+          m_TableReference:
+            m_TableCollectionName: GUID:ef3bb184878c4254b9ffc2766646f4fc
+          m_TableEntryReference:
+            m_KeyId: 116796248064
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        Type: 0
+    - Key: 3
+      Value:
+      - TipText:
+          m_TableReference:
+            m_TableCollectionName: GUID:ef3bb184878c4254b9ffc2766646f4fc
+          m_TableEntryReference:
+            m_KeyId: 195951153152
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        Type: 0
+  references:
+    version: 2
+    RefIds: []

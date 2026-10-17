@@ -38,6 +38,7 @@ public struct TipData {
 
     public LocalizedString TipText;
     public TipType Type;
+    Color TipColor;
 
 }
 
