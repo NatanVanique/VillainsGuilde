@@ -61,7 +61,7 @@ public class MonsterInfoCard : MonoBehaviour {
         MonsterCardPrefab.OnMonsterCardInfoButtonPressed += HandleCardInfoClicked;
     }
 
-    void HandleCardInfoClicked(MonsterData data, MonsterTips selectedTips) {
+    void HandleCardInfoClicked(MonsterData data, ListOfTips selectedTips) {
 
         SetImagesAndName(data);
 
@@ -124,7 +124,7 @@ public class MonsterInfoCard : MonoBehaviour {
         if (data.Name != null) nameText.StringReference = data.Name;
     }
 
-    void SetTips(MonsterTips selectedTips) {
+    void SetTips(ListOfTips selectedTips) {
         foreach (var tip in dictionaryOfTipTexts) {
             tip.Value.StringReference = selectedTips.SelectedTips[tip.Key].TipText;
         }
