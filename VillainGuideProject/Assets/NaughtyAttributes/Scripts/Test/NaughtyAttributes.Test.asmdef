@@ -1,8 +1,9 @@
 {
     "name": "NaughtyAttributes.Test",
     "references": [
-        "NaughtyAttributes.Core"
-    ],
+        "NaughtyAttributes.Core",
+    "BISC8.FMODB8.Runtime"
+  ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],

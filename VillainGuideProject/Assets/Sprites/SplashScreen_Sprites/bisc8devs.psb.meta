@@ -104,9 +104,9 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 1111
-      width: 358
-      height: 349
+      y: 1188
+      width: 396
+      height: 383
     spriteID: e84d8d7ce9442a943a089b55832b71e8
     spriteBone:
     - name: head
@@ -605,8 +605,8 @@ ScriptedImporter:
     - {x: 39, y: 40}
     - {x: 40, y: 41}
     tessellationDetail: 0
-    uvTransform: {x: -285, y: 579}
-    spritePosition: {x: 289, y: 532}
+    uvTransform: {x: 4, y: 1188}
+    spritePosition: {x: 254, y: 518}
   - name: From selection
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -616,9 +616,9 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 1468
-      width: 269
-      height: 174
+      y: 1573
+      width: 302
+      height: 212
     spriteID: 9888055f6b016ad4d8fb9038c78965a5
     spriteBone:
     - name: arm.R
@@ -1161,8 +1161,8 @@ ScriptedImporter:
     - {x: 42, y: 43}
     - {x: 43, y: 44}
     tessellationDetail: 0
-    uvTransform: {x: -258, y: 1135}
-    spritePosition: {x: 262, y: 333}
+    uvTransform: {x: 4, y: 1573}
+    spritePosition: {x: 227, y: 319}
   - name: "Ret\xE2ngulo Arredondado 2"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1173,8 +1173,8 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 808
-      height: 374
+      width: 842
+      height: 397
     spriteID: 81b6160b2432ae74b952052a748734ad
     spriteBone:
     - name: b.L
@@ -1872,8 +1872,8 @@ ScriptedImporter:
     - {x: 49, y: 50}
     - {x: 50, y: 51}
     tessellationDetail: 0
-    uvTransform: {x: -92, y: -46}
-    spritePosition: {x: 96, y: 50}
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 61, y: 36}
   - name: Camada 8
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1883,9 +1883,9 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 816
-      width: 440
-      height: 287
+      y: 867
+      width: 480
+      height: 319
     spriteID: 3968e60e47c8f60469df8f0b10b7263f
     spriteBone:
     - name: arm.R
@@ -2541,8 +2541,8 @@ ScriptedImporter:
     - {x: 47, y: 48}
     - {x: 48, y: 49}
     tessellationDetail: 0
-    uvTransform: {x: -265, y: 474}
-    spritePosition: {x: 269, y: 342}
+    uvTransform: {x: 4, y: 867}
+    spritePosition: {x: 234, y: 329}
   - name: Camada 11
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2552,9 +2552,9 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 386
-      width: 441
-      height: 422
+      y: 409
+      width: 486
+      height: 454
     spriteID: f2956344baa0c3e4e9a462b4fe060879
     spriteBone:
     - name: arm.L
@@ -3221,8 +3221,8 @@ ScriptedImporter:
     - {x: 48, y: 49}
     - {x: 49, y: 50}
     tessellationDetail: 0
-    uvTransform: {x: -551, y: -77}
-    spritePosition: {x: 555, y: 463}
+    uvTransform: {x: 4, y: 409}
+    spritePosition: {x: 520, y: 449}
   spriteImportData: []
   rigSpriteImportData: []
   sharedRigSpriteImportData: []
@@ -3432,7 +3432,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: e84d8d7ce9442a943a089b55832b71e8
     layerID: 6
-    mosaicPosition: {x: 4, y: 1111}
+    mosaicPosition: {x: 4, y: 1188}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -3442,7 +3442,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 9888055f6b016ad4d8fb9038c78965a5
     layerID: 5
-    mosaicPosition: {x: 4, y: 1468}
+    mosaicPosition: {x: 4, y: 1573}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -3462,7 +3462,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 3968e60e47c8f60469df8f0b10b7263f
     layerID: 3
-    mosaicPosition: {x: 4, y: 816}
+    mosaicPosition: {x: 4, y: 867}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -3472,7 +3472,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: f2956344baa0c3e4e9a462b4fe060879
     layerID: 2
-    mosaicPosition: {x: 4, y: 386}
+    mosaicPosition: {x: 4, y: 409}
     flatten: 0
     isImported: 1
     isVisible: 1

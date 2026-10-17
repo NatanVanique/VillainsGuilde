@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5005786551659728775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2492379809272245385}
+  - component: {fileID: 4465795195116975646}
+  m_Layer: 0
+  m_Name: QuestManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2492379809272245385
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5005786551659728775}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4465795195116975646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5005786551659728775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c346b6e4f649e44e83e25842742cce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestSelector
+  dictionaryOfDayInfo:
+    _serializedList:
+    - Key: 1
+      Value: {fileID: 11400000, guid: ab373182e774d684c8d5e30da5c42b08, type: 2}
+    - Key: 2
+      Value: {fileID: 11400000, guid: a8285caec4db39245807b0803c2a65c7, type: 2}
+    - Key: 3
+      Value: {fileID: 11400000, guid: b44dfd053e7b04b449b4bc4a66d9f136, type: 2}
+    - Key: 4
+      Value: {fileID: 11400000, guid: 100eca9efe6ee414f970016555c0a843, type: 2}
+    - Key: 5
+      Value: {fileID: 11400000, guid: 5f0d7ce56cc147a44ac069b4d06784b4, type: 2}
+    - Key: 6
+      Value: {fileID: 11400000, guid: bba8170ef65ea6b45a47d768c5219430, type: 2}
+    - Key: 7
+      Value: {fileID: 11400000, guid: 9bd470c5ade003640838ada85bb9ef7c, type: 2}
+    - Key: 8
+      Value: {fileID: 11400000, guid: b9bfb60e5d9622f4eadef8cef78cea94, type: 2}
+    - Key: 9
+      Value: {fileID: 11400000, guid: d232bf312c23a2540ac3a3bac578c7e5, type: 2}
+    - Key: 10
+      Value: {fileID: 11400000, guid: 8c6e266a3309a5a42a0e13a1d8ef63d4, type: 2}
