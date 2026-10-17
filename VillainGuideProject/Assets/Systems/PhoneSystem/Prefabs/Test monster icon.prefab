@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8322345502836161500}
   - component: {fileID: 1786784206713897919}
   - component: {fileID: 8018131629704210067}
+  - component: {fileID: -2600395925441972708}
   m_Layer: 0
   m_Name: Test monster icon
   m_TagString: Untagged
@@ -75,3 +76,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-2600395925441972708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7555446661734296321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2af669b5e1204a47be6b5d32874fcbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DragItem
