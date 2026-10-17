@@ -12,9 +12,9 @@ public class JournalRegister : MonoBehaviour
         public QuestData EventNew;
     }
     
-    public List<QuestData> QuestsWinned; // Isso calcula o que vocÊ recebe
-    public List<QuestData> QuestsLosed; // Isso calcula o que vocÊ perde
-    private JournalPageInfo JournalPage; //Isso calcula a página inicial
+    public List<QuestData> QuestsWinned = new List<QuestData>(); // Isso calcula o que você recebe
+    public List<QuestData> QuestsLosed = new List<QuestData>(); // Isso calcula o que você perde
+    private JournalPageInfo JournalPage = new JournalPageInfo(); // Isso calcula a página inicial
     
     public void RegisterResult(bool playerWins, QuestData questScriptable)
     {
@@ -27,6 +27,7 @@ public class JournalRegister : MonoBehaviour
             }
             else if (questScriptable.Type == QuestType.Mistery)
             {
+                QuestsWinned.Add(questScriptable);
                 SmallNewReplace(questScriptable);
             }
         }
@@ -49,7 +50,7 @@ public class JournalRegister : MonoBehaviour
     {
         if (JournalPage.SmallNew == null) 
             JournalPage.SmallNew = questScriptable;
-        else if (//(questScriptable.xp + questScriptable.money) >=(JournalPage.SmallNew.xp + JournalPage.SmallNew.money))
+        else
             JournalPage.SmallNew = questScriptable;
     }
 }

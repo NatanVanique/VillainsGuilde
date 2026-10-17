@@ -2,23 +2,48 @@ using UnityEngine;
 
 public class JournalReward : MonoBehaviour
 {
-    private JournalRegister rewardsRegistred;
+    [SerializeField] private JournalRegister rewardsRegister;
 
-        using UnityEngine;
+    public float TotalXP { get; private set; }
+    public float TotalMoney { get; private set; }
+    public int TotalCharacters { get; private set; }
 
-    public class JournalReward : MonoBehaviour
+    private void Awake()
     {
-        [SerializeField] private JournalRegister rewardsRegistred;
+        CalculateRewards();
+    }
 
-        private int totalXP;
-        private int totalMoney;
-        private int totalCharacters;
+    public void CalculateRewards()
+    {
+        TotalXP = 0f;
+        TotalMoney = 0f;
+        TotalCharacters = 0;
 
-        private void CalculeRewards()
+        if (rewardsRegister == null)
+            return;
+
+        AddRewards(rewardsRegister.QuestsWinned, 1);
+        AddRewards(rewardsRegister.QuestsLosed, -1);
+    }
+
+    private void AddRewards(System.Collections.Generic.List<QuestData> quests, int multiplier)
+    {
+        if (quests == null)
+            return;
+
+        foreach (QuestData quest in quests)
         {
-            totalXp == rewardsRegistred.QuestsWinned.xp - rewardsRegistred.QuestsLosed.xp;
-            totalCoins == rewardsRegistred.QuestsWinned.coins - rewardsRegistred.QuestsLosed.coins;
-            finalChars == rewardsRegistred.QuestsWinned.chars - rewardsRegistred.QuestsLosed.chars;
+            if (quest == null)
+                continue;
+
+            if (quest.HasXP)
+                TotalXP += quest.XPReward * multiplier;
+
+            if (quest.HasMoney)
+                TotalMoney += quest.MoneyReward * multiplier;
+
+            if (quest.HasCharacters && quest.ListOfCharacters != null)
+                TotalCharacters += quest.ListOfCharacters.Count * multiplier;
         }
     }
 }
