@@ -90,6 +90,14 @@ public class MonsterCardPrefab : MonoBehaviour {
     }
 
     #endregion
+
+    #region Select
+
+    public MonsterInfo SelectThisMonter() {
+        return new MonsterInfo(_selectedData, _selectedMonsterTips);
+    }
+
+    #endregion
 }
 
 [Serializable]
@@ -102,5 +110,16 @@ public struct ListOfTips {
             [2] = listOfTips[1],
             [3] = listOfTips[2]
         };
+    }
+}
+
+[Serializable]
+public struct MonsterInfo {
+    public MonsterData SelectedData;
+    public ListOfTips TipList;
+
+    public MonsterInfo(MonsterData selectedData, ListOfTips tipList) {
+        SelectedData = selectedData;
+        TipList = tipList;
     }
 }
