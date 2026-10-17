@@ -34,16 +34,28 @@ public class QuestSelectionManager : MonoBehaviour
             return;
         }
 
+        TrySelect(card);
+    }
+
+    public bool TrySelect(QuestCardSelection card)
+    {
+        if (card == null || !card.isActiveAndEnabled || !isActiveAndEnabled)
+            return false;
+
+        if (selectedCards.Contains(card))
+            return true;
+
         if (selectedCards.Count >= maxAcceptedMissions)
-            return;
+            return false;
 
         selectedCards.Add(card);
         card.SetSelected(true);
+        return true;
     }
 
     public void Deselect(QuestCardSelection card)
     {
-        if (selectedCards.Remove(card) && card != null)
+        if (selectedCards.Remove(card))
         {
             card.SetSelected(false);
         }

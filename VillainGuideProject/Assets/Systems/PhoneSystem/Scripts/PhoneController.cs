@@ -42,7 +42,7 @@ public class PhoneController : MonoBehaviour
 
     private IEnumerator PhoneRing()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(3f);
 
         if (phoneAnswered)
             yield break;

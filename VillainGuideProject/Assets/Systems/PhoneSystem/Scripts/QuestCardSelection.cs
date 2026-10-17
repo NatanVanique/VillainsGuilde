@@ -33,8 +33,22 @@ public class QuestCardSelection : MonoBehaviour
         selectionManager.ToggleSelection(this);
     }
 
+    public bool TrySelect()
+    {
+        if (selectionManager == null)
+            selectionManager = QuestSelectionManager.Instance;
+
+        return selectionManager.TrySelect(this);
+    }
+
     internal void SetSelected(bool selected)
     {
+        if (IsSelected && !selected)
+        {
+            foreach (DropSlot slot in GetComponentsInChildren<DropSlot>(true))
+                slot.ClearSlot();
+        }
+
         IsSelected = selected;
         RefreshBorder();
     }
