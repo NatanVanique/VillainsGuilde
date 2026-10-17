@@ -1,26 +1,42 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using DG.Tweening;
+
 public class PhoneController : MonoBehaviour
 {
-    [SerializeField] GameObject exclamationIcon;
-    [SerializeField] GameObject missionPopupPrefab;
-    void Start()
+    [SerializeField] private GameObject exclamationIcon;
+    private float animationDuration = 0.5f;
+
+    private void Start()
     {
-        gameObject.GetComponent<Button>().onClick.AddListener(AnswerPhone);
+        GetComponent<Button>().onClick.AddListener(AnswerPhone);
+        exclamationIcon.SetActive(false);
         StartCoroutine(PhoneRing());
     }
 
-    void AnswerPhone()
+    private void AnswerPhone()
     {
-        exclamationIcon.SetActive(false);
-        Instantiate(missionPopupPrefab);
+        exclamationIcon.transform
+            .DOScale(Vector3.zero, animationDuration)
+            .SetEase(Ease.InBack)
+            .OnComplete(() =>
+            {
+                exclamationIcon.SetActive(false);
+            });
+
+        MissionsScreenController.Instance.ShowMissionsScreen();
     }
 
-    IEnumerator PhoneRing()
+    private IEnumerator PhoneRing()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(3f);
+
+        exclamationIcon.transform.localScale = Vector3.zero;
         exclamationIcon.SetActive(true);
-    }
 
+        exclamationIcon.transform
+            .DOScale(Vector3.one, animationDuration)
+            .SetEase(Ease.OutBack);
+    }
 }
