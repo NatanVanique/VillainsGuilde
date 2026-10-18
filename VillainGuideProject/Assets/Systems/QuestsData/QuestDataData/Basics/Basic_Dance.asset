@@ -10,14 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36254ada68b428d429f1011fe9509544, type: 3}
-  m_Name: ClassicOne
+  m_Name: Basic_Dance
   m_EditorClassIdentifier: Assembly-CSharp::QuestData
   Type: 2
   QuestTitle:
     m_TableReference:
-      m_TableCollectionName: GUID:836df008699bda44d972b23c0fd6b731
+      m_TableCollectionName: 
     m_TableEntryReference:
-      m_KeyId: 5852712960
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  ResultDescriptionGood:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  ResultDescriptionBad:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -25,22 +43,22 @@ MonoBehaviour:
   TipData:
     TipText:
       m_TableReference:
-        m_TableCollectionName: GUID:a9d541e9444e580478269ea8347ec80b
+        m_TableCollectionName: 
       m_TableEntryReference:
-        m_KeyId: 7593349120
+        m_KeyId: 0
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    Type: 000000000100000002000000
-  AmountOfMaxCharacters: 1
-  HasMoney: 0
+    Type: 
+  AmountOfMaxCharacters: 0
+  HasMoney: 1
   MoneyReward: 10
-  HasXP: 1
+  HasXP: 0
   XPReward: 0
   HasCharacters: 0
   ListOfCharacters: 
-  BasePercentChanceOfWinning: 100
+  BasePercentChanceOfWinning: 0
   HasConsequence: 0
   AmountOfConsequenceEvents: 0
   references:

@@ -19,6 +19,82 @@ MonoBehaviour:
     m_Key: Desenvolvedores_Ui
     m_Metadata:
       m_Items: []
+  - m_Id: 90000000001
+    m_Key: Menu_NewGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000002
+    m_Key: Menu_Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000003
+    m_Key: Menu_Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000004
+    m_Key: Options_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000005
+    m_Key: Options_Return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000006
+    m_Key: Options_Fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000007
+    m_Key: Options_Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000008
+    m_Key: Options_TestSfx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000009
+    m_Key: Options_Video
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000010
+    m_Key: Options_Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000011
+    m_Key: Options_MainVolume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000012
+    m_Key: Options_MainMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000013
+    m_Key: Options_QuitGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000014
+    m_Key: Options_Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000015
+    m_Key: Confirmation_Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000016
+    m_Key: Confirmation_Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000017
+    m_Key: Options_Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000018
+    m_Key: Language_English
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000019
+    m_Key: Language_Portuguese
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

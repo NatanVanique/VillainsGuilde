@@ -19,7 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 5852712960
-    m_Localized: "Miss\xE3o Um"
+    m_Localized: "Opera\xE7\xE3o Pr\xEDncipe Frederick"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 517548579323904
+    m_Localized: Dose Fatalmente Canina
+    m_Metadata:
+      m_Items: []
+  - m_Id: 517548579323905
+    m_Localized: "\xDAltima Rodada no Chique Balique"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 517548579323906
+    m_Localized: "Assalto ao Cora\xE7\xE3o "
     m_Metadata:
       m_Items: []
   references:

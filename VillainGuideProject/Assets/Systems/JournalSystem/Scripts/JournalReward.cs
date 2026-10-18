@@ -1,14 +1,8 @@
-using System;
 using UnityEngine;
 
 public class JournalReward : MonoBehaviour
 {
     private JournalRegister rewardsRegister;
-
-    private void Awake()
-    {
-        Setup();
-    }
 
     public struct RewardResult
     {
@@ -30,11 +24,16 @@ public class JournalReward : MonoBehaviour
 
     public void Setup()
     {
-         rewardsRegister = SingleEntryPoint.Instance.ManagerManager.JournalRegister;
+        if (SingleEntryPoint.Instance != null && SingleEntryPoint.Instance.ManagerManager != null)
+            rewardsRegister = SingleEntryPoint.Instance.ManagerManager.JournalRegister;
     }
 
     public void CollectRewards()
     {
+        RewardResult result = CalculateRewards();
+
+        if (result.Characters != 0)
+            UpdateEmployees(result.Characters);
     }
 
     public RewardResult CalculateRewards()
@@ -44,12 +43,15 @@ public class JournalReward : MonoBehaviour
         TotalCharacters = 0;
 
         if (rewardsRegister == null)
-            return new RewardResult();
+            Setup();
+
+        if (rewardsRegister == null)
+            return new RewardResult(0, 0f, 0f);
 
         AddRewards(rewardsRegister.QuestsWinned, 1);
         AddRewards(rewardsRegister.QuestsLosed, -1);
 
-        return new RewardResult(TotalCharacters,TotalMoney,TotalXP);
+        return new RewardResult(TotalCharacters, TotalMoney, TotalXP);
     }
 
     private void AddRewards(System.Collections.Generic.List<QuestData> quests, int multiplier)
@@ -71,5 +73,10 @@ public class JournalReward : MonoBehaviour
             if (quest.HasCharacters && quest.ListOfCharacters != null)
                 TotalCharacters += quest.ListOfCharacters.Count * multiplier;
         }
+    }
+
+    public void UpdateEmployees(int characterChange)
+    {
+        // Será implementado quando o sistema de funcionários estiver definido.
     }
 }
