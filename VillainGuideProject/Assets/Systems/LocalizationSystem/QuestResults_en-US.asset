@@ -85,44 +85,99 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 22283911174
-    m_Localized: "A tradu\xE7\xE3o \xE9 corrigida a tempo. Os delegados aplaudem
-      a \u2018coragem diplom\xE1tica\u2019 da Liga, sem saber que quase entraram
-      em guerra por causa de um erro de atualiza\xE7\xE3o."
+    m_Localized: The translation is fixed just in time. The delegates applaud the
+      League's 'diplomatic courage,' completely unaware that they almost went to
+      war over a software update error.
     m_Metadata:
       m_Items: []
   - m_Id: 22283911175
-    m_Localized: "A C\xFApula Mundial da Paz \xE9 encerrada ap\xF3s delegados sa\xEDrem
-      do sal\xE3o gritando em sete idiomas diferentes. A Liga informa que \u2018houve
-      apenas uma diverg\xEAncia de interpreta\xE7\xE3o\u2019."
+    m_Localized: The World Peace Summit comes to an end after delegates storm out
+      of the hall shouting in seven different languages. The League reports that
+      'there was merely a difference of interpretation.
     m_Metadata:
       m_Items: []
   - m_Id: 22283911176
-    m_Localized: "A multid\xE3o se acalma ap\xF3s ouvir vozes suaves vindas dos alto-falantes
-      quebrados. As velas do palco antigo se acendem sozinhas e, por alguns minutos,
-      a pra\xE7a parece um lugar seguro. A Liga agradece ao \u2018consultor de bem-estar
-      coletivo\u2019."
+    m_Localized: The crowd calms down after hearing soothing voices coming from the
+      broken speakers. The candles on the old stage light up on their own, and for
+      a few minutes, the square feels like a safe place. The League expresses its
+      gratitude to the 'collective wellness consultant.
     m_Metadata:
       m_Items: []
   - m_Id: 22283911177
-    m_Localized: "A multid\xE3o invade a sede da Liga, ocupa o plen\xE1rio e exige
-      p\xE3o. A seguran\xE7a tenta agir, mas acaba criando o maior esc\xE2ndalo da
-      C\xFApula Mundial da Paz."
+    m_Localized: The crowd storms the League's headquarters, occupies the auditorium,
+      and demands bread. Security attempts to intervene, only to trigger the biggest
+      scandal of the World Peace Summit.
     m_Metadata:
       m_Items: []
   - m_Id: 22283911178
-    m_Localized: "Inc\xEAndio na Sala de Palestras \xE9 controlado antes de se espalhar.
-      Delegados s\xE3o evacuados com seguran\xE7a e a Liga anuncia que os kits ecol\xF3gicos
-      ser\xE3o \u2018repensados com mais carinho pelo planeta\u2019."
+    m_Localized: The fire in the Lecture Hall is controlled before spreading. Delegates
+      are safely evacuated, and the League announces that the eco-friendly kits will
+      be 'rethought with more love for the planet.
     m_Metadata:
       m_Items: []
   - m_Id: 22283911179
-    m_Localized: "Inc\xEAndio se espalha pela sede da Liga Global pela Paz Humana.
-      Delegados s\xE3o evacuados \xE0s pressas e a imprensa questiona como um kit
-      ecol\xF3gico conseguiu causar mais danos que uma guerra fria."
+    m_Localized: Fire spreads through the headquarters of the Global League for Human
+      Peace. Delegates are hastily evacuated, and the press asks how an eco-friendly
+      kit managed to cause more damage than a cold war.
     m_Metadata:
       m_Items: []
-  - m_Id: 22283911181
-    m_Localized: "Ela viaja para outro pa\xEDs e manda jogar um missil  na loja "
+  - m_Id: 21949966811136
+    m_Localized: She travels to another country and orders a missile strike on the
+      store
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142784
+    m_Localized: The manicurist manages to fix the nail and even launches a brand-new
+      trend.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142785
+    m_Localized: "Gl\xF3ria joins her husband, and they enjoy a relaxing moment filled
+      with lots of gossip."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142786
+    m_Localized: "Seeing her husband's foot being completely sucked in, a horrified
+      Gl\xF3ria divorces him right then and there."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142787
+    m_Localized: Baltazar loses his tie, but he had a spare one in his bag. He heads
+      to his meeting happily.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142788
+    m_Localized: Baltazar loses his tie, his suit, and the contract, while the press
+      covers his downfall as a 'contemporary art performance.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142789
+    m_Localized: The crown is successfully recovered, thoroughly washed, and handed
+      back to the queen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142790
+    m_Localized: The crown is swept down the plumbing, the queen breaks down and
+      declares a 'royal state of emergency,' while the airport is shut down for searches.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142791
+    m_Localized: "Louro Jos\xE9 is captured and sent home via Uber Pet."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142792
+    m_Localized: The parrot squawks it all out on live TV, the senator lands under
+      federal investigation, and the interview skyrockets to become the nation's
+      top viral video.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142793
+    m_Localized: The bear feels threatened and leaves.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142794
+    m_Localized: The bear takes over the bedroom, Mrs. Charlotte sleeps in the garden,
+      and the family sues the agency for 'infringement of ursine privacy.'
     m_Metadata:
       m_Items: []
   references:

@@ -46,6 +46,10 @@ public abstract class UiButtonManager : MonoBehaviour
                 "Main Menu" => "Options_MainMenu",
                 "Quit Game" => "Options_QuitGame",
                 "Music" => "Options_Music",
+                "Language" => "Options_Language",
+                "English" => "Language_English",
+                "Portugûes" => "Language_Portuguese",
+                "Português" => "Language_Portuguese",
                 _ => null
             };
             if (key != null)

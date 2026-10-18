@@ -22,22 +22,82 @@ MonoBehaviour:
     m_Localized: Developed by
     m_Metadata:
       m_Items: []
-  - {m_Id: 90000000001, m_Localized: New Game, m_Metadata: {m_Items: []}}
-  - {m_Id: 90000000002, m_Localized: Quit, m_Metadata: {m_Items: []}}
-  - {m_Id: 90000000003, m_Localized: Credits, m_Metadata: {m_Items: []}}
-  - {m_Id: 90000000004, m_Localized: Options, m_Metadata: {m_Items: []}}
-  - {m_Id: 90000000005, m_Localized: Return, m_Metadata: {m_Items: []}}
-  - {m_Id: 90000000006, m_Localized: Fullscreen, m_Metadata: {m_Items: []}}
-  - {m_Id: 90000000007, m_Localized: Effects, m_Metadata: {m_Items: []}}
-  - {m_Id: 90000000008, m_Localized: Test SFX, m_Metadata: {m_Items: []}}
-  - {m_Id: 90000000009, m_Localized: Video, m_Metadata: {m_Items: []}}
-  - {m_Id: 90000000010, m_Localized: Audio, m_Metadata: {m_Items: []}}
-  - {m_Id: 90000000011, m_Localized: Main, m_Metadata: {m_Items: []}}
-  - {m_Id: 90000000012, m_Localized: Main Menu, m_Metadata: {m_Items: []}}
-  - {m_Id: 90000000013, m_Localized: Quit Game, m_Metadata: {m_Items: []}}
-  - {m_Id: 90000000014, m_Localized: Music, m_Metadata: {m_Items: []}}
-  - {m_Id: 90000000015, m_Localized: Cancel, m_Metadata: {m_Items: []}}
-  - {m_Id: 90000000016, m_Localized: Menu, m_Metadata: {m_Items: []}}
+  - m_Id: 90000000001
+    m_Localized: New Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000002
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000003
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000004
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000005
+    m_Localized: Return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000006
+    m_Localized: Fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000007
+    m_Localized: Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000008
+    m_Localized: Test SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000009
+    m_Localized: Video
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000010
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000011
+    m_Localized: Main
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000012
+    m_Localized: Main Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000013
+    m_Localized: Quit Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000014
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000015
+    m_Localized: Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000016
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000017
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000018
+    m_Localized: English
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000019
+    m_Localized: "Portugu\xEAs"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

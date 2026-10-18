@@ -83,8 +83,56 @@ MonoBehaviour:
     m_Key: QUEST MISTERIOSA
     m_Metadata:
       m_Items: []
-  - m_Id: 22283911181
-    m_Key: New Entry
+  - m_Id: 21949966811136
+    m_Key: "Miss\xE3o 1 - Diplomata Manicure Bad"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142784
+    m_Key: "Miss\xE3o 1 - Diplomata Manicure Good"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142785
+    m_Key: "Miss\xE3o 2 - Hidromassagem Good"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142786
+    m_Key: "Miss\xE3o 2 - Hidromassagem Bad"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142787
+    m_Key: "Miss\xE3o 3 - Empres\xE1rio Baltazar Good"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142788
+    m_Key: "Miss\xE3o 3 - Empres\xE1rio Baltazar Bad"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142789
+    m_Key: "Miss\xE3o 4 - Rainha good"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142790
+    m_Key: "Miss\xE3o 4 - Rainha bad"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142791
+    m_Key: "Miss\xE3o 5 -  Papagaio Louro Jos\xE9 Good"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142792
+    m_Key: "Miss\xE3o 5 -  Papagaio Louro Jos\xE9 Bad"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142793
+    m_Key: "miss\xE3o 6 - Urso de estima\xE7\xE3o good"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142794
+    m_Key: "miss\xE3o 6 - Urso de estima\xE7\xE3o bad"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22391010459648
+    m_Key: "MISS\xD5ES CL\xC1SSICAS"
     m_Metadata:
       m_Items: []
   m_Metadata:
