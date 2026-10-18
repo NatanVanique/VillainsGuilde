@@ -20,6 +20,10 @@ public class ManagerManager : MonoBehaviour {
     public JournalRegister JournalRegister;
     [SerializeField] GameObject JournalRegisterPrefab;
 
+    [Header("Health")]
+    [SerializeField] HealthManager HealthManPrefab;
+    [HideInInspector] public HealthManager HealthMan;
+
     public void Setup() {
         if (questMngPrefab != null) {
             questMngPrefab = Instantiate(questMngPrefab, transform);
