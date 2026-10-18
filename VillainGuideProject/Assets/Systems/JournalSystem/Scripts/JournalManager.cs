@@ -14,6 +14,10 @@ public class JournalManager : MonoBehaviour
     private CanvasGroup canvasGroup;
     private Vector3 openScale;
     private bool closing;
+    private RectTransform popup;
+    private Vector2 openPosition;
+    private Vector2 hiddenPosition;
+    private readonly System.Collections.Generic.List<CanvasGroup> fadeGroups = new();
 
     public void Setup()
     {
@@ -22,7 +26,16 @@ public class JournalManager : MonoBehaviour
         canvasGroup = journalInstance.GetComponent<CanvasGroup>();
         if (canvasGroup == null)
             canvasGroup = journalInstance.gameObject.AddComponent<CanvasGroup>();
-        openScale = journalInstance.AnimationTarget.localScale;
+        journalInstance.transform.localScale = Vector3.one;
+        popup = (RectTransform)journalInstance.AnimationTarget;
+        foreach (RectTransform target in journalInstance.FadeTargets)
+        {
+            CanvasGroup group = target.GetComponent<CanvasGroup>();
+            if (group == null) group = target.gameObject.AddComponent<CanvasGroup>();
+            fadeGroups.Add(group);
+        }
+        openPosition = popup.anchoredPosition;
+        openScale = popup.localScale;
         if (openScale.sqrMagnitude < 0.001f)
             openScale = Vector3.one;
         journalInstance.CloseButton.onClick.AddListener(CloseJournal);
@@ -34,16 +47,27 @@ public class JournalManager : MonoBehaviour
     public void ActiveJournal()
     {
         closing = false;
-        journalInstance.AnimationTarget.DOKill();
+        popup.DOKill();
         canvasGroup.DOKill();
-        journalInstance.AnimationTarget.localScale = openScale;
-        canvasGroup.alpha = 0f;
+        popup.localScale = openScale;
+        canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         canvasGroup.interactable = true;
         journalInstance.gameObject.SetActive(true);
         if (journalUi != null)
             journalUi.Setup();
-        canvasGroup.DOFade(1f, animationDuration).SetEase(Ease.OutCubic);
+        Canvas.ForceUpdateCanvases();
+        float height = ((RectTransform)journalInstance.transform).rect.height
+            * journalInstance.transform.lossyScale.y / popup.parent.lossyScale.y;
+        hiddenPosition = openPosition + Vector2.down * (height + popup.rect.height * popup.localScale.y);
+        popup.anchoredPosition = hiddenPosition;
+        popup.DOAnchorPos(openPosition, animationDuration).SetEase(Ease.OutCubic).SetUpdate(true);
+        foreach (CanvasGroup group in fadeGroups)
+        {
+            group.DOKill();
+            group.alpha = 0f;
+            group.DOFade(1f, animationDuration).SetEase(Ease.OutCubic).SetUpdate(true);
+        }
     }
 
     private void CloseJournal()
@@ -62,24 +86,31 @@ public class JournalManager : MonoBehaviour
             return;
 
         closing = true;
-        journalInstance.AnimationTarget.DOKill();
+        popup.DOKill();
         canvasGroup.DOKill();
-        canvasGroup.blocksRaycasts = false;
+        canvasGroup.blocksRaycasts = true;
         canvasGroup.interactable = false;
-        canvasGroup.DOFade(0f, animationDuration)
-            .SetEase(Ease.InCubic)
-            .OnComplete(() =>
-            {
-                journalInstance.gameObject.SetActive(false);
-                TransitionManager.Instance.ReloadSceneTransitionOut();
-            });
+        popup.anchoredPosition = openPosition;
+        foreach (CanvasGroup group in fadeGroups)
+        {
+            group.DOKill();
+            group.alpha = 1f;
+        }
+        TransitionManager.Instance.ReloadSceneTransitionIn();
+    }
+
+    public void HideAfterTransition()
+    {
+        if (journalInstance != null) journalInstance.gameObject.SetActive(false);
     }
 
     private void OnDestroy()
     {
+        foreach (CanvasGroup group in fadeGroups)
+            if (group != null) group.DOKill();
         if (journalInstance != null)
         {
-            journalInstance.AnimationTarget.DOKill();
+            if (popup != null) popup.DOKill();
             if (canvasGroup != null)
                 canvasGroup.DOKill();
             journalInstance.CloseButton.onClick.RemoveListener(CloseJournal);

@@ -45,10 +45,11 @@ public class TransitionManager : MonoBehaviour
         reloadTransition = Instantiate(transitionPrefab, transform);
         reloadTransition.GetComponentInChildren<Animator>().SetTrigger(inTrigger);
         yield return new WaitForSeconds(transitionDuration);
+        SingleEntryPoint.Instance.UiManager.JournalManager.HideAfterTransition();
         SingleEntryPoint.Instance.ManagerManager.DaySystem.AdvanceDay();
         SingleEntryPoint.Instance.UiManager.MissionsScreenController.Setup();
         PhoneController.Instance.ResetPhone();
-        SingleEntryPoint.Instance.UiManager.JournalManager.ActiveJournal();
+        yield return ReloadOutRoutine();
     }
 
     public void ReloadSceneTransitionOut()

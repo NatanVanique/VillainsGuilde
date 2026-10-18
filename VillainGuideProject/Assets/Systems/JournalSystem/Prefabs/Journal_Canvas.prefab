@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 900000000000000003}
   - component: {fileID: 900000000000000004}
   - component: {fileID: 900000000000000005}
+  - component: {fileID: 8920720585899780223}
   m_Layer: 0
   m_Name: CloseButton
   m_TagString: Untagged
@@ -121,6 +122,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8920720585899780223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900000000000000001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7500e398c5f34291acffb5da04e37fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonHover
+  hoverScale: 1.1
+  duration: 0.15
+  ease: 27
 --- !u!1 &900000000000000008
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,7 +938,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff9538572b54f6a9bd15a390fdb7767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JournalView
-  animationTarget: {fileID: 8204520060770634206}
+  animationTarget: {fileID: 725892428894067125}
+  fadeTargets:
+  - {fileID: 2041783186580022838}
+  - {fileID: 2688380755934893737}
+  - {fileID: 6447915785312243858}
+  - {fileID: 900000000000000002}
   closeButton: {fileID: 900000000000000005}
 --- !u!114 &900000000000000007
 MonoBehaviour:
@@ -1085,7 +1106,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 20
+  m_ScrollSensitivity: 5
   m_Viewport: {fileID: 7809826996677511255}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
