@@ -1,21 +1,20 @@
-using UnityEngine;
 using DG.Tweening;
-using UnityEngine.UI;
-using System.Collections.Generic;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class MissionsScreenController : MonoBehaviour
 {
     [Header("Screen")]
-    [SerializeField] private GameObject missionsScreen;
-    [SerializeField] private Transform missionsTranform;
+    [SerializeField] private RectTransform missionsScreen;
+    [SerializeField] private RectTransform monstersScreen;
     [SerializeField] private Transform questsContent;
-    [SerializeField] private Transform iconsContent;
-
-    public Transform Content => questsContent;
+    [SerializeField] private Transform monstersContent;
 
     [Header("Animation")]
-    [SerializeField] private float animationDuration = 0.5f;
+    [SerializeField] private float animationDuration = 0.9f;
     [SerializeField] private Ease animationEase = Ease.OutCubic;
 
     [Header("Quests")]
@@ -33,11 +32,18 @@ public class MissionsScreenController : MonoBehaviour
     public void Setup()
     {
         closing = false;
-        missionsScreen.SetActive(false);
 
+        //Quests
+        missionsScreen.gameObject.SetActive(true);
+        missionsScreen.localScale = Vector3.zero;
+
+        //Icones monstros
+        monstersScreen.gameObject.SetActive(true);
+        monstersScreen.anchoredPosition = new Vector2(monstersScreen.anchoredPosition.x, -255f);
+
+        Canvas.ForceUpdateCanvases();
         SetButtons();
     }
-
     private void SetButtons()
     {
         acceptButton.onClick.AddListener(AcceptButtonMethod);
@@ -53,30 +59,41 @@ public class MissionsScreenController : MonoBehaviour
 
     public void ShowMissionsScreen()
     {
-        missionsScreen.SetActive(true);
-        missionsScreen.transform.localScale = Vector3.zero;
-
-        missionsScreen.transform
+        //Quests
+        missionsScreen.DOKill();
+        missionsScreen
             .DOScale(Vector3.one, animationDuration)
             .SetEase(animationEase);
+
+        //Icones monstros
+        monstersScreen.DOKill();
+        monstersScreen
+            .DOAnchorPosY(0f, 0.5f)
+            .SetEase(Ease.InOutSine);
     }
 
     public void HideMissionsScreen()
     {
-        if (closing || !missionsScreen.activeSelf)
+        if (closing)
             return;
 
         closing = true;
-        missionsScreen.transform.DOKill();
-        missionsScreen.transform
+
+        //Quests
+        missionsScreen.DOKill();
+        missionsScreen
             .DOScale(Vector3.zero, animationDuration)
-            .SetEase(Ease.InCubic)
+            .SetEase(Ease.InBack)
             .OnComplete(() =>
             {
-                missionsScreen.SetActive(false);
                 TransitionManager.Instance.ReloadSceneTransitionIn();
             });
 
+        //Icones monstros
+        monstersScreen.DOKill();
+        monstersScreen
+            .DOAnchorPosY(-255f, animationDuration)
+            .SetEase(Ease.InOutSine);
     }
 
     public void SetupQuests()
@@ -113,7 +130,7 @@ public class MissionsScreenController : MonoBehaviour
 
     void InstantiateIcon(MonsterInfo monsterInfo)
     {
-        MonsterIconPrefab icon = Instantiate(monsterIconPrefab, iconsContent);
+        MonsterIconPrefab icon = Instantiate(monsterIconPrefab, monstersContent);
         icon.Setup(monsterInfo);
     }
 }
