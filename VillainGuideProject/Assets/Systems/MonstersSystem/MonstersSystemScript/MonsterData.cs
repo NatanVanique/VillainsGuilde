@@ -9,6 +9,7 @@ public class MonsterData : ScriptableObject {
     [Header("General Atributes")]
     public LocalizedString Name;
     public Sprite SplashArt;
+    public Sprite MonsterCardSprite;
     public Sprite Icon;
     public Sprite Background;
 

@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-English (United States) (en-US)
   m_GUID: 43282da5abc16b74ea2244c79af9f38b
   m_SerializeEntries:
+  - m_GUID: 3de8778e9c6c97b42be675539a8d9c7a
+    m_Address: RegularText_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 65df25aa7822efe47a48dcf61db12d32
     m_Address: MonsterTips_en-US
     m_ReadOnly: 1

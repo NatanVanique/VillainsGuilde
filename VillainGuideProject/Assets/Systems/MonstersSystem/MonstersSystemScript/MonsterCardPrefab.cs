@@ -166,14 +166,14 @@ public class MonsterCardPrefab : MonoBehaviour {
 
     #endregion
 
-    #region Select
-    public MonsterInfo SelectThisMonter() {
-        return new MonsterInfo(_selectedData, _selectedMonsterTips);
-    }
-
-    #endregion
-
     #region End
+
+    public void DisableCard() {
+        _isSelected = false;
+        _canSelect = false;
+        HasBeenUsed = false;
+        container.transform.localScale = Vector3.zero;
+    }
 
     private void OnDestroy() {
         KillTweens();
@@ -186,6 +186,14 @@ public class MonsterCardPrefab : MonoBehaviour {
 
     void KillTweens() {
         DOTween.Kill(_scaleTween);
+    }
+
+    #endregion
+
+    #region Getters
+
+    public MonsterInfo ReturnMonsterInfo() {
+        return new MonsterInfo(_selectedData, _selectedMonsterTips);
     }
 
     #endregion
