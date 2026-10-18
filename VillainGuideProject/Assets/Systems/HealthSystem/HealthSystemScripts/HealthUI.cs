@@ -14,6 +14,9 @@ public class HealthUI : MonoBehaviour
     #endregion
 
     #region Setup
+    private void Start() {
+        Setup();
+    }
     public void Setup() {
         SubscribeToEvents();
     }
