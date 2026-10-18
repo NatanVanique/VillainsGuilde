@@ -222,6 +222,39 @@ MonoBehaviour:
       Billion e tirar o urso da cama antes que ele decida que a casa \xE9 dele."
     m_Metadata:
       m_Items: []
+  - m_Id: 78443452141570
+    m_Localized: "Em um pr\xE9dio antigo, moradores relatam gemidos vindos do por\xE3o
+      toda noite.\n\nH\xE1 marcas de garras na parede, um cheiro forte de terra molhada
+      e uma luz azulada piscando no fim do corredor.\n\nAlgu\xE9m precisa descer,
+      encontrar a criatura e traz\xEA-la para um lugar seguro antes que ela destrua
+      o encanamento."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78443456335872
+    m_Localized: "No teatro abandonado da cidade, uma figura mostruosa aparece entre
+      as cortinas depois da meia-noite.\n\nH\xE1 marcas de amassados em uma caixa
+      de instrumentos e um cheiro forte de perfume antigo.\n\nAlgu\xE9m precisa entrar
+      no teatro, acalmar a criatura e tir\xE1-la de l\xE1 antes que ela morda algu\xE9m."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78443456335873
+    m_Localized: "No fundo de uma mina, as pessoas come\xE7aram a escutar gritos
+      de socorro.  A voz era rouca e fraca. O resgate precisa ser r\xE1pido"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78443456335874
+    m_Localized: "Um avi\xE3o descontrolado come\xE7ou a descer com muita rapidez,
+      para o solo. Um monstro de bom cora\xE7\xE3o foi avistado tentando impedir.O
+      telefone toca pedindo refor\xE7os pois s\xF3 um monstro n\xE3o vai conseguir
+      sozinho"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85016077504512
+    m_Localized: "Em uma vila perto de Township, v\xE1rios humanos com monstrofobia
+      come\xE7aram a cercar uma vila de monstros para aniquila-los. Voc\xEA precisa
+      parar isso imediatamente"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -12,8 +12,14 @@ public class QuestCard : MonoBehaviour {
     [Header("Components")]
     [SerializeField] LocalizeStringEvent title;
     [SerializeField] LocalizeStringEvent tipText;
+    [SerializeField] TMP_Text questType;
     [SerializeField, SerializedDictionary("amount", "container")] SerializedDictionary<int, GameObject> dictionaryOfAmountOfCharacters;
     [SerializeField, SerializedDictionary("type", "icons")] SerializedDictionary<QuestRewardType, GameObject> dictionaryOfRewardIcons;
+
+    [Header("Background")]
+    [SerializeField] Image background;
+    [SerializeField] Sprite classicBackground;
+    [SerializeField] Sprite emergencyBackground;
 
 
     [Header("Test")]
@@ -27,6 +33,10 @@ public class QuestCard : MonoBehaviour {
     #region Setup
 
     public void Setup(QuestData data) {
+        if (data == null)
+            throw new ArgumentNullException(nameof(data), "QuestCard requires a valid QuestData asset.");
+        if (title == null)
+            throw new InvalidOperationException($"QuestCard '{name}' has no title LocalizeStringEvent assigned.");
         _data = data;
 
         SetVisuals();
@@ -37,6 +47,8 @@ public class QuestCard : MonoBehaviour {
     #region Visuals
 
     void SetVisuals() {
+        background.sprite = _data.Type == QuestType.Emergency ? emergencyBackground : classicBackground;
+        questType.text = _data.Type == QuestType.Mysterius ? "Mystery" : _data.Type.ToString();
         ChangeTitle();
         ChangeCharactersAmountIcons();
         ChangeTipText();
