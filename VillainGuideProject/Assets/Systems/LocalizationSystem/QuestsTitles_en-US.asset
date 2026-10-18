@@ -98,6 +98,26 @@ MonoBehaviour:
     m_Localized: Want a Little Bear?
     m_Metadata:
       m_Items: []
+  - m_Id: 608526755532814
+    m_Localized: The Basement Mystery
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532815
+    m_Localized: The Theater Phantom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532816
+    m_Localized: A Cry for Help in the Mine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532817
+    m_Localized: Danger in the Skies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532818
+    m_Localized: The Village Under Threat
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
