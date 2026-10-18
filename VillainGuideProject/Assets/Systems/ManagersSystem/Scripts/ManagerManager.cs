@@ -52,5 +52,9 @@ public class ManagerManager : MonoBehaviour {
             QuestVal = Instantiate(QuestValPrefab, transform);
             QuestVal.Setup();
         }
+        if (HealthManPrefab != null) {
+            HealthMan = Instantiate(HealthManPrefab, transform);
+            HealthMan.Setup();
+        }
     }
 }
