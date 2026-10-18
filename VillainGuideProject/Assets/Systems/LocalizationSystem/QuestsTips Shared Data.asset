@@ -16,15 +16,99 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: a9d541e9444e580478269ea8347ec80b
   m_Entries:
   - m_Id: 7593349120
-    m_Key: QuestTip1
+    m_Key: "Miss\xE3o 1(Dica 1) : "
     m_Metadata:
       m_Items: []
   - m_Id: 18431430656
-    m_Key: QuestTip2
+    m_Key: "Miss\xE3o 1(Dica 2)"
     m_Metadata:
       m_Items: []
   - m_Id: 21510049792
-    m_Key: QuestTip3
+    m_Key: "Miss\xE3o 1(Dica 3) : "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248349278208
+    m_Key: "Miss\xE3o 2 (Dica 1) : "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415552
+    m_Key: "Miss\xE3o 2 (Dica 2) : "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415553
+    m_Key: "Miss\xE3o 2 (Dica 3) : "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415554
+    m_Key: "Miss\xE3o 3 (Dica 1) : "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415555
+    m_Key: "Miss\xE3o 3 (Dica 2) : "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415556
+    m_Key: "Miss\xE3o 3 (Dica 3) : "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415557
+    m_Key: "Miss\xE3o 4 (Dica 1) :"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415558
+    m_Key: "Miss\xE3o 4 (Dica 2) :"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415559
+    m_Key: "Miss\xE3o 4 (Dica 3) :"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415560
+    m_Key: "Miss\xE3o 5 (Dica 1) :"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415561
+    m_Key: "Miss\xE3o 5 (Dica 2) :"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415562
+    m_Key: "Miss\xE3o 5 (Dica 3) :"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415563
+    m_Key: "Miss\xE3o 6 (Dica 1) :"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415564
+    m_Key: "Miss\xE3o 6 (Dica 2) :"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415565
+    m_Key: "Miss\xE3o 6 (Dica 3) :"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415566
+    m_Key: "Miss\xE3o 7 (Dica 1) :"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415567
+    m_Key: "Miss\xE3o 7 (Dica 2) :"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415568
+    m_Key: "Miss\xE3o 7 (Dica 3) :"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415569
+    m_Key: "Miss\xE3o 8 (Dica 1) :"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415570
+    m_Key: "Miss\xE3o 8 (Dica 2) :"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415571
+    m_Key: "Miss\xE3o 8 (Dica 3) :"
     m_Metadata:
       m_Items: []
   m_Metadata:

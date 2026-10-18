@@ -1,0 +1,261 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: QuestResults_en-US
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 08edffda23451f8419f80d25bb3887ad, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 22216802304
+    m_Localized: ' Prince Frederick is found safe and sound atop the master suite''s
+      ceiling fan. The Mayor tearfully embraces the feline, while Penelope assures
+      everyone that ''there was no break-in, merely a technical inspection.'''
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22275522560
+    m_Localized: After a night of failed searches, the Mayor appears with dark circles
+      under his eyes, shredding papers in his office. Penelope denies that the cat
+      was ever seen near confidential documents."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22279716864
+    m_Localized: 'The hospital awakens in silence: patients are found sleeping comfortably
+      on gurneys, while a mysterious ''wellness consultant'' receives praise from
+      the medical staff. The Mayor publicly gives thanks for the swift response to
+      the ''mild collective indisposition.'''
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22279716865
+    m_Localized: 'Chaos at Holy Hope Hospital: bloodstains are found along the corridors,
+      and witnesses report strange creatures fleeing into the night. City Hall denies
+      any connection to the vaccination drive and announces an internal investigation.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911168
+    m_Localized: Nightclub Fancy Balency wraps up the night with zero incidents.
+      Partygoers report that a 'performance artist' wrapped an agitated customer
+      in decorative banners, turning the whole thing into part of the show. The Mayor
+      was spotted sleeping on a VIP couch, neatly bandaged like a party mummy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911169
+    m_Localized: 'The night ends in chaos at Fancy Balency : an unidentified man
+      danced on top of the bar counter, knocked over dozens of bottles, and demanded
+      the DJ play ''my ex''s song.'' City Hall denies any involvement, claiming the
+      politician was merely taking part in an ''unofficial cultural initiative.'''
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911170
+    m_Localized: 'Central Bank Branch registers only a ''technical glitch'' this
+      morning. Witnesses report that a gigantic, one-eyed man entered the vault,
+      retrieved a briefcase, and escorted out a confused customer before the police
+      arrived. The Mayor was later found sleeping at home, with a note in his pocket:
+      ''Love cannot be paid in installments.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911171
+    m_Localized: The Mayor was detained following an attempted bank robbery. In his
+      statement, he claimed he was 'merely winning over a teller and planning his
+      financial future.' City Hall reported that he was on an 'unauthorized social
+      mission.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911172
+    m_Localized: The delegate is escorted to the stage minutes before the presentation.
+      He thanks the 'personal wellness consultant' and promises to cut his speech
+      down to just three hours.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911173
+    m_Localized: Security kicks the door down, the delegate faints onto the slides,
+      and the press discovers that the Global League for Human Peace left a guest
+      forgotten in the hotel for six hours.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911174
+    m_Localized: The translation is fixed just in time. The delegates applaud the
+      League's 'diplomatic courage,' completely unaware that they almost went to
+      war over a software update error.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911175
+    m_Localized: The World Peace Summit comes to an end after delegates storm out
+      of the hall shouting in seven different languages. The League reports that
+      'there was merely a difference of interpretation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911176
+    m_Localized: The crowd calms down after hearing soothing voices coming from the
+      broken speakers. The candles on the old stage light up on their own, and for
+      a few minutes, the square feels like a safe place. The League expresses its
+      gratitude to the 'collective wellness consultant.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911177
+    m_Localized: The crowd storms the League's headquarters, occupies the auditorium,
+      and demands bread. Security attempts to intervene, only to trigger the biggest
+      scandal of the World Peace Summit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911178
+    m_Localized: The fire in the Lecture Hall is controlled before spreading. Delegates
+      are safely evacuated, and the League announces that the eco-friendly kits will
+      be 'rethought with more love for the planet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911179
+    m_Localized: Fire spreads through the headquarters of the Global League for Human
+      Peace. Delegates are hastily evacuated, and the press asks how an eco-friendly
+      kit managed to cause more damage than a cold war.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21949966811136
+    m_Localized: She travels to another country and orders a missile strike on the
+      store
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142784
+    m_Localized: The manicurist manages to fix the nail and even launches a brand-new
+      trend.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142785
+    m_Localized: "Gl\xF3ria joins her husband, and they enjoy a relaxing moment filled
+      with lots of gossip."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142786
+    m_Localized: "Seeing her husband's foot being completely sucked in, a horrified
+      Gl\xF3ria divorces him right then and there."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142787
+    m_Localized: Baltazar loses his tie, but he had a spare one in his bag. He heads
+      to his meeting happily.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142788
+    m_Localized: Baltazar loses his tie, his suit, and the contract, while the press
+      covers his downfall as a 'contemporary art performance.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142789
+    m_Localized: The crown is successfully recovered, thoroughly washed, and handed
+      back to the queen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142790
+    m_Localized: The crown is swept down the plumbing, the queen breaks down and
+      declares a 'royal state of emergency,' while the airport is shut down for searches.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142791
+    m_Localized: "Louro Jos\xE9 is captured and sent home via Uber Pet."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142792
+    m_Localized: The parrot squawks it all out on live TV, the senator lands under
+      federal investigation, and the interview skyrockets to become the nation's
+      top viral video.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142793
+    m_Localized: The bear feels threatened and leaves.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142794
+    m_Localized: The bear takes over the bedroom, Mrs. Charlotte sleeps in the garden,
+      and the family sues the agency for 'infringement of ursine privacy.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454197862400
+    m_Localized: '
+
+      The chimpanzees leave the senior living home after an unprecedented
+      deal: they return to the zoo in exchange for weekly sunbathing sessions and
+      a fruit buffet. The elderly ladies celebrate the return of peace and promise
+      to send letters to their new furry friends.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582656
+    m_Localized: A senior living home is taken over by chimpanzees who refuse to
+      leave. The residents are forced to live in the garden while the primates organize
+      shifts for sunbathing, snacks, and meetings in the main hall. The zoo denies
+      any responsibility.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582657
+    m_Localized: Candy Candy's Bread Festival ends on a celebratory note after all
+      the bread is recovered from a secret base. The thieves were found trying to
+      hide baguettes under the couch. The bakery is celebrating with a 20% discount
+      on croissants.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582658
+    m_Localized: 'The Candy Candy Bread Festival gets called off after gluttonous
+      thieves steal the whole batch. Eyewitnesses claim the crooks made their getaway
+      laughing with their mouths full. The bakery vows to return for a second round,
+      but begs for understanding: ''our oven is grieving.'''
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582659
+    m_Localized: The missing dancers have been retrieved alive and well from the
+      city underground. They hit the club stages that very night, restoring music,
+      glamour, and gloss to the nightlife scene. To celebrate, the venues are hosting
+      an appreciation bash with free entry for anyone rocking stilettos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582660
+    m_Localized: Local clubs are still down their dancers after sewer search parties
+      come up dry. The sole lead remains a manhole surrounded by a tube of open gloss
+      and stiletto marks. The city's night goes quiet, and DJs take to socials begging
+      for backup.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582661
+    m_Localized: Mrs. Maria in apartment 841 finally gets her pickle jar open thanks
+      to some emergency backup. She marks the victory with a late-night feast and
+      vows never to underestimate the strength of a stubborn lid again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582662
+    m_Localized: The pickle jar holds the line heroically in the late-night darkness
+      of apartment 841. Mrs. Maria throws in the towel after multiple tries and heads
+      to bed hungry, while the jar sits completely untouched in the refrigerator.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582663
+    m_Localized: Mother and daughter reconcile after a discreet mediation. The diary
+      goes back to its proper place, apologies are accepted, and the family group
+      chat goes back to being strictly about recipes and chain letters.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582664
+    m_Localized: A family feud erupts in the group chat after the diary is read.
+      Gertrude disowns her daughter, the daughter fires back with a seven-minute
+      voice message, and the grandmother calls for calm while changing the group
+      name to 'Family Matters.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582665
+    m_Localized: The cops show up before the agency and catch Alissa lecturing the
+      room on 'the perils of trusting teens.' She gets hauled off yelling that her
+      daughter needs closer watching, as the principal shuts down the class and asks
+      for a transfer on the spot.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

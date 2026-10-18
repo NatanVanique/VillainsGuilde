@@ -13,6 +13,8 @@ public class QuestSelector : MonoBehaviour {
     List<QuestData> _selectedQuests = new();
     QuestLine _currentLine;
     bool _hasFoundCharacter;
+    bool _isInitialized;
+    int _selectedDay = -1;
 
     #endregion
 
@@ -20,7 +22,6 @@ public class QuestSelector : MonoBehaviour {
 
     private void Start() {
         Setup();
-        HandleDayChanged(Mathf.Max(1, SingleEntryPoint.Instance.ManagerManager.DaySystem.CurrentDay));
     }
 
     #endregion
@@ -28,7 +29,15 @@ public class QuestSelector : MonoBehaviour {
     #region Setup
 
     public void Setup() {
+        Setup(SingleEntryPoint.Instance.ManagerManager.DaySystem.CurrentDay);
+    }
+
+    public void Setup(int currentDay) {
+        if (_isInitialized) return;
+
+        _isInitialized = true;
         SubscribeToEvents();
+        HandleDayChanged(Mathf.Max(1, currentDay));
     }
 
     #endregion
@@ -41,7 +50,12 @@ public class QuestSelector : MonoBehaviour {
 
     void HandleDayChanged(int newDay) {
         Debug.Log(newDay);
-        if (!dictionaryOfDayInfo.ContainsKey(newDay)) return;
+        if (_selectedDay == newDay) return;
+        if (!dictionaryOfDayInfo.ContainsKey(newDay)) {
+            Debug.LogError($"No quest configuration for day {newDay}.", this);
+            _selectedQuests.Clear();
+            return;
+        }
 
         _selectedQuests.Clear();
 
@@ -92,8 +106,13 @@ public class QuestSelector : MonoBehaviour {
 
         }
 
+        _selectedDay = newDay;
     }
     #endregion
+
+    public void EnsureCurrentDay(int currentDay) {
+        HandleDayChanged(currentDay);
+    }
 
     #region Sup
 

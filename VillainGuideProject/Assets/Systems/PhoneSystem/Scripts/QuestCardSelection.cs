@@ -1,7 +1,8 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class QuestCardSelection : MonoBehaviour
+public class QuestCardSelection : MonoBehaviour, IDropHandler
 {
     [Header("Components")]
     [SerializeField] private GameObject selectedBorder;
@@ -12,6 +13,16 @@ public class QuestCardSelection : MonoBehaviour
     public void Setup()
     {
 
+    }
+    private void Awake()
+    {
+        // The card root has no Graphic; a transparent one makes its entire rectangle droppable.
+        if (GetComponent<Graphic>() == null)
+        {
+            Image hitArea = gameObject.AddComponent<Image>();
+            hitArea.color = Color.clear;
+            hitArea.raycastTarget = true;
+        }
     }
     private void OnEnable()
     {
@@ -36,6 +47,7 @@ public class QuestCardSelection : MonoBehaviour
         {
             foreach (DropSlot slot in GetComponentsInChildren<DropSlot>(true))
                 slot.ClearSlot();
+            QuestCard._listOfMonsters.Clear();
         }
 
         IsSelected = selected;
@@ -62,6 +74,53 @@ public class QuestCardSelection : MonoBehaviour
             SingleEntryPoint.Instance.ManagerManager.QuestSelectionManager.Deselect(this);
             IsSelected = false;
             RefreshBorder();
+        }
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        TryDropItem(eventData);
+    }
+
+    internal bool TryDropItem(PointerEventData eventData, DropSlot requestedSlot = null)
+    {
+        if (eventData.pointerDrag == null)
+            return false;
+
+        DragItem item = eventData.pointerDrag.GetComponent<DragItem>();
+        if (item == null)
+            return false;
+
+        DropSlot firstEmpty = null;
+        foreach (DropSlot slot in GetComponentsInChildren<DropSlot>())
+        {
+            if (slot.IsEmpty)
+            {
+                firstEmpty = slot;
+                break;
+            }
+        }
+
+        // Dropping directly on a later slot cannot skip an earlier empty slot.
+        if (firstEmpty == null || (requestedSlot != null && requestedSlot != firstEmpty) || !TrySelect())
+            return false;
+
+        item.Drop(firstEmpty.transform, this);
+        return true;
+    }
+
+    internal void CompactSlots()
+    {
+        DropSlot[] slots = GetComponentsInChildren<DropSlot>();
+        int next = 0;
+        for (int i = 0; i < slots.Length; i++)
+        {
+            DragItem item = slots[i].GetComponentInChildren<DragItem>();
+            if (item == null)
+                continue;
+            if (i != next)
+                item.MoveToSlot(slots[next].transform);
+            next++;
         }
     }
 }

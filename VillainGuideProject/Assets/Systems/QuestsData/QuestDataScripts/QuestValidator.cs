@@ -24,23 +24,37 @@ public class QuestValidator : MonoBehaviour
 
     void SubscribeToEvents()
     {
+        MissionsScreenController.OnQuestsAccepted -= HandleQuestsSelected;
         MissionsScreenController.OnQuestsAccepted += HandleQuestsSelected;
     }
 
     void HandleQuestsSelected(List<QuestCardSelection> selectedQuests)
     {
+        JournalRegister jr = SingleEntryPoint.Instance?.ManagerManager?.JournalRegister;
+        if (jr == null)
+        {
+            Debug.LogError("Cannot register mission results: JournalRegister is missing.", this);
+            return;
+        }
+
+        if (selectedQuests == null)
+            return;
+
         foreach (var cardSelection in selectedQuests) // Para cada carta
         {
+            if (cardSelection == null || cardSelection.QuestCard == null || cardSelection.QuestCard.ReturnQuestData() == null)
+            {
+                Debug.LogWarning("A selected mission has no quest data and could not be registered.", this);
+                continue;
+            }
             QuestCard card = cardSelection.QuestCard;
             List<MonsterInfo> listOfMonsterInfo = card._listOfMonsters;
             QuestData data = card.ReturnQuestData();
-            JournalRegister jr = SingleEntryPoint.Instance.ManagerManager.JournalRegister;
 
             bool result = ReturnIfCardSucceded(card, listOfMonsterInfo);
 
+            jr.RegisterResult(result, data, listOfMonsterInfo);
             CheckResult(result, data);
-
-            jr.RegisterResult(result, data);
         }
     }
 
@@ -59,12 +73,16 @@ public class QuestValidator : MonoBehaviour
     {
         int amountOfTipsSucceded = 0;
 
-        foreach (var tip in card.ReturnQuestData().TipData.Type) // Para cada dica da carta
+        List<TipType> tips = card.ReturnQuestData().TipData.Type;
+        if (tips == null)
+            tips = new List<TipType>();
+
+        foreach (var tip in tips) // Para cada dica da carta
         {
             if (ReturnIfAnyMonsterSucceded(listOfMonsterInfo, tip)) amountOfTipsSucceded++; // Verifica se algum monstro possui um match
         }
 
-        float percent = amountOfTipsSucceded / card.ReturnQuestData().TipData.Type.Count;
+        float percent = tips.Count > 0 ? (float)amountOfTipsSucceded / tips.Count : 0f;
         float basePercent = card.ReturnQuestData().BasePercentChanceOfWinning;
         float restPercent = 100 - basePercent;
 
@@ -79,6 +97,8 @@ public class QuestValidator : MonoBehaviour
 
     bool ReturnIfAnyMonsterSucceded(List<MonsterInfo> listOfMonsterInfo, TipType tip)
     {
+        if (listOfMonsterInfo == null)
+            return false;
         foreach (var monsterInfo in listOfMonsterInfo) // Para cada monstro
         {
             if(ReturnIfMonsterSucceded(monsterInfo, tip)) return true; // Verifica se aquele monstro deu match
@@ -89,6 +109,8 @@ public class QuestValidator : MonoBehaviour
 
     bool ReturnIfMonsterSucceded(MonsterInfo monster, TipType tip)
     {
+        if (monster.TipList.SelectedTips == null)
+            return false;
         foreach (var monsterTip in monster.TipList.SelectedTips) // Para cada dica do monstro
         {
             if (monsterTip.Value.Type == tip) return true; // Verifica se deu match

@@ -1,0 +1,227 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: QuestDescribe_en-US
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: b289f1bcb21dc364b906708c460e5f24, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 2290890670080
+    m_Localized: "O Prefeito \xE9 carism\xE1tico diante das c\xE2meras, mas sua carreira
+      pol\xEDtica carrega den\xFAncias, acordos silenciosos e casos convenientemente
+      esquecidos. Quem cuida para que nada venha \xE0 tona \xE9 sua assessora, a
+      impec\xE1vel senhorita Pen\xE9lope.\n\nHoje, por\xE9m, Pen\xE9lope ligou em
+      p\xE2nico: o bem mais precioso do prefeito desapareceu. N\xE3o um documento.
+      N\xE3o uma prova. O gato.\n\nPr\xEDncipe Frederick, um Ragdoll de temperamento
+      real e paci\xEAncia zero, sumiu dentro da resid\xEAncia oficial. O prefeito
+      est\xE1 em colapso, a imprensa j\xE1 fareja a hist\xF3ria e Pen\xE9lope precisa
+      de algu\xE9m discreto o suficiente para encontrar o felino antes que viralize."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290890670081
+    m_Localized: "Mais um dia amanheceu e o prefeito acordou para l\xE1 de mal-humorado.
+      Durante uma visita protocolar ao Hospital Municipal Santa Esperan\xE7a, ele
+      anunciou  uma nova campanha de vacina\xE7\xE3o.\n\nO problema? Ele pegou os
+      pap\xE9is errados.\n\nEm vez de autorizar a vacina gripal humana, assinou a
+      ordem de aplica\xE7\xE3o da Vacina Gripal Canina Premium, um lote experimental
+      destinado aos cachorros da guarda municipal.\n\nEm poucos minutos, dezenas
+      de pacientes come\xE7aram a passar mal. N\xE3o \xE9 letal, mas o soro causa
+      febre alta, sonol\xEAncia profunda e uma estranha instabilidade no sangue.
+      Os m\xE9dicos n\xE3o conseguem identificar o ant\xEDdoto antes do amanhecer.\n\nPen\xE9lope
+      ligou desesperada para a ag\xEAncia. Ela precisa de algu\xE9m capaz de extrair
+      o soro contaminado do sangue dos pacientes antes que a rea\xE7\xE3o se espalhe.
+      O hospital est\xE1 cheio de jornalistas, e ningu\xE9m pode descobrir o que
+      aconteceu."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290890670082
+    m_Localized: "No in\xEDcio de uma noite para l\xE1 de badalada, o prefeito foi
+      parar na Boate Chique Balique. L\xE1, ele conheceu o novo drink do momento:
+      o famoso Casacavel Rapeleu.\n\nNingu\xE9m sabia que a bebida era feita com
+      uma gota de ess\xEAncia de m\xFAmia, tr\xEAs pimentas do inferno e um chorinho
+      de esp\xEDrito vingativo. De tanto gor\xF3, o prefeito ficou totalmente incontrol\xE1vel.\n\nAo
+      lembrar da ex, declarou que ia \u201Creformar a boate com as pr\xF3prias m\xE3os\u201D
+      e come\xE7ou a quebrar mesas, empurrar caixas de som e subir na bancada do
+      bar.\n\nPen\xE9lope ligou desesperada para a ag\xEAncia. Ela precisa de um
+      monstro capaz de conter o prefeito sem machuc\xE1-lo, antes que ele destrua
+      o local, machuque os frequentadores ou apare\xE7a nos stories de meia Bras\xEDlia.\n\nO
+      monstro ideal precisa ser resistente, r\xE1pido e saber amarrar algu\xE9m com
+      estilo. De prefer\xEAncia, com fitas, faixas e um olhar que fa\xE7a at\xE9
+      um pol\xEDtico b\xEAbado repensar a vida."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864384
+    m_Localized: "Quando tudo parecia perfeitamente normal, o prefeito confundiu
+      os rem\xE9dios matinais e tomou zolpidem sem querer.\nO efeito foi imediato:
+      em vez de ir para uma reuni\xE3o sobre saneamento, ele resolveu colocar em
+      pr\xE1tica seus desejos mais ocultos. Seduziu uma atendente do banco com discursos
+      ruins sobre \u201Cdestino, juros e cora\xE7\xF5es em d\xEDvida\u201D, convenceu
+      a ger\xEAncia de que participava de um \u201Cteste de seguran\xE7a confidencial\u201D
+      e entrou na \xE1rea do cofre.\n\nAgora, o prefeito est\xE1 tentando encher
+      uma maleta com dinheiro enquanto declara seu amor para a atendente, que j\xE1
+      n\xE3o sabe se chama a seguran\xE7a ou um advogado.\n\nPen\xE9lope ligou desesperada
+      para a ag\xEAncia. Ela precisa de algu\xE9m grande o suficiente para abrir
+      caminho, forte o suficiente para carregar o prefeito e assustador o suficiente
+      para fazer todo mundo no banco parar de perguntar coisas.\nAlgu\xE9m com um
+      olho s\xF3, m\xE3os enormes e a paci\xEAncia de quem j\xE1 derrubou portas
+      inteiras s\xF3 para pedir informa\xE7\xE3o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864385
+    m_Localized: "Durante a C\xFApula Mundial da Paz, um delegado importante foi
+      esquecido no andar presidencial do hotel.\n\nO problema \xE9 que ele trancou
+      a porta, desligou o telefone e jurou que s\xF3 sairia quando algu\xE9m ouvisse
+      sua apresenta\xE7\xE3o de 14 horas sobre \u201Ca import\xE2ncia de ouvir as
+      pessoas\u201D.\n\nA imprensa j\xE1 est\xE1 no sagu\xE3o, a seguran\xE7a est\xE1
+      prestes a arrombar a porta e a Liga precisa de algu\xE9m capaz de entrar no
+      quarto, acalmar o delegado e tir\xE1-lo de l\xE1 antes que ele transforme um
+      mal-entendido em crise diplom\xE1tica."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864386
+    m_Localized: "O sistema de tradu\xE7\xE3o simult\xE2nea da Liga foi atualizado
+      na v\xE9spera da C\xFApula pela paz.\n\nO problema? O novo programa trocou
+      \u201Cpaz mundial\u201D por \u201Cguerra imediata\u201D, \u201Ccoopera\xE7\xE3o\u201D
+      por \u201Crendi\xE7\xE3o\u201D e \u201Ccaf\xE9\u201D por \u201Cbora quebrar
+      tudo''.\n\nAgora, delegados de pa\xEDses diferentes est\xE3o se olhando com
+      desconfian\xE7a, embaixadores est\xE3o pedindo explica\xE7\xF5es e dois ministros
+      j\xE1 come\xE7aram a discutir em idiomas que ningu\xE9m entende.\n\nA Liga
+      precisa de algu\xE9m capaz de invadir o sistema, corrigir as tradu\xE7\xF5es
+      e impedir que a C\xFApula da Paz termine em uma briga generalizada."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864387
+    m_Localized: "Milhares de pessoas est\xE3o na frente da sede da Liga Global pela
+      Paz Humana.\n\nElas n\xE3o est\xE3o protestando contra uma guerra ou uma lei.
+      Est\xE3o protestando porque a Liga prometeu \u201Cp\xE3o gratuito para todos\u201D
+      durante a C\xFApula, mas s\xF3 entregou guardanapos com o logo da organiza\xE7\xE3o.\n\nA
+      multid\xE3o est\xE1 irritada, a imprensa est\xE1 filmando e a seguran\xE7a
+      quer usar g\xE1s de pimenta. A Liga precisa de algu\xE9m capaz de acalmar a
+      multid\xE3o sem viol\xEAncia e impedir que a situa\xE7\xE3o vire um caos internacional."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864388
+    m_Localized: "No meio da Conven\xE7\xE3o Clim\xE1tica, a Liga Global pela Paz
+      Humana distribuiu kits ecol\xF3gicos para incentivar o cuidado com o meio ambiente.\n\nO
+      problema? O material escolhido era t\xE3o sustent\xE1vel que n\xE3o suportou
+      o calor da sala. Em poucos minutos, as sacolas come\xE7aram a derreter, os
+      cadernos viraram pasta e os brindes de bamboo entraram em combust\xE3o espont\xE2nea.\n\nAgora,
+      a Sala de Palestras Oficial est\xE1 pegando fogo, o alarme n\xE3o funciona
+      e centenas de delegados est\xE3o presos dentro do pr\xE9dio. A Dra. Folha Verde
+      precisa de algu\xE9m capaz de apagar as chamas, abrir caminho e tirar todo
+      mundo de l\xE1 antes que a conven\xE7\xE3o vire uma trag\xE9dia internacional."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864390
+    m_Localized: "Na cidade de Township, um grupo de chimpanz\xE9s fugiu do zool\xF3gico
+      e, sem ter para onde ir, escolheu uma casa de idosos como novo lar.\n\nO problema?
+      Eles n\xE3o querem dividir o espa\xE7o. As senhorinhas foram para o jardim
+      e os chimpanz\xE9s j\xE1 instalaram um sistema de turnos para tomar sol.\n\nA
+      dire\xE7\xE3o da casa pede ajuda para convencer os primatas a voltar para o
+      zool\xF3gico, sem assustar as moradoras."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864391
+    m_Localized: "A padaria Candy Candy, da cidade, decidiu realizar um grande festival
+      de p\xE3es.\n\nTudo estava indo bem at\xE9 um grupo de ladr\xF5es gulosos invadir
+      o local e levar todos os p\xE3es para uma base secreta.\n\nA padaria precisa
+      dos p\xE3es de volta antes do fim do festival. N\xE3o h\xE1 tempo para negocia\xE7\xE3o:
+      recupere tudo na base da for\xE7a."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864392
+    m_Localized: "J\xE1 faz uma semana que algumas boates da cidade est\xE3o sem
+      suas dan\xE7arinas.\n\nA \xFAnica pista \xE9 estranha, mas claramente um evidencia:
+      um bueiro foi encontrado com gloss aberto e marcas de salto alto ao redor.\n\nAlgu\xE9m
+      precisa descer ao esgoto, encontrar as dan\xE7arinas e traz\xEA-las de volta
+      antes que a noite da cidade acabe sem m\xFAsica."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864393
+    m_Localized: "No meio da noite, Dona Maria do apartamento de n\xFAmero 841, n\xE3o
+      est\xE1 conseguindo abrir seu pote de picles. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864394
+    m_Localized: "Gertrudes acabou pegando o di\xE1rio de sua filha e n\xE3o conseguiu
+      acreditar nas suas aventuras. Est\xE3o h\xE1 2 semanas sem se falar. Completamente
+      desamparada, at\xE9 pensou em deserdar sua cria. Precisamos de algu\xE9m para
+      conter os danos morais."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864395
+    m_Localized: "\nNuma quarta-feira qualquer, Alissa come\xE7ou a perceber sua
+      filha ficar mais fechada. Isso desencadeou uma crise de ansiedade grav\xEDssima
+      e em dos seus pensamentos intrusivos ela decidiu de se fantasiar de uma das
+      aulas no col\xE9gio e vigiar a filha de pertinho. \n\n\nUma das diretoras percebeu
+      e resolveu chamar a pol\xEDcia, mas dona Alissa n\xE3o queria sair de jeito
+      nenhum. Precisamos da agencia de monstros para conter a mam\xE3e fera"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864397
+    m_Localized: "Em uma v\xE9spera de feriado, a famosa diplomata Shirley das na\xE7\xF5es
+      desunidas, resolveu que queria um novo look para suas m\xE3os. Ela viu uma
+      cartaz que prometia unhas elegantes por apenas 15 reais. Ela n\xE3o aguenta
+      ver uma promo e decidiu ir logo.\n\nNo meio do procedimento, o alongamento
+      deu errado e sua unha foi quebrada. Ela se desesperou e pediu por vingan\xE7a\n\nA
+      storymaker da manicure que estava gravando tudo, ligou rapidamente pedindo
+      por algum monstro para acalma-la "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864398
+    m_Localized: "Na hidromassagem do subsolo da academia Dumbfit, seu Corn\xE9lios
+      achou que era de bom tom enfiar o seu ded\xE3o do p\xE9 no cano de saida da
+      turbula\xE7\xE3o de \xE1gua. \n\nO problema \xE9, seu Corn\xE9lios \xE9 um
+      coronel muito importante da marinha e ele se importa muito com seu ego. \n\nEle
+      precisa de ajuda o mais r\xE1pido poss\xEDvel pois sua esposa Gl\xF3ria est\xE1
+      a 30 minutos de terminar seu treino."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864399
+    m_Localized: "O empres\xE1rio Baltazar Charlat\xE3o decidiu provar que sua nova
+      gravata era \u201Cindestrut\xEDvel\u201D e enfiou a ponta dela no moedor de
+      caf\xE9 da cafeteria premium onde almo\xE7ava.\n\nO problema \xE9 que a gravata
+      era feita de seda importada, e o moedor era industrial. Agora, Baltazar est\xE1
+      preso pela gravata, de cabe\xE7a para baixo, com o caf\xE9 derramando sobre
+      seu terno de 30 mil.\n\nSua reuni\xE3o com investidores come\xE7a em 15 minutos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864400
+    m_Localized: "A rainha de um pequeno pa\xEDs em visita diplom\xE1tica decidiu
+      usar o banheiro do aeroporto sem sua comitiva.\n\nEm um momento de distra\xE7\xE3o,
+      sua coroa caiu no vaso sanit\xE1rio e ficou presa no encanamento.\n\nEla precisa
+      da coroa de volta antes do encontro com o presidente, e jurou demitir qualquer
+      funcion\xE1rio que contar a hist\xF3ria."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864401
+    m_Localized: "O papagaio Louro Jos\xE9 Sierra,  de um senador fugiu da gaiola
+      durante uma entrevista ao vivo.\n\nO problema \xE9 que ele come\xE7ou a repetir
+      frases que o senador disse em privado, incluindo o nome de uma amante, o valor
+      de um suborno e o endere\xE7o de uma conta secreta.\n\nO papagaio est\xE1 no
+      telhado do pr\xE9dio e a entrevista termina em 10 minutos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864402
+    m_Localized: "\xC0s 3h da manh\xE3, o urso de estima\xE7\xE3o da fam\xEDlia Charlotte
+      decidiu que queria dormir na cama do casal.\n\nO problema \xE9 que a cama \xE9
+      de casal, o urso pesa 400 quilos e a Sra. Charlotte tem medo de urso.\n\nA
+      fam\xEDlia precisa de algu\xE9m capaz de entrar no quintal, proteger a Sra.
+      Billion e tirar o urso da cama antes que ele decida que a casa \xE9 dele."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

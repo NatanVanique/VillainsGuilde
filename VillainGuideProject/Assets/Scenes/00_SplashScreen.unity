@@ -319,7 +319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6214555344630993547, guid: 5d83628fa20fc014f866ddb1faf44330, type: 3}
       propertyPath: eventLists.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6214555344630993547, guid: 5d83628fa20fc014f866ddb1faf44330, type: 3}
       propertyPath: 'eventLists.Array.data[0]'
@@ -329,6 +329,10 @@ PrefabInstance:
       propertyPath: 'eventLists.Array.data[1]'
       value: 
       objectReference: {fileID: 11400000, guid: 15edd99f241aefc449eaaf08eec4b1f3, type: 2}
+    - target: {fileID: 6214555344630993547, guid: 5d83628fa20fc014f866ddb1faf44330, type: 3}
+      propertyPath: 'eventLists.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 29a9e2edc25d64044918dc9263d625d4, type: 2}
     - target: {fileID: 7164142461048102846, guid: 5d83628fa20fc014f866ddb1faf44330, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
