@@ -39,12 +39,12 @@ public class QuestValidator : MonoBehaviour
     {
         int amountOfTipsSucceded = 0;
 
-        foreach (var tip in card.ReturnListOfTips().SelectedTips.Values) // Para cada dica da carta
+        foreach (var tip in card.ReturnQuestData().TipData.Type) // Para cada dica da carta
         {
             if (ReturnIfAnyMonsterSucceded(listOfMonsterInfo, tip)) amountOfTipsSucceded++; // Verifica se algum monstro possui um match
         }
 
-        float percent = amountOfTipsSucceded / card.ReturnListOfTips().SelectedTips.Count;
+        float percent = amountOfTipsSucceded / card.ReturnQuestData().TipData.Type.Count;
         float basePercent = card.ReturnQuestData().BasePercentChanceOfWinning;
         float restPercent = 100 - basePercent;
 
@@ -57,7 +57,7 @@ public class QuestValidator : MonoBehaviour
         return false;
     }
 
-    bool ReturnIfAnyMonsterSucceded(List<MonsterInfo> listOfMonsterInfo, TipData tip)
+    bool ReturnIfAnyMonsterSucceded(List<MonsterInfo> listOfMonsterInfo, TipType tip)
     {
         foreach (var monsterInfo in listOfMonsterInfo) // Para cada monstro
         {
@@ -67,11 +67,11 @@ public class QuestValidator : MonoBehaviour
         return false;
     }
 
-    bool ReturnIfMonsterSucceded(MonsterInfo monster, TipData tip)
+    bool ReturnIfMonsterSucceded(MonsterInfo monster, TipType tip)
     {
         foreach (var monsterTip in monster.TipList.SelectedTips) // Para cada dica do monstro
         {
-            if (monsterTip.Value.Type == tip.Type) return true; // Verifica se deu match
+            if (monsterTip.Value.Type == tip) return true; // Verifica se deu match
         }
 
         return false;

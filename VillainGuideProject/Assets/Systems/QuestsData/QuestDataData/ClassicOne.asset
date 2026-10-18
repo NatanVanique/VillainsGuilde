@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: ClassicOne
   m_EditorClassIdentifier: Assembly-CSharp::QuestData
   Type: 2
-  QuestIcon: {fileID: 21300000, guid: e08b6f5b8213f4040ad1a79c95af9105, type: 3}
-  QuestSplashArt: {fileID: 0}
   QuestTitle:
     m_TableReference:
       m_TableCollectionName: GUID:836df008699bda44d972b23c0fd6b731
@@ -24,45 +22,18 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  DictionaryOfTipData:
-    _serializedList:
-    - Key: 1
-      Value:
-      - TipText:
-          m_TableReference:
-            m_TableCollectionName: GUID:a9d541e9444e580478269ea8347ec80b
-          m_TableEntryReference:
-            m_KeyId: 7593349120
-            m_Key: 
-          m_FallbackState: 0
-          m_WaitForCompletion: 0
-          m_LocalVariables: []
-        Type: 0
-    - Key: 2
-      Value:
-      - TipText:
-          m_TableReference:
-            m_TableCollectionName: GUID:a9d541e9444e580478269ea8347ec80b
-          m_TableEntryReference:
-            m_KeyId: 18431430656
-            m_Key: 
-          m_FallbackState: 0
-          m_WaitForCompletion: 0
-          m_LocalVariables: []
-        Type: 0
-    - Key: 3
-      Value:
-      - TipText:
-          m_TableReference:
-            m_TableCollectionName: GUID:a9d541e9444e580478269ea8347ec80b
-          m_TableEntryReference:
-            m_KeyId: 21510049792
-            m_Key: 
-          m_FallbackState: 0
-          m_WaitForCompletion: 0
-          m_LocalVariables: []
-        Type: 0
-  AmountOfMaxCharacters: 2
+  TipData:
+    TipText:
+      m_TableReference:
+        m_TableCollectionName: GUID:a9d541e9444e580478269ea8347ec80b
+      m_TableEntryReference:
+        m_KeyId: 7593349120
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    Type: 000000000100000002000000
+  AmountOfMaxCharacters: 1
   HasMoney: 0
   MoneyReward: 10
   HasXP: 1

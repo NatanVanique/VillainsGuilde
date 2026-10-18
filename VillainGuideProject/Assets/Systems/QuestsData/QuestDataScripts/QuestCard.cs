@@ -1,19 +1,17 @@
-using UnityEngine;
-using UnityEngine.UI;
 using AYellowpaper.SerializedCollections;
-using UnityEngine.Localization.Components;
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Localization.Components;
+using UnityEngine.UI;
 
-public class QuestCard : MonoBehaviour
-{
+public class QuestCard : MonoBehaviour {
     #region Variables
 
     [Header("Components")]
-    [SerializeField] Image questIcon;
     [SerializeField] LocalizeStringEvent title;
-    [SerializeField] Button moreInfoButton;
-    [SerializeField, SerializedDictionary("index", "text")] SerializedDictionary<int, LocalizeStringEvent> dictionaryOfTips;
+    [SerializeField] LocalizeStringEvent tipText;
     [SerializeField, SerializedDictionary("amount", "container")] SerializedDictionary<int, GameObject> dictionaryOfAmountOfCharacters;
     [SerializeField, SerializedDictionary("type", "icons")] SerializedDictionary<QuestRewardType, GameObject> dictionaryOfRewardIcons;
 
@@ -23,9 +21,6 @@ public class QuestCard : MonoBehaviour
 
     public List<MonsterInfo> _listOfMonsters = new();
     QuestData _data;
-    ListOfTips _listOfTips;
-
-    public static event Action<QuestData, ListOfTips> OnQuestCardInfoPressed;
 
     #endregion
 
@@ -35,19 +30,6 @@ public class QuestCard : MonoBehaviour
         _data = data;
 
         SetVisuals();
-        SetButtons();
-    }
-
-    #endregion
-
-    #region Buttons
-
-    void SetButtons() {
-        moreInfoButton.onClick.AddListener(MoreInfoButton);
-    }
-
-    void MoreInfoButton() {
-        OnQuestCardInfoPressed?.Invoke(_data, _listOfTips);
     }
 
     #endregion
@@ -56,9 +38,8 @@ public class QuestCard : MonoBehaviour
 
     void SetVisuals() {
         ChangeTitle();
-        ChangeIcon();
         ChangeCharactersAmountIcons();
-        ChangeTips();
+        ChangeTipText();
         SetRewardsIcons();
     }
 
@@ -66,32 +47,15 @@ public class QuestCard : MonoBehaviour
         title.StringReference = _data.QuestTitle;
     }
 
-    void ChangeIcon() {
-        questIcon.sprite = _data.QuestIcon;
-    }
-
     void ChangeCharactersAmountIcons() {
-        foreach(var pair in dictionaryOfAmountOfCharacters) {
+        foreach (var pair in dictionaryOfAmountOfCharacters) {
             if (pair.Key == _data.AmountOfMaxCharacters) pair.Value.SetActive(true);
             else pair.Value.SetActive(false);
         }
     }
 
-    void ChangeTips() {
-        List<TipData> listOfTips = new();
-
-        foreach (var pair in dictionaryOfTips) {
-            if (!_data.DictionaryOfTipData.ContainsKey(pair.Key)) continue;
-
-            List<TipData> listOfData = _data.DictionaryOfTipData[pair.Key];
-            int randomTip = UnityEngine.Random.Range(0, listOfData.Count);
-            TipData data = listOfData[randomTip];
-            pair.Value.StringReference = data.TipText;
-
-            listOfTips.Add(data);
-        }
-
-        _listOfTips = new(listOfTips);
+    void ChangeTipText() {
+        tipText.StringReference = _data.TipData.TipText;
     }
 
     void SetRewardsIcons() {
@@ -104,15 +68,13 @@ public class QuestCard : MonoBehaviour
 
     #region Add Monster
 
-    public void AddMonster(MonsterInfo info)
-    {
+    public void AddMonster(MonsterInfo info) {
         if (_listOfMonsters.Contains(info)) return;
 
         _listOfMonsters.Add(info);
     }
 
-    public void RemoveMonster(MonsterInfo info)
-    {
+    public void RemoveMonster(MonsterInfo info) {
         if (!_listOfMonsters.Contains(info)) return;
         _listOfMonsters.Remove(info);
     }
@@ -120,8 +82,6 @@ public class QuestCard : MonoBehaviour
     #endregion
 
     #region Getters
-
-    public ListOfTips ReturnListOfTips() => _listOfTips;
 
     public QuestData ReturnQuestData() => _data;
 
