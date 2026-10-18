@@ -36,6 +36,12 @@ MonoBehaviour:
     - Locale-pt-BR
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df7aff835db01ae48911a6ddc99a44e4
+    m_Address: UI_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f6ceebaf0ab61c24a9dca22103fca0e0
     m_Address: MonsterName_pt-BR
     m_ReadOnly: 1
