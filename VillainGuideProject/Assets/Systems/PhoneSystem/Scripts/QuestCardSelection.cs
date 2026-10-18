@@ -1,7 +1,8 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class QuestCardSelection : MonoBehaviour
+public class QuestCardSelection : MonoBehaviour, IDropHandler
 {
     [Header("Components")]
     [SerializeField] private GameObject selectedBorder;
@@ -63,5 +64,31 @@ public class QuestCardSelection : MonoBehaviour
             IsSelected = false;
             RefreshBorder();
         }
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        TryDropItem(eventData);
+    }
+
+    internal bool TryDropItem(PointerEventData eventData)
+    {
+        if (eventData.pointerDrag == null)
+            return false;
+
+        DragItem item = eventData.pointerDrag.GetComponent<DragItem>();
+        if (item == null || !TrySelect())
+            return false;
+
+        foreach (DropSlot slot in GetComponentsInChildren<DropSlot>(true))
+        {
+            if (slot.IsEmpty)
+            {
+                item.Drop(slot.transform, this);
+                return true;
+            }
+        }
+
+        return false;
     }
 }

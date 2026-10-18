@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157c9fbd840024e419b93f506b974a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JournalManager
-  journalPrefab: {fileID: 7970307084933894683, guid: d3c59b9a323fef94b83a8b748d9a4e3b, type: 3}
+  journalPrefab: {fileID: 6142743493383576415, guid: 9371addc0aee1044ca4de5fa366a4f68, type: 3}
   animationDuration: 0.5

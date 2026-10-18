@@ -12,6 +12,10 @@ public class QuestData : ScriptableObject {
     public QuestType Type;
     public LocalizedString QuestTitle;
 
+    [Header("Journal Results")]
+    public LocalizedString ResultDescriptionGood;
+    public LocalizedString ResultDescriptionBad;
+
     [Space(10)]
 
     [Header("Card")]

@@ -35,6 +35,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b289f1bcb21dc364b906708c460e5f24
+    m_Address: Assets/Systems/LocalizationSystem/QuestDescribe Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ef3bb184878c4254b9ffc2766646f4fc
     m_Address: Assets/Systems/LocalizationSystem/MonsterTips Shared Data.asset
     m_ReadOnly: 1

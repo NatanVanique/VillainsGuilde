@@ -19,7 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 5852712960
-    m_Localized: Quest One
+    m_Localized: Operation Prince Frederick
+    m_Metadata:
+      m_Items: []
+  - m_Id: 517548579323904
+    m_Localized: Fatal Canine Dose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 517548579323905
+    m_Localized: The last round in Fancy Balancy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 517548579323906
+    m_Localized: Heist of the Heart
     m_Metadata:
       m_Items: []
   references:

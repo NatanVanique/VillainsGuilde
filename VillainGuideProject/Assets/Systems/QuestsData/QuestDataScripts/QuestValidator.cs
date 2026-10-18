@@ -44,7 +44,10 @@ public class QuestValidator : MonoBehaviour
             if (ReturnIfAnyMonsterSucceded(listOfMonsterInfo, tip)) amountOfTipsSucceded++; // Verifica se algum monstro possui um match
         }
 
-        float percent = amountOfTipsSucceded / card.ReturnQuestData().TipData.Type.Count;
+        int amountOfTips = card.ReturnQuestData().TipData.Type.Count;
+        float percent = amountOfTips > 0
+            ? (float)amountOfTipsSucceded / amountOfTips
+            : 0f;
         float basePercent = card.ReturnQuestData().BasePercentChanceOfWinning;
         float restPercent = 100 - basePercent;
 
