@@ -967,6 +967,7 @@ MonoBehaviour:
   smallNewsPrefab1: {fileID: 731133187550224965, guid: 1e86b36b0b2652841b588969efb12af0, type: 3}
   smallNewsPrefab2: {fileID: 1955829590756754905, guid: d18e39b0e65a13f4fa9f0dababd9c87d, type: 3}
   emergencyWarningPrefab: {fileID: 3002198918067220672, guid: f57335a8a3228154eb6af8d55485429b, type: 3}
+  resultsNewsPrefab: {fileID: 3227821070570391807, guid: b07290e6c3cc7474cbc81606180105d4, type: 3}
   rowSpacing: 6
   emergencyWarningText: Make a good choice!
   goToResultsButton: {fileID: 0}

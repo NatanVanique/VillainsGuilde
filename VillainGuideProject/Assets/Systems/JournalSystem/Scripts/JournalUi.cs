@@ -21,6 +21,7 @@ public class JournalUi : MonoBehaviour
     [SerializeField] private GameObject smallNewsPrefab1;
     [SerializeField] private GameObject smallNewsPrefab2;
     [SerializeField] private GameObject emergencyWarningPrefab;
+    [SerializeField] private GameObject resultsNewsPrefab;
     [SerializeField, Min(0f)] private float rowSpacing = 6f;
     [SerializeField, TextArea] private string emergencyWarningText = "An emergency mission is expected tomorrow.";
 
@@ -102,9 +103,23 @@ public class JournalUi : MonoBehaviour
         if (newsGrid == null)
             return;
         newsGrid.gameObject.SetActive(true);
-        if (newsScroll != null && newsScroll.viewport != null &&
-            newsScroll.viewport.GetComponent<RectMask2D>() == null)
-            newsScroll.viewport.gameObject.AddComponent<RectMask2D>();
+        if (newsScroll != null && newsScroll.viewport != null)
+        {
+            GameObject viewport = newsScroll.viewport.gameObject;
+            if (viewport.GetComponent<RectMask2D>() == null)
+                viewport.AddComponent<RectMask2D>();
+
+            // Keep the entire viewport scrollable even between article graphics.
+            Graphic viewportGraphic = viewport.GetComponent<Graphic>();
+            if (viewportGraphic == null)
+            {
+                Image hitArea = viewport.AddComponent<Image>();
+                hitArea.color = Color.clear;
+                hitArea.canvasRenderer.cullTransparentMesh = false;
+                viewportGraphic = hitArea;
+            }
+            viewportGraphic.raycastTarget = true;
+        }
 
         SpawnHeader();
         JournalRegister.JournalEntry featured = rewardsRegister.BigNews;
@@ -138,6 +153,7 @@ public class JournalUi : MonoBehaviour
             spawnedNews.Add(warning);
         }
 
+        SpawnResultsNews();
         CreateColumnDivider();
         resetScrollOnRefresh = true;
         RefreshLayout();
@@ -180,6 +196,48 @@ public class JournalUi : MonoBehaviour
             header.anchoredPosition = Vector2.zero;
         }
         spawnedRoots.Add(container);
+    }
+
+    private void SpawnResultsNews()
+    {
+        if (resultsNewsPrefab == null || journalReward == null)
+            return;
+
+        GameObject instance = Instantiate(resultsNewsPrefab, newsGrid.transform);
+        PrepareFullWidth(instance);
+        VerticalLayoutGroup resultsLayout = instance.transform.Find("Results")?.GetComponent<VerticalLayoutGroup>();
+        if (resultsLayout != null)
+            resultsLayout.spacing = -14f;
+        JournalReward.RewardResult result = journalReward.CalculateRewards();
+        bool hasResults = result.HasXP || result.HasMoney || result.HasCharacters;
+        Transform results = instance.transform.Find("Results");
+        Transform noRewards = instance.transform.Find("NoRewards");
+        if (results != null)
+            results.gameObject.SetActive(hasResults);
+        if (noRewards != null)
+            noRewards.gameObject.SetActive(!hasResults);
+        SetResultsTab(instance.transform, "Results/XpTab", result.HasXP, result.XP);
+        SetResultsTab(instance.transform, "Results/MoneyTab", result.HasMoney, result.Money);
+        SetResultsTab(instance.transform, "Results/MonsterTab", result.HasCharacters, result.Characters);
+        spawnedRoots.Add(instance);
+    }
+
+    private static void SetResultsTab(Transform root, string path, bool visible, float value)
+    {
+        Transform tab = root.Find(path);
+        if (tab == null)
+        {
+            Debug.LogWarning($"Results news is missing '{path}'.", root);
+            return;
+        }
+
+        tab.gameObject.SetActive(visible);
+        TMP_Text label = tab.GetComponentInChildren<TMP_Text>(true);
+        if (label != null)
+        {
+            string amount = value.ToString("+0.########;-0.########;0");
+            label.text = label.text.Replace("xx", amount);
+        }
     }
 
     private void SpawnFullWidthNews(GameObject prefab, JournalRegister.JournalEntry entry, bool showMonster)
