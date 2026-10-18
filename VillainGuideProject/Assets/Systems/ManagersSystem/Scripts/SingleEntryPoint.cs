@@ -22,13 +22,13 @@ public class SingleEntryPoint : MonoBehaviour
 
         if (UiManager != null)
         {
-            UiManager = Instantiate(umPrefab).GetComponent<UiManager>();
+            UiManager = Instantiate(umPrefab, transform).GetComponent<UiManager>();
             UiManager.Setup();
         }
 
         if (ManagerManager != null)
         {
-            ManagerManager = Instantiate(mmPrefab).GetComponent<ManagerManager>();
+            ManagerManager = Instantiate(mmPrefab, transform).GetComponent<ManagerManager>();
             ManagerManager.Setup();
         }
     }
