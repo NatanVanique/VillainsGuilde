@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36254ada68b428d429f1011fe9509544, type: 3}
+  m_Name: Prefeito02
+  m_EditorClassIdentifier: Assembly-CSharp::QuestData
+  Type: 0
+  QuestTitle:
+    m_TableReference:
+      m_TableCollectionName: GUID:b289f1bcb21dc364b906708c460e5f24
+    m_TableEntryReference:
+      m_KeyId: 2290890670081
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  ResultDescriptionGood:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  ResultDescriptionBad:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  TipData:
+    TipText:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    Type: 
+  AmountOfMaxCharacters: 0
+  HasMoney: 1
+  MoneyReward: 30
+  HasXP: 1
+  XPReward: 30
+  HasCharacters: 0
+  ListOfCharacters: 
+  BasePercentChanceOfWinning: 0
+  HasConsequence: 1
+  AmountOfConsequenceEvents: 3
+  references:
+    version: 2
+    RefIds: []
