@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8609990820223348425}
   - component: {fileID: 2132294422525661334}
   - component: {fileID: 5401234791494814428}
+  - component: {fileID: 3308573625669073239}
   m_Layer: 5
   m_Name: ButtonImage
   m_TagString: Untagged
@@ -121,6 +122,29 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3308573625669073239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2194561763801700687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a10d820359f5f64c8201184e06463d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: BISC8.FMODB8.Runtime::FmodButton
+  actions:
+  - moment: 1
+    command: 0
+    playbackScope: 0
+    soundId: ButtonEnter
+    fade: 0
+    floatValue: 1
+    floatValue2: 1
+    parameter: 
+    label: 
+    cascade: []
 --- !u!1 &2433580872678019238
 GameObject:
   m_ObjectHideFlags: 0

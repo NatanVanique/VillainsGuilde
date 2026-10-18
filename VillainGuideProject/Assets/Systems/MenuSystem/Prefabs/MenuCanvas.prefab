@@ -1225,13 +1225,13 @@ PrefabInstance:
       value: MenuUiManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5401234791494814428, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5401234791494814428, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 6851303924378115952}
+    - target: {fileID: 5401234791494814428, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1549,6 +1549,30 @@ PrefabInstance:
     - target: {fileID: 2194561763801700687, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
       propertyPath: m_Name
       value: OptionButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401234791494814428, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401234791494814428, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401234791494814428, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401234791494814428, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenOptions
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401234791494814428, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: OptionsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401234791494814428, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
       propertyPath: m_Pivot.x

@@ -51,6 +51,7 @@ public class MissionsScreenController : MonoBehaviour
 
     private void AcceptButtonMethod()
     {
+        Debug.Log("AcceptButton Clicked");
         List<QuestCardSelection> selectedQuests = SingleEntryPoint.Instance.ManagerManager.QuestSelectionManager.SelectedCards;
         OnQuestsAccepted?.Invoke(selectedQuests);
 

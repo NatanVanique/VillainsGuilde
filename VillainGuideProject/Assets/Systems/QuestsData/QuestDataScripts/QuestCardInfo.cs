@@ -56,7 +56,7 @@ public class QuestCardInfo : MonoBehaviour
     #region Handle Events
 
     void SubscribeToEvents() {
-        QuestCard.OnQuestCardInfoPressed += HandleCardInfoClicked;
+        //QuestCard.OnQuestCardInfoPressed += HandleCardInfoClicked;
     }
 
     void HandleCardInfoClicked(QuestData data, ListOfTips selectedTips) {
@@ -116,7 +116,7 @@ public class QuestCardInfo : MonoBehaviour
     #region Visuals
 
     void SetImagesAndName(QuestData data) {
-        if (data.QuestSplashArt != null) splashArt.sprite = data.QuestSplashArt;
+        //if (data.QuestSplashArt != null) splashArt.sprite = data.QuestSplashArt;
 
         if (data.QuestTitle != null) nameText.StringReference = data.QuestTitle;
     }
@@ -137,7 +137,7 @@ public class QuestCardInfo : MonoBehaviour
     }
 
     void UnSubscribeToEvents() {
-        QuestCard.OnQuestCardInfoPressed -= HandleCardInfoClicked;
+       // QuestCard.OnQuestCardInfoPressed -= HandleCardInfoClicked;
     }
 
     void KillTweens() {

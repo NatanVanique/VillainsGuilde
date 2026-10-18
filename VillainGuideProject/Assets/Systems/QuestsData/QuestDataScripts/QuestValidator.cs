@@ -1,9 +1,16 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
 public class QuestValidator : MonoBehaviour
 {
+    #region Variables
+
+    public static event Action<int> OnQuestWithResultFailed;
+
+    #endregion
+
     #region Setup
 
     public void Setup()
@@ -26,13 +33,25 @@ public class QuestValidator : MonoBehaviour
         {
             QuestCard card = cardSelection.QuestCard;
             List<MonsterInfo> listOfMonsterInfo = card._listOfMonsters;
+            QuestData data = card.ReturnQuestData();
+            JournalRegister jr = SingleEntryPoint.Instance.ManagerManager.JournalRegister;
 
             bool result = ReturnIfCardSucceded(card, listOfMonsterInfo);
-            QuestData data = card.ReturnQuestData();
-            SingleEntryPoint.Instance.ManagerManager.JournalRegister.RegisterResult(result, data);
+
+            CheckResult(result, data);
+
+            jr.RegisterResult(result, data);
         }
+    }
 
+    private void CheckResult(bool result, QuestData data) {
+        if (!result) {
+            if (!data.HasConsequence) return;
 
+            int amountOfBadEvents = data.AmountOfConsequenceEvents;
+
+            OnQuestWithResultFailed?.Invoke(amountOfBadEvents);
+        }
 
     }
 
@@ -40,21 +59,25 @@ public class QuestValidator : MonoBehaviour
     {
         int amountOfTipsSucceded = 0;
 
-        foreach (var tip in card.ReturnListOfTips().SelectedTips.Values) // Para cada dica da carta
+        foreach (var tip in card.ReturnQuestData().TipData.Type) // Para cada dica da carta
         {
             if (ReturnIfAnyMonsterSucceded(listOfMonsterInfo, tip)) amountOfTipsSucceded++; // Verifica se algum monstro possui um match
         }
 
-        float percent = amountOfTipsSucceded / card.ReturnListOfTips().SelectedTips.Count * 100;
+        float percent = amountOfTipsSucceded / card.ReturnQuestData().TipData.Type.Count;
+        float basePercent = card.ReturnQuestData().BasePercentChanceOfWinning;
+        float restPercent = 100 - basePercent;
 
-        int rng = Random.Range(0, 100);
+        float realPercent = (percent * restPercent) + basePercent;
 
-        if (rng <= percent) return true;
+        int rng = UnityEngine.Random.Range(0, 100);
+
+        if (rng <= realPercent) return true;
 
         return false;
     }
 
-    bool ReturnIfAnyMonsterSucceded(List<MonsterInfo> listOfMonsterInfo, TipData tip)
+    bool ReturnIfAnyMonsterSucceded(List<MonsterInfo> listOfMonsterInfo, TipType tip)
     {
         foreach (var monsterInfo in listOfMonsterInfo) // Para cada monstro
         {
@@ -64,11 +87,11 @@ public class QuestValidator : MonoBehaviour
         return false;
     }
 
-    bool ReturnIfMonsterSucceded(MonsterInfo monster, TipData tip)
+    bool ReturnIfMonsterSucceded(MonsterInfo monster, TipType tip)
     {
         foreach (var monsterTip in monster.TipList.SelectedTips) // Para cada dica do monstro
         {
-            if (monsterTip.Value.Type == tip.Type) return true; // Verifica se deu match
+            if (monsterTip.Value.Type == tip) return true; // Verifica se deu match
         }
 
         return false;
