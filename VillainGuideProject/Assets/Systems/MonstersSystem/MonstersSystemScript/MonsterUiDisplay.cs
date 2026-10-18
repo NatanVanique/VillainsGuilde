@@ -1,5 +1,6 @@
 using DG.Tweening;
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,21 +27,42 @@ public class MonsterUiDisplay : MonoBehaviour {
 
     [Header("Test")]
     [SerializeField] List<MonsterData> listOfData = new();
+    [SerializeField] Button startButton;
 
     // private
     public List<MonsterCardPrefab> _listOfExistingCards = new();
+    public MonsterCardPrefab _selectedCard;
 
     Tween _scaleTween, _fadeTween, _confirmButtonTween;
+
+    public static event Action<MonsterCardPrefab> OnMonsterCardSelected;
     #endregion
 
     #region Setup
 
     private void Start() {
-        MonsterUIDisplayOn(listOfData);
+        startButton.onClick.AddListener(() => MonsterUIDisplayOn(listOfData));
+        Setup();
     }
 
     public void Setup() {
         SubscribeToEvents();
+        SetButtons();
+    }
+
+    #endregion
+
+    #region Buttons
+
+    void SetButtons() {
+        confirmButton.onClick.AddListener(ConfirmButtonMethod);
+    }
+
+    private void ConfirmButtonMethod() {
+        if (_selectedCard == null) return;
+
+        OnMonsterCardSelected?.Invoke(_selectedCard);
+        MonsterUIDisplayOff();
     }
 
     #endregion
@@ -48,7 +70,11 @@ public class MonsterUiDisplay : MonoBehaviour {
     #region Handle Events
 
     void SubscribeToEvents() {
+        MonsterCardPrefab.OnCardSelected += HandleCardSelected;
+    }
 
+    private void HandleCardSelected(MonsterCardPrefab card) {
+        _selectedCard = card;
     }
 
     #endregion
@@ -62,7 +88,6 @@ public class MonsterUiDisplay : MonoBehaviour {
         _fadeTween = mask.DOFade(fadeFinalValue, fadeDuration);
         _scaleTween = container.transform.DOScale(1, scaleDuration).OnComplete(() => {
             StartCoroutine(InstantiateMonsterCards(listOfMonsters));
-            _confirmButtonTween = confirmButton.transform.DOScale(1, scaleDuration);
         });
     }
 
@@ -76,15 +101,16 @@ public class MonsterUiDisplay : MonoBehaviour {
         }
 
         for (int i = 0; i < listOfMonsterCard.Count; i++) {
-            yield return wait;
             listOfMonsterCard[i].Setup(listOfMonsters[i]);
+            yield return wait;
         }
 
+        _confirmButtonTween = confirmButton.transform.DOScale(1, scaleDuration);
     }
 
     MonsterCardPrefab InstantiateCard() {
 
-        foreach(var card in _listOfExistingCards) {
+        foreach (var card in _listOfExistingCards) {
             if (!card.HasBeenUsed) {
                 card.HasBeenUsed = true;
                 return card;
@@ -101,18 +127,32 @@ public class MonsterUiDisplay : MonoBehaviour {
 
     #region End
 
+    void MonsterUIDisplayOff() {
+
+        _confirmButtonTween = confirmButton.transform.DOScale(0, scaleDuration);
+        _fadeTween = mask.DOFade(0, fadeDuration);
+        _scaleTween = container.transform.DOScale(0, scaleDuration).OnComplete(() => {
+            foreach (var card in _listOfExistingCards) {
+                card.DisableCard();
+            }
+
+            mask.blocksRaycasts = false;
+        });
+    }
+
     private void OnDestroy() {
         UnsubscribeToEvents();
         KillTweens();
     }
 
     void UnsubscribeToEvents() {
-
+        MonsterCardPrefab.OnCardSelected -= HandleCardSelected;
     }
 
     void KillTweens() {
         DOTween.Kill(_fadeTween);
         DOTween.Kill(_scaleTween);
+        DOTween.Kill(_confirmButtonTween);
     }
 
     #endregion

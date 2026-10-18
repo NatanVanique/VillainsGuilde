@@ -22,11 +22,12 @@ public class MonstersManager : MonoBehaviour
     #region Handle Events
 
     void SubscribeToEvents() {
-
+        MonsterUiDisplay.OnMonsterCardSelected += HandleMonsterSelected;
     }
 
-    void HandleMonsterSelected(MonsterInfo info) {
-        RegisterMonster(info);
+    void HandleMonsterSelected(MonsterCardPrefab card) {
+        MonsterInfo newInfo = card.ReturnMonsterInfo();
+        RegisterMonster(newInfo);
     }
 
     #endregion
@@ -77,7 +78,7 @@ public class MonstersManager : MonoBehaviour
     }
 
     void UnsubscribeToEvents() {
-
+        MonsterUiDisplay.OnMonsterCardSelected -= HandleMonsterSelected;
     }
 
     #endregion
