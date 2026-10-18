@@ -15,9 +15,9 @@ MonoBehaviour:
   Type: 3
   QuestTitle:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:836df008699bda44d972b23c0fd6b731
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 608526755532815
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -33,18 +33,18 @@ MonoBehaviour:
     m_LocalVariables: []
   ResultDescriptionGood:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:08edffda23451f8419f80d25bb3887ad
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 82370560098304
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   ResultDescriptionBad:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:08edffda23451f8419f80d25bb3887ad
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 82370560098305
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

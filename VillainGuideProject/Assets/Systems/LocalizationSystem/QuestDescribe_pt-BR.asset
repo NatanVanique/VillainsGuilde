@@ -283,23 +283,53 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 78443452141570
-    m_Localized: 
+    m_Localized: 'In an old building, residents report groans coming from the basement
+      every night.
+
+
+      There are claw marks on the wall, a strong smell of wet
+      earth, and a flickering blue light at the end of the hallway.
+
+
+      Someone
+      needs to go down, find the creature, and bring it to a safe place before it
+      destroys the plumbing.'
     m_Metadata:
       m_Items: []
   - m_Id: 78443456335872
-    m_Localized: 
+    m_Localized: 'In the town''s abandoned theater, a monstrous figure appears between
+      the curtains after midnight.
+
+
+      There are dent marks on an instrument
+      case and a strong smell of old perfume.
+
+
+      Someone needs to enter the
+      theater, calm the creature, and get it out of there before it bites someone.'
     m_Metadata:
       m_Items: []
   - m_Id: 78443456335873
-    m_Localized: 
+    m_Localized: Deep in a mine, people began hearing cries for help. The voice was
+      raspy and weak. The rescue must be fast."
     m_Metadata:
       m_Items: []
   - m_Id: 78443456335874
-    m_Localized: 
+    m_Localized: 'An out-of-control plane began descending rapidly toward the ground.
+      A kindhearted monster was spotted trying to stop it.
+
+
+      The phone rings
+      calling for backup, because one monster won''t be able to handle it alone.'
     m_Metadata:
       m_Items: []
   - m_Id: 85016077504512
-    m_Localized: 
+    m_Localized: 'Just outside Township, a hostile crowd driven by monsterphobia
+      has cornered a peaceful monster village, threatening to wipe it out.
+
+
+      You
+      must step in and stop them before it''s too late.'
     m_Metadata:
       m_Items: []
   references:

@@ -108,12 +108,14 @@ public class JournalUi : MonoBehaviour
 
         SpawnHeader();
         JournalRegister.JournalEntry featured = rewardsRegister.BigNews;
+        if (featured != null && !HasNewsContent(featured))
+            featured = null;
         JournalRegister.JournalEntry promoted = null;
         if (featured == null && bigNewsPrefab != null && rewardsRegister.SmallNews != null)
         {
             foreach (JournalRegister.JournalEntry entry in rewardsRegister.SmallNews)
             {
-                if (entry != null && entry.Quest != null &&
+                if (HasNewsContent(entry) &&
                     (promoted == null || entry.Importance > promoted.Importance))
                     promoted = entry;
             }
@@ -227,7 +229,7 @@ public class JournalUi : MonoBehaviour
         int column = 0;
         foreach (JournalRegister.JournalEntry entry in entries)
         {
-            if (entry == null || entry.Quest == null || entry == promoted)
+            if (entry == promoted || !HasNewsContent(entry))
                 continue;
             if (column == 0)
                 row = CreateNewsRow("NewsRow");
@@ -235,6 +237,23 @@ public class JournalUi : MonoBehaviour
             column = (column + 1) % 2;
         }
         return column == 1 ? row : null;
+    }
+
+    private static bool HasNewsContent(JournalRegister.JournalEntry entry)
+    {
+        if (entry == null || entry.Quest == null)
+            return false;
+
+        var title = entry.Quest.QuestTitle;
+        var description = entry.PlayerWon
+            ? entry.Quest.ResultDescriptionGood
+            : entry.Quest.ResultDescriptionBad;
+        if ((title != null && !title.IsEmpty) || (description != null && !description.IsEmpty))
+            return true;
+
+        Debug.LogWarning($"Quest '{entry.Quest.name}' has no title or result description configured; " +
+            "its empty newspaper article was skipped.", entry.Quest);
+        return false;
     }
 
     private Transform CreateNewsRow(string rowName)

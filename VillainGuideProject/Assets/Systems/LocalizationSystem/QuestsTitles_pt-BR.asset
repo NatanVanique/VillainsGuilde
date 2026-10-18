@@ -98,6 +98,26 @@ MonoBehaviour:
     m_Localized: vai um Ursinho ai?
     m_Metadata:
       m_Items: []
+  - m_Id: 608526755532814
+    m_Localized: "O mistério do porão"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532815
+    m_Localized: "O fantasma do teatro"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532816
+    m_Localized: "Socorro na mina"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532817
+    m_Localized: "Perigo no céu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532818
+    m_Localized: "A vila ameaçada"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

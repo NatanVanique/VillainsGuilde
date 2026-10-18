@@ -248,10 +248,25 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 34454256582665
+    m_Localized: "Alissa \xE9 retirada da sala sem alarde e levada para casa por
+      um \u2018consultor de bem-estar familiar\u2019. A diretora desiste de chamar
+      a pol\xEDcia, e a filha nunca descobre que a professora nova era a pr\xF3pria
+      m\xE3e."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82370509766656
     m_Localized: "A pol\xEDcia chega antes da ag\xEAncia e encontra Alissa dando
       aula sobre \u2018os perigos de confiar em adolescentes\u2019. Ela \xE9 levada
       embora gritando que a filha precisa de mais supervis\xE3o, enquanto a diretora
       encerra a aula e pede transfer\xEAncia.\u201D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82370560098304
+    m_Localized: Monstro recrutado com sucesso para o seu time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82370560098305
+    m_Localized: O monstro ficou horrorizado com a sua proposta e foi embora
     m_Metadata:
       m_Items: []
   references:
