@@ -407,13 +407,12 @@ public class JournalUi : MonoBehaviour
             SingleEntryPoint.Instance.ManagerManager.QuestSelector == null)
             return null;
 
-        foreach (QuestData quest in SingleEntryPoint.Instance.ManagerManager.QuestSelector.SelectedQuests)
-        {
-            if (quest != null && quest.Type == QuestType.Emergency)
-                return quest;
-        }
+        QuestSelector selector = SingleEntryPoint.Instance.ManagerManager.QuestSelector;
+        DaySystem daySystem = SingleEntryPoint.Instance.ManagerManager.DaySystem;
+        if (selector == null || daySystem == null)
+            return null;
 
-        return null;
+        return selector.GetEmergencyForDay(daySystem.CurrentDay + 1);
     }
 
     private IEnumerator RefreshScrollNextFrame()
@@ -431,6 +430,18 @@ public class JournalUi : MonoBehaviour
             UpdateColumnDivider();
         }
 
+        // LocalizedString callbacks and dynamically-sized articles can finish
+        // after the first rebuild. Wait one more frame before deciding whether
+        // the page actually has content below the viewport.
+        yield return null;
+        Canvas.ForceUpdateCanvases();
+        RefreshLayout();
+        if (content != null)
+        {
+            LayoutRebuilder.ForceRebuildLayoutImmediate(content);
+            UpdateColumnDivider();
+        }
+
         if (resetScrollOnRefresh && newsScroll != null)
         {
             newsScroll.StopMovement();
@@ -440,12 +451,18 @@ public class JournalUi : MonoBehaviour
 
         if (newsScroll != null)
         {
-            bool needsScroll = content != null && newsScroll.viewport != null &&
-                content.rect.height > newsScroll.viewport.rect.height;
+            float contentHeight = content != null
+                ? Mathf.Max(content.rect.height, LayoutUtility.GetPreferredHeight(content))
+                : 0f;
+            float viewportHeight = newsScroll.viewport != null
+                ? newsScroll.viewport.rect.height
+                : 0f;
+            bool needsScroll = contentHeight > viewportHeight + 1f;
             newsScroll.vertical = needsScroll;
             if (newsSlider != null)
             {
                 newsSlider.interactable = needsScroll;
+                newsSlider.gameObject.SetActive(needsScroll);
                 newsSlider.SetValueWithoutNotify(1f - newsScroll.verticalNormalizedPosition);
             }
         }

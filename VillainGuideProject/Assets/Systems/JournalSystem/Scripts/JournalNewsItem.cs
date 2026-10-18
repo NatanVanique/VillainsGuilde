@@ -310,6 +310,9 @@ public class JournalNewsItem : MonoBehaviour
             if (data == null)
                 continue;
 
+            if (data.JournalSprite != null)
+                return data.JournalSprite;
+
             Sprite preferred = preferSplashArt ? data.SplashArt : data.Icon;
             if (preferred != null)
                 return preferred;
