@@ -1562,11 +1562,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4141387548203109684, guid: 832538570a4b94f4f93aae150fc1616f, type: 3}
   m_PrefabInstance: {fileID: 1506105210402521099}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &1826131876 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6700270727762438109, guid: 1486a7ded66e9784295daf3d716a814b, type: 3}
-  m_PrefabInstance: {fileID: 749173700315990647}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1839059470 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4335872446442976948, guid: 2cee862d935d2f34c86731611e46b3d3, type: 3}
@@ -1583,81 +1578,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2723102b3a30f344905a0cdaaf09df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ManagerManager
---- !u!1 &1920191600
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1920191601}
-  - component: {fileID: 1920191603}
-  - component: {fileID: 1920191602}
-  m_Layer: 0
-  m_Name: Exclamation_Icon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1920191601
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1920191600}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1826131876}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -334, y: 398}
-  m_SizeDelta: {x: 665, y: 474}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1920191602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1920191600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -4937764422025422194, guid: 1dfa5d11205f39d44a0159b4ff0f6758, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1920191603
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1920191600}
-  m_CullTransparentMesh: 1
 --- !u!1 &1923620390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,10 +1718,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1364536130}
     m_Modifications:
-    - target: {fileID: 109247906244893780, guid: 1486a7ded66e9784295daf3d716a814b, type: 3}
-      propertyPath: exclamationIcon
-      value: 
-      objectReference: {fileID: 1920191600}
     - target: {fileID: 3669480895832743094, guid: 1486a7ded66e9784295daf3d716a814b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1882,61 +1798,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4226474666016946282, guid: 1486a7ded66e9784295daf3d716a814b, type: 3}
-      propertyPath: m_Transition
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4226474666016946282, guid: 1486a7ded66e9784295daf3d716a814b, type: 3}
-      propertyPath: m_SpriteState.m_PressedSprite
-      value: 
-      objectReference: {fileID: 31558750549100821, guid: f48cde6ff216a4a4ca9ddd2dc5a965b1, type: 3}
-    - target: {fileID: 4226474666016946282, guid: 1486a7ded66e9784295daf3d716a814b, type: 3}
-      propertyPath: m_SpriteState.m_SelectedSprite
-      value: 
-      objectReference: {fileID: 31558750549100821, guid: f48cde6ff216a4a4ca9ddd2dc5a965b1, type: 3}
-    - target: {fileID: 4226474666016946282, guid: 1486a7ded66e9784295daf3d716a814b, type: 3}
-      propertyPath: m_SpriteState.m_HighlightedSprite
-      value: 
-      objectReference: {fileID: -5842968740890599926, guid: 0bf616583c460ba4a8e45541cbedae8f, type: 3}
-    - target: {fileID: 4891299010607724670, guid: 1486a7ded66e9784295daf3d716a814b, type: 3}
-      propertyPath: m_Name
-      value: Exclamation_Icon
-      objectReference: {fileID: 0}
-    - target: {fileID: 4891299010607724670, guid: 1486a7ded66e9784295daf3d716a814b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191194871052781160, guid: 1486a7ded66e9784295daf3d716a814b, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 84380643561718621, guid: 56f6662075b109f45ad6be18cd9e2a5e, type: 3}
-    - target: {fileID: 6700270727762438109, guid: 1486a7ded66e9784295daf3d716a814b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 485
-      objectReference: {fileID: 0}
-    - target: {fileID: 6700270727762438109, guid: 1486a7ded66e9784295daf3d716a814b, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 312
-      objectReference: {fileID: 0}
-    - target: {fileID: 6700270727762438109, guid: 1486a7ded66e9784295daf3d716a814b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 707
-      objectReference: {fileID: 0}
-    - target: {fileID: 6700270727762438109, guid: 1486a7ded66e9784295daf3d716a814b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -346
-      objectReference: {fileID: 0}
     - target: {fileID: 7740501758268649465, guid: 1486a7ded66e9784295daf3d716a814b, type: 3}
       propertyPath: m_Name
       value: Phone_Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 4891299010607724670, guid: 1486a7ded66e9784295daf3d716a814b, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 6700270727762438109, guid: 1486a7ded66e9784295daf3d716a814b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1920191601}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1486a7ded66e9784295daf3d716a814b, type: 3}
 --- !u!1 &800659401407321567

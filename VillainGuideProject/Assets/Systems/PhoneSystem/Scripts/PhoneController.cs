@@ -3,15 +3,20 @@ using System.Collections;
 using UnityEngine.UI;
 using DG.Tweening;
 
+[RequireComponent(typeof(Button), typeof(Image))]
 public class PhoneController : MonoBehaviour
 {
     public static PhoneController Instance { get; private set; }
 
     [Header("Components")]
     [SerializeField] private GameObject exclamationIcon;
+    [SerializeField] private Sprite idleSprite;
+    [SerializeField] private Sprite answeredSprite;
     private Button phoneButton;
+    private Image phoneImage;
     private float animationDuration = 0.5f;
-    private bool phoneAnswered = false;
+    private enum PhoneState { Idle, Ringing, Answered }
+    private PhoneState state;
 
     public void Awake()
     {
@@ -23,29 +28,28 @@ public class PhoneController : MonoBehaviour
         Instance = this;
 
         phoneButton = GetComponent<Button>();
-        exclamationIcon.SetActive(false);
+        phoneImage = GetComponent<Image>();
+        idleSprite = phoneImage.sprite;
+        phoneButton.onClick.AddListener(AnswerPhone);
+        ResetPhone();
     }
-    public void Start()
+    private IEnumerator Start()
     {
-        new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3f);
         PhoneRing();
     }
 
     private void AnswerPhone()
     {
-        if (phoneAnswered)
+        if (state != PhoneState.Ringing)
             return;
 
-        phoneAnswered = true;
-        phoneButton.onClick.RemoveListener(AnswerPhone);
-
-        exclamationIcon.transform
-            .DOScale(Vector3.zero, animationDuration)
-            .SetEase(Ease.InBack)
-            .OnComplete(() =>
-            {
-                exclamationIcon.SetActive(false);
-            });
+        state = PhoneState.Answered;
+        phoneButton.interactable = false;
+        phoneImage.overrideSprite = null;
+        phoneImage.sprite = answeredSprite;
+        exclamationIcon.transform.DOKill();
+        exclamationIcon.SetActive(false);
 
         SingleEntryPoint.Instance.UiManager.MissionsScreenController.ShowMissionsScreen();
         SingleEntryPoint.Instance.UiManager.MissionsScreenController.SetupQuests();
@@ -55,19 +59,24 @@ public class PhoneController : MonoBehaviour
     public void ResetPhone()
     {
         StopAllCoroutines();
-        phoneButton.onClick.RemoveListener(AnswerPhone);
-        phoneAnswered = false;
+        state = PhoneState.Idle;
+        phoneButton.interactable = false;
+        phoneImage.overrideSprite = null;
+        phoneImage.sprite = idleSprite;
         exclamationIcon.transform.DOKill();
         exclamationIcon.SetActive(false);
     }
 
     public void PhoneRing()
     {
-        if (phoneAnswered)
+        if (state != PhoneState.Idle)
             return;
 
-        phoneButton.onClick.AddListener(AnswerPhone);
+        StopAllCoroutines();
+        state = PhoneState.Ringing;
+        phoneButton.interactable = true;
 
+        exclamationIcon.transform.DOKill();
         exclamationIcon.transform.localScale = Vector3.zero;
         exclamationIcon.SetActive(true);
 
