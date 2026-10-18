@@ -8,6 +8,10 @@ public static class FmodEvents
     /// </summary>
     public const string ButtonEnter = "ButtonEnter";
     /// <summary>
+    /// Id de evento FMODB8: DuckClick_Sound
+    /// </summary>
+    public const string DuckClickSound = "DuckClick_Sound";
+    /// <summary>
     /// Id de evento FMODB8: SplashMusic
     /// </summary>
     public const string SplashMusic = "SplashMusic";

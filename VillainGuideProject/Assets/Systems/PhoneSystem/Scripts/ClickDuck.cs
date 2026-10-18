@@ -15,10 +15,9 @@ public class DuckClick : MonoBehaviour
 
     private Vector3 originalScale;
 
-    private void Awake()
+    private void Start()
     {
         originalScale = DuckObject.transform.localScale;
-
         duckButton = DuckObject.GetComponent<Button>();
         duckButton.onClick.AddListener(PlayDuckFeedback);
     }

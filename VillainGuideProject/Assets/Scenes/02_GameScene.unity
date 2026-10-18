@@ -579,6 +579,54 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1302692587}
     m_Modifications:
+    - target: {fileID: 1592984546313641907, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592984546313641907, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592984546313641907, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592984546313641907, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592984546313641907, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592984546313641907, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501322766712615380, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501322766712615380, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501322766712615380, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501322766712615380, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501322766712615380, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501322766712615380, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5989478386766899612, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -662,6 +710,30 @@ PrefabInstance:
     - target: {fileID: 7880813536322335428, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
       propertyPath: m_Name
       value: HealthOnScreenUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080511915476746443, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080511915476746443, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080511915476746443, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080511915476746443, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080511915476746443, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080511915476746443, guid: 9e253676335a48740a0357cea0b09e61, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1250,7 +1322,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a10d820359f5f64c8201184e06463d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: BISC8.FMODB8.Runtime::FmodButton
-  actions: []
+  actions:
+  - moment: 3
+    command: 0
+    playbackScope: 0
+    soundId: DuckClick_Sound
+    fade: 0
+    floatValue: 1
+    floatValue2: 1
+    parameter: 
+    label: 
+    cascade: []
 --- !u!114 &1923620396
 MonoBehaviour:
   m_ObjectHideFlags: 0
