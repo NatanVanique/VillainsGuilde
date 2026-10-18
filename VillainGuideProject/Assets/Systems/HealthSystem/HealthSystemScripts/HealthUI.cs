@@ -19,6 +19,16 @@ public class HealthUI : MonoBehaviour
     }
     public void Setup() {
         SubscribeToEvents();
+        HealthManager health = SingleEntryPoint.Instance.ManagerManager.HealthMan;
+        if (health != null) HandleHealthChanged(health.CurrentHealth);
+    }
+
+    private void OnEnable() {
+        Setup();
+    }
+
+    private void OnDisable() {
+        UnSubscribeToEvents();
     }
 
     #endregion
@@ -26,11 +36,15 @@ public class HealthUI : MonoBehaviour
     #region HandleEvents
 
     void SubscribeToEvents() {
+        HealthManager.OnHealthChanged -= HandleHealthChanged;
         HealthManager.OnHealthChanged += HandleHealthChanged;
     }
 
-    private void HandleHealthChanged(int obj) {
-        dictionaryOfHealthIcons[obj].sprite = damagedHealthSprite;
+    private void HandleHealthChanged(int currentHealth) {
+        foreach (var icon in dictionaryOfHealthIcons) {
+            if (icon.Value != null)
+                icon.Value.sprite = icon.Key < currentHealth ? regularHealthSprite : damagedHealthSprite;
+        }
     }
 
     #endregion

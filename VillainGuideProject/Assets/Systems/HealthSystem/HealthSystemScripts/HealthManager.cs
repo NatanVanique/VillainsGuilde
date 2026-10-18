@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using System;
 using UnityEngine;
 
@@ -7,8 +6,11 @@ public class HealthManager : MonoBehaviour
 
     #region Variables
 
-    [SerializeField] int maxHealth;
+    [SerializeField, Min(1)] int maxHealth = 3;
     int _currentHealth;
+    bool initialized;
+    public int CurrentHealth => _currentHealth;
+    public int MaxHealth => maxHealth;
 
     public static event Action OnHealthZero;
     public static event Action<int> OnHealthChanged;
@@ -18,6 +20,8 @@ public class HealthManager : MonoBehaviour
     #region Setup
 
     public void Setup() {
+        if (initialized) return;
+        initialized = true;
         SetMaxHealth();
         SubscribeToEvents();
     }
@@ -27,6 +31,7 @@ public class HealthManager : MonoBehaviour
     #region Handle Events
 
     void SubscribeToEvents() {
+        QuestValidator.OnQuestWithResultFailed -= HandleQuestsFailed;
         QuestValidator.OnQuestWithResultFailed += HandleQuestsFailed;
     }
 
@@ -39,14 +44,15 @@ public class HealthManager : MonoBehaviour
     #region Handle Variables
 
     public void SetMaxHealth() {
-        _currentHealth = maxHealth;
+        _currentHealth = Mathf.Max(1, maxHealth);
+        OnHealthChanged?.Invoke(_currentHealth);
     }
 
     void LooseHealth(int amountToLoose) {
+        if (_currentHealth <= 0 || amountToLoose <= 0) return;
         _currentHealth = Mathf.Max(0, _currentHealth - amountToLoose);
-
+        OnHealthChanged?.Invoke(_currentHealth);
         if (_currentHealth <= 0) OnHealthZero?.Invoke();
-        else OnHealthChanged?.Invoke(_currentHealth);
     }
 
     #endregion
@@ -58,7 +64,7 @@ public class HealthManager : MonoBehaviour
     }
 
     void UnsubscribeToEvents() {
-
+        QuestValidator.OnQuestWithResultFailed -= HandleQuestsFailed;
     }
 
     #endregion
