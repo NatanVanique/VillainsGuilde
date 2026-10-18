@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36254ada68b428d429f1011fe9509544, type: 3}
-  m_Name: Rescue_Mumia
+  m_Name: Rescue04
   m_EditorClassIdentifier: Assembly-CSharp::QuestData
   Type: 3
   QuestTitle:
@@ -54,7 +54,7 @@ MonoBehaviour:
       m_TableReference:
         m_TableCollectionName: GUID:b289f1bcb21dc364b906708c460e5f24
       m_TableEntryReference:
-        m_KeyId: 78443456335872
+        m_KeyId: 78443456335874
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0

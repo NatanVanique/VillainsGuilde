@@ -16,6 +16,11 @@ public class QuestCard : MonoBehaviour {
     [SerializeField, SerializedDictionary("amount", "container")] SerializedDictionary<int, GameObject> dictionaryOfAmountOfCharacters;
     [SerializeField, SerializedDictionary("type", "icons")] SerializedDictionary<QuestRewardType, GameObject> dictionaryOfRewardIcons;
 
+    [Header("Background")]
+    [SerializeField] Image background;
+    [SerializeField] Sprite classicBackground;
+    [SerializeField] Sprite emergencyBackground;
+
 
     [Header("Test")]
     [SerializeField] QuestData dataTest;
@@ -42,6 +47,7 @@ public class QuestCard : MonoBehaviour {
     #region Visuals
 
     void SetVisuals() {
+        background.sprite = _data.Type == QuestType.Emergency ? emergencyBackground : classicBackground;
         questType.text = _data.Type == QuestType.Mysterius ? "Mystery" : _data.Type.ToString();
         ChangeTitle();
         ChangeCharactersAmountIcons();

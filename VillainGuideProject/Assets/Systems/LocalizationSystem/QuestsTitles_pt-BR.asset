@@ -46,6 +46,58 @@ MonoBehaviour:
     m_Localized: "A Multid\xE3o pede p\xE3o"
     m_Metadata:
       m_Items: []
+  - m_Id: 593770644606978
+    m_Localized: "Caos Clim\xE1tico"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532800
+    m_Localized: Deu a louca na macacada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532801
+    m_Localized: "O roubo dos p\xE3es"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532802
+    m_Localized: "Dan\xE7ando no desaparecimento"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532803
+    m_Localized: Picles?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532804
+    m_Localized: 'Sabores da adolescencia '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532805
+    m_Localized: De volta aos 17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532807
+    m_Localized: Unha destrutiva
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532808
+    m_Localized: 'Uma aventura nada convencional '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532809
+    m_Localized: 'Gravata indestrutivel '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532810
+    m_Localized: Coroa maldita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532811
+    m_Localized: Papagaio fofoqueiro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532812
+    m_Localized: vai um Ursinho ai?
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

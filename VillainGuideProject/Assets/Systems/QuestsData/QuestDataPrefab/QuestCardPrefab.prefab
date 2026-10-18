@@ -1139,6 +1139,9 @@ MonoBehaviour:
   title: {fileID: 480817554755699131}
   tipText: {fileID: 2070634741140821915}
   questType: {fileID: 2423423270086888261}
+  background: {fileID: 2821671866286642813}
+  classicBackground: {fileID: -7786686659616316963, guid: 79369b742ba4b454f9f02052ece94a05, type: 3}
+  emergencyBackground: {fileID: 8264868046747433796, guid: 7042ab7487a4be1489f35fdcfbcb770b, type: 3}
   dictionaryOfAmountOfCharacters:
     _serializedList:
     - Key: 1
