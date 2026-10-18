@@ -1,8 +1,10 @@
 using UnityEngine;
 using DG.Tweening;
+using System.Collections.Generic;
 
 public class JournalManager : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private GameObject journalPrefab;
 
     [Header("Animation")]
@@ -17,7 +19,7 @@ public class JournalManager : MonoBehaviour
     private RectTransform popup;
     private Vector2 openPosition;
     private Vector2 hiddenPosition;
-    private readonly System.Collections.Generic.List<CanvasGroup> fadeGroups = new();
+    private readonly List<CanvasGroup> fadeGroups = new();
 
     public void Setup()
     {
@@ -28,19 +30,23 @@ public class JournalManager : MonoBehaviour
             canvasGroup = journalInstance.gameObject.AddComponent<CanvasGroup>();
         journalInstance.transform.localScale = Vector3.one;
         popup = (RectTransform)journalInstance.AnimationTarget;
+
+        //Fade 
         foreach (RectTransform target in journalInstance.FadeTargets)
         {
             CanvasGroup group = target.GetComponent<CanvasGroup>();
             if (group == null) group = target.gameObject.AddComponent<CanvasGroup>();
             fadeGroups.Add(group);
         }
+
+        // Close Journal Anim
         openPosition = popup.anchoredPosition;
         openScale = popup.localScale;
         if (openScale.sqrMagnitude < 0.001f)
             openScale = Vector3.one;
+
         journalInstance.CloseButton.onClick.AddListener(CloseJournal);
-        if (journalUi != null)
-            journalUi.DoneRequested += DeactiveJournal;
+        journalUi.DoneRequested += DeactiveJournal;
         journalInstance.gameObject.SetActive(false);
     }
 
@@ -54,14 +60,16 @@ public class JournalManager : MonoBehaviour
         canvasGroup.blocksRaycasts = true;
         canvasGroup.interactable = true;
         journalInstance.gameObject.SetActive(true);
-        if (journalUi != null)
-            journalUi.Setup();
+        journalUi.Setup();
+
+        // Anim
         Canvas.ForceUpdateCanvases();
         float height = ((RectTransform)journalInstance.transform).rect.height
             * journalInstance.transform.lossyScale.y / popup.parent.lossyScale.y;
         hiddenPosition = openPosition + Vector2.down * (height + popup.rect.height * popup.localScale.y);
         popup.anchoredPosition = hiddenPosition;
         popup.DOAnchorPos(openPosition, animationDuration).SetEase(Ease.OutCubic).SetUpdate(true);
+
         foreach (CanvasGroup group in fadeGroups)
         {
             group.DOKill();
@@ -74,10 +82,7 @@ public class JournalManager : MonoBehaviour
     {
         if (closing || !journalInstance.gameObject.activeSelf)
             return;
-        if (journalUi != null)
-            journalUi.FinishJournal();
-        else
-            DeactiveJournal();
+        journalUi.FinishJournal();
     }
 
     public void DeactiveJournal()
@@ -90,20 +95,38 @@ public class JournalManager : MonoBehaviour
         canvasGroup.DOKill();
         canvasGroup.blocksRaycasts = true;
         canvasGroup.interactable = false;
+
+        // Close Anim
         foreach (CanvasGroup group in fadeGroups)
         {
             group.DOKill();
             group.DOFade(0f, animationDuration).SetEase(Ease.InCubic).SetUpdate(true);
         }
+
         popup.DOAnchorPos(hiddenPosition, animationDuration)
             .SetEase(Ease.InCubic)
             .SetUpdate(true)
-            .OnComplete(HideAfterTransition);
+            .OnComplete(FinishClosingJournal);
+    }
+
+    private void FinishClosingJournal()
+    {
+        HideAfterTransition();
+        HealthManager health = SingleEntryPoint.Instance.ManagerManager.HealthMan;
+        if (health == null || health.PendingHealthLoss <= 0)
+            return;
+
+        LoseHealthUI lossScreen = FindFirstObjectByType<LoseHealthUI>(FindObjectsInactive.Include);
+        if (lossScreen == null)
+            return;
+
+        int lostHealth = health.ConsumePendingHealthLoss();
+        lossScreen.Show(health.CurrentHealth + lostHealth, health.CurrentHealth, null);
     }
 
     public void HideAfterTransition()
     {
-        if (journalInstance != null) journalInstance.gameObject.SetActive(false);
+        journalInstance.gameObject.SetActive(false);
     }
 
     private void OnDestroy()

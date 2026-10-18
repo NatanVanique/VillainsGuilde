@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.00033569336, y: -47}
-  m_SizeDelta: {x: 1820.0007, y: 460}
+  m_AnchoredPosition: {x: 0, y: -47}
+  m_SizeDelta: {x: 0, y: 460}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3038687289508814183
 CanvasRenderer:
@@ -160,6 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3483032327607102781}
   - component: {fileID: 2246324754239356423}
+  - component: {fileID: 8120000000000000001}
   m_Layer: 0
   m_Name: LoseHealthUI
   m_TagString: Untagged
@@ -185,10 +186,10 @@ RectTransform:
   - {fileID: 1414622704736866885}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2246324754239356423
 CanvasRenderer:
@@ -625,3 +626,29 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8120000000000000001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023620333843405374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa2367634574bc78a11e905ab7839ef, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::LoseHealthUI
+  bar: {fileID: 5997354424945902147}
+  message: {fileID: 2404369925802052500}
+  healthContainer: {fileID: 1414622704736866885}
+  healthIcons:
+  - {fileID: 7295805030110359137}
+  - {fileID: 1132240382300507544}
+  - {fileID: 7956549328269753939}
+  regularHealthSprite: {fileID: 21300000, guid: 804f9ac0477828c45a0bef6586246c68, type: 3}
+  lostHealthSprite: {fileID: 21300000, guid: 4528543b2ed26b745a6bd550b3f6f4cc, type: 3}
+  barDuration: 0.5
+  popupDuration: 0.25
+  healthDuration: 0.35
+  holdDuration: 1
+  sortingOrder: 11
