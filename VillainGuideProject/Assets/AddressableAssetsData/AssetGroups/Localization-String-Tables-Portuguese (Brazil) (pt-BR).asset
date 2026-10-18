@@ -22,6 +22,18 @@ MonoBehaviour:
     - Locale-pt-BR
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8f2e076c532b99c45beef79262051983
+    m_Address: QuestDescribe_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c8af380186189fb4591f285162cbdcc6
+    m_Address: QuestResults_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d98b6ff1d88388740af1b43e65aebe91
     m_Address: MonsterTips_pt-BR
     m_ReadOnly: 1

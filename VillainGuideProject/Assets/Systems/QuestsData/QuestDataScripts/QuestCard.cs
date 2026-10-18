@@ -48,8 +48,9 @@ public class QuestCard : MonoBehaviour {
     }
 
     void ChangeCharactersAmountIcons() {
+        int amount = Mathf.Clamp(_data.AmountOfMaxCharacters, 1, 3);
         foreach (var pair in dictionaryOfAmountOfCharacters) {
-            if (pair.Key == _data.AmountOfMaxCharacters) pair.Value.SetActive(true);
+            if (pair.Key == amount) pair.Value.SetActive(true);
             else pair.Value.SetActive(false);
         }
     }

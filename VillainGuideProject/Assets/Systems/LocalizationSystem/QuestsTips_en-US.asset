@@ -19,15 +19,109 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 7593349120
-    m_Localized: Tip One
+    m_Localized: 'Mission 1: The master suite is dark because the light bulb in the
+      bedside lamp burned out and hasn''t been replaced.'
     m_Metadata:
       m_Items: []
   - m_Id: 18431430656
-    m_Localized: Tip Two
+    m_Localized: "There are scratches on the ceiling near the fan. Pen\xE9lope swears
+      she heard a meow coming from up there."
     m_Metadata:
       m_Items: []
   - m_Id: 21510049792
-    m_Localized: Tip Three
+    m_Localized: Frederick only responds when people address him as if he were a
+      monarch. The employees are afraid to approach him.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248349278208
+    m_Localized: The patients have unstable blood and their serum must be extracted
+      carefully.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415552
+    m_Localized: 'The antidote can only be applied before dawn '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415553
+    m_Localized: The victims are scared, but still conscious. They need to trust
+      anyone who approaches them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415554
+    m_Localized: The Mayor is throwing tables and knocking over speakers.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415555
+    m_Localized: The local press is filming everything for a story on the city's
+      nightlife.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415556
+    m_Localized: There are decorative ribbons, safety ropes, and event banners scattered
+      across the hall.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415557
+    m_Localized: The Mayor believes he's in a romantic heist movie.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415558
+    m_Localized: "A atendente est\xE1 apavorada, mas o prefeito s\xF3 obedece quando
+      algu\xE9m fala com autoridade e emo\xE7\xE3o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415559
+    m_Localized: "O prefeito est\xE1 fraco, tonto e prestes a desmaiar entre as maletas
+      de dinheiro."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415560
+    m_Localized: "O delegado est\xE1 no \xFAltimo andar, atr\xE1s de uma porta blindada."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415561
+    m_Localized: "Ele s\xF3 abre a porta para quem souber conversar com autoridade."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415562
+    m_Localized: "A imprensa est\xE1 filmando tudo no sagu\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415563
+    m_Localized: "O erro est\xE1 nos servidores e nos fones de tradu\xE7\xE3o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415564
+    m_Localized: "A sala t\xE9cnica est\xE1 \xE0s escuras ap\xF3s um curto-circuito."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415565
+    m_Localized: "\xC9 preciso acalmar os delegados antes que eles saiam do sal\xE3o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415566
+    m_Localized: "O sol j\xE1 se p\xF4s e a pra\xE7a est\xE1 ficando escura."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415567
+    m_Localized: "As pessoas come\xE7am a ouvir sussurros vindos dos alto-falantes
+      quebrados."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415568
+    m_Localized: "\xC9 preciso acalmar a multid\xE3o sem gritar nem usar for\xE7a."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415569
+    m_Localized: "As chamas est\xE3o se espalhando pelo teto e pelas cortinas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415570
+    m_Localized: "As portas de emerg\xEAncia est\xE3o emperradas pelo calor."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415571
+    m_Localized: "H\xE1 delegados desmaiados e pessoas com dificuldade para respirar."
     m_Metadata:
       m_Items: []
   references:

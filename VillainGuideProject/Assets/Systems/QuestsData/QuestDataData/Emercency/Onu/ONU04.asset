@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36254ada68b428d429f1011fe9509544, type: 3}
-  m_Name: EmergencyOne
+  m_Name: ONU04
   m_EditorClassIdentifier: Assembly-CSharp::QuestData
   Type: 0
   QuestTitle:
@@ -22,27 +22,45 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  ResultDescriptionGood:
+    m_TableReference:
+      m_TableCollectionName: GUID:08edffda23451f8419f80d25bb3887ad
+    m_TableEntryReference:
+      m_KeyId: 22283911178
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  ResultDescriptionBad:
+    m_TableReference:
+      m_TableCollectionName: GUID:08edffda23451f8419f80d25bb3887ad
+    m_TableEntryReference:
+      m_KeyId: 22283911179
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   TipData:
     TipText:
       m_TableReference:
-        m_TableCollectionName: GUID:a9d541e9444e580478269ea8347ec80b
+        m_TableCollectionName: 
       m_TableEntryReference:
-        m_KeyId: 18431430656
+        m_KeyId: 0
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    Type: 000000000100000002000000
-  AmountOfMaxCharacters: 2
-  HasMoney: 0
-  MoneyReward: 10
-  HasXP: 0
-  XPReward: 0
+    Type: 
+  AmountOfMaxCharacters: 0
+  HasMoney: 1
+  MoneyReward: 30
+  HasXP: 1
+  XPReward: 30
   HasCharacters: 0
   ListOfCharacters: 
   BasePercentChanceOfWinning: 0
-  HasConsequence: 0
-  AmountOfConsequenceEvents: 0
+  HasConsequence: 1
+  AmountOfConsequenceEvents: 3
   references:
     version: 2
     RefIds: []

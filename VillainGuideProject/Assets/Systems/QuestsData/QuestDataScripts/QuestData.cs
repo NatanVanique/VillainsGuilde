@@ -11,6 +11,12 @@ public class QuestData : ScriptableObject {
     [Header("Quest")]
     public QuestType Type;
     public LocalizedString QuestTitle;
+    [Header("Emergency warning")]
+    public LocalizedString EmergencyRequirements;
+
+    [Header("Journal Results")]
+    public LocalizedString ResultDescriptionGood;
+    public LocalizedString ResultDescriptionBad;
 
     [Space(10)]
 

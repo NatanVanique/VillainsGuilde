@@ -10,14 +10,20 @@ public class JournalManager : MonoBehaviour
 
     [Header("Ui Components")]
     private JournalView journalInstance;
+    private JournalUi journalUi;
     private Vector3 openScale;
     private bool closing;
 
     public void Setup()
     {
         journalInstance = Instantiate(journalPrefab, transform).GetComponent<JournalView>();
+        journalUi = journalInstance.GetComponentInChildren<JournalUi>(true);
         openScale = journalInstance.AnimationTarget.localScale;
+        if (openScale.sqrMagnitude < 0.001f)
+            openScale = Vector3.one;
         journalInstance.CloseButton.onClick.AddListener(DeactiveJournal);
+        if (journalUi != null)
+            journalUi.DoneRequested += DeactiveJournal;
         journalInstance.gameObject.SetActive(false);
     }
 
@@ -27,6 +33,8 @@ public class JournalManager : MonoBehaviour
         journalInstance.AnimationTarget.DOKill();
         journalInstance.AnimationTarget.localScale = Vector3.zero;
         journalInstance.gameObject.SetActive(true);
+        if (journalUi != null)
+            journalUi.Setup();
         journalInstance.AnimationTarget.DOScale(openScale, animationDuration).SetEase(Ease.OutCubic);
     }
 
@@ -52,6 +60,8 @@ public class JournalManager : MonoBehaviour
         {
             journalInstance.AnimationTarget.DOKill();
             journalInstance.CloseButton.onClick.RemoveListener(DeactiveJournal);
+            if (journalUi != null)
+                journalUi.DoneRequested -= DeactiveJournal;
         }
     }
 }

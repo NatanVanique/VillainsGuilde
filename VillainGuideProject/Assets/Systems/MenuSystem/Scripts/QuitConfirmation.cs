@@ -76,6 +76,8 @@ public class QuitConfirmation : MonoBehaviour
         image.color = cancel ? Color.red : Color.black;
         TMP_Text label = buttonObject.GetComponentInChildren<TMP_Text>();
         label.text = cancel ? "Cancel" : confirmLabel;
+        UiLocalizedText.Bind(label, cancel ? "Confirmation_Cancel" :
+            confirmLabel == "Menu" ? "Confirmation_Menu" : "Menu_Quit");
         label.color = Color.white;
         label.enableAutoSizing = true;
 

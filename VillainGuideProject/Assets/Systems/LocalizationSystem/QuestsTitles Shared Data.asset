@@ -16,7 +16,19 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 836df008699bda44d972b23c0fd6b731
   m_Entries:
   - m_Id: 5852712960
-    m_Key: QuestOneTitle
+    m_Key: Title_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 517548579323904
+    m_Key: Title_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 517548579323905
+    m_Key: Title_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 517548579323906
+    m_Key: Title_4
     m_Metadata:
       m_Items: []
   m_Metadata:

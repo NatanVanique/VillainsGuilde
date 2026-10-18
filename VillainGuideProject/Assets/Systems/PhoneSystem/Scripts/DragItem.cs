@@ -38,16 +38,19 @@ public class DragItem : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (_card != null)
-        {
-            _card.RemoveMonsterFromTheCard(monsterIconPrefab.Info);
-            _card = null;
-        }
+        QuestCardSelection previousCard = _card;
+        _card = null;
 
         dropped = false;
 
         transform.SetParent(canvas.transform);
         transform.SetAsLastSibling();
+
+        if (previousCard != null)
+        {
+            previousCard.RemoveMonsterFromTheCard(monsterIconPrefab.Info);
+            previousCard.CompactSlots();
+        }
 
         canvasGroup.blocksRaycasts = false;
     }
@@ -70,6 +73,7 @@ public class DragItem : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
     public void ReturnToOrigin()
     {
         dropped = false;
+        _card = null;
         canvasGroup.blocksRaycasts = true;
         transform.SetParent(startParent);
         transform.localPosition = startPosition;
@@ -83,6 +87,12 @@ public class DragItem : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
         _card = card;
         card.AddMonsterToTheCard(monsterIconPrefab.Info);
 
+        transform.SetParent(slot);
+        transform.localPosition = Vector3.zero;
+    }
+
+    internal void MoveToSlot(Transform slot)
+    {
         transform.SetParent(slot);
         transform.localPosition = Vector3.zero;
     }

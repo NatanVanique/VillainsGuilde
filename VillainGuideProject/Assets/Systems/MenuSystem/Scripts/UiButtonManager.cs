@@ -18,6 +18,43 @@ public abstract class UiButtonManager : MonoBehaviour
     protected virtual void Start()
     {
         arrow.SetActive(false);
+        LocalizeCanvas();
+    }
+
+    private void LocalizeCanvas()
+    {
+        Canvas canvas = GetComponentInParent<Canvas>();
+        if (canvas == null)
+            return;
+
+        foreach (TMP_Text label in canvas.GetComponentsInChildren<TMP_Text>(true))
+        {
+            string key = label.text.Trim() switch
+            {
+                "New Game" => "Menu_NewGame",
+                "Quit" => "Menu_Quit",
+                "Credits" => "Menu_Credits",
+                "Options" => "Options_Title",
+                "Return" => "Options_Return",
+                "Fullscreen" => "Options_Fullscreen",
+                "Effects" => "Options_Effects",
+                "Test SFX" => "Options_TestSfx",
+                "Video" => "Options_Video",
+                "Áudio" => "Options_Audio",
+                "Audio" => "Options_Audio",
+                "Main" => "Options_MainVolume",
+                "Main Menu" => "Options_MainMenu",
+                "Quit Game" => "Options_QuitGame",
+                "Music" => "Options_Music",
+                "Language" => "Options_Language",
+                "English" => "Language_English",
+                "Portugûes" => "Language_Portuguese",
+                "Português" => "Language_Portuguese",
+                _ => null
+            };
+            if (key != null)
+                UiLocalizedText.Bind(label, key);
+        }
     }
 
     public void ShowQuitConfirmation(GameObject button)
