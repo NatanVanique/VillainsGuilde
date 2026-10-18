@@ -34,6 +34,18 @@ MonoBehaviour:
     m_Localized: Heist of the Heart
     m_Metadata:
       m_Items: []
+  - m_Id: 593770594275328
+    m_Localized: The Presidential Suite Hostage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 593770644606976
+    m_Localized: The Demonic Translator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 593770644606977
+    m_Localized: The Crowd Cries Out for Bread
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

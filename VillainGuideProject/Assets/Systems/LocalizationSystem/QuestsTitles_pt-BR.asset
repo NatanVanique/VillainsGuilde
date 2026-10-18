@@ -34,6 +34,18 @@ MonoBehaviour:
     m_Localized: "Assalto ao Cora\xE7\xE3o "
     m_Metadata:
       m_Items: []
+  - m_Id: 593770594275328
+    m_Localized: "O Ref\xE9m do Andar Presidencial"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 593770644606976
+    m_Localized: "O tradutor demon\xEDaco "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 593770644606977
+    m_Localized: "A Multid\xE3o pede p\xE3o"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

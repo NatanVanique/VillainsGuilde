@@ -261,7 +261,6 @@ GameObject:
   - component: {fileID: 3875614884432256427}
   - component: {fileID: 52607309905568392}
   - component: {fileID: 2423423270086888261}
-  - component: {fileID: 480817554755699131}
   m_Layer: 5
   m_Name: TitleText
   m_TagString: Untagged
@@ -396,7 +395,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3014657698237163297}
+  m_GameObject: {fileID: 4242955273054464432}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
@@ -415,7 +414,7 @@ MonoBehaviour:
   m_UpdateString:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2423423270086888261}
+      - m_Target: {fileID: 8518915141596083941}
         m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
         m_MethodName: set_text
         m_Mode: 0
@@ -631,6 +630,7 @@ GameObject:
   - component: {fileID: 541106689030240847}
   - component: {fileID: 2017187701387870944}
   - component: {fileID: 8518915141596083941}
+  - component: {fileID: 480817554755699131}
   m_Layer: 5
   m_Name: TitleText
   m_TagString: Untagged
@@ -1035,7 +1035,7 @@ RectTransform:
   m_GameObject: {fileID: 6877599228330523490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.03, y: 1.03, z: 1.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 9214598288682587692}
@@ -1043,7 +1043,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 455, y: 704}
+  m_SizeDelta: {x: 503, y: 760}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &56261056531084659
 CanvasRenderer:
@@ -1073,7 +1073,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8264868046747433796, guid: 7042ab7487a4be1489f35fdcfbcb770b, type: 3}
+  m_Sprite: {fileID: -783892166794946243, guid: 0ba2ca4a3776ab3408c378bb70f26735, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1138,6 +1138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestCard
   title: {fileID: 480817554755699131}
   tipText: {fileID: 2070634741140821915}
+  questType: {fileID: 2423423270086888261}
   dictionaryOfAmountOfCharacters:
     _serializedList:
     - Key: 1
