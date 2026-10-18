@@ -19,6 +19,7 @@ public class JournalUi : MonoBehaviour
     [SerializeField] private RectTransform bigNewObject;
     [SerializeField] private TMP_Text bigNewTitle;
     [SerializeField] private TMP_Text bigNewDescription;
+    [SerializeField] private Image bigNewImage;
     [SerializeField] private GameObject smallNewsPrefab;
     [SerializeField] private GameObject emergencyWarningPrefab;
     [SerializeField] private float bigNewSpacing = 16f;
@@ -44,8 +45,8 @@ public class JournalUi : MonoBehaviour
     {
         ResolveSystems();
         ConfigureButtons();
-        BuildNewsPage();
         ShowNewsPage();
+        BuildNewsPage();
     }
 
     private void ResolveSystems()
@@ -110,15 +111,14 @@ public class JournalUi : MonoBehaviour
         if (bigNewObject != null)
             bigNewObject.gameObject.SetActive(hasBigNews);
 
-        if (!hasBigNews)
+        if (!hasBigNews || bigNewObject == null)
             return;
 
         ResolveBigNewsTextReferences();
 
-        if (bigNewTitle != null)
-            bigNewTitle.text = JournalNewsItem.GetLocalizedText(entry.Quest.QuestTitle);
-        if (bigNewDescription != null)
-            bigNewDescription.text = JournalNewsItem.GetResultDescription(entry);
+        JournalNewsItem item = GetOrAddNewsItem(bigNewObject.gameObject);
+        item.SetReferences(bigNewTitle, bigNewDescription, bigNewImage);
+        item.Setup(entry, true);
     }
 
     public void RefreshLayout()
@@ -176,6 +176,18 @@ public class JournalUi : MonoBehaviour
                 bigNewTitle = text;
             else if (bigNewDescription == null && text.name == "Description")
                 bigNewDescription = text;
+        }
+
+        if (bigNewImage == null)
+        {
+            foreach (Image image in bigNewObject.GetComponentsInChildren<Image>(true))
+            {
+                if (image.name == "Image")
+                {
+                    bigNewImage = image;
+                    break;
+                }
+            }
         }
     }
 

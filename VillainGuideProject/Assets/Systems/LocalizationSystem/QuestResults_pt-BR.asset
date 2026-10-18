@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: QuestResults_pt-BR
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: 08edffda23451f8419f80d25bb3887ad, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 22216802304
+    m_Localized: "Pr\xEDncipe Frederick \xE9 encontrado s\xE3o e salvo sobre o ventilador
+      da su\xEDte master. O prefeito abra\xE7a o felino em prantos, enquanto Pen\xE9lope
+      garante que \u2018n\xE3o houve invas\xE3o, apenas uma visita t\xE9cnica\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22275522560
+    m_Localized: "Ap\xF3s uma noite de buscas fracassadas, o prefeito aparece com
+      olheiras profundas, rasgando pap\xE9is no gabinete. Pen\xE9lope nega que o
+      gato tenha sido visto perto de documentos confidenciais."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22279716864
+    m_Localized: "Hospital amanhece em sil\xEAncio: pacientes s\xE3o encontrados
+      dormindo confortavelmente nas macas, enquanto um misterioso \u2018consultor
+      de bem-estar\u2019 \xE9 elogiado pela equipe m\xE9dica. O prefeito agradece
+      publicamente pela r\xE1pida resposta \xE0 \u2018leve indisposi\xE7\xE3o coletiva\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22279716865
+    m_Localized: "Caos no Hospital Santa Esperan\xE7a: manchas de sangue s\xE3o encontradas
+      pelos corredores, e testemunhas relatam criaturas estranhas fugindo pela madrugada.
+      A prefeitura nega qualquer rela\xE7\xE3o com a vacina\xE7\xE3o e anuncia uma
+      investiga\xE7\xE3o interna."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911168
+    m_Localized: "Boate Chique Balique encerra a noite sem incidentes. Frequentadores
+      relatam que um \u2018artista perform\xE1tico\u2019 envolveu um cliente exaltado
+      em faixas decorativas, transformando o momento em parte do espet\xE1culo. O
+      prefeito foi visto dormindo em um sof\xE1 VIP, cuidadosamente enfaixado como
+      uma m\xFAmia de festa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911169
+    m_Localized: "Noite termina em caos na Chique Balique: um homem n\xE3o identificado
+      dan\xE7ou sobre a bancada do bar, derrubou dezenas de garrafas e exigiu que
+      o DJ tocasse \u2018a m\xFAsica da minha ex\u2019. A prefeitura nega envolvimento
+      e afirma que o pol\xEDtico estava apenas \u2018em uma a\xE7\xE3o cultural n\xE3o
+      oficial\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911170
+    m_Localized: "Ag\xEAncia Banc\xE1ria Central registra apenas uma \u2018falha
+      t\xE9cnica\u2019 nesta manh\xE3. Testemunhas relatam que um homem gigantesco,
+      de um olho s\xF3, entrou no cofre, recolheu uma maleta e retirou um cliente
+      confuso antes da chegada da pol\xEDcia. O prefeito foi encontrado mais tarde
+      dormindo em casa, com um bilhete no bolso: \u2018O amor n\xE3o se paga em presta\xE7\xF5es\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911171
+    m_Localized: "Prefeito \xE9 detido ap\xF3s tentativa de assalto ao banco. Em
+      depoimento, afirmou que estava \u2018apenas conquistando uma atendente e organizando
+      seu futuro financeiro\u2019. A prefeitura informou que ele estava \u2018em
+      uma miss\xE3o social n\xE3o autorizada\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911172
+    m_Localized: "O delegado \xE9 conduzido ao palco minutos antes da apresenta\xE7\xE3o.
+      Ele agradece ao \u2018consultor de bem-estar pessoal\u2019 e promete reduzir
+      sua fala para apenas tr\xEAs horas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911173
+    m_Localized: "A seguran\xE7a arromba a porta, o delegado desmaia sobre os slides
+      e a imprensa descobre que a Liga Global pela Paz Humana esqueceu um convidado
+      no hotel por seis horas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911174
+    m_Localized: The translation is fixed just in time. The delegates applaud the
+      League's 'diplomatic courage,' completely unaware that they almost went to
+      war over a software update error.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911175
+    m_Localized: The World Peace Summit comes to an end after delegates storm out
+      of the hall shouting in seven different languages. The League reports that
+      'there was merely a difference of interpretation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911176
+    m_Localized: The crowd calms down after hearing soothing voices coming from the
+      broken speakers. The candles on the old stage light up on their own, and for
+      a few minutes, the square feels like a safe place. The League expresses its
+      gratitude to the 'collective wellness consultant.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911177
+    m_Localized: The crowd storms the League's headquarters, occupies the auditorium,
+      and demands bread. Security attempts to intervene, only to trigger the biggest
+      scandal of the World Peace Summit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911178
+    m_Localized: The fire in the Lecture Hall is controlled before spreading. Delegates
+      are safely evacuated, and the League announces that the eco-friendly kits will
+      be 'rethought with more love for the planet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911179
+    m_Localized: Fire spreads through the headquarters of the Global League for Human
+      Peace. Delegates are hastily evacuated, and the press asks how an eco-friendly
+      kit managed to cause more damage than a cold war.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -19,6 +19,8 @@ public class JournalManager : MonoBehaviour
         journalInstance = Instantiate(journalPrefab, transform).GetComponent<JournalView>();
         journalUi = journalInstance.GetComponentInChildren<JournalUi>(true);
         openScale = journalInstance.AnimationTarget.localScale;
+        if (openScale.sqrMagnitude < 0.001f)
+            openScale = Vector3.one;
         journalInstance.CloseButton.onClick.AddListener(DeactiveJournal);
         if (journalUi != null)
             journalUi.DoneRequested += DeactiveJournal;

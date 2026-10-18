@@ -10,14 +10,18 @@ public class JournalRegister : MonoBehaviour
         public QuestData Quest;
         public bool PlayerWon;
         public float SignedValue;
+        public List<MonsterInfo> Monsters;
 
         public float Importance => Mathf.Abs(SignedValue);
 
-        public JournalEntry(QuestData quest, bool playerWon, float signedValue)
+        public JournalEntry(QuestData quest, bool playerWon, float signedValue, List<MonsterInfo> monsters)
         {
             Quest = quest;
             PlayerWon = playerWon;
             SignedValue = signedValue;
+            Monsters = monsters != null
+                ? new List<MonsterInfo>(monsters)
+                : new List<MonsterInfo>();
         }
     }
 
@@ -26,7 +30,7 @@ public class JournalRegister : MonoBehaviour
     public List<JournalEntry> SmallNews = new List<JournalEntry>();
     public JournalEntry BigNews { get; private set; }
 
-    public void RegisterResult(bool playerWins, QuestData quest)
+    public void RegisterResult(bool playerWins, QuestData quest, List<MonsterInfo> monsters = null)
     {
         if (quest == null)
             return;
@@ -34,12 +38,20 @@ public class JournalRegister : MonoBehaviour
         (playerWins ? QuestsWinned : QuestsLosed).Add(quest);
 
         float signedValue = CalculateQuestValue(quest) * (playerWins ? 1f : -1f);
-        JournalEntry entry = new JournalEntry(quest, playerWins, signedValue);
+        JournalEntry entry = new JournalEntry(quest, playerWins, signedValue, monsters);
 
         if (quest.Type == QuestType.Emergency)
         {
-            if (BigNews == null || entry.Importance > BigNews.Importance)
+            if (BigNews == null)
                 BigNews = entry;
+            else if (entry.Importance > BigNews.Importance)
+            {
+                SmallNews.Add(BigNews);
+                BigNews = entry;
+            }
+            else
+                SmallNews.Add(entry);
+            SmallNews.Sort(CompareByImportance);
             return;
         }
 

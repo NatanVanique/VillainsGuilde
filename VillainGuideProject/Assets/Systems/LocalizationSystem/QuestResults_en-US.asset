@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: QuestResults_en-US
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 08edffda23451f8419f80d25bb3887ad, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 22216802304
+    m_Localized: ' Prince Frederick is found safe and sound atop the master suite''s
+      ceiling fan. The Mayor tearfully embraces the feline, while Penelope assures
+      everyone that ''there was no break-in, merely a technical inspection.'''
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22275522560
+    m_Localized: After a night of failed searches, the Mayor appears with dark circles
+      under his eyes, shredding papers in his office. Penelope denies that the cat
+      was ever seen near confidential documents."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22279716864
+    m_Localized: 'The hospital awakens in silence: patients are found sleeping comfortably
+      on gurneys, while a mysterious ''wellness consultant'' receives praise from
+      the medical staff. The Mayor publicly gives thanks for the swift response to
+      the ''mild collective indisposition.'''
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22279716865
+    m_Localized: 'Chaos at Holy Hope Hospital: bloodstains are found along the corridors,
+      and witnesses report strange creatures fleeing into the night. City Hall denies
+      any connection to the vaccination drive and announces an internal investigation.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911168
+    m_Localized: Nightclub Fancy Balency wraps up the night with zero incidents.
+      Partygoers report that a 'performance artist' wrapped an agitated customer
+      in decorative banners, turning the whole thing into part of the show. The Mayor
+      was spotted sleeping on a VIP couch, neatly bandaged like a party mummy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911169
+    m_Localized: 'The night ends in chaos at Fancy Balency : an unidentified man
+      danced on top of the bar counter, knocked over dozens of bottles, and demanded
+      the DJ play ''my ex''s song.'' City Hall denies any involvement, claiming the
+      politician was merely taking part in an ''unofficial cultural initiative.'''
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911170
+    m_Localized: 'Central Bank Branch registers only a ''technical glitch'' this
+      morning. Witnesses report that a gigantic, one-eyed man entered the vault,
+      retrieved a briefcase, and escorted out a confused customer before the police
+      arrived. The Mayor was later found sleeping at home, with a note in his pocket:
+      ''Love cannot be paid in installments.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911171
+    m_Localized: The Mayor was detained following an attempted bank robbery. In his
+      statement, he claimed he was 'merely winning over a teller and planning his
+      financial future.' City Hall reported that he was on an 'unauthorized social
+      mission.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911172
+    m_Localized: The delegate is escorted to the stage minutes before the presentation.
+      He thanks the 'personal wellness consultant' and promises to cut his speech
+      down to just three hours.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911173
+    m_Localized: Security kicks the door down, the delegate faints onto the slides,
+      and the press discovers that the Global League for Human Peace left a guest
+      forgotten in the hotel for six hours.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911174
+    m_Localized: "A tradu\xE7\xE3o \xE9 corrigida a tempo. Os delegados aplaudem
+      a \u2018coragem diplom\xE1tica\u2019 da Liga, sem saber que quase entraram
+      em guerra por causa de um erro de atualiza\xE7\xE3o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911175
+    m_Localized: "A C\xFApula Mundial da Paz \xE9 encerrada ap\xF3s delegados sa\xEDrem
+      do sal\xE3o gritando em sete idiomas diferentes. A Liga informa que \u2018houve
+      apenas uma diverg\xEAncia de interpreta\xE7\xE3o\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911176
+    m_Localized: "A multid\xE3o se acalma ap\xF3s ouvir vozes suaves vindas dos alto-falantes
+      quebrados. As velas do palco antigo se acendem sozinhas e, por alguns minutos,
+      a pra\xE7a parece um lugar seguro. A Liga agradece ao \u2018consultor de bem-estar
+      coletivo\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911177
+    m_Localized: "A multid\xE3o invade a sede da Liga, ocupa o plen\xE1rio e exige
+      p\xE3o. A seguran\xE7a tenta agir, mas acaba criando o maior esc\xE2ndalo da
+      C\xFApula Mundial da Paz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911178
+    m_Localized: "Inc\xEAndio na Sala de Palestras \xE9 controlado antes de se espalhar.
+      Delegados s\xE3o evacuados com seguran\xE7a e a Liga anuncia que os kits ecol\xF3gicos
+      ser\xE3o \u2018repensados com mais carinho pelo planeta\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911179
+    m_Localized: "Inc\xEAndio se espalha pela sede da Liga Global pela Paz Humana.
+      Delegados s\xE3o evacuados \xE0s pressas e a imprensa questiona como um kit
+      ecol\xF3gico conseguiu causar mais danos que uma guerra fria."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911181
+    m_Localized: "Ela viaja para outro pa\xEDs e manda jogar um missil  na loja "
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

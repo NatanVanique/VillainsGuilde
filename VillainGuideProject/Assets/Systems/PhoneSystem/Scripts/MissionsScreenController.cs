@@ -46,7 +46,10 @@ public class MissionsScreenController : MonoBehaviour
     private void AcceptButtonMethod()
     {
         Debug.Log("AcceptButton Clicked");
-        List<QuestCardSelection> selectedQuests = SingleEntryPoint.Instance.ManagerManager.QuestSelectionManager.SelectedCards;
+        List<QuestCardSelection> selectedQuests = new List<QuestCardSelection>(
+            SingleEntryPoint.Instance.ManagerManager.QuestSelectionManager.SelectedCards);
+        if (selectedQuests.Count == 0)
+            Debug.LogWarning("No missions were selected when the day was submitted.", this);
         OnQuestsAccepted?.Invoke(selectedQuests);
 
         HideMissionsScreen();

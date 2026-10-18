@@ -15,27 +15,27 @@ MonoBehaviour:
   Type: 0
   QuestTitle:
     m_TableReference:
-      m_TableCollectionName: GUID:b289f1bcb21dc364b906708c460e5f24
+      m_TableCollectionName: GUID:836df008699bda44d972b23c0fd6b731
     m_TableEntryReference:
-      m_KeyId: 2290890670082
+      m_KeyId: 517548579323905
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   ResultDescriptionGood:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:08edffda23451f8419f80d25bb3887ad
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 22283911168
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   ResultDescriptionBad:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:08edffda23451f8419f80d25bb3887ad
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 22283911169
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

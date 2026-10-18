@@ -15,6 +15,6 @@ public class DropSlot : MonoBehaviour, IDropHandler
     {
         QuestCardSelection card = GetComponentInParent<QuestCardSelection>();
         if (card != null)
-            card.TryDropItem(eventData);
+            card.TryDropItem(eventData, this);
     }
 }

@@ -22,6 +22,22 @@ MonoBehaviour:
     m_Localized: 'Desenvolvido por:'
     m_Metadata:
       m_Items: []
+  - {m_Id: 90000000001, m_Localized: Novo jogo, m_Metadata: {m_Items: []}}
+  - {m_Id: 90000000002, m_Localized: Sair, m_Metadata: {m_Items: []}}
+  - {m_Id: 90000000003, m_Localized: "Cr\xE9ditos", m_Metadata: {m_Items: []}}
+  - {m_Id: 90000000004, m_Localized: "Op\xE7\xF5es", m_Metadata: {m_Items: []}}
+  - {m_Id: 90000000005, m_Localized: Voltar, m_Metadata: {m_Items: []}}
+  - {m_Id: 90000000006, m_Localized: Tela cheia, m_Metadata: {m_Items: []}}
+  - {m_Id: 90000000007, m_Localized: Efeitos, m_Metadata: {m_Items: []}}
+  - {m_Id: 90000000008, m_Localized: Testar efeitos, m_Metadata: {m_Items: []}}
+  - {m_Id: 90000000009, m_Localized: "V\xEDdeo", m_Metadata: {m_Items: []}}
+  - {m_Id: 90000000010, m_Localized: "\xC1udio", m_Metadata: {m_Items: []}}
+  - {m_Id: 90000000011, m_Localized: Geral, m_Metadata: {m_Items: []}}
+  - {m_Id: 90000000012, m_Localized: Menu principal, m_Metadata: {m_Items: []}}
+  - {m_Id: 90000000013, m_Localized: Sair do jogo, m_Metadata: {m_Items: []}}
+  - {m_Id: 90000000014, m_Localized: "M\xFAsica", m_Metadata: {m_Items: []}}
+  - {m_Id: 90000000015, m_Localized: Cancelar, m_Metadata: {m_Items: []}}
+  - {m_Id: 90000000016, m_Localized: Menu, m_Metadata: {m_Items: []}}
   references:
     version: 2
     RefIds: []
