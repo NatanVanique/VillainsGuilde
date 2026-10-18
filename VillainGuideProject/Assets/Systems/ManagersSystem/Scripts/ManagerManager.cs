@@ -17,8 +17,10 @@ public class ManagerManager : MonoBehaviour {
     [HideInInspector] public MonstersManager MonsterMan;
 
     [Header("Journal")]
-    public JournalRegister JournalRegister;
     [SerializeField] GameObject JournalRegisterPrefab;
+    [SerializeField] QuestValidator QuestValPrefab;
+    [HideInInspector] public JournalRegister JournalRegister;
+    [HideInInspector] public QuestValidator QuestVal;
 
     public void Setup() {
         if (questMngPrefab != null) {
@@ -41,6 +43,10 @@ public class ManagerManager : MonoBehaviour {
         {
             JournalRegisterPrefab = Instantiate(JournalRegisterPrefab, transform);
             JournalRegister = JournalRegisterPrefab.GetComponent<JournalRegister>();
+        }
+        if (QuestValPrefab != null) {
+            QuestVal = Instantiate(QuestValPrefab, transform);
+            QuestVal.Setup();
         }
     }
 }

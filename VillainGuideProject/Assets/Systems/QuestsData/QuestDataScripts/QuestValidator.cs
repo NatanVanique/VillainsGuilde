@@ -26,35 +26,38 @@ public class QuestValidator : MonoBehaviour
         {
             QuestCard card = cardSelection.QuestCard;
             List<MonsterInfo> listOfMonsterInfo = card._listOfMonsters;
+            QuestData data = card.ReturnQuestData();
+            JournalRegister jr = SingleEntryPoint.Instance.ManagerManager.JournalRegister;
 
             bool result = ReturnIfCardSucceded(card, listOfMonsterInfo);
-            QuestData data = card.ReturnQuestData();
-            SingleEntryPoint.Instance.ManagerManager.JournalRegister.RegisterResult(result, data);
+            Debug.Log("Quest processed, result: " + result);
+            jr.RegisterResult(result, data);
         }
-
-
-
     }
 
     bool ReturnIfCardSucceded(QuestCard card, List<MonsterInfo> listOfMonsterInfo)
     {
         int amountOfTipsSucceded = 0;
 
-        foreach (var tip in card.ReturnListOfTips().SelectedTips.Values) // Para cada dica da carta
+        foreach (var tip in card.ReturnQuestData().TipData.Type) // Para cada dica da carta
         {
             if (ReturnIfAnyMonsterSucceded(listOfMonsterInfo, tip)) amountOfTipsSucceded++; // Verifica se algum monstro possui um match
         }
 
-        float percent = amountOfTipsSucceded / card.ReturnListOfTips().SelectedTips.Count * 100;
+        float percent = amountOfTipsSucceded / card.ReturnQuestData().TipData.Type.Count;
+        float basePercent = card.ReturnQuestData().BasePercentChanceOfWinning;
+        float restPercent = 100 - basePercent;
+
+        float realPercent = (percent * restPercent) + basePercent;
 
         int rng = Random.Range(0, 100);
 
-        if (rng <= percent) return true;
+        if (rng <= realPercent) return true;
 
         return false;
     }
 
-    bool ReturnIfAnyMonsterSucceded(List<MonsterInfo> listOfMonsterInfo, TipData tip)
+    bool ReturnIfAnyMonsterSucceded(List<MonsterInfo> listOfMonsterInfo, TipType tip)
     {
         foreach (var monsterInfo in listOfMonsterInfo) // Para cada monstro
         {
@@ -64,11 +67,11 @@ public class QuestValidator : MonoBehaviour
         return false;
     }
 
-    bool ReturnIfMonsterSucceded(MonsterInfo monster, TipData tip)
+    bool ReturnIfMonsterSucceded(MonsterInfo monster, TipType tip)
     {
         foreach (var monsterTip in monster.TipList.SelectedTips) // Para cada dica do monstro
         {
-            if (monsterTip.Value.Type == tip.Type) return true; // Verifica se deu match
+            if (monsterTip.Value.Type == tip) return true; // Verifica se deu match
         }
 
         return false;
