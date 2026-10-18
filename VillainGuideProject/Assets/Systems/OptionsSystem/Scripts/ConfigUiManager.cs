@@ -10,6 +10,7 @@ using UnityEngine.UI;
 
 public class ConfigUiManager : UiButtonManager
 {
+    private const string FullscreenPreferenceKey = "FullscreenEnabled";
     [SerializeField] private GameObject initialArrow;
     [SerializeField] private GameObject audioArrow;
     [SerializeField] private GameObject videoArrow;
@@ -62,7 +63,11 @@ public class ConfigUiManager : UiButtonManager
 
     private void OnEnable()
     {
-        fullscreenToggle.SetIsOnWithoutNotify(Screen.fullScreen);
+        bool fullscreen = PlayerPrefs.HasKey(FullscreenPreferenceKey)
+            ? PlayerPrefs.GetInt(FullscreenPreferenceKey) == 1
+            : true;
+        Screen.fullScreen = fullscreen;
+        fullscreenToggle.SetIsOnWithoutNotify(fullscreen);
     }
 
     protected override void Start()
@@ -377,6 +382,8 @@ public class ConfigUiManager : UiButtonManager
     public void SetFullscreen(bool enabled)
     {
         Screen.fullScreen = enabled;
+        PlayerPrefs.SetInt(FullscreenPreferenceKey, enabled ? 1 : 0);
+        PlayerPrefs.Save();
     }
 
     public void ShowMenuConfirmation(GameObject button)
