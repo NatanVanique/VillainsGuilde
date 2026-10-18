@@ -50,7 +50,7 @@ public class QuestSelector : MonoBehaviour {
         int totalAmountOfQuestsLefts = newDayQuestData.totalAmountOfQuests;
         int amountOfMysteriusLeft = newDayQuestData.totalAmountOfMysterious;
 
-        if (newDayQuestData.IsEmergency) { // VERIFICANDO SE É UMA EMERGÊNCIA
+        if (newDayQuestData.IsEmergency) { // VERIFICANDO SE Ã‰ UMA EMERGÃŠNCIA
             _selectedQuests.Add(newDayQuestData.DictionaryOfMandatoryQuests[_currentLine]);
             totalAmountOfQuestsLefts--;
         }
@@ -59,10 +59,10 @@ public class QuestSelector : MonoBehaviour {
 
             // PRECISA ENCONTRAR UM PERSONAGEM
             List<QuestData> listOsRescueQuests = newDayQuestData.DictionaryOfPossibleQuests[QuestType.Rescue];
-            AddRandomQuestFromList(listOsRescueQuests);
-
-            _hasFoundCharacter = false;
-            totalAmountOfQuestsLefts--;
+            if (AddRandomQuestFromList(listOsRescueQuests)) {
+                _hasFoundCharacter = false;
+                totalAmountOfQuestsLefts--;
+            }
         }
 
         for (int i = 0; i < totalAmountOfQuestsLefts; i++) {
@@ -72,9 +72,10 @@ public class QuestSelector : MonoBehaviour {
 
                 if (random == 0) { // Encontrou
                     List<QuestData> listOsRescueQuests = newDayQuestData.DictionaryOfPossibleQuests[QuestType.Rescue];
-                    AddRandomQuestFromList(listOsRescueQuests);
-                    _hasFoundCharacter = true;
-                    continue;
+                    if (AddRandomQuestFromList(listOsRescueQuests)) {
+                        _hasFoundCharacter = true;
+                        continue;
+                    }
                 }
             }
 
@@ -84,7 +85,7 @@ public class QuestSelector : MonoBehaviour {
                 listOfQuestsToChoose = newDayQuestData.DictionaryOfPossibleQuests[QuestType.Mysterius];
                 amountOfMysteriusLeft--;
             }
-            else { // Clássica
+            else { // ClÃ¡ssica
                 listOfQuestsToChoose = newDayQuestData.DictionaryOfPossibleQuests[QuestType.Classic];
             }
 
@@ -97,10 +98,18 @@ public class QuestSelector : MonoBehaviour {
 
     #region Sup
 
-    void AddRandomQuestFromList(List<QuestData> listOfDataToAdd) {
-        int randomQuestId = Random.Range(0, listOfDataToAdd.Count);
-        QuestData selectedQuest = listOfDataToAdd[randomQuestId];
-        _selectedQuests.Add(selectedQuest);
+    bool AddRandomQuestFromList(List<QuestData> listOfDataToAdd) {
+        List<QuestData> validQuests = new();
+        if (listOfDataToAdd != null) {
+            foreach (QuestData quest in listOfDataToAdd)
+                if (quest != null) validQuests.Add(quest);
+        }
+        if (validQuests.Count == 0) {
+            Debug.LogWarning("A quest list has no valid QuestData references; check the day configuration.", this);
+            return false;
+        }
+        _selectedQuests.Add(validQuests[Random.Range(0, validQuests.Count)]);
+        return true;
     }
 
     #endregion

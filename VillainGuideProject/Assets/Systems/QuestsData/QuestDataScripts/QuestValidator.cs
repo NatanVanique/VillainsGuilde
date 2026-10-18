@@ -40,6 +40,12 @@ public class QuestValidator : MonoBehaviour
         if (selectedQuests == null)
             return;
 
+        // Keep track of each offered occurrence, including repeated quest assets.
+        QuestSelector selector = SingleEntryPoint.Instance.ManagerManager.QuestSelector;
+        List<QuestData> notSelected = selector != null && selector.SelectedQuests != null
+            ? new List<QuestData>(selector.SelectedQuests)
+            : new List<QuestData>();
+
         foreach (var cardSelection in selectedQuests) // Para cada carta
         {
             if (cardSelection == null || cardSelection.QuestCard == null || cardSelection.QuestCard.ReturnQuestData() == null)
@@ -50,11 +56,21 @@ public class QuestValidator : MonoBehaviour
             QuestCard card = cardSelection.QuestCard;
             List<MonsterInfo> listOfMonsterInfo = card._listOfMonsters;
             QuestData data = card.ReturnQuestData();
+            notSelected.Remove(data);
 
             bool result = ReturnIfCardSucceded(card, listOfMonsterInfo);
 
             jr.RegisterResult(result, data, listOfMonsterInfo);
             CheckResult(result, data);
+        }
+
+        // Offered missions that were not selected still appear as failed news.
+        foreach (QuestData quest in notSelected)
+        {
+            if (quest == null)
+                continue;
+            jr.RegisterResult(false, quest);
+            CheckResult(false, quest);
         }
     }
 

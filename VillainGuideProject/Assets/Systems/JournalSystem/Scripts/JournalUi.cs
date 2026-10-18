@@ -13,16 +13,15 @@ public class JournalUi : MonoBehaviour
 
     [Header("News")]
     private JournalRegister rewardsRegister;
-    [SerializeField] private GridLayoutGroup newsGrid;
+    [SerializeField] private VerticalLayoutGroup newsGrid;
     [SerializeField] private ScrollRect newsScroll;
-    [SerializeField] private Scrollbar newsScrollbar;
-    [SerializeField] private RectTransform bigNewObject;
-    [SerializeField] private TMP_Text bigNewTitle;
-    [SerializeField] private TMP_Text bigNewDescription;
-    [SerializeField] private Image bigNewImage;
-    [SerializeField] private GameObject smallNewsPrefab;
+    [SerializeField] private Slider newsSlider;
+    [SerializeField] private GameObject headerPrefab;
+    [SerializeField] private GameObject bigNewsPrefab;
+    [SerializeField] private GameObject smallNewsPrefab1;
+    [SerializeField] private GameObject smallNewsPrefab2;
     [SerializeField] private GameObject emergencyWarningPrefab;
-    [SerializeField] private float bigNewSpacing = 16f;
+    [SerializeField, Min(0f)] private float rowSpacing = 6f;
     [SerializeField, TextArea] private string emergencyWarningText = "An emergency mission is expected tomorrow.";
 
     [Header("Navigation")]
@@ -38,6 +37,11 @@ public class JournalUi : MonoBehaviour
     private readonly List<JournalNewsItem> spawnedNews = new List<JournalNewsItem>();
     private JournalReward journalReward;
     private Coroutine resultAnimation;
+    private Coroutine layoutRefresh;
+    private bool resetScrollOnRefresh;
+    private readonly List<GameObject> spawnedRoots = new List<GameObject>();
+    private readonly List<RectTransform> newsRows = new List<RectTransform>();
+    private RectTransform columnDivider;
 
     public event Action DoneRequested;
 
@@ -72,6 +76,17 @@ public class JournalUi : MonoBehaviour
             doneButton.onClick.RemoveListener(FinishJournal);
             doneButton.onClick.AddListener(FinishJournal);
         }
+
+        if (newsSlider != null)
+        {
+            newsSlider.onValueChanged.RemoveListener(SetScrollPosition);
+            newsSlider.onValueChanged.AddListener(SetScrollPosition);
+        }
+        if (newsScroll != null)
+        {
+            newsScroll.onValueChanged.RemoveListener(SyncSliderPosition);
+            newsScroll.onValueChanged.AddListener(SyncSliderPosition);
+        }
     }
 
     public void BuildNewsPage()
@@ -84,41 +99,98 @@ public class JournalUi : MonoBehaviour
         if (rewardsRegister == null)
             return;
 
-        SetupBigNews(rewardsRegister.BigNews);
-
         if (newsGrid == null)
             return;
+        newsGrid.gameObject.SetActive(true);
+        if (newsScroll != null && newsScroll.viewport != null &&
+            newsScroll.viewport.GetComponent<RectMask2D>() == null)
+            newsScroll.viewport.gameObject.AddComponent<RectMask2D>();
 
-        foreach (JournalRegister.JournalEntry entry in rewardsRegister.SmallNews)
-            SpawnNews(smallNewsPrefab, entry);
+        SpawnHeader();
+        JournalRegister.JournalEntry featured = rewardsRegister.BigNews;
+        JournalRegister.JournalEntry promoted = null;
+        if (featured == null && bigNewsPrefab != null && rewardsRegister.SmallNews != null)
+        {
+            foreach (JournalRegister.JournalEntry entry in rewardsRegister.SmallNews)
+            {
+                if (entry != null && entry.Quest != null &&
+                    (promoted == null || entry.Importance > promoted.Importance))
+                    promoted = entry;
+            }
+            featured = promoted;
+        }
+        if (featured != null)
+            SpawnFullWidthNews(bigNewsPrefab, featured, true);
+
+        Transform incompleteRow = SpawnMissionRows(rewardsRegister.SmallNews, promoted);
 
         QuestData upcomingEmergency = GetUpcomingEmergency();
         if (upcomingEmergency != null && emergencyWarningPrefab != null)
         {
-            GameObject warningObject = Instantiate(emergencyWarningPrefab, newsGrid.transform);
+            Transform warningRow = incompleteRow != null ? incompleteRow : CreateNewsRow("EventRow");
+            GameObject warningObject = Instantiate(emergencyWarningPrefab, warningRow);
+            PrepareHalfWidth(warningObject);
             JournalNewsItem warning = GetOrAddNewsItem(warningObject);
+            warning.LayoutChanged += RequestLayoutRefresh;
             warning.SetupWarning(upcomingEmergency, emergencyWarningText);
             spawnedNews.Add(warning);
         }
 
+        CreateColumnDivider();
+        resetScrollOnRefresh = true;
         RefreshLayout();
-        StartCoroutine(RefreshScrollNextFrame());
+        if (newsScroll != null)
+            newsScroll.verticalNormalizedPosition = 1f;
+        if (newsSlider != null)
+            newsSlider.SetValueWithoutNotify(0f);
+        RequestLayoutRefresh();
     }
 
-    private void SetupBigNews(JournalRegister.JournalEntry entry)
+    private void SpawnHeader()
     {
-        bool hasBigNews = entry != null && entry.Quest != null;
-        if (bigNewObject != null)
-            bigNewObject.gameObject.SetActive(hasBigNews);
-
-        if (!hasBigNews || bigNewObject == null)
+        if (headerPrefab == null)
             return;
+        GameObject container = new GameObject("HeaderContainer", typeof(RectTransform), typeof(LayoutElement));
+        container.transform.SetParent(newsGrid.transform, false);
+        GameObject instance = Instantiate(headerPrefab, container.transform);
+        RectTransform header = instance.transform as RectTransform;
+        if (header != null)
+        {
+            float height = header.rect.height;
+            float bottom = header.rect.yMin;
+            foreach (RectTransform child in header.GetComponentsInChildren<RectTransform>(false))
+            {
+                if (child == header)
+                    continue;
+                Vector3 lowerLeft = child.TransformPoint(new Vector3(child.rect.xMin, child.rect.yMin, 0f));
+                Vector3 lowerRight = child.TransformPoint(new Vector3(child.rect.xMax, child.rect.yMin, 0f));
+                bottom = Mathf.Min(bottom, header.InverseTransformPoint(lowerLeft).y,
+                    header.InverseTransformPoint(lowerRight).y);
+            }
 
-        ResolveBigNewsTextReferences();
+            LayoutElement layout = GetOrAddLayoutElement(container);
+            layout.preferredHeight = height + Mathf.Max(0f, header.rect.yMin - bottom);
+            layout.flexibleWidth = 1f;
+            header.anchorMin = new Vector2(0f, 1f);
+            header.anchorMax = new Vector2(1f, 1f);
+            header.pivot = new Vector2(0.5f, 1f);
+            header.sizeDelta = new Vector2(0f, height);
+            header.anchoredPosition = Vector2.zero;
+        }
+        spawnedRoots.Add(container);
+    }
 
-        JournalNewsItem item = GetOrAddNewsItem(bigNewObject.gameObject);
-        item.SetReferences(bigNewTitle, bigNewDescription, bigNewImage);
-        item.Setup(entry, true);
+    private void SpawnFullWidthNews(GameObject prefab, JournalRegister.JournalEntry entry, bool showMonster)
+    {
+        if (prefab == null || entry == null)
+            return;
+        GameObject instance = Instantiate(prefab, newsGrid.transform);
+        PrepareFullWidth(instance);
+        JournalNewsItem item = GetOrAddNewsItem(instance);
+        item.LayoutChanged += RequestLayoutRefresh;
+        item.Setup(entry, showMonster);
+        spawnedNews.Add(item);
+        spawnedRoots.Add(instance);
     }
 
     public void RefreshLayout()
@@ -126,17 +198,7 @@ public class JournalUi : MonoBehaviour
         if (newsGrid == null)
             return;
 
-        bool hasBigNews = bigNewObject != null && bigNewObject.gameObject.activeSelf;
-
-        RectOffset padding = newsGrid.padding;
-        padding.top = 0;
-
-        if (hasBigNews && bigNewObject != null)
-        {
-            padding.top = Mathf.CeilToInt(bigNewObject.rect.height + bigNewSpacing);
-        }
-
-        newsGrid.padding = padding;
+        UpdateRowHeights();
 
         ContentSizeFitter fitter = newsGrid.GetComponent<ContentSizeFitter>();
         if (fitter == null)
@@ -146,17 +208,145 @@ public class JournalUi : MonoBehaviour
 
         LayoutRebuilder.ForceRebuildLayoutImmediate(newsGrid.transform as RectTransform);
         newsGrid.SetLayoutVertical();
+        UpdateColumnDivider();
     }
 
-    private void SpawnNews(GameObject prefab, JournalRegister.JournalEntry entry)
+    private void RequestLayoutRefresh()
     {
-        if (prefab == null || entry == null)
+        if (!isActiveAndEnabled || newsGrid == null || layoutRefresh != null)
+            return;
+        layoutRefresh = StartCoroutine(RefreshScrollNextFrame());
+    }
+
+    private Transform SpawnMissionRows(List<JournalRegister.JournalEntry> entries,
+        JournalRegister.JournalEntry promoted)
+    {
+        if (entries == null)
+            return null;
+        Transform row = null;
+        int column = 0;
+        foreach (JournalRegister.JournalEntry entry in entries)
+        {
+            if (entry == null || entry.Quest == null || entry == promoted)
+                continue;
+            if (column == 0)
+                row = CreateNewsRow("NewsRow");
+            SpawnSmallNews(row, entry);
+            column = (column + 1) % 2;
+        }
+        return column == 1 ? row : null;
+    }
+
+    private Transform CreateNewsRow(string rowName)
+    {
+        GameObject row = new GameObject(rowName, typeof(RectTransform),
+            typeof(HorizontalLayoutGroup), typeof(LayoutElement));
+        row.transform.SetParent(newsGrid.transform, false);
+        ConfigureNewsRow(row.GetComponent<HorizontalLayoutGroup>());
+        newsRows.Add(row.GetComponent<RectTransform>());
+        spawnedRoots.Add(row);
+        return row.transform;
+    }
+
+    private GameObject CreateDivider(string objectName, Transform parent)
+    {
+        GameObject divider = new GameObject(objectName, typeof(RectTransform), typeof(Image));
+        divider.transform.SetParent(parent, false);
+        Image image = divider.GetComponent<Image>();
+        Image headerImage = headerPrefab != null ? headerPrefab.GetComponent<Image>() : null;
+        if (headerImage != null)
+        {
+            image.sprite = headerImage.sprite;
+            image.color = headerImage.color;
+        }
+        image.raycastTarget = false;
+        return divider;
+    }
+
+    private void CreateColumnDivider()
+    {
+        if (newsRows.Count == 0)
             return;
 
-        GameObject instanceObject = Instantiate(prefab, newsGrid.transform);
+        GameObject divider = CreateDivider("ColumnDivider", newsGrid.transform);
+        GetOrAddLayoutElement(divider).ignoreLayout = true;
+        columnDivider = divider.GetComponent<RectTransform>();
+        columnDivider.anchorMin = new Vector2(0.5f, 1f);
+        columnDivider.anchorMax = new Vector2(0.5f, 1f);
+        columnDivider.pivot = new Vector2(0.5f, 1f);
+        spawnedRoots.Add(divider);
+    }
+
+    private void UpdateColumnDivider()
+    {
+        if (columnDivider == null || newsRows.Count == 0)
+            return;
+
+        RectTransform content = (RectTransform)newsGrid.transform;
+        RectTransform first = newsRows[0];
+        RectTransform last = newsRows[newsRows.Count - 1];
+        float top = first.localPosition.y + first.rect.yMax;
+        float bottom = last.localPosition.y + last.rect.yMin;
+        columnDivider.anchoredPosition = new Vector2(
+            (newsGrid.padding.left - newsGrid.padding.right) * 0.5f, top - content.rect.yMax);
+        columnDivider.sizeDelta = new Vector2(2f, Mathf.Max(0f, top - bottom));
+    }
+
+    private void SpawnSmallNews(Transform parent, JournalRegister.JournalEntry entry)
+    {
+        GameObject prefab = UnityEngine.Random.value < 0.5f ? smallNewsPrefab1 : smallNewsPrefab2;
+        if (prefab == null)
+            prefab = smallNewsPrefab1 != null ? smallNewsPrefab1 : smallNewsPrefab2;
+        if (prefab == null || entry == null)
+            return;
+        GameObject instanceObject = Instantiate(prefab, parent);
+        PrepareHalfWidth(instanceObject);
         JournalNewsItem instance = GetOrAddNewsItem(instanceObject);
-        instance.Setup(entry);
+        instance.LayoutChanged += RequestLayoutRefresh;
+        instance.Setup(entry, false);
         spawnedNews.Add(instance);
+    }
+
+    private static void PrepareFullWidth(GameObject instance)
+    {
+        LayoutElement element = GetOrAddLayoutElement(instance);
+        RectTransform rect = instance.transform as RectTransform;
+        if (rect != null && element.preferredHeight < 0f)
+            element.preferredHeight = rect.rect.height;
+        element.flexibleWidth = 1f;
+    }
+
+    private void PrepareHalfWidth(GameObject instance)
+    {
+        LayoutElement element = GetOrAddLayoutElement(instance);
+        element.flexibleWidth = 0f;
+        element.preferredWidth = GetColumnWidth();
+    }
+
+    private float GetColumnWidth()
+    {
+        RectTransform content = newsGrid.transform as RectTransform;
+        if (content == null)
+            return 0f;
+
+        float availableWidth = content.rect.width - newsGrid.padding.horizontal;
+        return Mathf.Max(0f, (availableWidth - rowSpacing) * 0.5f);
+    }
+
+    private void ConfigureNewsRow(HorizontalLayoutGroup layout)
+    {
+        layout.spacing = rowSpacing;
+        layout.childAlignment = TextAnchor.UpperLeft;
+        layout.childControlWidth = true;
+        layout.childControlHeight = false;
+        layout.childForceExpandWidth = false;
+        layout.childForceExpandHeight = false;
+    }
+
+    private static LayoutElement GetOrAddLayoutElement(GameObject target)
+    {
+        LayoutElement element = target.GetComponent<LayoutElement>();
+        return element != null ? element : target.AddComponent<LayoutElement>();
     }
 
     private static JournalNewsItem GetOrAddNewsItem(GameObject newsObject)
@@ -165,29 +355,29 @@ public class JournalUi : MonoBehaviour
         return item != null ? item : newsObject.AddComponent<JournalNewsItem>();
     }
 
-    private void ResolveBigNewsTextReferences()
+    private void UpdateRowHeights()
     {
-        if (bigNewObject == null)
-            return;
-
-        foreach (TMP_Text text in bigNewObject.GetComponentsInChildren<TMP_Text>(true))
+        float halfWidth = GetColumnWidth();
+        foreach (Transform child in newsGrid.transform)
         {
-            if (bigNewTitle == null && text.name == "Title")
-                bigNewTitle = text;
-            else if (bigNewDescription == null && text.name == "Description")
-                bigNewDescription = text;
-        }
-
-        if (bigNewImage == null)
-        {
-            foreach (Image image in bigNewObject.GetComponentsInChildren<Image>(true))
+            if (!child.gameObject.activeSelf)
+                continue;
+            HorizontalLayoutGroup row = child.GetComponent<HorizontalLayoutGroup>();
+            if (row == null)
+                continue;
+            float height = 0f;
+            foreach (Transform article in row.transform)
             {
-                if (image.name == "Image")
-                {
-                    bigNewImage = image;
-                    break;
-                }
+                LayoutElement articleLayout = article.GetComponent<LayoutElement>();
+                if (articleLayout != null && articleLayout.ignoreLayout)
+                    continue;
+                RectTransform rect = article as RectTransform;
+                if (articleLayout != null)
+                    articleLayout.preferredWidth = halfWidth;
+                height = Mathf.Max(height, articleLayout != null && articleLayout.preferredHeight >= 0f
+                    ? articleLayout.preferredHeight : rect.rect.height);
             }
+            row.GetComponent<LayoutElement>().preferredHeight = height;
         }
     }
 
@@ -210,25 +400,49 @@ public class JournalUi : MonoBehaviour
     private IEnumerator RefreshScrollNextFrame()
     {
         yield return null;
+        RefreshLayout();
         Canvas.ForceUpdateCanvases();
+        // Width changes can reflow text during the first layout pass.
+        RefreshLayout();
 
         RectTransform content = newsGrid != null ? newsGrid.transform as RectTransform : null;
         if (content != null)
+        {
             LayoutRebuilder.ForceRebuildLayoutImmediate(content);
+            UpdateColumnDivider();
+        }
+
+        if (resetScrollOnRefresh && newsScroll != null)
+        {
+            newsScroll.StopMovement();
+            newsScroll.verticalNormalizedPosition = 1f;
+            resetScrollOnRefresh = false;
+        }
 
         if (newsScroll != null)
         {
             bool needsScroll = content != null && newsScroll.viewport != null &&
                 content.rect.height > newsScroll.viewport.rect.height;
             newsScroll.vertical = needsScroll;
-            newsScroll.verticalNormalizedPosition = 1f;
-            if (newsScrollbar != null)
+            if (newsSlider != null)
             {
-                newsScroll.verticalScrollbar = newsScrollbar;
-                newsScroll.verticalScrollbarVisibility = ScrollRect.ScrollbarVisibility.AutoHide;
-                newsScrollbar.gameObject.SetActive(needsScroll);
+                newsSlider.interactable = needsScroll;
+                newsSlider.SetValueWithoutNotify(1f - newsScroll.verticalNormalizedPosition);
             }
         }
+        layoutRefresh = null;
+    }
+
+    private void SetScrollPosition(float value)
+    {
+        if (newsScroll != null)
+            newsScroll.verticalNormalizedPosition = 1f - value;
+    }
+
+    private void SyncSliderPosition(Vector2 position)
+    {
+        if (newsSlider != null)
+            newsSlider.SetValueWithoutNotify(1f - position.y);
     }
 
     private void ShowNewsPage()
@@ -308,10 +522,26 @@ public class JournalUi : MonoBehaviour
         foreach (JournalNewsItem item in spawnedNews)
         {
             if (item != null)
+            {
+                item.LayoutChanged -= RequestLayoutRefresh;
+                item.gameObject.SetActive(false);
                 Destroy(item.gameObject);
+            }
         }
 
         spawnedNews.Clear();
+        spawnedRoots.Clear();
+        newsRows.Clear();
+        columnDivider = null;
+
+        if (newsGrid != null)
+        {
+            foreach (Transform child in newsGrid.transform)
+            {
+                child.gameObject.SetActive(false);
+                Destroy(child.gameObject);
+            }
+        }
     }
 
     private void OnDestroy()
@@ -320,5 +550,14 @@ public class JournalUi : MonoBehaviour
             goToResultsButton.onClick.RemoveListener(ShowResultsPage);
         if (doneButton != null)
             doneButton.onClick.RemoveListener(FinishJournal);
+        if (newsSlider != null)
+            newsSlider.onValueChanged.RemoveListener(SetScrollPosition);
+        if (newsScroll != null)
+            newsScroll.onValueChanged.RemoveListener(SyncSliderPosition);
+    }
+
+    private void OnDisable()
+    {
+        layoutRefresh = null;
     }
 }
