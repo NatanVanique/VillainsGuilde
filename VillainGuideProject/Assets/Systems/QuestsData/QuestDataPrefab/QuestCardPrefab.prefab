@@ -345,9 +345,9 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 25
-  m_fontSizeBase: 36
+  m_fontSizeBase: 25
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 25
   m_fontSizeMax: 100
   m_fontStyle: 0
@@ -389,46 +389,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &480817554755699131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4242955273054464432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: 
-    m_TableEntryReference:
-      m_KeyId: 0
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8518915141596083941}
-        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-  references:
-    version: 2
-    RefIds: []
 --- !u!1 &3228895670008040713
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,8 +614,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 71.9}
-  m_SizeDelta: {x: 408.4907, y: 50}
+  m_AnchoredPosition: {x: 0, y: 78.58708}
+  m_SizeDelta: {x: 408.4907, y: 63.3742}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2017187701387870944
 CanvasRenderer:
@@ -685,7 +645,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: of uncs and apes
+  m_text: The Monkeys Have Gone Bananas!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a4c0e7646e6f0404ea61110844fe0e66, type: 2}
   m_sharedMaterial: {fileID: -7319474074927318752, guid: a4c0e7646e6f0404ea61110844fe0e66, type: 2}
@@ -712,15 +672,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
-  m_fontSizeMax: 36
+  m_fontSizeMax: 18
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 1024
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -757,6 +717,46 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &480817554755699131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4242955273054464432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8518915141596083941}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &4543482922764195212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,8 +1121,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -465, y: 59}
-  m_SizeDelta: {x: 300, y: 400}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 463.4619, y: 710.2233}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8434513335273905093
 MonoBehaviour:
@@ -1139,9 +1139,6 @@ MonoBehaviour:
   title: {fileID: 480817554755699131}
   tipText: {fileID: 2070634741140821915}
   questType: {fileID: 2423423270086888261}
-  background: {fileID: 2821671866286642813}
-  classicBackground: {fileID: -7786686659616316963, guid: 79369b742ba4b454f9f02052ece94a05, type: 3}
-  emergencyBackground: {fileID: 8264868046747433796, guid: 7042ab7487a4be1489f35fdcfbcb770b, type: 3}
   dictionaryOfAmountOfCharacters:
     _serializedList:
     - Key: 1
@@ -1158,6 +1155,9 @@ MonoBehaviour:
       Value: {fileID: 4147306114862974230}
     - Key: 2
       Value: {fileID: 4543482922764195212}
+  background: {fileID: 2821671866286642813}
+  classicBackground: {fileID: -7786686659616316963, guid: 79369b742ba4b454f9f02052ece94a05, type: 3}
+  emergencyBackground: {fileID: 8264868046747433796, guid: 7042ab7487a4be1489f35fdcfbcb770b, type: 3}
   dataTest: {fileID: 11400000, guid: 7d027383ee43ee847a242697beb62755, type: 2}
   _listOfMonsters: []
   references:
@@ -1352,8 +1352,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.8419, y: -107.423164}
-  m_SizeDelta: {x: 354.0194, y: 276.7227}
+  m_AnchoredPosition: {x: 0.73799, y: -104.55}
+  m_SizeDelta: {x: 417.51, y: 303.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1700443225412204223
 CanvasRenderer:
@@ -1383,7 +1383,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A group of chimps has escaped the zoo and invaded a retirement home
+  m_text: "Na cidade de Township, um grupo de chimpanz\xE9s fugiu do zool\xF3gico
+    e, sem ter para onde ir, escolheu uma casa de idosos como novo lar.\n\nO problema?
+    Eles n\xE3o querem dividir o espa\xE7o. As senhorinhas foram para o jardim e
+    os chimpanz\xE9s j\xE1 instalaram um sistema de turnos para tomar sol.\n\nA dire\xE7\xE3o
+    da casa pede ajuda para convencer os primatas a voltar para o zool\xF3gico, sem
+    assustar as moradoras.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e8bcef46fc52db4fa8232413d1e3c0a, type: 2}
   m_sharedMaterial: {fileID: 8047056480254275243, guid: 2e8bcef46fc52db4fa8232413d1e3c0a, type: 2}
@@ -1410,20 +1415,20 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 20
   m_fontSizeBase: 20
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 8.1
   m_fontSizeMax: 30
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -29
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
