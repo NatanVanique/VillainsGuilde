@@ -2,6 +2,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System;
 
 public class MissionsScreenController : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class MissionsScreenController : MonoBehaviour
     [Header("Ui Components")]
     [SerializeField] private Button acceptButton;
 
+    public static event Action<List<QuestCardSelection>> OnQuestsAccepted;   
+
     private bool closing;
 
 
@@ -31,6 +34,21 @@ public class MissionsScreenController : MonoBehaviour
     {
         closing = false;
         missionsScreen.SetActive(false);
+
+        SetButtons();
+    }
+
+    private void SetButtons()
+    {
+        acceptButton.onClick.AddListener(AcceptButtonMethod);
+    }
+
+    private void AcceptButtonMethod()
+    {
+        List<QuestCardSelection> selectedQuests = SingleEntryPoint.Instance.ManagerManager.QuestSelectionManager.SelectedCards;
+        OnQuestsAccepted?.Invoke(selectedQuests);
+
+        HideMissionsScreen();
     }
 
     public void ShowMissionsScreen()

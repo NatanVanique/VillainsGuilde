@@ -38,8 +38,11 @@ public class DragItem : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        _card.RemoveMonsterFromTheCard(monsterIconPrefab.Info);
-        _card = null;
+        if (_card != null)
+        {
+            _card.RemoveMonsterFromTheCard(monsterIconPrefab.Info);
+            _card = null;
+        }
 
         dropped = false;
 

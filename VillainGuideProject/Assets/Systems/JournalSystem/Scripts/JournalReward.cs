@@ -30,7 +30,7 @@ public class JournalReward : MonoBehaviour
 
     public void Setup()
     {
-        rewardsRegister = gameObject.GetComponent<JournalRegister>();
+         rewardsRegister = SingleEntryPoint.Instance.ManagerManager.JournalRegister;
     }
 
     public void CollectRewards()

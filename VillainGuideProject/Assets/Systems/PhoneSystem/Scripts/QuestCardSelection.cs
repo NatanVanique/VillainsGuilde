@@ -5,7 +5,7 @@ public class QuestCardSelection : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] private GameObject selectedBorder;
-    [SerializeField] QuestCard questCard;
+    public QuestCard QuestCard;
 
     public bool IsSelected { get; private set; }
 
@@ -49,13 +49,13 @@ public class QuestCardSelection : MonoBehaviour
 
     public void AddMonsterToTheCard(MonsterInfo info)
     {
-        questCard.AddMonster(info);
+        QuestCard.AddMonster(info);
     }
 
     public void RemoveMonsterFromTheCard(MonsterInfo info)
     {
-        questCard.RemoveMonster(info);
-        int amountOfMonsters = questCard._listOfMonsters.Count;
+        QuestCard.RemoveMonster(info);
+        int amountOfMonsters = QuestCard._listOfMonsters.Count;
 
         if(amountOfMonsters == 0)
         {

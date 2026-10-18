@@ -118,4 +118,12 @@ public class QuestCard : MonoBehaviour
     }
 
     #endregion
+
+    #region Getters
+
+    public ListOfTips ReturnListOfTips() => _listOfTips;
+
+    public QuestData ReturnQuestData() => _data;
+
+    #endregion
 }

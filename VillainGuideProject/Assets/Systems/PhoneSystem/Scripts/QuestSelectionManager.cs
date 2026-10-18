@@ -4,7 +4,7 @@ using UnityEngine;
 public class QuestSelectionManager : MonoBehaviour
 {
     private readonly List<QuestCardSelection> selectedCards = new();
-    public IReadOnlyList<QuestCardSelection> SelectedCards => selectedCards.AsReadOnly();
+    public List<QuestCardSelection> SelectedCards => selectedCards;
 
     public void Setup()
     {
