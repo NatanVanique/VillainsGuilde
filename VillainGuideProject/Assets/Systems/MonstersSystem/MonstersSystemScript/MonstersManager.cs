@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ public class MonstersManager : MonoBehaviour
     [SerializeField] MonsterData initialMonster;
     public List<MonsterInfo> ListOfRegisteredMonsters = new();
 
+
+    public static event Action<MonsterInfo> OnMonsterRegistered;
     #endregion
 
     #region Setup
@@ -67,6 +70,8 @@ public class MonstersManager : MonoBehaviour
         if (ListOfRegisteredMonsters.Contains(info)) return;
 
         ListOfRegisteredMonsters.Add(info);
+
+        OnMonsterRegistered?.Invoke(info);
     }
 
     #endregion
