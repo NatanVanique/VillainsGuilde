@@ -22,6 +22,10 @@ public class ManagerManager : MonoBehaviour {
     [HideInInspector] public JournalRegister JournalRegister;
     [HideInInspector] public QuestValidator QuestVal;
 
+    [Header("Health")]
+    [SerializeField] HealthManager HealthManPrefab;
+    [HideInInspector] public HealthManager HealthMan;
+
     public void Setup() {
         if (questMngPrefab != null) {
             questMngPrefab = Instantiate(questMngPrefab, transform);
@@ -47,6 +51,10 @@ public class ManagerManager : MonoBehaviour {
         if (QuestValPrefab != null) {
             QuestVal = Instantiate(QuestValPrefab, transform);
             QuestVal.Setup();
+        }
+        if (HealthManPrefab != null) {
+            HealthMan = Instantiate(HealthManPrefab, transform);
+            HealthMan.Setup();
         }
     }
 }

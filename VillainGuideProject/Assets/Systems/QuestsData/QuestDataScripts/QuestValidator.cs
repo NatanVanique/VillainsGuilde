@@ -1,9 +1,16 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
 public class QuestValidator : MonoBehaviour
 {
+    #region Variables
+
+    public static event Action<int> OnQuestWithResultFailed;
+
+    #endregion
+
     #region Setup
 
     public void Setup()
@@ -30,9 +37,22 @@ public class QuestValidator : MonoBehaviour
             JournalRegister jr = SingleEntryPoint.Instance.ManagerManager.JournalRegister;
 
             bool result = ReturnIfCardSucceded(card, listOfMonsterInfo);
-            Debug.Log("Quest processed, result: " + result);
+
+            CheckResult(result, data);
+
             jr.RegisterResult(result, data);
         }
+    }
+
+    private void CheckResult(bool result, QuestData data) {
+        if (!result) {
+            if (!data.HasConsequence) return;
+
+            int amountOfBadEvents = data.AmountOfConsequenceEvents;
+
+            OnQuestWithResultFailed?.Invoke(amountOfBadEvents);
+        }
+
     }
 
     bool ReturnIfCardSucceded(QuestCard card, List<MonsterInfo> listOfMonsterInfo)
@@ -50,7 +70,7 @@ public class QuestValidator : MonoBehaviour
 
         float realPercent = (percent * restPercent) + basePercent;
 
-        int rng = Random.Range(0, 100);
+        int rng = UnityEngine.Random.Range(0, 100);
 
         if (rng <= realPercent) return true;
 
