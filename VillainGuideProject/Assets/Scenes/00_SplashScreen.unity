@@ -1088,6 +1088,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Splash_Astera
       objectReference: {fileID: 0}
+    - target: {fileID: 1948521514697441630, guid: cf128342f99c3bd4bb779160037ce373, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7710075297487450210, guid: cf128342f99c3bd4bb779160037ce373, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6
@@ -1287,6 +1291,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c3805d461ab604a945e75d46c5cb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SplashTimerSystem
+  bisc8Logo: {fileID: 1680990763}
+  asteraLogo: {fileID: 529255236}
+  splashDuration: 6
+--- !u!95 &1680990763 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9043664553730674074, guid: 71b1ec9e699bc0547a76e4461233a687, type: 3}
+  m_PrefabInstance: {fileID: 205886597}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1711066952
 GameObject:
   m_ObjectHideFlags: 0
