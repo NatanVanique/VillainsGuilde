@@ -29,6 +29,10 @@ public class QuestData : ScriptableObject {
     [ShowIf(nameof(HasXP))] public float XPReward;
     public bool HasCharacters;
     [ShowIf(nameof(HasCharacters))] public List<int> ListOfCharacters;
+
+    [Header("Win or loose")]
+    //public bool CanLoose;
+    [Range(0, 100)] public float BasePercentChanceOfWinning = 0; 
     public bool HasConsequence;
     [ShowIf(nameof(HasConsequence))] public int AmountOfConsequenceEvents;
 
