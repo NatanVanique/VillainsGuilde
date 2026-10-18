@@ -22,6 +22,15 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  EmergencyRequirements:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   ResultDescriptionGood:
     m_TableReference:
       m_TableCollectionName: GUID:08edffda23451f8419f80d25bb3887ad
@@ -43,9 +52,9 @@ MonoBehaviour:
   TipData:
     TipText:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:b289f1bcb21dc364b906708c460e5f24
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 2290890670080
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0

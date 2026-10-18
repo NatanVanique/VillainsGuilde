@@ -22,5 +22,5 @@ MonoBehaviour:
         Data2: 1241539825
         Data3: 1671240615
         Data4: 1196305712
-      Path: event:/SFX/ButtonEnter
+      Path: event:/SFX/Ui/ButtonEnter
     stageInProject: 3

@@ -58,7 +58,7 @@ public class QuestValidator : MonoBehaviour
             QuestData data = card.ReturnQuestData();
             notSelected.Remove(data);
 
-            bool result = ReturnIfCardSucceded(card, listOfMonsterInfo);
+            bool result = ReturnIfCardSucceded(card);
 
             jr.RegisterResult(result, data, listOfMonsterInfo);
             CheckResult(result, data);
@@ -85,54 +85,10 @@ public class QuestValidator : MonoBehaviour
 
     }
 
-    bool ReturnIfCardSucceded(QuestCard card, List<MonsterInfo> listOfMonsterInfo)
+    bool ReturnIfCardSucceded(QuestCard card)
     {
-        int amountOfTipsSucceded = 0;
-
-        List<TipType> tips = card.ReturnQuestData().TipData.Type;
-        if (tips == null)
-            tips = new List<TipType>();
-
-        foreach (var tip in tips) // Para cada dica da carta
-        {
-            if (ReturnIfAnyMonsterSucceded(listOfMonsterInfo, tip)) amountOfTipsSucceded++; // Verifica se algum monstro possui um match
-        }
-
-        float percent = tips.Count > 0 ? (float)amountOfTipsSucceded / tips.Count : 0f;
-        float basePercent = card.ReturnQuestData().BasePercentChanceOfWinning;
-        float restPercent = 100 - basePercent;
-
-        float realPercent = (percent * restPercent) + basePercent;
-
-        int rng = UnityEngine.Random.Range(0, 100);
-
-        if (rng <= realPercent) return true;
-
-        return false;
-    }
-
-    bool ReturnIfAnyMonsterSucceded(List<MonsterInfo> listOfMonsterInfo, TipType tip)
-    {
-        if (listOfMonsterInfo == null)
-            return false;
-        foreach (var monsterInfo in listOfMonsterInfo) // Para cada monstro
-        {
-            if(ReturnIfMonsterSucceded(monsterInfo, tip)) return true; // Verifica se aquele monstro deu match
-        }
-
-        return false;
-    }
-
-    bool ReturnIfMonsterSucceded(MonsterInfo monster, TipType tip)
-    {
-        if (monster.TipList.SelectedTips == null)
-            return false;
-        foreach (var monsterTip in monster.TipList.SelectedTips) // Para cada dica do monstro
-        {
-            if (monsterTip.Value.Type == tip) return true; // Verifica se deu match
-        }
-
-        return false;
+        float chance = Mathf.Clamp(card.ReturnQuestData().BasePercentChanceOfWinning, 0f, 100f);
+        return UnityEngine.Random.Range(0f, 100f) < chance;
     }
     #endregion
 
