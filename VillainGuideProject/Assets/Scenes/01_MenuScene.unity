@@ -341,7 +341,7 @@ MonoBehaviour:
   eventId: MainMusic
   oneShot: 0
   playEvent: 1
-  stopEvent: 1
+  stopEvent: 0
   cascade: []
   gizmoColor: {r: 0, g: 1, b: 1, a: 1}
 --- !u!114 &658424256
