@@ -56,3 +56,5 @@ MonoBehaviour:
   QuestValPrefab: {fileID: 5888478834412163171, guid: ae2daeb7f4045e647904499700cd13f7, type: 3}
   JournalRegister: {fileID: 0}
   QuestVal: {fileID: 5888478834412163171, guid: ae2daeb7f4045e647904499700cd13f7, type: 3}
+  HealthManPrefab: {fileID: 2528526244796582437, guid: fcaa58b2ecb77354697a8d25417d16bb, type: 3}
+  HealthMan: {fileID: 0}
