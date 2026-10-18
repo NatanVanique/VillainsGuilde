@@ -1718,6 +1718,10 @@ MonoBehaviour:
     - Key: 2
       Value: {fileID: 4543482922764195212}
   dataTest: {fileID: 11400000, guid: 7d027383ee43ee847a242697beb62755, type: 2}
+  _listOfMonsters: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &7950119165001440239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1730,9 +1734,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b7ad0a99804c93840816c49f0cebc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestCardSelection
-  cardButton: {fileID: 0}
   selectedBorder: {fileID: 6877599228330523490}
-  questCard: {fileID: 8434513335273905093}
+  QuestCard: {fileID: 8434513335273905093}
 --- !u!1 &8603211089527327358
 GameObject:
   m_ObjectHideFlags: 0

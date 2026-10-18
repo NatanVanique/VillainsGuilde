@@ -25,16 +25,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6553366509988330056}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6700270727762438109}
+  m_Father: {fileID: 3669480895832743094}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -334, y: 398}
+  m_AnchoredPosition: {x: 373, y: 52}
   m_SizeDelta: {x: 665, y: 474}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5864764038977235532
@@ -107,6 +107,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6700270727762438109}
+  - {fileID: 8711241457622195783}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -208,8 +209,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8711241457622195783}
+  m_Children: []
   m_Father: {fileID: 3669480895832743094}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -285,8 +285,8 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: -5842968740890599926, guid: 0bf616583c460ba4a8e45541cbedae8f, type: 3}
-    m_PressedSprite: {fileID: 31558750549100821, guid: f48cde6ff216a4a4ca9ddd2dc5a965b1, type: 3}
-    m_SelectedSprite: {fileID: 31558750549100821, guid: f48cde6ff216a4a4ca9ddd2dc5a965b1, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: f48cde6ff216a4a4ca9ddd2dc5a965b1, type: 3}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -294,7 +294,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5191194871052781160}
   m_OnClick:
     m_PersistentCalls:
@@ -312,3 +312,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhoneController
   exclamationIcon: {fileID: 6553366509988330056}
+  idleSprite: {fileID: 84380643561718621, guid: 56f6662075b109f45ad6be18cd9e2a5e, type: 3}
+  answeredSprite: {fileID: 21300000, guid: f48cde6ff216a4a4ca9ddd2dc5a965b1, type: 3}
