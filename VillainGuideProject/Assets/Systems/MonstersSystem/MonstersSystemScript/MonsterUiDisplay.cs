@@ -25,10 +25,6 @@ public class MonsterUiDisplay : MonoBehaviour {
     [Header("Instantiate Cards")]
     [SerializeField] float instantiateInterval;
 
-    [Header("Test")]
-    [SerializeField] List<MonsterData> listOfData = new();
-    [SerializeField] Button startButton;
-
     // private
     public List<MonsterCardPrefab> _listOfExistingCards = new();
     public MonsterCardPrefab _selectedCard;
@@ -41,7 +37,6 @@ public class MonsterUiDisplay : MonoBehaviour {
     #region Setup
 
     private void Start() {
-        startButton.onClick.AddListener(() => MonsterUIDisplayOn(listOfData));
         Setup();
     }
 

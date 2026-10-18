@@ -30,8 +30,6 @@ public class MonsterInfoCard : MonoBehaviour {
 
     private void Start() {
         Setup();
-
-        //XButton();
     }
 
     public void Setup() {
