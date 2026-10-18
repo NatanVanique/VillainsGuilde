@@ -250,10 +250,25 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 34454256582665
+    m_Localized: Alissa is whisked away from the room without a scene and driven
+      home by a 'family well-being advisor.' The principal drops the idea of calling
+      the cops, and the daughter remains completely oblivious that the substitute
+      teacher was her mom all along.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82370509766656
     m_Localized: The cops show up before the agency and catch Alissa lecturing the
       room on 'the perils of trusting teens.' She gets hauled off yelling that her
       daughter needs closer watching, as the principal shuts down the class and asks
       for a transfer on the spot.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82370560098304
+    m_Localized: Monster successfully recruited to your team!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82370560098305
+    m_Localized: The monster was so horrified by your proposal that it stormed off.
     m_Metadata:
       m_Items: []
   references:

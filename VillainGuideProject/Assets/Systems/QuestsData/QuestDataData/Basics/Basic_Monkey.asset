@@ -15,9 +15,9 @@ MonoBehaviour:
   Type: 2
   QuestTitle:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:836df008699bda44d972b23c0fd6b731
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 608526755532800
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -52,9 +52,9 @@ MonoBehaviour:
   TipData:
     TipText:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:b289f1bcb21dc364b906708c460e5f24
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 2290894864390
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0

@@ -403,6 +403,7 @@ GameObject:
   - component: {fileID: 5204078643518317923}
   - component: {fileID: 1892480689660967275}
   - component: {fileID: 2268958615864343399}
+  - component: {fileID: 1203064753400107016}
   m_Layer: 0
   m_Name: Title_Text
   m_TagString: Untagged
@@ -531,6 +532,46 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1203064753400107016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2567467591018342028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2268958615864343399}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &2638922960991602919
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,7 +665,7 @@ MonoBehaviour:
   leftButton: {fileID: 7109198288474000388}
   rightButton: {fileID: 5783063920342144276}
   maxVisibleItems: 3
-  hideButtonsWhenSingleItem: 1
+  pageDuration: 0.35
 --- !u!1 &2834967230695930309
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,6 +1081,7 @@ GameObject:
   - component: {fileID: 8575416359290837345}
   - component: {fileID: 6050358843013161490}
   - component: {fileID: 4140366672822816339}
+  - component: {fileID: 3112011691466281372}
   m_Layer: 0
   m_Name: Accept_Button
   m_TagString: Untagged
@@ -1161,6 +1203,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3112011691466281372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5299255729784456355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7500e398c5f34291acffb5da04e37fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonHover
+  hoverScale: 1.1
+  duration: 0.15
+  ease: 27
 --- !u!1 &5543566922939917836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,7 +1584,7 @@ MonoBehaviour:
   leftButton: {fileID: 5396791118828502979}
   rightButton: {fileID: 1036831130926159526}
   maxVisibleItems: 3
-  hideButtonsWhenSingleItem: 1
+  pageDuration: 0.35
 --- !u!1 &7622809151769927844
 GameObject:
   m_ObjectHideFlags: 0

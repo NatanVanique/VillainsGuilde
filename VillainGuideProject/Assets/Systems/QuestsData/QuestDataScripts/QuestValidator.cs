@@ -40,6 +40,12 @@ public class QuestValidator : MonoBehaviour
         if (selectedQuests == null)
             return;
 
+        // Keep track of each offered occurrence, including repeated quest assets.
+        QuestSelector selector = SingleEntryPoint.Instance.ManagerManager.QuestSelector;
+        List<QuestData> notSelected = selector != null && selector.SelectedQuests != null
+            ? new List<QuestData>(selector.SelectedQuests)
+            : new List<QuestData>();
+
         foreach (var cardSelection in selectedQuests) // Para cada carta
         {
             if (cardSelection == null || cardSelection.QuestCard == null || cardSelection.QuestCard.ReturnQuestData() == null)
@@ -50,11 +56,21 @@ public class QuestValidator : MonoBehaviour
             QuestCard card = cardSelection.QuestCard;
             List<MonsterInfo> listOfMonsterInfo = card._listOfMonsters;
             QuestData data = card.ReturnQuestData();
+            notSelected.Remove(data);
 
-            bool result = ReturnIfCardSucceded(card, listOfMonsterInfo);
+            bool result = ReturnIfCardSucceded(data, listOfMonsterInfo);
 
             jr.RegisterResult(result, data, listOfMonsterInfo);
             CheckResult(result, data);
+        }
+
+        // Offered missions that were not selected still appear as failed news.
+        foreach (QuestData quest in notSelected)
+        {
+            if (quest == null)
+                continue;
+            jr.RegisterResult(false, quest);
+            CheckResult(false, quest);
         }
     }
 
@@ -69,54 +85,45 @@ public class QuestValidator : MonoBehaviour
 
     }
 
-    bool ReturnIfCardSucceded(QuestCard card, List<MonsterInfo> listOfMonsterInfo)
+    bool ReturnIfCardSucceded(QuestData quest, List<MonsterInfo> monsters)
     {
-        int amountOfTipsSucceded = 0;
-
-        List<TipType> tips = card.ReturnQuestData().TipData.Type;
-        if (tips == null)
-            tips = new List<TipType>();
-
-        foreach (var tip in tips) // Para cada dica da carta
-        {
-            if (ReturnIfAnyMonsterSucceded(listOfMonsterInfo, tip)) amountOfTipsSucceded++; // Verifica se algum monstro possui um match
-        }
-
-        float percent = tips.Count > 0 ? (float)amountOfTipsSucceded / tips.Count : 0f;
-        float basePercent = card.ReturnQuestData().BasePercentChanceOfWinning;
-        float restPercent = 100 - basePercent;
-
-        float realPercent = (percent * restPercent) + basePercent;
-
-        int rng = UnityEngine.Random.Range(0, 100);
-
-        if (rng <= realPercent) return true;
-
-        return false;
+        float chance = CalculateWinChance(quest, monsters);
+        return chance >= 100f || (chance > 0f && UnityEngine.Random.Range(0f, 100f) < chance);
     }
 
-    bool ReturnIfAnyMonsterSucceded(List<MonsterInfo> listOfMonsterInfo, TipType tip)
+    internal static float CalculateWinChance(QuestData quest, List<MonsterInfo> monsters)
     {
-        if (listOfMonsterInfo == null)
-            return false;
-        foreach (var monsterInfo in listOfMonsterInfo) // Para cada monstro
+        float baseChance = Mathf.Clamp(quest.BasePercentChanceOfWinning, 0f, 100f);
+        List<TipType> tips = quest.TipData.Type;
+        if (tips == null || tips.Count == 0 || monsters == null || monsters.Count == 0)
+            return baseChance;
+
+        int matchedTips = 0;
+        foreach (TipType tip in tips)
         {
-            if(ReturnIfMonsterSucceded(monsterInfo, tip)) return true; // Verifica se aquele monstro deu match
+            foreach (MonsterInfo monster in monsters)
+            {
+                if (monster.TipList.SelectedTips == null)
+                    continue;
+
+                bool matched = false;
+                foreach (var monsterTip in monster.TipList.SelectedTips)
+                {
+                    if (monsterTip.Value.Type != tip)
+                        continue;
+                    matched = true;
+                    break;
+                }
+
+                if (matched)
+                {
+                    matchedTips++;
+                    break;
+                }
+            }
         }
 
-        return false;
-    }
-
-    bool ReturnIfMonsterSucceded(MonsterInfo monster, TipType tip)
-    {
-        if (monster.TipList.SelectedTips == null)
-            return false;
-        foreach (var monsterTip in monster.TipList.SelectedTips) // Para cada dica do monstro
-        {
-            if (monsterTip.Value.Type == tip) return true; // Verifica se deu match
-        }
-
-        return false;
+        return baseChance + (100f - baseChance) * matchedTips / tips.Count;
     }
     #endregion
 

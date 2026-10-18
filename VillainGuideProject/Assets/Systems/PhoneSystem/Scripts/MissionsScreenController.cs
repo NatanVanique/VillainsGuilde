@@ -54,13 +54,6 @@ public class MissionsScreenController : MonoBehaviour
 
     private void AcceptButtonMethod()
     {
-        Debug.Log("AcceptButton Clicked");
-        List<QuestCardSelection> selectedQuests = new List<QuestCardSelection>(
-            SingleEntryPoint.Instance.ManagerManager.QuestSelectionManager.SelectedCards);
-        if (selectedQuests.Count == 0)
-            Debug.LogWarning("No missions were selected when the day was submitted.", this);
-        OnQuestsAccepted?.Invoke(selectedQuests);
-
         HideMissionsScreen();
     }
 
@@ -86,12 +79,15 @@ public class MissionsScreenController : MonoBehaviour
             return;
 
         closing = true;
+        List<QuestCardSelection> selectedQuests = new List<QuestCardSelection>(
+            SingleEntryPoint.Instance.ManagerManager.QuestSelectionManager.SelectedCards);
+        OnQuestsAccepted?.Invoke(selectedQuests);
 
         //Quests
         missionsScreen.DOKill();
         missionsScreen.DOScale(Vector3.zero, animationDuration)
             .SetEase(Ease.InBack)
-            .OnComplete(() => TransitionManager.Instance.ReloadSceneTransitionIn());
+            .OnComplete(() => SingleEntryPoint.Instance.UiManager.JournalManager.ActiveJournal());
 
         //Icones monstros
         monstersScreen.DOKill();
@@ -119,6 +115,11 @@ public class MissionsScreenController : MonoBehaviour
 
         foreach (var data in selectedQuests)
         {
+            if (data == null)
+            {
+                Debug.LogWarning("A mission for this day has a missing QuestData reference.", this);
+                continue;
+            }
             GameObject questCard = Instantiate(questCardPrefab, questsContent, false);
             ((RectTransform)questCard.transform).anchoredPosition3D = Vector3.zero;
             questCard.GetComponent<QuestCard>().Setup(data);
@@ -155,5 +156,11 @@ public class MissionsScreenController : MonoBehaviour
     {
         MonsterIconPrefab icon = Instantiate(monsterIconPrefab, monstersContent);
         icon.Setup(monsterInfo);
+    }
+
+    private void OnDestroy()
+    {
+        if (acceptButton != null)
+            acceptButton.onClick.RemoveListener(AcceptButtonMethod);
     }
 }

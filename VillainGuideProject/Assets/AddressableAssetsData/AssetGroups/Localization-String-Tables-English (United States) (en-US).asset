@@ -54,6 +54,7 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c9719425f9755b743bf6927170a64d73
     m_Address: QuestResults_en-US
