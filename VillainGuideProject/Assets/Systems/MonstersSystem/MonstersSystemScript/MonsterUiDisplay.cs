@@ -3,6 +3,7 @@ using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,9 +26,12 @@ public class MonsterUiDisplay : MonoBehaviour {
     [Header("Instantiate Cards")]
     [SerializeField] float instantiateInterval;
 
+    [Header("Monsters")]
+    [SerializeField] List<MonsterData> listOfAllMonsters = new();
+
     // private
-    public List<MonsterCardPrefab> _listOfExistingCards = new();
-    public MonsterCardPrefab _selectedCard;
+    [HideInInspector] public List<MonsterCardPrefab> _listOfExistingCards = new();
+    [HideInInspector] public MonsterCardPrefab _selectedCard;
 
     Tween _scaleTween, _fadeTween, _confirmButtonTween;
 
@@ -76,14 +80,48 @@ public class MonsterUiDisplay : MonoBehaviour {
 
     #region Main Logic
 
-    void MonsterUIDisplayOn(List<MonsterData> listOfMonsters) {
+    void MonsterUIDisplayOn() {
+
+        List<MonsterData> unregisteredMonster = ReturnUnRegisteredMonsters().OrderBy(x => UnityEngine.Random.value).ToList();
+
+        if (unregisteredMonster == null || unregisteredMonster.Count == 0) return;
+
+        while (unregisteredMonster.Count > 3) {
+            unregisteredMonster.RemoveAt(unregisteredMonster.Count - 1);
+        }
 
         mask.blocksRaycasts = true;
 
         _fadeTween = mask.DOFade(fadeFinalValue, fadeDuration);
+
         _scaleTween = container.transform.DOScale(1, scaleDuration).OnComplete(() => {
-            StartCoroutine(InstantiateMonsterCards(listOfMonsters));
+            StartCoroutine(InstantiateMonsterCards(unregisteredMonster));
         });
+    }
+
+    List<MonsterData> ReturnUnRegisteredMonsters() {
+        List<MonsterData> listOfMosters = new(listOfAllMonsters);
+
+        List<MonsterInfo> listOfRegisteredMonsters = SingleEntryPoint.Instance.ManagerManager.MonsterMan.ListOfRegisteredMonsters;
+
+        foreach (var monster in listOfAllMonsters) {
+            if (CheckIfHasMonster(monster, listOfRegisteredMonsters)) {
+                listOfMosters.Remove(monster);
+            }
+        }
+
+        return listOfMosters;
+    }
+
+    bool CheckIfHasMonster(MonsterData monster, List<MonsterInfo> listOfRegisteredMonster) {
+
+        foreach (var monsterInfo in listOfRegisteredMonster) {
+            if (monsterInfo.SelectedData == monster) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     IEnumerator InstantiateMonsterCards(List<MonsterData> listOfMonsters) {

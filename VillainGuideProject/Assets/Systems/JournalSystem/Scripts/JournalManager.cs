@@ -90,13 +90,15 @@ public class JournalManager : MonoBehaviour
         canvasGroup.DOKill();
         canvasGroup.blocksRaycasts = true;
         canvasGroup.interactable = false;
-        popup.anchoredPosition = openPosition;
         foreach (CanvasGroup group in fadeGroups)
         {
             group.DOKill();
-            group.alpha = 1f;
+            group.DOFade(0f, animationDuration).SetEase(Ease.InCubic).SetUpdate(true);
         }
-        TransitionManager.Instance.ReloadSceneTransitionIn();
+        popup.DOAnchorPos(hiddenPosition, animationDuration)
+            .SetEase(Ease.InCubic)
+            .SetUpdate(true)
+            .OnComplete(HideAfterTransition);
     }
 
     public void HideAfterTransition()
