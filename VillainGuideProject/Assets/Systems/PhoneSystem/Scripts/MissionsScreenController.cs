@@ -87,7 +87,7 @@ public class MissionsScreenController : MonoBehaviour
         missionsScreen.DOKill();
         missionsScreen.DOScale(Vector3.zero, animationDuration)
             .SetEase(Ease.InBack)
-            .OnComplete(() => SingleEntryPoint.Instance.UiManager.JournalManager.ActiveJournal());
+            .OnComplete(() => TransitionManager.Instance.ReloadSceneTransitionIn());
 
         //Icones monstros
         monstersScreen.DOKill();

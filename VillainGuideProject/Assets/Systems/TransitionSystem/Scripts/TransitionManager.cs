@@ -48,7 +48,6 @@ public class TransitionManager : MonoBehaviour
         SingleEntryPoint.Instance.UiManager.JournalManager.HideAfterTransition();
         SingleEntryPoint.Instance.ManagerManager.DaySystem.AdvanceDay();
         SingleEntryPoint.Instance.UiManager.MissionsScreenController.Setup();
-        PhoneController.Instance.ResetPhone();
         yield return ReloadOutRoutine();
     }
 
@@ -66,7 +65,7 @@ public class TransitionManager : MonoBehaviour
         reloadTransition = null;
         transitioning = false;
         PhoneController.Instance.ResetPhone();
-        PhoneController.Instance.PhoneRing();
+        SingleEntryPoint.Instance.UiManager.JournalManager.ActiveJournal();
     }
     IEnumerator TransitionRoutine(string sceneName)
     {
