@@ -19,24 +19,86 @@ public class MonsterCardPrefab : MonoBehaviour {
 
     [Header("Animation")]
     [SerializeField] float scaleDuration;
+    [SerializeField] float scaleHoover = 1.1f;
+    [SerializeField] float scaleHooverDuration = 0.15f;
+
+    [Header("Selection")]
+    [SerializeField] Color selectedBackgroundColor;
+    [SerializeField] Color originalBackgroundColor;
+
+    [Header("Atributes")]
+    public bool HasBeenUsed;
 
     ListOfTips _selectedMonsterTips;
     MonsterData _selectedData;
 
     public static event Action<MonsterData, ListOfTips> OnMonsterCardInfoButtonPressed;
+    public static event Action<MonsterCardPrefab> OnCardSelected;
 
     Tween _scaleTween;
+
+    bool _isSelected;
+    bool _canSelect = false;
 
     #endregion
 
     #region Setup
     public void Setup(MonsterData data) {
+
+        SubscribeToEvents();
+
         _selectedData = data;
         _selectedMonsterTips = ChooseRandomTips();
+        _canSelect = false;
+
         SetVisual();
 
         SetButtons();
+        
         Animate();
+    }
+
+    #endregion
+
+    #region Handle Events
+
+    void SubscribeToEvents() {
+        OnCardSelected += HandleCardSelected;
+    }
+
+    void HandleCardSelected(MonsterCardPrefab cardSelected) {
+        if (cardSelected != this) DeselectCard();
+    }
+
+    public void SelectCard() {
+        if (_isSelected || !_canSelect) return;
+
+        _isSelected = true;
+
+        OnCardSelected?.Invoke(this);
+
+        Background.color = selectedBackgroundColor;
+    }
+
+    void DeselectCard() {
+        if (!_isSelected) return;
+
+        _isSelected = false;
+
+        Background.color = originalBackgroundColor;
+    }
+
+    public void OnPointerEnter() {
+        if (!_canSelect) return;
+
+        _scaleTween = container.DOScale(scaleHoover, scaleHooverDuration);
+
+    }
+
+    public void OnPointerExit() {
+        if (!_canSelect) return;
+
+        _scaleTween = container.DOScale(1, scaleHooverDuration);
     }
 
     #endregion
@@ -85,12 +147,21 @@ public class MonsterCardPrefab : MonoBehaviour {
     #region Visuals
 
     void Animate() {
-        _scaleTween = container.DOScale(1, scaleDuration);
+        _scaleTween = container.DOScale(1, scaleDuration).OnComplete(() => {
+            FinishScale();
+        });
     }
+
+    private void FinishScale() {
+        _canSelect = true;
+    }
+
     void SetVisual() {
         if (_selectedData.SplashArt != null) splashArt.sprite = _selectedData.SplashArt;
         if (_selectedData.Name != null) nameText.StringReference = _selectedData.Name;
         if (_selectedData.Background != null) Background.sprite = _selectedData.Background;
+
+        Background.color = originalBackgroundColor;
     }
 
     #endregion
@@ -102,10 +173,15 @@ public class MonsterCardPrefab : MonoBehaviour {
 
     #endregion
 
-    #region
+    #region End
 
     private void OnDestroy() {
         KillTweens();
+        UnsubscribeToEvents();
+    }
+
+    void UnsubscribeToEvents() {
+        OnCardSelected -= HandleCardSelected;
     }
 
     void KillTweens() {

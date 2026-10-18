@@ -3,14 +3,15 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class MonsterUiDisplay : MonoBehaviour
-{
+public class MonsterUiDisplay : MonoBehaviour {
     #region Variables
 
     [Header("Components")]
     [SerializeField] GameObject container;
     [SerializeField] CanvasGroup mask;
+    [SerializeField] Button confirmButton;
 
     [Header("Prefabs")]
     [SerializeField] MonsterCardPrefab monsterCardPrefab;
@@ -26,7 +27,10 @@ public class MonsterUiDisplay : MonoBehaviour
     [Header("Test")]
     [SerializeField] List<MonsterData> listOfData = new();
 
-    Tween _scaleTween, _fadeTween;
+    // private
+    public List<MonsterCardPrefab> _listOfExistingCards = new();
+
+    Tween _scaleTween, _fadeTween, _confirmButtonTween;
     #endregion
 
     #region Setup
@@ -58,7 +62,8 @@ public class MonsterUiDisplay : MonoBehaviour
         _fadeTween = mask.DOFade(fadeFinalValue, fadeDuration);
         _scaleTween = container.transform.DOScale(1, scaleDuration).OnComplete(() => {
             StartCoroutine(InstantiateMonsterCards(listOfMonsters));
-        }) ;
+            _confirmButtonTween = confirmButton.transform.DOScale(1, scaleDuration);
+        });
     }
 
     IEnumerator InstantiateMonsterCards(List<MonsterData> listOfMonsters) {
@@ -66,7 +71,7 @@ public class MonsterUiDisplay : MonoBehaviour
         WaitForSeconds wait = new(instantiateInterval);
         List<MonsterCardPrefab> listOfMonsterCard = new();
 
-        for (int i= 0; i< listOfMonsters.Count; i++) {
+        for (int i = 0; i < listOfMonsters.Count; i++) {
             listOfMonsterCard.Add(InstantiateCard());
         }
 
@@ -78,7 +83,18 @@ public class MonsterUiDisplay : MonoBehaviour
     }
 
     MonsterCardPrefab InstantiateCard() {
-        return Instantiate(monsterCardPrefab, container.transform);
+
+        foreach(var card in _listOfExistingCards) {
+            if (!card.HasBeenUsed) {
+                card.HasBeenUsed = true;
+                return card;
+            }
+        }
+
+        MonsterCardPrefab newCard = Instantiate(monsterCardPrefab, container.transform);
+        if (!_listOfExistingCards.Contains(newCard)) _listOfExistingCards.Add(newCard);
+        newCard.HasBeenUsed = true;
+        return newCard;
     }
 
     #endregion
