@@ -15,6 +15,15 @@ MonoBehaviour:
   type: 2
   typeName: 
   events:
+  - id: SplashMusic
+    reference:
+      Guid:
+        Data1: -507303222
+        Data2: 1289619437
+        Data3: -642217304
+        Data4: -2143505572
+      Path: event:/Music/SplashMusic
+    stageInProject: 3
   - id: MainMusic
     reference:
       Guid:
