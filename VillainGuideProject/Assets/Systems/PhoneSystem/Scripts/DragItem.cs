@@ -8,6 +8,10 @@ public class DragItem : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
     Transform startParent;
     Vector3 startPosition;
 
+    QuestCardSelection _card;
+
+    [SerializeField] MonsterIconPrefab monsterIconPrefab;
+
     bool dropped;
 
     void Start()
@@ -34,6 +38,12 @@ public class DragItem : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (_card != null)
+        {
+            _card.RemoveMonsterFromTheCard(monsterIconPrefab.Info);
+            _card = null;
+        }
+
         dropped = false;
 
         transform.SetParent(canvas.transform);
@@ -65,9 +75,13 @@ public class DragItem : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
         transform.localPosition = startPosition;
     }
 
-    public void Drop(Transform slot)
+    public void Drop(Transform slot, QuestCardSelection card)
     {
+
         dropped = true;
+
+        _card = card;
+        card.AddMonsterToTheCard(monsterIconPrefab.Info);
 
         transform.SetParent(slot);
         transform.localPosition = Vector3.zero;
