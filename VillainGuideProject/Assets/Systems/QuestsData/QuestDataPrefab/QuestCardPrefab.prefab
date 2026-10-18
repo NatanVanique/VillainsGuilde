@@ -1136,7 +1136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f526bcd8855e7524e96540b655f2c5c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestCard
-  title: {fileID: 0}
+  title: {fileID: 480817554755699131}
   tipText: {fileID: 2070634741140821915}
   dictionaryOfAmountOfCharacters:
     _serializedList:

@@ -38,9 +38,6 @@ public class PhoneController : MonoBehaviour
 
     private IEnumerator Start()
     {
-        SingleEntryPoint.Instance.UiManager.MissionsScreenController.SetupQuests();
-        SingleEntryPoint.Instance.UiManager.MissionsScreenController.SetupIcons();
-
         yield return new WaitForSeconds(3f);
 
         PhoneRing();
@@ -71,7 +68,10 @@ public class PhoneController : MonoBehaviour
                 notificationObject.SetActive(false);
             });
 
-        SingleEntryPoint.Instance.UiManager.MissionsScreenController.ShowMissionsScreen();
+        MissionsScreenController missions = SingleEntryPoint.Instance.UiManager.MissionsScreenController;
+        missions.SetupQuests();
+        missions.SetupIcons();
+        missions.ShowMissionsScreen();
     }
 
     public void ResetPhone()

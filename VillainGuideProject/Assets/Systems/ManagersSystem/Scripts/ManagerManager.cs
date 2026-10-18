@@ -39,6 +39,9 @@ public class ManagerManager : MonoBehaviour {
             daySysPrefab = Instantiate(daySysPrefab, transform);
             DaySystem = daySysPrefab.GetComponent<DaySystem>();
         }
+        if (QuestSelector != null && DaySystem != null) {
+            QuestSelector.Setup(DaySystem.CurrentDay);
+        }
         if (daySysPrefab != null) {
             MonsterMan = Instantiate(MonsterManPrefab, transform);
             MonsterMan.Setup();
