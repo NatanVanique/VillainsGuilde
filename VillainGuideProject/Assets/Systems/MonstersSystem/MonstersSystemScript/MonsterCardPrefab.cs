@@ -1,4 +1,5 @@
 using AYellowpaper.SerializedCollections;
+using DG.Tweening;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,32 +11,32 @@ public class MonsterCardPrefab : MonoBehaviour {
     #region Variables
 
     [Header("Components")]
+    [SerializeField] Transform container;
     [SerializeField] Image splashArt;
     [SerializeField] Image Background;
     [SerializeField] LocalizeStringEvent nameText;
     [SerializeField] Button infoButton;
 
+    [Header("Animation")]
+    [SerializeField] float scaleDuration;
+
     ListOfTips _selectedMonsterTips;
     MonsterData _selectedData;
 
-    [Header("Test")]
-    [SerializeField] MonsterData data;
-
     public static event Action<MonsterData, ListOfTips> OnMonsterCardInfoButtonPressed;
+
+    Tween _scaleTween;
 
     #endregion
 
     #region Setup
-    private void Start() {
-        Setup(data);
-    }
-
     public void Setup(MonsterData data) {
         _selectedData = data;
         _selectedMonsterTips = ChooseRandomTips();
         SetVisual();
 
         SetButtons();
+        Animate();
     }
 
     #endregion
@@ -83,6 +84,9 @@ public class MonsterCardPrefab : MonoBehaviour {
 
     #region Visuals
 
+    void Animate() {
+        _scaleTween = container.DOScale(1, scaleDuration);
+    }
     void SetVisual() {
         if (_selectedData.SplashArt != null) splashArt.sprite = _selectedData.SplashArt;
         if (_selectedData.Name != null) nameText.StringReference = _selectedData.Name;
@@ -92,9 +96,20 @@ public class MonsterCardPrefab : MonoBehaviour {
     #endregion
 
     #region Select
-
     public MonsterInfo SelectThisMonter() {
         return new MonsterInfo(_selectedData, _selectedMonsterTips);
+    }
+
+    #endregion
+
+    #region
+
+    private void OnDestroy() {
+        KillTweens();
+    }
+
+    void KillTweens() {
+        DOTween.Kill(_scaleTween);
     }
 
     #endregion
