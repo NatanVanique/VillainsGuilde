@@ -17,9 +17,11 @@ public class QuestCard : MonoBehaviour
     [SerializeField, SerializedDictionary("amount", "container")] SerializedDictionary<int, GameObject> dictionaryOfAmountOfCharacters;
     [SerializeField, SerializedDictionary("type", "icons")] SerializedDictionary<QuestRewardType, GameObject> dictionaryOfRewardIcons;
 
+
     [Header("Test")]
     [SerializeField] QuestData dataTest;
 
+    public List<MonsterInfo> _listOfMonsters = new();
     QuestData _data;
     ListOfTips _listOfTips;
 
@@ -97,6 +99,31 @@ public class QuestCard : MonoBehaviour
         dictionaryOfRewardIcons[QuestRewardType.XP].SetActive(_data.HasXP);
         dictionaryOfRewardIcons[QuestRewardType.Character].SetActive(_data.HasCharacters);
     }
+
+    #endregion
+
+    #region Add Monster
+
+    public void AddMonster(MonsterInfo info)
+    {
+        if (_listOfMonsters.Contains(info)) return;
+
+        _listOfMonsters.Add(info);
+    }
+
+    public void RemoveMonster(MonsterInfo info)
+    {
+        if (!_listOfMonsters.Contains(info)) return;
+        _listOfMonsters.Remove(info);
+    }
+
+    #endregion
+
+    #region Getters
+
+    public ListOfTips ReturnListOfTips() => _listOfTips;
+
+    public QuestData ReturnQuestData() => _data;
 
     #endregion
 }

@@ -22,7 +22,7 @@ public class DropSlot : MonoBehaviour, IDropHandler
             if (card && !card.TrySelect())
                 return;
 
-            item.Drop(transform);
+            item.Drop(transform,card);
         }
     }
 }
