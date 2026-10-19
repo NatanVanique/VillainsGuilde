@@ -27,15 +27,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 116829802496
-    m_Localized: "Tr\xEAs"
+    m_Localized: Amubis
     m_Metadata:
       m_Items: []
   - m_Id: 138543714304
-    m_Localized: Quatro
+    m_Localized: Mari
     m_Metadata:
       m_Items: []
   - m_Id: 156730216448
-    m_Localized: Cinco
+    m_Localized: Cyclopaulo
     m_Metadata:
       m_Items: []
   references:
