@@ -99,23 +99,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 608526755532814
-    m_Localized: The Basement Mystery
+    m_Localized: Basement Blues
     m_Metadata:
       m_Items: []
   - m_Id: 608526755532815
-    m_Localized: The Theater Phantom
+    m_Localized: The Phantom of the Monster
     m_Metadata:
       m_Items: []
   - m_Id: 608526755532816
-    m_Localized: A Cry for Help in the Mine
+    m_Localized: A Cry from Below
     m_Metadata:
       m_Items: []
   - m_Id: 608526755532817
-    m_Localized: Danger in the Skies
+    m_Localized: Mayday, Mayday, Monster!
     m_Metadata:
       m_Items: []
   - m_Id: 608526755532818
-    m_Localized: The Village Under Threat
+    m_Localized: No Monsters Allowed
     m_Metadata:
       m_Items: []
   references:

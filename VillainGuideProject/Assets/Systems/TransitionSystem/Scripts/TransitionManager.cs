@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 using System.Collections;
 
 public class TransitionManager : MonoBehaviour
@@ -99,6 +100,10 @@ public class TransitionManager : MonoBehaviour
         Animator animator = transition.GetComponentInChildren<Animator>();
         animator.SetTrigger(inTrigger);
         yield return new WaitForSeconds(transitionDuration);
+
+        foreach (GameObject root in oldScene.GetRootGameObjects())
+            foreach (EventSystem eventSystem in root.GetComponentsInChildren<EventSystem>(true))
+                eventSystem.enabled = false;
 
         yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
 
