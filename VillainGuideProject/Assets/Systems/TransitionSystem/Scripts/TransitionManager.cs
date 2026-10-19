@@ -86,7 +86,7 @@ public class TransitionManager : MonoBehaviour
         Destroy(reloadTransition);
         reloadTransition = null;
         transitioning = false;
-        SingleEntryPoint.Instance.UiManager.JournalManager.ActiveJournal();
+        SingleEntryPoint.Instance.UiManager.JournalManager.ShowJournalAfterHealthLoss();
     }
     IEnumerator TransitionRoutine(string sceneName)
     {
