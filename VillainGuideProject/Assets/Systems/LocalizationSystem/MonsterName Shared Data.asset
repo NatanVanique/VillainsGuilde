@@ -24,17 +24,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 116829802496
-    m_Key: Monster3Name
+    m_Key: MummyName
     m_Metadata:
       m_Items: []
   - m_Id: 138543714304
-    m_Key: Monster4Name
+    m_Key: ClownName
     m_Metadata:
       m_Items: []
   - m_Id: 156730216448
-    m_Key: 'Monster5Name
-
-'
+    m_Key: CyclopName
     m_Metadata:
       m_Items: []
   m_Metadata:

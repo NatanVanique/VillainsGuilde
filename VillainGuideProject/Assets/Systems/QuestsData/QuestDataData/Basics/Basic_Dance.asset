@@ -60,14 +60,14 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     Type: 
-  AmountOfMaxCharacters: 0
+  AmountOfMaxCharacters: 1
   HasMoney: 1
   MoneyReward: 10
   HasXP: 0
   XPReward: 0
   HasCharacters: 0
   ListOfCharacters: 
-  BasePercentChanceOfWinning: 0
+  BasePercentChanceOfWinning: 50
   HasConsequence: 0
   AmountOfConsequenceEvents: 0
   references:

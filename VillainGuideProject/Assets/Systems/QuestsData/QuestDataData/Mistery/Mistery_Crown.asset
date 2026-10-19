@@ -67,9 +67,9 @@ MonoBehaviour:
   XPReward: 10
   HasCharacters: 0
   ListOfCharacters: 
-  BasePercentChanceOfWinning: 0
+  BasePercentChanceOfWinning: 50
   HasConsequence: 1
-  AmountOfConsequenceEvents: 1
+  AmountOfConsequenceEvents: 0
   references:
     version: 2
     RefIds: []

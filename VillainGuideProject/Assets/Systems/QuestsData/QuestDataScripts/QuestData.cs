@@ -58,6 +58,6 @@ public struct QuestTipData {
 }
 
 public enum QuestType { Emergency, Mysterius, Classic, Rescue }
-public enum TipType { Day, Night, Flying, Grounded, Charisma, Fear, Animal, Empathy, Blood, Strength, Contention, Discretion, Ilusion, Protection, Speed }
+public enum TipType { Day, Night, Flying, Grounded, Charisma, Fear, Animal, Empathy, Blood, Strength, Contention, Discretion, Ilusion, Protection, Speed, Diplomacy }
 public enum QuestRewardType { Character, XP, Money }
 public enum QuestLine { Mayor, Second, Third }

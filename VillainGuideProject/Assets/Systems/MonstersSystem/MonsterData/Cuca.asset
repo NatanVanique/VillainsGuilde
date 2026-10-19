@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MonsterData
   Name:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:4e60a01ba90df1344a9a72be5523c31b
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 60189921280
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
           m_FallbackState: 0
           m_WaitForCompletion: 0
           m_LocalVariables: []
-        Type: 0
+        Type: 5
     - Key: 2
       Value:
       - TipText:
@@ -51,7 +51,7 @@ MonoBehaviour:
           m_FallbackState: 0
           m_WaitForCompletion: 0
           m_LocalVariables: []
-        Type: 0
+        Type: 6
     - Key: 3
       Value:
       - TipText:
@@ -63,7 +63,7 @@ MonoBehaviour:
           m_FallbackState: 0
           m_WaitForCompletion: 0
           m_LocalVariables: []
-        Type: 0
+        Type: 14
   references:
     version: 2
     RefIds: []

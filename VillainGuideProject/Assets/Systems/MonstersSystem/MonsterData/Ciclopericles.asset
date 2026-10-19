@@ -51,7 +51,7 @@ MonoBehaviour:
           m_FallbackState: 0
           m_WaitForCompletion: 0
           m_LocalVariables: []
-        Type: 0
+        Type: 9
     - Key: 3
       Value:
       - TipText:
@@ -63,7 +63,7 @@ MonoBehaviour:
           m_FallbackState: 0
           m_WaitForCompletion: 0
           m_LocalVariables: []
-        Type: 0
+        Type: 7
   references:
     version: 2
     RefIds: []
