@@ -11,6 +11,7 @@ public class MonsterData : ScriptableObject {
     public Sprite SplashArt;
     public Sprite MonsterCardSprite;
     public Sprite Icon;
+    public Sprite JournalSprite;
     public Sprite Background;
 
     [Header("Tips")]

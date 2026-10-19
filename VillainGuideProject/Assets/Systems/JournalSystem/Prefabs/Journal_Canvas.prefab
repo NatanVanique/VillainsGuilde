@@ -939,12 +939,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JournalView
   animationTarget: {fileID: 725892428894067125}
+  closeButton: {fileID: 900000000000000005}
   fadeTargets:
   - {fileID: 2041783186580022838}
   - {fileID: 2688380755934893737}
   - {fileID: 6447915785312243858}
   - {fileID: 900000000000000002}
-  closeButton: {fileID: 900000000000000005}
 --- !u!114 &900000000000000007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -965,10 +965,11 @@ MonoBehaviour:
   headerPrefab: {fileID: 3227821070570391807, guid: 866ebf3ebe111d44eb28ff60efbb72c2, type: 3}
   bigNewsPrefab: {fileID: 34382310232630354, guid: 212c9aa3ccebb7847b56b2c1e1f804a0, type: 3}
   smallNewsPrefab1: {fileID: 731133187550224965, guid: 1e86b36b0b2652841b588969efb12af0, type: 3}
-  smallNewsPrefab2: {fileID: 873840279623097134, guid: d18e39b0e65a13f4fa9f0dababd9c87d, type: 3}
+  smallNewsPrefab2: {fileID: 1955829590756754905, guid: d18e39b0e65a13f4fa9f0dababd9c87d, type: 3}
   emergencyWarningPrefab: {fileID: 3002198918067220672, guid: f57335a8a3228154eb6af8d55485429b, type: 3}
+  resultsNewsPrefab: {fileID: 3227821070570391807, guid: b07290e6c3cc7474cbc81606180105d4, type: 3}
   rowSpacing: 6
-  emergencyWarningText: An emergency mission is expected tomorrow.
+  emergencyWarningText: Make a good choice!
   goToResultsButton: {fileID: 0}
   doneButton: {fileID: 0}
   xpResultText: {fileID: 0}
@@ -1084,8 +1085,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030518, y: 1.8420105}
-  m_SizeDelta: {x: 348.34, y: 396.672}
+  m_AnchoredPosition: {x: 0.000030518, y: 50}
+  m_SizeDelta: {x: 348.34, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5061585204513406715
 MonoBehaviour:
