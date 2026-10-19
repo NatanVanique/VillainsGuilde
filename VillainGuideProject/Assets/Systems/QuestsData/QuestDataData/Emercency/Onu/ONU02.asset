@@ -69,7 +69,7 @@ MonoBehaviour:
   ListOfCharacters: 
   BasePercentChanceOfWinning: 0
   HasConsequence: 1
-  AmountOfConsequenceEvents: 3
+  AmountOfConsequenceEvents: 2
   references:
     version: 2
     RefIds: []
