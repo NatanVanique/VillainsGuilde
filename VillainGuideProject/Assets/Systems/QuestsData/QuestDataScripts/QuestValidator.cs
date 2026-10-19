@@ -8,6 +8,7 @@ public class QuestValidator : MonoBehaviour
     #region Variables
 
     public static event Action<int> OnQuestWithResultFailed;
+    public static event Action OnRescueQuestWon;
 
     #endregion
 
@@ -75,6 +76,9 @@ public class QuestValidator : MonoBehaviour
     }
 
     private void CheckResult(bool result, QuestData data) {
+
+        if (data.Type == QuestType.Rescue && result == true) OnRescueQuestWon?.Invoke();
+
         if (!result) {
             if (!data.HasConsequence) return;
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 900000000000000004}
   - component: {fileID: 900000000000000005}
   - component: {fileID: 8920720585899780223}
+  - component: {fileID: 7065989469349504488}
   m_Layer: 0
   m_Name: CloseButton
   m_TagString: Untagged
@@ -121,7 +122,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 900000000000000004}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7065989469349504488}
+        m_TargetAssemblyTypeName: JournalCloseButton, Assembly-CSharp
+        m_MethodName: ClickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8920720585899780223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +150,18 @@ MonoBehaviour:
   hoverScale: 1.1
   duration: 0.15
   ease: 27
+--- !u!114 &7065989469349504488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900000000000000001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18916aba41135b945addcc1f51b5bea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JournalCloseButton
 --- !u!1 &900000000000000008
 GameObject:
   m_ObjectHideFlags: 0

@@ -60,13 +60,15 @@ MonoBehaviour:
   fadeDuration: 0.25
   fadeFinalValue: 0.25
   instantiateInterval: 0.25
-  listOfData:
+  listOfAllMonsters:
   - {fileID: 11400000, guid: ffd4e75a0b8be704eb61bdaf31bad526, type: 2}
-  - {fileID: 11400000, guid: ffd4e75a0b8be704eb61bdaf31bad526, type: 2}
-  - {fileID: 11400000, guid: ffd4e75a0b8be704eb61bdaf31bad526, type: 2}
-  startButton: {fileID: 0}
+  - {fileID: 11400000, guid: b8f260ae7a201a645a9e9b95fb0213df, type: 2}
+  - {fileID: 11400000, guid: 8315acd9fa14d054e93b536c63425a7a, type: 2}
+  - {fileID: 11400000, guid: 9d9f0ac85882b364cab26a30bc37b30e, type: 2}
+  - {fileID: 11400000, guid: e27977747c2ff854188a4c7b2702cb9d, type: 2}
   _listOfExistingCards: []
   _selectedCard: {fileID: 0}
+  _canTurnScreenOn: 0
 --- !u!1 &2532283552090696240
 GameObject:
   m_ObjectHideFlags: 0
