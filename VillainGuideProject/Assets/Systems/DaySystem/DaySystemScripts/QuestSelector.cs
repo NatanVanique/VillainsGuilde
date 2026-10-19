@@ -63,7 +63,7 @@ public class QuestSelector : MonoBehaviour {
         int totalAmountOfQuestsLefts = newDayQuestData.totalAmountOfQuests;
         int amountOfMysteriusLeft = newDayQuestData.totalAmountOfMysterious;
 
-        if (newDayQuestData.IsEmergency) { // VERIFICANDO SE É UMA EMERGÊNCIA
+        if (newDayQuestData.IsEmergency) { // VERIFICANDO SE ï¿½ UMA EMERGï¿½NCIA
             if (newDayQuestData.DictionaryOfMandatoryQuests.TryGetValue(_currentLine, out QuestData mandatory) && mandatory != null) _selectedQuests.Add(mandatory);
             else totalAmountOfQuestsLefts++;
             totalAmountOfQuestsLefts--;
@@ -99,7 +99,7 @@ public class QuestSelector : MonoBehaviour {
                 newDayQuestData.DictionaryOfPossibleQuests.TryGetValue(QuestType.Mysterius, out listOfQuestsToChoose);
                 amountOfMysteriusLeft--;
             }
-            else { // Clássica
+            else { // Clï¿½ssica
                 newDayQuestData.DictionaryOfPossibleQuests.TryGetValue(QuestType.Classic, out listOfQuestsToChoose);
             }
 
@@ -119,6 +119,16 @@ public class QuestSelector : MonoBehaviour {
 
     public void EnsureCurrentDay(int currentDay) {
         HandleDayChanged(currentDay);
+    }
+
+    public QuestData GetEmergencyForDay(int day)
+    {
+        if (!dictionaryOfDayInfo.TryGetValue(day, out DayQuestsData dayData) ||
+            !dayData.IsEmergency || dayData.DictionaryOfMandatoryQuests == null)
+            return null;
+
+        dayData.DictionaryOfMandatoryQuests.TryGetValue(_currentLine, out QuestData emergency);
+        return emergency;
     }
 
     #region Sup

@@ -24,6 +24,7 @@ MonoBehaviour:
   SplashArt: {fileID: 21300000, guid: 8255dd1d35d197b41bbe3a693c5896bd, type: 3}
   MonsterCardSprite: {fileID: 392724521229228169, guid: d2c52864984cf60418386aa5c720c18a, type: 3}
   Icon: {fileID: -8495348301032556982, guid: f684d4aa5e27c684e97049500e5af3ea, type: 3}
+  JournalSprite: {fileID: 21300000, guid: 0b5f0eb8c3cfcf64eb129ca70fd77a62, type: 3}
   Background: {fileID: 0}
   DictionaryOfTips:
     _serializedList:

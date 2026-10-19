@@ -21,6 +21,7 @@ public class JournalUi : MonoBehaviour
     [SerializeField] private GameObject smallNewsPrefab1;
     [SerializeField] private GameObject smallNewsPrefab2;
     [SerializeField] private GameObject emergencyWarningPrefab;
+    [SerializeField] private GameObject resultsNewsPrefab;
     [SerializeField, Min(0f)] private float rowSpacing = 6f;
     [SerializeField, TextArea] private string emergencyWarningText = "An emergency mission is expected tomorrow.";
 
@@ -102,9 +103,23 @@ public class JournalUi : MonoBehaviour
         if (newsGrid == null)
             return;
         newsGrid.gameObject.SetActive(true);
-        if (newsScroll != null && newsScroll.viewport != null &&
-            newsScroll.viewport.GetComponent<RectMask2D>() == null)
-            newsScroll.viewport.gameObject.AddComponent<RectMask2D>();
+        if (newsScroll != null && newsScroll.viewport != null)
+        {
+            GameObject viewport = newsScroll.viewport.gameObject;
+            if (viewport.GetComponent<RectMask2D>() == null)
+                viewport.AddComponent<RectMask2D>();
+
+            // Keep the entire viewport scrollable even between article graphics.
+            Graphic viewportGraphic = viewport.GetComponent<Graphic>();
+            if (viewportGraphic == null)
+            {
+                Image hitArea = viewport.AddComponent<Image>();
+                hitArea.color = Color.clear;
+                hitArea.canvasRenderer.cullTransparentMesh = false;
+                viewportGraphic = hitArea;
+            }
+            viewportGraphic.raycastTarget = true;
+        }
 
         SpawnHeader();
         JournalRegister.JournalEntry featured = rewardsRegister.BigNews;
@@ -138,6 +153,7 @@ public class JournalUi : MonoBehaviour
             spawnedNews.Add(warning);
         }
 
+        SpawnResultsNews();
         CreateColumnDivider();
         resetScrollOnRefresh = true;
         RefreshLayout();
@@ -180,6 +196,48 @@ public class JournalUi : MonoBehaviour
             header.anchoredPosition = Vector2.zero;
         }
         spawnedRoots.Add(container);
+    }
+
+    private void SpawnResultsNews()
+    {
+        if (resultsNewsPrefab == null || journalReward == null)
+            return;
+
+        GameObject instance = Instantiate(resultsNewsPrefab, newsGrid.transform);
+        PrepareFullWidth(instance);
+        VerticalLayoutGroup resultsLayout = instance.transform.Find("Results")?.GetComponent<VerticalLayoutGroup>();
+        if (resultsLayout != null)
+            resultsLayout.spacing = -14f;
+        JournalReward.RewardResult result = journalReward.CalculateRewards();
+        bool hasResults = result.HasXP || result.HasMoney || result.HasCharacters;
+        Transform results = instance.transform.Find("Results");
+        Transform noRewards = instance.transform.Find("NoRewards");
+        if (results != null)
+            results.gameObject.SetActive(hasResults);
+        if (noRewards != null)
+            noRewards.gameObject.SetActive(!hasResults);
+        SetResultsTab(instance.transform, "Results/XpTab", result.HasXP, result.XP);
+        SetResultsTab(instance.transform, "Results/MoneyTab", result.HasMoney, result.Money);
+        SetResultsTab(instance.transform, "Results/MonsterTab", result.HasCharacters, result.Characters);
+        spawnedRoots.Add(instance);
+    }
+
+    private static void SetResultsTab(Transform root, string path, bool visible, float value)
+    {
+        Transform tab = root.Find(path);
+        if (tab == null)
+        {
+            Debug.LogWarning($"Results news is missing '{path}'.", root);
+            return;
+        }
+
+        tab.gameObject.SetActive(visible);
+        TMP_Text label = tab.GetComponentInChildren<TMP_Text>(true);
+        if (label != null)
+        {
+            string amount = value.ToString("+0.########;-0.########;0");
+            label.text = label.text.Replace("xx", amount);
+        }
     }
 
     private void SpawnFullWidthNews(GameObject prefab, JournalRegister.JournalEntry entry, bool showMonster)
@@ -407,13 +465,12 @@ public class JournalUi : MonoBehaviour
             SingleEntryPoint.Instance.ManagerManager.QuestSelector == null)
             return null;
 
-        foreach (QuestData quest in SingleEntryPoint.Instance.ManagerManager.QuestSelector.SelectedQuests)
-        {
-            if (quest != null && quest.Type == QuestType.Emergency)
-                return quest;
-        }
+        QuestSelector selector = SingleEntryPoint.Instance.ManagerManager.QuestSelector;
+        DaySystem daySystem = SingleEntryPoint.Instance.ManagerManager.DaySystem;
+        if (selector == null || daySystem == null)
+            return null;
 
-        return null;
+        return selector.GetEmergencyForDay(daySystem.CurrentDay + 1);
     }
 
     private IEnumerator RefreshScrollNextFrame()
@@ -431,6 +488,18 @@ public class JournalUi : MonoBehaviour
             UpdateColumnDivider();
         }
 
+        // LocalizedString callbacks and dynamically-sized articles can finish
+        // after the first rebuild. Wait one more frame before deciding whether
+        // the page actually has content below the viewport.
+        yield return null;
+        Canvas.ForceUpdateCanvases();
+        RefreshLayout();
+        if (content != null)
+        {
+            LayoutRebuilder.ForceRebuildLayoutImmediate(content);
+            UpdateColumnDivider();
+        }
+
         if (resetScrollOnRefresh && newsScroll != null)
         {
             newsScroll.StopMovement();
@@ -440,12 +509,18 @@ public class JournalUi : MonoBehaviour
 
         if (newsScroll != null)
         {
-            bool needsScroll = content != null && newsScroll.viewport != null &&
-                content.rect.height > newsScroll.viewport.rect.height;
+            float contentHeight = content != null
+                ? Mathf.Max(content.rect.height, LayoutUtility.GetPreferredHeight(content))
+                : 0f;
+            float viewportHeight = newsScroll.viewport != null
+                ? newsScroll.viewport.rect.height
+                : 0f;
+            bool needsScroll = contentHeight > viewportHeight + 1f;
             newsScroll.vertical = needsScroll;
             if (newsSlider != null)
             {
                 newsSlider.interactable = needsScroll;
+                newsSlider.gameObject.SetActive(needsScroll);
                 newsSlider.SetValueWithoutNotify(1f - newsScroll.verticalNormalizedPosition);
             }
         }
