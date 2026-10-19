@@ -36,6 +36,7 @@ public class MonsterUiDisplay : MonoBehaviour {
     Tween _scaleTween, _fadeTween, _confirmButtonTween;
 
     public bool _canTurnScreenOn = false;
+    public static bool IsShowing { get; private set; }
 
     public static event Action<MonsterCardPrefab> OnMonsterCardSelected;
     #endregion
@@ -92,6 +93,11 @@ public class MonsterUiDisplay : MonoBehaviour {
 
     void MonsterUIDisplayOn() {
 
+        if (EndingsManager.ShouldEndRun) {
+            _canTurnScreenOn = false;
+            return;
+        }
+
         if (!_canTurnScreenOn) return;
 
         _canTurnScreenOn = false;
@@ -104,6 +110,7 @@ public class MonsterUiDisplay : MonoBehaviour {
             unregisteredMonster.RemoveAt(unregisteredMonster.Count - 1);
         }
 
+        IsShowing = true;
         mask.blocksRaycasts = true;
 
         _fadeTween = mask.DOFade(fadeFinalValue, fadeDuration);
@@ -184,10 +191,13 @@ public class MonsterUiDisplay : MonoBehaviour {
             }
 
             mask.blocksRaycasts = false;
+            IsShowing = false;
+            SingleEntryPoint.Instance.UiManager.JournalManager.ContinueAfterJournal();
         });
     }
 
     private void OnDestroy() {
+        IsShowing = false;
         UnsubscribeToEvents();
         KillTweens();
     }

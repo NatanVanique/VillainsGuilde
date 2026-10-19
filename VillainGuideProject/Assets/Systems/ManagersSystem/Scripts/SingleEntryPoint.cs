@@ -5,6 +5,7 @@ public class SingleEntryPoint : MonoBehaviour
     public static SingleEntryPoint Instance { get; private set; }
     public ManagerManager ManagerManager;
     public UiManager UiManager;
+    public EndingsManager EndingsManager;
     [SerializeField] GameObject mmPrefab;
     [SerializeField] GameObject umPrefab;
 

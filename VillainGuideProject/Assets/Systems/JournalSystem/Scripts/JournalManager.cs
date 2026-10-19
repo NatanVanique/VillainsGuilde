@@ -16,6 +16,7 @@ public class JournalManager : MonoBehaviour
     private CanvasGroup canvasGroup;
     private Vector3 openScale;
     private bool closing;
+    private bool showingHealthLoss;
     private RectTransform popup;
     private Vector2 openPosition;
     private Vector2 hiddenPosition;
@@ -112,16 +113,41 @@ public class JournalManager : MonoBehaviour
     private void FinishClosingJournal()
     {
         HideAfterTransition();
+        if (EndingsManager.ShouldEndRun)
+        {
+            SingleEntryPoint.Instance.EndingsManager.ShowEnding();
+            return;
+        }
         HealthManager health = SingleEntryPoint.Instance.ManagerManager.HealthMan;
         if (health == null || health.PendingHealthLoss <= 0)
+        {
+            ContinueAfterJournal();
             return;
+        }
 
         LoseHealthUI lossScreen = FindFirstObjectByType<LoseHealthUI>(FindObjectsInactive.Include);
         if (lossScreen == null)
+        {
+            ContinueAfterJournal();
             return;
+        }
 
         int lostHealth = health.ConsumePendingHealthLoss();
-        lossScreen.Show(health.CurrentHealth + lostHealth, health.CurrentHealth, null);
+        showingHealthLoss = true;
+        lossScreen.Show(health.CurrentHealth + lostHealth, health.CurrentHealth, () =>
+        {
+            showingHealthLoss = false;
+            ContinueAfterJournal();
+        });
+    }
+
+    public void ContinueAfterJournal()
+    {
+        if (!closing || journalInstance.gameObject.activeSelf || showingHealthLoss ||
+            MonsterUiDisplay.IsShowing || EndingsManager.ShouldEndRun)
+            return;
+
+        PhoneController.Instance.PhoneRing();
     }
 
     public void HideAfterTransition()

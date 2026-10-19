@@ -82,6 +82,7 @@ public class MissionsScreenController : MonoBehaviour
         List<QuestCardSelection> selectedQuests = new List<QuestCardSelection>(
             SingleEntryPoint.Instance.ManagerManager.QuestSelectionManager.SelectedCards);
         OnQuestsAccepted?.Invoke(selectedQuests);
+        SingleEntryPoint.Instance.ManagerManager.DaySystem.CompleteCurrentDay();
 
         //Quests
         missionsScreen.DOKill();

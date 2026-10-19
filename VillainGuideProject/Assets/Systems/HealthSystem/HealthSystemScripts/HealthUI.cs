@@ -10,11 +10,13 @@ public class HealthUI : MonoBehaviour
     [SerializedDictionary("index", "image"), SerializeField] SerializedDictionary<int, Image> dictionaryOfHealthIcons = new();
     [SerializeField] Sprite regularHealthSprite;
     [SerializeField] Sprite damagedHealthSprite;
+    private bool started;
 
     #endregion
 
     #region Setup
     private void Start() {
+        started = true;
         Setup();
     }
     public void Setup() {
@@ -24,7 +26,8 @@ public class HealthUI : MonoBehaviour
     }
 
     private void OnEnable() {
-        Setup();
+        SubscribeToEvents();
+        if (started) Setup();
     }
 
     private void OnDisable() {
