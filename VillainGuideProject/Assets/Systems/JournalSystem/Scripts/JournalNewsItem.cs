@@ -70,21 +70,21 @@ public class JournalNewsItem : MonoBehaviour
             Debug.LogWarning($"Quest '{entry.Quest.name}' has no {(entry.PlayerWon ? "ResultDescriptionGood" : "ResultDescriptionBad")} configured.", entry.Quest);
     }
 
-    public void SetupWarning(QuestData emergencyQuest, string warningTitle)
+    public void SetupWarning(QuestData emergencyQuest)
     {
         ClearBindings();
         ResolveReferences(false);
         PrepareSizing();
         if (titleText != null)
-        {
-            titleText.text = warningTitle;
-        }
+            titleText.text = string.Empty;
         if (descriptionText != null)
-            descriptionText.text = "Requirements not configured.";
+            descriptionText.text = string.Empty;
 
         ApplyMonsterImage(monsterImage, null, false);
+        BindTitle(new LocalizedString("UI", "Journal_EmergencyWarning"));
         if (emergencyQuest != null)
-            BindDescription(emergencyQuest.EmergencyRequirements);
+            BindDescription(emergencyQuest.EmergencyRequirements != null && !emergencyQuest.EmergencyRequirements.IsEmpty
+                ? emergencyQuest.EmergencyRequirements : new LocalizedString("UI", "Journal_EmergencyDetails"));
         UpdateSize();
     }
 

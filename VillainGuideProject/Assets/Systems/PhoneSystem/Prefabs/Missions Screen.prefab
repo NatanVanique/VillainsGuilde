@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 4003016081623010307}
   - component: {fileID: 7481611760913770939}
   - component: {fileID: 540345112490562876}
+  - component: {fileID: 900000000000001001}
   m_Layer: 0
   m_Name: Accept_Text
   m_TagString: Untagged
@@ -300,6 +301,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2346943634262780474}
   m_CullTransparentMesh: 1
+--- !u!114 &900000000000001001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2346943634262780474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac36c3d22a94ad891bc6868281eb815, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::UiLocalizedText
+  key: Mission_Accept
 --- !u!114 &540345112490562876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,6 +417,7 @@ GameObject:
   - component: {fileID: 5204078643518317923}
   - component: {fileID: 1892480689660967275}
   - component: {fileID: 2268958615864343399}
+  - component: {fileID: 900000000000001002}
   - component: {fileID: 1203064753400107016}
   m_Layer: 0
   m_Name: Title_Text
@@ -438,6 +453,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2567467591018342028}
   m_CullTransparentMesh: 1
+--- !u!114 &900000000000001002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2567467591018342028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac36c3d22a94ad891bc6868281eb815, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::UiLocalizedText
+  key: Mission_Title
 --- !u!114 &2268958615864343399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1365,6 +1393,7 @@ GameObject:
   - component: {fileID: 2196248449785528416}
   - component: {fileID: 6041346707837063168}
   - component: {fileID: 5659297274847379026}
+  - component: {fileID: 900000000000001003}
   m_Layer: 0
   m_Name: Explication_Text
   m_TagString: Untagged
@@ -1399,6 +1428,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5676297737561380117}
   m_CullTransparentMesh: 1
+--- !u!114 &900000000000001003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5676297737561380117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac36c3d22a94ad891bc6868281eb815, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::UiLocalizedText
+  key: Mission_DragShort
 --- !u!114 &5659297274847379026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1596,6 +1638,7 @@ GameObject:
   - component: {fileID: 4112818644383009889}
   - component: {fileID: 1199337980385884153}
   - component: {fileID: 5361857951686444750}
+  - component: {fileID: 900000000000001004}
   m_Layer: 0
   m_Name: Explication_Text
   m_TagString: Untagged
@@ -1630,6 +1673,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7622809151769927844}
   m_CullTransparentMesh: 1
+--- !u!114 &900000000000001004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7622809151769927844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac36c3d22a94ad891bc6868281eb815, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::UiLocalizedText
+  key: Mission_DragHelp
 --- !u!114 &5361857951686444750
 MonoBehaviour:
   m_ObjectHideFlags: 0

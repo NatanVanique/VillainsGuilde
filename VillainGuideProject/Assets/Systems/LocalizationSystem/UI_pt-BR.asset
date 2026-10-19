@@ -98,6 +98,74 @@ MonoBehaviour:
     m_Localized: "Portugu\xEAs"
     m_Metadata:
       m_Items: []
+  - m_Id: 90000000020
+    m_Localized: Aceitar!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000021
+    m_Localized: "Miss\xF5es do dia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000022
+    m_Localized: "Arraste para as miss\xF5es."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000023
+    m_Localized: "Arraste funcion\xE1rios para as miss\xF5es para aceit\xE1-las.\nEscolha o monstro certo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000024
+    m_Localized: "Emerg\xEAncia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000025
+    m_Localized: "Mist\xE9rio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000026
+    m_Localized: "Cl\xE1ssica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000027
+    m_Localized: Resgate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000028
+    m_Localized: "NOT\xCDCIAS DE HOJE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000029
+    m_Localized: "Role para ver mais not\xEDcias,\nclique para continuar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000030
+    m_Localized: "Miss\xE3o de emerg\xEAncia amanh\xE3!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000031
+    m_Localized: "Sem recompensas hoje!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000032
+    m_Localized: 'Resultado recebido: {amount}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000033
+    m_Localized: "Miss\xE3o fracassou"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000034
+    m_Localized: "VOC\xCA CONSEGUIU!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000035
+    m_Localized: Fim de jogo...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000036
+    m_Localized: "Prepare sua equipe para a miss\xE3o de amanh\xE3."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

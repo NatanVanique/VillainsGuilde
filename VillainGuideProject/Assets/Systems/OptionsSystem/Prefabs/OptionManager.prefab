@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OptionsManager
   optionsCanvas: {fileID: 0}
+  sortingOrder: 20
   menuCanvas: {fileID: 0}

@@ -66,62 +66,64 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 516248395415558
-    m_Localized: "A atendente est\xE1 apavorada, mas o prefeito s\xF3 obedece quando
-      algu\xE9m fala com autoridade e emo\xE7\xE3o."
+    m_Localized: The clerk is in total panic, but the Mayor only responds if you
+      address him with authority and drama.
     m_Metadata:
       m_Items: []
   - m_Id: 516248395415559
-    m_Localized: "O prefeito est\xE1 fraco, tonto e prestes a desmaiar entre as maletas
-      de dinheiro."
+    m_Localized: The Mayor is feeling faint and lightheaded, about to collapse right
+      in the middle of the cash-filled briefcases.
     m_Metadata:
       m_Items: []
   - m_Id: 516248395415560
-    m_Localized: "O delegado est\xE1 no \xFAltimo andar, atr\xE1s de uma porta blindada."
+    m_Localized: The delegate is on the top floor, behind an armored door.
     m_Metadata:
       m_Items: []
   - m_Id: 516248395415561
-    m_Localized: "Ele s\xF3 abre a porta para quem souber conversar com autoridade."
+    m_Localized: He will only open the door for someone who knows how to speak with
+      authority
     m_Metadata:
       m_Items: []
   - m_Id: 516248395415562
-    m_Localized: "A imprensa est\xE1 filmando tudo no sagu\xE3o"
+    m_Localized: The press is filming everything in the lobby.
     m_Metadata:
       m_Items: []
   - m_Id: 516248395415563
-    m_Localized: "O erro est\xE1 nos servidores e nos fones de tradu\xE7\xE3o."
+    m_Localized: The glitch is coming from the servers and the translation earpieces.
     m_Metadata:
       m_Items: []
   - m_Id: 516248395415564
-    m_Localized: "A sala t\xE9cnica est\xE1 \xE0s escuras ap\xF3s um curto-circuito."
+    m_Localized: The control room went dark after a short circuit.
     m_Metadata:
       m_Items: []
   - m_Id: 516248395415565
-    m_Localized: "\xC9 preciso acalmar os delegados antes que eles saiam do sal\xE3o."
+    m_Localized: We have to calm the delegates down before they storm out of the
+      hall
     m_Metadata:
       m_Items: []
   - m_Id: 516248395415566
-    m_Localized: "O sol j\xE1 se p\xF4s e a pra\xE7a est\xE1 ficando escura."
+    m_Localized: The sun has dipped below the horizon, and darkness is settling over
+      the plaza.
     m_Metadata:
       m_Items: []
   - m_Id: 516248395415567
-    m_Localized: "As pessoas come\xE7am a ouvir sussurros vindos dos alto-falantes
-      quebrados."
+    m_Localized: Faint whispers are starting to bleed through the busted loudspeakers.
     m_Metadata:
       m_Items: []
   - m_Id: 516248395415568
-    m_Localized: "\xC9 preciso acalmar a multid\xE3o sem gritar nem usar for\xE7a."
+    m_Localized: The crowd needs to be calmed down without shouting or using force.
     m_Metadata:
       m_Items: []
   - m_Id: 516248395415569
-    m_Localized: "As chamas est\xE3o se espalhando pelo teto e pelas cortinas."
+    m_Localized: The flames are spreading across the ceiling and curtains.
     m_Metadata:
       m_Items: []
   - m_Id: 516248395415570
-    m_Localized: "As portas de emerg\xEAncia est\xE3o emperradas pelo calor."
+    m_Localized: The emergency doors are jammed due to the heat
     m_Metadata:
       m_Items: []
   - m_Id: 516248395415571
-    m_Localized: "H\xE1 delegados desmaiados e pessoas com dificuldade para respirar."
+    m_Localized: There are unconscious delegates and people having trouble breathing.
     m_Metadata:
       m_Items: []
   references:

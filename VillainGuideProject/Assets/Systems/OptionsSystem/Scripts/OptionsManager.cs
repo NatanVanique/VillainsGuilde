@@ -7,6 +7,7 @@ public class OptionsManager : MonoBehaviour
 {
     [SerializeField] private RectTransform optionsCanvas;
     [SerializeField] private float animationDuration = 0.9f;
+    [SerializeField] private int sortingOrder = 20;
     private RectTransform popup;
     private Vector3 openScale;
     private CanvasGroup popupGroup;
@@ -20,6 +21,13 @@ public class OptionsManager : MonoBehaviour
 
     private void Awake()
     {
+        Canvas canvas = optionsCanvas.GetComponent<Canvas>();
+        if (canvas != null)
+        {
+            canvas.overrideSorting = true;
+            canvas.sortingOrder = sortingOrder;
+        }
+
         Transform background = optionsCanvas.Find("BackgroundFade");
         if (background != null)
         {

@@ -95,6 +95,74 @@ MonoBehaviour:
     m_Key: Language_Portuguese
     m_Metadata:
       m_Items: []
+  - m_Id: 90000000020
+    m_Key: Mission_Accept
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000021
+    m_Key: Mission_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000022
+    m_Key: Mission_DragShort
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000023
+    m_Key: Mission_DragHelp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000024
+    m_Key: Mission_Type_Emergency
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000025
+    m_Key: Mission_Type_Mystery
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000026
+    m_Key: Mission_Type_Classic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000027
+    m_Key: Mission_Type_Rescue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000028
+    m_Key: Journal_Header
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000029
+    m_Key: Journal_Instruction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000030
+    m_Key: Journal_EmergencyWarning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000031
+    m_Key: Journal_NoRewards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000032
+    m_Key: Journal_ResultCollected
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000033
+    m_Key: Health_MissionFailed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000034
+    m_Key: Ending_Victory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000035
+    m_Key: Ending_Defeat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000036
+    m_Key: Journal_EmergencyDetails
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

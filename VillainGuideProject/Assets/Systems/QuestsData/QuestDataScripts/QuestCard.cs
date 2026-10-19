@@ -48,7 +48,13 @@ public class QuestCard : MonoBehaviour {
 
     void SetVisuals() {
         background.sprite = _data.Type == QuestType.Emergency ? emergencyBackground : classicBackground;
-        questType.text = _data.Type == QuestType.Mysterius ? "Mystery" : _data.Type.ToString();
+        string typeKey = _data.Type switch {
+            QuestType.Emergency => "Mission_Type_Emergency",
+            QuestType.Mysterius => "Mission_Type_Mystery",
+            QuestType.Rescue => "Mission_Type_Rescue",
+            _ => "Mission_Type_Classic"
+        };
+        UiLocalizedText.Bind(questType, typeKey);
         ChangeTitle();
         ChangeCharactersAmountIcons();
         ChangeTipText();
@@ -56,6 +62,8 @@ public class QuestCard : MonoBehaviour {
     }
 
     void ChangeTitle() {
+        TMP_Text label = title.GetComponent<TMP_Text>();
+        if (label != null) label.text = string.Empty;
         title.StringReference = _data.QuestTitle;
     }
 
@@ -68,6 +76,8 @@ public class QuestCard : MonoBehaviour {
     }
 
     void ChangeTipText() {
+        TMP_Text label = tipText.GetComponent<TMP_Text>();
+        if (label != null) label.text = string.Empty;
         tipText.StringReference = _data.TipData.TipText;
     }
 
