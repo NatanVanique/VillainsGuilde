@@ -9,6 +9,7 @@ public class QuestCardSelection : MonoBehaviour, IDropHandler
     public QuestCard QuestCard;
 
     public bool IsSelected { get; private set; }
+    private QuestSelectionManager selectionManager;
 
     public void Setup()
     {
@@ -31,14 +32,16 @@ public class QuestCardSelection : MonoBehaviour, IDropHandler
 
     private void OnDisable()
     {
-        SingleEntryPoint.Instance.ManagerManager.QuestSelectionManager.Deselect(this);
+        if (selectionManager != null)
+            selectionManager.Deselect(this);
         IsSelected = false;
         RefreshBorder();
     }
 
     public bool TrySelect()
     {
-        return SingleEntryPoint.Instance.ManagerManager.QuestSelectionManager.TrySelect(this);
+        selectionManager = SingleEntryPoint.Instance.ManagerManager.QuestSelectionManager;
+        return selectionManager.TrySelect(this);
     }
 
     internal void SetSelected(bool selected)
