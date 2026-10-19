@@ -6,6 +6,7 @@ public class DragItem : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
     Canvas canvas;
     CanvasGroup canvasGroup;
     Transform startParent;
+    HorizontalCarousel originCarousel;
     Vector3 startPosition;
 
     QuestCardSelection _card;
@@ -23,6 +24,7 @@ public class DragItem : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
             canvasGroup = gameObject.AddComponent<CanvasGroup>();
 
         startParent = transform.parent;
+        originCarousel = startParent.GetComponentInParent<HorizontalCarousel>();
         startPosition = transform.localPosition;
     }
 
@@ -45,6 +47,7 @@ public class DragItem : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
 
         transform.SetParent(canvas.transform);
         transform.SetAsLastSibling();
+        originCarousel.RefreshAfterItemChange();
 
         if (previousCard != null)
         {
@@ -77,6 +80,7 @@ public class DragItem : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
         canvasGroup.blocksRaycasts = true;
         transform.SetParent(startParent);
         transform.localPosition = startPosition;
+        originCarousel.RefreshAfterItemChange();
     }
 
     public void Drop(Transform slot, QuestCardSelection card)

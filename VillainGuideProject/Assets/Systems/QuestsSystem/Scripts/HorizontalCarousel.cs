@@ -79,12 +79,22 @@ public class HorizontalCarousel : MonoBehaviour
 
     public void Refresh()
     {
+        Refresh(0);
+    }
+
+    public void RefreshAfterItemChange()
+    {
+        Refresh(currentIndex);
+    }
+
+    private void Refresh(int index)
+    {
         FinishEntrance();
         pageTween?.Kill();
         changingPage = false;
         contentGroup.blocksRaycasts = true;
         contentRect.anchoredPosition = restingPosition;
-        currentIndex = 0;
+        currentIndex = Mathf.Clamp(index, 0, Mathf.Max(0, content.childCount - maxVisibleItems));
         UpdateItems();
     }
 
