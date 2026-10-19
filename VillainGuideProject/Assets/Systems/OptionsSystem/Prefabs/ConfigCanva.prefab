@@ -2067,6 +2067,7 @@ GameObject:
   - component: {fileID: 5122372833092377735}
   - component: {fileID: 6520307825384874005}
   - component: {fileID: 4303104664799146033}
+  - component: {fileID: 900000000000002001}
   m_Layer: 0
   m_Name: OptionsTitle
   m_TagString: Untagged
@@ -2074,6 +2075,46 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &900000000000002001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8132697884226378024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:39c09b2e628be7f4dace11c93d106e3f
+    m_TableEntryReference:
+      m_KeyId: 90000000004
+      m_Key:
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4303104664799146033}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName:
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument:
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!224 &5122372833092377735
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2450,6 +2491,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8138463996922673830}
     m_Modifications:
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:39c09b2e628be7f4dace11c93d106e3f
+      objectReference: {fileID: 0}
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 90000000005
+      objectReference: {fileID: 0}
     - target: {fileID: 1940008744297882439, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
       propertyPath: m_SizeDelta.y
       value: -12
@@ -2689,6 +2738,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2624633322436830463}
     m_Modifications:
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:39c09b2e628be7f4dace11c93d106e3f
+      objectReference: {fileID: 0}
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 90000000017
+      objectReference: {fileID: 0}
     - target: {fileID: 1940008744297882439, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
       propertyPath: m_SizeDelta.y
       value: -12
@@ -2916,6 +2973,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4264560550642249804}
     m_Modifications:
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:39c09b2e628be7f4dace11c93d106e3f
+      objectReference: {fileID: 0}
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 90000000006
+      objectReference: {fileID: 0}
     - target: {fileID: 1940008744297882439, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
       propertyPath: m_SizeDelta.y
       value: -12
@@ -3155,6 +3220,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 643115255543485931}
     m_Modifications:
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:39c09b2e628be7f4dace11c93d106e3f
+      objectReference: {fileID: 0}
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 90000000007
+      objectReference: {fileID: 0}
     - target: {fileID: 1940008744297882439, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
       propertyPath: m_SizeDelta.y
       value: -12
@@ -3363,6 +3436,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 643115255543485931}
     m_Modifications:
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:39c09b2e628be7f4dace11c93d106e3f
+      objectReference: {fileID: 0}
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 90000000008
+      objectReference: {fileID: 0}
     - target: {fileID: 1940008744297882439, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
       propertyPath: m_SizeDelta.y
       value: -12
@@ -3610,6 +3691,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2624633322436830463}
     m_Modifications:
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:39c09b2e628be7f4dace11c93d106e3f
+      objectReference: {fileID: 0}
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 90000000009
+      objectReference: {fileID: 0}
     - target: {fileID: 1940008744297882439, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
       propertyPath: m_SizeDelta.y
       value: -12
@@ -3839,6 +3928,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2624633322436830463}
     m_Modifications:
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:39c09b2e628be7f4dace11c93d106e3f
+      objectReference: {fileID: 0}
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 90000000010
+      objectReference: {fileID: 0}
     - target: {fileID: 1940008744297882439, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
       propertyPath: m_SizeDelta.y
       value: -12
@@ -4066,6 +4163,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 643115255543485931}
     m_Modifications:
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:39c09b2e628be7f4dace11c93d106e3f
+      objectReference: {fileID: 0}
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 90000000011
+      objectReference: {fileID: 0}
     - target: {fileID: 1940008744297882439, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
       propertyPath: m_SizeDelta.y
       value: -12
@@ -4302,6 +4407,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3933126726437224164}
     m_Modifications:
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:39c09b2e628be7f4dace11c93d106e3f
+      objectReference: {fileID: 0}
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 90000000018
+      objectReference: {fileID: 0}
     - target: {fileID: 1940008744297882439, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
       propertyPath: m_SizeDelta.y
       value: -12
@@ -4529,6 +4642,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2624633322436830463}
     m_Modifications:
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:39c09b2e628be7f4dace11c93d106e3f
+      objectReference: {fileID: 0}
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 90000000012
+      objectReference: {fileID: 0}
     - target: {fileID: 1940008744297882439, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
       propertyPath: m_SizeDelta.y
       value: -12
@@ -4874,6 +4995,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2624633322436830463}
     m_Modifications:
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:39c09b2e628be7f4dace11c93d106e3f
+      objectReference: {fileID: 0}
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 90000000013
+      objectReference: {fileID: 0}
     - target: {fileID: 1940008744297882439, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
       propertyPath: m_SizeDelta.y
       value: -12
@@ -5109,6 +5238,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3933126726437224164}
     m_Modifications:
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:39c09b2e628be7f4dace11c93d106e3f
+      objectReference: {fileID: 0}
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 90000000019
+      objectReference: {fileID: 0}
     - target: {fileID: 1940008744297882439, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
       propertyPath: m_SizeDelta.y
       value: -12
@@ -5336,6 +5473,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5462845037260506328}
     m_Modifications:
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:39c09b2e628be7f4dace11c93d106e3f
+      objectReference: {fileID: 0}
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 90000000005
+      objectReference: {fileID: 0}
     - target: {fileID: 1940008744297882439, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
       propertyPath: m_SizeDelta.y
       value: -12
@@ -5803,6 +5948,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 643115255543485931}
     m_Modifications:
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:39c09b2e628be7f4dace11c93d106e3f
+      objectReference: {fileID: 0}
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 90000000014
+      objectReference: {fileID: 0}
     - target: {fileID: 1940008744297882439, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
       propertyPath: m_SizeDelta.y
       value: -12
@@ -6011,6 +6164,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1041987798579914168}
     m_Modifications:
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:39c09b2e628be7f4dace11c93d106e3f
+      objectReference: {fileID: 0}
+    - target: {fileID: 900000000000002000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 90000000005
+      objectReference: {fileID: 0}
     - target: {fileID: 1940008744297882439, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
       propertyPath: m_SizeDelta.y
       value: -12

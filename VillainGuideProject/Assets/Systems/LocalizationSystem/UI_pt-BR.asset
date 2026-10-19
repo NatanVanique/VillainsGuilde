@@ -147,7 +147,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 90000000032
-    m_Localized: 'Resultado recebido: {amount}'
+    m_Localized: 'Resultado recebido: {0}'
     m_Metadata:
       m_Items: []
   - m_Id: 90000000033

@@ -118,10 +118,6 @@ MonoBehaviour:
     m_Localized: "Monstro N\xE3o \xE9 Inimigo"
     m_Metadata:
       m_Items: []
-  - m_Id: 608526755532812
-    m_Localized: "Vai um ursinho a\xED?"
-    m_Metadata:
-      m_Items: []
   references:
     version: 2
     RefIds: []
