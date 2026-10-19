@@ -19,39 +19,236 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 11506634752
-    m_Localized: OneOne
+    m_Localized: Dracula has a strange allergy to the sun, which ruins his skincare
+      routine. Whenever possible, he avoids going out during the day.
     m_Metadata:
       m_Items: []
   - m_Id: 42880028672
-    m_Localized: OneTwo
+    m_Localized: Due to his financial crisis, Dracula had to find a second job as
+      a nurse at a blood bank.
     m_Metadata:
       m_Items: []
   - m_Id: 90758008832
-    m_Localized: OneThree
+    m_Localized: Dracula deals very well with people who are afraid.
     m_Metadata:
       m_Items: []
   - m_Id: 116796248064
-    m_Localized: TwoOne
+    m_Localized: Dracula is known for his nocturnal diplomatic parties. He has numerous
+      contacts with ambassadors and other important people.
     m_Metadata:
       m_Items: []
   - m_Id: 151764160512
-    m_Localized: TwoTwo
+    m_Localized: Occasionally, the great Count Dracula's empathy is so great that
+      he transforms other people into vampires.
     m_Metadata:
       m_Items: []
   - m_Id: 155786498048
-    m_Localized: TwoThree
+    m_Localized: Charismatic and seductive, Dracula always sits at the table with
+      the popular girls.
     m_Metadata:
       m_Items: []
   - m_Id: 195951153152
-    m_Localized: ThreeOne
+    m_Localized: Once, when Dracula was a teenager, he was seen stopping a moving
+      car that was about to hit a girl.
     m_Metadata:
       m_Items: []
   - m_Id: 217056890880
-    m_Localized: ThreeTwo
+    m_Localized: Dracula has been seen sleeping upside down on the roof of his building.
     m_Metadata:
       m_Items: []
   - m_Id: 228972908544
-    m_Localized: ThreeThree
+    m_Localized: When Dracula feels stressed, he usually goes for a nighttime run.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331333226496
+    m_Localized: Cuca often sings to calm her friends' fears.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363840
+    m_Localized: Sometimes, Cuca feels overwhelmed by the stresses of daily life
+      and hides in her underground cave.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363841
+    m_Localized: In her free time, Cuca gives private lessons in broomstick flying.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363842
+    m_Localized: Cuca sometimes gets stressed when she needs to talk to her reptilian
+      relatives.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363843
+    m_Localized: Like a good work-from-home employee, Cuca can occasionally conjure
+      up an illusion to work in her place.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363844
+    m_Localized: When Cuca encounters a very big problem, he prepares a damage control
+      potion to solve it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363845
+    m_Localized: Cuca gets annoyed when Dracula breaks his speed record in his races.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363846
+    m_Localized: One of Cuca's potions is known for protecting her friends.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363847
+    m_Localized: Cuca loves going out for a daytime stroll with her friends.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363848
+    m_Localized: Mubis has a habit of sleeping underground, and there are reports
+      that it helps with back pain.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363849
+    m_Localized: During his life, Ra would take Amub's for walks on beautiful sunny
+      days while they laughed in the faces of mortals.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363850
+    m_Localized: They say the bandages that hold Amub's remains in place can stretch
+      for miles! Besides being extremely durable, they're an excellent alternative
+      to toilet paper in emergency situations.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363851
+    m_Localized: That decomposing puppy face isn't just charming, and let's face
+      it, mortals are dying of envy at such beauty.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363852
+    m_Localized: Amubish has negotiated with pharaohs, gods, and vengeful spirits.
+      But, to this day, he hasn't learned how to deal with a mortal asking for a
+      discount.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363853
+    m_Localized: Those who come across this decaying face should be horrified and
+      want to keep their distance. But no mortal can resist someone with so much
+      gold! (Amubis is not responsible for any possible side effects involving plagues
+      and curses)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363854
+    m_Localized: After centuries of guarding tombs, Amubis takes protection very
+      seriously. So seriously, in fact, that sometimes even the owner can't get into
+      his own house.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363855
+    m_Localized: Amubish is capable of creating illusions so convincing that even
+      the gods believe them. Just don't ask why he insists on using his powers to
+      make his tomb appear far more luxurious than it actually is.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363856
+    m_Localized: "Am\xFAbis can move as silently as the dead. It's amazing how nobody
+      notices the trail of sand he leaves behind."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363857
+    m_Localized: Mari Palhacilda always preferred nighttime performances. After all,
+      the audience tends to be much more receptive when they can't see clearly what's
+      right in front of them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363858
+    m_Localized: Mari loves to scare people, but she gets deeply offended when someone
+      screams upon seeing her. Frankly, she doesn't understand what's so scary about
+      a smiling little girl.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363859
+    m_Localized: After a minor incident involving her death, Mari developed a rather
+      peculiar relationship with blood. Today, she considers any red stain a great
+      detail for the costume. She says it adds a special touch to the show!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363860
+    m_Localized: Mari was never known for her physical strength. But when someone
+      needs a helping hand, she tends to take the expression literally.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363861
+    m_Localized: Mari can walk through walls and disappear without a trace. Unfortunately,
+      the little bells on her clothes don't seem to understand the concept of silence.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363862
+    m_Localized: Mari is able to disappear and reappear in the blink of an eye. The
+      problem is that not all parts of her always reappear at the same time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363863
+    m_Localized: Mari always has a smile on her face, regardless of the situation.
+      Some say it's friendliness, others find it unsettling. She prefers not to comment,
+      especially since taking off the mask is incredibly difficult.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363864
+    m_Localized: Mari manages to create such fascinating spectacles that no one notices
+      when reality ceases to make sense. Her disappearance acts are especially impressive,
+      although she is still learning how to bring all the parts back together.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363865
+    m_Localized: Mari is extremely sensitive and always cries when other people talk
+      about her problems. At least, that's what she says. The tears on her mask were
+      already there long before anyone started to open up.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363866
+    m_Localized: Cyclops loves working during the day. With so much light, he believes
+      he can see much better. The city's doors, walls, and lampposts disagree.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363867
+    m_Localized: Digging tunnels was never a problem for someone that size. We won't
+      even discuss how to get him out of there afterwards.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363868
+    m_Localized: Cyclops has a special fondness for animals, and it seems the feeling
+      is mutual. He just doesn't understand why the animals get so nervous when he
+      tries to pick them up.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363869
+    m_Localized: They say there's no problem too big for Cyclops' strength. As for
+      small problems, well... they usually get even smaller after he tries to help.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363870
+    m_Localized: At his size, the Cyclops is practically a walking fortress! Just
+      make sure you're on the right side when he decides to find a place to sit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363871
+    m_Localized: The Cyclops believes that everything can be resolved with a good
+      conversation and a friendly smile. Unfortunately, not all humans can remain
+      calm in the face of a giant trying to be friendly.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363872
+    m_Localized: Cyclops has a heart as big as he is! He can't stand to see anyone
+      sad and is always ready to offer a tight hug. Sometimes, a little too tight.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363873
+    m_Localized: Despite his size and strength, Cyclops cannot stand the sight of
+      blood. He once fainted upon seeing a small cut on his finger. The real damage
+      occurred when he fell.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363874
+    m_Localized: The Cyclops has never been afraid of heights. After all, he's used
+      to seeing the world from up there. His biggest challenge is figuring out exactly
+      where to put his feet when he needs to descend.
     m_Metadata:
       m_Items: []
   references:
