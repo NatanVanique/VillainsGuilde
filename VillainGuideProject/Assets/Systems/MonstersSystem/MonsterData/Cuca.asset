@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f9df6a92cb89a449b578ae9b3346d2a, type: 3}
+  m_Name: Cuca
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterData
+  Name:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SplashArt: {fileID: 21300000, guid: 02b62c361e118f54da53f200358f2394, type: 3}
+  MonsterCardSprite: {fileID: -7851795377364303094, guid: c0aa931b0d17c664597294edd31b39c7, type: 3}
+  Icon: {fileID: -8240245386667130619, guid: f684d4aa5e27c684e97049500e5af3ea, type: 3}
+  JournalSprite: {fileID: 21300000, guid: fe79215b9fe14d141b3224862e7e1fa6, type: 3}
+  Background: {fileID: 0}
+  DictionaryOfTips:
+    _serializedList:
+    - Key: 1
+      Value:
+      - TipText:
+          m_TableReference:
+            m_TableCollectionName: GUID:ef3bb184878c4254b9ffc2766646f4fc
+          m_TableEntryReference:
+            m_KeyId: 536331333226496
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        Type: 0
+    - Key: 2
+      Value:
+      - TipText:
+          m_TableReference:
+            m_TableCollectionName: GUID:ef3bb184878c4254b9ffc2766646f4fc
+          m_TableEntryReference:
+            m_KeyId: 536331379363842
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        Type: 0
+    - Key: 3
+      Value:
+      - TipText:
+          m_TableReference:
+            m_TableCollectionName: GUID:ef3bb184878c4254b9ffc2766646f4fc
+          m_TableEntryReference:
+            m_KeyId: 536331379363845
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        Type: 0
+  references:
+    version: 2
+    RefIds: []

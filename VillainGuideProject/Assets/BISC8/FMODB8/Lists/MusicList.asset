@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1073a74d2e31ee7468e98db73d5e0cf0, type: 3}
+  m_Name: MusicList
+  m_EditorClassIdentifier: BISC8.FMODB8.Runtime::CreateFmodList
+  type: 2
+  typeName: 
+  events:
+  - id: SplashMusic
+    reference:
+      Guid:
+        Data1: -507303222
+        Data2: 1289619437
+        Data3: -642217304
+        Data4: -2143505572
+      Path: event:/Music/SplashMusic
+    stageInProject: 3
+  - id: MainMusic
+    reference:
+      Guid:
+        Data1: 1000370456
+        Data2: 1081120154
+        Data3: -1236075634
+        Data4: 1841223916
+      Path: event:/Music/MainMusic
+    stageInProject: 3

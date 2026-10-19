@@ -13,6 +13,8 @@ public class QuestSelector : MonoBehaviour {
     List<QuestData> _selectedQuests = new();
     QuestLine _currentLine;
     bool _hasFoundCharacter;
+    bool _isInitialized;
+    int _selectedDay = -1;
 
     #endregion
 
@@ -20,7 +22,6 @@ public class QuestSelector : MonoBehaviour {
 
     private void Start() {
         Setup();
-        HandleDayChanged(1);
     }
 
     #endregion
@@ -28,7 +29,15 @@ public class QuestSelector : MonoBehaviour {
     #region Setup
 
     public void Setup() {
+        Setup(SingleEntryPoint.Instance.ManagerManager.DaySystem.CurrentDay);
+    }
+
+    public void Setup(int currentDay) {
+        if (_isInitialized) return;
+
+        _isInitialized = true;
         SubscribeToEvents();
+        HandleDayChanged(Mathf.Max(1, currentDay));
     }
 
     #endregion
@@ -40,8 +49,12 @@ public class QuestSelector : MonoBehaviour {
     }
 
     void HandleDayChanged(int newDay) {
-        Debug.Log(newDay);
-        if (!dictionaryOfDayInfo.ContainsKey(newDay)) return;
+        if (_selectedDay == newDay) return;
+        if (!dictionaryOfDayInfo.ContainsKey(newDay)) {
+            Debug.LogError($"No quest configuration for day {newDay}.", this);
+            _selectedQuests.Clear();
+            return;
+        }
 
         _selectedQuests.Clear();
 
@@ -50,19 +63,20 @@ public class QuestSelector : MonoBehaviour {
         int totalAmountOfQuestsLefts = newDayQuestData.totalAmountOfQuests;
         int amountOfMysteriusLeft = newDayQuestData.totalAmountOfMysterious;
 
-        if (newDayQuestData.IsEmergency) { // VERIFICANDO SE É UMA EMERGÊNCIA
-            _selectedQuests.Add(newDayQuestData.DictionaryOfMandatoryQuests[_currentLine]);
+        if (newDayQuestData.IsEmergency) { // VERIFICANDO SE ï¿½ UMA EMERGï¿½NCIA
+            if (newDayQuestData.DictionaryOfMandatoryQuests.TryGetValue(_currentLine, out QuestData mandatory) && mandatory != null) _selectedQuests.Add(mandatory);
+            else totalAmountOfQuestsLefts++;
             totalAmountOfQuestsLefts--;
         }
 
         if (newDayQuestData.CanFindRescue && !_hasFoundCharacter && newDayQuestData.ResetCharacter && totalAmountOfQuestsLefts > 0) {
 
             // PRECISA ENCONTRAR UM PERSONAGEM
-            List<QuestData> listOsRescueQuests = newDayQuestData.DictionaryOfPossibleQuests[QuestType.Rescue];
-            AddRandomQuestFromList(listOsRescueQuests);
-
-            _hasFoundCharacter = false;
-            totalAmountOfQuestsLefts--;
+            newDayQuestData.DictionaryOfPossibleQuests.TryGetValue(QuestType.Rescue, out List<QuestData> listOsRescueQuests);
+            if (AddRandomQuestFromList(listOsRescueQuests)) {
+                totalAmountOfQuestsLefts--;
+            }
+            _hasFoundCharacter = true;
         }
 
         for (int i = 0; i < totalAmountOfQuestsLefts; i++) {
@@ -71,38 +85,61 @@ public class QuestSelector : MonoBehaviour {
                 int random = Random.Range(0, 2);
 
                 if (random == 0) { // Encontrou
-                    List<QuestData> listOsRescueQuests = newDayQuestData.DictionaryOfPossibleQuests[QuestType.Rescue];
-                    AddRandomQuestFromList(listOsRescueQuests);
-                    _hasFoundCharacter = true;
-                    continue;
+                    newDayQuestData.DictionaryOfPossibleQuests.TryGetValue(QuestType.Rescue, out List<QuestData> listOsRescueQuests);
+                    if (AddRandomQuestFromList(listOsRescueQuests)) {
+                        _hasFoundCharacter = true;
+                        continue;
+                    }
                 }
             }
 
             List<QuestData> listOfQuestsToChoose;
 
             if (amountOfMysteriusLeft > 0) { // Precisa ser uma misteriosa
-                listOfQuestsToChoose = newDayQuestData.DictionaryOfPossibleQuests[QuestType.Mysterius];
+                newDayQuestData.DictionaryOfPossibleQuests.TryGetValue(QuestType.Mysterius, out listOfQuestsToChoose);
                 amountOfMysteriusLeft--;
             }
-            else { // Clássica
-                listOfQuestsToChoose = newDayQuestData.DictionaryOfPossibleQuests[QuestType.Classic];
+            else { // Clï¿½ssica
+                newDayQuestData.DictionaryOfPossibleQuests.TryGetValue(QuestType.Classic, out listOfQuestsToChoose);
             }
 
-            AddRandomQuestFromList(listOfQuestsToChoose);
+            if (!AddRandomQuestFromList(listOfQuestsToChoose)) {
+                newDayQuestData.DictionaryOfPossibleQuests.TryGetValue(QuestType.Classic, out List<QuestData> fallback);
+                if (!AddRandomQuestFromList(fallback))
+                    Debug.LogError($"No valid quests available for day {newDay}.", newDayQuestData);
+            }
 
         }
 
+        if (newDayQuestData.ResetCharacter) _hasFoundCharacter = false;
+
+        _selectedDay = newDay;
     }
     #endregion
 
-    #region Sup
-
-    void AddRandomQuestFromList(List<QuestData> listOfDataToAdd) {
-        int randomQuestId = Random.Range(0, listOfDataToAdd.Count);
-        QuestData selectedQuest = listOfDataToAdd[randomQuestId];
-        _selectedQuests.Add(selectedQuest);
+    public void EnsureCurrentDay(int currentDay) {
+        HandleDayChanged(currentDay);
     }
 
+    public QuestData GetEmergencyForDay(int day)
+    {
+        if (!dictionaryOfDayInfo.TryGetValue(day, out DayQuestsData dayData) ||
+            !dayData.IsEmergency || dayData.DictionaryOfMandatoryQuests == null)
+            return null;
+
+        dayData.DictionaryOfMandatoryQuests.TryGetValue(_currentLine, out QuestData emergency);
+        return emergency;
+    }
+
+    #region Sup
+
+    bool AddRandomQuestFromList(List<QuestData> listOfDataToAdd) {
+        if (listOfDataToAdd == null) return false;
+        List<QuestData> validQuests = listOfDataToAdd.FindAll(quest => quest != null);
+        if (validQuests.Count == 0) return false;
+        _selectedQuests.Add(validQuests[Random.Range(0, validQuests.Count)]);
+        return true;
+    }
     #endregion
 
     #region End

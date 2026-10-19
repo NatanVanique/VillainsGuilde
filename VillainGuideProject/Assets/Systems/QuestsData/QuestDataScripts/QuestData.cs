@@ -10,13 +10,19 @@ public class QuestData : ScriptableObject {
 
     [Header("Quest")]
     public QuestType Type;
-    public Sprite QuestIcon;
     public LocalizedString QuestTitle;
+
+    [Header("Emergency warning")]
+    public LocalizedString EmergencyRequirements;
+
+    [Header("Journal Results")]
+    public LocalizedString ResultDescriptionGood;
+    public LocalizedString ResultDescriptionBad;
 
     [Space(10)]
 
     [Header("Card")]
-    [SerializedDictionary("index", "list of tips")] public SerializedDictionary<int, List<TipData>> DictionaryOfTipData = new();
+    public QuestTipData TipData;
     [Range(1, 3)] public int AmountOfMaxCharacters;
 
     [Space(10)]
@@ -28,6 +34,9 @@ public class QuestData : ScriptableObject {
     [ShowIf(nameof(HasXP))] public float XPReward;
     public bool HasCharacters;
     [ShowIf(nameof(HasCharacters))] public List<int> ListOfCharacters;
+
+    [Header("Win or loose")]
+    [Range(0, 100)] public float BasePercentChanceOfWinning = 0; 
     public bool HasConsequence;
     [ShowIf(nameof(HasConsequence))] public int AmountOfConsequenceEvents;
 
@@ -38,10 +47,17 @@ public struct TipData {
 
     public LocalizedString TipText;
     public TipType Type;
+    Color TipColor;
 
 }
 
+[Serializable]
+public struct QuestTipData {
+    public LocalizedString TipText;
+    public List<TipType> Type;
+}
+
 public enum QuestType { Emergency, Mysterius, Classic, Rescue }
-public enum TipType { Day, Night, Flying }
+public enum TipType { Day, Night, Flying, Grounded, Charisma, Fear, Animal, Empathy, Blood, Strength, Contention, Discretion, Ilusion, Protection, Speed }
 public enum QuestRewardType { Character, XP, Money }
 public enum QuestLine { Mayor, Second, Third }

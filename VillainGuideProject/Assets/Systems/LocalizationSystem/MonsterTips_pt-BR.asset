@@ -1,0 +1,268 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: MonsterTips_pt-BR
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: ef3bb184878c4254b9ffc2766646f4fc, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 11506634752
+    m_Localized: "Dr\xE1cula possui uma estranha alergia ao Sol, acaba com sua rotina
+      de skin care. Sempre que pode, evita sair de dia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42880028672
+    m_Localized: "Por conta de sua crise financeira, Dr\xE1cula precisou arrumar
+      um segundo emprego como enfermeiro em um hemocentro."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90758008832
+    m_Localized: "Dr\xE1cula lida muito bem com pessoas que est\xE3o com medo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 116796248064
+    m_Localized: "Dr\xE1cula \xE9 conhecido por suas festas diplom\xE1ticas noturnas.
+      Ele possui diversos contatos com embaixadores e outras pessoas importantes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151764160512
+    m_Localized: "De vez em quando, a empatia do grande Conde Dr\xE1cula \xE9 t\xE3o
+      grande, que ele transforma outras pessoas em vamp\xEDras."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 155786498048
+    m_Localized: "Carism\xE1tico e sedutor, Dr\xE1cula sempre se senta na mesa das
+      meninas populares"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 195951153152
+    m_Localized: "Uma vez, quando o Dr\xE1cula era adolescente, ele foi visto parando
+      um carro em movimento que atingiria uma garota."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 217056890880
+    m_Localized: "Dr\xE1cula j\xE1 foi visto dormindo de cabe\xE7a para baixo no
+      telhado de seu pr\xE9dio."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 228972908544
+    m_Localized: "Quando Dr\xE1culo se sente estressado, ele costuma sair para uma
+      corrida noturna."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331333226496
+    m_Localized: Cuca costuma cantar para acalmar o medo de seus amigos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363840
+    m_Localized: "As vezes, Cuca se sente sobrecarregada pelos estresses do dia a
+      dia e se esconde em sua caverna subterr\xE2nea"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363841
+    m_Localized: No seu tempo livre, Cuca da aulas particulares de voo de vassoura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363842
+    m_Localized: Cuca as vezes se estressa quando precisa conversar com seus parentes
+      reptilianos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363843
+    m_Localized: "Como uma boa trabalhadora de home office, Cuca pode de vez em quando,
+      invocar uma ilus\xE3o para trabalhar no seu lugar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363844
+    m_Localized: "Quando Cuca se depara com um problema muito grande, prepara uma
+      po\xE7\xE3o de conten\xE7\xE3o de danos para resolver o problema"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363845
+    m_Localized: "Cuca se irrita quando Dr\xE1cula bate seu recorde de velocidade
+      nas suas corridas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363846
+    m_Localized: "Uma das po\xE7\xF5es da Cuca \xE9 conhecida por proteger seus amigos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363847
+    m_Localized: Cuca adora sair para um passeio diurno com suas amigas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363848
+    m_Localized: "Am\xFAbis tem o h\xE1bito de dormir embaixo da terra, a relatos
+      de que ajuda com a dor nas costas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363849
+    m_Localized: "Durante a vida, Ra levava Am\xFAbis para passear durante lindos
+      dias ensolarados enquanto riam da cara dos mortais. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363850
+    m_Localized: "Dizem que as faixas que mant\xEAm os restos de Am\xFAbis no lugar
+      podem se estender por quil\xF4metros! Al\xE9m de extremamente resistentes,
+      s\xE3o uma excelente alternativa ao papel higi\xEAnico em situa\xE7\xF5es de
+      emerg\xEAncia.."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363851
+    m_Localized: "Essa cara de cachorro em decomposi\xE7\xE3o n\xE3o \xE9 s\xF3 charme,
+      e convenhamos, os mortais morrem de inveja de tanta beleza."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363852
+    m_Localized: "Am\xFAbis j\xE1 negociou com fara\xF3s, deuses e esp\xEDritos vingativos.
+      Mas, at\xE9 hoje, n\xE3o aprendeu a lidar com um mortal pedindo desconto."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363853
+    m_Localized: "Aqueles que se deparam com esse rosto em decomposi\xE7\xE3o deveriam
+      ficar horrorizados e querer dist\xE2ncia. Mas n\xE3o h\xE1 mortal que resista
+      a algu\xE9m com tanto ouro! (Am\xFAbis n\xE3o se responsabiliza por poss\xEDveis
+      efeitos colaterais envolvendo pragas e maldi\xE7\xF5es)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363854
+    m_Localized: "Depois de s\xE9culos guardando tumbas, Amubis leva a prote\xE7\xE3o
+      muito a s\xE9rio. T\xE3o a s\xE9rio que, \xE0s vezes, nem o dono consegue entrar
+      na pr\xF3pria casa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363855
+    m_Localized: "Am\xFAbis \xE9 capaz de criar ilus\xF5es t\xE3o convincentes que
+      at\xE9 os deuses acreditam nelas. S\xF3 n\xE3o pergunte por que ele insiste
+      em usar seus poderes para fazer sua tumba parecer muito mais luxuosa do que
+      realmente \xE9."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363856
+    m_Localized: "Am\xFAbis consegue se mover t\xE3o silenciosamente quanto os mortos.
+      \xC9 impressionante como ningu\xE9m percebe o rastro de areia que ele deixa
+      por onde passa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363857
+    m_Localized: "Mari Palhacilda sempre preferiu os espet\xE1culos noturnos. Afinal,
+      o p\xFAblico costuma ser bem mais receptivo quando n\xE3o consegue enxergar
+      direito o que est\xE1 bem diante dele."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363858
+    m_Localized: "Mari adora pregar sustos nos outros, mas fica profundamente ofendida
+      quando algu\xE9m grita ao v\xEA-la. Francamente, ela n\xE3o entende o que h\xE1
+      de t\xE3o assustador em uma garotinha sorridente."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363859
+    m_Localized: "Depois de um pequeno incidente envolvendo sua morte, Mari desenvolveu
+      uma rela\xE7\xE3o bastante peculiar com sangue. Hoje, considera qualquer mancha
+      vermelha um \xF3timo detalhe para o figurino. Diz que d\xE1 um toque especial
+      ao espet\xE1culo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363860
+    m_Localized: "Mari nunca foi conhecida pela for\xE7a f\xEDsica. Mas, quando algu\xE9m
+      precisa de uma m\xE3ozinha, ela costuma levar a express\xE3o ao p\xE9 da letra."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363861
+    m_Localized: "Mari consegue atravessar paredes e desaparecer sem deixar vest\xEDgios.
+      Infelizmente, os sininhos de sua roupa parecem n\xE3o compreender o conceito
+      de sil\xEAncio."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363862
+    m_Localized: "Mari \xE9 capaz de desaparecer e reaparecer em um piscar de olhos.
+      O problema \xE9 que nem sempre todas as partes dela chegam ao mesmo tempo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363863
+    m_Localized: "Mari est\xE1 sempre com um sorriso no rosto, independentemente
+      da situa\xE7\xE3o. Alguns dizem que \xE9 simpatia, outros acham perturbador.
+      Ela prefere n\xE3o comentar, at\xE9 porque tirar a m\xE1scara d\xE1 um trabalho
+      danado."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363864
+    m_Localized: "Mari consegue criar espet\xE1culos t\xE3o fascinantes que ningu\xE9m
+      percebe quando a realidade deixa de fazer sentido. Seus n\xFAmeros de desaparecimento
+      s\xE3o especialmente impressionantes, embora ela ainda esteja aprendendo a
+      fazer todas as partes voltarem."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363865
+    m_Localized: "Mari \xE9 extremamente sens\xEDvel e sempre chora com os problemas
+      dos outros. Pelo menos \xE9 o que ela diz. As l\xE1grimas da m\xE1scara j\xE1
+      estavam ali muito antes de algu\xE9m come\xE7ar a desabafar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363866
+    m_Localized: O Ciclope adora trabalhar durante o dia. Com tanta luz, ele acredita
+      que consegue enxergar muito melhor. As portas, paredes e postes da cidade discordam.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363867
+    m_Localized: "Escavar t\xFAneis nunca foi um problema para algu\xE9m daquele
+      tamanho. N\xE3o comentamos sobre como tirar ele la de dentro depois."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363868
+    m_Localized: "O Ciclope tem um carinho especial pelos animais, e parece que o
+      sentimento \xE9 rec\xEDproco. S\xF3 n\xE3o entende por que os bichinhos ficam
+      t\xE3o nervosos quando ele tenta peg\xE1-los no colo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363869
+    m_Localized: "Dizem que n\xE3o existe problema grande demais para a for\xE7a
+      do Ciclope. Quanto aos problemas pequenos, bem... geralmente ficam ainda menores
+      depois que ele tenta ajudar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363870
+    m_Localized: "Com aquele tamanho todo, o Ciclope \xE9 praticamente uma fortaleza
+      ambulante! S\xF3 tenha certeza de estar do lado certo quando ele decidir achar
+      um lugar para sentar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363871
+    m_Localized: "O Ciclope acredita que tudo pode ser resolvido com uma boa conversa
+      e um sorriso amig\xE1vel. Infelizmente, nem todos os humanos conseguem manter
+      a calma diante de um gigante tentando ser simp\xE1tico."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363872
+    m_Localized: "O Ciclope tem um cora\xE7\xE3o t\xE3o grande quanto ele! N\xE3o
+      suporta ver algu\xE9m triste e est\xE1 sempre pronto para oferecer um abra\xE7o
+      apertado. \xC0s vezes, um pouco apertado demais."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363873
+    m_Localized: "Apesar do tamanho e da for\xE7a, o Ciclope n\xE3o suporta ver sangue.
+      Certa vez, desmaiou ao ver um pequeno corte no dedo. O verdadeiro estrago aconteceu
+      quando ele caiu."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363874
+    m_Localized: "O Ciclope nunca teve medo de altura. Afinal, j\xE1 est\xE1 acostumado
+      a ver o mundo l\xE1 de cima. Seu maior desafio \xE9 descobrir exatamente onde
+      colocar os p\xE9s quando precisa descer."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

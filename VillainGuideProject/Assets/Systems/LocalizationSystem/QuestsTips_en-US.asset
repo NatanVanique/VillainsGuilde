@@ -19,15 +19,111 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 7593349120
-    m_Localized: Tip One
+    m_Localized: 'Mission 1: The master suite is dark because the light bulb in the
+      bedside lamp burned out and hasn''t been replaced.'
     m_Metadata:
       m_Items: []
   - m_Id: 18431430656
-    m_Localized: Tip Two
+    m_Localized: "There are scratches on the ceiling near the fan. Pen\xE9lope swears
+      she heard a meow coming from up there."
     m_Metadata:
       m_Items: []
   - m_Id: 21510049792
-    m_Localized: Tip Three
+    m_Localized: Frederick only responds when people address him as if he were a
+      monarch. The employees are afraid to approach him.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248349278208
+    m_Localized: The patients have unstable blood and their serum must be extracted
+      carefully.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415552
+    m_Localized: 'The antidote can only be applied before dawn '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415553
+    m_Localized: The victims are scared, but still conscious. They need to trust
+      anyone who approaches them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415554
+    m_Localized: The Mayor is throwing tables and knocking over speakers.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415555
+    m_Localized: The local press is filming everything for a story on the city's
+      nightlife.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415556
+    m_Localized: There are decorative ribbons, safety ropes, and event banners scattered
+      across the hall.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415557
+    m_Localized: The Mayor believes he's in a romantic heist movie.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415558
+    m_Localized: The clerk is in total panic, but the Mayor only responds if you
+      address him with authority and drama.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415559
+    m_Localized: The Mayor is feeling faint and lightheaded, about to collapse right
+      in the middle of the cash-filled briefcases.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415560
+    m_Localized: The delegate is on the top floor, behind an armored door.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415561
+    m_Localized: He will only open the door for someone who knows how to speak with
+      authority
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415562
+    m_Localized: The press is filming everything in the lobby.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415563
+    m_Localized: The glitch is coming from the servers and the translation earpieces.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415564
+    m_Localized: The control room went dark after a short circuit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415565
+    m_Localized: We have to calm the delegates down before they storm out of the
+      hall
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415566
+    m_Localized: The sun has dipped below the horizon, and darkness is settling over
+      the plaza.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415567
+    m_Localized: Faint whispers are starting to bleed through the busted loudspeakers.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415568
+    m_Localized: The crowd needs to be calmed down without shouting or using force.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415569
+    m_Localized: The flames are spreading across the ceiling and curtains.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415570
+    m_Localized: The emergency doors are jammed due to the heat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516248395415571
+    m_Localized: There are unconscious delegates and people having trouble breathing.
     m_Metadata:
       m_Items: []
   references:

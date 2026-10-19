@@ -6,7 +6,12 @@ public class DragItem : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
     Canvas canvas;
     CanvasGroup canvasGroup;
     Transform startParent;
+    HorizontalCarousel originCarousel;
     Vector3 startPosition;
+
+    QuestCardSelection _card;
+
+    [SerializeField] MonsterIconPrefab monsterIconPrefab;
 
     bool dropped;
 
@@ -19,6 +24,7 @@ public class DragItem : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
             canvasGroup = gameObject.AddComponent<CanvasGroup>();
 
         startParent = transform.parent;
+        originCarousel = startParent.GetComponentInParent<HorizontalCarousel>();
         startPosition = transform.localPosition;
     }
 
@@ -34,10 +40,20 @@ public class DragItem : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        QuestCardSelection previousCard = _card;
+        _card = null;
+
         dropped = false;
 
         transform.SetParent(canvas.transform);
         transform.SetAsLastSibling();
+        originCarousel.RefreshAfterItemChange();
+
+        if (previousCard != null)
+        {
+            previousCard.RemoveMonsterFromTheCard(monsterIconPrefab.Info);
+            previousCard.CompactSlots();
+        }
 
         canvasGroup.blocksRaycasts = false;
     }
@@ -60,15 +76,27 @@ public class DragItem : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
     public void ReturnToOrigin()
     {
         dropped = false;
+        _card = null;
         canvasGroup.blocksRaycasts = true;
         transform.SetParent(startParent);
         transform.localPosition = startPosition;
+        originCarousel.RefreshAfterItemChange();
     }
 
-    public void Drop(Transform slot)
+    public void Drop(Transform slot, QuestCardSelection card)
     {
+
         dropped = true;
 
+        _card = card;
+        card.AddMonsterToTheCard(monsterIconPrefab.Info);
+
+        transform.SetParent(slot);
+        transform.localPosition = Vector3.zero;
+    }
+
+    internal void MoveToSlot(Transform slot)
+    {
         transform.SetParent(slot);
         transform.localPosition = Vector3.zero;
     }

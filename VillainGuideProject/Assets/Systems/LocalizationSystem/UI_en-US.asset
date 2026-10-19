@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI_en-US
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 39c09b2e628be7f4dace11c93d106e3f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 6450413568
+    m_Localized: 'Developed by:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000001
+    m_Localized: New Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000002
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000003
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000004
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000005
+    m_Localized: Return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000006
+    m_Localized: Fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000007
+    m_Localized: Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000008
+    m_Localized: Test SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000009
+    m_Localized: Video
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000010
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000011
+    m_Localized: Main
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000012
+    m_Localized: Main Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000013
+    m_Localized: Quit Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000014
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000015
+    m_Localized: Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000016
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000017
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000018
+    m_Localized: English
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000019
+    m_Localized: "Portugu\xEAs"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000020
+    m_Localized: Accept!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000021
+    m_Localized: Missions of the day
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000022
+    m_Localized: Drag to missions.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000023
+    m_Localized: "Drag employees to missions to accept them.\nMake sure to pick the right monster!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000024
+    m_Localized: Emergency
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000025
+    m_Localized: Mystery
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000026
+    m_Localized: Classic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000027
+    m_Localized: Rescue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000028
+    m_Localized: NEWS TODAY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000029
+    m_Localized: "Scroll down to see more news,\nclick to continue"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000030
+    m_Localized: Emergency mission tomorrow!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000031
+    m_Localized: No rewards today!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000032
+    m_Localized: 'Result collected: {amount}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000033
+    m_Localized: Mission failed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000034
+    m_Localized: YOU DID IT!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000035
+    m_Localized: Game over...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000036
+    m_Localized: Prepare your team for tomorrow's mission.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

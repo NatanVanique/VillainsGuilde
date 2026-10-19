@@ -5,76 +5,144 @@ using DG.Tweening;
 
 public class PhoneController : MonoBehaviour
 {
-    [Header("Components")]
-    [SerializeField] private GameObject exclamationIcon;
-    private Button phoneButton;
-    private float animationDuration = 0.5f;
-    private bool phoneAnswered = false;
+    public static PhoneController Instance { get; private set; }
 
-    public void Start()
+    [Header("Components")]
+    [SerializeField] private GameObject notificationObject;
+    [SerializeField] private GameObject exclamationIcon;
+    [SerializeField] private Sprite idleSprite;
+    [SerializeField] private Sprite answeredSprite;
+    [SerializeField] private Button phoneButton;
+    [SerializeField] private Image phoneImage;
+
+    private float animationDuration = 0.5f;
+    private Sequence ringSequence;
+
+    private enum PhoneState { Idle, Ringing, Answered }
+    private PhoneState state;
+
+    public void Awake()
     {
-        phoneButton = GetComponent<Button>();
-        exclamationIcon.SetActive(false);
-        StartCoroutine(PhoneRing());
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+
+        idleSprite = phoneImage.sprite;
+        phoneButton.onClick.AddListener(AnswerPhone);
+        ResetPhone();
+    }
+
+    private IEnumerator Start()
+    {
+        yield return new WaitForSeconds(3f);
+
+        PhoneRing();
     }
 
     private void AnswerPhone()
     {
-        if (phoneAnswered)
+        if (state != PhoneState.Ringing)
             return;
 
-        phoneAnswered = true;
-        phoneButton.onClick.RemoveListener(AnswerPhone);
+        state = PhoneState.Answered;
+        phoneButton.interactable = false;
+        phoneImage.overrideSprite = null;
+        phoneImage.sprite = answeredSprite;
 
-        exclamationIcon.transform
-            .DOScale(Vector3.zero, animationDuration)
+        //Icone exclamacao
+        ringSequence?.Kill();
+        exclamationIcon.transform.DOKill();
+        exclamationIcon.transform.localRotation = Quaternion.identity;
+
+        //Notificacao
+        notificationObject.transform.DOKill();
+        notificationObject.transform
+            .DOScale(Vector3.zero, 0.1f)
             .SetEase(Ease.InBack)
             .OnComplete(() =>
             {
-                exclamationIcon.SetActive(false);
+                notificationObject.SetActive(false);
             });
 
-        SingleEntryPoint.Instance.UiManager.MissionsScreenController.ShowMissionsScreen();
-        SingleEntryPoint.Instance.UiManager.MissionsScreenController.SetupQuests();
+        MissionsScreenController missions = SingleEntryPoint.Instance.UiManager.MissionsScreenController;
+        missions.SetupQuests();
+        missions.SetupIcons();
+        missions.ShowMissionsScreen();
     }
 
-    private IEnumerator PhoneRing()
+    public void ResetPhone()
     {
-        yield return new WaitForSeconds(3f);
+        StopAllCoroutines();
 
-        if (phoneAnswered)
-            yield break;
+        state = PhoneState.Idle;
+        phoneButton.interactable = false;
+        phoneImage.overrideSprite = null;
+        phoneImage.sprite = idleSprite;
 
-        phoneButton.onClick.AddListener(AnswerPhone);
-        exclamationIcon.transform.localScale = Vector3.zero;
+        //Icone exclamacao
+        ringSequence?.Kill();
+        exclamationIcon.transform.DOKill();
+        exclamationIcon.transform.localRotation = Quaternion.identity;
+
+        //Notificacao
+        notificationObject.transform.DOKill();
+        notificationObject.SetActive(false);
+    }
+
+    public void PhoneRing()
+    {
+        if (state != PhoneState.Idle)
+            return;
+
+        StopAllCoroutines();
+
+        state = PhoneState.Ringing;
+        phoneButton.interactable = true;
+
+        //Notificacao
+        notificationObject.transform.DOKill();
+        notificationObject.transform.localScale = Vector3.zero;
+        notificationObject.SetActive(true);
+
+        //Icone exclamacao
+        exclamationIcon.transform.DOKill();
+        exclamationIcon.transform.localRotation = Quaternion.identity;
         exclamationIcon.SetActive(true);
 
-        exclamationIcon.transform
+        notificationObject.transform
             .DOScale(Vector3.one, animationDuration)
-            .SetEase(Ease.OutBack);
+            .SetEase(Ease.OutBack)
+            .OnComplete(AnimateExclamation);
     }
 
-    //PARA TOCAR O TELEFONE SEM A CORROUTINA, DEPOIS DE LER O JORNAL
+    private void AnimateExclamation()
+    {
+        ringSequence?.Kill();
 
-    //public void PhoneRing()
-    //{
-    //    if (phoneAnswered)
-    //        return;
+        exclamationIcon.transform.localRotation = Quaternion.identity;
+        ringSequence = DOTween.Sequence();
 
-    //    phoneButton.onClick.AddListener(AnswerPhone);
+        ringSequence
+            .Append(exclamationIcon.transform.DOLocalRotate(
+                new Vector3(0, 0, -20f), 0.08f))
 
-    //    exclamationIcon.transform.localScale = Vector3.zero;
-    //    exclamationIcon.SetActive(true);
+            .Append(exclamationIcon.transform.DOLocalRotate(
+                new Vector3(0, 0, 20f), 0.16f))
 
-    //    exclamationIcon.transform
-    //        .DOScale(Vector3.one, animationDuration)
-    //        .SetEase(Ease.OutBack);
-    //}
+            .Append(exclamationIcon.transform.DOLocalRotate(
+                new Vector3(0, 0, -20f), 0.16f))
 
-    //private IEnumerator PhoneRingDelay()
-    //{
-    //    yield return new WaitForSeconds(3f);
+            .Append(exclamationIcon.transform.DOLocalRotate(
+                new Vector3(0, 0, 20f), 0.16f))
 
-    //    PhoneRing();
-    //}
+            .Append(exclamationIcon.transform.DOLocalRotate(
+                Vector3.zero, 0.08f))
+
+            .AppendInterval(0.4f)
+            .SetLoops(-1, LoopType.Restart);
+    }
 }

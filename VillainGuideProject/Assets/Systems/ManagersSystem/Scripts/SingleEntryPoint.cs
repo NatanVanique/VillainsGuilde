@@ -5,6 +5,7 @@ public class SingleEntryPoint : MonoBehaviour
     public static SingleEntryPoint Instance { get; private set; }
     public ManagerManager ManagerManager;
     public UiManager UiManager;
+    public EndingsManager EndingsManager;
     [SerializeField] GameObject mmPrefab;
     [SerializeField] GameObject umPrefab;
 
@@ -13,6 +14,7 @@ public class SingleEntryPoint : MonoBehaviour
         if (Instance != null && Instance != this)
         {
             Destroy(this);
+            return;
         }
         else
         {
@@ -21,13 +23,13 @@ public class SingleEntryPoint : MonoBehaviour
 
         if (UiManager != null)
         {
-            UiManager = Instantiate(umPrefab).GetComponent<UiManager>();
+            UiManager = Instantiate(umPrefab, transform).GetComponent<UiManager>();
             UiManager.Setup();
         }
 
         if (ManagerManager != null)
         {
-            ManagerManager = Instantiate(mmPrefab).GetComponent<ManagerManager>();
+            ManagerManager = Instantiate(mmPrefab, transform).GetComponent<ManagerManager>();
             ManagerManager.Setup();
         }
     }

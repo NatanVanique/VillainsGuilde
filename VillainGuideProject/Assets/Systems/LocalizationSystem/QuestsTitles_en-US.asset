@@ -19,7 +19,103 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 5852712960
-    m_Localized: Quest One
+    m_Localized: Operation Prince Frederick
+    m_Metadata:
+      m_Items: []
+  - m_Id: 517548579323904
+    m_Localized: Fatal Canine Dose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 517548579323905
+    m_Localized: The last round in Fancy Balancy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 517548579323906
+    m_Localized: Heist of the Heart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 593770594275328
+    m_Localized: The Presidential Suite Hostage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 593770644606976
+    m_Localized: The Demonic Translator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 593770644606977
+    m_Localized: The Crowd Cries Out for Bread
+    m_Metadata:
+      m_Items: []
+  - m_Id: 593770644606978
+    m_Localized: " Caos Clim\xE1tico"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532800
+    m_Localized: The Monkeys Have Gone Bananas!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532801
+    m_Localized: The Great Bread Heist
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532802
+    m_Localized: Vanishing on the Dance Floor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532803
+    m_Localized: Pickle Power
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532804
+    m_Localized: Flavors of Youth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532805
+    m_Localized: Seventeen Again
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532807
+    m_Localized: The Wrecking Nail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532808
+    m_Localized: An Unconventional Adventure
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532809
+    m_Localized: The Unbreakable Necktie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532810
+    m_Localized: Cursed Crown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532811
+    m_Localized: The Tattletale Parrot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532812
+    m_Localized: Want a Little Bear?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532814
+    m_Localized: Basement Blues
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532815
+    m_Localized: The Phantom of the Monster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532816
+    m_Localized: A Cry from Below
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532817
+    m_Localized: Mayday, Mayday, Monster!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532818
+    m_Localized: No Monsters Allowed
     m_Metadata:
       m_Items: []
   references:

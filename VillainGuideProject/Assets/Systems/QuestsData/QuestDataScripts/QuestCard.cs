@@ -1,34 +1,42 @@
-using UnityEngine;
-using UnityEngine.UI;
 using AYellowpaper.SerializedCollections;
-using UnityEngine.Localization.Components;
+using System;
 using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Localization.Components;
+using UnityEngine.UI;
 
-public class QuestCard : MonoBehaviour
-{
+public class QuestCard : MonoBehaviour {
     #region Variables
 
     [Header("Components")]
-    [SerializeField] Image questIcon;
     [SerializeField] LocalizeStringEvent title;
-    [SerializeField, SerializedDictionary("index", "text")] SerializedDictionary<int, LocalizeStringEvent> dictionaryOfTips;
+    [SerializeField] LocalizeStringEvent tipText;
+    [SerializeField] TMP_Text questType;
     [SerializeField, SerializedDictionary("amount", "container")] SerializedDictionary<int, GameObject> dictionaryOfAmountOfCharacters;
     [SerializeField, SerializedDictionary("type", "icons")] SerializedDictionary<QuestRewardType, GameObject> dictionaryOfRewardIcons;
+
+    [Header("Background")]
+    [SerializeField] Image background;
+    [SerializeField] Sprite classicBackground;
+    [SerializeField] Sprite emergencyBackground;
+
 
     [Header("Test")]
     [SerializeField] QuestData dataTest;
 
+    public List<MonsterInfo> _listOfMonsters = new();
     QuestData _data;
 
     #endregion
 
     #region Setup
 
-    //private void Start() {
-    //    Setup(dataTest);
-    //}
-
     public void Setup(QuestData data) {
+        if (data == null)
+            throw new ArgumentNullException(nameof(data), "QuestCard requires a valid QuestData asset.");
+        if (title == null)
+            throw new InvalidOperationException($"QuestCard '{name}' has no title LocalizeStringEvent assigned.");
         _data = data;
 
         SetVisuals();
@@ -39,36 +47,38 @@ public class QuestCard : MonoBehaviour
     #region Visuals
 
     void SetVisuals() {
+        background.sprite = _data.Type == QuestType.Emergency ? emergencyBackground : classicBackground;
+        string typeKey = _data.Type switch {
+            QuestType.Emergency => "Mission_Type_Emergency",
+            QuestType.Mysterius => "Mission_Type_Mystery",
+            QuestType.Rescue => "Mission_Type_Rescue",
+            _ => "Mission_Type_Classic"
+        };
+        UiLocalizedText.Bind(questType, typeKey);
         ChangeTitle();
-        ChangeIcon();
         ChangeCharactersAmountIcons();
-        ChangeTips();
+        ChangeTipText();
         SetRewardsIcons();
     }
 
     void ChangeTitle() {
+        TMP_Text label = title.GetComponent<TMP_Text>();
+        if (label != null) label.text = string.Empty;
         title.StringReference = _data.QuestTitle;
     }
 
-    void ChangeIcon() {
-        questIcon.sprite = _data.QuestIcon;
-    }
-
     void ChangeCharactersAmountIcons() {
-        foreach(var pair in dictionaryOfAmountOfCharacters) {
-            if (pair.Key == _data.AmountOfMaxCharacters) pair.Value.SetActive(true);
+        int amount = Mathf.Clamp(_data.AmountOfMaxCharacters, 1, 3);
+        foreach (var pair in dictionaryOfAmountOfCharacters) {
+            if (pair.Key == amount) pair.Value.SetActive(true);
             else pair.Value.SetActive(false);
         }
     }
 
-    void ChangeTips() {
-        foreach (var pair in dictionaryOfTips) {
-            if (!_data.DictionaryOfTipData.ContainsKey(pair.Key)) continue;
-
-            List<TipData> listOfData = _data.DictionaryOfTipData[pair.Key];
-            int randomTip = Random.Range(0, listOfData.Count);
-            pair.Value.StringReference = listOfData[randomTip].TipText;
-        }
+    void ChangeTipText() {
+        TMP_Text label = tipText.GetComponent<TMP_Text>();
+        if (label != null) label.text = string.Empty;
+        tipText.StringReference = _data.TipData.TipText;
     }
 
     void SetRewardsIcons() {
@@ -76,6 +86,27 @@ public class QuestCard : MonoBehaviour
         dictionaryOfRewardIcons[QuestRewardType.XP].SetActive(_data.HasXP);
         dictionaryOfRewardIcons[QuestRewardType.Character].SetActive(_data.HasCharacters);
     }
+
+    #endregion
+
+    #region Add Monster
+
+    public void AddMonster(MonsterInfo info) {
+        if (_listOfMonsters.Contains(info)) return;
+
+        _listOfMonsters.Add(info);
+    }
+
+    public void RemoveMonster(MonsterInfo info) {
+        if (!_listOfMonsters.Contains(info)) return;
+        _listOfMonsters.Remove(info);
+    }
+
+    #endregion
+
+    #region Getters
+
+    public QuestData ReturnQuestData() => _data;
 
     #endregion
 }

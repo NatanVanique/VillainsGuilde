@@ -22,8 +22,47 @@ MonoBehaviour:
     - Locale-pt-BR
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e783b012cb18c247a82515364d6078c
+    m_Address: RegularText_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8f2e076c532b99c45beef79262051983
+    m_Address: QuestDescribe_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c8af380186189fb4591f285162cbdcc6
+    m_Address: QuestResults_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d98b6ff1d88388740af1b43e65aebe91
+    m_Address: MonsterTips_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dd5eefa01aea45e49a98d015d07f4f58
     m_Address: QuestsTitles_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df7aff835db01ae48911a6ddc99a44e4
+    m_Address: UI_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6ceebaf0ab61c24a9dca22103fca0e0
+    m_Address: MonsterName_pt-BR
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pt-BR

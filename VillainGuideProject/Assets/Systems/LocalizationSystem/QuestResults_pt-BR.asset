@@ -1,0 +1,274 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: QuestResults_pt-BR
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: 08edffda23451f8419f80d25bb3887ad, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 22216802304
+    m_Localized: "Pr\xEDncipe Frederick \xE9 encontrado s\xE3o e salvo sobre o ventilador
+      da su\xEDte master. O prefeito abra\xE7a o felino em prantos, enquanto Pen\xE9lope
+      garante que \u2018n\xE3o houve invas\xE3o, apenas uma visita t\xE9cnica\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22275522560
+    m_Localized: "Ap\xF3s uma noite de buscas fracassadas, o prefeito aparece com
+      olheiras profundas, rasgando pap\xE9is no gabinete. Pen\xE9lope nega que o
+      gato tenha sido visto perto de documentos confidenciais."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22279716864
+    m_Localized: "Hospital amanhece em sil\xEAncio: pacientes s\xE3o encontrados
+      dormindo confortavelmente nas macas, enquanto um misterioso \u2018consultor
+      de bem-estar\u2019 \xE9 elogiado pela equipe m\xE9dica. O prefeito agradece
+      publicamente pela r\xE1pida resposta \xE0 \u2018leve indisposi\xE7\xE3o coletiva\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22279716865
+    m_Localized: "Caos no Hospital Santa Esperan\xE7a: manchas de sangue s\xE3o encontradas
+      pelos corredores, e testemunhas relatam criaturas estranhas fugindo pela madrugada.
+      A prefeitura nega qualquer rela\xE7\xE3o com a vacina\xE7\xE3o e anuncia uma
+      investiga\xE7\xE3o interna."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911168
+    m_Localized: "Boate Chique Balique encerra a noite sem incidentes. Frequentadores
+      relatam que um \u2018artista perform\xE1tico\u2019 envolveu um cliente exaltado
+      em faixas decorativas, transformando o momento em parte do espet\xE1culo. O
+      prefeito foi visto dormindo em um sof\xE1 VIP, cuidadosamente enfaixado como
+      uma m\xFAmia de festa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911169
+    m_Localized: "Noite termina em caos na Chique Balique: um homem n\xE3o identificado
+      dan\xE7ou sobre a bancada do bar, derrubou dezenas de garrafas e exigiu que
+      o DJ tocasse \u2018a m\xFAsica da minha ex\u2019. A prefeitura nega envolvimento
+      e afirma que o pol\xEDtico estava apenas \u2018em uma a\xE7\xE3o cultural n\xE3o
+      oficial\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911170
+    m_Localized: "Ag\xEAncia Banc\xE1ria Central registra apenas uma \u2018falha
+      t\xE9cnica\u2019 nesta manh\xE3. Testemunhas relatam que um homem gigantesco,
+      de um olho s\xF3, entrou no cofre, recolheu uma maleta e retirou um cliente
+      confuso antes da chegada da pol\xEDcia. O prefeito foi encontrado mais tarde
+      dormindo em casa, com um bilhete no bolso: \u2018O amor n\xE3o se paga em presta\xE7\xF5es\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911171
+    m_Localized: "Prefeito \xE9 detido ap\xF3s tentativa de assalto ao banco. Em
+      depoimento, afirmou que estava \u2018apenas conquistando uma atendente e organizando
+      seu futuro financeiro\u2019. A prefeitura informou que ele estava \u2018em
+      uma miss\xE3o social n\xE3o autorizada\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911172
+    m_Localized: "O delegado \xE9 conduzido ao palco minutos antes da apresenta\xE7\xE3o.
+      Ele agradece ao \u2018consultor de bem-estar pessoal\u2019 e promete reduzir
+      sua fala para apenas tr\xEAs horas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911173
+    m_Localized: "A seguran\xE7a arromba a porta, o delegado desmaia sobre os slides
+      e a imprensa descobre que a Liga Global pela Paz Humana esqueceu um convidado
+      no hotel por seis horas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911174
+    m_Localized: "A tradu\xE7\xE3o \xE9 corrigida a tempo. Os delegados aplaudem
+      a \u2018coragem diplom\xE1tica\u2019 da Liga, sem saber que quase entraram
+      em guerra por causa de um erro de atualiza\xE7\xE3o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911175
+    m_Localized: "A C\xFApula Mundial da Paz \xE9 encerrada ap\xF3s delegados sa\xEDrem
+      do sal\xE3o gritando em sete idiomas diferentes. A Liga informa que \u2018houve
+      apenas uma diverg\xEAncia de interpreta\xE7\xE3o\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911176
+    m_Localized: "A multid\xE3o se acalma ap\xF3s ouvir vozes suaves vindas dos alto-falantes
+      quebrados. As velas do palco antigo se acendem sozinhas e, por alguns minutos,
+      a pra\xE7a parece um lugar seguro. A Liga agradece ao \u2018consultor de bem-estar
+      coletivo\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911177
+    m_Localized: "A multid\xE3o invade a sede da Liga, ocupa o plen\xE1rio e exige
+      p\xE3o. A seguran\xE7a tenta agir, mas acaba criando o maior esc\xE2ndalo da
+      C\xFApula Mundial da Paz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911178
+    m_Localized: "Inc\xEAndio na Sala de Palestras \xE9 controlado antes de se espalhar.
+      Delegados s\xE3o evacuados com seguran\xE7a e a Liga anuncia que os kits ecol\xF3gicos
+      ser\xE3o \u2018repensados com mais carinho pelo planeta\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22283911179
+    m_Localized: "Inc\xEAndio se espalha pela sede da Liga Global pela Paz Humana.
+      Delegados s\xE3o evacuados \xE0s pressas e a imprensa questiona como um kit
+      ecol\xF3gico conseguiu causar mais danos que uma guerra fria."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21949966811136
+    m_Localized: "Ela viaja para outro pa\xEDs e manda jogar um missil  na loja "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142784
+    m_Localized: "A manicure consegue arrumar a unha e ainda lan\xE7a uma nova tend\xEAncia
+      \n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142785
+    m_Localized: "Gl\xF3ria se junta ao seu marido e eles curtem o momento de relaxamento
+      com muitas fofocas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142786
+    m_Localized: "Gloria v\xEA seu marido com o p\xE9 sendo completamente sugado,
+      horrorizada ela se divorcia dele ali mesmo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142787
+    m_Localized: "Baltazar ficar sem sua gravata mas em sua bolsa tinha outras substituta.
+      Ele vai para sua reuni\xE3o feliz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142788
+    m_Localized: "Baltazar perde a gravata, o terno e o contrato, enquanto a imprensa
+      registra sua queda como \u201Cperformance de arte contempor\xE2nea."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142789
+    m_Localized: "A coroa \xE9 recuperada com sucesso, bem lavada e entregue a rainha."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142790
+    m_Localized: "A coroa \xE9 levada pelo encanamento, a rainha entra em crise e
+      declara \u201Cestado de emerg\xEAncia real\u201D, enquanto o aeroporto \xE9
+      fechado para buscas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142791
+    m_Localized: "Louro Jos\xE9 \xE9 capturado e mandado de uber pet para casa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142792
+    m_Localized: "O papagaio repete tudo ao vivo, o senador \xE9 investigado e a
+      entrevista se torna o v\xEDdeo mais viral do pa\xEDs."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142793
+    m_Localized: "O Urso se sente amea\xE7ado e vai embora"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21950017142794
+    m_Localized: "O urso assume o quarto, a Sra. Billion dorme no jardim e a fam\xEDlia
+      processa a ag\xEAncia por \u201Cinvas\xE3o de privacidade ursina\u201D."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454197862400
+    m_Localized: "Chimpanz\xE9s deixam casa de idosos ap\xF3s acordo in\xE9dito:
+      eles voltam ao zool\xF3gico em troca de sess\xF5es semanais de sol e um buffet
+      de frutas. As senhorinhas comemoram o retorno da paz e prometem enviar cartas
+      aos novos amigos peludos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582656
+    m_Localized: "Casa de idosos \xE9 tomada por chimpanz\xE9s que se recusam a sair.
+      As moradoras passam a viver no jardim, enquanto os primatas organizam turnos
+      de sol, lanches e reuni\xF5es no sal\xE3o principal. O zool\xF3gico nega responsabilidade."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582657
+    m_Localized: "Festival de P\xE3es da Candy Candy termina em festa ap\xF3s todos
+      os p\xE3es serem recuperados de uma base secreta. Os ladr\xF5es foram encontrados
+      tentando esconder baguetes debaixo do sof\xE1. A padaria celebra com desconto
+      de 20% em croissants."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582658
+    m_Localized: "Festival de P\xE3es da Candy Candy \xE9 cancelado ap\xF3s ladr\xF5es
+      gulosos levarem toda a produ\xE7\xE3o. Testemunhas relatam que os criminosos
+      fugiram rindo e mastigando. A padaria promete uma nova edi\xE7\xE3o, mas pede
+      calma: \u2018o forno est\xE1 triste\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582659
+    m_Localized: "Dan\xE7arinas desaparecidas s\xE3o encontradas s\xE3s e salvas
+      no esgoto da cidade. Elas voltam \xE0s boates no mesmo dia, e a noite volta
+      a ter m\xFAsica, brilho e gloss. As boates prometem uma festa de agradecimento
+      com entrada gratuita para quem trouxer um salto alto."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582660
+    m_Localized: "Boates da cidade seguem sem dan\xE7arinas ap\xF3s buscas no esgoto
+      n\xE3o encontrarem ningu\xE9m. A \xFAnica pista continua sendo um bueiro com
+      gloss aberto e marcas de salto alto. A noite da cidade entra em sil\xEAncio,
+      e os DJs pedem ajuda nas redes sociais."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582661
+    m_Localized: "Dona Maria, do apartamento 841, consegue abrir o pote de picles
+      ap\xF3s ajuda emergencial. Ela comemora com um lanche da madrugada e promete
+      nunca mais subestimar a for\xE7a de uma tampa bem fechada."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582662
+    m_Localized: "Pote de picles resiste heroicamente na madrugada do apartamento
+      841. Dona Maria desiste ap\xF3s v\xE1rias tentativas e decide dormir com fome,
+      enquanto o pote continua intacto na geladeira."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582663
+    m_Localized: "M\xE3e e filha se reconciliam ap\xF3s media\xE7\xE3o discreta.
+      O di\xE1rio volta para o lugar certo, as desculpas s\xE3o aceitas e o grupo
+      da fam\xEDlia volta a falar apenas de receitas e correntes de sorte."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582664
+    m_Localized: "Briga familiar se espalha pelo grupo da fam\xEDlia ap\xF3s leitura
+      do di\xE1rio. Gertrudes desereda a filha, a filha responde com um \xE1udio
+      de sete minutos e a av\xF3 pede calma enquanto muda o nome do grupo para \u2018Assuntos
+      da Fam\xEDlia\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34454256582665
+    m_Localized: "Alissa \xE9 retirada da sala sem alarde e levada para casa por
+      um \u2018consultor de bem-estar familiar\u2019. A diretora desiste de chamar
+      a pol\xEDcia, e a filha nunca descobre que a professora nova era a pr\xF3pria
+      m\xE3e."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82370509766656
+    m_Localized: "A pol\xEDcia chega antes da ag\xEAncia e encontra Alissa dando
+      aula sobre \u2018os perigos de confiar em adolescentes\u2019. Ela \xE9 levada
+      embora gritando que a filha precisa de mais supervis\xE3o, enquanto a diretora
+      encerra a aula e pede transfer\xEAncia.\u201D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82370560098304
+    m_Localized: Monstro recrutado com sucesso para o seu time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82370560098305
+    m_Localized: O monstro ficou horrorizado com a sua proposta e foi embora
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

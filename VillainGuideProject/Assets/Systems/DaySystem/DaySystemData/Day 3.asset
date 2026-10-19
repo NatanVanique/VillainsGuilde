@@ -16,19 +16,37 @@ MonoBehaviour:
   DictionaryOfMandatoryQuests:
     _serializedList:
     - Key: 0
-      Value: {fileID: 11400000, guid: 442aa393e75a69444b09b7ca31f33f51, type: 2}
+      Value: {fileID: 11400000, guid: bc4434b7e5481d041a6ce9959ee2500b, type: 2}
+    - Key: 1
+      Value: {fileID: 11400000, guid: 09e5f399ac7782c43baa2010c6e67eba, type: 2}
   totalAmountOfQuests: 3
   totalAmountOfMysterious: 0
   DictionaryOfPossibleQuests:
     _serializedList:
-    - Key: 1
+    - Key: 0
       Value:
-      - {fileID: 11400000, guid: 442aa393e75a69444b09b7ca31f33f51, type: 2}
-    - Key: 2
-      Value:
-      - {fileID: 11400000, guid: 7d027383ee43ee847a242697beb62755, type: 2}
+      - {fileID: 11400000, guid: bc4434b7e5481d041a6ce9959ee2500b, type: 2}
+      - {fileID: 11400000, guid: 628573c0415e7d24cbee0eedefa0ee94, type: 2}
+      - {fileID: 11400000, guid: 0db2da7a6ef89b2449e4ff100276929f, type: 2}
+      - {fileID: 11400000, guid: 1d8254b87a9ac20409ac1cac59c6b543, type: 2}
+      - {fileID: 11400000, guid: 09e5f399ac7782c43baa2010c6e67eba, type: 2}
+      - {fileID: 11400000, guid: 5a1bc8af6c5d44243a2dc1b20d1ff9b4, type: 2}
+      - {fileID: 11400000, guid: 1d899983bf3383b499d70d8a5c13bb16, type: 2}
+      - {fileID: 11400000, guid: f9ebc5a7765b71f4c93e733372f86ead, type: 2}
     - Key: 3
       Value:
-      - {fileID: 11400000, guid: 9b30ea94a7b66694d8fea20fbe6951f9, type: 2}
+      - {fileID: 11400000, guid: 5459d8f457a7feb4f95735944ed9788b, type: 2}
+      - {fileID: 11400000, guid: f76e5f249c3346c4cabcf5cb2f31207e, type: 2}
+      - {fileID: 11400000, guid: be5578c3ddfe6544f8b27e7187cad519, type: 2}
+      - {fileID: 11400000, guid: 517f52a4b3c05714cbeb87106b35ab70, type: 2}
+      - {fileID: 11400000, guid: 4a2aa62fc27882342a8be5e36f85aaae, type: 2}
+    - Key: 2
+      Value:
+      - {fileID: 11400000, guid: 4c27ddbb3a8dfda4293166798abe65ab, type: 2}
+      - {fileID: 11400000, guid: 078e39fa40b8ff74ab51eba4c1886ac0, type: 2}
+      - {fileID: 11400000, guid: 07e46fee4e64a564da6f7bae03aaa210, type: 2}
+      - {fileID: 11400000, guid: e38c60fa6ee230f4a82fad5b7fc07ad3, type: 2}
+      - {fileID: 11400000, guid: 813ba7df7cc11b34b88ef0881b0b6de2, type: 2}
+      - {fileID: 11400000, guid: 24ab46110e4fb2c45af65e4ac430f4ba, type: 2}
   CanFindRescue: 1
   ResetCharacter: 1

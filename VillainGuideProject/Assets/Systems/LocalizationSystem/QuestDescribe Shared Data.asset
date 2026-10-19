@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: QuestDescribe Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: QuestDescribe
+  m_TableCollectionNameGuidString: b289f1bcb21dc364b906708c460e5f24
+  m_Entries:
+  - m_Id: 2290890670080
+    m_Key: Describe_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290890670081
+    m_Key: Describe_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290890670082
+    m_Key: Describe_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864384
+    m_Key: Describe_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864385
+    m_Key: Describe_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864386
+    m_Key: Describe_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864387
+    m_Key: Describe_7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864388
+    m_Key: Describe_8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98355702759424
+    m_Key: "MISS\xD5ES SIMPLES"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864390
+    m_Key: Describe_9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864391
+    m_Key: Describe_10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864392
+    m_Key: Describe_11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864393
+    m_Key: Describe_12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864394
+    m_Key: Describe_13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864395
+    m_Key: Describe_14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98355727925248
+    m_Key: "MISS\xD5ES MISTERIOSAS"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864397
+    m_Key: Describe_15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864398
+    m_Key: Describe_16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864399
+    m_Key: Describe_17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864400
+    m_Key: Describe_18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864401
+    m_Key: Describe_19
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2290894864402
+    m_Key: Describe_20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98355732119552
+    m_Key: "MISS\xD5ES RESGATE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78443452141570
+    m_Key: Describe_21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78443456335872
+    m_Key: Describe_22
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78443456335873
+    m_Key: Describe_23
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78443456335874
+    m_Key: Describe_24
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85016077504512
+    m_Key: Describe_25
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 9015152441165611087
+  references:
+    version: 2
+    RefIds:
+    - rid: 9015152441165611087
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1792325209641

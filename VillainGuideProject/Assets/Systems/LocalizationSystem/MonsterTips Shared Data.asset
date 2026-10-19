@@ -1,0 +1,208 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: MonsterTips Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: MonsterTips
+  m_TableCollectionNameGuidString: ef3bb184878c4254b9ffc2766646f4fc
+  m_Entries:
+  - m_Id: 11506634752
+    m_Key: Dracula1_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42880028672
+    m_Key: Dracula1_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90758008832
+    m_Key: Dracula1_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 116796248064
+    m_Key: Dracula2_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151764160512
+    m_Key: Dracula2_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 155786498048
+    m_Key: Dracula2_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 195951153152
+    m_Key: Dracula3_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 217056890880
+    m_Key: Dracula3_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 228972908544
+    m_Key: Dracula3_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331333226496
+    m_Key: Cuca1_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363840
+    m_Key: Cuca1_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363841
+    m_Key: Cuca1_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363842
+    m_Key: Cuca2_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363843
+    m_Key: Cuca2_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363844
+    m_Key: Cuca2_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363845
+    m_Key: Cuca3_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363846
+    m_Key: Cuca3_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363847
+    m_Key: Cuca3_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363848
+    m_Key: Mumia1_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363849
+    m_Key: Mumia1_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363850
+    m_Key: Mumia1_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363851
+    m_Key: Mumia2_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363852
+    m_Key: Mumia2_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363853
+    m_Key: Mumia2_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363854
+    m_Key: Mumia3_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363855
+    m_Key: Mumia3_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363856
+    m_Key: Mumia3_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363857
+    m_Key: "Palha\xE7o1_1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363858
+    m_Key: "Palha\xE7o1_2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363859
+    m_Key: "Palha\xE7o1_3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363860
+    m_Key: "Palha\xE7o2_1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363861
+    m_Key: "Palha\xE7o2_2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363862
+    m_Key: "Palha\xE7o2_3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363863
+    m_Key: "Palha\xE7o3_1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363864
+    m_Key: "Palha\xE7o3_2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363865
+    m_Key: "Palha\xE7o3_3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363866
+    m_Key: Cyclop1_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363867
+    m_Key: Cyclop1_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363868
+    m_Key: Cyclop1_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363869
+    m_Key: Cyclop2_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363870
+    m_Key: Cyclop2_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363871
+    m_Key: Cyclop2_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363872
+    m_Key: Cyclop3_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363873
+    m_Key: Cyclop3_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536331379363874
+    m_Key: Cyclop3_3
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 1771619293752459349
+  references:
+    version: 2
+    RefIds:
+    - rid: 1771619293752459349
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1792243496258

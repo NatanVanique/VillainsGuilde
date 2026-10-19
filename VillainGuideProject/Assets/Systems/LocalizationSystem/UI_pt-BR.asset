@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI_pt-BR
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: 39c09b2e628be7f4dace11c93d106e3f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 6450413568
+    m_Localized: 'Desenvolvido por:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000001
+    m_Localized: Novo jogo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000002
+    m_Localized: Sair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000003
+    m_Localized: "Cr\xE9ditos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000004
+    m_Localized: "Op\xE7\xF5es"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000005
+    m_Localized: Voltar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000006
+    m_Localized: Tela cheia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000007
+    m_Localized: Efeitos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000008
+    m_Localized: Testar som
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000009
+    m_Localized: "V\xEDdeo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000010
+    m_Localized: "\xC1udio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000011
+    m_Localized: Geral
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000012
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000013
+    m_Localized: Fechar Jogo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000014
+    m_Localized: "M\xFAsica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000015
+    m_Localized: Cancelar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000016
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000017
+    m_Localized: Idioma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000018
+    m_Localized: English
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000019
+    m_Localized: "Portugu\xEAs"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000020
+    m_Localized: Aceitar!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000021
+    m_Localized: "Miss\xF5es do dia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000022
+    m_Localized: "Arraste para as miss\xF5es."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000023
+    m_Localized: "Arraste funcion\xE1rios para as miss\xF5es para aceit\xE1-las.\nEscolha o monstro certo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000024
+    m_Localized: "Emerg\xEAncia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000025
+    m_Localized: "Mist\xE9rio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000026
+    m_Localized: "Cl\xE1ssica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000027
+    m_Localized: Resgate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000028
+    m_Localized: "NOT\xCDCIAS DE HOJE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000029
+    m_Localized: "Role para ver mais not\xEDcias,\nclique para continuar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000030
+    m_Localized: "Miss\xE3o de emerg\xEAncia amanh\xE3!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000031
+    m_Localized: "Sem recompensas hoje!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000032
+    m_Localized: 'Resultado recebido: {amount}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000033
+    m_Localized: "Miss\xE3o fracassou"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000034
+    m_Localized: "VOC\xCA CONSEGUIU!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000035
+    m_Localized: Fim de jogo...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000036
+    m_Localized: "Prepare sua equipe para a miss\xE3o de amanh\xE3."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

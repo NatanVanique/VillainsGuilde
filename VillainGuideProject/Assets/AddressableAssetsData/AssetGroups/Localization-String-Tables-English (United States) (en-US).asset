@@ -15,8 +15,28 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-English (United States) (en-US)
   m_GUID: 43282da5abc16b74ea2244c79af9f38b
   m_SerializeEntries:
+  - m_GUID: 3de8778e9c6c97b42be675539a8d9c7a
+    m_Address: RegularText_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 65df25aa7822efe47a48dcf61db12d32
+    m_Address: MonsterTips_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 66407f4061639054db9f54a89734b890
     m_Address: QuestsTitles_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 84a8fb6caef16ca4d8319aa6bec4095f
+    m_Address: MonsterName_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
@@ -28,6 +48,25 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-US
     - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d6e25cc81c603440a82a72ef06b8214
+    m_Address: QuestDescribe_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c9719425f9755b743bf6927170a64d73
+    m_Address: QuestResults_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: da4b6c6bc1db7bb45b456431e2dc9130
+    m_Address: UI_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 9a6257aacc0d25d4fbbfc41c9f870caa, type: 2}
