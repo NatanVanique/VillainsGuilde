@@ -909,6 +909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OptionsManager
   optionsCanvas: {fileID: 1075362742}
+  animationDuration: 0.9
 --- !u!1 &2037442800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,6 +1115,10 @@ PrefabInstance:
     - target: {fileID: 5169380877442165053, guid: 0489f9e1309648c4491dbc5b2d73d94d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400358541102200038, guid: 0489f9e1309648c4491dbc5b2d73d94d, type: 3}
+      propertyPath: m_text
+      value: v 0.0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7222899454769062323, guid: 0489f9e1309648c4491dbc5b2d73d94d, type: 3}
       propertyPath: m_AnchoredPosition.y

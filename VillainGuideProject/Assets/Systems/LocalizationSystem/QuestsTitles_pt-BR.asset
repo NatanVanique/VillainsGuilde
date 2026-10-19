@@ -95,27 +95,27 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 608526755532812
-    m_Localized: vai um Ursinho ai?
+    m_Localized: Vai um Ursinho ai?
     m_Metadata:
       m_Items: []
   - m_Id: 608526755532814
-    m_Localized: "O mistério do porão"
+    m_Localized: "A Coisa no Por\xE3o"
     m_Metadata:
       m_Items: []
   - m_Id: 608526755532815
-    m_Localized: "O fantasma do teatro"
+    m_Localized: Um Monstro Sob os Holofotes
     m_Metadata:
       m_Items: []
   - m_Id: 608526755532816
-    m_Localized: "Socorro na mina"
+    m_Localized: Um Grito das Profundezas
     m_Metadata:
       m_Items: []
   - m_Id: 608526755532817
-    m_Localized: "Perigo no céu"
+    m_Localized: Monstros a Bordo
     m_Metadata:
       m_Items: []
   - m_Id: 608526755532818
-    m_Localized: "A vila ameaçada"
+    m_Localized: "Monstro N\xE3o \xE9 Inimigo"
     m_Metadata:
       m_Items: []
   references:
