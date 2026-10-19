@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
@@ -54,7 +55,9 @@ public class QuestCard : MonoBehaviour {
             QuestType.Rescue => "Mission_Type_Rescue",
             _ => "Mission_Type_Classic"
         };
-        UiLocalizedText.Bind(questType, typeKey);
+        LocalizeStringEvent typeLocalization = questType.GetComponent<LocalizeStringEvent>();
+        if (typeLocalization != null)
+            typeLocalization.StringReference = new LocalizedString("UI", typeKey);
         ChangeTitle();
         ChangeCharactersAmountIcons();
         ChangeTipText();

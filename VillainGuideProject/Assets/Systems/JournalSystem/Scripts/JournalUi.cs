@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
 public class JournalUi : MonoBehaviour
@@ -261,7 +262,12 @@ public class JournalUi : MonoBehaviour
         if (label != null)
         {
             string amount = value.ToString("+0.########;-0.########;0");
-            UiLocalizedText.Bind(label, "Journal_ResultCollected", amount);
+            LocalizeStringEvent localization = label.GetComponent<LocalizeStringEvent>();
+            if (localization != null)
+            {
+                localization.StringReference.Arguments = new object[] { amount };
+                localization.RefreshString();
+            }
         }
     }
 

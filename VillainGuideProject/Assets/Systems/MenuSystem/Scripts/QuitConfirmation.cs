@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
 public class QuitConfirmation : MonoBehaviour
@@ -76,8 +78,10 @@ public class QuitConfirmation : MonoBehaviour
         image.color = cancel ? Color.red : Color.black;
         TMP_Text label = buttonObject.GetComponentInChildren<TMP_Text>();
         label.text = cancel ? "Cancel" : confirmLabel;
-        UiLocalizedText.Bind(label, cancel ? "Confirmation_Cancel" :
-            confirmLabel == "Menu" ? "Confirmation_Menu" : "Menu_Quit");
+        LocalizeStringEvent localization = label.GetComponent<LocalizeStringEvent>();
+        if (localization != null)
+            localization.StringReference = new LocalizedString("UI", cancel ? "Confirmation_Cancel" :
+                confirmLabel == "Menu" ? "Confirmation_Menu" : "Menu_Quit");
         label.color = Color.white;
         label.enableAutoSizing = true;
 
