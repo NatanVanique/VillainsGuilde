@@ -375,8 +375,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -464}
-  m_SizeDelta: {x: 1920, y: 150}
+  m_AnchoredPosition: {x: 0, y: -476.20944}
+  m_SizeDelta: {x: 1920, y: 174.4189}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5830249475678616688
 CanvasRenderer:
@@ -555,13 +555,12 @@ RectTransform:
   m_Children:
   - {fileID: 5169380877442165053}
   - {fileID: 3199789607473824177}
-  - {fileID: 3936062127617737269}
   - {fileID: 2001906579116608061}
   m_Father: {fileID: 7601672495466969413}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -24.79, y: -185.61496}
+  m_AnchoredPosition: {x: -24.79, y: -202}
   m_SizeDelta: {x: 629.503, y: 311.817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1271750442992218428
@@ -581,8 +580,8 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 1
-  m_Spacing: 20
+  m_ChildAlignment: 4
+  m_Spacing: -17
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -706,7 +705,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: v 0.0.0
+  m_text: v 0.0.2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e8bcef46fc52db4fa8232413d1e3c0a, type: 2}
   m_sharedMaterial: {fileID: 8047056480254275243, guid: 2e8bcef46fc52db4fa8232413d1e3c0a, type: 2}
@@ -1373,165 +1372,6 @@ MonoBehaviour:
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 6851303924378115952}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!1001 &7797875111881035319
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 7222899454769062323}
-    m_Modifications:
-    - target: {fileID: 2194561763801700687, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_Name
-      value: CreditsButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 453.287
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 58.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7679663333504020434, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      propertyPath: m_text
-      value: Credits
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2194561763801700687, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3416473186626962364}
-  m_SourcePrefab: {fileID: 100100000, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
---- !u!224 &3936062127617737269 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6532521561285544962, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-  m_PrefabInstance: {fileID: 7797875111881035319}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8233486483358046072 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2194561763801700687, guid: a176eb8395a1d0f4aa01f46069fd89de, type: 3}
-  m_PrefabInstance: {fileID: 7797875111881035319}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3416473186626962364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8233486483358046072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5981904387604046268}
-          m_TargetAssemblyTypeName: MenuUiManager, Assembly-CSharp
-          m_MethodName: MoveArrow
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 8233486483358046072}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5981904387604046268}
-          m_TargetAssemblyTypeName: MenuUiManager, Assembly-CSharp
-          m_MethodName: DisableArrow
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 8233486483358046072}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0

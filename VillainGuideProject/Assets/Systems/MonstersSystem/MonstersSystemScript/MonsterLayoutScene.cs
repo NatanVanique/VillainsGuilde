@@ -16,8 +16,14 @@ public class MonsterLayoutScene : MonoBehaviour
         SubscribeToEvents();
     }
 
-    void Setup() {
-        SubscribeToEvents();
+    private void Start() {
+        MonstersManager manager = SingleEntryPoint.Instance?.ManagerManager?.MonsterMan;
+        if (manager == null) return;
+
+        // Registration can happen before this scene object's Awake subscribes.
+        foreach (MonsterInfo info in manager.ListOfRegisteredMonsters) {
+            HandleMonsterRegistered(info);
+        }
     }
 
     #endregion
