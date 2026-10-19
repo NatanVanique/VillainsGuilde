@@ -82,9 +82,7 @@ public class QuestValidator : MonoBehaviour
         if (!result) {
             if (!data.HasConsequence) return;
 
-            int amountOfBadEvents = data.AmountOfConsequenceEvents;
-
-            OnQuestWithResultFailed?.Invoke(amountOfBadEvents);
+            OnQuestWithResultFailed?.Invoke(Mathf.Max(0, data.AmountOfConsequenceEvents));
         }
 
     }

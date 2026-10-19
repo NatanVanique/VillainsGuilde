@@ -11,6 +11,12 @@ public class DaySystem : MonoBehaviour
     // private variables
     int _currentDay = 1;
     public int CurrentDay => _currentDay;
+    public int CompletedDays { get; private set; }
+    public bool HasCompletedAllDays => maxAmountOfDays > 0 && CompletedDays >= maxAmountOfDays;
+
+    public void CompleteCurrentDay() {
+        CompletedDays = _currentDay;
+    }
 
     // events
     /// <summary>

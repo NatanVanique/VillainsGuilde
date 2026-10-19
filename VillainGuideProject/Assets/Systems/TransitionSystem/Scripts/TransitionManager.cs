@@ -33,6 +33,27 @@ public class TransitionManager : MonoBehaviour
 
     private GameObject reloadTransition;
 
+    public void PlayTransition(System.Action onCovered, System.Action onRevealed)
+    {
+        if (!transitioning)
+            StartCoroutine(ScreenTransitionRoutine(onCovered, onRevealed));
+    }
+
+    private IEnumerator ScreenTransitionRoutine(System.Action onCovered, System.Action onRevealed)
+    {
+        transitioning = true;
+        GameObject transition = Instantiate(transitionPrefab, transform);
+        Animator animator = transition.GetComponentInChildren<Animator>();
+        animator.SetTrigger(inTrigger);
+        yield return new WaitForSecondsRealtime(transitionDuration);
+        onCovered.Invoke();
+        animator.SetTrigger(outTrigger);
+        yield return new WaitForSecondsRealtime(transitionDuration);
+        Destroy(transition);
+        transitioning = false;
+        onRevealed.Invoke();
+    }
+
     public void ReloadSceneTransitionIn()
     {
         if (!transitioning)
@@ -59,13 +80,13 @@ public class TransitionManager : MonoBehaviour
 
     private IEnumerator ReloadOutRoutine()
     {
+        PhoneController.Instance.ResetPhone();
         reloadTransition.GetComponentInChildren<Animator>().SetTrigger(outTrigger);
         yield return new WaitForSeconds(transitionDuration);
         Destroy(reloadTransition);
         reloadTransition = null;
         transitioning = false;
-        PhoneController.Instance.ResetPhone();
-        SingleEntryPoint.Instance.UiManager.JournalManager.ActiveJournal();
+        SingleEntryPoint.Instance.UiManager.JournalManager.ShowJournalAfterHealthLoss();
     }
     IEnumerator TransitionRoutine(string sceneName)
     {
