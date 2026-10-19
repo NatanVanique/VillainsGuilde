@@ -35,12 +35,14 @@ public class MonsterUiDisplay : MonoBehaviour {
 
     Tween _scaleTween, _fadeTween, _confirmButtonTween;
 
+    public bool _canTurnScreenOn = false;
+
     public static event Action<MonsterCardPrefab> OnMonsterCardSelected;
     #endregion
 
     #region Setup
 
-    private void Start() {
+    private void Awake() {
         Setup();
     }
 
@@ -62,6 +64,8 @@ public class MonsterUiDisplay : MonoBehaviour {
 
         OnMonsterCardSelected?.Invoke(_selectedCard);
         MonsterUIDisplayOff();
+
+        //PhoneController.Instance.ResetPhone();
     }
 
     #endregion
@@ -70,6 +74,12 @@ public class MonsterUiDisplay : MonoBehaviour {
 
     void SubscribeToEvents() {
         MonsterCardPrefab.OnCardSelected += HandleCardSelected;
+        JournalCloseButton.OnCloseJournalButtonPreesed += MonsterUIDisplayOn;
+        QuestValidator.OnRescueQuestWon += HandleRescueQuestWon;
+    }
+
+    private void HandleRescueQuestWon() {
+        _canTurnScreenOn = true;
     }
 
     private void HandleCardSelected(MonsterCardPrefab card) {
@@ -81,6 +91,10 @@ public class MonsterUiDisplay : MonoBehaviour {
     #region Main Logic
 
     void MonsterUIDisplayOn() {
+
+        if (!_canTurnScreenOn) return;
+
+        _canTurnScreenOn = false;
 
         List<MonsterData> unregisteredMonster = ReturnUnRegisteredMonsters().OrderBy(x => UnityEngine.Random.value).ToList();
 
@@ -180,6 +194,8 @@ public class MonsterUiDisplay : MonoBehaviour {
 
     void UnsubscribeToEvents() {
         MonsterCardPrefab.OnCardSelected -= HandleCardSelected;
+        JournalCloseButton.OnCloseJournalButtonPreesed -= MonsterUIDisplayOn;
+        QuestValidator.OnRescueQuestWon -= HandleRescueQuestWon;
     }
 
     void KillTweens() {

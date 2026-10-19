@@ -43,4 +43,4 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 813ba7df7cc11b34b88ef0881b0b6de2, type: 2}
       - {fileID: 11400000, guid: 24ab46110e4fb2c45af65e4ac430f4ba, type: 2}
   CanFindRescue: 1
-  ResetCharacter: 0
+  ResetCharacter: 1

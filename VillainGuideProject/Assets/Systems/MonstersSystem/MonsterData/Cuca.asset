@@ -26,7 +26,43 @@ MonoBehaviour:
   Icon: {fileID: -8240245386667130619, guid: f684d4aa5e27c684e97049500e5af3ea, type: 3}
   Background: {fileID: 0}
   DictionaryOfTips:
-    _serializedList: []
+    _serializedList:
+    - Key: 1
+      Value:
+      - TipText:
+          m_TableReference:
+            m_TableCollectionName: GUID:ef3bb184878c4254b9ffc2766646f4fc
+          m_TableEntryReference:
+            m_KeyId: 11506634752
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        Type: 0
+    - Key: 2
+      Value:
+      - TipText:
+          m_TableReference:
+            m_TableCollectionName: GUID:ef3bb184878c4254b9ffc2766646f4fc
+          m_TableEntryReference:
+            m_KeyId: 42880028672
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        Type: 0
+    - Key: 3
+      Value:
+      - TipText:
+          m_TableReference:
+            m_TableCollectionName: GUID:ef3bb184878c4254b9ffc2766646f4fc
+          m_TableEntryReference:
+            m_KeyId: 90758008832
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        Type: 0
   references:
     version: 2
     RefIds: []

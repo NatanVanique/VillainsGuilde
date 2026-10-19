@@ -49,7 +49,6 @@ public class QuestSelector : MonoBehaviour {
     }
 
     void HandleDayChanged(int newDay) {
-        Debug.Log(newDay);
         if (_selectedDay == newDay) return;
         if (!dictionaryOfDayInfo.ContainsKey(newDay)) {
             Debug.LogError($"No quest configuration for day {newDay}.", this);
@@ -75,9 +74,9 @@ public class QuestSelector : MonoBehaviour {
             // PRECISA ENCONTRAR UM PERSONAGEM
             newDayQuestData.DictionaryOfPossibleQuests.TryGetValue(QuestType.Rescue, out List<QuestData> listOsRescueQuests);
             if (AddRandomQuestFromList(listOsRescueQuests)) {
-                _hasFoundCharacter = true;
                 totalAmountOfQuestsLefts--;
             }
+            _hasFoundCharacter = true;
         }
 
         for (int i = 0; i < totalAmountOfQuestsLefts; i++) {
@@ -111,6 +110,8 @@ public class QuestSelector : MonoBehaviour {
             }
 
         }
+
+        if (newDayQuestData.ResetCharacter) _hasFoundCharacter = false;
 
         _selectedDay = newDay;
     }
