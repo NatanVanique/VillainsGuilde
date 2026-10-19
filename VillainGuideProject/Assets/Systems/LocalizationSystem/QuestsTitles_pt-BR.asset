@@ -67,7 +67,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 608526755532804
-    m_Localized: 'Sabores da adolescencia '
+    m_Localized: "Sabores da adolesc\xEAncia"
     m_Metadata:
       m_Items: []
   - m_Id: 608526755532805
@@ -83,7 +83,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 608526755532809
-    m_Localized: 'Gravata indestrutivel '
+    m_Localized: "Gravata indestrut\xEDvel"
     m_Metadata:
       m_Items: []
   - m_Id: 608526755532810
@@ -116,6 +116,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 608526755532818
     m_Localized: "Monstro N\xE3o \xE9 Inimigo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608526755532812
+    m_Localized: "Vai um ursinho a\xED?"
     m_Metadata:
       m_Items: []
   references:

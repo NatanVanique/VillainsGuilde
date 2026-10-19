@@ -1010,6 +1010,7 @@ GameObject:
   - component: {fileID: 985430286}
   - component: {fileID: 985430288}
   - component: {fileID: 985430287}
+  - component: {fileID: 985430289}
   m_Layer: 0
   m_Name: Devs
   m_TagString: Untagged
@@ -1056,7 +1057,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Desenvolvido por:'
+  m_text: ''
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e8bcef46fc52db4fa8232413d1e3c0a, type: 2}
   m_sharedMaterial: {fileID: 8047056480254275243, guid: 2e8bcef46fc52db4fa8232413d1e3c0a, type: 2}
@@ -1136,6 +1137,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985430285}
   m_CullTransparentMesh: 1
+--- !u!114 &985430289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985430285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac36c3d22a94ad891bc6868281eb815, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::UiLocalizedText
+  key: Desenvolvedores_Ui
 --- !u!1 &1165583079
 GameObject:
   m_ObjectHideFlags: 0

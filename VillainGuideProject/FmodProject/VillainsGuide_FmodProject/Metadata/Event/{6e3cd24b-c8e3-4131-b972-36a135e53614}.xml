@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{6e3cd24b-c8e3-4131-b972-36a135e53614}">
 		<property name="color">
-			<value>Green</value>
+			<value>Blue</value>
 		</property>
 		<property name="name">
 			<value>DuckSound</value>
@@ -98,6 +98,9 @@
 		<property name="pitch">
 			<value>-1</value>
 		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
 		<relationship name="sounds">
 			<destination>{2e9d607e-984b-4b1a-ba10-49ee69257612}</destination>
 			<destination>{f84a4739-5ae5-470b-854d-059cac28b8bd}</destination>
@@ -182,7 +185,7 @@
 			<value>3.60000014</value>
 		</property>
 		<property name="depth">
-			<value>46.5</value>
+			<value>22</value>
 		</property>
 	</object>
 	<object class="SFXReverbEffect" id="{84bece14-3318-4c76-ae4d-a2814f9d6754}">

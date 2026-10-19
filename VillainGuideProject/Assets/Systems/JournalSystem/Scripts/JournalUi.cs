@@ -23,7 +23,6 @@ public class JournalUi : MonoBehaviour
     [SerializeField] private GameObject emergencyWarningPrefab;
     [SerializeField] private GameObject resultsNewsPrefab;
     [SerializeField, Min(0f)] private float rowSpacing = 6f;
-    [SerializeField, TextArea] private string emergencyWarningText = "An emergency mission is expected tomorrow.";
 
     [Header("Navigation")]
     [SerializeField] private Button goToResultsButton;
@@ -149,7 +148,7 @@ public class JournalUi : MonoBehaviour
             PrepareHalfWidth(warningObject);
             JournalNewsItem warning = GetOrAddNewsItem(warningObject);
             warning.LayoutChanged += RequestLayoutRefresh;
-            warning.SetupWarning(upcomingEmergency, emergencyWarningText);
+            warning.SetupWarning(upcomingEmergency);
             spawnedNews.Add(warning);
         }
 
@@ -205,6 +204,7 @@ public class JournalUi : MonoBehaviour
 
         GameObject instance = Instantiate(resultsNewsPrefab, newsGrid.transform);
         PrepareFullWidth(instance);
+        FitResultsBars(instance.transform);
         VerticalLayoutGroup resultsLayout = instance.transform.Find("Results")?.GetComponent<VerticalLayoutGroup>();
         if (resultsLayout != null)
             resultsLayout.spacing = -14f;
@@ -222,6 +222,31 @@ public class JournalUi : MonoBehaviour
         spawnedRoots.Add(instance);
     }
 
+    private static void FitResultsBars(Transform root)
+    {
+        RectTransform results = root as RectTransform;
+        Transform decoration = root.Find("Deco");
+        if (results == null || decoration == null)
+            return;
+
+        // The result width is driven by the journal layout; size the bars against
+        // the actual background rather than a fixed-width decoration container.
+        for (int i = decoration.childCount - 1; i >= 0; i--)
+        {
+            if (decoration.GetChild(i) is not RectTransform bar)
+                continue;
+
+            float y = results.InverseTransformPoint(bar.position).y - results.rect.center.y;
+            float height = bar.rect.height;
+            bar.SetParent(results, false);
+            bar.anchorMin = new Vector2(0.04f, 0.5f);
+            bar.anchorMax = new Vector2(0.96f, 0.5f);
+            bar.pivot = new Vector2(0.5f, 0.5f);
+            bar.sizeDelta = new Vector2(0f, height);
+            bar.anchoredPosition = new Vector2(0f, y);
+        }
+    }
+
     private static void SetResultsTab(Transform root, string path, bool visible, float value)
     {
         Transform tab = root.Find(path);
@@ -236,7 +261,7 @@ public class JournalUi : MonoBehaviour
         if (label != null)
         {
             string amount = value.ToString("+0.########;-0.########;0");
-            label.text = label.text.Replace("xx", amount);
+            UiLocalizedText.Bind(label, "Journal_ResultCollected", amount);
         }
     }
 

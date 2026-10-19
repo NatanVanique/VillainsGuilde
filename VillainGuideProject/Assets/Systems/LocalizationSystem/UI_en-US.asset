@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 6450413568
-    m_Localized: Developed by
+    m_Localized: 'Developed by:'
     m_Metadata:
       m_Items: []
   - m_Id: 90000000001
@@ -96,6 +96,74 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 90000000019
     m_Localized: "Portugu\xEAs"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000020
+    m_Localized: Accept!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000021
+    m_Localized: Missions of the day
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000022
+    m_Localized: Drag to missions.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000023
+    m_Localized: "Drag employees to missions to accept them.\nMake sure to pick the right monster!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000024
+    m_Localized: Emergency
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000025
+    m_Localized: Mystery
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000026
+    m_Localized: Classic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000027
+    m_Localized: Rescue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000028
+    m_Localized: NEWS TODAY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000029
+    m_Localized: "Scroll down to see more news,\nclick to continue"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000030
+    m_Localized: Emergency mission tomorrow!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000031
+    m_Localized: No rewards today!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000032
+    m_Localized: 'Result collected: {amount}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000033
+    m_Localized: Mission failed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000034
+    m_Localized: YOU DID IT!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000035
+    m_Localized: Game over...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90000000036
+    m_Localized: Prepare your team for tomorrow's mission.
     m_Metadata:
       m_Items: []
   references:
