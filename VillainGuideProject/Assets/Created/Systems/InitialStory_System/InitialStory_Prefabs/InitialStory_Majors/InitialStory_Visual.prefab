@@ -42,5 +42,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0000000000000000000000000000004f, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialStoryCanvas: {fileID: 1237904020617436266, guid: 30bd4dcc76364b44e88b7d72ef947c7a, type: 3}
