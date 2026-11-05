@@ -14,21 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: Localization-String-Tables-Portuguese (Brazil) (pt-BR)
   m_GUID: ec13d4982c9fce54aa5e7af29ce4b435
-  m_SerializeEntries:
-  - m_GUID: 06aae80c6a02760448e87079998eb0d5
-    m_Address: QuestsTips_pt-BR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-pt-BR
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: dd5eefa01aea45e49a98d015d07f4f58
-    m_Address: QuestsTitles_pt-BR
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-pt-BR
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 9a6257aacc0d25d4fbbfc41c9f870caa, type: 2}
   m_SchemaSet:

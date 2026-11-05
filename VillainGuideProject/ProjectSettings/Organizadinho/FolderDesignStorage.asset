@@ -22,7 +22,7 @@ MonoBehaviour:
     iconGuid: fee1383308d4f004f9c824b16d7477ad
   - guid: af9f69a3f5ae1c4499c5d971437bf1dc
     hasColor: 1
-    propagateChildren: 0
+    propagateChildren: 1
     colorMode: 0
     hue: 0.85
     customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
@@ -224,13 +224,6 @@ MonoBehaviour:
     customColor: {r: 0.6250694, g: 0.9547169, b: 0.6765768, a: 1}
     iconGuid: 
   - guid: 83160dda8f38d3f4aafeef6ffb46541a
-    hasColor: 1
-    propagateChildren: 0
-    colorMode: 0
-    hue: 0.85
-    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
-    iconGuid: 
-  - guid: 7e9d8e1923a67cc49a79d2f1dc98ee68
     hasColor: 1
     propagateChildren: 0
     colorMode: 0
