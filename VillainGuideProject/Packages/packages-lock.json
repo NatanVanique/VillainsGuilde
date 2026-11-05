@@ -1,11 +1,10 @@
 {
   "dependencies": {
     "com.bisc8.organizadinho": {
-      "version": "https://github.com/Bisc8Studio/com.bisc8.organizadinho.git",
+      "version": "file:com.bisc8.organizadinho",
       "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "ac2b413dead01ea495d646ababa9aba49a5af1f9"
+      "source": "embedded",
+      "dependencies": {}
     },
     "com.bisc8.simplefmod": {
       "version": "https://github.com/Bisc8Studio/com.bisc8.simplefmod.git",

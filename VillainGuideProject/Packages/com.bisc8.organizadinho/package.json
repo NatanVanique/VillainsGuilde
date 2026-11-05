@@ -1,0 +1,11 @@
+{
+  "name": "com.bisc8.organizadinho",
+  "version": "1.3.5",
+  "displayName": "Organizadinho",
+  "description": "Improves Unity Project and Hierarchy navigation and visualization.",
+  "unity": "6000.3",
+  "author": {
+    "name": "Bisc8"
+  },
+  "_fingerprint": "ac2b413dead01ea495d646ababa9aba49a5af1f9"
+}

@@ -19,14 +19,14 @@ MonoBehaviour:
     colorMode: 3
     hue: 0.096428566
     customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
-    iconGuid: 
+    iconGuid: fee1383308d4f004f9c824b16d7477ad
   - guid: af9f69a3f5ae1c4499c5d971437bf1dc
     hasColor: 1
     propagateChildren: 0
     colorMode: 0
     hue: 0.85
     customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
-    iconGuid: 
+    iconGuid: 7f8617e9243b23a4b9ef07c982c21acc
   - guid: b6b92980e3b498a4ea986a1a47cfdc64
     hasColor: 1
     propagateChildren: 1
@@ -51,36 +51,29 @@ MonoBehaviour:
   - guid: 109e9bdd0fcc649c5bc59085c35bdc83
     hasColor: 1
     propagateChildren: 1
-    colorMode: 0
+    colorMode: 2
     hue: 0.85
     customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
-    iconGuid: 
+    iconGuid: 3416fbe15fde01b4ca4d958e3e967345
   - guid: cc84d7151e50f9748bc2b8915129ff93
     hasColor: 1
     propagateChildren: 1
     colorMode: 0
-    hue: 0.85
+    hue: 0
     customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
-    iconGuid: 
+    iconGuid: 714e174ae76a9d5419c59d360628a2c3
   - guid: 6662e2c0168658044ab3096c826da571
     hasColor: 1
     propagateChildren: 1
     colorMode: 0
-    hue: 0.85
+    hue: 0.52500004
     customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
-    iconGuid: 
+    iconGuid: bc54cb61729ffc14aa4d61115440d016
   - guid: 3ca1e17b5f7d05345969cb90c94a446f
     hasColor: 1
     propagateChildren: 1
     colorMode: 0
     hue: 0.17857143
-    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
-    iconGuid: 
-  - guid: bce06f1e3bf55a44889f70658a93c163
-    hasColor: 1
-    propagateChildren: 1
-    colorMode: 0
-    hue: 0.85
     customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
     iconGuid: 
   - guid: 9872299340a85b343a2375a57578e004
@@ -285,5 +278,26 @@ MonoBehaviour:
     colorMode: 4
     hue: 0.58
     customColor: {r: 0.6250694, g: 0.9547169, b: 0.6765768, a: 1}
+    iconGuid: 
+  - guid: c6371b4544b3417429315a62e6414d40
+    hasColor: 0
+    propagateChildren: 0
+    colorMode: 0
+    hue: 0.58
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 3a29f1227b46dd749b29698396bd86f4
+  - guid: d9d59cb3c1fbc1544b0d7cf4bd89ec8b
+    hasColor: 1
+    propagateChildren: 0
+    colorMode: 2
+    hue: 0.58
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 
+  - guid: 8ce9aadda4af72c4c853b9dd1b214fb4
+    hasColor: 1
+    propagateChildren: 0
+    colorMode: 2
+    hue: 0.58
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
     iconGuid: 
   _storageVersion: 4

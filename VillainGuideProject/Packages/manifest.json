@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.bisc8.organizadinho": "https://github.com/Bisc8Studio/com.bisc8.organizadinho.git",
+    "com.bisc8.organizadinho": "file:com.bisc8.organizadinho",
     "com.bisc8.simplefmod": "https://github.com/Bisc8Studio/com.bisc8.simplefmod.git",
     "com.unity.2d.animation": "13.0.6",
     "com.unity.2d.aseprite": "3.0.2",
