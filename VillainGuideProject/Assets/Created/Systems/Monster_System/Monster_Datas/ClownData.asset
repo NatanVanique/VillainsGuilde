@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 652e26920880440469b230e61a82851f, type: 3}
+  m_Name: ClownData
+  m_EditorClassIdentifier: Assembly-CSharp::CreateMonster_Data
+  monsterName:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  monsterDescription:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  bigImage: {fileID: 21300000, guid: 53ca664b1a0ae774585377616ccfe1d4, type: 3}
+  smallImage: {fileID: 0}
+  icon: {fileID: 0}
+  strength: 0
+  speed: 0
+  intelligence: 0
+  charisma: 0
+  endurance: 0
+  delicacy: 0
+  luck: 0
+  mainPower: 2
+  references:
+    version: 2
+    RefIds: []
