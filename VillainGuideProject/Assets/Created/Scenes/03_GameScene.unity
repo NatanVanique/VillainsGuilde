@@ -670,42 +670,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2973630057736164751}
     - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
-      propertyPath: stats.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
-      propertyPath: 'stats.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2973630057736164750}
-    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
-      propertyPath: 'stats.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2973630057736164749}
-    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
-      propertyPath: 'stats.Array.data[2]'
-      value: 
-      objectReference: {fileID: 2973630057736164748}
-    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
-      propertyPath: 'stats.Array.data[3]'
-      value: 
-      objectReference: {fileID: 2973630057736164747}
-    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
-      propertyPath: 'stats.Array.data[4]'
-      value: 
-      objectReference: {fileID: 2973630057736164746}
-    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
-      propertyPath: 'stats.Array.data[5]'
-      value: 
-      objectReference: {fileID: 2973630057736164745}
-    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
-      propertyPath: 'stats.Array.data[6]'
-      value: 
-      objectReference: {fileID: 2973630057736164744}
-    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
-      propertyPath: 'stats.Array.data[7]'
-      value: 
-      objectReference: {fileID: 2973630057736164743}
-    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
       propertyPath: bigImage_ContractTolltip
       value: 
       objectReference: {fileID: 2973630057736164754}
@@ -745,34 +709,6 @@ PrefabInstance:
       propertyPath: stats.Array.data[7].slider
       value: 
       objectReference: {fileID: 2973630057736164743}
-    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
-      propertyPath: stats.Array.data[1].statType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
-      propertyPath: stats.Array.data[2].statType
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
-      propertyPath: stats.Array.data[3].statType
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
-      propertyPath: stats.Array.data[4].statType
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
-      propertyPath: stats.Array.data[5].statType
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
-      propertyPath: stats.Array.data[6].statType
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
-      propertyPath: stats.Array.data[7].statType
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -893,30 +829,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 0000000000000000000000000000003c, type: 3}
-      propertyPath: monsters.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 0000000000000000000000000000003c, type: 3}
-      propertyPath: monsters.Array.data[0].monstersProfile
-      value: 
-      objectReference: {fileID: 11400000, guid: 73cf047be816af94e890201373bc1e5a, type: 2}
-    - target: {fileID: 11400000, guid: 0000000000000000000000000000003c, type: 3}
-      propertyPath: monsters.Array.data[1].monstersProfile
-      value: 
-      objectReference: {fileID: 11400000, guid: 20f33b025903b684d905602e1ec1a4c2, type: 2}
-    - target: {fileID: 11400000, guid: 0000000000000000000000000000003c, type: 3}
-      propertyPath: monsters.Array.data[2].monstersProfile
-      value: 
-      objectReference: {fileID: 11400000, guid: f6679f46fd5ad3f49a8ad24629454a08, type: 2}
-    - target: {fileID: 11400000, guid: 0000000000000000000000000000003c, type: 3}
-      propertyPath: monsters.Array.data[3].monstersProfile
-      value: 
-      objectReference: {fileID: 11400000, guid: 5fa2f2d6679c9164196703ff688b2b89, type: 2}
-    - target: {fileID: 11400000, guid: 0000000000000000000000000000003c, type: 3}
-      propertyPath: monsters.Array.data[4].monstersProfile
-      value: 
-      objectReference: {fileID: 11400000, guid: 370b40ad437ec2f40baab17f28fb29f9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1088,10 +1000,6 @@ PrefabInstance:
     - target: {fileID: 7818286906944775404, guid: 9df2b523d41b5124194e1887b7e56a96, type: 3}
       propertyPath: m_Name
       value: LookingForWork_Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 7818286906944775404, guid: 9df2b523d41b5124194e1887b7e56a96, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2111,14 +2019,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6724327331691185379, guid: e93b6cf1378fb51438b40e2f981e48ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7611007086762876133, guid: e93b6cf1378fb51438b40e2f981e48ef, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7611007086762876133, guid: e93b6cf1378fb51438b40e2f981e48ef, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
