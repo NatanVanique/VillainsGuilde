@@ -713,6 +713,66 @@ PrefabInstance:
       propertyPath: nameText_ContractTolltip
       value: 
       objectReference: {fileID: 2973630057736164752}
+    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
+      propertyPath: stats.Array.data[0].slider
+      value: 
+      objectReference: {fileID: 2973630057736164750}
+    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
+      propertyPath: stats.Array.data[1].slider
+      value: 
+      objectReference: {fileID: 2973630057736164749}
+    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
+      propertyPath: stats.Array.data[2].slider
+      value: 
+      objectReference: {fileID: 2973630057736164748}
+    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
+      propertyPath: stats.Array.data[3].slider
+      value: 
+      objectReference: {fileID: 2973630057736164747}
+    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
+      propertyPath: stats.Array.data[4].slider
+      value: 
+      objectReference: {fileID: 2973630057736164746}
+    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
+      propertyPath: stats.Array.data[5].slider
+      value: 
+      objectReference: {fileID: 2973630057736164745}
+    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
+      propertyPath: stats.Array.data[6].slider
+      value: 
+      objectReference: {fileID: 2973630057736164744}
+    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
+      propertyPath: stats.Array.data[7].slider
+      value: 
+      objectReference: {fileID: 2973630057736164743}
+    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
+      propertyPath: stats.Array.data[1].statType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
+      propertyPath: stats.Array.data[2].statType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
+      propertyPath: stats.Array.data[3].statType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
+      propertyPath: stats.Array.data[4].statType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
+      propertyPath: stats.Array.data[5].statType
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
+      propertyPath: stats.Array.data[6].statType
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 00000000000000000000000000000024, type: 3}
+      propertyPath: stats.Array.data[7].statType
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -42,5 +42,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0000000000000000000000000000003b, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsters:
+  - monstersProfile: {fileID: 11400000, guid: 73cf047be816af94e890201373bc1e5a, type: 2}
+    contracted: 0
+    happiness: 0
+  - monstersProfile: {fileID: 11400000, guid: 20f33b025903b684d905602e1ec1a4c2, type: 2}
+    contracted: 0
+    happiness: 0
+  - monstersProfile: {fileID: 11400000, guid: f6679f46fd5ad3f49a8ad24629454a08, type: 2}
+    contracted: 0
+    happiness: 0
+  - monstersProfile: {fileID: 11400000, guid: 5fa2f2d6679c9164196703ff688b2b89, type: 2}
+    contracted: 0
+    happiness: 0
+  - monstersProfile: {fileID: 11400000, guid: 370b40ad437ec2f40baab17f28fb29f9, type: 2}
+    contracted: 0
+    happiness: 0

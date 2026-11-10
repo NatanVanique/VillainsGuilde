@@ -8,16 +8,21 @@ public sealed class ContractManager : MonoBehaviour
     [Header("General")]
     [SerializeField] private MonsterManager _monsterManager;
     
-    /*[Header("LookingForWork")]
-    [SerializeField] private Image bigImage_LookingForWork;
-    [SerializeField] private TextMeshProUGUI nameText_LookingForWork;*/
+    [System.Serializable]
+    public class StatSlider
+    {
+        public CreateMonster_Data.StatsTypes statType;
+        public Slider slider;
+    }
+
+    [Header("Stats")]
+    [SerializeField] private StatSlider[] stats;
     
     [Header("ContractTolltip")]
     [SerializeField] private Image bigImage_ContractTolltip;
     [SerializeField] private Image iconImage;
     [SerializeField] private TextMeshProUGUI nameText_ContractTolltip;
     [SerializeField] private TextMeshProUGUI descriptionText;
-    [SerializeField] private Slider[] stats;
 
     private void GenerateStats(LocalizedString nameSearch)
     {
@@ -27,21 +32,16 @@ public sealed class ContractManager : MonoBehaviour
             {
                 CreateMonster_Data data = monster.monstersProfile;
 
-                float[] statsValues =
+                foreach (var stat in stats)
                 {
-                    data.strength,
-                    data.speed,
-                    data.intelligence,
-                    data.charisma,
-                    data.endurance,
-                    data.delicacy,
-                    data.luck,
-                    data.enthusiasm
-                };
-
-                for (int i = 0; i < stats.Length; i++)
-                {
-                    stats[i].value = statsValues[i];
+                    foreach (var monsterStat in data.stats)
+                    {
+                        if (stat.statType == monsterStat.statType)
+                        {
+                            stat.slider.value = monsterStat.statValue;
+                            break;
+                        }
+                    }
                 }
 
                 break;

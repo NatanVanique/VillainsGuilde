@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Localization;
 
@@ -12,16 +13,16 @@ public class CreateMonster_Data : ScriptableObject
     public Sprite bigImage;
     public Sprite smallImage;
     public Sprite icon;
-
+    
+    [System.Serializable]
+    public class statsInfos
+    {
+        public StatsTypes statType;
+        [Range(0f, 1f)] public float statValue;
+    }
+    
     [Header("Stats")]
-    [Range(0f, 1f)] public float strength;
-    [Range(0f, 1f)] public float speed;
-    [Range(0f, 1f)] public float intelligence;
-    [Range(0f, 1f)] public float charisma;
-    [Range(0f, 1f)] public float endurance;
-    [Range(0f, 1f)] public float delicacy;
-    [Range(0f, 1f)] public float luck;
-    [Range(0f, 1f)] public float enthusiasm;
+    public statsInfos[] stats;
 
     [Header("Power")] 
     public MonstersPowers mainPower; 
@@ -32,5 +33,30 @@ public class CreateMonster_Data : ScriptableObject
         Magic,
         Metamorf,
         PhysicalProwess
+    }
+    public enum StatsTypes
+    {
+        strength,
+        speed,
+        intelligence,
+        charisma,
+        endurance,
+        delicacy,
+        luck,
+        enthusiasm
+    }
+    private void OnValidate()
+    {
+        //numero de status igual elementos do enum
+        StatsTypes[] types = (StatsTypes[])Enum.GetValues(typeof(StatsTypes));
+
+        if (stats == null || stats.Length != types.Length)
+            Array.Resize(ref stats, types.Length);
+
+        for (int i = 0; i < types.Length; i++)
+        {
+            stats[i] ??= new statsInfos();
+            stats[i].statType = types[i];
+        }
     }
 }

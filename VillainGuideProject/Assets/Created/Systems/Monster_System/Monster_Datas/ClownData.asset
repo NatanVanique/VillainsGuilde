@@ -33,13 +33,23 @@ MonoBehaviour:
   bigImage: {fileID: 21300000, guid: 53ca664b1a0ae774585377616ccfe1d4, type: 3}
   smallImage: {fileID: 0}
   icon: {fileID: 0}
-  strength: 0
-  speed: 0
-  intelligence: 0
-  charisma: 0
-  endurance: 0
-  delicacy: 0
-  luck: 0
+  stats:
+  - statType: 0
+    statValue: 0
+  - statType: 1
+    statValue: 0
+  - statType: 2
+    statValue: 0
+  - statType: 3
+    statValue: 0
+  - statType: 4
+    statValue: 0
+  - statType: 5
+    statValue: 0
+  - statType: 6
+    statValue: 0
+  - statType: 7
+    statValue: 0
   mainPower: 2
   references:
     version: 2
