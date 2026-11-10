@@ -21,6 +21,7 @@ public class CreateMonster_Data : ScriptableObject
     [Range(0f, 1f)] public float endurance;
     [Range(0f, 1f)] public float delicacy;
     [Range(0f, 1f)] public float luck;
+    [Range(0f, 1f)] public float enthusiasm;
 
     [Header("Power")] 
     public MonstersPowers mainPower; 
