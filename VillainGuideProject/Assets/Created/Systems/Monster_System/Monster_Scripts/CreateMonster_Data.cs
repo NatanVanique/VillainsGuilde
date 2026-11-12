@@ -29,6 +29,7 @@ public class CreateMonster_Data : ScriptableObject
 
     public enum MonstersPowers
     {
+        None,
         Fly,
         Magic,
         Metamorf,

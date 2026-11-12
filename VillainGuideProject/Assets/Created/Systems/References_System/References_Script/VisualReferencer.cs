@@ -12,15 +12,15 @@ public class VisualReferencer : MonoBehaviour
     public GameObject top_Bars;
     public GameObject bottom_Bars;
     
-    [System.Serializable]
-    public class StatSlider
-    {
-        public CreateMonster_Data.StatsTypes statType;
-        public Slider slider;
-    }
+    [Header("VoiceMail")]
+    public Canvas voiceMailCanvas_voiceMail;
+    public GameObject questMail_VoiceMail;
+    public GameObject questMailContainer_VoiceMail;
     
     [Header("LookingForJob")]
     public Canvas lookingForJobCanvas_LookingForJob;
+    public GameObject contractCard_LookingForJob;
+    public GameObject contractCardContainer_LookingForJob;
     
     [Header("ContractTolltip")]
     public Canvas contractTooltipCanvas_ContractTolltip;
@@ -31,4 +31,11 @@ public class VisualReferencer : MonoBehaviour
     public Image iconImage__ContractTolltip;
     public LocalizeStringEvent  nameText_ContractTolltip;
     public LocalizeStringEvent descriptionText_ContractTolltip;
+    
+    [System.Serializable]
+    public class StatSlider
+    {
+        public CreateMonster_Data.StatsTypes statType;
+        public Slider slider;
+    }
 }
