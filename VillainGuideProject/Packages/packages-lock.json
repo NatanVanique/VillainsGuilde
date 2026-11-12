@@ -20,6 +20,15 @@
       },
       "hash": "629710adb7c4162bbaed360077a2f09b80e51bdc"
     },
+    "com.codewriter.triinspector": {
+      "version": "https://github.com/codewriter-packages/Tri-Inspector.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.localization": "1.0.0"
+      },
+      "hash": "1c895238f1518138ff378a259b6b3f7067b4834f"
+    },
     "com.unity.2d.animation": {
       "version": "13.0.6",
       "depth": 0,

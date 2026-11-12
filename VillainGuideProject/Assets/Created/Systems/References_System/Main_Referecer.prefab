@@ -1,0 +1,467 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1379683483392985121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7664469444255462770}
+  - component: {fileID: 5134789259676609193}
+  m_Layer: 0
+  m_Name: Monster_Referencer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7664469444255462770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379683483392985121}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 450054096377227755}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5134789259676609193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379683483392985121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c363836c44db38479d1f013a3970f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterReferencer
+  monsters:
+  - monstersProfile: {fileID: 11400000, guid: 73cf047be816af94e890201373bc1e5a, type: 2}
+    contracted: 0
+    monsterLevel: 1
+    happiness: 0
+    statusUpgrade:
+    - upgradeStatType: 0
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 1
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 2
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 3
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 4
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 5
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 6
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 7
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+  - monstersProfile: {fileID: 11400000, guid: 20f33b025903b684d905602e1ec1a4c2, type: 2}
+    contracted: 0
+    monsterLevel: 1
+    happiness: 0
+    statusUpgrade:
+    - upgradeStatType: 0
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 1
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 2
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 3
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 4
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 5
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 6
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 7
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+  - monstersProfile: {fileID: 11400000, guid: f6679f46fd5ad3f49a8ad24629454a08, type: 2}
+    contracted: 0
+    monsterLevel: 1
+    happiness: 0
+    statusUpgrade:
+    - upgradeStatType: 0
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 1
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 2
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 3
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 4
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 5
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 6
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 7
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+  - monstersProfile: {fileID: 11400000, guid: 5fa2f2d6679c9164196703ff688b2b89, type: 2}
+    contracted: 0
+    monsterLevel: 1
+    happiness: 0
+    statusUpgrade:
+    - upgradeStatType: 0
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 1
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 2
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 3
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 4
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 5
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 6
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 7
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+  - monstersProfile: {fileID: 11400000, guid: 370b40ad437ec2f40baab17f28fb29f9, type: 2}
+    contracted: 0
+    monsterLevel: 1
+    happiness: 0
+    statusUpgrade:
+    - upgradeStatType: 0
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 1
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 2
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 3
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 4
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 5
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 6
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+    - upgradeStatType: 7
+      upgradeValue: 0
+      upgradeValueperLevel: 0.1
+--- !u!1 &4395835182413543571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 450054096377227755}
+  - component: {fileID: 4959945854547166352}
+  - component: {fileID: 4392562731173936003}
+  m_Layer: 0
+  m_Name: Main_Referecer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &450054096377227755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395835182413543571}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7664469444255462770}
+  - {fileID: 425851622019209597}
+  - {fileID: 3236322772269651702}
+  - {fileID: 4974043347019177027}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4959945854547166352
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395835182413543571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd381cfa6f59184c9997ff712553326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Organizadinho.Runtime::Organizadinho.Runtime.HierarchyDesign
+  isOrganizer: 1
+  propagateToChildren: 0
+  colorMode: 2
+  colorHue: 0.58
+  customColor: {r: 0.62, g: 0.78, b: 0.96, a: 1}
+  customFont: {fileID: 0}
+  fontSize: 12
+  fontStyle: 0
+  customIcon: {fileID: 2800000, guid: fee1383308d4f004f9c824b16d7477ad, type: 3}
+  _dataVersion: 2
+--- !u!114 &4392562731173936003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395835182413543571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3614ceef28252f4f937356fb404a428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  visual: {fileID: 4726212440438625469}
+  value: {fileID: 5717543905197242760}
+  monster: {fileID: 5134789259676609193}
+--- !u!1 &5738842045808684951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3236322772269651702}
+  - component: {fileID: 5717543905197242760}
+  m_Layer: 0
+  m_Name: Values_Referencer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3236322772269651702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5738842045808684951}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 450054096377227755}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5717543905197242760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5738842045808684951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f73a89c2aa37f40ab3fe7f257af405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  dayGradient_HourValues:
+    serializedVersion: 2
+    key0: {r: 0.27450982, g: 0.16470589, b: 0.4509804, a: 1}
+    key1: {r: 0.27450982, g: 0.16470589, b: 0.4509804, a: 1}
+    key2: {r: 0.8901961, g: 0.7189515, b: 0.35294116, a: 0}
+    key3: {r: 0.34901962, g: 0.8901961, b: 0.87058824, a: 0}
+    key4: {r: 0.34901962, g: 0.8901961, b: 0.87058824, a: 0}
+    key5: {r: 0.8901961, g: 0.42745098, b: 0.3529412, a: 0}
+    key6: {r: 0.27450982, g: 0.16470589, b: 0.4509804, a: 0}
+    key7: {r: 0.27450982, g: 0.16470589, b: 0.4509804, a: 0}
+    ctime0: 0
+    ctime1: 13107
+    ctime2: 19661
+    ctime3: 26214
+    ctime4: 45875
+    ctime5: 52428
+    ctime6: 58982
+    ctime7: 65535
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: 0
+    m_NumColorKeys: 8
+    m_NumAlphaKeys: 2
+  currentHour_HourValues: 0
+  dayInMinutes_HourValues: 1
+  beforeOfficeDayStartHour_TimeCalls: 6
+  OfficeDayStartHour_TimeCalls: 8
+  OfficeNightStartHour_TimeCalls: 18
+  velocity_Bars: 0.5
+--- !u!1 &6668578579049326372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 425851622019209597}
+  - component: {fileID: 4726212440438625469}
+  m_Layer: 0
+  m_Name: Visual_Referencer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &425851622019209597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6668578579049326372}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 450054096377227755}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4726212440438625469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6668578579049326372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36805cac261d12145887abcf7da0fc31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  colorImage_Room: {fileID: 0}
+  top_Bars: {fileID: 0}
+  bottom_Bars: {fileID: 0}
+  voiceMailCanvas_voiceMail: {fileID: 0}
+  questMail_VoiceMail: {fileID: 9027416509029165702, guid: f59c1fe2c192a8e4e8bbaeaaeeb60f00, type: 3}
+  questMailContainer_VoiceMail: {fileID: 0}
+  lookingForJobCanvas_LookingForJob: {fileID: 0}
+  contractCard_LookingForJob: {fileID: 638250967513505782, guid: a36293e6ef53584448e3b85d584023ec, type: 3}
+  contractCardContainer_LookingForJob: {fileID: 0}
+  contractTooltipCanvas_ContractTolltip: {fileID: 0}
+  infoButton_ContractTolltip: {fileID: 0}
+  statsButton_ContractTolltip: {fileID: 0}
+  statsSlider_ContractTolltip:
+  - statType: 0
+    slider: {fileID: 0}
+  - statType: 1
+    slider: {fileID: 0}
+  - statType: 2
+    slider: {fileID: 0}
+  - statType: 3
+    slider: {fileID: 0}
+  - statType: 4
+    slider: {fileID: 0}
+  - statType: 5
+    slider: {fileID: 0}
+  - statType: 6
+    slider: {fileID: 0}
+  - statType: 7
+    slider: {fileID: 0}
+  bigImage_ContractTolltip: {fileID: 0}
+  iconImage__ContractTolltip: {fileID: 0}
+  nameText_ContractTolltip: {fileID: 0}
+  descriptionText_ContractTolltip: {fileID: 0}
+--- !u!1 &8151791403019110307
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4974043347019177027}
+  - component: {fileID: 8860733965699580666}
+  m_Layer: 0
+  m_Name: Quest_Referencer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4974043347019177027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8151791403019110307}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 450054096377227755}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8860733965699580666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8151791403019110307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff2d890c1defb94299a1b812e458041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'

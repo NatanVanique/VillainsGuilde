@@ -2,6 +2,7 @@
   "dependencies": {
     "com.bisc8.organizadinho": "file:com.bisc8.organizadinho",
     "com.bisc8.simplefmod": "https://github.com/Bisc8Studio/com.bisc8.simplefmod.git",
+    "com.codewriter.triinspector": "https://github.com/codewriter-packages/Tri-Inspector.git",
     "com.unity.2d.animation": "13.0.6",
     "com.unity.2d.aseprite": "3.0.2",
     "com.unity.2d.psdimporter": "12.0.2",
