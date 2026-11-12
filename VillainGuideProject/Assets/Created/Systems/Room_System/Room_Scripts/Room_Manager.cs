@@ -4,11 +4,6 @@ using UnityEngine.UI;
 
 public sealed class RoomManager : MonoBehaviour
 {
-    [Header("Hour Changes")]
-    [SerializeField] DaycicleManager daycicleManager;
-    [SerializeField] private Gradient dayColorGradient;
-    [SerializeField] private Image colorImage;
-
     private void Update()
     {
         UpdateDayColor();
@@ -16,7 +11,7 @@ public sealed class RoomManager : MonoBehaviour
 
     private void UpdateDayColor()
     {
-        float normalizedHour = daycicleManager.currentHour / 24f;
-        colorImage.color = dayColorGradient.Evaluate(normalizedHour);
+        float normalizedHour = Main_Referencer.Instance.value.currentHour_HourValues / 24f;
+        Main_Referencer.Instance.visual.colorImage_Room.color = Main_Referencer.Instance.value.dayGradient_HourValues.Evaluate(normalizedHour);
     }
 }

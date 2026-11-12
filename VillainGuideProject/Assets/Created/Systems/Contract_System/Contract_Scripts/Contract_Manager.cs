@@ -5,36 +5,37 @@ using UnityEngine.UI;
 
 public sealed class ContractManager : MonoBehaviour
 {
-    [Header("General")]
-    [SerializeField] private MonsterManager _monsterManager;
-    
-    [System.Serializable]
-    public class StatSlider
+    public void ChangeTab()
     {
-        public CreateMonster_Data.StatsTypes statType;
-        public Slider slider;
+        Main_Referencer.Instance.visual.lookingForJobCanvas_LookingForJob.enabled =
+            (!Main_Referencer.Instance.visual.lookingForJobCanvas_LookingForJob.enabled);
+        Main_Referencer.Instance.visual.contractTooltipCanvas_ContractTolltip.enabled =
+            (!Main_Referencer.Instance.visual.contractTooltipCanvas_ContractTolltip.enabled);
+        UpdateTab();
     }
-
-    [Header("Stats")]
-    [SerializeField] private StatSlider[] stats;
+    private void UpdateTab()
+    {
+    }
     
-    [Header("ContractTolltip")]
-    [SerializeField] private Image bigImage_ContractTolltip;
-    [SerializeField] private Image iconImage;
-    [SerializeField] private TextMeshProUGUI nameText_ContractTolltip;
-    [SerializeField] private TextMeshProUGUI descriptionText;
-
+    private void UpdateTexts(LocalizedString nameSearch)
+    {
+        Main_Referencer.Instance.visual.nameText_ContractTolltip.StringReference = 
+            Main_Referencer.Instance.monster.monsters[nameSearch.TableEntryReference].monstersProfile.monsterName;
+        Main_Referencer.Instance.visual.descriptionText_ContractTolltip.StringReference = 
+            Main_Referencer.Instance.monster.monsters[nameSearch.TableEntryReference].monstersProfile.monsterDescription;
+    }
+    
     private void GenerateStats(LocalizedString nameSearch)
     {
-        foreach (var monster in _monsterManager.monsters)
+        foreach (var monster in Main_Referencer.Instance.monster.monsters)
         {
             if (monster.monstersProfile.monsterName.TableEntryReference.Equals(nameSearch.TableEntryReference))
             {
                 CreateMonster_Data data = monster.monstersProfile;
 
-                foreach (var stat in stats)
+                foreach (var stat in Main_Referencer.Instance.visual.statsSlider_ContractTolltip)
                 {
-                    foreach (var monsterStat in data.stats)
+                    foreach (var monsterStat in data.baseStats)
                     {
                         if (stat.statType == monsterStat.statType)
                         {
@@ -51,7 +52,7 @@ public sealed class ContractManager : MonoBehaviour
 
     public void AddContracted(LocalizedString nameSearch)
     {
-        foreach (var monster in _monsterManager.monsters)
+        foreach (var monster in Main_Referencer.Instance.monster.monsters)
         {
             if (monster.monstersProfile.monsterName.TableEntryReference.Equals(nameSearch.TableEntryReference))
             {
@@ -63,7 +64,7 @@ public sealed class ContractManager : MonoBehaviour
     }
     public void RemoveContracted(LocalizedString nameSearch)
     {
-        foreach (var monster in _monsterManager.monsters)
+        foreach (var monster in Main_Referencer.Instance.monster.monsters)
         {
             if (monster.monstersProfile.monsterName.TableEntryReference.Equals(nameSearch.TableEntryReference))
             {

@@ -769,4 +769,25 @@ MonoBehaviour:
     hue: 0.58
     customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
     iconGuid: 714e174ae76a9d5419c59d360628a2c3
+  - guid: 659174bcb8e7de0428699309f380d5de
+    hasColor: 0
+    propagateChildren: 0
+    colorMode: 0
+    hue: 0.58
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 7f8617e9243b23a4b9ef07c982c21acc
+  - guid: 634e974de70c5444d86ed01f6b402e12
+    hasColor: 1
+    propagateChildren: 0
+    colorMode: 0
+    hue: 0.38392857
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 3d19d5e7778bd14488c67791ef43105e
+  - guid: 374537eee9967bd4395c3ad694e36eb5
+    hasColor: 1
+    propagateChildren: 1
+    colorMode: 0
+    hue: 0.58
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 9a313ea44a27d9b43a2ee9f54336cb52
   _storageVersion: 4
