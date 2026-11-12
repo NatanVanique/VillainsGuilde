@@ -7,7 +7,7 @@ public class MonsterReferencer : MonoBehaviour
     public class statusUpgradeValues
     {
         public CreateMonster_Data.StatsTypes upgradeStatType;
-        [Range(0f, 1f)] public float upgradeValue;
+        [Range(0f, 1f)] public float upgradeValue = 1;
         public float upgradeValueperLevel;
     }
     
