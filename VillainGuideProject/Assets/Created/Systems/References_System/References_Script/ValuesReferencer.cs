@@ -26,4 +26,10 @@ public class ValuesReferencer : MonoBehaviour
     
     [Group("Bars")]
     public float velocity_Bars;
+    
+    [Group("Popularity")]
+    [Range(0f, 100f)] public int popularityXp;
+    
+    [Group("Popularity")]
+    [Range(1f, 10f)] public int popularityLevel;
 }

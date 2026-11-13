@@ -14,7 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: Localization-Assets-Shared
   m_GUID: 63fd679662c1e794488ddccd7d338cb5
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 33275aad986aaab4ea27a58988ba64f5
+    m_Address: Assets/Localization/QuestRoutes/Name/RouteQuests_Name Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4cd80b71b36c934885926a53300db9b
+    m_Address: Assets/Localization/SingleQuests/Name/SingleQuests_Name Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c855c3fc76d33a846bf383ba1f48b585
+    m_Address: Assets/Localization/SingleQuests/Describes/SingleQuests_Describes
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c9c5d91d87e761d4cb47b0dbd7b242bc
+    m_Address: Assets/Localization/QuestRoutes/Describes/RouteQuests_Describes Shared
+      Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 9a6257aacc0d25d4fbbfc41c9f870caa, type: 2}
   m_SchemaSet:

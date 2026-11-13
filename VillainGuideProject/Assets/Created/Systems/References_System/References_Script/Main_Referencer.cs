@@ -14,4 +14,7 @@ public class Main_Referencer : MonoBehaviour
 
     [Group("References")]
     public MonsterReferencer monster;
+    
+    [Group("References")] 
+    public QuestReferencer quest;
 }

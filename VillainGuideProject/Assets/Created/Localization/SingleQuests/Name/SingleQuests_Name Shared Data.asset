@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: SingleQuests_Name Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: SingleQuests_Name
+  m_TableCollectionNameGuidString: a4cd80b71b36c934885926a53300db9b
+  m_Entries:
+  - m_Id: 37933178880
+    m_Key: BasementBlues_SingleQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316224
+    m_Key: PhantomMonster_SingleQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316225
+    m_Key: CryBelow_SingleQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316226
+    m_Key: MaydayMonster_SingleQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316227
+    m_Key: MonstersAllowed_SingleQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316228
+    m_Key: GoneBananas_SingleQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316229
+    m_Key: GreatBread_SingleQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316230
+    m_Key: DanceFloor_SingleQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316231
+    m_Key: PicklePower_SingleQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316232
+    m_Key: FlavorsYouth_SingleQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316233
+    m_Key: SeventeenAgain_SingleQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316234
+    m_Key: WreckingNail_SingleQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316235
+    m_Key: UnconventionalAdventure_SingleQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316236
+    m_Key: UnbreakableNecktie_SingleQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316237
+    m_Key: CursedCrown_SingleQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316238
+    m_Key: TattletaleParrot_SingleQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316239
+    m_Key: LittleBear_SingleQuestName
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4562753658738704411
+  references:
+    version: 2
+    RefIds:
+    - rid: 4562753658738704411
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1794571597265

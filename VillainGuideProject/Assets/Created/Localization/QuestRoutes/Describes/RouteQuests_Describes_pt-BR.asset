@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: RouteQuests_Describes_pt-BR
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: c9c5d91d87e761d4cb47b0dbd7b242bc, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 57986146304
+    m_Localized: "O Prefeito \xE9 carism\xE1tico diante das c\xE2meras, mas sua carreira
+      esconde den\xFAncias e esc\xE2ndalos convenientemente esquecidos gra\xE7as
+      \xE0 sua impec\xE1vel assessora, senhorita Pen\xE9lope.\n\nHoje, por\xE9m,
+      Pen\xE9lope ligou em p\xE2nico: o bem mais precioso do prefeito desapareceu.
+      N\xE3o um documento. N\xE3o uma prova. O gato.\n\nPr\xEDncipe Frederick, um
+      Ragdoll de temperamento real e paci\xEAncia zero, sumiu na resid\xEAncia oficial.
+      O prefeito est\xE1 em colapso, a imprensa j\xE1 fareja a hist\xF3ria e Pen\xE9lope
+      precisa encontr\xE1-lo antes que tudo viralize."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58262970368
+    m_Localized: "Durante uma visita ao Hospital Municipal Santa Esperan\xE7a, o
+      prefeito anunciou uma campanha de vacina\xE7\xE3o. O problema? Pegou os pap\xE9is
+      errados.\n\nEm vez da vacina gripal humana, autorizou a Vacina Gripal Canina
+      Premium, um lote experimental destinado aos c\xE3es da guarda municipal.\n\nDezenas
+      de pacientes come\xE7aram a apresentar febre alta, sonol\xEAncia e instabilidade
+      no sangue. Os m\xE9dicos n\xE3o encontrar\xE3o um ant\xEDdoto antes do amanhecer.\n\nPen\xE9lope
+      precisa de algu\xE9m capaz de extrair o soro contaminado dos pacientes, sem
+      que os jornalistas descubram o desastre."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58271358976
+    m_Localized: "Em uma noite badalada na Boate Chique Balique, o prefeito experimentou
+      o famoso drink Casacavel Rapeleu, feito com ess\xEAncia de m\xFAmia, pimentas
+      do inferno e esp\xEDrito vingativo.\n\nAp\xF3s alguns copos, ficou incontrol\xE1vel.
+      Lembrando da ex, decidiu \"reformar a boate com as pr\xF3prias m\xE3os\", quebrando
+      mesas, empurrando caixas de som e subindo no balc\xE3o.\n\nPen\xE9lope precisa
+      de um monstro que consiga cont\xEA-lo sem machuc\xE1-lo, antes que algu\xE9m
+      se fira ou tudo apare\xE7a nos stories de Bras\xEDlia.\n\nO candidato ideal
+      deve ser resistente, r\xE1pido e habilidoso com fitas e faixas. Um olhar intimidador
+      tamb\xE9m ajuda."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58271358977
+    m_Localized: "Ap\xF3s confundir seus rem\xE9dios matinais e tomar zolpidem, o
+      prefeito abandonou uma reuni\xE3o sobre saneamento para realizar seus desejos
+      mais ocultos.\n\nNo banco, seduziu uma atendente com discursos sobre \"destino,
+      juros e cora\xE7\xF5es em d\xEDvida\" e convenceu a ger\xEAncia de que realizava
+      um teste de seguran\xE7a confidencial.\n\nAgora, tenta encher uma maleta de
+      dinheiro enquanto declara seu amor \xE0 atendente.\n\nPen\xE9lope precisa de
+      algu\xE9m grande, forte e assustador o suficiente para carregar o prefeito
+      para fora sem levantar perguntas. De prefer\xEAncia, algu\xE9m com um olho
+      s\xF3, m\xE3os enormes e experi\xEAncia em derrubar portas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58279747584
+    m_Localized: "Durante a C\xFApula Mundial da Paz, um delegado importante foi
+      esquecido no andar presidencial do hotel.\n\nO problema \xE9 que ele trancou
+      a porta, desligou o telefone e jurou que s\xF3 sairia quando algu\xE9m ouvisse
+      sua apresenta\xE7\xE3o de 14 horas sobre \u201Ca import\xE2ncia de ouvir as
+      pessoas\u201D.\n\nA imprensa j\xE1 est\xE1 no sagu\xE3o, a seguran\xE7a est\xE1
+      prestes a arrombar a porta e a Liga precisa de algu\xE9m capaz de entrar no
+      quarto, acalmar o delegado e tir\xE1-lo de l\xE1 antes que ele transforme um
+      mal-entendido em crise diplom\xE1tica."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58283941888
+    m_Localized: "O sistema de tradu\xE7\xE3o simult\xE2nea da Liga foi atualizado
+      na v\xE9spera da C\xFApula pela paz.\n\nO problema? O novo programa trocou
+      \u201Cpaz mundial\u201D por \u201Cguerra imediata\u201D, \u201Ccoopera\xE7\xE3o\u201D
+      por \u201Crendi\xE7\xE3o\u201D e \u201Ccaf\xE9\u201D por \u201Cbora quebrar
+      tudo''.\n\nAgora, delegados de pa\xEDses diferentes est\xE3o se olhando com
+      desconfian\xE7a, embaixadores est\xE3o pedindo explica\xE7\xF5es e dois ministros
+      j\xE1 come\xE7aram a discutir em idiomas que ningu\xE9m entende.\n\nA Liga
+      precisa de algu\xE9m capaz de invadir o sistema, corrigir as tradu\xE7\xF5es
+      e impedir que a C\xFApula da Paz termine em uma briga generalizada."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58283941889
+    m_Localized: "Milhares de pessoas est\xE3o na frente da sede da Liga Global pela
+      Paz Humana.\n\nElas n\xE3o est\xE3o protestando contra uma guerra ou uma lei.
+      Est\xE3o protestando porque a Liga prometeu \u201Cp\xE3o gratuito para todos\u201D
+      durante a C\xFApula, mas s\xF3 entregou guardanapos com o logo da organiza\xE7\xE3o.\n\nA
+      multid\xE3o est\xE1 irritada, a imprensa est\xE1 filmando e a seguran\xE7a
+      quer usar g\xE1s de pimenta. A Liga precisa de algu\xE9m capaz de acalmar a
+      multid\xE3o sem viol\xEAncia e impedir que a situa\xE7\xE3o vire um caos internacional."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

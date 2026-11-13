@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0cb2cdcfd8375468499c03bb35d3ed, type: 3}
+  m_Name: SeventeenAgain
+  m_EditorClassIdentifier: Assembly-CSharp::CreateQuest_Data
+  questName:
+    m_TableReference:
+      m_TableCollectionName: GUID:a4cd80b71b36c934885926a53300db9b
+    m_TableEntryReference:
+      m_KeyId: 37979316233
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  questDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:c855c3fc76d33a846bf383ba1f48b585
+    m_TableEntryReference:
+      m_KeyId: 35336904713
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  minPopularity: 0
+  winMargin: 0
+  timeToDoneSeconds: 0
+  powersToWin: 
+  statsToWin: 0
+  statusRequirements: []
+  reputationXpEarned: 0
+  characterXpEarned: 0
+  coinsEarned: 0
+  characterEarned: []
+  references:
+    version: 2
+    RefIds: []
