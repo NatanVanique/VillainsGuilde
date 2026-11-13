@@ -266,6 +266,7 @@ MonoBehaviour:
   value: {fileID: 5717543905197242760}
   monster: {fileID: 5134789259676609193}
   quest: {fileID: 8860733965699580666}
+  manager: {fileID: 7618967074502631834}
 --- !u!1 &5738842045808684951
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +403,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   popularitysToNewTry_TelephoneValues: 3
   hoursToTryTick_TelephoneValues: 3
-  telephoneAnimator_TelephoneValues: {fileID: 0}
   ringingRepeats_TelephoneValues: 3
 --- !u!1 &6668578579049326372
 GameObject:
@@ -482,6 +482,7 @@ MonoBehaviour:
   nameText_ContractTolltip: {fileID: 0}
   descriptionText_ContractTolltip: {fileID: 0}
   telephoneButton_Telephone: {fileID: 0}
+  telephoneAnimator_Telephone: {fileID: 0}
 --- !u!1 &8151791403019110307
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +660,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 661440104287915}
+  - component: {fileID: 7618967074502631834}
   m_Layer: 0
   m_Name: Manager_Referencer
   m_TagString: Untagged
@@ -681,3 +683,15 @@ Transform:
   m_Children: []
   m_Father: {fileID: 450054096377227755}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7618967074502631834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8648067440499408748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd619a9f52a225a40b8c981f8fb35474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ManagerReferencer

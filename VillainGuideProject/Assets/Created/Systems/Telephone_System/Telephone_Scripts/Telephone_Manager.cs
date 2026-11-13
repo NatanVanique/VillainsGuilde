@@ -76,5 +76,7 @@ public sealed class TelephoneManager : MonoBehaviour
 
         Main_Referencer.Instance.visual.telephoneButton_Telephone.enabled = false;
         Main_Referencer.Instance.value.telephoneRinging = false;
+
+        Main_Referencer.Instance.manager.questManager.OpenVoiceMail();
     }
 }
