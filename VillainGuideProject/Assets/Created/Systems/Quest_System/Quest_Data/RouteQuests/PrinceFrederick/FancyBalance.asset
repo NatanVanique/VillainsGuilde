@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CreateQuest_Data
   questName:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:33275aad986aaab4ea27a58988ba64f5
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 37333393408
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   questDescription:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:c9c5d91d87e761d4cb47b0dbd7b242bc
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 58262970368
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

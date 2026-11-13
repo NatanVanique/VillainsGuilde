@@ -225,6 +225,7 @@ Transform:
   - {fileID: 425851622019209597}
   - {fileID: 3236322772269651702}
   - {fileID: 4974043347019177027}
+  - {fileID: 661440104287915}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4959945854547166352
@@ -264,6 +265,7 @@ MonoBehaviour:
   visual: {fileID: 4726212440438625469}
   value: {fileID: 5717543905197242760}
   monster: {fileID: 5134789259676609193}
+  quest: {fileID: 8860733965699580666}
 --- !u!1 &5738842045808684951
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,7 +337,7 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
-    m_ColorSpace: 0
+    m_ColorSpace: -1
     m_NumColorKeys: 8
     m_NumAlphaKeys: 2
   currentHour_HourValues: 0
@@ -344,6 +346,64 @@ MonoBehaviour:
   OfficeDayStartHour_TimeCalls: 8
   OfficeNightStartHour_TimeCalls: 18
   velocity_Bars: 0.5
+  popularityXp_Popularity: 0
+  popularityLevel_Popularity: 1
+  telephoneRinging: 0
+  callChancePerHour_TelephoneValues:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.3
+      value: 0
+      inSlope: -0
+      outSlope: 5.0000005
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 5.0000005
+      outSlope: -4.000001
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.65
+      value: 0.4
+      inSlope: -4.000001
+      outSlope: -1.1871023
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0050049
+      value: -0.021427155
+      inSlope: -1.1871023
+      outSlope: -1.1871023
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  popularitysToNewTry_TelephoneValues: 3
+  hoursToTryTick_TelephoneValues: 3
+  telephoneAnimator_TelephoneValues: {fileID: 0}
+  ringingRepeats_TelephoneValues: 3
 --- !u!1 &6668578579049326372
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +481,7 @@ MonoBehaviour:
   iconImage__ContractTolltip: {fileID: 0}
   nameText_ContractTolltip: {fileID: 0}
   descriptionText_ContractTolltip: {fileID: 0}
+  telephoneButton_Telephone: {fileID: 0}
 --- !u!1 &8151791403019110307
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,3 +526,158 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff2d890c1defb94299a1b812e458041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  singleQuests:
+  - displayName: BasementBlues
+    quest: {fileID: 11400000, guid: 4131bc8161343f94cb58b65aa7f4dc70, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: CryBelow
+    quest: {fileID: 11400000, guid: bf08246bc16c9fa46b373e3dd78be3fb, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: CursedCrown
+    quest: {fileID: 11400000, guid: f30ee817dc9d6d34ab587bd9211807b1, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: DanceFloor
+    quest: {fileID: 11400000, guid: c248623c79f0c8548b8811a1e675f3bf, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: FlavorsYouth
+    quest: {fileID: 11400000, guid: 340d049ee94d4bd43935383f4b6fe7b0, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: GoneBananas
+    quest: {fileID: 11400000, guid: 551da917d7c0dfd4aaa3262f6f743ef0, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: GreatBread
+    quest: {fileID: 11400000, guid: 9a3e150eb8bf698429953b3014eb6094, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: LittleBear
+    quest: {fileID: 11400000, guid: 1f00603b7eb267944be9daee6cd003be, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: MaydayMonster
+    quest: {fileID: 11400000, guid: bd1de69d9c2347047bc4022ce57b0637, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: MonstersAllowed
+    quest: {fileID: 11400000, guid: af6f02327d3e31d4586eb5b7de318327, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: PhantomMonster
+    quest: {fileID: 11400000, guid: b7e9df3be1f642648bd4735c4d895dcf, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: PicklePower
+    quest: {fileID: 11400000, guid: b8919d62f2d3bb845872f6f37a681d7e, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: SeventeenAgain
+    quest: {fileID: 11400000, guid: ef8d0f4275173ec4888a7f853d7d03af, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: TattletaleParrot
+    quest: {fileID: 11400000, guid: 1477180018b118e4bb0b05a7961e9698, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: UnbreakableNecktie
+    quest: {fileID: 11400000, guid: 5ea40118b65471542a1dd105dd53e445, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: UnconventionalAdventure
+    quest: {fileID: 11400000, guid: c1e9adfbf4401944f8949e74c071b9f5, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: WreckingNail
+    quest: {fileID: 11400000, guid: de9ac1761bcca534f946ca08304dd660, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  routeQuests:
+  - routeName: Prince Frederick
+    quests:
+    - displayName: ClimateChaos
+      quest: {fileID: 11400000, guid: 454c4361ea55adc45b94b86f9f1c702e, type: 2}
+      questCompleted: 0
+      goodMonsters: []
+      badMonsters: []
+    - displayName: DemonicTranslator
+      quest: {fileID: 11400000, guid: 0c11e1333053b7a448bf4c8c4623bb17, type: 2}
+      questCompleted: 0
+      goodMonsters: []
+      badMonsters: []
+    - displayName: FancyBalance
+      quest: {fileID: 11400000, guid: 2d7d1f87494bace4ead1f628c2aca092, type: 2}
+      questCompleted: 0
+      goodMonsters: []
+      badMonsters: []
+    - displayName: FatalCanine
+      quest: {fileID: 11400000, guid: 5fb22de2cb5c9ad4582aa21343eca0db, type: 2}
+      questCompleted: 0
+      goodMonsters: []
+      badMonsters: []
+    - displayName: HeistHeart
+      quest: {fileID: 11400000, guid: d8a421cc5b1ba2e4e8673c92e0cc7631, type: 2}
+      questCompleted: 0
+      goodMonsters: []
+      badMonsters: []
+    - displayName: PresidentialSuite
+      quest: {fileID: 11400000, guid: 8509c78124fba9c47a6502707009251c, type: 2}
+      questCompleted: 0
+      goodMonsters: []
+      badMonsters: []
+    - displayName: TheCrowdBread
+      quest: {fileID: 11400000, guid: 8fd4df5524c788d4a97bb8a87a66a27d, type: 2}
+      questCompleted: 0
+      goodMonsters: []
+      badMonsters: []
+--- !u!1 &8648067440499408748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 661440104287915}
+  m_Layer: 0
+  m_Name: Manager_Referencer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &661440104287915
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8648067440499408748}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 450054096377227755}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

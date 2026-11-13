@@ -5,6 +5,7 @@ using UnityEngine;
 [DeclareFoldoutGroup("Time Calls", Expanded = true)]
 [DeclareFoldoutGroup("Bars", Expanded = true)]
 [DeclareFoldoutGroup("Popularity", Expanded = true)]
+[DeclareFoldoutGroup("Mail Values", Expanded = true)]
 public class ValuesReferencer : MonoBehaviour
 {
     [Group("Hour Values")]
@@ -26,11 +27,27 @@ public class ValuesReferencer : MonoBehaviour
     public int OfficeNightStartHour_TimeCalls = 18;
     
     [Group("Bars")]
-    public float velocity_Bars;
+    public float velocity_Bars; 
     
     [Group("Popularity")]
-    [Range(0f, 100f)] public int popularityXp;
+    [Range(0f, 100f)] public int popularityXp_Popularity;
     
     [Group("Popularity")]
-    [Range(1f, 10f)] public int popularityLevel;
+    [Range(1f, 10f)] public int popularityLevel_Popularity;
+    
+    [Group("Telephone Values")]
+    public bool  telephoneRinging;
+    
+    [Group("Telephone Values")]
+    public AnimationCurve  callChancePerHour_TelephoneValues;
+    
+    [Group("Telephone Values")]
+    public int  popularitysToNewTry_TelephoneValues;
+    
+    [Group("Telephone Values")]
+    public int  hoursToTryTick_TelephoneValues;
+    
+    
+    [Group("Telephone Values")]
+    public int  ringingRepeats_TelephoneValues;
 }

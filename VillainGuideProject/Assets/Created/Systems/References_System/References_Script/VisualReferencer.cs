@@ -9,6 +9,8 @@ using UnityEngine.Localization;
 [DeclareFoldoutGroup("Voice Mail", Expanded = true)]
 [DeclareFoldoutGroup("Looking For Job", Expanded = true)]
 [DeclareFoldoutGroup("Contract Tooltip", Expanded = true)]
+    [DeclareFoldoutGroup(" Telephone ", Expanded = true)]
+
 public class VisualReferencer : MonoBehaviour
 {
     [Group("Room")]
@@ -61,6 +63,13 @@ public class VisualReferencer : MonoBehaviour
 
     [Group("Contract Tooltip")]
     public LocalizeStringEvent descriptionText_ContractTolltip;
+    
+    [Group("Telephone")]
+    public Button telephoneButton_Telephone;
+    
+    [Group("Telephone")]
+    public Animator  telephoneAnimator_Telephone;
+
     
     [System.Serializable]
     [DeclareBoxGroup("References", Title = "Referências")]
