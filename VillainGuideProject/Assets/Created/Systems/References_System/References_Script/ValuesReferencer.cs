@@ -4,6 +4,7 @@ using UnityEngine;
 [DeclareFoldoutGroup("Hour Values", Expanded = true)]
 [DeclareFoldoutGroup("Time Calls", Expanded = true)]
 [DeclareFoldoutGroup("Bars", Expanded = true)]
+[DeclareFoldoutGroup("Popularity", Expanded = true)]
 public class ValuesReferencer : MonoBehaviour
 {
     [Group("Hour Values")]
