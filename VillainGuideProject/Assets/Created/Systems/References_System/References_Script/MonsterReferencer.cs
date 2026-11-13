@@ -1,26 +1,46 @@
 using UnityEngine;
 using System;
+using TriInspector;
 
+[DeclareBoxGroup("Monsters", Title = "Monstros")]
 public class MonsterReferencer : MonoBehaviour
 {
     [System.Serializable]
+    [DeclareBoxGroup("Upgrade", Title = "Upgrade")]
     public class statusUpgradeValues
     {
+        [Group("Upgrade")]
         public CreateMonster_Data.StatsTypes upgradeStatType;
+
+        [Group("Upgrade")]
         [Range(0f, 1f)] public float upgradeValue = 1;
+
+        [Group("Upgrade")]
         public float upgradeValueperLevel;
     }
     
     [System.Serializable]
+    [DeclareBoxGroup("Profile", Title = "Perfil")]
+    [DeclareBoxGroup("Progression", Title = "Progressão")]
     public class Monsters
     {
+        [Group("Profile")]
         public CreateMonster_Data monstersProfile;
+
+        [Group("Progression")]
         public bool contracted = false;
+
+        [Group("Progression")]
         public int monsterLevel = 0; // max 10
+
+        [Group("Progression")]
         [Range(0f, 1f)] public float happiness;
+
+        [Group("Progression")]
         public statusUpgradeValues[] statusUpgrade;
     }
     
+    [Group("Monsters")]
     public Monsters[] monsters;
     
     private void OnValidate()
