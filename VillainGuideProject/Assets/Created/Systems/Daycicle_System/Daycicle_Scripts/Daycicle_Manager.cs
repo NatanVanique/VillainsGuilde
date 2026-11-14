@@ -13,8 +13,13 @@ public sealed class DaycicleManager : MonoBehaviour
 
     private void HourUpdate()
     {
-        if (curtime * 60 >= 24 / Main_Referencer.Instance.value.dayInMinutes_HourValues) HourAdd();
-        else curtime += Time.fixedDeltaTime;
+        float secondsPerHour = Mathf.Max(
+            0.01f,
+            Main_Referencer.Instance.value.dayInMinutes_HourValues * 60f / 24f);
+
+        curtime += Time.deltaTime;
+
+        if (curtime >= secondsPerHour) HourAdd();
     }
 
     private void HourAdd()

@@ -23,7 +23,7 @@ public class VisualReferencer : MonoBehaviour
     public GameObject bottom_Bars;
     
     [Group("Voice Mail")]
-    public Canvas voiceMailCanvas_voiceMail;
+    public GameObject voiceMailCanvas_voiceMail;
 
     [Group("Voice Mail")]
     public GameObject questMail_VoiceMail;
@@ -63,9 +63,6 @@ public class VisualReferencer : MonoBehaviour
 
     [Group("Contract Tooltip")]
     public LocalizeStringEvent descriptionText_ContractTolltip;
-    
-    [Group("Telephone")]
-    public Button telephoneButton_Telephone;
     
     [Group("Telephone")]
     public Animator  telephoneAnimator_Telephone;
