@@ -839,4 +839,11 @@ MonoBehaviour:
     hue: 0.0625
     customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
     iconGuid: 
+  - guid: 461d05caf0f4ce94aab9950233d460f2
+    hasColor: 1
+    propagateChildren: 0
+    colorMode: 0
+    hue: 0.85
+    customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
+    iconGuid: 7f8617e9243b23a4b9ef07c982c21acc
   _storageVersion: 4
