@@ -5,7 +5,8 @@ using UnityEngine;
 [DeclareFoldoutGroup("Time Calls", Expanded = true)]
 [DeclareFoldoutGroup("Bars", Expanded = true)]
 [DeclareFoldoutGroup("Popularity", Expanded = true)]
-[DeclareFoldoutGroup("Mail Values", Expanded = true)]
+[DeclareFoldoutGroup("Telephone Values ", Expanded = true)]
+[DeclareFoldoutGroup("Quest Values ", Expanded = true)]
 public class ValuesReferencer : MonoBehaviour
 {
     [Group("Hour Values")]
@@ -16,6 +17,9 @@ public class ValuesReferencer : MonoBehaviour
 
     [Group("Hour Values")]
     public float dayInMinutes_HourValues;
+    
+    [Group("Hour Values")]
+    public int currentDay_HourValues = 1;
     
     [Group("Time Calls")]
     public int beforeOfficeDayStartHour_TimeCalls = 6;
@@ -33,7 +37,11 @@ public class ValuesReferencer : MonoBehaviour
     [Range(0f, 100f)] public int popularityXp_Popularity;
     
     [Group("Popularity")]
-    [Range(1f, 10f)] public int popularityLevel_Popularity;
+    public int maxPopularityLevel_Popularity = 10;
+
+    [Group("Popularity")]
+    [Slider(1, nameof(maxPopularityLevel_Popularity))]
+    public int popularityLevel_Popularity = 1;
     
     [Group("Telephone Values")]
     public bool  telephoneRinging;
@@ -50,4 +58,7 @@ public class ValuesReferencer : MonoBehaviour
     
     [Group("Telephone Values")]
     public int  ringingRepeats_TelephoneValues;
+    
+    [Group("Quest Values")]
+    public int  daysToStartRouteQuest_QuestValues;
 }

@@ -24,8 +24,17 @@ public sealed class DaycicleManager : MonoBehaviour
 
     private void HourAdd()
     {
-        if (Main_Referencer.Instance.value.currentHour_HourValues >= 24) Main_Referencer.Instance.value.currentHour_HourValues = 0;
+        if (Main_Referencer.Instance.value.currentHour_HourValues >= 24)
+        {
+            DayAdd();
+        }
         else Main_Referencer.Instance.value.currentHour_HourValues++;
         curtime = 0;
+    }
+    
+    private void DayAdd()
+    {
+        Main_Referencer.Instance.value.currentHour_HourValues = 0;
+        Main_Referencer.Instance.value.currentDay_HourValues++;
     }
 }

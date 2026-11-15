@@ -4,6 +4,8 @@ using Random = UnityEngine.Random;
 
 public sealed class TelephoneManager : MonoBehaviour
 {
+    private int lastRouteQuestDay = -1;
+    
     private void Start()
     {
         Main_Referencer.Instance.visual.telephoneAnimator_Telephone.SetBool("Ringing", false);
@@ -32,6 +34,12 @@ public sealed class TelephoneManager : MonoBehaviour
         float chance = Main_Referencer.Instance.value.callChancePerHour_TelephoneValues
             .Evaluate(Main_Referencer.Instance.value.currentHour_HourValues / 24f);
 
+        if (RouteDayVerify())
+        {
+            RingingTelephone();
+            return;
+        }
+
         for (int i = 0; i < tries; i++)
         {
             if (Random.value < chance)
@@ -44,6 +52,8 @@ public sealed class TelephoneManager : MonoBehaviour
 
     private void RingingTelephone()
     {
+        NewQuest();
+        
         var animator = Main_Referencer.Instance.visual.telephoneAnimator_Telephone;
 
         StopCoroutine("timeToStopRinging");
@@ -53,6 +63,35 @@ public sealed class TelephoneManager : MonoBehaviour
         Main_Referencer.Instance.value.telephoneRinging = true;
 
         StartCoroutine("timeToStopRinging");
+    }
+
+    private bool RouteDayVerify()
+    {
+        int currentDay = Main_Referencer.Instance.value.currentDay_HourValues;
+        int startDay = Main_Referencer.Instance.value.daysToStartRouteQuest_QuestValues;
+
+        int levelPerQuest = Mathf.Max(1, Mathf.CeilToInt(
+            (float)Main_Referencer.Instance.value.maxPopularityLevel_Popularity /
+            Main_Referencer.Instance.quest.routeQuests.Length
+        ));
+
+        return currentDay > startDay &&
+               (currentDay - startDay) % levelPerQuest == 0 &&
+               lastRouteQuestDay != currentDay;
+    }   
+    
+    private void NewQuest()
+    {
+        if (RouteDayVerify())
+        {
+            Main_Referencer.Instance.manager.questManager.AddQuest(QuestManager.QuestType.Route);
+
+            lastRouteQuestDay = Main_Referencer.Instance.value.currentDay_HourValues;
+        }
+        else
+        {
+            Main_Referencer.Instance.manager.questManager.AddQuest(QuestManager.QuestType.Single);
+        }
     }
 
     private IEnumerator timeToStopRinging()

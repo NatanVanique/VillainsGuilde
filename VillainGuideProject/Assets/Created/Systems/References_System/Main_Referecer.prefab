@@ -343,11 +343,13 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   currentHour_HourValues: 0
   dayInMinutes_HourValues: 1
+  currentDay_HourValues: 1
   beforeOfficeDayStartHour_TimeCalls: 6
   OfficeDayStartHour_TimeCalls: 8
   OfficeNightStartHour_TimeCalls: 18
   velocity_Bars: 0.5
   popularityXp_Popularity: 0
+  maxPopularityLevel_Popularity: 10
   popularityLevel_Popularity: 1
   telephoneRinging: 0
   callChancePerHour_TelephoneValues:
@@ -404,6 +406,7 @@ MonoBehaviour:
   popularitysToNewTry_TelephoneValues: 3
   hoursToTryTick_TelephoneValues: 3
   ringingRepeats_TelephoneValues: 3
+  daysToStartRouteQuest_QuestValues: 2
 --- !u!1 &6668578579049326372
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +484,6 @@ MonoBehaviour:
   iconImage__ContractTolltip: {fileID: 0}
   nameText_ContractTolltip: {fileID: 0}
   descriptionText_ContractTolltip: {fileID: 0}
-  telephoneButton_Telephone: {fileID: 0}
   telephoneAnimator_Telephone: {fileID: 0}
 --- !u!1 &8151791403019110307
 GameObject:
@@ -695,3 +697,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd619a9f52a225a40b8c981f8fb35474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ManagerReferencer
+  questManager: {fileID: 0}
