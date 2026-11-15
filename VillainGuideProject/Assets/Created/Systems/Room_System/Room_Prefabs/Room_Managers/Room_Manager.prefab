@@ -137,6 +137,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4712999427676028995, guid: c05028fd8875cb848b472c60cdba2700, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712999427676028995, guid: c05028fd8875cb848b472c60cdba2700, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712999427676028995, guid: c05028fd8875cb848b472c60cdba2700, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -531
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
