@@ -6,6 +6,20 @@ public sealed class DaycicleManager : MonoBehaviour
     [Header("System Variables")]
     private float curtime;
 
+    public float NormalizedDayProgress
+    {
+        get
+        {
+            float secondsPerHour = Mathf.Max(
+                0.01f,
+                Main_Referencer.Instance.value.dayInMinutes_HourValues * 60f / 24f);
+
+            float hourProgress = Mathf.Clamp01(curtime / secondsPerHour);
+            return Mathf.Clamp01(
+                (Main_Referencer.Instance.value.currentHour_HourValues + hourProgress) / 24f);
+        }
+    }
+
     private void Update()
     {
         HourUpdate();
@@ -24,7 +38,7 @@ public sealed class DaycicleManager : MonoBehaviour
 
     private void HourAdd()
     {
-        if (Main_Referencer.Instance.value.currentHour_HourValues >= 24)
+        if (Main_Referencer.Instance.value.currentHour_HourValues >= 23)
         {
             DayAdd();
         }
