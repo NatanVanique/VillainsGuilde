@@ -1,0 +1,170 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9057425247489779578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5302374224008641690}
+  - component: {fileID: 8531275410678407715}
+  m_Layer: 0
+  m_Name: Quest_Referencer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5302374224008641690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9057425247489779578}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8531275410678407715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9057425247489779578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff2d890c1defb94299a1b812e458041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  singleQuests:
+  - displayName: BasementBlues
+    quest: {fileID: 11400000, guid: 4131bc8161343f94cb58b65aa7f4dc70, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: CryBelow
+    quest: {fileID: 11400000, guid: bf08246bc16c9fa46b373e3dd78be3fb, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: CursedCrown
+    quest: {fileID: 11400000, guid: f30ee817dc9d6d34ab587bd9211807b1, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: DanceFloor
+    quest: {fileID: 11400000, guid: c248623c79f0c8548b8811a1e675f3bf, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: FlavorsYouth
+    quest: {fileID: 11400000, guid: 340d049ee94d4bd43935383f4b6fe7b0, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: GoneBananas
+    quest: {fileID: 11400000, guid: 551da917d7c0dfd4aaa3262f6f743ef0, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: GreatBread
+    quest: {fileID: 11400000, guid: 9a3e150eb8bf698429953b3014eb6094, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: LittleBear
+    quest: {fileID: 11400000, guid: 1f00603b7eb267944be9daee6cd003be, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: MaydayMonster
+    quest: {fileID: 11400000, guid: bd1de69d9c2347047bc4022ce57b0637, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: MonstersAllowed
+    quest: {fileID: 11400000, guid: af6f02327d3e31d4586eb5b7de318327, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: PhantomMonster
+    quest: {fileID: 11400000, guid: b7e9df3be1f642648bd4735c4d895dcf, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: PicklePower
+    quest: {fileID: 11400000, guid: b8919d62f2d3bb845872f6f37a681d7e, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: SeventeenAgain
+    quest: {fileID: 11400000, guid: ef8d0f4275173ec4888a7f853d7d03af, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: TattletaleParrot
+    quest: {fileID: 11400000, guid: 1477180018b118e4bb0b05a7961e9698, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: UnbreakableNecktie
+    quest: {fileID: 11400000, guid: 5ea40118b65471542a1dd105dd53e445, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: UnconventionalAdventure
+    quest: {fileID: 11400000, guid: c1e9adfbf4401944f8949e74c071b9f5, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  - displayName: WreckingNail
+    quest: {fileID: 11400000, guid: de9ac1761bcca534f946ca08304dd660, type: 2}
+    questCompleted: 0
+    goodMonsters: []
+    badMonsters: []
+  routeQuests:
+  - routeName: Prince Frederick
+    quests:
+    - displayName: ClimateChaos
+      quest: {fileID: 11400000, guid: 454c4361ea55adc45b94b86f9f1c702e, type: 2}
+      questCompleted: 0
+      goodMonsters: []
+      badMonsters: []
+    - displayName: DemonicTranslator
+      quest: {fileID: 11400000, guid: 0c11e1333053b7a448bf4c8c4623bb17, type: 2}
+      questCompleted: 0
+      goodMonsters: []
+      badMonsters: []
+    - displayName: FancyBalance
+      quest: {fileID: 11400000, guid: 2d7d1f87494bace4ead1f628c2aca092, type: 2}
+      questCompleted: 0
+      goodMonsters: []
+      badMonsters: []
+    - displayName: FatalCanine
+      quest: {fileID: 11400000, guid: 5fb22de2cb5c9ad4582aa21343eca0db, type: 2}
+      questCompleted: 0
+      goodMonsters: []
+      badMonsters: []
+    - displayName: HeistHeart
+      quest: {fileID: 11400000, guid: d8a421cc5b1ba2e4e8673c92e0cc7631, type: 2}
+      questCompleted: 0
+      goodMonsters: []
+      badMonsters: []
+    - displayName: PresidentialSuite
+      quest: {fileID: 11400000, guid: 8509c78124fba9c47a6502707009251c, type: 2}
+      questCompleted: 0
+      goodMonsters: []
+      badMonsters: []
+    - displayName: TheCrowdBread
+      quest: {fileID: 11400000, guid: 8fd4df5524c788d4a97bb8a87a66a27d, type: 2}
+      questCompleted: 0
+      goodMonsters: []
+      badMonsters: []

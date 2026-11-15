@@ -27,18 +27,25 @@ public sealed class TelephoneManager : MonoBehaviour
 
     private void TryRinging()
     {
-        int tries = Mathf.CeilToInt(
-            (float)Main_Referencer.Instance.value.popularityLevel_Popularity /
-            Main_Referencer.Instance.value.popularitysToNewTry_TelephoneValues);
+        int currentHour = Main_Referencer.Instance.value.currentHour_HourValues;
 
         float chance = Main_Referencer.Instance.value.callChancePerHour_TelephoneValues
-            .Evaluate(Main_Referencer.Instance.value.currentHour_HourValues / 24f);
+            .Evaluate(currentHour / 24f);
+
+        if (chance <= 0f)
+        {
+            return;
+        }
 
         if (RouteDayVerify())
         {
             RingingTelephone();
             return;
         }
+
+        int tries = Mathf.CeilToInt(
+            (float)Main_Referencer.Instance.value.popularityLevel_Popularity /
+            Main_Referencer.Instance.value.popularitysToNewTry_TelephoneValues);
 
         for (int i = 0; i < tries; i++)
         {

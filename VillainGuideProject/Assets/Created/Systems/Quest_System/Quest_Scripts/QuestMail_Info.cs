@@ -8,5 +8,6 @@ public class QuestMail_Info : MonoBehaviour
     public void setInfo(CreateQuest_Data data)
     {
         mailName.StringReference = data.questName;
+        mailName.RefreshString();
     }
 }
