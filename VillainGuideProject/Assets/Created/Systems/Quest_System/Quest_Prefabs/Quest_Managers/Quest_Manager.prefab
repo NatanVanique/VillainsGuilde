@@ -54,33 +54,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 400000}
     m_Modifications:
     - target: {fileID: 788873850219685706, guid: d77f906d5111e8a41aa3902aba3fa660, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 788873850219685706, guid: d77f906d5111e8a41aa3902aba3fa660, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 788873850219685706, guid: d77f906d5111e8a41aa3902aba3fa660, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 11400000}
-    - target: {fileID: 788873850219685706, guid: d77f906d5111e8a41aa3902aba3fa660, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 788873850219685706, guid: d77f906d5111e8a41aa3902aba3fa660, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CloseVoiceMail
-      objectReference: {fileID: 0}
-    - target: {fileID: 788873850219685706, guid: d77f906d5111e8a41aa3902aba3fa660, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: QuestManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 788873850219685706, guid: d77f906d5111e8a41aa3902aba3fa660, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1013264388332211126, guid: d77f906d5111e8a41aa3902aba3fa660, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -165,20 +141,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Voicemail_Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 2039615603236220281, guid: d77f906d5111e8a41aa3902aba3fa660, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8040388380574886623, guid: d77f906d5111e8a41aa3902aba3fa660, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8040388380574886623, guid: d77f906d5111e8a41aa3902aba3fa660, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9183664508244862031, guid: d77f906d5111e8a41aa3902aba3fa660, type: 3}
-      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
