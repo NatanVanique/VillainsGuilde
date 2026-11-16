@@ -10,7 +10,6 @@ public sealed class TelephoneManager : MonoBehaviour, IPointerEnterHandler, IPoi
     
     private void Start()
     {
-        Main_Referencer.Instance.visual.phoneButton.onClick.AddListener(AccepptCall);
         Main_Referencer.Instance.visual.telephoneAnimator_Telephone.SetBool("Ringing", false);
         SetPhoneState(isOpen: false);
         StartCoroutine(tickTelephoneRoutine());
@@ -129,19 +128,11 @@ public sealed class TelephoneManager : MonoBehaviour, IPointerEnterHandler, IPoi
         animator.SetBool("Ringing", false);
         Main_Referencer.Instance.value.telephoneRinging = false;
     }
-
-    public void AccepptCall()
-    {
-        SetPhoneState(isOpen: true);
-        Main_Referencer.Instance.manager.questManager.OpenVoiceMail();
-        Main_Referencer.Instance.visual.telephoneAnimator_Telephone.SetBool("Ringing", false);
-        Main_Referencer.Instance.value.telephoneRinging = false;
-    }
     
     private void UpdatePhoneOutline()
     {
         var visual = Main_Referencer.Instance.visual;
-        visual.openPhoneOutline.SetActive(isMouseOver && !visual.openPhone.activeSelf);
+        visual.openPhoneOutline.SetActive(isMouseOver && visual.openPhone.activeSelf);
 
         foreach (var outline in visual.closedPhoneOutlines)
         {
@@ -151,8 +142,19 @@ public sealed class TelephoneManager : MonoBehaviour, IPointerEnterHandler, IPoi
     
     public void SetPhoneState(bool isOpen)
     {
+        var buttonTelephone = Main_Referencer.Instance.visual.phoneButton;
+        var questManager = Main_Referencer.Instance.manager.questManager;
+
+        buttonTelephone.onClick.RemoveAllListeners();
+
+        if (!isOpen)
+            buttonTelephone.onClick.AddListener(questManager.OpenVoiceMail);
+        else
+            buttonTelephone.onClick.AddListener(questManager.CloseVoiceMail);
+
         Main_Referencer.Instance.visual.openPhone.SetActive(isOpen);
         Main_Referencer.Instance.visual.closedPhone.SetActive(!isOpen);
+
         UpdatePhoneOutline();
     }
 }

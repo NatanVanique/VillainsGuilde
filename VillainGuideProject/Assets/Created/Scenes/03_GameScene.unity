@@ -124,6 +124,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5710500625201375477, guid: d0a8818069cb8b54aacff518d994b311, type: 3}
   m_PrefabInstance: {fileID: 6203289509136370080}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &67279131 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1031583716741781788, guid: 00000000000000000000000000000012, type: 3}
+  m_PrefabInstance: {fileID: 898469209}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!114 &155112983 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4740522483483993598, guid: 00000000000000000000000000000012, type: 3}
@@ -431,6 +442,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5095610060817843897, guid: 00000000000000000000000000000036, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.9941406
+      objectReference: {fileID: 0}
     - target: {fileID: 9112660379668895982, guid: 00000000000000000000000000000036, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -661,6 +676,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5517702089041654016, guid: 00000000000000000000000000000006, type: 3}
   m_PrefabInstance: {fileID: 355846424}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &889175386 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1210962866190800895, guid: 00000000000000000000000000000012, type: 3}
+  m_PrefabInstance: {fileID: 898469209}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1001 &898469209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -954,17 +980,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8328040622550714445, guid: 00000000000000000000000000000006, type: 3}
   m_PrefabInstance: {fileID: 355846424}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1590769143 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 863731025224137032, guid: 00000000000000000000000000000012, type: 3}
-  m_PrefabInstance: {fileID: 898469209}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1601218564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,6 +1035,17 @@ Transform:
   - {fileID: 469363004}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1688580713 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1163584875936694376, guid: 00000000000000000000000000000012, type: 3}
+  m_PrefabInstance: {fileID: 898469209}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!114 &1852315358 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11400000, guid: 0000000000000000000000000000000c, type: 3}
@@ -2710,9 +2736,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 355846428}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: voiceMailBackground
+      value: 
+      objectReference: {fileID: 889175386}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: closeVoiceMailButton
+      value: 
+      objectReference: {fileID: 67279131}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: missionDescriptionText
       value: 
-      objectReference: {fileID: 1590769143}
+      objectReference: {fileID: 1688580713}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: bigImage_ContractTolltip
       value: 

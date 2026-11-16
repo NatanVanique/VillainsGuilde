@@ -5,10 +5,18 @@ using Random = UnityEngine.Random;
 public sealed class QuestManager : MonoBehaviour
 {
     private int nextRouteIndex;
-    
+
+    public void Start()
+    {
+        Main_Referencer.Instance.visual.closeVoiceMailButton.onClick.AddListener(CloseVoiceMail);
+    }
+
     public void OpenVoiceMail()
     {
         Main_Referencer.Instance.visual.voiceMailCanvas_voiceMail.SetActive(true);
+        Main_Referencer.Instance.manager.telephoneManager.SetPhoneState(isOpen: true);
+        Main_Referencer.Instance.visual.telephoneAnimator_Telephone.SetBool("Ringing", false);
+        Main_Referencer.Instance.value.telephoneRinging = false;
     }
     
     public void CloseVoiceMail()
