@@ -1,16 +1,30 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
 
-public sealed class TelephoneManager : MonoBehaviour
+public sealed class TelephoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private int lastRouteQuestDay = -1;
+    private bool isMouseOver;
     
     private void Start()
     {
+        Main_Referencer.Instance.visual.phoneButton.onClick.AddListener(AccepptCall);
         Main_Referencer.Instance.visual.telephoneAnimator_Telephone.SetBool("Ringing", false);
         SetPhoneState(isOpen: false);
         StartCoroutine(tickTelephoneRoutine());
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        isMouseOver = true;
+        UpdatePhoneOutline();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        isMouseOver = false;
+        UpdatePhoneOutline();
     }
 
     private IEnumerator tickTelephoneRoutine()
@@ -124,9 +138,17 @@ public sealed class TelephoneManager : MonoBehaviour
         Main_Referencer.Instance.value.telephoneRinging = false;
     }
     
+    private void UpdatePhoneOutline()
+    {
+        var visual = Main_Referencer.Instance.visual;
+        visual.closedPhoneOutline.SetActive(isMouseOver && !visual.openPhone.activeSelf);
+        visual.openPhoneOutline.SetActive(isMouseOver && visual.openPhone.activeSelf);
+    }
+    
     public void SetPhoneState(bool isOpen)
     {
         Main_Referencer.Instance.visual.openPhone.SetActive(isOpen);
         Main_Referencer.Instance.visual.closedPhone.SetActive(!isOpen);
+        UpdatePhoneOutline();
     }
 }

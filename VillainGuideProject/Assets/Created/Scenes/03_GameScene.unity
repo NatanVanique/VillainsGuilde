@@ -843,6 +843,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5082868865568430343, guid: 00000000000000000000000000000024, type: 3}
   m_PrefabInstance: {fileID: 4928466494860126690}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1286090887 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8547936810582510645, guid: 00000000000000000000000000000006, type: 3}
+  m_PrefabInstance: {fileID: 355846424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+--- !u!1 &1313740689 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5517702089041654016, guid: 00000000000000000000000000000006, type: 3}
+  m_PrefabInstance: {fileID: 355846424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1601218564
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,6 +986,11 @@ Transform:
   - {fileID: 160302614}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2042093751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2813150725351196388, guid: 00000000000000000000000000000006, type: 3}
+  m_PrefabInstance: {fileID: 355846424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &390423912111181714 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 967565977802337639, guid: 00000000000000000000000000000006, type: 3}
@@ -1154,9 +1175,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 355846427}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: phoneButton
+      value: 
+      objectReference: {fileID: 1286090887}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: colorImage_Room
       value: 
       objectReference: {fileID: 236916861}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: openPhoneOutline
+      value: 
+      objectReference: {fileID: 1313740689}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: closedPhoneOutline
+      value: 
+      objectReference: {fileID: 2042093751}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: bigImage_ContractTolltip
       value: 

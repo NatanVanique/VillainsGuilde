@@ -69,6 +69,9 @@ public class VisualReferencer : MonoBehaviour
 
     public GameObject closedPhone;
     public GameObject openPhone;
+    public GameObject closedPhoneOutline;
+    public GameObject openPhoneOutline;
+    public Button phoneButton;
 
     
     [System.Serializable]
