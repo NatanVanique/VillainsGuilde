@@ -141,8 +141,12 @@ public sealed class TelephoneManager : MonoBehaviour, IPointerEnterHandler, IPoi
     private void UpdatePhoneOutline()
     {
         var visual = Main_Referencer.Instance.visual;
-        visual.closedPhoneOutline.SetActive(isMouseOver && !visual.openPhone.activeSelf);
-        visual.openPhoneOutline.SetActive(isMouseOver && visual.openPhone.activeSelf);
+        visual.openPhoneOutline.SetActive(isMouseOver && !visual.openPhone.activeSelf);
+
+        foreach (var outline in visual.closedPhoneOutlines)
+        {
+            outline.SetActive(isMouseOver);
+        }
     }
     
     public void SetPhoneState(bool isOpen)

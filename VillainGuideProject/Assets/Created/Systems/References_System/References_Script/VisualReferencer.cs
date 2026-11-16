@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TriInspector;
 using UnityEngine;
 using UnityEngine.UI;
@@ -69,7 +70,7 @@ public class VisualReferencer : MonoBehaviour
 
     public GameObject closedPhone;
     public GameObject openPhone;
-    public GameObject closedPhoneOutline;
+    public GameObject[] closedPhoneOutlines;
     public GameObject openPhoneOutline;
     public Button phoneButton;
 
