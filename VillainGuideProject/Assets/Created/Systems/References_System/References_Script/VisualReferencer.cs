@@ -67,6 +67,9 @@ public class VisualReferencer : MonoBehaviour
     [Group("Telephone")]
     public Animator  telephoneAnimator_Telephone;
 
+    public GameObject closedPhone;
+    public GameObject openPhone;
+
     
     [System.Serializable]
     [DeclareBoxGroup("References", Title = "Referências")]

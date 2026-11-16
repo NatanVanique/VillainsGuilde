@@ -318,6 +318,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 00000000000000000000000000000006, type: 3}
   m_PrefabInstance: {fileID: 355846424}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &355846426 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6055332311809303507, guid: 00000000000000000000000000000006, type: 3}
+  m_PrefabInstance: {fileID: 355846424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &355846427 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 584439495393903375, guid: 00000000000000000000000000000006, type: 3}
+  m_PrefabInstance: {fileID: 355846424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &356717697 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 880184397737694043, guid: d0a8818069cb8b54aacff518d994b311, type: 3}
@@ -441,6 +451,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 0000000000000000000000000000000c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352289863111956132, guid: 0000000000000000000000000000000c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -48.918457
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -753,6 +767,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 345090802}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1164886785 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11400000, guid: 00000000000000000000000000000006, type: 3}
+  m_PrefabInstance: {fileID: 355846424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00000000000000000000000000000005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1165583079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,9 +1142,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 356717697}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: openPhone
+      value: 
+      objectReference: {fileID: 355846426}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: bottom_Bars
       value: 
       objectReference: {fileID: 20444676}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: closedPhone
+      value: 
+      objectReference: {fileID: 355846427}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: colorImage_Room
       value: 
@@ -1209,6 +1242,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2973630057736164743}
     - target: {fileID: 5717543905197242760, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: hoursToTryTick_TelephoneValues
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717543905197242760, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: telephoneAnimator_TelephoneValues
       value: 
       objectReference: {fileID: 390423912111181714}
@@ -1220,6 +1257,10 @@ PrefabInstance:
       propertyPath: dayCicleManager
       value: 
       objectReference: {fileID: 1852315358}
+    - target: {fileID: 7618967074502631834, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: telephoneManager
+      value: 
+      objectReference: {fileID: 1164886785}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1410,6 +1451,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1400886303078552709, guid: d0a8818069cb8b54aacff518d994b311, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.009765625
+      objectReference: {fileID: 0}
     - target: {fileID: 3132443298180222113, guid: d0a8818069cb8b54aacff518d994b311, type: 3}
       propertyPath: m_Name
       value: Bars_Manager
@@ -1453,6 +1498,10 @@ PrefabInstance:
     - target: {fileID: 3564261798854423743, guid: d0a8818069cb8b54aacff518d994b311, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994972790251832960, guid: d0a8818069cb8b54aacff518d994b311, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.009765625
       objectReference: {fileID: 0}
     - target: {fileID: 5710500625201375477, guid: d0a8818069cb8b54aacff518d994b311, type: 3}
       propertyPath: m_IsActive

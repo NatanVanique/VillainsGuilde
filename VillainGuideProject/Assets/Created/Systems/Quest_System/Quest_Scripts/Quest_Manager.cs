@@ -12,6 +12,7 @@ public sealed class QuestManager : MonoBehaviour
     public void CloseVoiceMail()
     {
         Main_Referencer.Instance.visual.voiceMailCanvas_voiceMail.SetActive(false);
+        Main_Referencer.Instance.manager.telephoneManager.SetPhoneState(false);
     }
     
     public void AddQuest(QuestType type)

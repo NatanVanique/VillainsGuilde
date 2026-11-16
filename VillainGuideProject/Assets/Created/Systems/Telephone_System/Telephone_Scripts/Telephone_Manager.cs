@@ -9,7 +9,7 @@ public sealed class TelephoneManager : MonoBehaviour
     private void Start()
     {
         Main_Referencer.Instance.visual.telephoneAnimator_Telephone.SetBool("Ringing", false);
-
+        SetPhoneState(isOpen: false);
         StartCoroutine(tickTelephoneRoutine());
     }
 
@@ -118,11 +118,15 @@ public sealed class TelephoneManager : MonoBehaviour
 
     public void AccepptCall()
     {
+        SetPhoneState(isOpen: true);
         Main_Referencer.Instance.manager.questManager.OpenVoiceMail();
-
-        Main_Referencer.Instance.visual.telephoneAnimator_Telephone
-            .SetBool("Ringing", false);
-
+        Main_Referencer.Instance.visual.telephoneAnimator_Telephone.SetBool("Ringing", false);
         Main_Referencer.Instance.value.telephoneRinging = false;
+    }
+    
+    public void SetPhoneState(bool isOpen)
+    {
+        Main_Referencer.Instance.visual.openPhone.SetActive(isOpen);
+        Main_Referencer.Instance.visual.closedPhone.SetActive(!isOpen);
     }
 }

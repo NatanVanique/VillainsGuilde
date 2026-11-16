@@ -10,4 +10,7 @@ public class ManagerReferencer : MonoBehaviour
     
     [Group("Hour")]
     public DaycicleManager dayCicleManager;
+    
+    [Group("Phone")]
+    public TelephoneManager telephoneManager;
 }
