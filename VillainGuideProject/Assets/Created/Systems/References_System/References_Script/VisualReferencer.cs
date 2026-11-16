@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Localization.Components;
 using UnityEngine.Localization;
+using TMPro;
 
 [DeclareFoldoutGroup("Room", Expanded = true)]
 [DeclareFoldoutGroup("Bars", Expanded = true)]
 [DeclareFoldoutGroup("Voice Mail", Expanded = true)]
 [DeclareFoldoutGroup("Looking For Job", Expanded = true)]
 [DeclareFoldoutGroup("Contract Tooltip", Expanded = true)]
-    [DeclareFoldoutGroup(" Telephone ", Expanded = true)]
+[DeclareFoldoutGroup("Telephone", Expanded = true)]
 
 public class VisualReferencer : MonoBehaviour
 {
@@ -35,6 +36,8 @@ public class VisualReferencer : MonoBehaviour
     [Group("Voice Mail")] public GameObject firstVision;
     [Group("Voice Mail")] public GameObject infoVision;
     [Group("Voice Mail")] public Button returnInfoButton;
+    [Group("Voice Mail")] public TMP_Text missionTitleText;
+    [Group("Voice Mail")] public TMP_Text missionDescriptionText;
     
     [Group("Looking For Job")]
     public Canvas lookingForJobCanvas_LookingForJob;

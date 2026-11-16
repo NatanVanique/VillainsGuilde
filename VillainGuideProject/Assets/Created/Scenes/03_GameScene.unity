@@ -634,6 +634,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1165583081}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &521578456 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2212333648214455985, guid: 00000000000000000000000000000012, type: 3}
+  m_PrefabInstance: {fileID: 898469209}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!114 &597692720 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11400000, guid: 00000000000000000000000000000006, type: 3}
@@ -702,13 +713,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 303550886054940056, guid: 00000000000000000000000000000012, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 303550886054940056, guid: 00000000000000000000000000000012, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 303550886054940056, guid: 00000000000000000000000000000012, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 303550886054940056, guid: 00000000000000000000000000000012, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1795921330075718447, guid: 00000000000000000000000000000012, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5903238409049878241, guid: 00000000000000000000000000000012, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6036374469300558533, guid: 00000000000000000000000000000012, type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6275399899571475770, guid: 00000000000000000000000000000012, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6275399899571475770, guid: 00000000000000000000000000000012, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6275399899571475770, guid: 00000000000000000000000000000012, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6275399899571475770, guid: 00000000000000000000000000000012, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7725782067187864713, guid: 00000000000000000000000000000012, type: 3}
       propertyPath: m_AnchorMax.x
@@ -907,6 +954,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8328040622550714445, guid: 00000000000000000000000000000006, type: 3}
   m_PrefabInstance: {fileID: 355846424}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1590769143 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 863731025224137032, guid: 00000000000000000000000000000012, type: 3}
+  m_PrefabInstance: {fileID: 898469209}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1601218564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2636,6 +2694,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 236916861}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: missionTitleText
+      value: 
+      objectReference: {fileID: 521578456}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: openPhoneOutline
       value: 
       objectReference: {fileID: 734801456}
@@ -2647,6 +2709,10 @@ PrefabInstance:
       propertyPath: closedPhoneOutline
       value: 
       objectReference: {fileID: 355846428}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: missionDescriptionText
+      value: 
+      objectReference: {fileID: 1590769143}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: bigImage_ContractTolltip
       value: 
