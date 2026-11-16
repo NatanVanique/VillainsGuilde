@@ -31,6 +31,10 @@ public class VisualReferencer : MonoBehaviour
 
     [Group("Voice Mail")]
     public GameObject questMailContainer_VoiceMail;
+
+    [Group("Voice Mail")] public GameObject firstVision;
+    [Group("Voice Mail")] public GameObject infoVision;
+    [Group("Voice Mail")] public Button returnInfoButton;
     
     [Group("Looking For Job")]
     public Canvas lookingForJobCanvas_LookingForJob;
@@ -65,14 +69,12 @@ public class VisualReferencer : MonoBehaviour
     [Group("Contract Tooltip")]
     public LocalizeStringEvent descriptionText_ContractTolltip;
     
-    [Group("Telephone")]
-    public Animator  telephoneAnimator_Telephone;
-
-    public GameObject closedPhone;
-    public GameObject openPhone;
-    public GameObject[] closedPhoneOutlines;
-    public GameObject openPhoneOutline;
-    public Button phoneButton;
+    [Group("Telephone")] public Animator  telephoneAnimator_Telephone;
+    [Group("Telephone")] public GameObject closedPhone;
+    [Group("Telephone")] public GameObject openPhone;
+    [Group("Telephone")] public GameObject[] closedPhoneOutlines;
+    [Group("Telephone")] public GameObject openPhoneOutline;
+    [Group("Telephone")] public Button phoneButton;
 
     
     [System.Serializable]

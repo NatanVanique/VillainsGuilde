@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public sealed class QuestManager : MonoBehaviour
 {
     private int nextRouteIndex;
-
+    
     public void OpenVoiceMail()
     {
         Main_Referencer.Instance.visual.voiceMailCanvas_voiceMail.SetActive(true);

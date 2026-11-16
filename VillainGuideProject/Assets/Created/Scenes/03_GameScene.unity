@@ -124,6 +124,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5710500625201375477, guid: d0a8818069cb8b54aacff518d994b311, type: 3}
   m_PrefabInstance: {fileID: 6203289509136370080}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &155112983 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4740522483483993598, guid: 00000000000000000000000000000012, type: 3}
+  m_PrefabInstance: {fileID: 898469209}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1001 &160302613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -189,6 +200,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2771270114088014650, guid: d5fcdc0b74707594d92779ce46b785b6, type: 3}
   m_PrefabInstance: {fileID: 160302613}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &191619344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1901908567051425854, guid: 00000000000000000000000000000012, type: 3}
+  m_PrefabInstance: {fileID: 898469209}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &236916861 stripped
 MonoBehaviour:
@@ -414,6 +430,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 00000000000000000000000000000036, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112660379668895982, guid: 00000000000000000000000000000036, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -871,6 +891,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 0000000000000000000000000000000c, type: 3}
   m_PrefabInstance: {fileID: 509405309}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1212106588 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5903238409049878241, guid: 00000000000000000000000000000012, type: 3}
+  m_PrefabInstance: {fileID: 898469209}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1250584619 stripped
 Transform:
@@ -2587,6 +2612,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 355846429}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: infoVision
+      value: 
+      objectReference: {fileID: 1212106588}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: bottom_Bars
       value: 
       objectReference: {fileID: 20444676}
@@ -2594,6 +2623,10 @@ PrefabInstance:
       propertyPath: closedPhone
       value: 
       objectReference: {fileID: 355846426}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: firstVision
+      value: 
+      objectReference: {fileID: 191619344}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: phoneButton
       value: 
@@ -2606,6 +2639,10 @@ PrefabInstance:
       propertyPath: openPhoneOutline
       value: 
       objectReference: {fileID: 734801456}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: returnInfoButton
+      value: 
+      objectReference: {fileID: 155112983}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: closedPhoneOutline
       value: 
