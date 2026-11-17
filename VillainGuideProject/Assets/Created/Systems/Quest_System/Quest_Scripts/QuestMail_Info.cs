@@ -61,11 +61,10 @@ public class QuestMail_Info : MonoBehaviour
 
         if (questData.timeToDoneSeconds > 0f)
         {
+            int totalSeconds = Mathf.CeilToInt(questData.timeToDoneSeconds);
+            string time = $"{totalSeconds / 60:00}:{totalSeconds % 60:00}";
             Requirement_Element requirement = Instantiate(requirementPrefab, requirementContent);
-            requirement.SetRequirement(
-                Requirement_Element.RequirementType.TimeToDone,
-                $"{questData.timeToDoneSeconds} seconds"
-            );
+            requirement.SetRequirement(Requirement_Element.RequirementType.TimeToDone, time);
         }
 
         if (questData.hasReputationXpReward)
