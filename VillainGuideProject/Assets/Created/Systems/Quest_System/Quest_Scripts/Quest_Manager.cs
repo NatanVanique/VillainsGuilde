@@ -7,6 +7,7 @@ public sealed class QuestManager : MonoBehaviour
 {
     private const float VoiceMailBackgroundHeight = 750f;
     private const float VoiceMailBackgroundTweenDuration = 0.35f;
+    private const float InitialVisionFadeDuration = 0.1f;
 
     private int nextRouteIndex;
 
@@ -17,8 +18,13 @@ public sealed class QuestManager : MonoBehaviour
 
     public void OpenVoiceMail()
     {
-        AnimateVoiceMailBackground(isOpening: true);
-        Main_Referencer.Instance.visual.voiceMailCanvas_voiceMail.SetActive(true);
+        VisualReferencer visual = Main_Referencer.Instance.visual;
+        visual.voiceMailCanvas_voiceMail.SetActive(true);
+        CanvasGroup initialVisionGroup = visual.firstVision.GetComponent<CanvasGroup>();
+        DOTween.Kill(initialVisionGroup);
+        initialVisionGroup.alpha = 0f;
+        visual.firstVision.SetActive(true);
+        AnimateVoiceMailBackground(isOpening: true, initialVisionGroup: initialVisionGroup);
         Main_Referencer.Instance.manager.telephoneManager.SetPhoneState(isOpen: true);
         Main_Referencer.Instance.visual.telephoneAnimator_Telephone.SetBool("Ringing", false);
         Main_Referencer.Instance.value.telephoneRinging = false;
@@ -26,27 +32,61 @@ public sealed class QuestManager : MonoBehaviour
     
     public void CloseVoiceMail()
     {
-        AnimateVoiceMailBackground(isOpening: false);
-        Main_Referencer.Instance.visual.voiceMailCanvas_voiceMail.SetActive(false);
+        VisualReferencer visual = Main_Referencer.Instance.visual;
+        CanvasGroup initialVisionGroup = visual.firstVision.GetComponent<CanvasGroup>();
+        DOTween.Kill(initialVisionGroup);
+        initialVisionGroup.DOFade(0f, InitialVisionFadeDuration)
+            .OnComplete(() =>
+            {
+                visual.firstVision.SetActive(false);
+                AnimateVoiceMailBackground(isOpening: false, deactivateCanvasOnComplete: true);
+            });
         Main_Referencer.Instance.manager.telephoneManager.SetPhoneState(false);
     }
 
-    private void AnimateVoiceMailBackground(bool isOpening)
+    private void AnimateVoiceMailBackground(
+        bool isOpening,
+        CanvasGroup initialVisionGroup = null,
+        bool deactivateCanvasOnComplete = false
+    )
     {
         RectTransform background = Main_Referencer.Instance.visual.voiceMailBackground.rectTransform;
         DOTween.Kill(background);
 
+        float startHeight = VoiceMailBackgroundHeight;
         float targetHeight = 0f;
         if (isOpening)
         {
+            startHeight = 0f;
             targetHeight = VoiceMailBackgroundHeight;
         }
 
-        background.DOSizeDelta(
-                new Vector2(background.sizeDelta.x, targetHeight),
-                VoiceMailBackgroundTweenDuration
-            )
-            .SetEase(Ease.OutCubic);
+        Vector2 size = background.sizeDelta;
+        background.sizeDelta = new Vector2(size.x, startHeight);
+        Sequence animation = DOTween.Sequence();
+        animation.Append(
+            background.DOSizeDelta(
+                    new Vector2(background.sizeDelta.x, targetHeight),
+                    VoiceMailBackgroundTweenDuration
+                )
+                .SetEase(Ease.OutCubic)
+        );
+
+        if (isOpening && initialVisionGroup != null)
+        {
+            animation.Insert(
+                VoiceMailBackgroundTweenDuration * 0.5f,
+                initialVisionGroup.DOFade(1f, InitialVisionFadeDuration)
+            );
+        }
+
+        if (deactivateCanvasOnComplete)
+        {
+            animation.OnComplete(() =>
+                Main_Referencer.Instance.visual.voiceMailCanvas_voiceMail.SetActive(false)
+            );
+        }
+
     }
     
     public void AddQuest(QuestType type)
