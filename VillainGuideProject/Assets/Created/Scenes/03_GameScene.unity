@@ -866,6 +866,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &991334510 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2011536665473944293, guid: 00000000000000000000000000000048, type: 3}
+  m_PrefabInstance: {fileID: 2027650565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
 --- !u!1 &1081844065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,6 +1016,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 0000000000000000000000000000000c, type: 3}
   m_PrefabInstance: {fileID: 509405309}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1218981436 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6883282145157455311, guid: 00000000000000000000000000000048, type: 3}
+  m_PrefabInstance: {fileID: 2027650565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
 --- !u!4 &1250584619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5082868865568430343, guid: 00000000000000000000000000000024, type: 3}
@@ -1194,6 +1216,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2011536665473944293, guid: 00000000000000000000000000000048, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 6130386231296
+      objectReference: {fileID: 0}
+    - target: {fileID: 2011536665473944293, guid: 00000000000000000000000000000048, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:2bb221462f13b2a4bbe55f6562e8f818
+      objectReference: {fileID: 0}
+    - target: {fileID: 4340964469455168944, guid: 00000000000000000000000000000048, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4607763429306472667, guid: 00000000000000000000000000000048, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1229,10 +1263,6 @@ PrefabInstance:
     - target: {fileID: 6458004051687123233, guid: 00000000000000000000000000000048, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8763525694745083917, guid: 00000000000000000000000000000048, type: 3}
-      propertyPath: m_Name
-      value: Tab_Button
       objectReference: {fileID: 0}
     - target: {fileID: 9217901021535915420, guid: 00000000000000000000000000000048, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1275,17 +1305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
---- !u!114 &2027650568 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6883282145157455311, guid: 00000000000000000000000000000048, type: 3}
-  m_PrefabInstance: {fileID: 2027650565}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
 --- !u!1 &2037442800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2379,6 +2398,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 236916861}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: tabText_Journal
+      value: 
+      objectReference: {fileID: 991334510}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: missionTitleText
       value: 
       objectReference: {fileID: 898469216}
@@ -2391,25 +2414,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 898469214}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: routeNew_Journal
-      value: 
-      objectReference: {fileID: 1817309071299043150, guid: 42059efeec703b74ab0f6a4a4282e4fb, type: 3}
-    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: singleNew_Journal
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: tabButton_Journal
       value: 
       objectReference: {fileID: 2027650567}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: titleText_Journal
       value: 
-      objectReference: {fileID: 2027650568}
-    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: closedPhoneOutline
-      value: 
-      objectReference: {fileID: 355846428}
+      objectReference: {fileID: 1218981436}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: voiceMailBackground
       value: 
@@ -2434,10 +2445,6 @@ PrefabInstance:
       propertyPath: routeNewContainer_Journal
       value: 
       objectReference: {fileID: 1572917619}
-    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: telephoneButton_Telephone
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: voiceMailCanvas_voiceMail
       value: 
@@ -2466,10 +2473,6 @@ PrefabInstance:
       propertyPath: questMailContainer_VoiceMail
       value: 
       objectReference: {fileID: 898469212}
-    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: closedPhoneOutlines.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: descriptionText_ContractTolltip
       value: 
@@ -2526,26 +2529,6 @@ PrefabInstance:
       propertyPath: statsSlider_ContractTolltip.Array.data[7].slider
       value: 
       objectReference: {fileID: 2973630057736164743}
-    - target: {fileID: 5717543905197242760, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: telephoneAnimator_TelephoneValues
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5717543905197242760, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: RewardsText_JournalValues.m_TableEntryReference.m_KeyId
-      value: 34032476160
-      objectReference: {fileID: 0}
-    - target: {fileID: 5717543905197242760, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: DailyNewsText_JournalValues.m_TableEntryReference.m_KeyId
-      value: 33852121088
-      objectReference: {fileID: 0}
-    - target: {fileID: 5717543905197242760, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: RewardsText_JournalValues.m_TableReference.m_TableCollectionName
-      value: GUID:2bb221462f13b2a4bbe55f6562e8f818
-      objectReference: {fileID: 0}
-    - target: {fileID: 5717543905197242760, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: DailyNewsText_JournalValues.m_TableReference.m_TableCollectionName
-      value: GUID:2bb221462f13b2a4bbe55f6562e8f818
-      objectReference: {fileID: 0}
     - target: {fileID: 7618967074502631834, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: questManager
       value: 

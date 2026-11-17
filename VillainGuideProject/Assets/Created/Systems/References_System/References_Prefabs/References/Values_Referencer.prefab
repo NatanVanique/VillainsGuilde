@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2874944822726039772}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -140,3 +140,24 @@ MonoBehaviour:
   hoursToTryTick_TelephoneValues: 3
   ringingRepeats_TelephoneValues: 3
   daysToStartRouteQuest_QuestValues: 2
+  DailyNewsText_JournalValues:
+    m_TableReference:
+      m_TableCollectionName: GUID:2bb221462f13b2a4bbe55f6562e8f818
+    m_TableEntryReference:
+      m_KeyId: 33852121088
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  RewardsText_JournalValues:
+    m_TableReference:
+      m_TableCollectionName: GUID:2bb221462f13b2a4bbe55f6562e8f818
+    m_TableEntryReference:
+      m_KeyId: 34032476160
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

@@ -10,4 +10,9 @@ public static class DoTweenEffects_Commands
 
         target.DOScale(originalScale, duration).SetEase(Ease.OutBack, intensity);
     }
+    
+    public static void DoTweenSpin(Transform target, float duration, float angle)
+    {
+        target.DOLocalRotate(new Vector3(0, 0, angle), duration).SetEase(Ease.InOutSine);
+    }
 }

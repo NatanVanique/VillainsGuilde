@@ -73,6 +73,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -253.6
       objectReference: {fileID: 0}
+    - target: {fileID: 762557604759421173, guid: a609c5687b78f4d48ab90494a1a35462, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000}
     - target: {fileID: 1206504097688418321, guid: a609c5687b78f4d48ab90494a1a35462, type: 3}
       propertyPath: m_Name
       value: Journal_Canvas

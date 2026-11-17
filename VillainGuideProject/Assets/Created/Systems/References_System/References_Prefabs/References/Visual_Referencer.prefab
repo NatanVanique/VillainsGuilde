@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3415688248818761613}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -50,6 +50,13 @@ MonoBehaviour:
   voiceMailCanvas_voiceMail: {fileID: 0}
   questMail_VoiceMail: {fileID: 9027416509029165702, guid: f59c1fe2c192a8e4e8bbaeaaeeb60f00, type: 3}
   questMailContainer_VoiceMail: {fileID: 0}
+  firstVision: {fileID: 0}
+  infoVision: {fileID: 0}
+  returnInfoButton: {fileID: 0}
+  closeVoiceMailButton: {fileID: 0}
+  voiceMailBackground: {fileID: 0}
+  missionTitleText: {fileID: 0}
+  missionDescriptionText: {fileID: 0}
   lookingForJobCanvas_LookingForJob: {fileID: 0}
   contractCard_LookingForJob: {fileID: 638250967513505782, guid: a36293e6ef53584448e3b85d584023ec, type: 3}
   contractCardContainer_LookingForJob: {fileID: 0}
@@ -78,3 +85,19 @@ MonoBehaviour:
   nameText_ContractTolltip: {fileID: 0}
   descriptionText_ContractTolltip: {fileID: 0}
   telephoneAnimator_Telephone: {fileID: 0}
+  closedPhone: {fileID: 0}
+  openPhone: {fileID: 0}
+  closedPhoneOutlines:
+  - {fileID: 0}
+  - {fileID: 0}
+  openPhoneOutline: {fileID: 0}
+  phoneButton: {fileID: 0}
+  singleNewContainer_Journal: {fileID: 0}
+  singleNews_Journal:
+  - {fileID: 1463714975924569701, guid: dfc5bf3db9dc8e14b9301e0a287635c0, type: 3}
+  - {fileID: 1463714975924569701, guid: 17f506a82c821e84a822781ced6edaed, type: 3}
+  - {fileID: 1463714975924569701, guid: 3b5350b71cce46345ad8c981f0a4b2fd, type: 3}
+  routeNewContainer_Journal: {fileID: 0}
+  routeNew_Journal: {fileID: 1817309071299043150, guid: 42059efeec703b74ab0f6a4a4282e4fb, type: 3}
+  titleText_Journal: {fileID: 0}
+  tabButton_Journal: {fileID: 0}

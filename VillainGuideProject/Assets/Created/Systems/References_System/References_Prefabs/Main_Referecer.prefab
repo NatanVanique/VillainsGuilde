@@ -304,6 +304,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 450054096377227755}
     m_Modifications:
+    - target: {fileID: 2817395850304851651, guid: 7a7510576b054b243a64aa86c65ed504, type: 3}
+      propertyPath: NewsTabText_JournalValues.m_TableEntryReference.m_KeyId
+      value: 6130377842688
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817395850304851651, guid: 7a7510576b054b243a64aa86c65ed504, type: 3}
+      propertyPath: RewardsTabText_JournalValues.m_TableEntryReference.m_KeyId
+      value: 6130386231296
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817395850304851651, guid: 7a7510576b054b243a64aa86c65ed504, type: 3}
+      propertyPath: NewsTabText_JournalValues.m_TableReference.m_TableCollectionName
+      value: GUID:2bb221462f13b2a4bbe55f6562e8f818
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817395850304851651, guid: 7a7510576b054b243a64aa86c65ed504, type: 3}
+      propertyPath: RewardsTabText_JournalValues.m_TableReference.m_TableCollectionName
+      value: GUID:2bb221462f13b2a4bbe55f6562e8f818
+      objectReference: {fileID: 0}
     - target: {fileID: 2874944822726039772, guid: 7a7510576b054b243a64aa86c65ed504, type: 3}
       propertyPath: m_Name
       value: Values_Referencer

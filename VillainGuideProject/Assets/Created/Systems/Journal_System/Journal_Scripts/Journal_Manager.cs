@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public sealed class JournalManager : MonoBehaviour
 {
     private List<GameObject> instantiatedNews = new List<GameObject>();
+    private bool rewardsOpen = false;
 
     public void InstanceNew(CreateQuest_Data data)
     {
@@ -43,14 +45,43 @@ public sealed class JournalManager : MonoBehaviour
 
     public void OpenRewards()
     {
+        Transform buttonTransform = Main_Referencer.Instance.visual.tabButton_Journal.transform;
+        buttonTransform.DOKill();
+        
+        DoTweenEffects_Commands.DoTweenSpin(buttonTransform, 0.3f, -180);
+        
+        Main_Referencer.Instance.visual.tabText_Journal.StringReference = Main_Referencer.Instance.value.NewsTabText_JournalValues;
+        
         Main_Referencer.Instance.visual.titleText_Journal.StringReference =
             Main_Referencer.Instance.value.RewardsText_JournalValues;
+            
+        rewardsOpen = true;
     }
     
     public void CloseRewards()
     {
+        Transform buttonTransform = Main_Referencer.Instance.visual.tabButton_Journal.transform;
+        buttonTransform.DOKill();
+        
+        DoTweenEffects_Commands.DoTweenSpin(buttonTransform, 0.3f, -0);
+        
+        Main_Referencer.Instance.visual.tabText_Journal.StringReference = Main_Referencer.Instance.value.RewardsTabText_JournalValues;
+        
         Main_Referencer.Instance.visual.titleText_Journal.StringReference =
             Main_Referencer.Instance.value.DailyNewsText_JournalValues;
+        
+        rewardsOpen = false;
+    }
+
+    public void ToggleRewards()
+    {
+        if (rewardsOpen)
+        {
+            CloseRewards();
+            return;
+        }
+
+        OpenRewards();
     }
 
 

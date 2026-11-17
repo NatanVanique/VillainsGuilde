@@ -37,4 +37,6 @@ public class ValuesReferencer : MonoBehaviour
     
     [Group("Journal Values")] public LocalizedString  DailyNewsText_JournalValues;
     [Group("Journal Values")] public LocalizedString  RewardsText_JournalValues;
+    [Group("Journal Values")] public LocalizedString  RewardsTabText_JournalValues;
+    [Group("Journal Values")] public LocalizedString  NewsTabText_JournalValues;
 }

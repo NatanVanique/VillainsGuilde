@@ -26,6 +26,14 @@ MonoBehaviour:
     m_Localized: Recompensas
     m_Metadata:
       m_Items: []
+  - m_Id: 6130377842688
+    m_Localized: "Clique para Not\xEDcias"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6130386231296
+    m_Localized: Clique para Recompensas
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

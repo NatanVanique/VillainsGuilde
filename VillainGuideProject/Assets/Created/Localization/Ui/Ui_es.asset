@@ -23,7 +23,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 34032476160
-    m_Localized: "\tRecompensas"
+    m_Localized: Recompensas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6130377842688
+    m_Localized: Clic para ver Noticias
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6130386231296
+    m_Localized: Clic para ver Recompensas
     m_Metadata:
       m_Items: []
   references:
