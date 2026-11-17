@@ -1,7 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public sealed class JournalManager : MonoBehaviour
 {
+    private List<GameObject> instantiatedNews = new List<GameObject>();
+
     public void InstanceNew(CreateQuest_Data data)
     {
         GameObject curNew;
@@ -10,7 +13,8 @@ public sealed class JournalManager : MonoBehaviour
         if (data.type == CreateQuest_Data.QuestType.Single)
         {
             curNew = Main_Referencer.Instance.visual.singleNews_Journal
-                [Random.Range(0, Main_Referencer.Instance.visual.singleNews_Journal.Length-1)];
+                [Random.Range(0, Main_Referencer.Instance.visual.singleNews_Journal.Length)];
+
             curContainer = Main_Referencer.Instance.visual.singleNewContainer_Journal.transform;
         }
         else if (data.type == CreateQuest_Data.QuestType.Route)
@@ -22,7 +26,18 @@ public sealed class JournalManager : MonoBehaviour
         {
             return;
         }
-        
-        Instantiate(curNew, curContainer);
+
+        GameObject newObject = Instantiate(curNew, curContainer);
+        instantiatedNews.Add(newObject);
+    }
+
+    public void CleanJournal()
+    {
+        foreach (GameObject news in instantiatedNews)
+        {
+            Destroy(news);
+        }
+
+        instantiatedNews.Clear();
     }
 }
