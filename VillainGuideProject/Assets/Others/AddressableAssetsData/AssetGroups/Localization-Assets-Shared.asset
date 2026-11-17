@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_GUID: 63fd679662c1e794488ddccd7d338cb5
   m_SerializeEntries:
+  - m_GUID: 2bb221462f13b2a4bbe55f6562e8f818
+    m_Address: Assets/Created/Localization/Ui/Ui Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 33275aad986aaab4ea27a58988ba64f5
     m_Address: Assets/Localization/QuestRoutes/Name/RouteQuests_Name Shared Data.asset
     m_ReadOnly: 1

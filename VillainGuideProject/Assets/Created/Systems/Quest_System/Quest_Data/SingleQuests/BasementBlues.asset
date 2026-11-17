@@ -30,6 +30,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  type: 0
   minPopularity: 0
   winMargin: 0
   timeToDoneSeconds: 0
