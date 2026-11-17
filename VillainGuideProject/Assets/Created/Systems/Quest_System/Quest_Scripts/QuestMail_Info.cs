@@ -9,9 +9,9 @@ public class QuestMail_Info : MonoBehaviour
 {
     private const float InfoTweenDuration = 0.35f;
     private const float MailDefaultY = 165.2499f;
-    private const float MailDefaultHeight = 749.5f;
-    private const float MailInfoY = 55.1375f;
-    private const float MailInfoHeight = 969.7247f;
+    private const float MailDefaultHeight = 750f;
+    private const float MailInfoY = -45.90763f;
+    private const float MailInfoHeight = 1170f;
 
     [SerializeField] private LocalizeStringEvent mailName;
     [SerializeField] Button infoButton;
@@ -90,8 +90,20 @@ public class QuestMail_Info : MonoBehaviour
             visual.firstVision.SetActive(true);
         }
 
-        float targetY = isInfoOpen ? MailInfoY : MailDefaultY;
-        float targetHeight = isInfoOpen ? MailInfoHeight : MailDefaultHeight;
+        float targetY;
+        float targetHeight;
+
+        if (isInfoOpen)
+        {
+            targetY = MailInfoY;
+            targetHeight = MailInfoHeight;
+        }
+        else
+        {
+            targetY = MailDefaultY;
+            targetHeight = MailDefaultHeight;
+        }
+
         background.DOAnchorPosY(targetY, InfoTweenDuration).SetEase(Ease.OutCubic);
         background.DOSizeDelta(new Vector2(background.sizeDelta.x, targetHeight), InfoTweenDuration)
             .SetEase(Ease.OutCubic);

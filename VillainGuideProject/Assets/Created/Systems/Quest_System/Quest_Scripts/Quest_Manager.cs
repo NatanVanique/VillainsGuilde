@@ -1,9 +1,13 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public sealed class QuestManager : MonoBehaviour
 {
+    private const float VoiceMailBackgroundHeight = 750f;
+    private const float VoiceMailBackgroundTweenDuration = 0.35f;
+
     private int nextRouteIndex;
 
     public void Start()
@@ -13,6 +17,7 @@ public sealed class QuestManager : MonoBehaviour
 
     public void OpenVoiceMail()
     {
+        AnimateVoiceMailBackground(isOpening: true);
         Main_Referencer.Instance.visual.voiceMailCanvas_voiceMail.SetActive(true);
         Main_Referencer.Instance.manager.telephoneManager.SetPhoneState(isOpen: true);
         Main_Referencer.Instance.visual.telephoneAnimator_Telephone.SetBool("Ringing", false);
@@ -21,8 +26,27 @@ public sealed class QuestManager : MonoBehaviour
     
     public void CloseVoiceMail()
     {
+        AnimateVoiceMailBackground(isOpening: false);
         Main_Referencer.Instance.visual.voiceMailCanvas_voiceMail.SetActive(false);
         Main_Referencer.Instance.manager.telephoneManager.SetPhoneState(false);
+    }
+
+    private void AnimateVoiceMailBackground(bool isOpening)
+    {
+        RectTransform background = Main_Referencer.Instance.visual.voiceMailBackground.rectTransform;
+        DOTween.Kill(background);
+
+        float targetHeight = 0f;
+        if (isOpening)
+        {
+            targetHeight = VoiceMailBackgroundHeight;
+        }
+
+        background.DOSizeDelta(
+                new Vector2(background.sizeDelta.x, targetHeight),
+                VoiceMailBackgroundTweenDuration
+            )
+            .SetEase(Ease.OutCubic);
     }
     
     public void AddQuest(QuestType type)
