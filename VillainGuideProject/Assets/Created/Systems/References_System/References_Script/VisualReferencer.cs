@@ -35,9 +35,11 @@ public class VisualReferencer : MonoBehaviour
 
     [Group("Voice Mail")] public GameObject firstVision;
     [Group("Voice Mail")] public GameObject infoVision;
+    [Group("Voice Mail")] public Transform requirementsContent;
+    [Group("Voice Mail")] public Transform rewardsIconsContent;
     [Group("Voice Mail")] public Button returnInfoButton;
     [Group("Voice Mail")] public Button closeVoiceMailButton;
-    [Group("Voice Mail")] public UnityEngine.UI.Image voiceMailBackground;
+    [Group("Voice Mail")] public Image voiceMailBackground;
     [Group("Voice Mail")] public TMP_Text missionTitleText;
     [Group("Voice Mail")] public TMP_Text missionDescriptionText;
     

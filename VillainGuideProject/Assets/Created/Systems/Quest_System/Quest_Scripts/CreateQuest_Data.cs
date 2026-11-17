@@ -19,11 +19,15 @@
         public statusRequirementsValues[]  statusRequirements;
 
         [Header("Rewards")] 
+        public bool hasReputationXpReward;
         public int reputationXpEarned;
+        public bool hasCharacterXpReward;
         public int characterXpEarned;
+        public bool hasCoinsReward;
         public int coinsEarned;
-        public string[] characterEarned;
-        
+        public bool hasCharacterReward;
+        public string[] characterEarned = System.Array.Empty<string>();
+
         [System.Serializable]
         public class statusRequirementsValues
         {
