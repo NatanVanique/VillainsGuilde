@@ -1222,7 +1222,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45.75
+  m_fontSize: 50
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1517,3 +1517,5 @@ MonoBehaviour:
   mailName: {fileID: 6980099465893602527}
   infoButton: {fileID: 1610305753579007800}
   monstersButton: {fileID: 8505712801199648753}
+  rewardPrefab: {fileID: 4119000000000000001, guid: cdeb49dee3c1b5a4982959bab1a5771c, type: 3}
+  requirementPrefab: {fileID: 4119000000000000002, guid: cd49972423458034da972de53893dd88, type: 3}
