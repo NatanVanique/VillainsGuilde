@@ -9,6 +9,7 @@
         [Header("Infos")]
         public LocalizedString questName;
         public LocalizedString questDescription;
+        public QuestType type;
 
         [Header("Requirements")] 
         public int minPopularity;
@@ -23,6 +24,12 @@
         public int characterXpEarned;
         public int coinsEarned;
         public string[] characterEarned;
+        
+        public enum QuestType
+        {
+            Single,
+            Route
+        }
         
         [System.Serializable]
         public class statusRequirementsValues

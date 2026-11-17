@@ -104,13 +104,13 @@ public sealed class TelephoneManager : MonoBehaviour, IPointerEnterHandler, IPoi
     {
         if (RouteDayVerify())
         {
-            Main_Referencer.Instance.manager.questManager.AddQuest(QuestManager.QuestType.Route);
+            Main_Referencer.Instance.manager.questManager.AddQuest(CreateQuest_Data.QuestType.Route);
 
             lastRouteQuestDay = Main_Referencer.Instance.value.currentDay_HourValues;
         }
         else
         {
-            Main_Referencer.Instance.manager.questManager.AddQuest(QuestManager.QuestType.Single);
+            Main_Referencer.Instance.manager.questManager.AddQuest(CreateQuest_Data.QuestType.Single);
         }
     }
 
