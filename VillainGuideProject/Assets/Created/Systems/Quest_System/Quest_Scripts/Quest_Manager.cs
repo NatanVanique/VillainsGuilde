@@ -7,7 +7,7 @@ public sealed class QuestManager : MonoBehaviour
 {
     private const float VoiceMailBackgroundHeight = 750f;
     private const float VoiceMailBackgroundTweenDuration = 0.35f;
-    private const float InitialVisionFadeDuration = 0.1f;
+    private const float InitialVisionFadeDuration = 0.2f;
 
     private int nextRouteIndex;
 
