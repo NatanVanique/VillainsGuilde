@@ -55,6 +55,8 @@ public class VisualReferencer : MonoBehaviour
     [Group("Journal")] public GameObject[] singleNews_Journal;
     [Group("Journal")] public GameObject routeNewContainer_Journal;
     [Group("Journal")] public GameObject routeNew_Journal;
+    [Group("Journal")] public LocalizeStringEvent titleText_Journal;
+    [Group("Journal")] public Button tabButton_Journal;
 
     
 

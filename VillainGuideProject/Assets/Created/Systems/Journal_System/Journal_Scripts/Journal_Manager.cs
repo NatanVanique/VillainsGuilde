@@ -40,4 +40,18 @@ public sealed class JournalManager : MonoBehaviour
 
         instantiatedNews.Clear();
     }
+
+    public void OpenRewards()
+    {
+        Main_Referencer.Instance.visual.titleText_Journal.StringReference =
+            Main_Referencer.Instance.value.RewardsText_JournalValues;
+    }
+    
+    public void CloseRewards()
+    {
+        Main_Referencer.Instance.visual.titleText_Journal.StringReference =
+            Main_Referencer.Instance.value.DailyNewsText_JournalValues;
+    }
+
+
 }
