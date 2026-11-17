@@ -89,15 +89,15 @@ public sealed class QuestManager : MonoBehaviour
 
     }
     
-    public void AddQuest(QuestType type)
+    public void AddQuest(CreateQuest_Data.QuestType type)
     {
         CreateQuest_Data data = null;
 
-        if (type == QuestType.Single)
+        if (type == CreateQuest_Data.QuestType.Single)
         {
             data = GetRandomSingleQuest();
         }
-        else if (type == QuestType.Route)
+        else if (type == CreateQuest_Data.QuestType.Route)
         {
             data = GetNextUncalledRouteQuest();
         }
@@ -145,11 +145,5 @@ public sealed class QuestManager : MonoBehaviour
         }
         
         return null;
-    }
-    
-    public enum QuestType
-    {
-        Single,
-        Route
     }
 }

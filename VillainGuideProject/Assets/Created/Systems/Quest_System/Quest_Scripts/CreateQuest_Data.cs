@@ -9,6 +9,7 @@
         [Header("Infos")]
         public LocalizedString questName;
         public LocalizedString questDescription;
+        public QuestType type;
 
         [Header("Requirements")] 
         public int minPopularity;
@@ -27,7 +28,13 @@
         public int coinsEarned;
         public bool hasCharacterReward;
         public string[] characterEarned = System.Array.Empty<string>();
-
+        
+        public enum QuestType
+        {
+            Single,
+            Route
+        }
+        
         [System.Serializable]
         public class statusRequirementsValues
         {
