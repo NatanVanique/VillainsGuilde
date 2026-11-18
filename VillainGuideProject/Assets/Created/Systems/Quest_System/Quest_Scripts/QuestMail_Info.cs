@@ -10,11 +10,13 @@ using DG.Tweening;
 
 public class QuestMail_Info : MonoBehaviour
 {
-    private const float InfoTweenDuration = 0.35f;
-    private const float MailDefaultY = 165.2499f;
-    private const float MailDefaultHeight = 750f;
-    private const float MailInfoY = -45.90763f;
-    private const float MailInfoHeight = 1170f;
+    [Header("Info Animation")]
+    [SerializeField, Min(0f)] private float infoTweenDuration = 0.35f;
+    [SerializeField] private Ease infoTweenEase = Ease.OutCubic;
+    [SerializeField] private float mailDefaultY = 165.2499f;
+    [SerializeField] private float mailDefaultHeight = 750f;
+    [SerializeField] private float mailInfoY = -45.90763f;
+    [SerializeField] private float mailInfoHeight = 1170f;
 
     [SerializeField] private LocalizeStringEvent mailName;
     [SerializeField] Button infoButton;
@@ -183,6 +185,7 @@ public class QuestMail_Info : MonoBehaviour
     public void openMonsters()
     {
         Main_Referencer.Instance.manager.monsterManager.OpenSelection(this);
+        Main_Referencer.Instance.manager.roomManager.GoToScreen(-1);
     }
 
     public void AssignMonster(CreateMonster_Data monster)
@@ -278,7 +281,6 @@ public class QuestMail_Info : MonoBehaviour
     {
         VisualReferencer visual = Main_Referencer.Instance.visual;
         RectTransform background = visual.voiceMailBackground.rectTransform;
-        DOTween.Kill(background);
 
         if (isInfoOpen)
         {
@@ -296,17 +298,16 @@ public class QuestMail_Info : MonoBehaviour
 
         if (isInfoOpen)
         {
-            targetY = MailInfoY;
-            targetHeight = MailInfoHeight;
+            targetY = mailInfoY;
+            targetHeight = mailInfoHeight;
         }
         else
         {
-            targetY = MailDefaultY;
-            targetHeight = MailDefaultHeight;
+            targetY = mailDefaultY;
+            targetHeight = mailDefaultHeight;
         }
 
-        background.DOAnchorPosY(targetY, InfoTweenDuration).SetEase(Ease.OutCubic);
-        background.DOSizeDelta(new Vector2(background.sizeDelta.x, targetHeight), InfoTweenDuration)
-            .SetEase(Ease.OutCubic);
+        DoTweenEffects_Commands.DoTweenAnchorPosYAndHeight(
+            background, targetY, targetHeight, infoTweenDuration, infoTweenEase);
     }
 }
