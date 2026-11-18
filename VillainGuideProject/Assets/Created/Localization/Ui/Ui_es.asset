@@ -18,20 +18,8 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 33852121088
-    m_Localized: Diario Hoy!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 34032476160
-    m_Localized: Recompensas
-    m_Metadata:
-      m_Items: []
-  - m_Id: 6130377842688
-    m_Localized: Clic para ver Noticias
-    m_Metadata:
-      m_Items: []
-  - m_Id: 6130386231296
-    m_Localized: Clic para ver Recompensas
+  - m_Id: 348377612652544
+    m_Localized: 'Desarrollado por:'
     m_Metadata:
       m_Items: []
   references:

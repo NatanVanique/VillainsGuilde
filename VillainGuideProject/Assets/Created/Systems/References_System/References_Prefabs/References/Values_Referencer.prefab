@@ -142,18 +142,36 @@ MonoBehaviour:
   daysToStartRouteQuest_QuestValues: 2
   DailyNewsText_JournalValues:
     m_TableReference:
-      m_TableCollectionName: GUID:2bb221462f13b2a4bbe55f6562e8f818
+      m_TableCollectionName: GUID:521794ee59605654f9b774b50a6ec8cb
     m_TableEntryReference:
-      m_KeyId: 33852121088
+      m_KeyId: 25373020160
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   RewardsText_JournalValues:
     m_TableReference:
-      m_TableCollectionName: GUID:2bb221462f13b2a4bbe55f6562e8f818
+      m_TableCollectionName: GUID:521794ee59605654f9b774b50a6ec8cb
     m_TableEntryReference:
-      m_KeyId: 34032476160
+      m_KeyId: 25410768896
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  RewardsTabText_JournalValues:
+    m_TableReference:
+      m_TableCollectionName: GUID:521794ee59605654f9b774b50a6ec8cb
+    m_TableEntryReference:
+      m_KeyId: 25410768898
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  NewsTabText_JournalValues:
+    m_TableReference:
+      m_TableCollectionName: GUID:521794ee59605654f9b774b50a6ec8cb
+    m_TableEntryReference:
+      m_KeyId: 25410768897
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

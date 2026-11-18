@@ -2901,6 +2901,22 @@ PrefabInstance:
       propertyPath: rewardsNewComponents_Journal.Array.data[3].numbersValueText
       value: 
       objectReference: {fileID: 735512412}
+    - target: {fileID: 5717543905197242760, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: NewsTabText_JournalValues.m_TableEntryReference.m_KeyId
+      value: 25410768897
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717543905197242760, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: RewardsTabText_JournalValues.m_TableEntryReference.m_KeyId
+      value: 25410768898
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717543905197242760, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: NewsTabText_JournalValues.m_TableReference.m_TableCollectionName
+      value: GUID:521794ee59605654f9b774b50a6ec8cb
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717543905197242760, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: RewardsTabText_JournalValues.m_TableReference.m_TableCollectionName
+      value: GUID:521794ee59605654f9b774b50a6ec8cb
+      objectReference: {fileID: 0}
     - target: {fileID: 7618967074502631834, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: roomManager
       value: 

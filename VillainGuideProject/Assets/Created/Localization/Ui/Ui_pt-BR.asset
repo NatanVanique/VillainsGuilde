@@ -18,20 +18,8 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 33852121088
-    m_Localized: Jornal Hoje!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 34032476160
-    m_Localized: Recompensas
-    m_Metadata:
-      m_Items: []
-  - m_Id: 6130377842688
-    m_Localized: "Clique para Not\xEDcias"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 6130386231296
-    m_Localized: Clique para Recompensas
+  - m_Id: 348377612652544
+    m_Localized: 'Desenvolvido por:'
     m_Metadata:
       m_Items: []
   references:
