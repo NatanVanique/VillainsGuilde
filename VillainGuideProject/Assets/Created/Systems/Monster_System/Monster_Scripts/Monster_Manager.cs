@@ -46,7 +46,7 @@ public sealed class MonsterManager : MonoBehaviour
 
         selectedQuest = quest;
         selectedIndex = Mathf.Max(0, availableMonsters.FindIndex(
-            monster => monster.monstersProfile == quest.AssignedMonster));
+            monster => monster == quest.AssignedMonster));
         bool canNavigate = availableMonsters.Count > 1;
         VisualReferencer visual = references.visual;
         visual.previousButton_MonsterSelection.interactable = canNavigate;
@@ -90,20 +90,20 @@ public sealed class MonsterManager : MonoBehaviour
             return;
         }
 
-        CreateMonster_Data profile = availableMonsters[selectedIndex].monstersProfile;
-        if (UpdateSendButton(profile))
+        MonsterReferencer.Monsters monster = availableMonsters[selectedIndex];
+        if (UpdateSendButton(monster))
         {
             return;
         }
 
-        selectedQuest.AssignMonster(profile);
+        selectedQuest.AssignMonster(monster);
         CloseSelection();
     }
 
-    private bool UpdateSendButton(CreateMonster_Data profile)
+    private bool UpdateSendButton(MonsterReferencer.Monsters monster)
     {
         Main_Referencer references = Main_Referencer.Instance;
-        bool isOnMission = references.manager.questManager.IsMonsterOnMission(profile);
+        bool isOnMission = references.manager.questManager.IsMonsterOnMission(monster);
         references.visual.sendButton_MonsterSelection.interactable = !isOnMission;
         references.visual.sendButtonText_MonsterSelection.text = isOnMission ? "Já está em missão" : sendLabel;
         return isOnMission;
@@ -113,7 +113,7 @@ public sealed class MonsterManager : MonoBehaviour
     {
         if (Main_Referencer.Instance.visual.selectionCanvas_MonsterSelection.activeSelf)
         {
-            UpdateSendButton(availableMonsters[selectedIndex].monstersProfile);
+            UpdateSendButton(availableMonsters[selectedIndex]);
         }
     }
 
@@ -133,7 +133,7 @@ public sealed class MonsterManager : MonoBehaviour
     {
         MonsterReferencer.Monsters monster = availableMonsters[selectedIndex];
         CreateMonster_Data profile = monster.monstersProfile;
-        UpdateSendButton(profile);
+        UpdateSendButton(monster);
         VisualReferencer visual = Main_Referencer.Instance.visual;
         visual.monsterImage_MonsterSelection.sprite = profile.bigImage;
         visual.specialAbilityText_MonsterSelection.text = profile.mainPower.ToString();

@@ -36,10 +36,10 @@ public class QuestMail_Info : MonoBehaviour
     private bool resolved;
     private bool viewingInfo;
     private float responseDeadline;
-    private readonly HashSet<CreateMonster_Data> goodDiscoveries = new();
-    private readonly HashSet<CreateMonster_Data> badDiscoveries = new();
+    private readonly HashSet<MonsterReferencer.Monsters> goodDiscoveries = new();
+    private readonly HashSet<MonsterReferencer.Monsters> badDiscoveries = new();
 
-    public CreateMonster_Data AssignedMonster { get; private set; }
+    public MonsterReferencer.Monsters AssignedMonster { get; private set; }
 
     public void setInfo(CreateQuest_Data data)
     {
@@ -188,12 +188,12 @@ public class QuestMail_Info : MonoBehaviour
         Main_Referencer.Instance.manager.roomManager.GoToScreen(-1);
     }
 
-    public void AssignMonster(CreateMonster_Data monster)
+    public void AssignMonster(MonsterReferencer.Monsters monster)
     {
         AssignedMonster = monster;
         acceptButton.interactable = true;
         Image icon = monstersButton.image;
-        icon.sprite = monster.icon;
+        icon.sprite = monster.monstersProfile.icon;
         icon.color = Color.white;
         icon.preserveAspect = true;
         RefreshDiscoveredResults();
@@ -215,7 +215,7 @@ public class QuestMail_Info : MonoBehaviour
         }
     }
 
-    private void ShowDiscoveryIcons(RectTransform content, HashSet<CreateMonster_Data> discoveries)
+    private void ShowDiscoveryIcons(RectTransform content, HashSet<MonsterReferencer.Monsters> discoveries)
     {
         ClearContent(content);
         if (discoveries.Count == 0)
@@ -226,9 +226,9 @@ public class QuestMail_Info : MonoBehaviour
         float slotWidth = Mathf.Min(content.rect.width / discoveries.Count, content.rect.height);
         float iconSize = slotWidth * 0.9f;
         int index = 0;
-        foreach (CreateMonster_Data monster in discoveries)
+        foreach (MonsterReferencer.Monsters monster in discoveries)
         {
-            var iconObject = new GameObject(monster.name, typeof(RectTransform), typeof(Image));
+            var iconObject = new GameObject(monster.monstersProfile.name, typeof(RectTransform), typeof(Image));
             var iconTransform = (RectTransform)iconObject.transform;
             iconTransform.SetParent(content, false);
             iconTransform.anchorMin = iconTransform.anchorMax = new Vector2(0f, 0.5f);
@@ -236,7 +236,7 @@ public class QuestMail_Info : MonoBehaviour
             iconTransform.anchoredPosition = new Vector2(slotWidth * (index + 0.5f), 0f);
 
             var image = iconObject.GetComponent<Image>();
-            image.sprite = monster.icon;
+            image.sprite = monster.monstersProfile.icon;
             image.preserveAspect = true;
             image.raycastTarget = false;
             index++;
@@ -269,7 +269,7 @@ public class QuestMail_Info : MonoBehaviour
         {
             closeInfo();
         }
-        CreateMonster_Data monster = AssignedMonster;
+        MonsterReferencer.Monsters monster = AssignedMonster;
         AssignedMonster = null;
         gameObject.SetActive(false);
         Destroy(gameObject);

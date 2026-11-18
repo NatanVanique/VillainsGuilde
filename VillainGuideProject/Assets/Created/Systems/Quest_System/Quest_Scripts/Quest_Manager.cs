@@ -13,7 +13,7 @@ public sealed class QuestManager : MonoBehaviour
 
     private int nextRouteIndex;
     private readonly List<QuestMail_Info> questMails = new();
-    private readonly HashSet<CreateMonster_Data> monstersOnTimedMissions = new();
+    private readonly HashSet<MonsterReferencer.Monsters> monstersOnTimedMissions = new();
 
     public void StartResponseTimer(QuestMail_Info mail)
     {
@@ -28,7 +28,7 @@ public sealed class QuestManager : MonoBehaviour
         }
     }
 
-    public void ResolveQuest(CreateQuest_Data quest, CreateMonster_Data monster, bool accepted)
+    public void ResolveQuest(CreateQuest_Data quest, MonsterReferencer.Monsters monster, bool accepted)
     {
         if (!accepted || monstersOnTimedMissions.Add(monster))
         {
@@ -36,7 +36,10 @@ public sealed class QuestManager : MonoBehaviour
         }
     }
 
-    private IEnumerator CompleteMissionAfterDelay(CreateQuest_Data quest, CreateMonster_Data monster, bool accepted)
+    private IEnumerator CompleteMissionAfterDelay(
+        CreateQuest_Data quest,
+        MonsterReferencer.Monsters monster,
+        bool accepted)
     {
         if (quest.timeToDoneSeconds > 0f)
         {
@@ -63,10 +66,8 @@ public sealed class QuestManager : MonoBehaviour
         }
     }
 
-    private static bool MeetsQuestRequirements(CreateQuest_Data quest, CreateMonster_Data profile)
+    private static bool MeetsQuestRequirements(CreateQuest_Data quest, MonsterReferencer.Monsters monster)
     {
-        MonsterReferencer.Monsters monster = Array.Find(Main_Referencer.Instance.monster.monsters,
-            entry => entry != null && entry.monstersProfile == profile);
         if (monster == null)
         {
             return false;
@@ -87,7 +88,7 @@ public sealed class QuestManager : MonoBehaviour
         return passed.Count >= quest.statsToWin;
     }
 
-    public bool IsMonsterOnMission(CreateMonster_Data monster)
+    public bool IsMonsterOnMission(MonsterReferencer.Monsters monster)
     {
         if (monstersOnTimedMissions.Contains(monster))
         {

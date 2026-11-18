@@ -9,7 +9,7 @@ public sealed class JournalManager : MonoBehaviour
     private readonly List<GameObject> instantiatedNews = new();
     private readonly List<GameObject> instantiatedCharacterXp = new();
 
-    private readonly List<(CreateQuest_Data data, MonsterReferencer monster, bool isWinned, bool attempted)> pendingNews = new();
+    private readonly List<(CreateQuest_Data data, MonsterReferencer.Monsters monster, bool isWinned, bool attempted)> pendingNews = new();
 
     private DaycicleManager daycicle;
 
@@ -29,7 +29,7 @@ public sealed class JournalManager : MonoBehaviour
         }
     }
 
-    public void RegisterNew(CreateQuest_Data data, MonsterReferencer monster, bool isWinned, bool attempted = true)
+    public void RegisterNew(CreateQuest_Data data, MonsterReferencer.Monsters monster, bool isWinned, bool attempted = true)
     {
         pendingNews.Add((data, monster, isWinned, attempted));
     }
@@ -57,7 +57,7 @@ public sealed class JournalManager : MonoBehaviour
         Main_Referencer.Instance.manager.questManager.RefreshDiscoveredResults();
     }
 
-    public bool? GetLatestDiscoveredResult(CreateQuest_Data quest, MonsterReferencer monster)
+    public bool? GetLatestDiscoveredResult(CreateQuest_Data quest, MonsterReferencer.Monsters monster)
     {
         var results = Main_Referencer.Instance.value.realizedDayRegister;
 
@@ -79,7 +79,10 @@ public sealed class JournalManager : MonoBehaviour
         return null;
     }
 
-    public void GetDiscoveredMonsters(CreateQuest_Data quest, HashSet<MonsterReferencer> good, HashSet<MonsterReferencer> bad)
+    public void GetDiscoveredMonsters(
+        CreateQuest_Data quest,
+        HashSet<MonsterReferencer.Monsters> good,
+        HashSet<MonsterReferencer.Monsters> bad)
     {
         good.Clear();
         bad.Clear();
@@ -212,7 +215,7 @@ public sealed class JournalManager : MonoBehaviour
         int totalCoins = 0;
         int totalMonsters = 0;
 
-        Dictionary<MonsterReferencer, int> monstersUsed = new();
+        Dictionary<MonsterReferencer.Monsters, int> monstersUsed = new();
 
         foreach (var news in Main_Referencer.Instance.value.realizedDayRegister[day])
         {
