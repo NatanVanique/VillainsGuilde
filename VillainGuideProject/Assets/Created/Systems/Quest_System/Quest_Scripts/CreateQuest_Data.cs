@@ -11,6 +11,11 @@
         public LocalizedString questDescription;
         public QuestType type;
 
+        [Header("Results")] 
+        public LocalizedString goodResult;
+        public LocalizedString badResult;
+
+        
         [Header("Requirements")] 
         public int minPopularity;
         [Range(0f, 1f)] public float winMargin;

@@ -86,16 +86,4 @@
             [Group("References")]
             public Slider slider;
         }
-        
-        private void OnValidate()
-        {
-            if (rewardsNewComponents_Journal == null) return;
-
-            foreach (var reward in rewardsNewComponents_Journal)
-            {
-                if (reward == null) continue;
-
-                reward.displayName = reward.displayName;
-            }
-        }
     }

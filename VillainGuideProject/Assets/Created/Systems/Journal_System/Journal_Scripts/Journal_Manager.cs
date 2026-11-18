@@ -5,9 +5,10 @@ using DG.Tweening;
 public sealed class JournalManager : MonoBehaviour
 {
     private List<GameObject> instantiatedNews = new List<GameObject>();
+    private List<CreateQuest_Data> winnedNews = new List<CreateQuest_Data>();
     private bool rewardsOpen = false;
 
-    public void InstanceNew(CreateQuest_Data data)
+    public void InstanceNew(CreateQuest_Data data, bool isWinned)
     {
         GameObject curNew;
         Transform curContainer;
@@ -30,9 +31,25 @@ public sealed class JournalManager : MonoBehaviour
         }
 
         GameObject newObject = Instantiate(curNew, curContainer);
+
+        if (isWinned)
+        {
+            curNew.GetComponent<JournalNew_Info>().setInfo(data, data.goodResult);
+            RegisterWinned(data);
+        }
+        else
+        {
+            curNew.GetComponent<JournalNew_Info>().setInfo(data, data.badResult);
+        }
+        
         instantiatedNews.Add(newObject);
     }
 
+    public void RegisterWinned(CreateQuest_Data data)
+    {
+        winnedNews.Add(data);
+    }
+    
     public void CleanJournal()
     {
         foreach (GameObject news in instantiatedNews)
@@ -41,6 +58,7 @@ public sealed class JournalManager : MonoBehaviour
         }
 
         instantiatedNews.Clear();
+        winnedNews.Clear();
     }
 
     public void OpenRewards()
