@@ -5,6 +5,8 @@ using TriInspector;
 [DeclareBoxGroup("Monsters", Title = "Monstros")]
 public class MonsterReferencer : MonoBehaviour
 {
+    public const int MaxMonsterLevel = 10;
+
     [System.Serializable]
     [DeclareBoxGroup("Upgrade", Title = "Upgrade")]
     public class statusUpgradeValues
@@ -13,12 +15,12 @@ public class MonsterReferencer : MonoBehaviour
         public CreateMonster_Data.StatsTypes upgradeStatType;
 
         [Group("Upgrade")]
-        [Range(0f, 1f)] public float upgradeValue = 1;
+        [Range(0f, 1f)] public float upgradeValue;
 
         [Group("Upgrade")]
         public float upgradeValueperLevel;
     }
-    
+
     [System.Serializable]
     [DeclareBoxGroup("Profile", Title = "Perfil")]
     [DeclareBoxGroup("Progression", Title = "Progressão")]
@@ -31,49 +33,34 @@ public class MonsterReferencer : MonoBehaviour
         public bool contracted = false;
 
         [Group("Progression")]
-        public int monsterLevel = 0; // max 10
+        public int monsterLevel = 0;
 
         [Group("Progression")]
         [Range(0f, 1f)] public float happiness;
 
         [Group("Progression")]
-        public statusUpgradeValues[] statusUpgrade;
-    }
-    
-    [Group("Monsters")]
-    public Monsters[] monsters;
-    
-    private void OnValidate()
-    {
-        var types = (CreateMonster_Data.StatsTypes[])
-            Enum.GetValues(typeof(CreateMonster_Data.StatsTypes));
+        public statusUpgradeValues[] statusUpgrade = Array.Empty<statusUpgradeValues>();
 
-        if (monsters == null) return;
-
-        foreach (var monster in monsters)
+        public float GetStatValue(CreateMonster_Data.StatsTypes type)
         {
-            if (monster == null) continue;
+            statusUpgradeValues upgrade = statusUpgrade == null
+                ? null
+                : Array.Find(statusUpgrade, stat => stat != null && stat.upgradeStatType == type);
+            return Mathf.Clamp01(GetBaseStatValue(type) + (upgrade?.upgradeValue ?? 0f));
+        }
 
-            if (monster.statusUpgrade == null ||
-                monster.statusUpgrade.Length != types.Length)
-                Array.Resize(ref monster.statusUpgrade, types.Length);
-
-            for (int i = 0; i < types.Length; i++)
+        private float GetBaseStatValue(CreateMonster_Data.StatsTypes type)
+        {
+            if (monstersProfile.baseStats == null)
             {
-                monster.statusUpgrade[i] ??= new statusUpgradeValues();
-                monster.statusUpgrade[i].upgradeStatType = types[i];
-
-                if (monster.monstersProfile == null ||
-                    monster.monstersProfile.baseStats == null ||
-                    i >= monster.monstersProfile.baseStats.Length ||
-                    monster.monstersProfile.baseStats[i] == null)
-                    continue;
-
-                float baseValue = monster.monstersProfile.baseStats[i].statValue;
-                float maxUpgrade = 1f - baseValue;
-
-                monster.statusUpgrade[i].upgradeValueperLevel = maxUpgrade / 10f;
+                return 0f;
             }
+
+            var stat = Array.Find(monstersProfile.baseStats, entry => entry != null && entry.statType == type);
+            return Mathf.Clamp01(stat?.statValue ?? 0f);
         }
     }
+
+    [Group("Monsters")]
+    public Monsters[] monsters = Array.Empty<Monsters>();
 }

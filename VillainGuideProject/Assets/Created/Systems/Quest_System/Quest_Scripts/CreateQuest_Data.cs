@@ -20,6 +20,7 @@
         public int minPopularity;
         [Range(0f, 1f)] public float winMargin;
         public float timeToDoneSeconds;
+        [Min(0f)] public float timeToAcceptSeconds;
         public CreateMonster_Data.MonstersPowers[] powersToWin;
         public int statsToWin;
         public statusRequirementsValues[]  statusRequirements;

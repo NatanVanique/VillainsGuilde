@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -10,6 +12,101 @@ public sealed class QuestManager : MonoBehaviour
     private const float InitialVisionFadeDuration = 0.2f;
 
     private int nextRouteIndex;
+    private readonly List<QuestMail_Info> questMails = new();
+    private readonly HashSet<CreateMonster_Data> monstersOnTimedMissions = new();
+
+    public void StartResponseTimer(QuestMail_Info mail)
+    {
+        StartCoroutine(WatchResponseTimer(mail));
+    }
+
+    private static IEnumerator WatchResponseTimer(QuestMail_Info mail)
+    {
+        while (mail != null && mail.UpdateResponseTimer())
+        {
+            yield return null;
+        }
+    }
+
+    public void ResolveQuest(CreateQuest_Data quest, CreateMonster_Data monster, bool accepted)
+    {
+        if (!accepted || monstersOnTimedMissions.Add(monster))
+        {
+            StartCoroutine(CompleteMissionAfterDelay(quest, monster, accepted));
+        }
+    }
+
+    private IEnumerator CompleteMissionAfterDelay(CreateQuest_Data quest, CreateMonster_Data monster, bool accepted)
+    {
+        if (quest.timeToDoneSeconds > 0f)
+        {
+            yield return new WaitForSeconds(quest.timeToDoneSeconds);
+        }
+
+        ManagerReferencer managers = Main_Referencer.Instance.manager;
+        bool succeeded = accepted && MeetsQuestRequirements(quest, monster);
+        if (accepted)
+        {
+            monstersOnTimedMissions.Remove(monster);
+            managers.monsterManager.RefreshMissionAvailability();
+        }
+
+        managers.journalManager.RegisterNew(quest, monster, succeeded, attempted: accepted);
+    }
+
+    public void RefreshDiscoveredResults()
+    {
+        Main_Referencer.Instance.visual.questMailContainer_VoiceMail.GetComponentsInChildren(true, questMails);
+        foreach (QuestMail_Info mail in questMails)
+        {
+            mail.RefreshDiscoveredResults();
+        }
+    }
+
+    private static bool MeetsQuestRequirements(CreateQuest_Data quest, CreateMonster_Data profile)
+    {
+        MonsterReferencer.Monsters monster = Array.Find(Main_Referencer.Instance.monster.monsters,
+            entry => entry != null && entry.monstersProfile == profile);
+        if (monster == null)
+        {
+            return false;
+        }
+
+        var passed = new HashSet<CreateMonster_Data.StatsTypes>();
+        if (quest.statusRequirements != null)
+        {
+            foreach (CreateQuest_Data.statusRequirementsValues requirement in quest.statusRequirements)
+            {
+                if (requirement != null && monster.GetStatValue(requirement.requerimenttype) >= requirement.requerimentValue)
+                {
+                    passed.Add(requirement.requerimenttype);
+                }
+            }
+        }
+
+        return passed.Count >= quest.statsToWin;
+    }
+
+    public bool IsMonsterOnMission(CreateMonster_Data monster)
+    {
+        if (monstersOnTimedMissions.Contains(monster))
+        {
+            return true;
+        }
+
+        Main_Referencer.Instance.visual.questMailContainer_VoiceMail
+            .GetComponentsInChildren(true, questMails);
+
+        foreach (QuestMail_Info mail in questMails)
+        {
+            if (mail.AssignedMonster == monster)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 
     public void Start()
     {
@@ -32,6 +129,7 @@ public sealed class QuestManager : MonoBehaviour
     
     public void CloseVoiceMail()
     {
+        Main_Referencer.Instance.manager.monsterManager.CloseSelection();
         VisualReferencer visual = Main_Referencer.Instance.visual;
         CanvasGroup initialVisionGroup = visual.firstVision.GetComponent<CanvasGroup>();
         DOTween.Kill(initialVisionGroup);
@@ -100,6 +198,11 @@ public sealed class QuestManager : MonoBehaviour
         else if (type == CreateQuest_Data.QuestType.Route)
         {
             data = GetNextUncalledRouteQuest();
+        }
+
+        if (data == null)
+        {
+            return;
         }
 
         GameObject mailObject = Instantiate(

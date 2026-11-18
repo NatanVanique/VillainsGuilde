@@ -22,7 +22,7 @@ public class CreateMonster_Data : ScriptableObject
     }
     
     [Header("Stats")]
-    public statsInfos[] baseStats;
+    public statsInfos[] baseStats = Array.Empty<statsInfos>();
 
     [Header("Power")] 
     public MonstersPowers mainPower; 
@@ -45,19 +45,5 @@ public class CreateMonster_Data : ScriptableObject
         delicacy,
         luck,
         enthusiasm
-    }
-    private void OnValidate()
-    {
-        //numero de status igual elementos do enum
-        StatsTypes[] types = (StatsTypes[])Enum.GetValues(typeof(StatsTypes));
-
-        if (baseStats == null || baseStats.Length != types.Length)
-            Array.Resize(ref baseStats, types.Length);
-
-        for (int i = 0; i < types.Length; i++)
-        {
-            baseStats[i] ??= new statsInfos();
-            baseStats[i].statType = types[i];
-        }
     }
 }

@@ -33,10 +33,17 @@ MonoBehaviour:
   type: 0
   minPopularity: 0
   winMargin: 0
-  timeToDoneSeconds: 0
+  timeToDoneSeconds: 25
+  timeToAcceptSeconds: 30
   powersToWin: 
-  statsToWin: 0
-  statusRequirements: []
+  statsToWin: 2
+  statusRequirements:
+  - requerimenttype: 0
+    requerimentValue: 0.45
+  - requerimenttype: 2
+    requerimentValue: 0.50
+  - requerimenttype: 4
+    requerimentValue: 0.30
   hasReputationXpReward: 0
   reputationXpEarned: 0
   hasCharacterXpReward: 0

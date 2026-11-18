@@ -6,6 +6,8 @@ public sealed class DaycicleManager : MonoBehaviour
     [Header("System Variables")]
     private float curtime;
 
+    public event Action BeforeOfficeDayStart;
+
     public float NormalizedDayProgress
     {
         get
@@ -44,6 +46,11 @@ public sealed class DaycicleManager : MonoBehaviour
         }
         else Main_Referencer.Instance.value.currentHour_HourValues++;
         curtime = 0;
+        ValuesReferencer values = Main_Referencer.Instance.value;
+        if (values.currentHour_HourValues == values.beforeOfficeDayStartHour_TimeCalls)
+        {
+            BeforeOfficeDayStart?.Invoke();
+        }
     }
     
     private void DayAdd()
