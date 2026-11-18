@@ -1,6 +1,7 @@
 using TriInspector;
 using UnityEngine;
 using UnityEngine.Localization;
+using System.Collections.Generic;
 
 [DeclareFoldoutGroup("Hour Values", Expanded = true)]
 [DeclareFoldoutGroup("Time Calls", Expanded = true)]
@@ -34,6 +35,7 @@ public class ValuesReferencer : MonoBehaviour
     
     [Group("Quest Values")]
     public int  daysToStartRouteQuest_QuestValues;
+    public List<List<(CreateQuest_Data data, CreateMonster_Data monster, bool isWinned )>> realizedDayRegister = new();
     
     [Group("Journal Values")] public LocalizedString  DailyNewsText_JournalValues;
     [Group("Journal Values")] public LocalizedString  RewardsText_JournalValues;

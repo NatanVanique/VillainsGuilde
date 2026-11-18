@@ -5,25 +5,24 @@ using UnityEditor.Localization.Plugins.XLIFF.V20;
 
 public sealed class JournalManager : MonoBehaviour
 {
-    private List<GameObject> instantiatedNews = new List<GameObject>();
-    private List<CreateQuest_Data> winnedNews = new List<CreateQuest_Data>();
-    
-    public List<List<(CreateQuest_Data data, CreateMonster_Data monster, bool isWinned )>> dayNewsRegister = new();
+    private List<GameObject> instantiatedNews;
     
     private bool rewardsOpen = false;
 
     public void RegisterNew(CreateQuest_Data data, CreateMonster_Data monster, bool isWinned )
     {
-        dayNewsRegister.Add(new ());
-        dayNewsRegister[^1].Add((data, monster, isWinned));
+        Main_Referencer.Instance.value.realizedDayRegister.Add(new ());
+        Main_Referencer.Instance.value.realizedDayRegister[^1].Add((data, monster, isWinned));
     }
     
     public void InstanceNew(int day)
     {
+        CleanJournal();
+        
         GameObject curNew;
         Transform curContainer;
 
-        foreach (var news  in dayNewsRegister[day])
+        foreach (var news  in Main_Referencer.Instance.value.realizedDayRegister[day])
         {
             if (news.data.type == CreateQuest_Data.QuestType.Single)
             {
@@ -41,8 +40,9 @@ public sealed class JournalManager : MonoBehaviour
             {
                 return;
             }
-
+            
             GameObject newObject = Instantiate(curNew, curContainer);
+            instantiatedNews.Add(newObject);
 
             if (news.isWinned)
             {
@@ -53,18 +53,14 @@ public sealed class JournalManager : MonoBehaviour
                 curNew.GetComponent<JournalNew_Info>().setInfo(news.data, news.data.badResult);
             }
         }
-        
     }
     
     public void CleanJournal()
     {
-        foreach (GameObject news in instantiatedNews)
+        foreach (var news in instantiatedNews)
         {
             Destroy(news);
         }
-
-        instantiatedNews.Clear();
-        winnedNews.Clear();
     }
 
     public void OpenRewards()
@@ -116,20 +112,20 @@ public sealed class JournalManager : MonoBehaviour
         OpenRewards();
     }
 
-    public void UpdateRewards()
+    public void UpdateRewards(int day)
     {
         int totalCharacterXp = 0;
         int totalPopularityXp = 0;
         int totalCoins = 0;
         int totalMonsters = 0;
         
-        foreach (CreateQuest_Data data in winnedNews)
+        foreach (var news in Main_Referencer.Instance.value.realizedDayRegister[day])
         {
-            totalCharacterXp += data.characterXpEarned;
-            totalPopularityXp += data.popularityXpEarned;
-            totalCoins += data.coinsEarned;
+            totalCharacterXp += news.data.characterXpEarned;
+            totalPopularityXp += news.data.popularityXpEarned;
+            totalCoins += news.data.coinsEarned;
 
-            if (data.hasCharacterReward)
+            if (news.data.hasCharacterReward)
             {
                 totalMonsters++;
             }
