@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEditor.Localization.Plugins.XLIFF.V20;
+using UnityEngine.UI;
 
 public sealed class JournalManager : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public sealed class JournalManager : MonoBehaviour
     
     private bool rewardsOpen = false;
 
-    public void RegisterNew(CreateQuest_Data data, CreateMonster_Data monster, bool isWinned )
+    public void RegisterNew(CreateQuest_Data data, MonsterReferencer monster, bool isWinned )
     {
         Main_Referencer.Instance.value.realizedDayRegister.Add(new ());
         Main_Referencer.Instance.value.realizedDayRegister[^1].Add((data, monster, isWinned));
@@ -114,29 +115,30 @@ public sealed class JournalManager : MonoBehaviour
 
     public void UpdateRewards(int day)
     {
-        int totalCharacterXp = 0;
         int totalPopularityXp = 0;
         int totalCoins = 0;
         int totalMonsters = 0;
+        Dictionary<MonsterReferencer, int> monstersUsed = new();
         
-        foreach (var news in Main_Referencer.Instance.value.realizedDayRegister[day])
-        {
-            totalCharacterXp += news.data.characterXpEarned;
-            totalPopularityXp += news.data.popularityXpEarned;
-            totalCoins += news.data.coinsEarned;
-
-            if (news.data.hasCharacterReward)
-            {
-                totalMonsters++;
-            }
-        }
         
         //CharactersXP
-        Main_Referencer.Instance.visual.rewardsNewComponents_Journal[0].progressSlider.value = totalCharacterXp;
+        foreach (var news in Main_Referencer.Instance.value.realizedDayRegister[day])
+        {
+            if (news.monster == null) continue;
+
+            monstersUsed.TryAdd(news.monster, 0);
+            monstersUsed[news.monster] += news.isWinned ? news.data.characterXpEarned : 0;
+        }
         
-        //adicionar verificação de se xp atingiu o maximo aumenta o nivel e continua somando xp
-        
-        //Tem que pegar o nivel do monstro pra mostrar, mas como?
+        foreach (var monster in monstersUsed)
+        {
+            GameObject obj = Instantiate(
+                Main_Referencer.Instance.visual.characterXpElement_Journal,
+                Main_Referencer.Instance.visual.rewardsNew_Journal.transform.parent
+            );
+
+            obj.GetComponentInChildren<Slider>().value = monster.Value;
+        }
         
         //PopularityXp
         Main_Referencer.Instance.visual.rewardsNewComponents_Journal[1].progressSlider.value = totalPopularityXp;

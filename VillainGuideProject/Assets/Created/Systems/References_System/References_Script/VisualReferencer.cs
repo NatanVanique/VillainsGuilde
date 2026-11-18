@@ -61,9 +61,8 @@
         [Group("Journal")] public Button tabButton_Journal;
         [Group("Journal")] public LocalizeStringEvent tabText_Journal;
         [Group("Journal")] public GameObject rewardsNew_Journal;
-        [Group("Journal")]
-        [ListDrawerSettings(ShowElementLabels = true)]
-        public RewardComponenet[] rewardsNewComponents_Journal;
+        [Group("Journal")] public GameObject characterXpElement_Journal;
+        [Group("Journal")] [ListDrawerSettings(ShowElementLabels = true)] public RewardComponenet[] rewardsNewComponents_Journal;
         
         [System.Serializable]
         [DeclareFoldoutGroup("References", Expanded = true)]

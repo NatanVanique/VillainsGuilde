@@ -35,7 +35,7 @@ public class ValuesReferencer : MonoBehaviour
     
     [Group("Quest Values")]
     public int  daysToStartRouteQuest_QuestValues;
-    public List<List<(CreateQuest_Data data, CreateMonster_Data monster, bool isWinned )>> realizedDayRegister = new();
+    public List<List<(CreateQuest_Data data, MonsterReferencer monster, bool isWinned )>> realizedDayRegister = new();
     
     [Group("Journal Values")] public LocalizedString  DailyNewsText_JournalValues;
     [Group("Journal Values")] public LocalizedString  RewardsText_JournalValues;
