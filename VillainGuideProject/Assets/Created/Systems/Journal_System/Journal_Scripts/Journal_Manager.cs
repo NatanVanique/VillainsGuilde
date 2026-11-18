@@ -1,23 +1,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using UnityEditor.Localization.Plugins.XLIFF.V20;
 
 public sealed class JournalManager : MonoBehaviour
 {
-    private List<GameObject> instantiatedNews;
+    private readonly List<GameObject> instantiatedNews = new();
     
     private bool rewardsOpen = false;
 
     public void RegisterNew(CreateQuest_Data data, CreateMonster_Data monster, bool isWinned )
     {
-        Main_Referencer.Instance.value.realizedDayRegister.Add(new ());
-        Main_Referencer.Instance.value.realizedDayRegister[^1].Add((data, monster, isWinned));
+        ValuesReferencer values = Main_Referencer.Instance.value;
+        int day = values.currentDay_HourValues;
+        while (values.realizedDayRegister.Count <= day)
+        {
+            values.realizedDayRegister.Add(new());
+        }
+
+        values.realizedDayRegister[day].Add((data, monster, isWinned));
+        InstanceNew(day);
     }
     
     public void InstanceNew(int day)
     {
         CleanJournal();
+        if (day < 0 || day >= Main_Referencer.Instance.value.realizedDayRegister.Count)
+        {
+            return;
+        }
         
         GameObject curNew;
         Transform curContainer;
@@ -44,13 +54,12 @@ public sealed class JournalManager : MonoBehaviour
             GameObject newObject = Instantiate(curNew, curContainer);
             instantiatedNews.Add(newObject);
 
-            if (news.isWinned)
+            JournalNew_Info info = newObject.GetComponent<JournalNew_Info>();
+            var result = news.isWinned ? news.data.goodResult : news.data.badResult;
+            info.setInfo(news.data, result);
+            if (result == null || result.IsEmpty)
             {
-                curNew.GetComponent<JournalNew_Info>().setInfo(news.data , news.data.goodResult);
-            }
-            else
-            {
-                curNew.GetComponent<JournalNew_Info>().setInfo(news.data, news.data.badResult);
+                info.newDescription.OnUpdateString.Invoke(news.isWinned ? "Mission succeeded." : "Mission failed.");
             }
         }
     }
@@ -59,8 +68,10 @@ public sealed class JournalManager : MonoBehaviour
     {
         foreach (var news in instantiatedNews)
         {
+            news.SetActive(false);
             Destroy(news);
         }
+        instantiatedNews.Clear();
     }
 
     public void OpenRewards()
@@ -121,6 +132,11 @@ public sealed class JournalManager : MonoBehaviour
         
         foreach (var news in Main_Referencer.Instance.value.realizedDayRegister[day])
         {
+            if (!news.isWinned)
+            {
+                continue;
+            }
+
             totalCharacterXp += news.data.characterXpEarned;
             totalPopularityXp += news.data.popularityXpEarned;
             totalCoins += news.data.coinsEarned;

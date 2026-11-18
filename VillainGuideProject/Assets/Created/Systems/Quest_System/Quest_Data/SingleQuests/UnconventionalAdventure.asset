@@ -32,10 +32,18 @@ MonoBehaviour:
     m_LocalVariables: []
   minPopularity: 0
   winMargin: 0
-  timeToDoneSeconds: 0
+  timeToDoneSeconds: 40
   powersToWin: 
-  statsToWin: 0
-  statusRequirements: []
+  statsToWin: 2
+  statusRequirements:
+  - requerimenttype: 1
+    requerimentValue: 0.35
+  - requerimenttype: 4
+    requerimentValue: 0.30
+  - requerimenttype: 6
+    requerimentValue: 0.35
+  - requerimenttype: 7
+    requerimentValue: 0.40
   reputationXpEarned: 0
   characterXpEarned: 0
   coinsEarned: 0

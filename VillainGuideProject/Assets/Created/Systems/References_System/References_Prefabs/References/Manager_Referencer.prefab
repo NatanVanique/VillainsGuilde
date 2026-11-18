@@ -46,4 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ManagerReferencer
   questManager: {fileID: 0}
   monsterManager: {fileID: 0}
+  journalManager: {fileID: 0}
   dayCicleManager: {fileID: 0}

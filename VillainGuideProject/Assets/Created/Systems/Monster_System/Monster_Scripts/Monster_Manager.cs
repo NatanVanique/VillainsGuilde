@@ -109,6 +109,14 @@ public sealed class MonsterManager : MonoBehaviour
         return isOnMission;
     }
 
+    public void RefreshMissionAvailability()
+    {
+        if (Main_Referencer.Instance.visual.selectionCanvas_MonsterSelection.activeSelf)
+        {
+            UpdateSendButton(availableMonsters[selectedIndex].monstersProfile);
+        }
+    }
+
     private void RefreshSelection()
     {
         MonsterReferencer.Monsters monster = availableMonsters[selectedIndex];

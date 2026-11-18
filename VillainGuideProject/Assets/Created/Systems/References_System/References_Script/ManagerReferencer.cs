@@ -3,6 +3,7 @@ using TriInspector;
 
 [DeclareBoxGroup("Quest", Title = "Quest")]
 [DeclareBoxGroup("Monster", Title = "Monster")]
+[DeclareBoxGroup("Journal", Title = "Journal")]
 [DeclareBoxGroup("Hour", Title = "Hour")]
 public class ManagerReferencer : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class ManagerReferencer : MonoBehaviour
 
     [Group("Monster")]
     public MonsterManager monsterManager;
+
+    [Group("Journal")]
+    public JournalManager journalManager;
     
     [Group("Hour")]
     public DaycicleManager dayCicleManager;

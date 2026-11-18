@@ -17,6 +17,8 @@ public class QuestMail_Info : MonoBehaviour
     [SerializeField] private LocalizeStringEvent mailName;
     [SerializeField] Button infoButton;
     [SerializeField] Button monstersButton;
+    [SerializeField] private Button acceptButton;
+    [SerializeField] private Button declineButton;
     [SerializeField] private RewardIcon_Element rewardPrefab;
     [SerializeField] private Requirement_Element requirementPrefab;
 
@@ -26,6 +28,7 @@ public class QuestMail_Info : MonoBehaviour
     private int infoRequestId;
     private Transform requirementContent;
     private Transform rewardContent;
+    private bool resolved;
 
     public CreateMonster_Data AssignedMonster { get; private set; }
 
@@ -41,6 +44,9 @@ public class QuestMail_Info : MonoBehaviour
         Main_Referencer.Instance.visual.returnInfoButton.onClick.AddListener(closeInfo);
         infoButton.onClick.AddListener(openInfo);
         monstersButton.onClick.AddListener(openMonsters);
+        acceptButton.onClick.AddListener(AcceptQuest);
+        declineButton.onClick.AddListener(DeclineQuest);
+        acceptButton.interactable = false;
         
         questData = data;
         questName = questData.questName;
@@ -149,10 +155,41 @@ public class QuestMail_Info : MonoBehaviour
     public void AssignMonster(CreateMonster_Data monster)
     {
         AssignedMonster = monster;
+        acceptButton.interactable = true;
         Image icon = monstersButton.image;
         icon.sprite = monster.icon;
         icon.color = Color.white;
         icon.preserveAspect = true;
+    }
+
+    private void AcceptQuest()
+    {
+        if (AssignedMonster != null)
+        {
+            ResolveQuest(accepted: true);
+        }
+    }
+
+    private void DeclineQuest()
+    {
+        ResolveQuest(accepted: false);
+    }
+
+    private void ResolveQuest(bool accepted)
+    {
+        if (resolved)
+        {
+            return;
+        }
+
+        resolved = true;
+        Main_Referencer references = Main_Referencer.Instance;
+        references.visual.returnInfoButton.onClick.RemoveListener(closeInfo);
+        CreateMonster_Data monster = AssignedMonster;
+        AssignedMonster = null;
+        gameObject.SetActive(false);
+        Destroy(gameObject);
+        references.manager.questManager.ResolveQuest(questData, monster, accepted);
     }
     
     public void SetInfoState(bool isInfoOpen)

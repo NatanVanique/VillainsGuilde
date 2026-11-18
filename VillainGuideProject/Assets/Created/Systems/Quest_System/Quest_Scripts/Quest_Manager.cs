@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -12,9 +13,67 @@ public sealed class QuestManager : MonoBehaviour
 
     private int nextRouteIndex;
     private readonly List<QuestMail_Info> questMails = new();
+    private readonly HashSet<CreateMonster_Data> monstersOnTimedMissions = new();
+
+    public void ResolveQuest(CreateQuest_Data quest, CreateMonster_Data monster, bool accepted)
+    {
+        if (!accepted)
+        {
+            Main_Referencer.Instance.manager.journalManager.RegisterNew(quest, monster, false);
+            return;
+        }
+
+        if (monstersOnTimedMissions.Add(monster))
+        {
+            StartCoroutine(CompleteMissionAfterDelay(quest, monster));
+        }
+    }
+
+    private IEnumerator CompleteMissionAfterDelay(CreateQuest_Data quest, CreateMonster_Data monster)
+    {
+        if (quest.timeToDoneSeconds > 0f)
+        {
+            yield return new WaitForSeconds(quest.timeToDoneSeconds);
+        }
+
+        bool succeeded = MeetsQuestRequirements(quest, monster);
+        monstersOnTimedMissions.Remove(monster);
+        ManagerReferencer managers = Main_Referencer.Instance.manager;
+        managers.monsterManager.RefreshMissionAvailability();
+        managers.journalManager.RegisterNew(quest, monster, succeeded);
+    }
+
+    private static bool MeetsQuestRequirements(CreateQuest_Data quest, CreateMonster_Data profile)
+    {
+        MonsterReferencer.Monsters monster = Array.Find(Main_Referencer.Instance.monster.monsters,
+            entry => entry != null && entry.monstersProfile == profile);
+        if (monster == null)
+        {
+            return false;
+        }
+
+        var passed = new HashSet<CreateMonster_Data.StatsTypes>();
+        if (quest.statusRequirements != null)
+        {
+            foreach (CreateQuest_Data.statusRequirementsValues requirement in quest.statusRequirements)
+            {
+                if (requirement != null && monster.GetStatValue(requirement.requerimenttype) >= requirement.requerimentValue)
+                {
+                    passed.Add(requirement.requerimenttype);
+                }
+            }
+        }
+
+        return passed.Count >= quest.statsToWin;
+    }
 
     public bool IsMonsterOnMission(CreateMonster_Data monster)
     {
+        if (monstersOnTimedMissions.Contains(monster))
+        {
+            return true;
+        }
+
         Main_Referencer.Instance.visual.questMailContainer_VoiceMail
             .GetComponentsInChildren(true, questMails);
 
@@ -119,6 +178,11 @@ public sealed class QuestManager : MonoBehaviour
         else if (type == CreateQuest_Data.QuestType.Route)
         {
             data = GetNextUncalledRouteQuest();
+        }
+
+        if (data == null)
+        {
+            return;
         }
 
         GameObject mailObject = Instantiate(

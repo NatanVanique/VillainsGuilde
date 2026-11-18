@@ -30,12 +30,21 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  type: 1
   minPopularity: 0
   winMargin: 0
-  timeToDoneSeconds: 0
+  timeToDoneSeconds: 70
   powersToWin: 
-  statsToWin: 0
-  statusRequirements: []
+  statsToWin: 3
+  statusRequirements:
+  - requerimenttype: 0
+    requerimentValue: 0.45
+  - requerimenttype: 2
+    requerimentValue: 0.55
+  - requerimenttype: 4
+    requerimentValue: 0.32
+  - requerimenttype: 6
+    requerimentValue: 0.35
   reputationXpEarned: 0
   characterXpEarned: 0
   coinsEarned: 0
