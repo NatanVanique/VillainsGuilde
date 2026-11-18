@@ -25,8 +25,8 @@
         public statusRequirementsValues[]  statusRequirements;
 
         [Header("Rewards")] 
-        public bool hasReputationXpReward;
-        public int reputationXpEarned;
+        public bool haspopularityXpReward;
+        public int popularityXpEarned;
         public bool hasCharacterXpReward;
         public int characterXpEarned;
         public bool hasCoinsReward;
