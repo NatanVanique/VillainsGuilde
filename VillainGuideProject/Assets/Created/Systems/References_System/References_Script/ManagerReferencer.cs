@@ -5,12 +5,11 @@ using TriInspector;
 [DeclareBoxGroup("Hour", Title = "Hour")]
 public class ManagerReferencer : MonoBehaviour
 {
-    [Group("Quest")]
-    public QuestManager questManager;
+    [Group("Quest")] public QuestManager questManager;
     
-    [Group("Hour")]
-    public DaycicleManager dayCicleManager;
+    [Group("Hour")] public DaycicleManager dayCicleManager;
     
-    [Group("Phone")]
-    public TelephoneManager telephoneManager;
+    [Group("Phone")] public TelephoneManager telephoneManager;
+    
+    [Group("Room")] public RoomManager roomManager;
 }

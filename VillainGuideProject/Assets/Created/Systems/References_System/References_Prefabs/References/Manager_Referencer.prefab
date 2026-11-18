@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ManagerReferencer
   questManager: {fileID: 0}
   dayCicleManager: {fileID: 0}
+  roomManager: {fileID: 0}
