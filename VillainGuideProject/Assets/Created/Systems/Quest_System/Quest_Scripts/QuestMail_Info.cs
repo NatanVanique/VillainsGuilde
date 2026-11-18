@@ -185,6 +185,7 @@ public class QuestMail_Info : MonoBehaviour
     public void openMonsters()
     {
         Main_Referencer.Instance.manager.monsterManager.OpenSelection(this);
+        Main_Referencer.Instance.manager.roomManager.GoToScreen(-1);
     }
 
     public void AssignMonster(CreateMonster_Data monster)
