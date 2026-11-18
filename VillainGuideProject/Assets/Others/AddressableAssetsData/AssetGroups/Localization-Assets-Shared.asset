@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-Shared
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Localization-Assets-Shared
+  m_GUID: 63fd679662c1e794488ddccd7d338cb5
+  m_SerializeEntries:
+  - m_GUID: 2bb221462f13b2a4bbe55f6562e8f818
+    m_Address: Assets/Created/Localization/Ui/Ui Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 33275aad986aaab4ea27a58988ba64f5
+    m_Address: Assets/Localization/QuestRoutes/Name/RouteQuests_Name Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4cd80b71b36c934885926a53300db9b
+    m_Address: Assets/Localization/SingleQuests/Name/SingleQuests_Name Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c855c3fc76d33a846bf383ba1f48b585
+    m_Address: Assets/Localization/SingleQuests/Describes/SingleQuests_Describes
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c9c5d91d87e761d4cb47b0dbd7b242bc
+    m_Address: Assets/Localization/QuestRoutes/Describes/RouteQuests_Describes Shared
+      Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 9a6257aacc0d25d4fbbfc41c9f870caa, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: d840cc4d6c61bf340ad74330e401eb86, type: 2}
+    - {fileID: 11400000, guid: 69b2f069d6ab5a74a8d44a46cedf5a35, type: 2}
+    - {fileID: 11400000, guid: bdb190d2ad7ed594bbb7668a22bd9c15, type: 2}

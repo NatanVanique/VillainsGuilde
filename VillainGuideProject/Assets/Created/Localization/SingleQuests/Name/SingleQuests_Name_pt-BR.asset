@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: SingleQuests_Name_pt-BR
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: a4cd80b71b36c934885926a53300db9b, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 37933178880
+    m_Localized: "A Coisa no Por\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316224
+    m_Localized: Um Monstro Sob os Holofotes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316225
+    m_Localized: Um Grito das Profundezas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316226
+    m_Localized: Monstros a Bordo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316227
+    m_Localized: "Monstro N\xE3o \xE9 Inimigo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316228
+    m_Localized: Deu a louca na macacada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316229
+    m_Localized: "O roubo dos p\xE3es"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316230
+    m_Localized: "Dan\xE7ando no desaparecimento"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316231
+    m_Localized: Picles?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316232
+    m_Localized: Sabores da adolescencia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316233
+    m_Localized: De volta aos 17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316234
+    m_Localized: Unha destrutiva
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316235
+    m_Localized: Uma aventura nada convencional
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316236
+    m_Localized: Gravata indestrutivel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316237
+    m_Localized: Coroa maldita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316238
+    m_Localized: Papagaio fofoqueiro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316239
+    m_Localized: Vai um Ursinho ai?
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

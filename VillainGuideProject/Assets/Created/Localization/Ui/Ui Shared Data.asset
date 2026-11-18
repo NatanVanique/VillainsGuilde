@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Ui Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Ui
+  m_TableCollectionNameGuidString: 2bb221462f13b2a4bbe55f6562e8f818
+  m_Entries:
+  - m_Id: 33852121088
+    m_Key: DailyNews_Ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34032476160
+    m_Key: Rewards_Ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6130377842688
+    m_Key: ClickNews_Ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6130386231296
+    m_Key: ClickRewards_Ui
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4562753752256479325
+  references:
+    version: 2
+    RefIds:
+    - rid: 4562753752256479325
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1794942084181

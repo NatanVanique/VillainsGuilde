@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Ui_es
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 2bb221462f13b2a4bbe55f6562e8f818, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 33852121088
+    m_Localized: Diario Hoy!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34032476160
+    m_Localized: Recompensas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6130377842688
+    m_Localized: Clic para ver Noticias
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6130386231296
+    m_Localized: Clic para ver Recompensas
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

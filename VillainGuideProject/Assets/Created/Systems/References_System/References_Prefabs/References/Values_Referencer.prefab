@@ -1,0 +1,163 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2874944822726039772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4947229552218497469}
+  - component: {fileID: 2817395850304851651}
+  m_Layer: 0
+  m_Name: Values_Referencer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4947229552218497469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2874944822726039772}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2817395850304851651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2874944822726039772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f73a89c2aa37f40ab3fe7f257af405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  dayGradient_HourValues:
+    serializedVersion: 2
+    key0: {r: 0.27450982, g: 0.16470589, b: 0.4509804, a: 1}
+    key1: {r: 0.27450982, g: 0.16470589, b: 0.4509804, a: 1}
+    key2: {r: 0.8901961, g: 0.7189515, b: 0.35294116, a: 0}
+    key3: {r: 0.34901962, g: 0.8901961, b: 0.87058824, a: 0}
+    key4: {r: 0.34901962, g: 0.8901961, b: 0.87058824, a: 0}
+    key5: {r: 0.8901961, g: 0.42745098, b: 0.3529412, a: 0}
+    key6: {r: 0.27450982, g: 0.16470589, b: 0.4509804, a: 0}
+    key7: {r: 0.27450982, g: 0.16470589, b: 0.4509804, a: 0}
+    ctime0: 0
+    ctime1: 13107
+    ctime2: 19661
+    ctime3: 26214
+    ctime4: 45875
+    ctime5: 52428
+    ctime6: 58982
+    ctime7: 65535
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 8
+    m_NumAlphaKeys: 2
+  currentHour_HourValues: 0
+  dayInMinutes_HourValues: 1
+  currentDay_HourValues: 1
+  beforeOfficeDayStartHour_TimeCalls: 6
+  OfficeDayStartHour_TimeCalls: 8
+  OfficeNightStartHour_TimeCalls: 18
+  velocity_Bars: 0.5
+  popularityXp_Popularity: 0
+  maxPopularityLevel_Popularity: 10
+  popularityLevel_Popularity: 1
+  telephoneRinging: 0
+  callChancePerHour_TelephoneValues:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.3
+      value: 0
+      inSlope: -0
+      outSlope: 5.0000005
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 5.0000005
+      outSlope: -4.000001
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.65
+      value: 0.4
+      inSlope: -4.000001
+      outSlope: -1.1871023
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0050049
+      value: -0.021427155
+      inSlope: -1.1871023
+      outSlope: -1.1871023
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  popularitysToNewTry_TelephoneValues: 3
+  hoursToTryTick_TelephoneValues: 3
+  ringingRepeats_TelephoneValues: 3
+  daysToStartRouteQuest_QuestValues: 2
+  DailyNewsText_JournalValues:
+    m_TableReference:
+      m_TableCollectionName: GUID:2bb221462f13b2a4bbe55f6562e8f818
+    m_TableEntryReference:
+      m_KeyId: 33852121088
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  RewardsText_JournalValues:
+    m_TableReference:
+      m_TableCollectionName: GUID:2bb221462f13b2a4bbe55f6562e8f818
+    m_TableEntryReference:
+      m_KeyId: 34032476160
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

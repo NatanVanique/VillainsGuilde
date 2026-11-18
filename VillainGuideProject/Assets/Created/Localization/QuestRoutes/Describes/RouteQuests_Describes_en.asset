@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: RouteQuests_Describes_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: c9c5d91d87e761d4cb47b0dbd7b242bc, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 57986146304
+    m_Localized: 'The Mayor is charismatic on camera, but his career hides allegations
+      and conveniently forgotten scandals, all thanks to his impeccable assistant,
+      Miss Penelope.
+
+
+      Today, however, Penelope called in a panic: the Mayor''s
+      most prized possession has vanished. Not a document. Not evidence. His cat.
+
+
+      Prince
+      Frederick, a Ragdoll with a royal temperament and zero patience, disappeared
+      inside the official residence. The Mayor is breaking down, the press is sniffing
+      around, and Penelope needs him found before the story goes viral.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58262970368
+    m_Localized: "During a visit to Santa Esperan\xE7a Municipal Hospital, the Mayor
+      announced a vaccination campaign. The problem? He grabbed the wrong paperwork.\n\nInstead
+      of the human flu vaccine, he authorized Canine Flu Vaccine Premium, an experimental
+      batch intended for police dogs.\n\nDozens of patients developed high fevers,
+      drowsiness, and blood instability. Doctors won't find an antidote before dawn.\n\nPenelope
+      needs someone capable of extracting the contaminated serum from the patients
+      without the journalists discovering the disaster."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58271358976
+    m_Localized: "During a wild night at Chique Balique Nightclub, the Mayor tried
+      the famous Cascavel Rapeleu, a cocktail made with mummy essence, hell peppers,
+      and vengeful spirit.\n\nAfter a few drinks, he went completely wild. Thinking
+      about his ex, he decided to \"remodel the nightclub with his bare hands,\"
+      smashing tables, shoving speakers, and climbing onto the bar.\n\nPenelope needs
+      a monster capable of restraining him without injury, before someone gets hurt
+      or the whole thing ends up on Bras\xEDlia's Instagram stories.\n\nThe ideal
+      candidate must be resilient, fast, and skilled with ribbons and bandages. An
+      intimidating glare wouldn't hurt either."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58271358977
+    m_Localized: 'After mixing up his morning medications and accidentally taking
+      Zolpidem, the Mayor skipped a sanitation meeting to pursue his deepest desires.
+
+
+      At
+      the bank, he seduced a teller with speeches about "destiny, interest rates,
+      and indebted hearts," convincing management he was conducting a confidential
+      security test.
+
+
+      Now, he''s stuffing a briefcase with cash while declaring
+      his love to the teller.
+
+
+      Penelope needs someone big, strong, and terrifying
+      enough to carry the Mayor out without raising questions. Preferably someone
+      with one eye, enormous hands, and experience knocking down doors.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58279747584
+    m_Localized: 'During the World Peace Summit, an important delegate was forgotten
+      on the hotel''s presidential floor.
+
+
+      The problem is, he locked the door,
+      unplugged the phone, and swore he would only come out once someone listened
+      to his 14-hour presentation on ''the importance of listening to people.''
+
+
+      The
+      press is already in the lobby, security is about to kick the door down, and
+      the League needs someone capable of getting into the room, calming the delegate
+      down, and getting him out of there before he turns a simple misunderstanding
+      into an international diplomatic crisis.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58283941888
+    m_Localized: "The League\u2019s simultaneous translation system was updated on
+      the eve of the Peace Summit.\n\nThe problem? The new software swapped 'world
+      peace' for 'immediate war', 'cooperation' for 'surrender', and 'coffee' for
+      'let's wreck everything.'\n\nNow, delegates from different countries are looking
+      at each other with suspicion, ambassadors are demanding explanations, and two
+      ministers have already started arguing in languages no one understands.\n\nThe
+      League needs someone capable of hacking into the system, fixing the translations,
+      and preventing the Peace Summit from ending in an all-out brawl."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58283941889
+    m_Localized: 'Thousands of people are gathered in front of the headquarters of
+      the Global League for Human Peace.
+
+
+      They aren''t protesting against
+      a war or a new law. They are protesting because the League promised ''free
+      bread for everyone'' during the Summit, but only handed out napkins with the
+      organization''s logo.
+
+
+      The crowd is furious, the press is recording,
+      and security wants to use pepper spray. The League needs someone capable of
+      calming the crowd down without violence and keeping the situation from spiraling
+      into an international disaster.'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

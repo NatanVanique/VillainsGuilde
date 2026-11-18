@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: RouteQuests_Name Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: RouteQuests_Name
+  m_TableCollectionNameGuidString: 33275aad986aaab4ea27a58988ba64f5
+  m_Entries:
+  - m_Id: 36549058560
+    m_Key: FatalCanine_FrederickRouteQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37333393408
+    m_Key: FancyBalancy_FrederickRouteQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37333393409
+    m_Key: HeistHeart_FrederickRouteQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37333393410
+    m_Key: PresidentialSuite_FrederickRouteQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37333393411
+    m_Key: DemonicTranslator_FrederickRouteQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37333393412
+    m_Key: TheCrowdBread_FrederickRouteQuestName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37333393413
+    m_Key: ClimateChaos_FrederickRouteQuestName
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4562753658738704409
+  references:
+    version: 2
+    RefIds:
+    - rid: 4562753658738704409
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1794571480841

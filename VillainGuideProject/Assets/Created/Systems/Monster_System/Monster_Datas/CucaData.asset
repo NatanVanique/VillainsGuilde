@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 652e26920880440469b230e61a82851f, type: 3}
+  m_Name: CucaData
+  m_EditorClassIdentifier: Assembly-CSharp::CreateMonster_Data
+  monsterName:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  monsterDescription:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  bigImage: {fileID: 21300000, guid: 073a372c7c634ac409bfbe86515566c5, type: 3}
+  smallImage: {fileID: 0}
+  icon: {fileID: -2945557770108572549, guid: 508ec17c4b50ed74296772cd7956d66a, type: 3}
+  strength: 0
+  speed: 0
+  intelligence: 0
+  charisma: 0
+  endurance: 0
+  delicacy: 0
+  baseStats:
+  - statType: 0
+    statValue: 0.45
+  - statType: 1
+    statValue: 0.37
+  - statType: 2
+    statValue: 0.80
+  - statType: 3
+    statValue: 0.51
+  - statType: 4
+    statValue: 0.32
+  - statType: 5
+    statValue: 0.13
+  - statType: 6
+    statValue: 0.45
+  - statType: 7
+    statValue: 0.01
+  mainPower: 1
+  references:
+    version: 2
+    RefIds: []

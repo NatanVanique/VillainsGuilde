@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Portuguese (Brazil) (pt-BR)
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Localization-String-Tables-Portuguese (Brazil) (pt-BR)
+  m_GUID: ec13d4982c9fce54aa5e7af29ce4b435
+  m_SerializeEntries:
+  - m_GUID: 5b526882ace3fe040a022a54231e93ee
+    m_Address: RouteQuests_Name_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 86239b71f58829845816bc106fee670c
+    m_Address: RouteQuests_Describes_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e7eb091699275047bf935544de55d63
+    m_Address: SingleQuests_Describes_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 967d69b302e75be4887562c074606315
+    m_Address: SingleQuests_Name_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ad04128a9dae56247843596dd322be57
+    m_Address: Ui_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 9a6257aacc0d25d4fbbfc41c9f870caa, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f81970b7f1ce3ae4591aa5a6f199c400, type: 2}
+    - {fileID: 11400000, guid: 60d63a42645e36a4691f0790b792141b, type: 2}
+    - {fileID: 11400000, guid: 08dab1425861d374180234f7832e923e, type: 2}
