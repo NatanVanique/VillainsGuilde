@@ -37,9 +37,13 @@ MonoBehaviour:
   powersToWin: 
   statsToWin: 0
   statusRequirements: []
+  hasReputationXpReward: 0
   reputationXpEarned: 0
+  hasCharacterXpReward: 0
   characterXpEarned: 0
+  hasCoinsReward: 0
   coinsEarned: 0
+  hasCharacterReward: 0
   characterEarned: []
   references:
     version: 2
