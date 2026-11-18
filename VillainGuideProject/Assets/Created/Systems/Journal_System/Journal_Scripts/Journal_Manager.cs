@@ -7,11 +7,20 @@ public sealed class JournalManager : MonoBehaviour
 {
     private List<GameObject> instantiatedNews = new List<GameObject>();
     private List<CreateQuest_Data> winnedNews = new List<CreateQuest_Data>();
+
+    public List<(CreateQuest_Data data, CreateMonster_Data monster, bool isWinned )> dayNewsRegister = new();
+    
     private bool rewardsOpen = false;
 
-    public void InstanceNew(CreateQuest_Data data, bool isWinned)
+    public void RegisterNew(CreateQuest_Data data, CreateMonster_Data monster, bool isWinned )
     {
-        GameObject curNew;
+        dayNewsRegister.Add((data, monster, isWinned));
+    }
+    
+    
+    public void InstanceNew()
+    {
+        /*GameObject curNew;
         Transform curContainer;
 
         if (data.type == CreateQuest_Data.QuestType.Single)
@@ -43,7 +52,7 @@ public sealed class JournalManager : MonoBehaviour
             curNew.GetComponent<JournalNew_Info>().setInfo(data, data.badResult);
         }
         
-        instantiatedNews.Add(newObject);
+        instantiatedNews.Add(newObject);*/
     }
 
     public void RegisterWinned(CreateQuest_Data data)
