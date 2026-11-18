@@ -32,24 +32,24 @@ MonoBehaviour:
     m_LocalVariables: []
   bigImage: {fileID: 21300000, guid: 53ca664b1a0ae774585377616ccfe1d4, type: 3}
   smallImage: {fileID: 0}
-  icon: {fileID: 0}
-  stats:
+  icon: {fileID: 505607914848609327, guid: 508ec17c4b50ed74296772cd7956d66a, type: 3}
+  baseStats:
   - statType: 0
-    statValue: 0
+    statValue: 0.52
   - statType: 1
-    statValue: 0
+    statValue: 0.97
   - statType: 2
-    statValue: 0
+    statValue: 0.31
   - statType: 3
-    statValue: 0
+    statValue: 0.70
   - statType: 4
-    statValue: 0
+    statValue: 0.30
   - statType: 5
-    statValue: 0
+    statValue: 0.95
   - statType: 6
-    statValue: 0
+    statValue: 0.25
   - statType: 7
-    statValue: 0
+    statValue: 0.65
   mainPower: 2
   references:
     version: 2

@@ -32,14 +32,30 @@ MonoBehaviour:
     m_LocalVariables: []
   bigImage: {fileID: 21300000, guid: 14e0c4f9b5d81de4ca4e929f70d9085d, type: 3}
   smallImage: {fileID: 0}
-  icon: {fileID: 0}
+  icon: {fileID: -3705531280476462948, guid: 508ec17c4b50ed74296772cd7956d66a, type: 3}
   strength: 0
   speed: 0
   intelligence: 0
   charisma: 0
   endurance: 0
   delicacy: 0
-  luck: 0
+  baseStats:
+  - statType: 0
+    statValue: 0.22
+  - statType: 1
+    statValue: 0.33
+  - statType: 2
+    statValue: 0.25
+  - statType: 3
+    statValue: 0.36
+  - statType: 4
+    statValue: 0.24
+  - statType: 5
+    statValue: 0.18
+  - statType: 6
+    statValue: 0.37
+  - statType: 7
+    statValue: 0.42
   mainPower: 3
   references:
     version: 2

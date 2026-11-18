@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -10,6 +11,23 @@ public sealed class QuestManager : MonoBehaviour
     private const float InitialVisionFadeDuration = 0.2f;
 
     private int nextRouteIndex;
+    private readonly List<QuestMail_Info> questMails = new();
+
+    public bool IsMonsterOnMission(CreateMonster_Data monster)
+    {
+        Main_Referencer.Instance.visual.questMailContainer_VoiceMail
+            .GetComponentsInChildren(true, questMails);
+
+        foreach (QuestMail_Info mail in questMails)
+        {
+            if (mail.AssignedMonster == monster)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 
     public void Start()
     {
@@ -32,6 +50,7 @@ public sealed class QuestManager : MonoBehaviour
     
     public void CloseVoiceMail()
     {
+        Main_Referencer.Instance.manager.monsterManager.CloseSelection();
         VisualReferencer visual = Main_Referencer.Instance.visual;
         CanvasGroup initialVisionGroup = visual.firstVision.GetComponent<CanvasGroup>();
         DOTween.Kill(initialVisionGroup);

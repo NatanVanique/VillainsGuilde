@@ -27,6 +27,8 @@ public class QuestMail_Info : MonoBehaviour
     private Transform requirementContent;
     private Transform rewardContent;
 
+    public CreateMonster_Data AssignedMonster { get; private set; }
+
     public void Start()
     {
         VisualReferencer visual = Main_Referencer.Instance.visual;
@@ -141,7 +143,16 @@ public class QuestMail_Info : MonoBehaviour
 
     public void openMonsters()
     {
-        
+        Main_Referencer.Instance.manager.monsterManager.OpenSelection(this);
+    }
+
+    public void AssignMonster(CreateMonster_Data monster)
+    {
+        AssignedMonster = monster;
+        Image icon = monstersButton.image;
+        icon.sprite = monster.icon;
+        icon.color = Color.white;
+        icon.preserveAspect = true;
     }
     
     public void SetInfoState(bool isInfoOpen)

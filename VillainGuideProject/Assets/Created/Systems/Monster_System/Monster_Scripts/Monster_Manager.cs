@@ -1,5 +1,153 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
 
 public sealed class MonsterManager : MonoBehaviour
 {
+    private readonly List<MonsterReferencer.Monsters> availableMonsters = new();
+    private string sendLabel;
+    private QuestMail_Info selectedQuest;
+    private LocalizedString displayedName;
+    private int selectedIndex;
+
+    private void Start()
+    {
+        VisualReferencer visual = Main_Referencer.Instance.visual;
+        sendLabel = visual.sendButtonText_MonsterSelection.text;
+        visual.previousButton_MonsterSelection.onClick.AddListener(SelectPrevious);
+        visual.nextButton_MonsterSelection.onClick.AddListener(SelectNext);
+        visual.sendButton_MonsterSelection.onClick.AddListener(SendMonster);
+        visual.backButton_MonsterSelection.onClick.AddListener(CloseSelection);
+    }
+
+    private void OnDestroy()
+    {
+        ClearDisplayedName();
+    }
+
+    public void OpenSelection(QuestMail_Info quest)
+    {
+        Main_Referencer references = Main_Referencer.Instance;
+
+        availableMonsters.Clear();
+        foreach (MonsterReferencer.Monsters monster in references.monster.monsters)
+        {
+            if (monster != null && monster.contracted && monster.monstersProfile != null)
+            {
+                availableMonsters.Add(monster);
+            }
+        }
+
+        if (availableMonsters.Count == 0)
+        {
+            return;
+        }
+
+        selectedQuest = quest;
+        selectedIndex = Mathf.Max(0, availableMonsters.FindIndex(
+            monster => monster.monstersProfile == quest.AssignedMonster));
+        bool canNavigate = availableMonsters.Count > 1;
+        VisualReferencer visual = references.visual;
+        visual.previousButton_MonsterSelection.interactable = canNavigate;
+        visual.nextButton_MonsterSelection.interactable = canNavigate;
+
+        visual.voiceMailCanvas_voiceMail.SetActive(false);
+        RefreshSelection();
+        visual.selectionCanvas_MonsterSelection.SetActive(true);
+    }
+
+    public void CloseSelection()
+    {
+        VisualReferencer visual = Main_Referencer.Instance.visual;
+        if (!visual.selectionCanvas_MonsterSelection.activeSelf)
+        {
+            return;
+        }
+
+        ClearDisplayedName();
+        visual.selectionCanvas_MonsterSelection.SetActive(false);
+        selectedQuest = null;
+        visual.voiceMailCanvas_voiceMail.SetActive(true);
+    }
+
+    private void SelectPrevious()
+    {
+        selectedIndex = (selectedIndex + availableMonsters.Count - 1) % availableMonsters.Count;
+        RefreshSelection();
+    }
+
+    private void SelectNext()
+    {
+        selectedIndex = (selectedIndex + 1) % availableMonsters.Count;
+        RefreshSelection();
+    }
+
+    private void SendMonster()
+    {
+        if (selectedQuest == null)
+        {
+            return;
+        }
+
+        CreateMonster_Data profile = availableMonsters[selectedIndex].monstersProfile;
+        if (UpdateSendButton(profile))
+        {
+            return;
+        }
+
+        selectedQuest.AssignMonster(profile);
+        CloseSelection();
+    }
+
+    private bool UpdateSendButton(CreateMonster_Data profile)
+    {
+        Main_Referencer references = Main_Referencer.Instance;
+        bool isOnMission = references.manager.questManager.IsMonsterOnMission(profile);
+        references.visual.sendButton_MonsterSelection.interactable = !isOnMission;
+        references.visual.sendButtonText_MonsterSelection.text = isOnMission ? "Já está em missão" : sendLabel;
+        return isOnMission;
+    }
+
+    private void RefreshSelection()
+    {
+        MonsterReferencer.Monsters monster = availableMonsters[selectedIndex];
+        CreateMonster_Data profile = monster.monstersProfile;
+        UpdateSendButton(profile);
+        VisualReferencer visual = Main_Referencer.Instance.visual;
+        visual.monsterImage_MonsterSelection.sprite = profile.bigImage;
+        visual.specialAbilityText_MonsterSelection.text = profile.mainPower.ToString();
+        visual.levelText_MonsterSelection.text = $"Level: {monster.monsterLevel}";
+        visual.levelSlider_MonsterSelection.SetValueWithoutNotify((float)monster.monsterLevel / MonsterReferencer.MaxMonsterLevel);
+        visual.happinessSlider_MonsterSelection.SetValueWithoutNotify(monster.happiness);
+
+        foreach (VisualReferencer.StatSlider stat in visual.statSliders_MonsterSelection)
+        {
+            stat.slider.SetValueWithoutNotify(monster.GetStatValue(stat.statType));
+        }
+
+        ClearDisplayedName();
+        string profileName = profile.name;
+        visual.monsterNameText_MonsterSelection.text =
+            profileName.EndsWith("Data", StringComparison.Ordinal) ? profileName[..^4] : profileName;
+        if (profile.monsterName != null && !profile.monsterName.IsEmpty)
+        {
+            displayedName = profile.monsterName;
+            displayedName.StringChanged += SetMonsterName;
+        }
+    }
+
+    private void SetMonsterName(string localizedName)
+    {
+        Main_Referencer.Instance.visual.monsterNameText_MonsterSelection.text = localizedName;
+    }
+
+    private void ClearDisplayedName()
+    {
+        if (displayedName != null)
+        {
+            displayedName.StringChanged -= SetMonsterName;
+            displayedName = null;
+        }
+    }
 }

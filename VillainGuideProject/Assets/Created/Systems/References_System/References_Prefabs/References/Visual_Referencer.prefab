@@ -92,6 +92,35 @@ MonoBehaviour:
   - {fileID: 0}
   openPhoneOutline: {fileID: 0}
   phoneButton: {fileID: 0}
+  selectionCanvas_MonsterSelection: {fileID: 0}
+  monsterImage_MonsterSelection: {fileID: 0}
+  monsterNameText_MonsterSelection: {fileID: 0}
+  specialAbilityText_MonsterSelection: {fileID: 0}
+  levelText_MonsterSelection: {fileID: 0}
+  levelSlider_MonsterSelection: {fileID: 0}
+  happinessSlider_MonsterSelection: {fileID: 0}
+  previousButton_MonsterSelection: {fileID: 0}
+  nextButton_MonsterSelection: {fileID: 0}
+  sendButton_MonsterSelection: {fileID: 0}
+  backButton_MonsterSelection: {fileID: 0}
+  sendButtonText_MonsterSelection: {fileID: 0}
+  statSliders_MonsterSelection:
+  - statType: 0
+    slider: {fileID: 0}
+  - statType: 1
+    slider: {fileID: 0}
+  - statType: 2
+    slider: {fileID: 0}
+  - statType: 3
+    slider: {fileID: 0}
+  - statType: 4
+    slider: {fileID: 0}
+  - statType: 5
+    slider: {fileID: 0}
+  - statType: 6
+    slider: {fileID: 0}
+  - statType: 7
+    slider: {fileID: 0}
   singleNewContainer_Journal: {fileID: 0}
   singleNews_Journal:
   - {fileID: 1463714975924569701, guid: dfc5bf3db9dc8e14b9301e0a287635c0, type: 3}

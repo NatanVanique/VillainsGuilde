@@ -9,6 +9,7 @@ using TMPro;
 [DeclareFoldoutGroup("Room", Expanded = true)]
 [DeclareFoldoutGroup("Bars", Expanded = true)]
 [DeclareFoldoutGroup("Voice Mail", Expanded = true)]
+[DeclareFoldoutGroup("Monster Selection", Expanded = true)]
 [DeclareFoldoutGroup("Looking For Job", Expanded = true)]
 [DeclareFoldoutGroup("Contract Tooltip", Expanded = true)]
 [DeclareFoldoutGroup("Telephone", Expanded = true)]
@@ -32,6 +33,20 @@ public class VisualReferencer : MonoBehaviour
     [Group("Voice Mail")] public Image voiceMailBackground;
     [Group("Voice Mail")] public TMP_Text missionTitleText;
     [Group("Voice Mail")] public TMP_Text missionDescriptionText;
+
+    [Group("Monster Selection")] public GameObject selectionCanvas_MonsterSelection;
+    [Group("Monster Selection")] public Image monsterImage_MonsterSelection;
+    [Group("Monster Selection")] public TMP_Text monsterNameText_MonsterSelection;
+    [Group("Monster Selection")] public TMP_Text specialAbilityText_MonsterSelection;
+    [Group("Monster Selection")] public TMP_Text levelText_MonsterSelection;
+    [Group("Monster Selection")] public Slider levelSlider_MonsterSelection;
+    [Group("Monster Selection")] public Slider happinessSlider_MonsterSelection;
+    [Group("Monster Selection")] public StatSlider[] statSliders_MonsterSelection;
+    [Group("Monster Selection")] public Button previousButton_MonsterSelection;
+    [Group("Monster Selection")] public Button nextButton_MonsterSelection;
+    [Group("Monster Selection")] public Button sendButton_MonsterSelection;
+    [Group("Monster Selection")] public TMP_Text sendButtonText_MonsterSelection;
+    [Group("Monster Selection")] public Button backButton_MonsterSelection;
     
     [Group("Looking For Job")] public Canvas lookingForJobCanvas_LookingForJob;
     [Group("Looking For Job")] public GameObject contractCard_LookingForJob;
