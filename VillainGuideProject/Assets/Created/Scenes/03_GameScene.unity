@@ -698,6 +698,158 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00000000000000000000000000000005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &735512410 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6556893362831459930, guid: 00000000000000000000000000000048, type: 3}
+  m_PrefabInstance: {fileID: 2027650565}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &735512411 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8791156234812357479, guid: 00000000000000000000000000000048, type: 3}
+  m_PrefabInstance: {fileID: 2027650565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &735512412 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6760847208804274655, guid: 00000000000000000000000000000048, type: 3}
+  m_PrefabInstance: {fileID: 2027650565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &735512413 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6811102939558517169, guid: 00000000000000000000000000000048, type: 3}
+  m_PrefabInstance: {fileID: 2027650565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!1 &735512414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3156074775176408074, guid: 00000000000000000000000000000048, type: 3}
+  m_PrefabInstance: {fileID: 2027650565}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &735512415 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1393724698408319548, guid: 00000000000000000000000000000048, type: 3}
+  m_PrefabInstance: {fileID: 2027650565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &735512416 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 926128536832229281, guid: 00000000000000000000000000000048, type: 3}
+  m_PrefabInstance: {fileID: 2027650565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &735512417 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4305727753748744714, guid: 00000000000000000000000000000048, type: 3}
+  m_PrefabInstance: {fileID: 2027650565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!1 &735512418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7782048506624770593, guid: 00000000000000000000000000000048, type: 3}
+  m_PrefabInstance: {fileID: 2027650565}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &735512419 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7443180934876357046, guid: 00000000000000000000000000000048, type: 3}
+  m_PrefabInstance: {fileID: 2027650565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &735512420 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2912835027824336446, guid: 00000000000000000000000000000048, type: 3}
+  m_PrefabInstance: {fileID: 2027650565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &735512421 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6910226933532544221, guid: 00000000000000000000000000000048, type: 3}
+  m_PrefabInstance: {fileID: 2027650565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!1 &735512422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3270681535745975765, guid: 00000000000000000000000000000048, type: 3}
+  m_PrefabInstance: {fileID: 2027650565}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &735512423 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8788133943792046412, guid: 00000000000000000000000000000048, type: 3}
+  m_PrefabInstance: {fileID: 2027650565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &735512424 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8711201780573510789, guid: 00000000000000000000000000000048, type: 3}
+  m_PrefabInstance: {fileID: 2027650565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &735512425 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6380067964258057677, guid: 00000000000000000000000000000048, type: 3}
+  m_PrefabInstance: {fileID: 2027650565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1001 &898469209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2712,10 +2864,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4928466494860126693}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: rewardsNewComponents_Journal.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: statsSlider_ContractTolltip.Array.data[0].slider
       value: 
       objectReference: {fileID: 2973630057736164750}
@@ -2748,21 +2896,69 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2973630057736164743}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: rewardsNewComponents_Journal.Array.data[0].displayName
-      value: MonsterXp
-      objectReference: {fileID: 0}
+      propertyPath: rewardsNewComponents_Journal.Array.data[0].levelUpObject
+      value: 
+      objectReference: {fileID: 735512422}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: rewardsNewComponents_Journal.Array.data[1].displayName
-      value: PopularityXp
-      objectReference: {fileID: 0}
+      propertyPath: rewardsNewComponents_Journal.Array.data[1].levelUpObject
+      value: 
+      objectReference: {fileID: 735512418}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: rewardsNewComponents_Journal.Array.data[2].displayName
-      value: Coins
-      objectReference: {fileID: 0}
+      propertyPath: rewardsNewComponents_Journal.Array.data[2].levelUpObject
+      value: 
+      objectReference: {fileID: 735512414}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: rewardsNewComponents_Journal.Array.data[3].displayName
-      value: Monster
-      objectReference: {fileID: 0}
+      propertyPath: rewardsNewComponents_Journal.Array.data[3].levelUpObject
+      value: 
+      objectReference: {fileID: 735512410}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: rewardsNewComponents_Journal.Array.data[0].LevelValueText
+      value: 
+      objectReference: {fileID: 735512423}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: rewardsNewComponents_Journal.Array.data[0].progressSlider
+      value: 
+      objectReference: {fileID: 735512425}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: rewardsNewComponents_Journal.Array.data[1].LevelValueText
+      value: 
+      objectReference: {fileID: 735512419}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: rewardsNewComponents_Journal.Array.data[1].progressSlider
+      value: 
+      objectReference: {fileID: 735512421}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: rewardsNewComponents_Journal.Array.data[2].LevelValueText
+      value: 
+      objectReference: {fileID: 735512415}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: rewardsNewComponents_Journal.Array.data[2].progressSlider
+      value: 
+      objectReference: {fileID: 735512417}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: rewardsNewComponents_Journal.Array.data[3].LevelValueText
+      value: 
+      objectReference: {fileID: 735512411}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: rewardsNewComponents_Journal.Array.data[3].progressSlider
+      value: 
+      objectReference: {fileID: 735512413}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: rewardsNewComponents_Journal.Array.data[0].numbersValueText
+      value: 
+      objectReference: {fileID: 735512424}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: rewardsNewComponents_Journal.Array.data[1].numbersValueText
+      value: 
+      objectReference: {fileID: 735512420}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: rewardsNewComponents_Journal.Array.data[2].numbersValueText
+      value: 
+      objectReference: {fileID: 735512416}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: rewardsNewComponents_Journal.Array.data[3].numbersValueText
+      value: 
+      objectReference: {fileID: 735512412}
     - target: {fileID: 7618967074502631834, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: questManager
       value: 
