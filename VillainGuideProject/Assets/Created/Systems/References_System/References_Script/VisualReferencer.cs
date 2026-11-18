@@ -16,7 +16,17 @@ using TMPro;
 
 public class VisualReferencer : MonoBehaviour
 {
+    [System.Serializable]
+    public struct RoomScreenReference
+    {
+        public int position;
+        public RectTransform screen;
+    }
+
     [Group("Room")] public Image colorImage_Room;
+    [Group("Room")] public Button previousScreenButton_Room;
+    [Group("Room")] public Button nextScreenButton_Room;
+    [Group("Room")] public List<RoomScreenReference> screensRoom = new List<RoomScreenReference>();
     [Group("Bars")] public GameObject top_Bars;
     [Group("Bars")] public GameObject bottom_Bars;
     
@@ -61,9 +71,6 @@ public class VisualReferencer : MonoBehaviour
     [Group("Journal")] public Button tabButton_Journal;
     [Group("Journal")] public LocalizeStringEvent tabText_Journal;
 
-    
-
-    
     [System.Serializable]
     [DeclareBoxGroup("References", Title = "Referências")]
     public class StatSlider

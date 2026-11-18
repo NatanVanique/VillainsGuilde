@@ -45,6 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   colorImage_Room: {fileID: 0}
+  previousScreenButton_Room: {fileID: 0}
+  nextScreenButton_Room: {fileID: 0}
+  screens_Room:
+  - position: -1
+    screen: {fileID: 0}
+  - position: 0
+    screen: {fileID: 0}
+  - position: 1
+    screen: {fileID: 0}
   top_Bars: {fileID: 0}
   bottom_Bars: {fileID: 0}
   voiceMailCanvas_voiceMail: {fileID: 0}
