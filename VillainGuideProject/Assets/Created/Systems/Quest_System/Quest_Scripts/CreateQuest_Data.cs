@@ -11,6 +11,11 @@
         public LocalizedString questDescription;
         public QuestType type;
 
+        [Header("Results")] 
+        public LocalizedString goodResult;
+        public LocalizedString badResult;
+
+        
         [Header("Requirements")] 
         public int minPopularity;
         [Range(0f, 1f)] public float winMargin;
@@ -20,8 +25,8 @@
         public statusRequirementsValues[]  statusRequirements;
 
         [Header("Rewards")] 
-        public bool hasReputationXpReward;
-        public int reputationXpEarned;
+        public bool haspopularityXpReward;
+        public int popularityXpEarned;
         public bool hasCharacterXpReward;
         public int characterXpEarned;
         public bool hasCoinsReward;

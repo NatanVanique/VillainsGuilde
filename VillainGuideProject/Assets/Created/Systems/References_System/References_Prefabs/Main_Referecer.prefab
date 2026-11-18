@@ -397,6 +397,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Visual_Referencer
       objectReference: {fileID: 0}
+    - target: {fileID: 3637672180268043284, guid: cef333b7d321fc941b65f869cd9c7e1c, type: 3}
+      propertyPath: rewardsNewComponents_Journal.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637672180268043284, guid: cef333b7d321fc941b65f869cd9c7e1c, type: 3}
+      propertyPath: rewardsNewComponents_Journal.Array.data[0].displayName
+      value: CharacterXp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637672180268043284, guid: cef333b7d321fc941b65f869cd9c7e1c, type: 3}
+      propertyPath: rewardsNewComponents_Journal.Array.data[1].displayName
+      value: PopularityXp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637672180268043284, guid: cef333b7d321fc941b65f869cd9c7e1c, type: 3}
+      propertyPath: rewardsNewComponents_Journal.Array.data[2].displayName
+      value: Coins
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637672180268043284, guid: cef333b7d321fc941b65f869cd9c7e1c, type: 3}
+      propertyPath: rewardsNewComponents_Journal.Array.data[3].displayName
+      value: Monster
+      objectReference: {fileID: 0}
     - target: {fileID: 8504369999826665940, guid: cef333b7d321fc941b65f869cd9c7e1c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

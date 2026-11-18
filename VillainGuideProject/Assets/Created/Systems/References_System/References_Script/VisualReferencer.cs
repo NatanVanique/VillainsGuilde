@@ -75,10 +75,22 @@ public class VisualReferencer : MonoBehaviour
     [Group("Journal")] public LocalizeStringEvent titleText_Journal;
     [Group("Journal")] public Button tabButton_Journal;
     [Group("Journal")] public LocalizeStringEvent tabText_Journal;
+    [Group("Journal")] public GameObject rewardsNew_Journal;
+    [Group("Journal")]
+    [ListDrawerSettings(ShowElementLabels = true)]
+    public RewardComponenet[] rewardsNewComponents_Journal;
 
-    
+    [System.Serializable]
+    [DeclareFoldoutGroup("References", Expanded = true)]
+    public class RewardComponenet
+    {
+        public string displayName;
+        public Slider progressSlider;
+        public TextMeshProUGUI numbersValueText;
+        public TextMeshProUGUI LevelValueText;
+        public GameObject levelUpObject;
+    }
 
-    
     [System.Serializable]
     [DeclareBoxGroup("References", Title = "Referências")]
     public class StatSlider
