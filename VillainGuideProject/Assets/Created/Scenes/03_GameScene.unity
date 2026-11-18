@@ -498,6 +498,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 00000000000000000000000000000036, type: 3}
   m_PrefabInstance: {fileID: 483798438}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &483798440 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11400000, guid: 00000000000000000000000000000036, type: 3}
+  m_PrefabInstance: {fileID: 483798438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00000000000000000000000000000035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &509405309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -804,44 +815,6 @@ MonoBehaviour:
 --- !u!114 &735512421 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6910226933532544221, guid: 00000000000000000000000000000048, type: 3}
-  m_PrefabInstance: {fileID: 2027650565}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
---- !u!1 &735512422 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3270681535745975765, guid: 00000000000000000000000000000048, type: 3}
-  m_PrefabInstance: {fileID: 2027650565}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &735512423 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8788133943792046412, guid: 00000000000000000000000000000048, type: 3}
-  m_PrefabInstance: {fileID: 2027650565}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
---- !u!114 &735512424 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8711201780573510789, guid: 00000000000000000000000000000048, type: 3}
-  m_PrefabInstance: {fileID: 2027650565}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
---- !u!114 &735512425 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6380067964258057677, guid: 00000000000000000000000000000048, type: 3}
   m_PrefabInstance: {fileID: 2027650565}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -2743,13 +2716,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 898469218}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: goodDiscoveriesContent
-      value:
-      objectReference: {fileID: 7397729492400114399}
-    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: badDiscoveriesContent
-      value:
+      value: 
       objectReference: {fileID: 6476883213199858471}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: goodDiscoveriesContent
+      value: 
+      objectReference: {fileID: 7397729492400114399}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: missionDescriptionText
       value: 
@@ -2933,7 +2906,7 @@ PrefabInstance:
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: rewardsNewComponents_Journal.Array.data[0].levelUpObject
       value: 
-      objectReference: {fileID: 735512422}
+      objectReference: {fileID: 0}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: rewardsNewComponents_Journal.Array.data[1].levelUpObject
       value: 
@@ -2949,11 +2922,11 @@ PrefabInstance:
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: rewardsNewComponents_Journal.Array.data[0].LevelValueText
       value: 
-      objectReference: {fileID: 735512423}
+      objectReference: {fileID: 0}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: rewardsNewComponents_Journal.Array.data[0].progressSlider
       value: 
-      objectReference: {fileID: 735512425}
+      objectReference: {fileID: 0}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: rewardsNewComponents_Journal.Array.data[1].LevelValueText
       value: 
@@ -2981,7 +2954,7 @@ PrefabInstance:
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: rewardsNewComponents_Journal.Array.data[0].numbersValueText
       value: 
-      objectReference: {fileID: 735512424}
+      objectReference: {fileID: 0}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: rewardsNewComponents_Journal.Array.data[1].numbersValueText
       value: 
@@ -2994,6 +2967,10 @@ PrefabInstance:
       propertyPath: rewardsNewComponents_Journal.Array.data[3].numbersValueText
       value: 
       objectReference: {fileID: 735512412}
+    - target: {fileID: 7618967074502631834, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: roomManager
+      value: 
+      objectReference: {fileID: 483798440}
     - target: {fileID: 7618967074502631834, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: questManager
       value: 
@@ -3307,6 +3284,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!224 &6476883213199858471 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6476883212889642622, guid: 00000000000000000000000000000012, type: 3}
+  m_PrefabInstance: {fileID: 898469209}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7213310084915213184 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1403185014138578378, guid: 00000000000000000000000000000024, type: 3}
@@ -3329,6 +3311,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!224 &7397729492400114399 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7397729493281736582, guid: 00000000000000000000000000000012, type: 3}
+  m_PrefabInstance: {fileID: 898469209}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7453813676088497055 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4830505671150727940, guid: 0000000000000000000000000000003c, type: 3}
@@ -3403,13 +3390,3 @@ SceneRoots:
   - {fileID: 345090802}
   - {fileID: 2037442802}
   - {fileID: 1601218566}
---- !u!224 &7397729492400114399 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7397729493281736582, guid: 00000000000000000000000000000012, type: 3}
-  m_PrefabInstance: {fileID: 898469209}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &6476883213199858471 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6476883212889642622, guid: 00000000000000000000000000000012, type: 3}
-  m_PrefabInstance: {fileID: 898469209}
-  m_PrefabAsset: {fileID: 0}
