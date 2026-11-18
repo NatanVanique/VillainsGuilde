@@ -123,11 +123,13 @@ public sealed class JournalManager : MonoBehaviour
             totalCharacterXp += data.characterXpEarned;
             totalPopularityXp += data.popularityXpEarned;
             totalCoins += data.coinsEarned;
-            totalMonsters += data.characterEarned.Length;
-            // Preciso mudar isso, porque atualmente estou somando todas as opções de monstros disponíveis para escolha.
-            // O correto seria contar quantas vezes poderei escolher um monstro, ou seja, quantas missões concluídas
-            // oferecem monstros como recompensa, independentemente da quantidade de monstros disponíveis em cada uma.
+
+            if (data.hasCharacterReward)
+            {
+                totalMonsters++;
+            }
         }
+        
         //CharactersXP
         Main_Referencer.Instance.visual.rewardsNewComponents_Journal[0].progressSlider.value = totalCharacterXp;
         
