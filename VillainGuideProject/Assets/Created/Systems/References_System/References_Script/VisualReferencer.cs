@@ -1,3 +1,4 @@
+
 using System.Collections.Generic;
 using TriInspector;
 using UnityEngine;
@@ -18,9 +19,10 @@ using TMPro;
 public class VisualReferencer : MonoBehaviour
 {
     [Group("Room")] public Image colorImage_Room;
+
     [Group("Bars")] public GameObject top_Bars;
     [Group("Bars")] public GameObject bottom_Bars;
-    
+
     [Group("Voice Mail")] public GameObject voiceMailCanvas_voiceMail;
     [Group("Voice Mail")] public GameObject questMail_VoiceMail;
     [Group("Voice Mail")] public GameObject questMailContainer_VoiceMail;
@@ -49,27 +51,27 @@ public class VisualReferencer : MonoBehaviour
     [Group("Monster Selection")] public Button sendButton_MonsterSelection;
     [Group("Monster Selection")] public TMP_Text sendButtonText_MonsterSelection;
     [Group("Monster Selection")] public Button backButton_MonsterSelection;
-    
+
     [Group("Looking For Job")] public Canvas lookingForJobCanvas_LookingForJob;
     [Group("Looking For Job")] public GameObject contractCard_LookingForJob;
     [Group("Looking For Job")] public GameObject contractCardContainer_LookingForJob;
-    
+
     [Group("Contract Tooltip")] public Canvas contractTooltipCanvas_ContractTolltip;
     [Group("Contract Tooltip")] public Button infoButton_ContractTolltip;
     [Group("Contract Tooltip")] public Button statsButton_ContractTolltip;
     [Group("Contract Tooltip")] public StatSlider[] statsSlider_ContractTolltip;
     [Group("Contract Tooltip")] public Image bigImage_ContractTolltip;
     [Group("Contract Tooltip")] public Image iconImage__ContractTolltip;
-    [Group("Contract Tooltip")] public LocalizeStringEvent  nameText_ContractTolltip;
+    [Group("Contract Tooltip")] public LocalizeStringEvent nameText_ContractTolltip;
     [Group("Contract Tooltip")] public LocalizeStringEvent descriptionText_ContractTolltip;
-    
-    [Group("Telephone")] public Animator  telephoneAnimator_Telephone;
+
+    [Group("Telephone")] public Animator telephoneAnimator_Telephone;
     [Group("Telephone")] public GameObject closedPhone;
     [Group("Telephone")] public GameObject openPhone;
     [Group("Telephone")] public GameObject[] closedPhoneOutlines;
     [Group("Telephone")] public GameObject openPhoneOutline;
     [Group("Telephone")] public Button phoneButton;
-    
+
     [Group("Journal")] public GameObject singleNewContainer_Journal;
     [Group("Journal")] public GameObject[] singleNews_Journal;
     [Group("Journal")] public GameObject routeNewContainer_Journal;
@@ -78,6 +80,8 @@ public class VisualReferencer : MonoBehaviour
     [Group("Journal")] public Button tabButton_Journal;
     [Group("Journal")] public LocalizeStringEvent tabText_Journal;
     [Group("Journal")] public GameObject rewardsNew_Journal;
+    [Group("Journal")] public GameObject characterXpElement_Journal;
+
     [Group("Journal")]
     [ListDrawerSettings(ShowElementLabels = true)]
     public RewardComponenet[] rewardsNewComponents_Journal;
