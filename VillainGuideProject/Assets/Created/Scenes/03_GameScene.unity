@@ -2498,10 +2498,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1657039179}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: 'closedPhoneOutlines.Array.data[2]'
-      value: 
-      objectReference: {fileID: 609486492}
-    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: lookingForJobCanvas_LookingForJob
       value: 
       objectReference: {fileID: 4928466494860126694}
