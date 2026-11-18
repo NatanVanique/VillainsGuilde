@@ -34,6 +34,7 @@ MonoBehaviour:
   minPopularity: 0
   winMargin: 0
   timeToDoneSeconds: 45
+  timeToAcceptSeconds: 30
   powersToWin: 
   statsToWin: 2
   statusRequirements:

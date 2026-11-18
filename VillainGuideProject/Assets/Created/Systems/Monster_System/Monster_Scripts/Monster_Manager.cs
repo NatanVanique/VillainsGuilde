@@ -117,6 +117,18 @@ public sealed class MonsterManager : MonoBehaviour
         }
     }
 
+    public void OnQuestMailResolved(QuestMail_Info quest)
+    {
+        if (selectedQuest == quest)
+        {
+            CloseSelection();
+        }
+        else
+        {
+            RefreshMissionAvailability();
+        }
+    }
+
     private void RefreshSelection()
     {
         MonsterReferencer.Monsters monster = availableMonsters[selectedIndex];

@@ -15,6 +15,19 @@ public sealed class QuestManager : MonoBehaviour
     private readonly List<QuestMail_Info> questMails = new();
     private readonly HashSet<CreateMonster_Data> monstersOnTimedMissions = new();
 
+    public void StartResponseTimer(QuestMail_Info mail)
+    {
+        StartCoroutine(WatchResponseTimer(mail));
+    }
+
+    private static IEnumerator WatchResponseTimer(QuestMail_Info mail)
+    {
+        while (mail != null && mail.UpdateResponseTimer())
+        {
+            yield return null;
+        }
+    }
+
     public void ResolveQuest(CreateQuest_Data quest, CreateMonster_Data monster, bool accepted)
     {
         if (!accepted)

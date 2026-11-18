@@ -19,6 +19,8 @@ public class QuestMail_Info : MonoBehaviour
     [SerializeField] Button monstersButton;
     [SerializeField] private Button acceptButton;
     [SerializeField] private Button declineButton;
+    [SerializeField] private Image timerBar;
+    [SerializeField] private Gradient timerBarGradient;
     [SerializeField] private RewardIcon_Element rewardPrefab;
     [SerializeField] private Requirement_Element requirementPrefab;
 
@@ -29,6 +31,8 @@ public class QuestMail_Info : MonoBehaviour
     private Transform requirementContent;
     private Transform rewardContent;
     private bool resolved;
+    private bool viewingInfo;
+    private float responseDeadline;
 
     public CreateMonster_Data AssignedMonster { get; private set; }
 
@@ -41,7 +45,6 @@ public class QuestMail_Info : MonoBehaviour
 
     public void setInfo(CreateQuest_Data data)
     {
-        Main_Referencer.Instance.visual.returnInfoButton.onClick.AddListener(closeInfo);
         infoButton.onClick.AddListener(openInfo);
         monstersButton.onClick.AddListener(openMonsters);
         acceptButton.onClick.AddListener(AcceptQuest);
@@ -53,10 +56,36 @@ public class QuestMail_Info : MonoBehaviour
         questDescription = questData.questDescription;
         mailName.StringReference = questData.questName;
         mailName.RefreshString();
+        responseDeadline = Time.time + data.timeToAcceptSeconds;
+        Main_Referencer.Instance.manager.questManager.StartResponseTimer(this);
+    }
+
+    internal bool UpdateResponseTimer()
+    {
+        if (resolved)
+        {
+            return false;
+        }
+
+        float remaining = responseDeadline - Time.time;
+        float fraction = remaining > 0f ? Mathf.Clamp01(remaining / questData.timeToAcceptSeconds) : 0f;
+        RectTransform barTransform = timerBar.rectTransform;
+        barTransform.anchorMax = new Vector2(fraction, barTransform.anchorMax.y);
+        timerBar.color = timerBarGradient.Evaluate(1f - fraction);
+
+        if (remaining <= 0f)
+        {
+            DeclineQuest();
+            return false;
+        }
+
+        return true;
     }
 
     public void openInfo()
     {
+        viewingInfo = true;
+        Main_Referencer.Instance.visual.returnInfoButton.onClick.AddListener(closeInfo);
         SetInfoState(isInfoOpen: true);
         PopulateRequirementsAndRewards();
         RefreshMissionInfo();
@@ -144,6 +173,9 @@ public class QuestMail_Info : MonoBehaviour
 
     public void closeInfo()
     {
+        viewingInfo = false;
+        Main_Referencer.Instance.visual.returnInfoButton.onClick.RemoveListener(closeInfo);
+        infoRequestId++;
         SetInfoState(isInfoOpen: false);
     }
 
@@ -184,12 +216,16 @@ public class QuestMail_Info : MonoBehaviour
 
         resolved = true;
         Main_Referencer references = Main_Referencer.Instance;
-        references.visual.returnInfoButton.onClick.RemoveListener(closeInfo);
+        if (viewingInfo)
+        {
+            closeInfo();
+        }
         CreateMonster_Data monster = AssignedMonster;
         AssignedMonster = null;
         gameObject.SetActive(false);
         Destroy(gameObject);
-        references.manager.questManager.ResolveQuest(questData, monster, accepted);
+        references.manager.monsterManager.OnQuestMailResolved(this);
+        references.manager.questManager.ResolveQuest(questData, monster, accepted && Time.time < responseDeadline);
     }
     
     public void SetInfoState(bool isInfoOpen)
