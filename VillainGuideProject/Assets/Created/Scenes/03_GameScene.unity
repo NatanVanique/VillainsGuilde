@@ -2743,6 +2743,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 898469218}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: goodDiscoveriesContent
+      value:
+      objectReference: {fileID: 7397729492400114399}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: badDiscoveriesContent
+      value:
+      objectReference: {fileID: 6476883213199858471}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: missionDescriptionText
       value: 
       objectReference: {fileID: 898469215}
@@ -3395,3 +3403,13 @@ SceneRoots:
   - {fileID: 345090802}
   - {fileID: 2037442802}
   - {fileID: 1601218566}
+--- !u!224 &7397729492400114399 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7397729493281736582, guid: 00000000000000000000000000000012, type: 3}
+  m_PrefabInstance: {fileID: 898469209}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &6476883213199858471 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6476883212889642622, guid: 00000000000000000000000000000012, type: 3}
+  m_PrefabInstance: {fileID: 898469209}
+  m_PrefabAsset: {fileID: 0}

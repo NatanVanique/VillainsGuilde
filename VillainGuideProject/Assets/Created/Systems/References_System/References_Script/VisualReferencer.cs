@@ -33,6 +33,8 @@ public class VisualReferencer : MonoBehaviour
     [Group("Voice Mail")] public Image voiceMailBackground;
     [Group("Voice Mail")] public TMP_Text missionTitleText;
     [Group("Voice Mail")] public TMP_Text missionDescriptionText;
+    [Group("Voice Mail")] public RectTransform goodDiscoveriesContent;
+    [Group("Voice Mail")] public RectTransform badDiscoveriesContent;
 
     [Group("Monster Selection")] public GameObject selectionCanvas_MonsterSelection;
     [Group("Monster Selection")] public Image monsterImage_MonsterSelection;

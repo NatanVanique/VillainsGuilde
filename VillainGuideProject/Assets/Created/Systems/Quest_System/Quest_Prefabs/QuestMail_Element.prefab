@@ -1596,6 +1596,7 @@ MonoBehaviour:
   acceptButton: {fileID: 5063183912770500415}
   declineButton: {fileID: 8125312492730291515}
   timerBar: {fileID: 1628761149660546103}
+  successChanceText: {fileID: 5445971588751338973}
   timerBarGradient:
     serializedVersion: 2
     key0: {r: 0.3529412, g: 0.8901961, b: 0.8627451, a: 1}

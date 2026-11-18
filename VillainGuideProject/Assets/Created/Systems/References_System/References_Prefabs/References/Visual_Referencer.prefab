@@ -57,6 +57,8 @@ MonoBehaviour:
   voiceMailBackground: {fileID: 0}
   missionTitleText: {fileID: 0}
   missionDescriptionText: {fileID: 0}
+  goodDiscoveriesContent: {fileID: 0}
+  badDiscoveriesContent: {fileID: 0}
   lookingForJobCanvas_LookingForJob: {fileID: 0}
   contractCard_LookingForJob: {fileID: 638250967513505782, guid: a36293e6ef53584448e3b85d584023ec, type: 3}
   contractCardContainer_LookingForJob: {fileID: 0}

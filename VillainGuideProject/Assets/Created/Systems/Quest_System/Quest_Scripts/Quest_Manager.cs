@@ -30,30 +30,37 @@ public sealed class QuestManager : MonoBehaviour
 
     public void ResolveQuest(CreateQuest_Data quest, CreateMonster_Data monster, bool accepted)
     {
-        if (!accepted)
+        if (!accepted || monstersOnTimedMissions.Add(monster))
         {
-            Main_Referencer.Instance.manager.journalManager.RegisterNew(quest, monster, false);
-            return;
-        }
-
-        if (monstersOnTimedMissions.Add(monster))
-        {
-            StartCoroutine(CompleteMissionAfterDelay(quest, monster));
+            StartCoroutine(CompleteMissionAfterDelay(quest, monster, accepted));
         }
     }
 
-    private IEnumerator CompleteMissionAfterDelay(CreateQuest_Data quest, CreateMonster_Data monster)
+    private IEnumerator CompleteMissionAfterDelay(CreateQuest_Data quest, CreateMonster_Data monster, bool accepted)
     {
         if (quest.timeToDoneSeconds > 0f)
         {
             yield return new WaitForSeconds(quest.timeToDoneSeconds);
         }
 
-        bool succeeded = MeetsQuestRequirements(quest, monster);
-        monstersOnTimedMissions.Remove(monster);
         ManagerReferencer managers = Main_Referencer.Instance.manager;
-        managers.monsterManager.RefreshMissionAvailability();
-        managers.journalManager.RegisterNew(quest, monster, succeeded);
+        bool succeeded = accepted && MeetsQuestRequirements(quest, monster);
+        if (accepted)
+        {
+            monstersOnTimedMissions.Remove(monster);
+            managers.monsterManager.RefreshMissionAvailability();
+        }
+
+        managers.journalManager.RegisterNew(quest, monster, succeeded, attempted: accepted);
+    }
+
+    public void RefreshDiscoveredResults()
+    {
+        Main_Referencer.Instance.visual.questMailContainer_VoiceMail.GetComponentsInChildren(true, questMails);
+        foreach (QuestMail_Info mail in questMails)
+        {
+            mail.RefreshDiscoveredResults();
+        }
     }
 
     private static bool MeetsQuestRequirements(CreateQuest_Data quest, CreateMonster_Data profile)

@@ -5,11 +5,37 @@ using DG.Tweening;
 public sealed class JournalManager : MonoBehaviour
 {
     private readonly List<GameObject> instantiatedNews = new();
+    private readonly List<(CreateQuest_Data data, CreateMonster_Data monster, bool isWinned, bool attempted)> pendingNews = new();
+    private DaycicleManager daycicle;
     
     private bool rewardsOpen = false;
 
-    public void RegisterNew(CreateQuest_Data data, CreateMonster_Data monster, bool isWinned )
+    private void Start()
     {
+        daycicle = Main_Referencer.Instance.manager.dayCicleManager;
+        daycicle.BeforeOfficeDayStart += PublishResults;
+    }
+
+    private void OnDestroy()
+    {
+        if (daycicle != null)
+        {
+            daycicle.BeforeOfficeDayStart -= PublishResults;
+        }
+    }
+
+    public void RegisterNew(CreateQuest_Data data, CreateMonster_Data monster, bool isWinned, bool attempted = true)
+    {
+        pendingNews.Add((data, monster, isWinned, attempted));
+    }
+
+    private void PublishResults()
+    {
+        if (pendingNews.Count == 0)
+        {
+            return;
+        }
+
         ValuesReferencer values = Main_Referencer.Instance.value;
         int day = values.currentDay_HourValues;
         while (values.realizedDayRegister.Count <= day)
@@ -17,8 +43,45 @@ public sealed class JournalManager : MonoBehaviour
             values.realizedDayRegister.Add(new());
         }
 
-        values.realizedDayRegister[day].Add((data, monster, isWinned));
+        values.realizedDayRegister[day].AddRange(pendingNews);
+        pendingNews.Clear();
         InstanceNew(day);
+        Main_Referencer.Instance.manager.questManager.RefreshDiscoveredResults();
+    }
+
+    public bool? GetLatestDiscoveredResult(CreateQuest_Data quest, CreateMonster_Data monster)
+    {
+        var results = Main_Referencer.Instance.value.realizedDayRegister;
+        for (int day = results.Count - 1; day >= 0; day--)
+        {
+            var reports = results[day];
+            for (int index = reports.Count - 1; index >= 0; index--)
+            {
+                var report = reports[index];
+                if (report.attempted && report.data == quest && report.monster == monster)
+                {
+                    return report.isWinned;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    public void GetDiscoveredMonsters(CreateQuest_Data quest, HashSet<CreateMonster_Data> good, HashSet<CreateMonster_Data> bad)
+    {
+        good.Clear();
+        bad.Clear();
+        foreach (var reports in Main_Referencer.Instance.value.realizedDayRegister)
+        {
+            foreach (var report in reports)
+            {
+                if (report.attempted && report.data == quest && report.monster != null)
+                {
+                    (report.isWinned ? good : bad).Add(report.monster);
+                }
+            }
+        }
     }
     
     public void InstanceNew(int day)
