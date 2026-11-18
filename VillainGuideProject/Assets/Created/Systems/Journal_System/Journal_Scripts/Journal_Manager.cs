@@ -7,57 +7,53 @@ public sealed class JournalManager : MonoBehaviour
 {
     private List<GameObject> instantiatedNews = new List<GameObject>();
     private List<CreateQuest_Data> winnedNews = new List<CreateQuest_Data>();
-
-    public List<(CreateQuest_Data data, CreateMonster_Data monster, bool isWinned )> dayNewsRegister = new();
+    
+    public List<List<(CreateQuest_Data data, CreateMonster_Data monster, bool isWinned )>> dayNewsRegister = new();
     
     private bool rewardsOpen = false;
 
     public void RegisterNew(CreateQuest_Data data, CreateMonster_Data monster, bool isWinned )
     {
-        dayNewsRegister.Add((data, monster, isWinned));
+        dayNewsRegister.Add(new ());
+        dayNewsRegister[^1].Add((data, monster, isWinned));
     }
     
-    
-    public void InstanceNew()
+    public void InstanceNew(int day)
     {
-        /*GameObject curNew;
+        GameObject curNew;
         Transform curContainer;
 
-        if (data.type == CreateQuest_Data.QuestType.Single)
+        foreach (var news  in dayNewsRegister[day])
         {
-            curNew = Main_Referencer.Instance.visual.singleNews_Journal
-                [Random.Range(0, Main_Referencer.Instance.visual.singleNews_Journal.Length)];
+            if (news.data.type == CreateQuest_Data.QuestType.Single)
+            {
+                curNew = Main_Referencer.Instance.visual.singleNews_Journal
+                    [Random.Range(0, Main_Referencer.Instance.visual.singleNews_Journal.Length)];
 
-            curContainer = Main_Referencer.Instance.visual.singleNewContainer_Journal.transform;
-        }
-        else if (data.type == CreateQuest_Data.QuestType.Route)
-        {
-            curNew = Main_Referencer.Instance.visual.routeNew_Journal;
-            curContainer = Main_Referencer.Instance.visual.routeNewContainer_Journal.transform;
-        }
-        else
-        {
-            return;
-        }
+                curContainer = Main_Referencer.Instance.visual.singleNewContainer_Journal.transform;
+            }
+            else if (news.data.type == CreateQuest_Data.QuestType.Route)
+            {
+                curNew = Main_Referencer.Instance.visual.routeNew_Journal;
+                curContainer = Main_Referencer.Instance.visual.routeNewContainer_Journal.transform;
+            }
+            else
+            {
+                return;
+            }
 
-        GameObject newObject = Instantiate(curNew, curContainer);
+            GameObject newObject = Instantiate(curNew, curContainer);
 
-        if (isWinned)
-        {
-            curNew.GetComponent<JournalNew_Info>().setInfo(data, data.goodResult);
-            RegisterWinned(data);
-        }
-        else
-        {
-            curNew.GetComponent<JournalNew_Info>().setInfo(data, data.badResult);
+            if (news.isWinned)
+            {
+                curNew.GetComponent<JournalNew_Info>().setInfo(news.data , news.data.goodResult);
+            }
+            else
+            {
+                curNew.GetComponent<JournalNew_Info>().setInfo(news.data, news.data.badResult);
+            }
         }
         
-        instantiatedNews.Add(newObject);*/
-    }
-
-    public void RegisterWinned(CreateQuest_Data data)
-    {
-        winnedNews.Add(data);
     }
     
     public void CleanJournal()
