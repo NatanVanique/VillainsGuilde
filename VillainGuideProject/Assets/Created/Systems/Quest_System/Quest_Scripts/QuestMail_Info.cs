@@ -67,9 +67,9 @@ public class QuestMail_Info : MonoBehaviour
             requirement.SetRequirement(Requirement_Element.RequirementType.TimeToDone, time);
         }
 
-        if (questData.hasReputationXpReward)
+        if (questData.haspopularityXpReward)
         {
-            AddReward(rewardContent, RewardIcon_Element.RewardType.ReputationXp, questData.reputationXpEarned.ToString());
+            AddReward(rewardContent, RewardIcon_Element.RewardType.ReputationXp, questData.popularityXpEarned.ToString());
         }
 
         if (questData.hasCharacterXpReward)
