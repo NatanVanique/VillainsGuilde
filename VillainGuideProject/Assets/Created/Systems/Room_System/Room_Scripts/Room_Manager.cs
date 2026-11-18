@@ -11,6 +11,8 @@ public sealed class RoomManager : MonoBehaviour
     private RectTransform backgroundContent;
     private float initialContentPositionX;
     private int currentScreen;
+    private Transform navigationContent;
+    private bool navigationHidden;
     
     private void Start()
     {
@@ -22,6 +24,7 @@ public sealed class RoomManager : MonoBehaviour
 
         backgroundContent = initialScreen.parent.GetComponent<RectTransform>();
         initialContentPositionX = backgroundContent.anchoredPosition.x;
+        navigationContent = visual.previousScreenButton_Room.transform.parent;
         visual.previousScreenButton_Room.onClick.AddListener(PreviousScreen);
         visual.nextScreenButton_Room.onClick.AddListener(NextScreen);
         UpdateNavigationButtons();
@@ -36,15 +39,20 @@ public sealed class RoomManager : MonoBehaviour
 
     public void PreviousScreen()
     {
-        GoToScreen(PreviousScreenPosition());
+        GoToScreen(PreviousScreenPosition(), false);
     }
 
     public void NextScreen()
     {
-        GoToScreen(NextScreenPosition());
+        GoToScreen(NextScreenPosition(), false);
     }
 
     public void GoToScreen(int position)
+    {
+        GoToScreen(position, true);
+    }
+
+    public void GoToScreen(int position, bool hideNavigation)
     {
         if (!TryGetRoomScreen(position, out RectTransform screen))
         {
@@ -57,6 +65,38 @@ public sealed class RoomManager : MonoBehaviour
             initialContentPositionX - screen.anchoredPosition.x,
             screenTransitionDuration, screenTransitionEase);
         UpdateNavigationButtons();
+        if (hideNavigation)
+        {
+            SetNavigationContent(false);
+        }
+    }
+
+    public void ReactivateNavigationButtons()
+    {
+        SetNavigationContent(true);
+    }
+
+    private void SetNavigationContent(bool active)
+    {
+        navigationHidden = !active;
+        UpdateNavigationButtons();
+
+        if (navigationContent == null ||
+            navigationContent != visual.nextScreenButton_Room.transform.parent ||
+            backgroundContent.IsChildOf(navigationContent))
+        {
+            return;
+        }
+
+        foreach (VisualReferencer.RoomScreenReference roomScreen in visual.screensRoom)
+        {
+            if (roomScreen.screen != null && roomScreen.screen.IsChildOf(navigationContent))
+            {
+                return;
+            }
+        }
+
+        navigationContent.gameObject.SetActive(active);
     }
 
     public bool TryGetRoomScreen(int position, out RectTransform screen)
@@ -101,7 +141,7 @@ public sealed class RoomManager : MonoBehaviour
 
     private void UpdateNavigationButtons()
     {
-        visual.previousScreenButton_Room.gameObject.SetActive(PreviousScreenPosition() != int.MinValue);
-        visual.nextScreenButton_Room.gameObject.SetActive(NextScreenPosition() != int.MaxValue);
+        visual.previousScreenButton_Room.gameObject.SetActive(!navigationHidden && PreviousScreenPosition() != int.MinValue);
+        visual.nextScreenButton_Room.gameObject.SetActive(!navigationHidden && NextScreenPosition() != int.MaxValue);
     }
 }

@@ -69,6 +69,9 @@ public sealed class MonsterManager : MonoBehaviour
         visual.selectionCanvas_MonsterSelection.SetActive(false);
         selectedQuest = null;
         visual.voiceMailCanvas_voiceMail.SetActive(true);
+        RoomManager roomManager = Main_Referencer.Instance.manager.roomManager;
+        roomManager.GoToScreen(0);
+        roomManager.ReactivateNavigationButtons();
     }
 
     private void SelectPrevious()
