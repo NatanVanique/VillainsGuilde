@@ -3,7 +3,9 @@ using UnityEngine;
 
 public sealed class RoomManager : MonoBehaviour
 {
-    private const float ScreenTransitionDuration = 0.45f;
+    [Header("Screen Animation")]
+    [SerializeField, Min(0f)] private float screenTransitionDuration = 0.45f;
+    [SerializeField] private Ease screenTransitionEase = Ease.InOutCubic;
     
     private VisualReferencer visual;
     private RectTransform backgroundContent;
@@ -50,10 +52,10 @@ public sealed class RoomManager : MonoBehaviour
         }
 
         currentScreen = position;
-        backgroundContent.DOKill();
-        backgroundContent.DOAnchorPosX(
+        DoTweenEffects_Commands.DoTweenAnchorPosX(
+            backgroundContent,
             initialContentPositionX - screen.anchoredPosition.x,
-            ScreenTransitionDuration).SetEase(Ease.InOutCubic);
+            screenTransitionDuration, screenTransitionEase);
         UpdateNavigationButtons();
     }
 
