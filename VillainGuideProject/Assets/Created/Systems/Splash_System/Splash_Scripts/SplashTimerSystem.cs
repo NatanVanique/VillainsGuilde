@@ -4,12 +4,21 @@ using System.Collections;
 
 public class SplashTimerSystem : MonoBehaviour
 {
-    int splashDuration = 3;
+    int splashDuration = 5;
+    [SerializeField] GameObject bisc8Logo;
+    //[SerializeField] GameObject asteraLogo;
+
+    public void StartLogos()
+    {
+        bisc8Logo.SetActive(true);
+        //asteraLogo.SetActive(true);
+
+        StartCoroutine(SplashTimer());
+    }
     public void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        StartCoroutine(SplashTimer());
     }
 
     public void EndSplash()

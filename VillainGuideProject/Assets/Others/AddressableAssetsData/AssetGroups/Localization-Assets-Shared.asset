@@ -25,6 +25,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 521794ee59605654f9b774b50a6ec8cb
+    m_Address: Assets/Created/Localization/Journal/Journal Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a4cd80b71b36c934885926a53300db9b
     m_Address: Assets/Localization/SingleQuests/Name/SingleQuests_Name Shared Data.asset
     m_ReadOnly: 1

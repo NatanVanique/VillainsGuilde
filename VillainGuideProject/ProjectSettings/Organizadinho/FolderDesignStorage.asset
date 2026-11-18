@@ -288,7 +288,7 @@ MonoBehaviour:
     iconGuid: 
   - guid: 8ce9aadda4af72c4c853b9dd1b214fb4
     hasColor: 1
-    propagateChildren: 0
+    propagateChildren: 1
     colorMode: 2
     hue: 0.58
     customColor: {r: 0.6336, g: 0.803328, b: 0.96, a: 1}
