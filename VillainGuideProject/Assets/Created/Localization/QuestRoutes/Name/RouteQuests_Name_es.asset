@@ -17,7 +17,35 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 33275aad986aaab4ea27a58988ba64f5, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 36549058560
+    m_Localized: "Dosis fatalmente canina"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37333393408
+    m_Localized: "La última ronda en Fancy Balancy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37333393409
+    m_Localized: "El atraco del corazón"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37333393410
+    m_Localized: "El rehén de la suite presidencial"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37333393411
+    m_Localized: "El traductor demoníaco"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37333393412
+    m_Localized: "La multitud pide pan"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37333393413
+    m_Localized: "Caos climático"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -33,6 +33,7 @@ MonoBehaviour:
   bigImage: {fileID: 21300000, guid: 30adfbccca6f57447aefa07c1cd865f0, type: 3}
   smallImage: {fileID: 0}
   icon: {fileID: 2973255062055760650, guid: 508ec17c4b50ed74296772cd7956d66a, type: 3}
+  journalImage: {fileID: 21300000, guid: dfac0d8fd9d7b2a4d89683b529c876a3, type: 3}
   strength: 0
   speed: 0
   intelligence: 0

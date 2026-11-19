@@ -27,11 +27,215 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 25410768897
-    m_Localized: Clic para ver Noticias
+    m_Localized: Cerrar diario
     m_Metadata:
       m_Items: []
   - m_Id: 25410768898
     m_Localized: Clic para ver Recompensas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768899
+    m_Localized: Sin resultados
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768920
+    m_Localized: "El príncipe Frederick apareció sano y salvo sobre el ventilador de la suite. El alcalde lo abrazó entre lágrimas y Penélope aseguró que todo había sido una inspección técnica."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768921
+    m_Localized: "Tras una noche de búsquedas, el alcalde apareció con ojeras y se puso a triturar papeles. Penélope negó que el gato hubiera estado cerca de documentos confidenciales."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768922
+    m_Localized: "El hospital amaneció en silencio. Los pacientes dormían y el personal elogió a un misterioso asesor de bienestar. El alcalde agradeció la rápida intervención."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768923
+    m_Localized: "Reina el caos en el hospital. Los testigos vieron criaturas huyendo por los pasillos, mientras el Ayuntamiento negó toda relación con la campaña de vacunación."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768924
+    m_Localized: "La discoteca cerró sin incidentes. Un supuesto artista envolvió al cliente agitado en cintas decorativas y el alcalde acabó dormido en un sofá VIP, vendado como una momia."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768925
+    m_Localized: "La noche terminó en caos en la discoteca. Los asistentes huyeron y la gerencia suspendió la programación mientras recogía los destrozos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768926
+    m_Localized: "El banco solo informó de un fallo técnico. El alcalde salió discretamente del edificio y su oficina aseguró que el incidente había sido un malentendido."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768927
+    m_Localized: "El alcalde quedó detenido tras un intento de robo en el banco. Su oficina aún no ha explicado por qué estaba allí."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768928
+    m_Localized: "El delegado llegó al escenario minutos antes de su presentación. El personal del hotel insiste en que la demora se debió a una puerta atascada."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768929
+    m_Localized: "Seguridad derribó la puerta y el delegado se desmayó sobre sus propias diapositivas. La presentación quedó suspendida."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768930
+    m_Localized: "La traducción se corrigió justo a tiempo. Los delegados aplaudieron y el discurso logró continuar sin que nadie preguntara por la versión anterior."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768931
+    m_Localized: "La cumbre terminó antes de lo previsto. Los delegados abandonaron la sala tras escuchar la traducción y se negaron a volver."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768932
+    m_Localized: "Las voces tranquilas que salían de la sede calmaron a la multitud. Los manifestantes se dispersaron sin que el auditorio sufriera daños."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768933
+    m_Localized: "La multitud irrumpió en la sede de la Liga y ocupó el auditorio. La dirección suspendió el programa y desalojó al personal."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768934
+    m_Localized: place holder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768935
+    m_Localized: place holder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768936
+    m_Localized: place holder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768937
+    m_Localized: place holder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768938
+    m_Localized: place holder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768939
+    m_Localized: place holder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768940
+    m_Localized: place holder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768941
+    m_Localized: place holder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768942
+    m_Localized: place holder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768943
+    m_Localized: place holder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768944
+    m_Localized: "Los chimpancés volvieron al zoológico después de abandonar la residencia de mayores. Los residentes pudieron por fin recuperar sus habitaciones."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768945
+    m_Localized: "Los chimpancés tomaron la residencia y se negaron a marcharse. Los cuidadores han pedido refuerzos y más plátanos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768946
+    m_Localized: "El festival de la panadería Candy Candy terminó con una celebración después de recuperar el pan. La gerencia insiste en que nadie se quedó sin probarlo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768947
+    m_Localized: "La panadería canceló el festival después de que las criaturas se comieran el pan. Los vecinos salieron con las bolsas vacías."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768948
+    m_Localized: "Los bailarines desaparecidos fueron rescatados con vida de las alcantarillas. Las discotecas esperan reabrir sus pistas este fin de semana."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768949
+    m_Localized: "Las discotecas siguen sin bailarines tras una búsqueda infructuosa en las alcantarillas. Ningún club ha anunciado cuándo volverá a abrir."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768950
+    m_Localized: "La señora María, del 841, por fin abrió su frasco de pepinillos con ayuda de la agencia. Los vecinos volvieron a dormir tranquilos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768951
+    m_Localized: "El frasco de pepinillos resistió heroicamente en la oscuridad. La señora María sigue esperando que alguien consiga abrirlo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768952
+    m_Localized: "Madre e hija se reconciliaron tras una mediación discreta. El diario volvió a su sitio y el resto de la familia quedó fuera del asunto."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768953
+    m_Localized: "La lectura del diario desató una pelea en el chat familiar. Los vecinos dicen que la discusión duró hasta la madrugada."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768954
+    m_Localized: "Alissa salió del lugar discretamente y volvió a casa sin que el incidente atrajera más miradas. La familia agradeció la discreción."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768955
+    m_Localized: "La policía llegó antes que la agencia y encontró a Alissa sermoneando a los presentes. El barrio lleva toda la mañana comentándolo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768956
+    m_Localized: "La manicurista reparó la uña e incluso lanzó un nuevo estilo. La diplomática pudo volver a sus compromisos sin más sobresaltos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768957
+    m_Localized: "La diplomática se marchó furiosa y el incidente acabó escalando hasta convertirse en un conflicto internacional."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768958
+    m_Localized: "Glória pudo reunirse con su marido y el jacuzzi volvió a funcionar. La pareja acabó disfrutando de un baño tranquilo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768959
+    m_Localized: "Glória vio cómo el jacuzzi se tragaba el pie de su marido. El gimnasio cerró el sótano y pidió a los socios que evitaran la zona."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768960
+    m_Localized: "Baltazar perdió la corbata, pero llevaba una de repuesto. Llegó a su reunión como si nada hubiera pasado."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768961
+    m_Localized: "Baltazar perdió la corbata, el traje y el contrato. La prensa documentó el espectáculo entero."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768962
+    m_Localized: "La corona fue recuperada, lavada a fondo y devuelta a la reina. La comitiva retomó su agenda con cierta prisa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768963
+    m_Localized: "La corona desapareció por las tuberías y la reina rompió a llorar. La comitiva suspendió el resto de la visita."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768964
+    m_Localized: "Louro José fue capturado y enviado a casa en un Uber Pet. El senador recuperó a su loro antes de que se acercara a otro micrófono."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768965
+    m_Localized: "El loro lo contó todo en directo. Ya se ha abierto una investigación y el senador ha dejado de atender a la prensa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768966
+    m_Localized: "El oso se sintió amenazado y abandonó la habitación. La señora Charlotte pudo regresar a su dormitorio."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768967
+    m_Localized: "El oso se quedó con la habitación y la señora Charlotte durmió en el jardín. La familia aún negocia la devolución de la cama."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768910
+    m_Localized: "Los últimos informes confirman que la misión se completó."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768911
+    m_Localized: "Los informes recogidos en el lugar confirman que la misión no salió según lo previsto."
     m_Metadata:
       m_Items: []
   references:

@@ -36,6 +36,7 @@ public class QuestMail_Info : MonoBehaviour
     private bool resolved;
     private bool viewingInfo;
     private float responseDeadline;
+    private (Sprite sprite, Color color, bool preserveAspect) unassignedMonsterIcon;
     private readonly HashSet<MonsterReferencer.Monsters> goodDiscoveries = new();
     private readonly HashSet<MonsterReferencer.Monsters> badDiscoveries = new();
 
@@ -48,6 +49,8 @@ public class QuestMail_Info : MonoBehaviour
         acceptButton.onClick.AddListener(AcceptQuest);
         declineButton.onClick.AddListener(DeclineQuest);
         acceptButton.interactable = false;
+        Image icon = monstersButton.image;
+        unassignedMonsterIcon = (icon.sprite, icon.color, icon.preserveAspect);
         
         questData = data;
         questName = questData.questName;
@@ -191,11 +194,12 @@ public class QuestMail_Info : MonoBehaviour
     public void AssignMonster(MonsterReferencer.Monsters monster)
     {
         AssignedMonster = monster;
-        acceptButton.interactable = true;
+        bool hasMonster = monster != null;
+        acceptButton.interactable = hasMonster;
         Image icon = monstersButton.image;
-        icon.sprite = monster.monstersProfile.icon;
-        icon.color = Color.white;
-        icon.preserveAspect = true;
+        icon.sprite = hasMonster ? monster.monstersProfile.icon : unassignedMonsterIcon.sprite;
+        icon.color = hasMonster ? Color.white : unassignedMonsterIcon.color;
+        icon.preserveAspect = hasMonster || unassignedMonsterIcon.preserveAspect;
         RefreshDiscoveredResults();
     }
 
@@ -273,8 +277,8 @@ public class QuestMail_Info : MonoBehaviour
         AssignedMonster = null;
         gameObject.SetActive(false);
         Destroy(gameObject);
-        references.manager.monsterManager.OnQuestMailResolved(this);
         references.manager.questManager.ResolveQuest(questData, monster, accepted && Time.time < responseDeadline);
+        references.manager.monsterManager.OnQuestMailResolved(this);
     }
     
     public void SetInfoState(bool isInfoOpen)

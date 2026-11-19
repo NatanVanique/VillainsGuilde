@@ -30,6 +30,24 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  goodResult:
+    m_TableReference:
+      m_TableCollectionName: GUID:521794ee59605654f9b774b50a6ec8cb
+    m_TableEntryReference:
+      m_KeyId: 25410768920
+      m_Key:
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  badResult:
+    m_TableReference:
+      m_TableCollectionName: GUID:521794ee59605654f9b774b50a6ec8cb
+    m_TableEntryReference:
+      m_KeyId: 25410768921
+      m_Key:
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   type: 1
   minPopularity: 0
   winMargin: 0
@@ -47,7 +65,8 @@ MonoBehaviour:
   - requerimenttype: 6
     requerimentValue: 0.35
   reputationXpEarned: 0
-  characterXpEarned: 0
+  hasCharacterXpReward: 1
+  characterXpEarned: 50
   coinsEarned: 0
   characterEarned: []
   references:

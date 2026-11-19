@@ -6,6 +6,7 @@ using TriInspector;
 public class MonsterReferencer : MonoBehaviour
 {
     public const int MaxMonsterLevel = 10;
+    public const int ExperiencePerLevel = 100;
 
     [System.Serializable]
     [DeclareBoxGroup("Upgrade", Title = "Upgrade")]
@@ -36,10 +37,40 @@ public class MonsterReferencer : MonoBehaviour
         public int monsterLevel = 0;
 
         [Group("Progression")]
+        [Range(0, ExperiencePerLevel)] public int monsterExperience;
+
+        [Group("Progression")]
         [Range(0f, 1f)] public float happiness;
 
         [Group("Progression")]
         public statusUpgradeValues[] statusUpgrade = Array.Empty<statusUpgradeValues>();
+
+        public void GainExperience(int amount)
+        {
+            if (amount <= 0 || monsterLevel >= MaxMonsterLevel)
+            {
+                return;
+            }
+
+            int capacity = (MaxMonsterLevel - monsterLevel) * ExperiencePerLevel;
+            int experience = Mathf.Min(amount, capacity) + monsterExperience;
+            int levelsGained = Mathf.Min(experience / ExperiencePerLevel, MaxMonsterLevel - monsterLevel);
+            monsterLevel += levelsGained;
+            monsterExperience = monsterLevel == MaxMonsterLevel ? ExperiencePerLevel : experience % ExperiencePerLevel;
+
+            if (levelsGained == 0 || statusUpgrade == null)
+            {
+                return;
+            }
+
+            foreach (statusUpgradeValues upgrade in statusUpgrade)
+            {
+                if (upgrade != null)
+                {
+                    upgrade.upgradeValue = Mathf.Clamp01(upgrade.upgradeValue + upgrade.upgradeValueperLevel * levelsGained);
+                }
+            }
+        }
 
         public float GetStatValue(CreateMonster_Data.StatsTypes type)
         {

@@ -33,6 +33,7 @@ MonoBehaviour:
   bigImage: {fileID: 21300000, guid: 53ca664b1a0ae774585377616ccfe1d4, type: 3}
   smallImage: {fileID: 0}
   icon: {fileID: 505607914848609327, guid: 508ec17c4b50ed74296772cd7956d66a, type: 3}
+  journalImage: {fileID: 21300000, guid: d8a4859fb29955a4a97e694cf5cf2e0e, type: 3}
   baseStats:
   - statType: 0
     statValue: 0.52

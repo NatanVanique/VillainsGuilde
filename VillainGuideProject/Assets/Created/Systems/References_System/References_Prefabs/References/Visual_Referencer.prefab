@@ -139,5 +139,6 @@ MonoBehaviour:
   - {fileID: 1463714975924569701, guid: 3b5350b71cce46345ad8c981f0a4b2fd, type: 3}
   routeNewContainer_Journal: {fileID: 0}
   routeNew_Journal: {fileID: 1817309071299043150, guid: 42059efeec703b74ab0f6a4a4282e4fb, type: 3}
+  characterXpElement_Journal: {fileID: 6908302142946551006, guid: 6ccdaf2a4b2d2c94ab44fba8c0938486, type: 3}
   titleText_Journal: {fileID: 0}
   tabButton_Journal: {fileID: 0}

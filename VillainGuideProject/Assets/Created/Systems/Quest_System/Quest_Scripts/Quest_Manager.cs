@@ -88,9 +88,14 @@ public sealed class QuestManager : MonoBehaviour
         return passed.Count >= quest.statsToWin;
     }
 
+    public bool IsMonsterInProgress(MonsterReferencer.Monsters monster)
+    {
+        return monstersOnTimedMissions.Contains(monster);
+    }
+
     public bool IsMonsterOnMission(MonsterReferencer.Monsters monster)
     {
-        if (monstersOnTimedMissions.Contains(monster))
+        if (IsMonsterInProgress(monster))
         {
             return true;
         }

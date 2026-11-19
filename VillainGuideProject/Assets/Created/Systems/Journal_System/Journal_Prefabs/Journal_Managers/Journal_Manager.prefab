@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00000000000000000000000000000047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  journalCanvas: {fileID: 5692628652861824471}
+  dayLabel: {fileID: 5692628652861824472}
 --- !u!1001 &8667912299406312149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -423,3 +425,19 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4065726953521856488, guid: a609c5687b78f4d48ab90494a1a35462, type: 3}
   m_PrefabInstance: {fileID: 8667912299406312149}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5692628652861824471 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1206504097688418321, guid: a609c5687b78f4d48ab90494a1a35462, type: 3}
+  m_PrefabInstance: {fileID: 8667912299406312149}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5692628652861824472 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1337694290759238986, guid: a609c5687b78f4d48ab90494a1a35462, type: 3}
+  m_PrefabInstance: {fileID: 8667912299406312149}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:

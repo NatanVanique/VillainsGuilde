@@ -17,7 +17,75 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: a4cd80b71b36c934885926a53300db9b, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 37933178880
+    m_Localized: "Blues del sótano"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316224
+    m_Localized: "El fantasma del monstruo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316225
+    m_Localized: "Un grito desde las profundidades"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316226
+    m_Localized: "¡Mayday, mayday, monstruo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316227
+    m_Localized: "Prohibido el paso a monstruos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316228
+    m_Localized: "¡Los monos se han vuelto locos!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316229
+    m_Localized: "El gran robo del pan"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316230
+    m_Localized: "Desaparición en la pista de baile"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316231
+    m_Localized: "El poder del pepinillo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316232
+    m_Localized: "Sabores de juventud"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316233
+    m_Localized: "Diecisiete otra vez"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316234
+    m_Localized: "La uña problemática"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316235
+    m_Localized: "Una aventura poco convencional"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316236
+    m_Localized: "La corbata irrompible"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316237
+    m_Localized: "La corona maldita"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316238
+    m_Localized: "El loro chivato"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37979316239
+    m_Localized: "¿Quieres un osito?"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

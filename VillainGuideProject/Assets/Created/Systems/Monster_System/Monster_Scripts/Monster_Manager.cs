@@ -99,6 +99,13 @@ public sealed class MonsterManager : MonoBehaviour
             return;
         }
 
+        if (selectedQuest.AssignedMonster == monster)
+        {
+            selectedQuest.AssignMonster(null);
+            UpdateSendButton(monster);
+            return;
+        }
+
         selectedQuest.AssignMonster(monster);
         CloseSelection();
     }
@@ -106,10 +113,18 @@ public sealed class MonsterManager : MonoBehaviour
     private bool UpdateSendButton(MonsterReferencer.Monsters monster)
     {
         Main_Referencer references = Main_Referencer.Instance;
-        bool isOnMission = references.manager.questManager.IsMonsterOnMission(monster);
-        references.visual.sendButton_MonsterSelection.interactable = !isOnMission;
-        references.visual.sendButtonText_MonsterSelection.text = isOnMission ? "Já está em missão" : sendLabel;
-        return isOnMission;
+        QuestManager quests = references.manager.questManager;
+        bool isInProgress = quests.IsMonsterInProgress(monster);
+        bool assignedHere = selectedQuest != null && selectedQuest.AssignedMonster == monster;
+        bool reservedElsewhere = !isInProgress && !assignedHere && quests.IsMonsterOnMission(monster);
+        bool blocked = isInProgress || reservedElsewhere;
+
+        references.visual.sendButton_MonsterSelection.interactable = !blocked;
+        references.visual.sendButtonText_MonsterSelection.text = isInProgress ? "Já está em missão"
+            : reservedElsewhere ? "Já selecionado"
+            : assignedHere ? "Remove"
+            : sendLabel;
+        return blocked;
     }
 
     public void RefreshMissionAvailability()
