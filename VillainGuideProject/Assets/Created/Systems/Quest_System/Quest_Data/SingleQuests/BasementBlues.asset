@@ -62,12 +62,12 @@ MonoBehaviour:
     requerimentValue: 0.50
   - requerimenttype: 4
     requerimentValue: 0.30
-  hasReputationXpReward: 0
-  reputationXpEarned: 0
+  haspopularityXpReward: 1
+  popularityXpEarned: 10
   hasCharacterXpReward: 1
   characterXpEarned: 25
-  hasCoinsReward: 0
-  coinsEarned: 0
+  hasCoinsReward: 1
+  coinsEarned: 20
   hasCharacterReward: 0
   characterEarned: []
   references:

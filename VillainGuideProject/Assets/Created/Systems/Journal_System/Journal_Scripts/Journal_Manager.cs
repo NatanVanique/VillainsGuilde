@@ -8,6 +8,7 @@ public sealed class JournalManager : MonoBehaviour
 {
     [SerializeField] private GameObject journalCanvas;
     [SerializeField] private TMPro.TextMeshProUGUI dayLabel;
+    [SerializeField] private GameObject smallNewsDivider;
 
     private readonly List<GameObject> instantiatedNews = new();
     private readonly List<GameObject> instantiatedCharacterXp = new();
@@ -25,8 +26,8 @@ public sealed class JournalManager : MonoBehaviour
     private int publishedDay = -1;
     private float? timeScaleBeforeJournal;
     private bool rewardsOpen;
-    private int totalPopularityXp;
-    private int totalCoins;
+    private long totalPopularityXp;
+    private long totalCoins;
     private int totalRecruits;
 
     private void Start()
@@ -146,6 +147,7 @@ public sealed class JournalManager : MonoBehaviour
     public void InstanceNew(int day)
     {
         CleanJournal();
+        smallNewsDivider.SetActive(false);
 
         if (day < 0 || day >= Main_Referencer.Instance.value.realizedDayRegister.Count)
         {
@@ -159,10 +161,15 @@ public sealed class JournalManager : MonoBehaviour
             featured = reports.FindIndex(report => report.attempted && report.monster != null);
         }
 
+        int smallNewsCount = 0;
         for (int index = 0; index < reports.Count; index++)
         {
             var news = reports[index];
             bool isHeadline = index == featured || news.data.type == CreateQuest_Data.QuestType.Route;
+            if (!isHeadline)
+            {
+                smallNewsCount++;
+            }
             GameObject prefab = isHeadline
                 ? visual.routeNew_Journal
                 : visual.singleNews_Journal[Random.Range(0, visual.singleNews_Journal.Length)];
@@ -184,6 +191,8 @@ public sealed class JournalManager : MonoBehaviour
             info.SetMonsterImage(news.attempted ? news.monster?.monstersProfile : null);
             info.setInfo(news.data, result);
         }
+
+        smallNewsDivider.SetActive(smallNewsCount > 1);
     }
 
     public void CleanJournal()
@@ -288,8 +297,15 @@ public sealed class JournalManager : MonoBehaviour
                 continue;
             }
 
-            totalPopularityXp += news.data.popularityXpEarned;
-            totalCoins += news.data.coinsEarned;
+            if (news.data.haspopularityXpReward)
+            {
+                totalPopularityXp += Mathf.Max(0, news.data.popularityXpEarned);
+            }
+
+            if (news.data.hasCoinsReward)
+            {
+                totalCoins += Mathf.Max(0, news.data.coinsEarned);
+            }
 
             if (news.data.hasCharacterReward)
             {
@@ -304,6 +320,10 @@ public sealed class JournalManager : MonoBehaviour
             experienceByMonster.TryGetValue(news.monster, out int experience);
             experienceByMonster[news.monster] = experience + news.data.characterXpEarned;
         }
+
+        ManagerReferencer managers = Main_Referencer.Instance.manager;
+        managers.popularityManager.GrantExperience(totalPopularityXp);
+        managers.moneyManager.Credit(totalCoins);
 
         foreach (var reward in experienceByMonster)
         {
@@ -332,10 +352,17 @@ public sealed class JournalManager : MonoBehaviour
                 reward.monster.monstersProfile.icon, reward.startLevel, reward.startXp, reward.endLevel, reward.endXp);
         }
 
+        Main_Referencer references = Main_Referencer.Instance;
+        ValuesReferencer values = references.value;
         var rewards = visual.rewardsNewComponents_Journal;
-        rewards[1].progressSlider.SetValueWithoutNotify(Mathf.Clamp01(totalPopularityXp / 100f));
-        rewards[1].LevelValueText.text = Main_Referencer.Instance.value.popularityLevel_Popularity.ToString();
-        rewards[2].numbersValueText.text = totalCoins.ToString();
+        float progress = values.popularityLevel_Popularity >= values.maxPopularityLevel_Popularity
+            ? 1f
+            : Mathf.Clamp01((float)values.popularityXp_Popularity / PopularityManager.ExperiencePerLevel);
+        rewards[1].progressSlider.SetValueWithoutNotify(progress);
+        rewards[1].LevelValueText.text = values.popularityLevel_Popularity.ToString();
+        rewards[1].numbersValueText.gameObject.SetActive(true);
+        rewards[1].numbersValueText.text = $"+{totalPopularityXp:N0} XP";
+        rewards[2].numbersValueText.text = $"+{totalCoins:N0}  |  Total {references.manager.moneyManager.Balance:N0}";
         rewards[3].numbersValueText.text = totalRecruits.ToString();
     }
 
@@ -352,6 +379,19 @@ public sealed class JournalManager : MonoBehaviour
 
     private void ResetPageScroll()
     {
+        // Size the active sections before their parent reads their heights.
+        if (rewardsOpen)
+        {
+            UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)visual.rewardsNew_Journal.transform);
+        }
+        else
+        {
+            UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)visual.routeNewContainer_Journal.transform);
+            UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)visual.singleNewContainer_Journal.transform);
+        }
+
+        UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)visual.rewardsNew_Journal.transform.parent);
+        UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(journalScroll.content);
         Canvas.ForceUpdateCanvases();
         journalScroll.StopMovement();
         journalScroll.verticalNormalizedPosition = 1f;

@@ -7,6 +7,7 @@ using TriInspector;
 [DeclareBoxGroup("Hour", Title = "Hour")]
 [DeclareBoxGroup("Phone", Title = "Phone")]
 [DeclareBoxGroup("Room", Title = "Room")]
+[DeclareBoxGroup("Economy", Title = "Economy")]
 
 public class ManagerReferencer : MonoBehaviour
 {
@@ -21,4 +22,7 @@ public class ManagerReferencer : MonoBehaviour
     [Group("Phone")] public TelephoneManager telephoneManager;
     
     [Group("Room")] public RoomManager roomManager;
+
+    [Group("Economy")] public MoneyManager moneyManager;
+    [Group("Economy")] public PopularityManager popularityManager;
 }

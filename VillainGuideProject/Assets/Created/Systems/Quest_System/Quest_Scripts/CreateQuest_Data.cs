@@ -26,7 +26,9 @@
         public statusRequirementsValues[]  statusRequirements;
 
         [Header("Rewards")] 
+        [UnityEngine.Serialization.FormerlySerializedAs("hasReputationXpReward")]
         public bool haspopularityXpReward;
+        [UnityEngine.Serialization.FormerlySerializedAs("reputationXpEarned")]
         public int popularityXpEarned;
         public bool hasCharacterXpReward;
         public int characterXpEarned;
