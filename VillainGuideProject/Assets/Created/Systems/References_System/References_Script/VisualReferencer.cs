@@ -42,6 +42,7 @@ public class VisualReferencer : MonoBehaviour
 
     [Group("Bars")] public GameObject top_Bars;
     [Group("Bars")] public GameObject bottom_Bars;
+    [Group("Bars")] public Image background_Bars;
 
     [Group("Voice Mail")] public GameObject voiceMailCanvas_voiceMail;
     [Group("Voice Mail")] public GameObject questMail_VoiceMail;

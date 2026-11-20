@@ -80,7 +80,7 @@ MonoBehaviour:
   beforeOfficeDayStartHour_TimeCalls: 6
   OfficeDayStartHour_TimeCalls: 8
   OfficeNightStartHour_TimeCalls: 18
-  velocity_Bars: 0.5
+  velocity_Bars: 2
   popularityXp_Popularity: 0
   maxPopularityLevel_Popularity: 10
   popularityLevel_Popularity: 1

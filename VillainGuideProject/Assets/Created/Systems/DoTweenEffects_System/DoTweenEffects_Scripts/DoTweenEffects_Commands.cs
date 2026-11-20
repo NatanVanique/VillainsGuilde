@@ -1,8 +1,19 @@
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public static class DoTweenEffects_Commands
 {
+
+    public static Sequence DoTweenLoseHealth(Image image, Sprite lostSprite, Vector3 originalScale,
+        float duration, float intensity)
+    {
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(image.transform.DOScale(originalScale * 0.6f, duration * 0.5f).SetEase(Ease.InBack));
+        sequence.AppendCallback(() => image.sprite = lostSprite);
+        sequence.Append(image.transform.DOScale(originalScale, duration * 0.5f).SetEase(Ease.OutBack, intensity));
+        return sequence;
+    }
 
     public static void DoTweenHover(Transform target, float intensity, float duration)
     {
