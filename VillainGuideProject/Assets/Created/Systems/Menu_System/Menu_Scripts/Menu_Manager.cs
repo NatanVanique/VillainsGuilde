@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
@@ -23,35 +24,16 @@ public sealed class MenuManager : MonoBehaviour
     private Dictionary<GameObject, Color> OriginalOutlineColors = new();
     private Dictionary<GameObject, Color> OriginalTextColors = new();
     private Dictionary<GameObject, Material> OriginalTextMaterials = new();
+    private Dictionary<GameObject, Vector3> OriginalScales = new();
 
-    public void OnPointerEnter(GameObject button)
-    {
-        SaveOriginalColors(button);
-
-        ChangeScale(button, ButtonBigXScale);
-        ChangeColor(button, HoverColor, HoverOutlineColor, HoverTextColor);
-        ChangeTextMaterial(button, HoverTextMaterial);
-    }
-
-    public void OnPointerExit(GameObject button)
-    {
-        ChangeScale(button, 1f);
-
-        ChangeColor(
-            button,
-            OriginalButtonColors[button],
-            OriginalOutlineColors[button],
-            OriginalTextColors[button]
-        );
-
-        ChangeTextMaterial(button, OriginalTextMaterials[button]);
-    }
-
-    private void SaveOriginalColors(GameObject button)
+    public void SaveOriginalValues(GameObject button)
     {
         Image image = button.GetComponentInChildren<Image>();
         Outline outline = button.GetComponentInChildren<Outline>();
         TextMeshProUGUI text = button.GetComponentInChildren<TextMeshProUGUI>();
+
+        if (!OriginalScales.ContainsKey(button))
+            OriginalScales.Add(button, button.transform.localScale);
 
         if (!OriginalButtonColors.ContainsKey(button))
             OriginalButtonColors.Add(button, image.color);
@@ -66,33 +48,73 @@ public sealed class MenuManager : MonoBehaviour
             OriginalTextMaterials.Add(button, text.fontMaterial);
     }
 
-    private void ChangeScale(GameObject button, float scaleX)
+    public void ChangeScale(GameObject button)
     {
         button.transform.DOKill();
-
-        button.transform.DOScaleX(scaleX, AnimationDuration)
-            .SetEase(Ease.OutBack);
+        button.transform.DOScaleX(ButtonBigXScale, AnimationDuration).SetEase(Ease.OutBack);
     }
 
-    private void ChangeColor(GameObject button, Color buttonColor, Color outlineColor, Color textColor)
+    public void RestoreScale(GameObject button)
+    {
+        button.transform.DOKill();
+        button.transform.DOScaleX(OriginalScales[button].x, AnimationDuration).SetEase(Ease.OutBack);
+    }
+
+    public void ChangeColor(GameObject button)
+    {
+        SaveOriginalValues(button);
+
+        Image image = button.GetComponentInChildren<Image>();
+        Outline outline = button.GetComponentInChildren<Outline>();
+        TextMeshProUGUI text = button.GetComponentInChildren<TextMeshProUGUI>();
+
+        image.DOKill();
+        image.DOColor(HoverColor, AnimationDuration);
+
+        outline.effectColor = HoverOutlineColor;
+
+        text.DOKill();
+        text.DOColor(HoverTextColor, AnimationDuration);
+    }
+
+    public void RestoreColor(GameObject button)
     {
         Image image = button.GetComponentInChildren<Image>();
         Outline outline = button.GetComponentInChildren<Outline>();
         TextMeshProUGUI text = button.GetComponentInChildren<TextMeshProUGUI>();
 
         image.DOKill();
-        image.DOColor(buttonColor, AnimationDuration);
+        image.DOColor(OriginalButtonColors[button], AnimationDuration);
 
-        outline.DOKill();
-        outline.DOColor(outlineColor, AnimationDuration);
+        outline.effectColor = OriginalOutlineColors[button];
 
         text.DOKill();
-        text.DOColor(textColor, AnimationDuration);
+        text.DOColor(OriginalTextColors[button], AnimationDuration);
     }
 
-    private void ChangeTextMaterial(GameObject button, Material material)
+    public void ChangeTextMaterial(GameObject button)
     {
-        TextMeshProUGUI text = button.GetComponentInChildren<TextMeshProUGUI>();
-        text.fontMaterial = material;
+        SaveOriginalValues(button);
+        button.GetComponentInChildren<TextMeshProUGUI>().fontMaterial = HoverTextMaterial;
+    }
+
+    public void RestoreTextMaterial(GameObject button)
+    {
+        button.GetComponentInChildren<TextMeshProUGUI>().fontMaterial = OriginalTextMaterials[button];
+    }
+
+    public void NewGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void ContinueGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
