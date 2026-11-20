@@ -1045,6 +1045,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 345090802}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1117476414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1587296440794643211, guid: 00000000000000000000000000000042, type: 3}
+  m_PrefabInstance: {fileID: 1999618823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1165583079
 GameObject:
   m_ObjectHideFlags: 0
@@ -2926,6 +2931,10 @@ PrefabInstance:
       propertyPath: returnInfoButton
       value: 
       objectReference: {fileID: 898469214}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: arrowDefeatScreen
+      value: 
+      objectReference: {fileID: 1117476414}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: tabButton_Journal
       value: 

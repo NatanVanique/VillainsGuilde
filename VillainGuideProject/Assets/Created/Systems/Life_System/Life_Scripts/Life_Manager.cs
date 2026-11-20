@@ -11,6 +11,7 @@ public sealed class LifeManager : MonoBehaviour
 
     [Header("Animation")]
     private float animationDuration = 0.4f;
+    private float arrowAnimationDuration = 1.2f;
     private float animationIntensity = 0.6f;
 
     private RectTransform failedPanel;
@@ -195,13 +196,31 @@ public sealed class LifeManager : MonoBehaviour
         StartCoroutine(GameOverVisualSequence());
     }
 
+    public void AnimateDefeatArrow()
+    {
+        RectTransform arrow = (RectTransform)Visual.arrowDefeatScreen.transform;
+
+        arrow.DOKill();
+        arrow.anchoredPosition = new Vector2(-1691f, 968f);
+        arrow.gameObject.SetActive(true);
+
+        arrow.DOAnchorPos(new Vector2(-235f, 18f), arrowAnimationDuration)
+            .SetEase(Ease.OutCubic)
+            .SetLink(arrow.gameObject, LinkBehaviour.KillOnDisable);
+    }
+
     private IEnumerator GameOverVisualSequence()
     {
         Visual.fadeAnimator.SetTrigger("FadeIn");
         yield return new WaitForSeconds(2);
         
+        RectTransform arrow = (RectTransform)Visual.arrowDefeatScreen.transform;
+        arrow.DOKill();
+        arrow.anchoredPosition = new Vector2(-1691f, 968f);
+
         Visual.defeatContainer.SetActive(true);
         Visual.fadeAnimator.SetTrigger("FadeOut");
+        AnimateDefeatArrow();
     }
 
     // Teste!!
