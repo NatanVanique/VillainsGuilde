@@ -54,7 +54,7 @@ public sealed class LifeManager : MonoBehaviour
         RefreshHealth(Visual.healthImages_Life);
         RefreshHealth(Visual.failedHealthImages_Life);
 
-        SetLifeContainers(true, false);
+        SetLifeContainers(false);
     }
 
     public void LoseLife(int amount)
@@ -84,7 +84,7 @@ public sealed class LifeManager : MonoBehaviour
         Main_Referencer.Instance.manager.barsManager.ShowBars();
 
         RestoreFailedHealth();
-        SetLifeContainers(false, true);
+        SetLifeContainers(true);
 
         Canvas.ForceUpdateCanvases();
 
@@ -114,15 +114,14 @@ public sealed class LifeManager : MonoBehaviour
 
         failedSequence.OnComplete(() =>
         {
-            SetLifeContainers(true, false);
+            SetLifeContainers(false);
             failedPanel.anchoredPosition = failedPanelPosition;
             failedPanelClosing = false;
         });
     }
 
-    private void SetLifeContainers(bool healthActive, bool failedActive)
+    private void SetLifeContainers(bool failedActive)
     {
-        Visual.healthContainer_Life.SetActive(healthActive);
         Visual.failedContainer_Life.SetActive(failedActive);
     }
 
@@ -165,9 +164,7 @@ public sealed class LifeManager : MonoBehaviour
             if (image == null) continue;
 
             image.transform.localScale = healthIconScales[i];
-            image.sprite = i < displayedLives
-                ? regularHealthSprites[i]
-                : lostHealthSprite;
+            image.sprite = i < displayedLives ? regularHealthSprites[i] : lostHealthSprite;
         }
     }
 
