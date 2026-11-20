@@ -1,11 +1,41 @@
-
 using UnityEngine;
 using DG.Tweening;
 
 public static class DoTweenEffects_Commands
 {
-    private static Vector3 squashObjOriginalScale;
-    private static Transform squashTarget;
+
+    public static void DoTweenHover(Transform target, float intensity, float duration)
+    {
+        target.DOKill();
+
+        Vector3 originalScale = target.localScale;
+
+        target.DOScale(originalScale * (1f + intensity), duration)
+            .SetEase(Ease.OutBack);
+    }
+
+    public static void DoTweenHoverExit(Transform target, float duration)
+    {
+        target.DOKill();
+
+        target.DOScale(Vector3.one, duration)
+            .SetEase(Ease.OutQuad);
+    }
+
+    public static void DoTweenShowPanel(GameObject panel, float duration, float intensity)
+    {
+        panel.transform.DOComplete();
+        panel.transform.DOKill();
+        panel.SetActive(true);
+        DoTweenPop(panel.transform, duration, intensity);
+    }
+
+    public static void DoTweenHidePanel(GameObject panel)
+    {
+        panel.transform.DOComplete();
+        panel.transform.DOKill();
+        panel.SetActive(false);
+    }
 
     public static Tween DoTweenAnchorPosX(RectTransform target, float positionX, float duration, Ease ease)
     {
@@ -35,14 +65,9 @@ public static class DoTweenEffects_Commands
     
     public static Tween DoTweenSquash(Transform target, float duration, float intensity)
     {
-        if (squashTarget != target)
-        {
-            squashTarget = target;
-            squashObjOriginalScale = target.localScale;
-        }
-        
+        target.DOComplete();
         target.DOKill();
-        target.localScale = squashObjOriginalScale;
+        Vector3 squashObjOriginalScale = target.localScale;
 
         Vector3 squashScale = new Vector3(squashObjOriginalScale.x * (1f + intensity), 
             squashObjOriginalScale.y * (1f - intensity * 0.6f), squashObjOriginalScale.z);
@@ -50,7 +75,7 @@ public static class DoTweenEffects_Commands
         Vector3 stretchScale = new Vector3(squashObjOriginalScale.x * 0.9f, 
             squashObjOriginalScale.y * 1.12f, squashObjOriginalScale.z);
 
-        Sequence sequence = DOTween.Sequence();
+        Sequence sequence = DOTween.Sequence().SetTarget(target);
         
         sequence.Append(target.DOScale(squashScale, duration * 0.25f).SetEase(Ease.OutQuad));
         sequence.Append(target.DOScale(stretchScale, duration * 0.3f).SetEase(Ease.OutBack));

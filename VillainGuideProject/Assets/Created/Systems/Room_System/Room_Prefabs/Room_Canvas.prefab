@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2531526071231934252}
   - component: {fileID: 592856882819081459}
   - component: {fileID: 3662397593420130381}
+  - component: {fileID: 7633328181425984937}
   m_Layer: 5
   m_Name: PreviousScreen_Button
   m_TagString: Untagged
@@ -120,6 +121,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7633328181425984937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208397992588119048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c552f2e5cc03924889b4f42ca2c5bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonHover
 --- !u!1 &456599385071640256
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,6 +818,7 @@ GameObject:
   - component: {fileID: 2746171323642309429}
   - component: {fileID: 3727785087511660925}
   - component: {fileID: 1196552055738566948}
+  - component: {fileID: 2803196540043817014}
   m_Layer: 5
   m_Name: NextScreen_Button
   m_TagString: Untagged
@@ -913,6 +927,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2803196540043817014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2464126599210696677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c552f2e5cc03924889b4f42ca2c5bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonHover
 --- !u!1 &2773923961920979249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,7 +1780,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50.23059, y: 0}
+  m_AnchoredPosition: {x: -50.23047, y: 0}
   m_SizeDelta: {x: -100.4612, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &675940254127809447

@@ -7,9 +7,15 @@ using TriInspector;
 [DeclareBoxGroup("Hour", Title = "Hour")]
 [DeclareBoxGroup("Phone", Title = "Phone")]
 [DeclareBoxGroup("Room", Title = "Room")]
+[DeclareBoxGroup("Life", Title = "Life")]
+[DeclareBoxGroup("Bars", Title = "Bars")]
 
 public class ManagerReferencer : MonoBehaviour
 {
+    [Group("Life")] public LifeManager lifeManager;
+    
+    [Group("Bars")] public Bars_Manager barsManager;
+
     [Group("Quest")] public QuestManager questManager;
 
     [Group("Monster")] public MonsterManager monsterManager;
