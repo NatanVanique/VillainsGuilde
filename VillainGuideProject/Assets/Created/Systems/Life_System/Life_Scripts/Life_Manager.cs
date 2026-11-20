@@ -1,4 +1,4 @@
-
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
@@ -33,7 +33,7 @@ public sealed class LifeManager : MonoBehaviour
 
     private void Start()
     {
-        failedPanel = (RectTransform)Visual.failedContainer_Life.transform;
+        failedPanel = (RectTransform)Visual.failedContainer.transform;
         failedPanelPosition = failedPanel.anchoredPosition;
         displayedLives = playerLives;
 
@@ -66,7 +66,7 @@ public sealed class LifeManager : MonoBehaviour
 
         RefreshHealth(Visual.healthImages_Life);
 
-        if (Visual.failedContainer_Life.activeSelf &&
+        if (Visual.failedContainer.activeSelf &&
             !failedPanelClosing &&
             (failedSequence == null || !failedSequence.IsActive() || !failedSequence.IsPlaying()))
         {
@@ -76,7 +76,7 @@ public sealed class LifeManager : MonoBehaviour
 
     public void ShowFailedPanel()
     {
-        if (Visual.failedContainer_Life.activeSelf && !failedPanelClosing) return;
+        if (Visual.failedContainer.activeSelf && !failedPanelClosing) return;
 
         failedSequence?.Kill();
         failedPanelClosing = false;
@@ -100,7 +100,7 @@ public sealed class LifeManager : MonoBehaviour
 
     public void HideFailedPanel()
     {
-        if (!Visual.failedContainer_Life.activeSelf || failedPanelClosing) return;
+        if (!Visual.failedContainer.activeSelf || failedPanelClosing) return;
 
         failedSequence?.Kill();
         failedPanelClosing = true;
@@ -122,7 +122,7 @@ public sealed class LifeManager : MonoBehaviour
 
     private void SetLifeContainers(bool failedActive)
     {
-        Visual.failedContainer_Life.SetActive(failedActive);
+        Visual.failedContainer.SetActive(failedActive);
     }
 
     private float FailedPanelDistance()
@@ -190,8 +190,23 @@ public sealed class LifeManager : MonoBehaviour
         }
     }
 
+    private void GameOver()
+    {
+        StartCoroutine(GameOverVisualSequence());
+    }
+
+    private IEnumerator GameOverVisualSequence()
+    {
+        Visual.fadeAnimator.SetTrigger("FadeIn");
+        yield return new WaitForSeconds(2);
+        
+        Visual.defeatContainer.SetActive(true);
+        Visual.fadeAnimator.SetTrigger("FadeOut");
+    }
+
     // Teste!!
-    // 1 = perder uma vida e 2 = abrir o painel failed
+    // 1 = perder uma vida, 2 = abrir o painel failed,
+    // 3 = fecha painel failed, 4 = game over
     private void Update()
     {
         var keyboard = UnityEngine.InputSystem.Keyboard.current;
@@ -201,5 +216,6 @@ public sealed class LifeManager : MonoBehaviour
         if (keyboard.digit1Key.wasPressedThisFrame) LoseLife(1);
         if (keyboard.digit2Key.wasPressedThisFrame) ShowFailedPanel();
         if (keyboard.digit3Key.wasPressedThisFrame) HideFailedPanel();
+        if (keyboard.digit4Key.wasPressedThisFrame) GameOver();
     }
 }

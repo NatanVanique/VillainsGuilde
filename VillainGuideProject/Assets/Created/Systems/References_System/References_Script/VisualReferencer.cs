@@ -17,11 +17,15 @@ using TMPro;
 [DeclareFoldoutGroup("Journal", Expanded = true)]
 [DeclareFoldoutGroup("Duck", Expanded = true)]
 [DeclareFoldoutGroup("Life", Expanded = true)]
+[DeclareFoldoutGroup("Fade", Expanded = true)]
 
 public class VisualReferencer : MonoBehaviour
 {
-    [Group("Life")] public GameObject healthContainer_Life;
-    [Group("Life")] public GameObject failedContainer_Life;
+    [Group("Fade")] public Animator fadeAnimator;
+    
+    [Group("Life")] public GameObject healthContainer;
+    [Group("Life")] public GameObject failedContainer;
+    [Group("Life")] public GameObject defeatContainer;
     [Group("Life")] public Image[] healthImages_Life = new Image[3];
     [Group("Life")] public Image[] failedHealthImages_Life = new Image[3];
 
