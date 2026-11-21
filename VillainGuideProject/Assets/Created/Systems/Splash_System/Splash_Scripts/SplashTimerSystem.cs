@@ -4,21 +4,15 @@ using System.Collections;
 
 public class SplashTimerSystem : MonoBehaviour
 {
-    int splashDuration = 5;
-    [SerializeField] GameObject bisc8Logo;
-    //[SerializeField] GameObject asteraLogo;
+    [SerializeField] private Animator bisc8Logo;
+    [SerializeField] private Transform asteraLogo;
+    [SerializeField] private float splashDuration = 6f;
 
-    public void StartLogos()
-    {
-        bisc8Logo.SetActive(true);
-        //asteraLogo.SetActive(true);
-
-        StartCoroutine(SplashTimer());
-    }
     public void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        StartCoroutine(SplashTimer());
     }
 
     public void EndSplash()
@@ -28,8 +22,17 @@ public class SplashTimerSystem : MonoBehaviour
 
     public IEnumerator SplashTimer()
     {
-        yield return new WaitForSeconds(splashDuration);
+        float startTime = Time.time;
+        yield return null;
+        yield return new WaitUntil(() => bisc8Logo.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
+
+        asteraLogo.gameObject.SetActive(true);
+        Animator asteraAnimator = asteraLogo.GetComponent<Animator>();
+        yield return null;
+        yield return new WaitUntil(() => asteraAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
+        float remainingTime = splashDuration - (Time.time - startTime);
+        if (remainingTime > 0f)
+            yield return new WaitForSeconds(remainingTime);
         EndSplash();
     }
-
 }

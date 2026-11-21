@@ -6,6 +6,6 @@ public class InitialFadeEvents : MonoBehaviour
 
     public void StartLogos()
     {
-        splashTimer.StartLogos();
+        //splashTimer.StartLogos();
     }
 }
