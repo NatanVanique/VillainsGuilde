@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_GUID: 63fd679662c1e794488ddccd7d338cb5
   m_SerializeEntries:
+  - m_GUID: 1979d64d892e4164db7244a9e1bf375d
+    m_Address: Assets/Created/Localization/QuestRoutes/GoodResults/RouteQuest_GoodResults
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2bb221462f13b2a4bbe55f6562e8f818
     m_Address: Assets/Created/Localization/Ui/Ui Shared Data.asset
     m_ReadOnly: 1
@@ -35,6 +41,12 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bc7c1dae511aa0d4d9c449c13d1dad52
+    m_Address: Assets/Created/Localization/SingleQuests/BadResults/SingleQuest_BadResults
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c855c3fc76d33a846bf383ba1f48b585
     m_Address: Assets/Localization/SingleQuests/Describes/SingleQuests_Describes
       Shared Data.asset
@@ -44,6 +56,18 @@ MonoBehaviour:
   - m_GUID: c9c5d91d87e761d4cb47b0dbd7b242bc
     m_Address: Assets/Localization/QuestRoutes/Describes/RouteQuests_Describes Shared
       Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f80b487d8ae49e7419af8aa439284030
+    m_Address: Assets/Created/Localization/SingleQuests/GoodResults/SingleQuest_GoodResults
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ff6c7acb321a8d04c974b86cd478d7d5
+    m_Address: Assets/Created/Localization/QuestRoutes/BadResults/RouteQuest_BadResults
+      Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

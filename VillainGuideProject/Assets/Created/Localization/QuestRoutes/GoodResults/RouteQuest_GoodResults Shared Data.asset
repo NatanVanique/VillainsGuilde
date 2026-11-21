@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: RouteQuest_GoodResults Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: RouteQuest_GoodResults
+  m_TableCollectionNameGuidString: 1979d64d892e4164db7244a9e1bf375d
+  m_Entries:
+  - m_Id: 59739365376
+    m_Key: PrinceFrederick_MayorRouteQuestGoodResult
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114112
+    m_Key: FatalCanine_MayorRouteQuestGoodResult
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114113
+    m_Key: FancyBalancy_MayorRouteQuestGoodResult
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114114
+    m_Key: HeistHeart_MayorRouteQuestGoodResult
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114115
+    m_Key: PresidentialSuite_WorldPeaceRouteQuestGoodResult
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114116
+    m_Key: DemonicTranslator_WorldPeaceRouteQuestGoodResult
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114117
+    m_Key: TheCrowdBread_WorldPeaceRouteQuestGoodResult
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114118
+    m_Key: ClimateChaos_WorldPeaceRouteQuestGoodResult
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4562753842148802560
+  references:
+    version: 2
+    RefIds:
+    - rid: 4562753842148802560
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1795270965037

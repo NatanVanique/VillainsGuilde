@@ -15,32 +15,36 @@ MonoBehaviour:
   m_TableCollectionName: RouteQuests_Describes
   m_TableCollectionNameGuidString: c9c5d91d87e761d4cb47b0dbd7b242bc
   m_Entries:
-  - m_Id: 57986146304
-    m_Key: FatalCanine_FrederickRouteQuestDescribe
+  - m_Id: 2933509186281472
+    m_Key: PrinceFrederick_MayorRouteQuestDescribe
     m_Metadata:
       m_Items: []
-  - m_Id: 58262970368
-    m_Key: FancyBalancy_FrederickRouteQuestDescribe
+  - m_Id: 2933509366636544
+    m_Key: FatalCanine_MayorRouteQuestDescribe
     m_Metadata:
       m_Items: []
-  - m_Id: 58271358976
-    m_Key: HeistHeart_FrederickRouteQuestDescribe
+  - m_Id: 2933509366636545
+    m_Key: FancyBalancy_MayorRouteQuestDescribe
     m_Metadata:
       m_Items: []
-  - m_Id: 58271358977
-    m_Key: PresidentialSuite_FrederickRouteQuestDescribe
+  - m_Id: 2933509366636546
+    m_Key: HeistHeart_MayorRouteQuestDescribe
     m_Metadata:
       m_Items: []
-  - m_Id: 58279747584
-    m_Key: DemonicTranslator_FrederickRouteQuestDescribe
+  - m_Id: 2933509366636547
+    m_Key: PresidentialSuite_WorldPeaceRouteQuestDescribe
     m_Metadata:
       m_Items: []
-  - m_Id: 58283941888
-    m_Key: TheCrowdBread_FrederickRouteQuestDescribe
+  - m_Id: 2933509366636548
+    m_Key: DemonicTranslator_WorldPeaceRouteQuestDescribe
     m_Metadata:
       m_Items: []
-  - m_Id: 58283941889
-    m_Key: ClimateChaos_FrederickRouteQuestDescribe
+  - m_Id: 2933509366636549
+    m_Key: TheCrowdBread_WorldPeaceRouteQuestDescribe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2933509366636550
+    m_Key: ClimateChaos_WorldPeaceRouteQuestDescribe
     m_Metadata:
       m_Items: []
   m_Metadata:

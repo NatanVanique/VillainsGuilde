@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: SingleQuest_GoodResults_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: f80b487d8ae49e7419af8aa439284030, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 40600756224
+    m_Localized: Monster successfully recruited to your team!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40625922048
+    m_Localized: Monster successfully recruited to your team!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40625922049
+    m_Localized: Monster successfully recruited to your team!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40625922050
+    m_Localized: Monster successfully recruited to your team!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40625922051
+    m_Localized: Monster successfully recruited to your team!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40625922052
+    m_Localized: 'The chimpanzees leave the senior living home after an unprecedented
+      deal: they return to the zoo in exchange for weekly sunbathing sessions and
+      a fruit buffet. The elderly ladies celebrate the return of peace and promise
+      to send letters to their new furry friends.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40625922053
+    m_Localized: Candy Candy's Bread Festival ends on a celebratory note after all
+      the bread is recovered from a secret base. The thieves were found trying to
+      hide baguettes under the couch. The bakery is celebrating with a 20% discount
+      on croissants.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40625922054
+    m_Localized: The missing dancers have been retrieved alive and well from the
+      city underground. They hit the club stages that very night, restoring music,
+      glamour, and gloss to the nightlife scene. To celebrate, the venues are hosting
+      an appreciation bash with free entry for anyone rocking stilettos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40630116352
+    m_Localized: Mrs. Maria in apartment 841 finally gets her pickle jar open thanks
+      to some emergency backup. She marks the victory with a late-night feast and
+      vows never to underestimate the strength of a stubborn lid again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40630116353
+    m_Localized: Mother and daughter reconcile after a discreet mediation. The diary
+      goes back to its proper place, apologies are accepted, and the family group
+      chat goes back to being strictly about recipes and chain letters.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40630116354
+    m_Localized: Alissa is whisked away from the room without a scene and driven
+      home by a 'family well-being advisor.' The principal drops the idea of calling
+      the cops, and the daughter remains completely oblivious that the substitute
+      teacher was her mom all along.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40630116355
+    m_Localized: The manicurist manages to fix the nail and even launches a brand-new
+      trend.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40630116356
+    m_Localized: "Gl\xF3ria joins her husband, and they enjoy a relaxing moment filled
+      with lots of gossip."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40630116357
+    m_Localized: Baltazar loses his tie, but he had a spare one in his bag. He heads
+      to his meeting happily.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40630116358
+    m_Localized: The crown is successfully recovered, thoroughly washed, and handed
+      back to the queen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40630116359
+    m_Localized: "Louro Jos\xE9 is captured and sent home via Uber Pet."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40630116360
+    m_Localized: The bear feels threatened and leaves.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

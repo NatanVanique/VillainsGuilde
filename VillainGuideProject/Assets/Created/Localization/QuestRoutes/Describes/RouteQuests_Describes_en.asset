@@ -18,7 +18,7 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 57986146304
+  - m_Id: 2933509186281472
     m_Localized: 'The Mayor is charismatic on camera, but his career hides allegations
       and conveniently forgotten scandals, all thanks to his impeccable assistant,
       Miss Penelope.
@@ -34,7 +34,7 @@ MonoBehaviour:
       around, and Penelope needs him found before the story goes viral.'
     m_Metadata:
       m_Items: []
-  - m_Id: 58262970368
+  - m_Id: 2933509366636544
     m_Localized: "During a visit to Santa Esperan\xE7a Municipal Hospital, the Mayor
       announced a vaccination campaign. The problem? He grabbed the wrong paperwork.\n\nInstead
       of the human flu vaccine, he authorized Canine Flu Vaccine Premium, an experimental
@@ -44,7 +44,7 @@ MonoBehaviour:
       without the journalists discovering the disaster."
     m_Metadata:
       m_Items: []
-  - m_Id: 58271358976
+  - m_Id: 2933509366636545
     m_Localized: "During a wild night at Chique Balique Nightclub, the Mayor tried
       the famous Cascavel Rapeleu, a cocktail made with mummy essence, hell peppers,
       and vengeful spirit.\n\nAfter a few drinks, he went completely wild. Thinking
@@ -56,7 +56,7 @@ MonoBehaviour:
       intimidating glare wouldn't hurt either."
     m_Metadata:
       m_Items: []
-  - m_Id: 58271358977
+  - m_Id: 2933509366636546
     m_Localized: 'After mixing up his morning medications and accidentally taking
       Zolpidem, the Mayor skipped a sanitation meeting to pursue his deepest desires.
 
@@ -76,7 +76,7 @@ MonoBehaviour:
       with one eye, enormous hands, and experience knocking down doors.'
     m_Metadata:
       m_Items: []
-  - m_Id: 58279747584
+  - m_Id: 2933509366636547
     m_Localized: 'During the World Peace Summit, an important delegate was forgotten
       on the hotel''s presidential floor.
 
@@ -93,7 +93,7 @@ MonoBehaviour:
       into an international diplomatic crisis.'
     m_Metadata:
       m_Items: []
-  - m_Id: 58283941888
+  - m_Id: 2933509366636548
     m_Localized: "The League\u2019s simultaneous translation system was updated on
       the eve of the Peace Summit.\n\nThe problem? The new software swapped 'world
       peace' for 'immediate war', 'cooperation' for 'surrender', and 'coffee' for
@@ -104,7 +104,7 @@ MonoBehaviour:
       and preventing the Peace Summit from ending in an all-out brawl."
     m_Metadata:
       m_Items: []
-  - m_Id: 58283941889
+  - m_Id: 2933509366636549
     m_Localized: 'Thousands of people are gathered in front of the headquarters of
       the Global League for Human Peace.
 
@@ -119,6 +119,24 @@ MonoBehaviour:
       and security wants to use pepper spray. The League needs someone capable of
       calming the crowd down without violence and keeping the situation from spiraling
       into an international disaster.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2933509366636550
+    m_Localized: 'In the middle of the Climate Convention, the Global League for
+      Human Peace handed out eco-friendly kits to promote environmental awareness.
+
+
+      The
+      problem? The materials chosen were so sustainable that they couldn''t handle
+      the heat in the room. Within minutes, the bags started melting, the notebooks
+      turned into pulp, and the bamboo souvenirs spontaneously combusted.
+
+
+      Now,
+      the Main Lecture Hall is on fire, the alarm isn''t working, and hundreds of
+      delegates are trapped inside the building. Dr. Greenleaf needs someone capable
+      of putting out the flames, clearing a path, and getting everyone out of there
+      before the convention turns into an international tragedy.'
     m_Metadata:
       m_Items: []
   references:

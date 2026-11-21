@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: SingleQuest_BadResults Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: SingleQuest_BadResults
+  m_TableCollectionNameGuidString: bc7c1dae511aa0d4d9c449c13d1dad52
+  m_Entries:
+  - m_Id: 22733021184
+    m_Key: BasementBlues_SingleQuestBadResults
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22766575616
+    m_Key: PhantomMonster_SingleQuestBadResults
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22766575617
+    m_Key: CryBelow_SingleQuestBadResults
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22766575618
+    m_Key: MaydayMonster_SingleQuestBadResults
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22766575619
+    m_Key: MonstersAllowed_SingleQuestBadResults
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22766575620
+    m_Key: GoneBananas_SingleQuestBadResults
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22766575621
+    m_Key: GreatBread_SingleQuestBadResults
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22770769920
+    m_Key: DanceFloo_SingleQuestBadResults
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22770769921
+    m_Key: PicklePower_SingleQuestBadResults
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22770769922
+    m_Key: FlavorsYouth_SingleQuestBadResults
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22770769923
+    m_Key: SeventeenAgain_SingleQuestBadResults
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22770769924
+    m_Key: WreckingNail_SingleQuestBadResults
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22770769925
+    m_Key: UnconventionalAdventure_SingleQuestBadResults
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22770769926
+    m_Key: UnbreakableNecktie_SingleQuestBadResults
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22770769927
+    m_Key: CursedCrown_SingleQuestBadResults
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22770769928
+    m_Key: TattletaleParrot_SingleQuestBadResults
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22770769929
+    m_Key: LittleBear_SingleQuestBadResults
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4562753842148802563
+  references:
+    version: 2
+    RefIds:
+    - rid: 4562753842148802563
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1795271252695

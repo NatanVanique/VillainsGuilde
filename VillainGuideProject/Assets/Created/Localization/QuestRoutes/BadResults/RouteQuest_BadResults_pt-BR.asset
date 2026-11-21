@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: RouteQuest_BadResults_pt-BR
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: ff6c7acb321a8d04c974b86cd478d7d5, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 216614723584
+    m_Localized: "Ap\xF3s uma noite de buscas fracassadas, o prefeito aparece com
+      olheiras profundas, rasgando pap\xE9is no gabinete. Pen\xE9lope nega que o
+      gato tenha sido visto perto de documentos confidenciais."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216644083712
+    m_Localized: "Caos no Hospital Santa Esperan\xE7a: manchas de sangue s\xE3o encontradas
+      pelos corredores, e testemunhas relatam criaturas estranhas fugindo pela madrugada.
+      A prefeitura nega qualquer rela\xE7\xE3o com a vacina\xE7\xE3o e anuncia uma
+      investiga\xE7\xE3o interna."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216644083713
+    m_Localized: "Noite termina em caos na Chique Balique: um homem n\xE3o identificado
+      dan\xE7ou sobre a bancada do bar, derrubou dezenas de garrafas e exigiu que
+      o DJ tocasse \u2018a m\xFAsica da minha ex\u2019. A prefeitura nega envolvimento
+      e afirma que o pol\xEDtico estava apenas \u2018em uma a\xE7\xE3o cultural n\xE3o
+      oficial\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216644083714
+    m_Localized: "Prefeito \xE9 detido ap\xF3s tentativa de assalto ao banco. Em
+      depoimento, afirmou que estava \u2018apenas conquistando uma atendente e organizando
+      seu futuro financeiro\u2019. A prefeitura informou que ele estava \u2018em
+      uma miss\xE3o social n\xE3o autorizada\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216644083715
+    m_Localized: "A seguran\xE7a arromba a porta, o delegado desmaia sobre os slides
+      e a imprensa descobre que a Liga Global pela Paz Humana esqueceu um convidado
+      no hotel por seis horas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216644083716
+    m_Localized: "A C\xFApula Mundial da Paz \xE9 encerrada ap\xF3s delegados sa\xEDrem
+      do sal\xE3o gritando em sete idiomas diferentes. A Liga informa que \u2018houve
+      apenas uma diverg\xEAncia de interpreta\xE7\xE3o\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216644083717
+    m_Localized: "A multid\xE3o invade a sede da Liga, ocupa o plen\xE1rio e exige
+      p\xE3o. A seguran\xE7a tenta agir, mas acaba criando o maior esc\xE2ndalo da
+      C\xFApula Mundial da Paz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216644083718
+    m_Localized: "Inc\xEAndio se espalha pela sede da Liga Global pela Paz Humana.
+      Delegados s\xE3o evacuados \xE0s pressas e a imprensa questiona como um kit
+      ecol\xF3gico conseguiu causar mais danos que uma guerra fria."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

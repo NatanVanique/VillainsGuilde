@@ -18,7 +18,7 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 57986146304
+  - m_Id: 2933509186281472
     m_Localized: "O Prefeito \xE9 carism\xE1tico diante das c\xE2meras, mas sua carreira
       esconde den\xFAncias e esc\xE2ndalos convenientemente esquecidos gra\xE7as
       \xE0 sua impec\xE1vel assessora, senhorita Pen\xE9lope.\n\nHoje, por\xE9m,
@@ -29,7 +29,7 @@ MonoBehaviour:
       precisa encontr\xE1-lo antes que tudo viralize."
     m_Metadata:
       m_Items: []
-  - m_Id: 58262970368
+  - m_Id: 2933509366636544
     m_Localized: "Durante uma visita ao Hospital Municipal Santa Esperan\xE7a, o
       prefeito anunciou uma campanha de vacina\xE7\xE3o. O problema? Pegou os pap\xE9is
       errados.\n\nEm vez da vacina gripal humana, autorizou a Vacina Gripal Canina
@@ -40,7 +40,7 @@ MonoBehaviour:
       que os jornalistas descubram o desastre."
     m_Metadata:
       m_Items: []
-  - m_Id: 58271358976
+  - m_Id: 2933509366636545
     m_Localized: "Em uma noite badalada na Boate Chique Balique, o prefeito experimentou
       o famoso drink Casacavel Rapeleu, feito com ess\xEAncia de m\xFAmia, pimentas
       do inferno e esp\xEDrito vingativo.\n\nAp\xF3s alguns copos, ficou incontrol\xE1vel.
@@ -52,7 +52,7 @@ MonoBehaviour:
       tamb\xE9m ajuda."
     m_Metadata:
       m_Items: []
-  - m_Id: 58271358977
+  - m_Id: 2933509366636546
     m_Localized: "Ap\xF3s confundir seus rem\xE9dios matinais e tomar zolpidem, o
       prefeito abandonou uma reuni\xE3o sobre saneamento para realizar seus desejos
       mais ocultos.\n\nNo banco, seduziu uma atendente com discursos sobre \"destino,
@@ -64,7 +64,7 @@ MonoBehaviour:
       s\xF3, m\xE3os enormes e experi\xEAncia em derrubar portas."
     m_Metadata:
       m_Items: []
-  - m_Id: 58279747584
+  - m_Id: 2933509366636547
     m_Localized: "Durante a C\xFApula Mundial da Paz, um delegado importante foi
       esquecido no andar presidencial do hotel.\n\nO problema \xE9 que ele trancou
       a porta, desligou o telefone e jurou que s\xF3 sairia quando algu\xE9m ouvisse
@@ -75,7 +75,7 @@ MonoBehaviour:
       mal-entendido em crise diplom\xE1tica."
     m_Metadata:
       m_Items: []
-  - m_Id: 58283941888
+  - m_Id: 2933509366636548
     m_Localized: "O sistema de tradu\xE7\xE3o simult\xE2nea da Liga foi atualizado
       na v\xE9spera da C\xFApula pela paz.\n\nO problema? O novo programa trocou
       \u201Cpaz mundial\u201D por \u201Cguerra imediata\u201D, \u201Ccoopera\xE7\xE3o\u201D
@@ -87,7 +87,7 @@ MonoBehaviour:
       e impedir que a C\xFApula da Paz termine em uma briga generalizada."
     m_Metadata:
       m_Items: []
-  - m_Id: 58283941889
+  - m_Id: 2933509366636549
     m_Localized: "Milhares de pessoas est\xE3o na frente da sede da Liga Global pela
       Paz Humana.\n\nElas n\xE3o est\xE3o protestando contra uma guerra ou uma lei.
       Est\xE3o protestando porque a Liga prometeu \u201Cp\xE3o gratuito para todos\u201D
@@ -95,6 +95,18 @@ MonoBehaviour:
       multid\xE3o est\xE1 irritada, a imprensa est\xE1 filmando e a seguran\xE7a
       quer usar g\xE1s de pimenta. A Liga precisa de algu\xE9m capaz de acalmar a
       multid\xE3o sem viol\xEAncia e impedir que a situa\xE7\xE3o vire um caos internacional."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2933509366636550
+    m_Localized: "No meio da Conven\xE7\xE3o Clim\xE1tica, a Liga Global pela Paz
+      Humana distribuiu kits ecol\xF3gicos para incentivar o cuidado com o meio ambiente.\n\nO
+      problema? O material escolhido era t\xE3o sustent\xE1vel que n\xE3o suportou
+      o calor da sala. Em poucos minutos, as sacolas come\xE7aram a derreter, os
+      cadernos viraram pasta e os brindes de bamboo entraram em combust\xE3o espont\xE2nea.\n\nAgora,
+      a Sala de Palestras Oficial est\xE1 pegando fogo, o alarme n\xE3o funciona
+      e centenas de delegados est\xE3o presos dentro do pr\xE9dio. A Dra. Folha Verde
+      precisa de algu\xE9m capaz de apagar as chamas, abrir caminho e tirar todo
+      mundo de l\xE1 antes que a conven\xE7\xE3o vire uma trag\xE9dia internacional."
     m_Metadata:
       m_Items: []
   references:
