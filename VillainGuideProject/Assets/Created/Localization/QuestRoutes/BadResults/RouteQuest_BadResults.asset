@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: RouteQuest_BadResults
+  m_EditorClassIdentifier: Unity.Localization.Editor::UnityEditor.Localization.StringTableCollection
+  m_SharedTableData: {fileID: 11400000, guid: ff6c7acb321a8d04c974b86cd478d7d5, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: 04dbf6a02d7e80c45a6846ee7222ebbb, type: 2}
+  - {fileID: 11400000, guid: 2350e60e53ed7434bb95edcb84373f24, type: 2}
+  - {fileID: 11400000, guid: 70f92eb09df712d46bd71646f9b59260, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []

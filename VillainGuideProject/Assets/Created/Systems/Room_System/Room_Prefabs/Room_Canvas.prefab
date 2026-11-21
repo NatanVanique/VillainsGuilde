@@ -432,7 +432,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a10d820359f5f64c8201184e06463d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: BISC8.FMODB8.Runtime::FmodButton
-  actions: []
+  actions:
+  - moment: 3
+    command: 0
+    playbackScope: 0
+    soundId: Duck_Sound
+    fade: 0
+    floatValue: 1
+    floatValue2: 1
+    parameter: 
+    label: 
+    cascade: []
 --- !u!1 &1873987051647232216
 GameObject:
   m_ObjectHideFlags: 0

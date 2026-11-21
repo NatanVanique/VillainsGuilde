@@ -31,6 +31,24 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   type: 0
+  goodResult:
+    m_TableReference:
+      m_TableCollectionName: GUID:f80b487d8ae49e7419af8aa439284030
+    m_TableEntryReference:
+      m_KeyId: 40600756224
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  badResult:
+    m_TableReference:
+      m_TableCollectionName: GUID:bc7c1dae511aa0d4d9c449c13d1dad52
+    m_TableEntryReference:
+      m_KeyId: 22733021184
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   minPopularity: 0
   winMargin: 0
   timeToDoneSeconds: 25
@@ -41,11 +59,11 @@ MonoBehaviour:
   - requerimenttype: 0
     requerimentValue: 0.45
   - requerimenttype: 2
-    requerimentValue: 0.50
+    requerimentValue: 0.5
   - requerimenttype: 4
-    requerimentValue: 0.30
-  hasReputationXpReward: 0
-  reputationXpEarned: 0
+    requerimentValue: 0.3
+  haspopularityXpReward: 0
+  popularityXpEarned: 0
   hasCharacterXpReward: 0
   characterXpEarned: 0
   hasCoinsReward: 0

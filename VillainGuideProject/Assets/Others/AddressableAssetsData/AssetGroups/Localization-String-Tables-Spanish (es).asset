@@ -33,14 +33,38 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-es
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 70f92eb09df712d46bd71646f9b59260
+    m_Address: RouteQuest_BadResults_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 75d0002e8f2061b4c9555c05f6715221
     m_Address: Ui_es
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-es
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 87412d0e25f3edc44b9c401a42918383
+    m_Address: SingleQuest_BadResults_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9b2517b379d941a47be3825737fc382d
     m_Address: Journal_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9dc043acddb1d144fb2dd622d227c200
+    m_Address: RouteQuest_GoodResults_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bfeb6940cda20ef47b9f36dfaa0ab1b9
+    m_Address: SingleQuest_GoodResults_es
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-es

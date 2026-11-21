@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: RouteQuest_GoodResults_pt-BR
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: 1979d64d892e4164db7244a9e1bf375d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 59739365376
+    m_Localized: "Pr\xEDncipe Frederick \xE9 encontrado s\xE3o e salvo sobre o ventilador
+      da su\xEDte master. O prefeito abra\xE7a o felino em prantos, enquanto Pen\xE9lope
+      garante que \u2018n\xE3o houve invas\xE3o, apenas uma visita t\xE9cnica\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114112
+    m_Localized: "Hospital amanhece em sil\xEAncio: pacientes s\xE3o encontrados
+      dormindo confortavelmente nas macas, enquanto um misterioso \u2018consultor
+      de bem-estar\u2019 \xE9 elogiado pela equipe m\xE9dica. O prefeito agradece
+      publicamente pela r\xE1pida resposta \xE0 \u2018leve indisposi\xE7\xE3o coletiva\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114113
+    m_Localized: "Boate Chique Balique encerra a noite sem incidentes. Frequentadores
+      relatam que um \u2018artista perform\xE1tico\u2019 envolveu um cliente exaltado
+      em faixas decorativas, transformando o momento em parte do espet\xE1culo. O
+      prefeito foi visto dormindo em um sof\xE1 VIP, cuidadosamente enfaixado como
+      uma m\xFAmia de festa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114114
+    m_Localized: "Ag\xEAncia Banc\xE1ria Central registra apenas uma \u2018falha
+      t\xE9cnica\u2019 nesta manh\xE3. Testemunhas relatam que um homem gigantesco,
+      de um olho s\xF3, entrou no cofre, recolheu uma maleta e retirou um cliente
+      confuso antes da chegada da pol\xEDcia. O prefeito foi encontrado mais tarde
+      dormindo em casa, com um bilhete no bolso: \u2018O amor n\xE3o se paga em presta\xE7\xF5es\u2019"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114115
+    m_Localized: "O delegado \xE9 conduzido ao palco minutos antes da apresenta\xE7\xE3o.
+      Ele agradece ao \u2018consultor de bem-estar pessoal\u2019 e promete reduzir
+      sua fala para apenas tr\xEAs horas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114116
+    m_Localized: "A tradu\xE7\xE3o \xE9 corrigida a tempo. Os delegados aplaudem
+      a \u2018coragem diplom\xE1tica\u2019 da Liga, sem saber que quase entraram
+      em guerra por causa de um erro de atualiza\xE7\xE3o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114117
+    m_Localized: "A multid\xE3o se acalma ap\xF3s ouvir vozes suaves vindas dos alto-falantes
+      quebrados. As velas do palco antigo se acendem sozinhas e, por alguns minutos,
+      a pra\xE7a parece um lugar seguro. A Liga agradece ao \u2018consultor de bem-estar
+      coletivo\u2019."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114118
+    m_Localized: "Inc\xEAndio na Sala de Palestras \xE9 controlado antes de se espalhar.
+      Delegados s\xE3o evacuados com seguran\xE7a e a Liga anuncia que os kits ecol\xF3gicos
+      ser\xE3o \u2018repensados com mais carinho pelo planeta\u2019."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: RouteQuest_GoodResults_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 1979d64d892e4164db7244a9e1bf375d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 59739365376
+    m_Localized: Prince Frederick is found safe and sound atop the master suite's
+      ceiling fan. The Mayor tearfully embraces the feline, while Penelope assures
+      everyone that 'there was no break-in, merely a technical inspection.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114112
+    m_Localized: 'The hospital awakens in silence: patients are found sleeping comfortably
+      on gurneys, while a mysterious ''wellness consultant'' receives praise from
+      the medical staff. The Mayor publicly gives thanks for the swift response to
+      the ''mild collective indisposition.'''
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114113
+    m_Localized: Nightclub Fancy Balency wraps up the night with zero incidents.
+      Partygoers report that a 'performance artist' wrapped an agitated customer
+      in decorative banners, turning the whole thing into part of the show. The Mayor
+      was spotted sleeping on a VIP couch, neatly bandaged like a party mummy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114114
+    m_Localized: 'Central Bank Branch registers only a ''technical glitch'' this
+      morning. Witnesses report that a gigantic, one-eyed man entered the vault,
+      retrieved a briefcase, and escorted out a confused customer before the police
+      arrived. The Mayor was later found sleeping at home, with a note in his pocket:
+      ''Love cannot be paid in installments.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114115
+    m_Localized: The delegate is escorted to the stage minutes before the presentation.
+      He thanks the 'personal wellness consultant' and promises to cut his speech
+      down to just three hours.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114116
+    m_Localized: The translation is fixed just in time. The delegates applaud the
+      League's 'diplomatic courage,' completely unaware that they almost went to
+      war over a software update error.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114117
+    m_Localized: The crowd calms down after hearing soothing voices coming from the
+      broken speakers. The candles on the old stage light up on their own, and for
+      a few minutes, the square feels like a safe place. The League expresses its
+      gratitude to the 'collective wellness consultant.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59777114118
+    m_Localized: The fire in the Lecture Hall is controlled before spreading. Delegates
+      are safely evacuated, and the League announces that the eco-friendly kits will
+      be 'rethought with more love for the planet.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
