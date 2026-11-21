@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DuckManager : MonoBehaviour
+public sealed class DuckManager : MonoBehaviour
 {
     [Header("Animation")]
     [Min(0f)] public float intensity = 0.5f;
