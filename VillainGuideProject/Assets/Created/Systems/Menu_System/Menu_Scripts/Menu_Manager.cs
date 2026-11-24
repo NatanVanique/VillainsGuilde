@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -25,6 +26,13 @@ public sealed class MenuManager : MonoBehaviour
     private Dictionary<GameObject, Color> OriginalTextColors = new();
     private Dictionary<GameObject, Material> OriginalTextMaterials = new();
     private Dictionary<GameObject, Vector3> OriginalScales = new();
+    private Dictionary<GameObject, Vector2> OriginalAnchoredPositions = new();
+
+    private void Start()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
 
     public void SaveOriginalValues(GameObject button)
     {
@@ -34,6 +42,10 @@ public sealed class MenuManager : MonoBehaviour
 
         if (!OriginalScales.ContainsKey(button))
             OriginalScales.Add(button, button.transform.localScale);
+
+        RectTransform rectTransform = button.GetComponent<RectTransform>();
+        if (rectTransform != null && !OriginalAnchoredPositions.ContainsKey(button))
+            OriginalAnchoredPositions.Add(button, rectTransform.anchoredPosition);
 
         if (!OriginalButtonColors.ContainsKey(button))
             OriginalButtonColors.Add(button, image.color);
@@ -50,14 +62,59 @@ public sealed class MenuManager : MonoBehaviour
 
     public void ChangeScale(GameObject button)
     {
+        SaveOriginalValues(button);
+
         button.transform.DOKill();
-        button.transform.DOScaleX(ButtonBigXScale, AnimationDuration).SetEase(Ease.OutBack);
+
+        float targetScaleX = OriginalScales[button].x * ButtonBigXScale;
+        button.transform.DOScaleX(targetScaleX, AnimationDuration).SetEase(Ease.OutBack);
+
+        AnimateTowardsSibling(button, targetScaleX);
     }
 
     public void RestoreScale(GameObject button)
     {
+        SaveOriginalValues(button);
+
         button.transform.DOKill();
+
+        if (button.TryGetComponent(out RectTransform rectTransform))
+        {
+            rectTransform.DOAnchorPos(OriginalAnchoredPositions[button], AnimationDuration)
+                .SetEase(Ease.OutCubic);
+        }
+
         button.transform.DOScaleX(OriginalScales[button].x, AnimationDuration).SetEase(Ease.OutBack);
+    }
+
+    private void AnimateTowardsSibling(GameObject button, float targetScaleX)
+    {
+        if (!button.TryGetComponent(out RectTransform rectTransform) || rectTransform.parent == null)
+            return;
+
+        RectTransform sibling = null;
+        int buttonCount = 0;
+        foreach (Transform child in rectTransform.parent)
+        {
+            if (!child.TryGetComponent<Button>(out _) || !child.TryGetComponent(out RectTransform childRect))
+                continue;
+
+            buttonCount++;
+            if (child != rectTransform)
+            {
+                sibling = childRect;
+            }
+        }
+
+        if (buttonCount != 2 || sibling == null)
+            return;
+
+        bool isLeftHalf = rectTransform.anchorMin.x < sibling.anchorMin.x;
+        float scaleIncrease = targetScaleX / OriginalScales[button].x - 1f;
+        float offset = rectTransform.rect.width * scaleIncrease * 0.5f;
+        Vector2 targetPosition = OriginalAnchoredPositions[button] + Vector2.right * (isLeftHalf ? offset : -offset);
+
+        rectTransform.DOAnchorPos(targetPosition, AnimationDuration).SetEase(Ease.OutBack);
     }
 
     public void ChangeColor(GameObject button)
