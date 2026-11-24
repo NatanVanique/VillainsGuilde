@@ -1,34 +1,47 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
-using System.Collections;
 
 public class Bars_Manager : MonoBehaviour
 {
-    [Header("System Variables")]
-    private Coroutine movementBars;
-    
-    public void ShowBars()
-    {
-        StopCoroutine(movementBars);
-        movementBars = StartCoroutine(MoveBars(1));
-    }
+    private readonly HashSet<GameObject> openPopups = new();
 
-    public void HideBars()
-    {
-        StopCoroutine(movementBars);
-        movementBars = StartCoroutine(MoveBars(0));
-    }
+    public event Action<bool> VisibilityChanged;
 
-    private IEnumerator MoveBars(float targetScale)
+    public void SetPopupOpen(GameObject popup, bool isOpen)
     {
-        while (Main_Referencer.Instance.visual.top_Bars.transform.localScale.y != targetScale)
+        if (popup == null)
         {
-            Vector3 scale = Main_Referencer.Instance.visual.top_Bars.transform.localScale;
-            scale.y = Mathf.MoveTowards(scale.y, targetScale, Main_Referencer.Instance.value.velocity_Bars * Time.deltaTime);
-
-            Main_Referencer.Instance.visual.top_Bars.transform.localScale = scale;
-            Main_Referencer.Instance.visual.bottom_Bars.transform.localScale = scale;
-
-            yield return null;
+            return;
         }
+
+        if (isOpen)
+        {
+            openPopups.Add(popup);
+        }
+        else
+        {
+            openPopups.Remove(popup);
+        }
+
+        Main_Referencer references = Main_Referencer.Instance;
+        if (references == null || references.visual == null)
+        {
+            return;
+        }
+
+        GameObject canvas = references.visual.barsCanvas_Bars;
+        bool visible = openPopups.Count > 0;
+        if (canvas == null || canvas.activeSelf == visible)
+        {
+            return;
+        }
+
+        canvas.SetActive(visible);
+        VisibilityChanged?.Invoke(visible);
     }
+
+    public void ShowBars() => SetPopupOpen(gameObject, true);
+
+    public void HideBars() => SetPopupOpen(gameObject, false);
 }

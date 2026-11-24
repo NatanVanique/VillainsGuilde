@@ -54,6 +54,7 @@ MonoBehaviour:
     screen: {fileID: 0}
   - position: 1
     screen: {fileID: 0}
+  barsCanvas_Bars: {fileID: 0}
   top_Bars: {fileID: 0}
   bottom_Bars: {fileID: 0}
   voiceMailCanvas_voiceMail: {fileID: 0}
@@ -132,6 +133,10 @@ MonoBehaviour:
     slider: {fileID: 0}
   - statType: 7
     slider: {fileID: 0}
+  journalCanvas_Journal: {fileID: 0}
+  dayLabel_Journal: {fileID: 0}
+  smallNewsDivider_Journal: {fileID: 0}
+  scrollRect_Journal: {fileID: 0}
   singleNewContainer_Journal: {fileID: 0}
   singleNews_Journal:
   - {fileID: 1463714975924569701, guid: dfc5bf3db9dc8e14b9301e0a287635c0, type: 3}

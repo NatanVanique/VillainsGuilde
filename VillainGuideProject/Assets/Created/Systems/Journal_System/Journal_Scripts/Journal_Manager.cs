@@ -2,26 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using UnityEngine.Localization;
 
 public sealed class JournalManager : MonoBehaviour
 {
-    [SerializeField] private GameObject journalCanvas;
-    [SerializeField] private TMPro.TextMeshProUGUI dayLabel;
-    [SerializeField] private GameObject smallNewsDivider;
-
     private readonly List<GameObject> instantiatedNews = new();
     private readonly List<GameObject> instantiatedCharacterXp = new();
     private readonly List<(MonsterReferencer.Monsters monster, int startLevel, int startXp, int endLevel, int endXp)> monsterRewards = new();
-    private readonly LocalizedString emptyEditionTitle = new("Journal", "NoMissionResults_Journal");
-    private readonly LocalizedString missingWinArticle = new("Journal", "MissingWinArticle_Journal");
-    private readonly LocalizedString missingLossArticle = new("Journal", "MissingLossArticle_Journal");
 
     private readonly List<(CreateQuest_Data data, MonsterReferencer.Monsters monster, bool isWinned, bool attempted)> pendingNews = new();
 
     private DaycicleManager daycicle;
     private VisualReferencer visual;
-    private UnityEngine.UI.ScrollRect journalScroll;
 
     private int publishedDay = -1;
     private float? timeScaleBeforeJournal;
@@ -34,7 +25,6 @@ public sealed class JournalManager : MonoBehaviour
     {
         Main_Referencer references = Main_Referencer.Instance;
         visual = references.visual;
-        journalScroll = visual.rewardsNew_Journal.GetComponentInParent<UnityEngine.UI.ScrollRect>(true);
         daycicle = references.manager.dayCicleManager;
         daycicle.BeforeOfficeDayStart += PublishResults;
     }
@@ -56,12 +46,7 @@ public sealed class JournalManager : MonoBehaviour
 
         if (timeScaleBeforeJournal.HasValue)
         {
-            if (journalCanvas != null)
-            {
-                journalCanvas.SetActive(false);
-            }
-
-            ResumeGame();
+            HideEdition();
         }
     }
 
@@ -89,17 +74,24 @@ public sealed class JournalManager : MonoBehaviour
         pendingNews.Clear();
 
         publishedDay = day;
-        dayLabel.text = $"Day {day - 1:000}";
         CollectRewards(reports);
-        ClearRewardRows();
-        ShowNewsPage(reports.Count > 0);
-        InstanceNew(day);
-        timeScaleBeforeJournal ??= Time.timeScale;
-        Time.timeScale = 0f;
-        journalCanvas.SetActive(true);
-        ResetPageScroll();
+        ShowEdition(reports, day - 1);
 
         Main_Referencer.Instance.manager.questManager.RefreshDiscoveredResults();
+    }
+
+    private void ShowEdition(
+        List<(CreateQuest_Data data, MonsterReferencer.Monsters monster, bool isWinned, bool attempted)> reports,
+        int editionDay)
+    {
+        visual.dayLabel_Journal.text = $"Day {editionDay:000}";
+        ClearRewardRows();
+        ShowNewsPage(reports.Count > 0);
+        RenderNews(reports);
+        timeScaleBeforeJournal ??= Time.timeScale;
+        Time.timeScale = 0f;
+        visual.journalCanvas_Journal.SetActive(true);
+        ResetPageScroll();
     }
 
     public bool? GetLatestDiscoveredResult(CreateQuest_Data quest, MonsterReferencer.Monsters monster)
@@ -146,15 +138,21 @@ public sealed class JournalManager : MonoBehaviour
 
     public void InstanceNew(int day)
     {
-        CleanJournal();
-        smallNewsDivider.SetActive(false);
+        var editions = Main_Referencer.Instance.value.realizedDayRegister;
+        RenderNews(day >= 0 && day < editions.Count ? editions[day] : null);
+    }
 
-        if (day < 0 || day >= Main_Referencer.Instance.value.realizedDayRegister.Count)
+    private void RenderNews(
+        List<(CreateQuest_Data data, MonsterReferencer.Monsters monster, bool isWinned, bool attempted)> reports)
+    {
+        CleanJournal();
+        visual.smallNewsDivider_Journal.SetActive(false);
+        if (reports == null)
         {
             return;
         }
 
-        var reports = Main_Referencer.Instance.value.realizedDayRegister[day];
+        ValuesReferencer values = Main_Referencer.Instance.value;
         int featured = -1;
         if (!reports.Exists(report => report.data.type == CreateQuest_Data.QuestType.Route))
         {
@@ -185,14 +183,14 @@ public sealed class JournalManager : MonoBehaviour
 
             if (result == null || result.IsEmpty)
             {
-                result = news.isWinned ? missingWinArticle : missingLossArticle;
+                result = news.isWinned ? values.MissingWinArticle_JournalValues : values.MissingLossArticle_JournalValues;
             }
 
             info.SetMonsterImage(news.attempted ? news.monster?.monstersProfile : null);
             info.setInfo(news.data, result);
         }
 
-        smallNewsDivider.SetActive(smallNewsCount > 1);
+        visual.smallNewsDivider_Journal.SetActive(smallNewsCount > 1);
     }
 
     public void CleanJournal()
@@ -208,7 +206,7 @@ public sealed class JournalManager : MonoBehaviour
 
     public void OpenRewards()
     {
-        if (rewardsOpen || !journalCanvas.activeSelf)
+        if (rewardsOpen || !visual.journalCanvas_Journal.activeSelf)
         {
             return;
         }
@@ -218,11 +216,9 @@ public sealed class JournalManager : MonoBehaviour
 
         DoTweenEffects_Commands.DoTweenSpin(buttonTransform, 0.3f, -180);
 
-        Main_Referencer.Instance.visual.tabText_Journal.StringReference =
-            Main_Referencer.Instance.value.NewsTabText_JournalValues;
-
-        Main_Referencer.Instance.visual.titleText_Journal.StringReference =
-            Main_Referencer.Instance.value.RewardsText_JournalValues;
+        ValuesReferencer values = Main_Referencer.Instance.value;
+        visual.tabText_Journal.StringReference = values.NewsTabText_JournalValues;
+        visual.titleText_Journal.StringReference = values.RewardsText_JournalValues;
 
         visual.routeNewContainer_Journal.SetActive(false);
         visual.singleNewContainer_Journal.SetActive(false);
@@ -237,13 +233,17 @@ public sealed class JournalManager : MonoBehaviour
     {
         visual.tabButton_Journal.transform.DOKill();
         ClearRewardRows();
-        journalCanvas.SetActive(false);
-        rewardsOpen = false;
-        ResumeGame();
+        HideEdition();
     }
 
-    private void ResumeGame()
+    private void HideEdition()
     {
+        if (visual != null && visual.journalCanvas_Journal != null)
+        {
+            visual.journalCanvas_Journal.SetActive(false);
+        }
+
+        rewardsOpen = false;
         if (timeScaleBeforeJournal.HasValue)
         {
             Time.timeScale = timeScaleBeforeJournal.Value;
@@ -257,15 +257,13 @@ public sealed class JournalManager : MonoBehaviour
         buttonTransform.DOKill();
         buttonTransform.localRotation = Quaternion.identity;
 
-        Main_Referencer.Instance.visual.tabText_Journal.StringReference =
-            Main_Referencer.Instance.value.RewardsTabText_JournalValues;
+        ValuesReferencer values = Main_Referencer.Instance.value;
+        visual.tabText_Journal.StringReference = values.RewardsTabText_JournalValues;
+        visual.titleText_Journal.StringReference = hasNews ? values.DailyNewsText_JournalValues : values.NoMissionResults_JournalValues;
 
-        Main_Referencer.Instance.visual.titleText_Journal.StringReference =
-            hasNews ? Main_Referencer.Instance.value.DailyNewsText_JournalValues : emptyEditionTitle;
-
-        Main_Referencer.Instance.visual.rewardsNew_Journal.SetActive(false);
-        Main_Referencer.Instance.visual.routeNewContainer_Journal.SetActive(true);
-        Main_Referencer.Instance.visual.singleNewContainer_Journal.SetActive(true);
+        visual.rewardsNew_Journal.SetActive(false);
+        visual.routeNewContainer_Journal.SetActive(true);
+        visual.singleNewContainer_Journal.SetActive(true);
 
         rewardsOpen = false;
     }
@@ -288,7 +286,7 @@ public sealed class JournalManager : MonoBehaviour
         totalCoins = 0;
         totalRecruits = 0;
         monsterRewards.Clear();
-        Dictionary<MonsterReferencer.Monsters, int> experienceByMonster = new();
+        Dictionary<MonsterReferencer.Monsters, long> experienceByMonster = new();
 
         foreach (var news in reports)
         {
@@ -317,7 +315,7 @@ public sealed class JournalManager : MonoBehaviour
                 continue;
             }
 
-            experienceByMonster.TryGetValue(news.monster, out int experience);
+            experienceByMonster.TryGetValue(news.monster, out long experience);
             experienceByMonster[news.monster] = experience + news.data.characterXpEarned;
         }
 
@@ -330,7 +328,7 @@ public sealed class JournalManager : MonoBehaviour
             MonsterReferencer.Monsters monster = reward.Key;
             int startLevel = monster.monsterLevel;
             int startXp = monster.monsterExperience;
-            monster.GainExperience(reward.Value);
+            monster.GainExperience((int)System.Math.Min(reward.Value, int.MaxValue));
             monsterRewards.Add((monster, startLevel, startXp, monster.monsterLevel, monster.monsterExperience));
         }
     }
@@ -391,6 +389,7 @@ public sealed class JournalManager : MonoBehaviour
         }
 
         UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)visual.rewardsNew_Journal.transform.parent);
+        UnityEngine.UI.ScrollRect journalScroll = visual.scrollRect_Journal;
         UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(journalScroll.content);
         Canvas.ForceUpdateCanvases();
         journalScroll.StopMovement();
