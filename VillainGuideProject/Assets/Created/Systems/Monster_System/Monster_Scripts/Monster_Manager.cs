@@ -5,6 +5,8 @@ using UnityEngine.Localization;
 
 public sealed class MonsterManager : MonoBehaviour
 {
+    [SerializeField] private GameObject rosterButtons;
+
     private readonly List<MonsterReferencer.Monsters> availableMonsters = new();
     private string sendLabel;
     private QuestMail_Info selectedQuest;
@@ -26,6 +28,11 @@ public sealed class MonsterManager : MonoBehaviour
         ClearDisplayedName();
     }
 
+    public void OpenRoster()
+    {
+        OpenSelection(null);
+    }
+
     public void OpenSelection(QuestMail_Info quest)
     {
         Main_Referencer references = Main_Referencer.Instance;
@@ -45,16 +52,36 @@ public sealed class MonsterManager : MonoBehaviour
         }
 
         selectedQuest = quest;
+        MonsterReferencer.Monsters assignedMonster = quest?.AssignedMonster;
         selectedIndex = Mathf.Max(0, availableMonsters.FindIndex(
-            monster => monster == quest.AssignedMonster));
+            monster => monster == assignedMonster));
+        bool forMission = quest != null;
         bool canNavigate = availableMonsters.Count > 1;
         VisualReferencer visual = references.visual;
         visual.previousButton_MonsterSelection.interactable = canNavigate;
         visual.nextButton_MonsterSelection.interactable = canNavigate;
+        visual.sendButton_MonsterSelection.gameObject.SetActive(forMission);
+        visual.backButton_MonsterSelection.gameObject.SetActive(forMission);
+        if (rosterButtons != null)
+        {
+            rosterButtons.SetActive(!forMission);
+        }
 
-        visual.voiceMailCanvas_voiceMail.SetActive(false);
+        if (forMission)
+        {
+            visual.voiceMailCanvas_voiceMail.SetActive(false);
+        }
+
         RefreshSelection();
         visual.selectionCanvas_MonsterSelection.SetActive(true);
+    }
+
+    public void CloseRoster()
+    {
+        if (selectedQuest == null)
+        {
+            CloseSelection();
+        }
     }
 
     public void CloseSelection()
@@ -67,6 +94,11 @@ public sealed class MonsterManager : MonoBehaviour
 
         ClearDisplayedName();
         visual.selectionCanvas_MonsterSelection.SetActive(false);
+        if (selectedQuest == null)
+        {
+            return;
+        }
+
         selectedQuest = null;
         visual.voiceMailCanvas_voiceMail.SetActive(true);
         RoomManager roomManager = Main_Referencer.Instance.manager.roomManager;
@@ -129,7 +161,7 @@ public sealed class MonsterManager : MonoBehaviour
 
     public void RefreshMissionAvailability()
     {
-        if (Main_Referencer.Instance.visual.selectionCanvas_MonsterSelection.activeSelf)
+        if (selectedQuest != null && Main_Referencer.Instance.visual.selectionCanvas_MonsterSelection.activeSelf)
         {
             UpdateSendButton(availableMonsters[selectedIndex]);
         }
@@ -151,7 +183,11 @@ public sealed class MonsterManager : MonoBehaviour
     {
         MonsterReferencer.Monsters monster = availableMonsters[selectedIndex];
         CreateMonster_Data profile = monster.monstersProfile;
-        UpdateSendButton(monster);
+        if (selectedQuest != null)
+        {
+            UpdateSendButton(monster);
+        }
+
         VisualReferencer visual = Main_Referencer.Instance.visual;
         visual.monsterImage_MonsterSelection.sprite = profile.bigImage;
         visual.specialAbilityText_MonsterSelection.text = profile.mainPower.ToString();

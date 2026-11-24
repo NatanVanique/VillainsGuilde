@@ -40,10 +40,12 @@ public sealed class RoomManager : MonoBehaviour
     public void PreviousScreen()
     {
         GoToScreen(PreviousScreenPosition(), false);
+        Main_Referencer.Instance.manager.monsterManager.OpenRoster();
     }
 
     public void NextScreen()
     {
+        Main_Referencer.Instance.manager.monsterManager.CloseRoster();
         GoToScreen(NextScreenPosition(), false);
     }
 

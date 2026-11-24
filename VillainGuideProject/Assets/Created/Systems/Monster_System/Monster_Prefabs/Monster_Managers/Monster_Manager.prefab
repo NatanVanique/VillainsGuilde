@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0000000000000000000000000000003b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rosterButtons: {fileID: 8456444530311399066}
 --- !u!1001 &4032920958300256256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -678,6 +679,11 @@ RectTransform:
 --- !u!1 &8176101200625536915 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5080210495631849363, guid: 1d28278ec77c1c6459635bcfc87c3c38, type: 3}
+  m_PrefabInstance: {fileID: 4032920958300256256}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8456444530311399066 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4804359219886653082, guid: 1d28278ec77c1c6459635bcfc87c3c38, type: 3}
   m_PrefabInstance: {fileID: 4032920958300256256}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &5239108873230857752 stripped
