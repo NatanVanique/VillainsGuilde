@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00000000000000000000000000000047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  journalPanel: {fileID: 3742587592633296000}
+  entranceDuration: 0.5
 --- !u!1001 &8667912299406312149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -418,6 +420,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a609c5687b78f4d48ab90494a1a35462, type: 3}
+--- !u!224 &3742587592633296000 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5456898034902984277, guid: a609c5687b78f4d48ab90494a1a35462, type: 3}
+  m_PrefabInstance: {fileID: 8667912299406312149}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4622594618163002685 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4065726953521856488, guid: a609c5687b78f4d48ab90494a1a35462, type: 3}

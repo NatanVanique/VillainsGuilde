@@ -5,6 +5,9 @@ using DG.Tweening;
 
 public sealed class JournalManager : MonoBehaviour
 {
+    [SerializeField] private RectTransform journalPanel;
+    [SerializeField, Min(0f)] private float entranceDuration = 0.5f;
+
     private readonly List<GameObject> instantiatedNews = new();
     private readonly List<GameObject> instantiatedCharacterXp = new();
     private readonly List<(MonsterReferencer.Monsters monster, int startLevel, int startXp, int endLevel, int endXp)> monsterRewards = new();
@@ -16,6 +19,7 @@ public sealed class JournalManager : MonoBehaviour
 
     private int publishedDay = -1;
     private float? timeScaleBeforeJournal;
+    private Tween entranceTween;
     private bool rewardsOpen;
     private long totalPopularityXp;
     private long totalCoins;
@@ -90,8 +94,37 @@ public sealed class JournalManager : MonoBehaviour
         RenderNews(reports);
         timeScaleBeforeJournal ??= Time.timeScale;
         Time.timeScale = 0f;
-        visual.journalCanvas_Journal.SetActive(true);
+        OpenJournalCanvas();
         ResetPageScroll();
+    }
+
+    private void OpenJournalCanvas()
+    {
+        GameObject journalCanvas = visual.journalCanvas_Journal;
+        entranceTween?.Kill();
+
+        if (journalPanel == null || entranceDuration <= 0f)
+        {
+            journalCanvas.SetActive(true);
+            return;
+        }
+
+        Vector2 restingPosition = journalPanel.anchoredPosition;
+        float hiddenY = -journalPanel.rect.yMax * journalPanel.localScale.y - 8f;
+        journalPanel.anchoredPosition = new Vector2(restingPosition.x, hiddenY);
+        journalCanvas.SetActive(true);
+
+        entranceTween = journalPanel.DOAnchorPosY(restingPosition.y, entranceDuration)
+            .SetEase(Ease.OutCubic)
+            .SetUpdate(true)
+            .OnKill(() =>
+            {
+                entranceTween = null;
+                if (journalPanel != null)
+                {
+                    journalPanel.anchoredPosition = restingPosition;
+                }
+            });
     }
 
     public bool? GetLatestDiscoveredResult(CreateQuest_Data quest, MonsterReferencer.Monsters monster)
@@ -243,6 +276,7 @@ public sealed class JournalManager : MonoBehaviour
             visual.journalCanvas_Journal.SetActive(false);
         }
 
+        entranceTween?.Kill();
         rewardsOpen = false;
         if (timeScaleBeforeJournal.HasValue)
         {
