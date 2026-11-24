@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{f578ef97-39f4-48aa-b48a-8620d8fd3cbd}">
+		<property name="assetPath">
+			<value>DuckNoise1_Sfx_Noon.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{16d56375-3e20-4b88-a8ea-92df098c11fe}</destination>
+		</relationship>
+	</object>
+</objects>

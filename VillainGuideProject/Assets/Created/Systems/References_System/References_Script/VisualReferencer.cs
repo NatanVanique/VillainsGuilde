@@ -16,9 +16,20 @@ using TMPro;
 [DeclareFoldoutGroup("Telephone", Expanded = true)]
 [DeclareFoldoutGroup("Journal", Expanded = true)]
 [DeclareFoldoutGroup("Duck", Expanded = true)]
+[DeclareFoldoutGroup("Life", Expanded = true)]
+[DeclareFoldoutGroup("Fade", Expanded = true)]
 
 public class VisualReferencer : MonoBehaviour
 {
+    [Group("Fade")] public Animator fadeAnimator;
+    
+    [Group("Life")] public GameObject healthContainer;
+    [Group("Life")] public GameObject failedContainer;
+    [Group("Life")] public GameObject defeatContainer;
+    [Group("Life")] public Image[] healthImages_Life = new Image[3];
+    [Group("Life")] public Image[] failedHealthImages_Life = new Image[3];
+    [Group("Life")] public GameObject arrowDefeatScreen;
+
     [System.Serializable]
     public struct RoomScreenReference
     {
@@ -37,6 +48,7 @@ public class VisualReferencer : MonoBehaviour
     [Group("Bars")] public GameObject barsCanvas_Bars;
     [Group("Bars")] public GameObject top_Bars;
     [Group("Bars")] public GameObject bottom_Bars;
+    [Group("Bars")] public Image background_Bars;
 
     [Group("Voice Mail")] public GameObject voiceMailCanvas_voiceMail;
     [Group("Voice Mail")] public GameObject questMail_VoiceMail;

@@ -15,6 +15,18 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Portuguese (Brazil) (pt-BR)
   m_GUID: ec13d4982c9fce54aa5e7af29ce4b435
   m_SerializeEntries:
+  - m_GUID: 2350e60e53ed7434bb95edcb84373f24
+    m_Address: RouteQuest_BadResults_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 597c707aa993a234b8c98a377d9e9ac8
+    m_Address: RouteQuest_GoodResults_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5b526882ace3fe040a022a54231e93ee
     m_Address: RouteQuests_Name_pt-BR
     m_ReadOnly: 1
@@ -45,8 +57,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pt-BR
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aef9537a5376b0c419258be1c41c5f1a
+    m_Address: SingleQuest_GoodResults_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ba624fb982efaf34c96a1ccf981df5cb
     m_Address: Journal_pt-BR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf4e2913b33461e40a0b4ef9df079ed8
+    m_Address: SingleQuest_BadResults_pt-BR
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pt-BR

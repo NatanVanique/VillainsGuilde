@@ -32,19 +32,19 @@ MonoBehaviour:
     m_LocalVariables: []
   goodResult:
     m_TableReference:
-      m_TableCollectionName: GUID:521794ee59605654f9b774b50a6ec8cb
+      m_TableCollectionName: GUID:f80b487d8ae49e7419af8aa439284030
     m_TableEntryReference:
-      m_KeyId: 25410768938
-      m_Key:
+      m_KeyId: 40625922049
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   badResult:
     m_TableReference:
-      m_TableCollectionName: GUID:521794ee59605654f9b774b50a6ec8cb
+      m_TableCollectionName: GUID:bc7c1dae511aa0d4d9c449c13d1dad52
     m_TableEntryReference:
-      m_KeyId: 25410768939
-      m_Key:
+      m_KeyId: 22766575617
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []

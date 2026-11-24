@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: RouteQuest_BadResults_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: ff6c7acb321a8d04c974b86cd478d7d5, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 216614723584
+    m_Localized: After a night of failed searches, the Mayor appears with dark circles
+      under his eyes, shredding papers in his office. Penelope denies that the cat
+      was ever seen near confidential documents."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216644083712
+    m_Localized: 'Chaos at Holy Hope Hospital: bloodstains are found along the corridors,
+      and witnesses report strange creatures fleeing into the night. City Hall denies
+      any connection to the vaccination drive and announces an internal investigation.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216644083713
+    m_Localized: 'The night ends in chaos at Fancy Balency : an unidentified man
+      danced on top of the bar counter, knocked over dozens of bottles, and demanded
+      the DJ play ''my ex''s song.'' City Hall denies any involvement, claiming the
+      politician was merely taking part in an ''unofficial cultural initiative.'''
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216644083714
+    m_Localized: The Mayor was detained following an attempted bank robbery. In his
+      statement, he claimed he was 'merely winning over a teller and planning his
+      financial future.' City Hall reported that he was on an 'unauthorized social
+      mission.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216644083715
+    m_Localized: Security kicks the door down, the delegate faints onto the slides,
+      and the press discovers that the Global League for Human Peace left a guest
+      forgotten in the hotel for six hours.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216644083716
+    m_Localized: The World Peace Summit comes to an end after delegates storm out
+      of the hall shouting in seven different languages. The League reports that
+      'there was merely a difference of interpretation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216644083717
+    m_Localized: The crowd storms the League's headquarters, occupies the auditorium,
+      and demands bread. Security attempts to intervene, only to trigger the biggest
+      scandal of the World Peace Summit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216644083718
+    m_Localized: re spreads through the headquarters of the Global League for Human
+      Peace. Delegates are hastily evacuated, and the press asks how an eco-friendly
+      kit managed to cause more damage than a cold war.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

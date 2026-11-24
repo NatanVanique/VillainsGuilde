@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-English (en)
   m_GUID: 76e1692c42e765c40b93f3f5f0ec1cf5
   m_SerializeEntries:
+  - m_GUID: 04dbf6a02d7e80c45a6846ee7222ebbb
+    m_Address: RouteQuest_BadResults_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2b4abbbf14dc7d84189096b0feda381a
     m_Address: RouteQuests_Name_en
     m_ReadOnly: 1
@@ -33,6 +39,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6d3b319eb064ed14bbacf1c8ce686e7d
+    m_Address: SingleQuest_BadResults_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6d6b7610c30218f49b5ddeb8ba36c12b
+    m_Address: RouteQuest_GoodResults_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 85db6f067685d8d4381cf426e8ec8a84
     m_Address: RouteQuests_Describes_en
     m_ReadOnly: 1
@@ -47,6 +65,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b9b6256ebd285e14691a72e2a5248504
     m_Address: SingleQuests_Name_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e4b985f9822969e45b9a38a961b1498e
+    m_Address: SingleQuest_GoodResults_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
