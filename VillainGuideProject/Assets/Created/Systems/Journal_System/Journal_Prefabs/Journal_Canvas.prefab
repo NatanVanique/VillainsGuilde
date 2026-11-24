@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 2
@@ -880,13 +880,26 @@ GameObject:
   - component: {fileID: 8931724064251119114}
   - component: {fileID: 1189208055576705353}
   - component: {fileID: 8846243892629215956}
+  - component: {fileID: 4295362340112597537}
   m_Layer: 5
   m_Name: Journal_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &4295362340112597537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206504097688418321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c3de1ac6bf44753805e832ff949f0af, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::PopupBars
 --- !u!224 &4065726953521856488
 RectTransform:
   m_ObjectHideFlags: 0
@@ -928,7 +941,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &1189208055576705353
 MonoBehaviour:
@@ -3001,8 +3014,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -106.03, y: -15.5267}
-  m_SizeDelta: {x: 412.06, y: 45.7454}
+  m_AnchoredPosition: {x: 38, y: -23}
+  m_SizeDelta: {x: 640, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4612613797790889620
 CanvasRenderer:
@@ -3026,7 +3039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3063,8 +3076,8 @@ MonoBehaviour:
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 2
-  m_fontSizeMax: 300
+  m_fontSizeMin: 16
+  m_fontSizeMax: 34
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
@@ -4575,7 +4588,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 6
   m_TargetDisplay: 0
 --- !u!114 &7206032691014012467
 MonoBehaviour:
@@ -4703,7 +4716,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 2
@@ -4814,11 +4827,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2853182444852066680}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -106.03, y: -15.5267}
-  m_SizeDelta: {x: 412.06, y: 45.7454}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -20, y: -23}
+  m_SizeDelta: {x: 200, y: 42}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &1180907535974373254
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4841,7 +4854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4878,8 +4891,8 @@ MonoBehaviour:
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 2
-  m_fontSizeMax: 300
+  m_fontSizeMin: 16
+  m_fontSizeMax: 34
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
@@ -5106,7 +5119,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 2
@@ -5125,7 +5138,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 40
     m_Bottom: 0
   m_ChildAlignment: 1
   m_Spacing: 50
@@ -5685,9 +5698,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -170.89001, y: -14}
-  m_SizeDelta: {x: -387.79, y: 27.375}
-  m_Pivot: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -7.5, y: -23}
+  m_SizeDelta: {x: -475, y: 27.375}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2858820973951520264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6276,7 +6289,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 2

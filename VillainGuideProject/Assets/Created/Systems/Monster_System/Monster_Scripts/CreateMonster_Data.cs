@@ -13,6 +13,7 @@ public class CreateMonster_Data : ScriptableObject
     public Sprite bigImage;
     public Sprite smallImage;
     public Sprite icon;
+    public Sprite journalImage;
     
     [System.Serializable]
     public class statsInfos

@@ -30,7 +30,6 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  type: 0
   goodResult:
     m_TableReference:
       m_TableCollectionName: GUID:f80b487d8ae49e7419af8aa439284030
@@ -57,18 +56,17 @@ MonoBehaviour:
   statsToWin: 2
   statusRequirements:
   - requerimenttype: 1
-    requerimentValue: 0.4
+    requerimentValue: 0.40
   - requerimenttype: 4
     requerimentValue: 0.35
   - requerimenttype: 6
     requerimentValue: 0.35
-  haspopularityXpReward: 0
-  popularityXpEarned: 0
-  hasCharacterXpReward: 0
-  characterXpEarned: 0
-  hasCoinsReward: 0
-  coinsEarned: 0
-  hasCharacterReward: 0
+  haspopularityXpReward: 1
+  popularityXpEarned: 10
+  hasCharacterXpReward: 1
+  characterXpEarned: 25
+  hasCoinsReward: 1
+  coinsEarned: 20
   characterEarned: []
   references:
     version: 2

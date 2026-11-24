@@ -2,30 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using UnityEngine.UI;
 
 public sealed class JournalManager : MonoBehaviour
 {
+    [SerializeField] private RectTransform journalPanel;
+    [SerializeField, Min(0f)] private float entranceDuration = 0.5f;
+
     private readonly List<GameObject> instantiatedNews = new();
     private readonly List<GameObject> instantiatedCharacterXp = new();
+    private readonly List<(MonsterReferencer.Monsters monster, int startLevel, int startXp, int endLevel, int endXp)> monsterRewards = new();
 
     private readonly List<(CreateQuest_Data data, MonsterReferencer.Monsters monster, bool isWinned, bool attempted)> pendingNews = new();
 
     private DaycicleManager daycicle;
+    private VisualReferencer visual;
 
-    private bool rewardsOpen = false;
+    private int publishedDay = -1;
+    private float? timeScaleBeforeJournal;
+    private Tween entranceTween;
+    private bool rewardsOpen;
+    private long totalPopularityXp;
+    private long totalCoins;
+    private int totalRecruits;
 
     private void Start()
     {
-        daycicle = Main_Referencer.Instance.manager.dayCicleManager;
+        Main_Referencer references = Main_Referencer.Instance;
+        visual = references.visual;
+        daycicle = references.manager.dayCicleManager;
         daycicle.BeforeOfficeDayStart += PublishResults;
     }
 
-    private void OnDestroy()
+    private void OnEnable()
+    {
+        if (daycicle != null)
+        {
+            daycicle.BeforeOfficeDayStart += PublishResults;
+        }
+    }
+
+    private void OnDisable()
     {
         if (daycicle != null)
         {
             daycicle.BeforeOfficeDayStart -= PublishResults;
+        }
+
+        if (timeScaleBeforeJournal.HasValue)
+        {
+            HideEdition();
         }
     }
 
@@ -36,25 +61,70 @@ public sealed class JournalManager : MonoBehaviour
 
     private void PublishResults()
     {
-        if (pendingNews.Count == 0)
+        ValuesReferencer values = Main_Referencer.Instance.value;
+        int day = values.currentDay_HourValues;
+        if (day <= 1 || day == publishedDay)
         {
             return;
         }
-
-        ValuesReferencer values = Main_Referencer.Instance.value;
-        int day = values.currentDay_HourValues;
 
         while (values.realizedDayRegister.Count <= day)
         {
             values.realizedDayRegister.Add(new());
         }
 
-        values.realizedDayRegister[day].AddRange(pendingNews);
+        var reports = values.realizedDayRegister[day];
+        reports.AddRange(pendingNews);
         pendingNews.Clear();
 
-        InstanceNew(day);
+        publishedDay = day;
+        CollectRewards(reports);
+        ShowEdition(reports, day - 1);
 
         Main_Referencer.Instance.manager.questManager.RefreshDiscoveredResults();
+    }
+
+    private void ShowEdition(
+        List<(CreateQuest_Data data, MonsterReferencer.Monsters monster, bool isWinned, bool attempted)> reports,
+        int editionDay)
+    {
+        visual.dayLabel_Journal.text = $"Day {editionDay:000}";
+        ClearRewardRows();
+        ShowNewsPage(reports.Count > 0);
+        RenderNews(reports);
+        timeScaleBeforeJournal ??= Time.timeScale;
+        Time.timeScale = 0f;
+        OpenJournalCanvas();
+        ResetPageScroll();
+    }
+
+    private void OpenJournalCanvas()
+    {
+        GameObject journalCanvas = visual.journalCanvas_Journal;
+        entranceTween?.Kill();
+
+        if (journalPanel == null || entranceDuration <= 0f)
+        {
+            journalCanvas.SetActive(true);
+            return;
+        }
+
+        Vector2 restingPosition = journalPanel.anchoredPosition;
+        float hiddenY = -journalPanel.rect.yMax * journalPanel.localScale.y - 8f;
+        journalPanel.anchoredPosition = new Vector2(restingPosition.x, hiddenY);
+        journalCanvas.SetActive(true);
+
+        entranceTween = journalPanel.DOAnchorPosY(restingPosition.y, entranceDuration)
+            .SetEase(Ease.OutCubic)
+            .SetUpdate(true)
+            .OnKill(() =>
+            {
+                entranceTween = null;
+                if (journalPanel != null)
+                {
+                    journalPanel.anchoredPosition = restingPosition;
+                }
+            });
     }
 
     public bool? GetLatestDiscoveredResult(CreateQuest_Data quest, MonsterReferencer.Monsters monster)
@@ -101,50 +171,59 @@ public sealed class JournalManager : MonoBehaviour
 
     public void InstanceNew(int day)
     {
-        CleanJournal();
+        var editions = Main_Referencer.Instance.value.realizedDayRegister;
+        RenderNews(day >= 0 && day < editions.Count ? editions[day] : null);
+    }
 
-        if (day < 0 || day >= Main_Referencer.Instance.value.realizedDayRegister.Count)
+    private void RenderNews(
+        List<(CreateQuest_Data data, MonsterReferencer.Monsters monster, bool isWinned, bool attempted)> reports)
+    {
+        CleanJournal();
+        visual.smallNewsDivider_Journal.SetActive(false);
+        if (reports == null)
         {
             return;
         }
 
-        GameObject curNew;
-        Transform curContainer;
-
-        foreach (var news in Main_Referencer.Instance.value.realizedDayRegister[day])
+        ValuesReferencer values = Main_Referencer.Instance.value;
+        int featured = -1;
+        if (!reports.Exists(report => report.data.type == CreateQuest_Data.QuestType.Route))
         {
-            if (news.data.type == CreateQuest_Data.QuestType.Single)
-            {
-                curNew = Main_Referencer.Instance.visual.singleNews_Journal[
-                    Random.Range(0, Main_Referencer.Instance.visual.singleNews_Journal.Length)];
+            featured = reports.FindIndex(report => report.attempted && report.monster != null);
+        }
 
-                curContainer = Main_Referencer.Instance.visual.singleNewContainer_Journal.transform;
-            }
-            else if (news.data.type == CreateQuest_Data.QuestType.Route)
+        int smallNewsCount = 0;
+        for (int index = 0; index < reports.Count; index++)
+        {
+            var news = reports[index];
+            bool isHeadline = index == featured || news.data.type == CreateQuest_Data.QuestType.Route;
+            if (!isHeadline)
             {
-                curNew = Main_Referencer.Instance.visual.routeNew_Journal;
-                curContainer = Main_Referencer.Instance.visual.routeNewContainer_Journal.transform;
+                smallNewsCount++;
             }
-            else
-            {
-                return;
-            }
-
-            GameObject newObject = Instantiate(curNew, curContainer);
+            GameObject prefab = isHeadline
+                ? visual.routeNew_Journal
+                : visual.singleNews_Journal[Random.Range(0, visual.singleNews_Journal.Length)];
+            Transform container = isHeadline
+                ? visual.routeNewContainer_Journal.transform
+                : visual.singleNewContainer_Journal.transform;
+            GameObject newObject = Instantiate(prefab, container);
             instantiatedNews.Add(newObject);
 
             JournalNew_Info info = newObject.GetComponent<JournalNew_Info>();
 
             var result = news.isWinned ? news.data.goodResult : news.data.badResult;
 
-            info.setInfo(news.data, result);
-
             if (result == null || result.IsEmpty)
             {
-                info.newDescription.OnUpdateString.Invoke(
-                    news.isWinned ? "Mission succeeded." : "Mission failed.");
+                result = news.isWinned ? values.MissingWinArticle_JournalValues : values.MissingLossArticle_JournalValues;
             }
+
+            info.SetMonsterImage(news.attempted ? news.monster?.monstersProfile : null);
+            info.setInfo(news.data, result);
         }
+
+        visual.smallNewsDivider_Journal.SetActive(smallNewsCount > 1);
     }
 
     public void CleanJournal()
@@ -160,40 +239,65 @@ public sealed class JournalManager : MonoBehaviour
 
     public void OpenRewards()
     {
-        Transform buttonTransform = Main_Referencer.Instance.visual.tabButton_Journal.transform;
+        if (rewardsOpen || !visual.journalCanvas_Journal.activeSelf)
+        {
+            return;
+        }
+
+        Transform buttonTransform = visual.tabButton_Journal.transform;
         buttonTransform.DOKill();
 
         DoTweenEffects_Commands.DoTweenSpin(buttonTransform, 0.3f, -180);
 
-        Main_Referencer.Instance.visual.tabText_Journal.StringReference =
-            Main_Referencer.Instance.value.NewsTabText_JournalValues;
+        ValuesReferencer values = Main_Referencer.Instance.value;
+        visual.tabText_Journal.StringReference = values.NewsTabText_JournalValues;
+        visual.titleText_Journal.StringReference = values.RewardsText_JournalValues;
 
-        Main_Referencer.Instance.visual.titleText_Journal.StringReference =
-            Main_Referencer.Instance.value.RewardsText_JournalValues;
-
-        Main_Referencer.Instance.visual.rewardsNew_Journal.SetActive(true);
-        Main_Referencer.Instance.visual.routeNewContainer_Journal.SetActive(false);
-        Main_Referencer.Instance.visual.singleNewContainer_Journal.SetActive(false);
+        visual.routeNewContainer_Journal.SetActive(false);
+        visual.singleNewContainer_Journal.SetActive(false);
+        visual.rewardsNew_Journal.SetActive(true);
 
         rewardsOpen = true;
+        UpdateRewards(publishedDay);
+        ResetPageScroll();
     }
 
     public void CloseRewards()
     {
-        Transform buttonTransform = Main_Referencer.Instance.visual.tabButton_Journal.transform;
+        visual.tabButton_Journal.transform.DOKill();
+        ClearRewardRows();
+        HideEdition();
+    }
+
+    private void HideEdition()
+    {
+        if (visual != null && visual.journalCanvas_Journal != null)
+        {
+            visual.journalCanvas_Journal.SetActive(false);
+        }
+
+        entranceTween?.Kill();
+        rewardsOpen = false;
+        if (timeScaleBeforeJournal.HasValue)
+        {
+            Time.timeScale = timeScaleBeforeJournal.Value;
+            timeScaleBeforeJournal = null;
+        }
+    }
+
+    private void ShowNewsPage(bool hasNews)
+    {
+        Transform buttonTransform = visual.tabButton_Journal.transform;
         buttonTransform.DOKill();
+        buttonTransform.localRotation = Quaternion.identity;
 
-        DoTweenEffects_Commands.DoTweenSpin(buttonTransform, 0.3f, 0);
+        ValuesReferencer values = Main_Referencer.Instance.value;
+        visual.tabText_Journal.StringReference = values.RewardsTabText_JournalValues;
+        visual.titleText_Journal.StringReference = hasNews ? values.DailyNewsText_JournalValues : values.NoMissionResults_JournalValues;
 
-        Main_Referencer.Instance.visual.tabText_Journal.StringReference =
-            Main_Referencer.Instance.value.RewardsTabText_JournalValues;
-
-        Main_Referencer.Instance.visual.titleText_Journal.StringReference =
-            Main_Referencer.Instance.value.DailyNewsText_JournalValues;
-
-        Main_Referencer.Instance.visual.rewardsNew_Journal.SetActive(false);
-        Main_Referencer.Instance.visual.routeNewContainer_Journal.SetActive(true);
-        Main_Referencer.Instance.visual.singleNewContainer_Journal.SetActive(true);
+        visual.rewardsNew_Journal.SetActive(false);
+        visual.routeNewContainer_Journal.SetActive(true);
+        visual.singleNewContainer_Journal.SetActive(true);
 
         rewardsOpen = false;
     }
@@ -209,70 +313,120 @@ public sealed class JournalManager : MonoBehaviour
         OpenRewards();
     }
 
-    public void UpdateRewards(int day)
+    private void CollectRewards(
+        List<(CreateQuest_Data data, MonsterReferencer.Monsters monster, bool isWinned, bool attempted)> reports)
     {
-        int totalPopularityXp = 0;
-        int totalCoins = 0;
-        int totalMonsters = 0;
+        totalPopularityXp = 0;
+        totalCoins = 0;
+        totalRecruits = 0;
+        monsterRewards.Clear();
+        Dictionary<MonsterReferencer.Monsters, long> experienceByMonster = new();
 
-        Dictionary<MonsterReferencer.Monsters, int> monstersUsed = new();
-
-        foreach (var news in Main_Referencer.Instance.value.realizedDayRegister[day])
+        foreach (var news in reports)
         {
             if (!news.isWinned)
             {
                 continue;
             }
 
-            totalPopularityXp += news.data.popularityXpEarned;
-            totalCoins += news.data.coinsEarned;
+            if (news.data.haspopularityXpReward)
+            {
+                totalPopularityXp += Mathf.Max(0, news.data.popularityXpEarned);
+            }
+
+            if (news.data.hasCoinsReward)
+            {
+                totalCoins += Mathf.Max(0, news.data.coinsEarned);
+            }
 
             if (news.data.hasCharacterReward)
             {
-                totalMonsters++;
+                totalRecruits += news.data.characterEarned?.Length ?? 0;
             }
 
-            if (news.monster == null)
+            if (news.monster == null || news.data.characterXpEarned <= 0)
             {
                 continue;
             }
 
-            monstersUsed.TryAdd(news.monster, 0);
-            monstersUsed[news.monster] += news.data.characterXpEarned;
+            experienceByMonster.TryGetValue(news.monster, out long experience);
+            experienceByMonster[news.monster] = experience + news.data.characterXpEarned;
         }
 
-        foreach (var obj in instantiatedCharacterXp)
+        ManagerReferencer managers = Main_Referencer.Instance.manager;
+        managers.popularityManager.GrantExperience(totalPopularityXp);
+        managers.moneyManager.Credit(totalCoins);
+
+        foreach (var reward in experienceByMonster)
         {
-            Destroy(obj);
+            MonsterReferencer.Monsters monster = reward.Key;
+            int startLevel = monster.monsterLevel;
+            int startXp = monster.monsterExperience;
+            monster.GainExperience((int)System.Math.Min(reward.Value, int.MaxValue));
+            monsterRewards.Add((monster, startLevel, startXp, monster.monsterLevel, monster.monsterExperience));
+        }
+    }
+
+    public void UpdateRewards(int day)
+    {
+        if (!rewardsOpen || day != publishedDay)
+        {
+            return;
+        }
+
+        ClearRewardRows();
+        foreach (var reward in monsterRewards)
+        {
+            GameObject row = Instantiate(visual.characterXpElement_Journal, visual.rewardsNew_Journal.transform);
+            row.transform.SetSiblingIndex(instantiatedCharacterXp.Count);
+            instantiatedCharacterXp.Add(row);
+            row.GetComponent<JournalMonsterReward>().Play(
+                reward.monster.monstersProfile.icon, reward.startLevel, reward.startXp, reward.endLevel, reward.endXp);
+        }
+
+        Main_Referencer references = Main_Referencer.Instance;
+        ValuesReferencer values = references.value;
+        var rewards = visual.rewardsNewComponents_Journal;
+        float progress = values.popularityLevel_Popularity >= values.maxPopularityLevel_Popularity
+            ? 1f
+            : Mathf.Clamp01((float)values.popularityXp_Popularity / PopularityManager.ExperiencePerLevel);
+        rewards[1].progressSlider.SetValueWithoutNotify(progress);
+        rewards[1].LevelValueText.text = values.popularityLevel_Popularity.ToString();
+        rewards[1].numbersValueText.gameObject.SetActive(true);
+        rewards[1].numbersValueText.text = $"+{totalPopularityXp:N0} XP";
+        rewards[2].numbersValueText.text = $"+{totalCoins:N0}  |  Total {references.manager.moneyManager.Balance:N0}";
+        rewards[3].numbersValueText.text = totalRecruits.ToString();
+    }
+
+    private void ClearRewardRows()
+    {
+        foreach (GameObject row in instantiatedCharacterXp)
+        {
+            row.SetActive(false);
+            Destroy(row);
         }
 
         instantiatedCharacterXp.Clear();
+    }
 
-        foreach (var monster in monstersUsed)
+    private void ResetPageScroll()
+    {
+        // Size the active sections before their parent reads their heights.
+        if (rewardsOpen)
         {
-            GameObject obj = Instantiate(
-                Main_Referencer.Instance.visual.characterXpElement_Journal,
-                Main_Referencer.Instance.visual.rewardsNew_Journal.transform.parent
-            );
-
-            instantiatedCharacterXp.Add(obj);
-
-            obj.GetComponentInChildren<Slider>().value = monster.Value;
+            UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)visual.rewardsNew_Journal.transform);
+        }
+        else
+        {
+            UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)visual.routeNewContainer_Journal.transform);
+            UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)visual.singleNewContainer_Journal.transform);
         }
 
-        //PopularityXp
-        Main_Referencer.Instance.visual.rewardsNewComponents_Journal[1].progressSlider.value =
-            totalPopularityXp;
-
-        Main_Referencer.Instance.visual.rewardsNewComponents_Journal[1].LevelValueText.text =
-            Main_Referencer.Instance.value.popularityLevel_Popularity.ToString();
-
-        //Coins
-        Main_Referencer.Instance.visual.rewardsNewComponents_Journal[2].numbersValueText.text =
-            totalCoins.ToString();
-
-        //Characters
-        Main_Referencer.Instance.visual.rewardsNewComponents_Journal[3].numbersValueText.text =
-            totalMonsters.ToString();
+        UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)visual.rewardsNew_Journal.transform.parent);
+        UnityEngine.UI.ScrollRect journalScroll = visual.scrollRect_Journal;
+        UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(journalScroll.content);
+        Canvas.ForceUpdateCanvases();
+        journalScroll.StopMovement();
+        journalScroll.verticalNormalizedPosition = 1f;
     }
 }

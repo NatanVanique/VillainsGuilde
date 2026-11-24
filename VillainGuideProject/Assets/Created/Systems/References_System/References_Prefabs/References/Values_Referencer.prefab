@@ -176,6 +176,33 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  NoMissionResults_JournalValues:
+    m_TableReference:
+      m_TableCollectionName: GUID:521794ee59605654f9b774b50a6ec8cb
+    m_TableEntryReference:
+      m_KeyId: 25410768899
+      m_Key:
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  MissingWinArticle_JournalValues:
+    m_TableReference:
+      m_TableCollectionName: GUID:521794ee59605654f9b774b50a6ec8cb
+    m_TableEntryReference:
+      m_KeyId: 25410768910
+      m_Key:
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  MissingLossArticle_JournalValues:
+    m_TableReference:
+      m_TableCollectionName: GUID:521794ee59605654f9b774b50a6ec8cb
+    m_TableEntryReference:
+      m_KeyId: 25410768911
+      m_Key:
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   references:
     version: 2
     RefIds: []

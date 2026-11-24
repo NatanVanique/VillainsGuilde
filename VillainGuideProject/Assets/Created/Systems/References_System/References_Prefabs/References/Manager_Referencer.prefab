@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 120791570997282403}
   - component: {fileID: 7499470808103987538}
+  - component: {fileID: 4106121259937273001}
+  - component: {fileID: 4106121259937273002}
   m_Layer: 0
   m_Name: Manager_Referencer
   m_TagString: Untagged
@@ -47,5 +49,33 @@ MonoBehaviour:
   questManager: {fileID: 0}
   monsterManager: {fileID: 0}
   journalManager: {fileID: 0}
+  barsManager: {fileID: 0}
   dayCicleManager: {fileID: 0}
   roomManager: {fileID: 0}
+  moneyManager: {fileID: 4106121259937273001}
+  popularityManager: {fileID: 4106121259937273002}
+--- !u!114 &4106121259937273001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8767208148307408804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00000000000000000000000000000017, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  balance: 0
+--- !u!114 &4106121259937273002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8767208148307408804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0000000000000000000000000000004d, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:

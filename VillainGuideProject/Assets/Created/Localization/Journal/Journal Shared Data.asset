@@ -31,6 +31,210 @@ MonoBehaviour:
     m_Key: ClickRewards_Journal
     m_Metadata:
       m_Items: []
+  - m_Id: 25410768920
+    m_Key: ClimateChaos_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768921
+    m_Key: ClimateChaos_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768922
+    m_Key: FatalCanine_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768923
+    m_Key: FatalCanine_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768924
+    m_Key: FancyBalance_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768925
+    m_Key: FancyBalance_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768926
+    m_Key: HeistHeart_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768927
+    m_Key: HeistHeart_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768928
+    m_Key: PresidentialSuite_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768929
+    m_Key: PresidentialSuite_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768930
+    m_Key: DemonicTranslator_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768931
+    m_Key: DemonicTranslator_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768932
+    m_Key: TheCrowdBread_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768933
+    m_Key: TheCrowdBread_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768934
+    m_Key: BasementBlues_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768935
+    m_Key: BasementBlues_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768936
+    m_Key: PhantomMonster_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768937
+    m_Key: PhantomMonster_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768938
+    m_Key: CryBelow_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768939
+    m_Key: CryBelow_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768940
+    m_Key: MaydayMonster_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768941
+    m_Key: MaydayMonster_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768942
+    m_Key: MonstersAllowed_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768943
+    m_Key: MonstersAllowed_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768944
+    m_Key: GoneBananas_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768945
+    m_Key: GoneBananas_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768946
+    m_Key: GreatBread_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768947
+    m_Key: GreatBread_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768948
+    m_Key: DanceFloor_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768949
+    m_Key: DanceFloor_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768950
+    m_Key: PicklePower_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768951
+    m_Key: PicklePower_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768952
+    m_Key: FlavorsYouth_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768953
+    m_Key: FlavorsYouth_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768954
+    m_Key: SeventeenAgain_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768955
+    m_Key: SeventeenAgain_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768956
+    m_Key: WreckingNail_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768957
+    m_Key: WreckingNail_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768958
+    m_Key: UnconventionalAdventure_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768959
+    m_Key: UnconventionalAdventure_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768960
+    m_Key: UnbreakableNecktie_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768961
+    m_Key: UnbreakableNecktie_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768962
+    m_Key: CursedCrown_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768963
+    m_Key: CursedCrown_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768964
+    m_Key: TattletaleParrot_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768965
+    m_Key: TattletaleParrot_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768966
+    m_Key: LittleBear_Good
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768967
+    m_Key: LittleBear_Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768910
+    m_Key: MissingWinArticle_Journal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768911
+    m_Key: MissingLossArticle_Journal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25410768899
+    m_Key: NoMissionResults_Journal
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

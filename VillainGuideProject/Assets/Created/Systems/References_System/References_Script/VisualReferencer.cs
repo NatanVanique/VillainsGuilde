@@ -45,6 +45,7 @@ public class VisualReferencer : MonoBehaviour
     [Group("Room")] public Button nextScreenButton_Room;
     [Group("Room")] public List<RoomScreenReference> screensRoom = new List<RoomScreenReference>();
 
+    [Group("Bars")] public GameObject barsCanvas_Bars;
     [Group("Bars")] public GameObject top_Bars;
     [Group("Bars")] public GameObject bottom_Bars;
     [Group("Bars")] public Image background_Bars;
@@ -99,6 +100,10 @@ public class VisualReferencer : MonoBehaviour
     [Group("Telephone")] public GameObject openPhoneOutline;
     [Group("Telephone")] public Button phoneButton;
 
+    [Group("Journal")] public GameObject journalCanvas_Journal;
+    [Group("Journal")] public TextMeshProUGUI dayLabel_Journal;
+    [Group("Journal")] public GameObject smallNewsDivider_Journal;
+    [Group("Journal")] public UnityEngine.UI.ScrollRect scrollRect_Journal;
     [Group("Journal")] public GameObject singleNewContainer_Journal;
     [Group("Journal")] public GameObject[] singleNews_Journal;
     [Group("Journal")] public GameObject routeNewContainer_Journal;

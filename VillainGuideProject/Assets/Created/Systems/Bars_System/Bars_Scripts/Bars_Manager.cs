@@ -1,87 +1,151 @@
-
-using UnityEngine;
-using UnityEngine.UI;
+using System;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public sealed class Bars_Manager : MonoBehaviour
 {
-    private Coroutine movementBars;
+    private const float BackgroundOpacity = 218f / 255f;
 
-    private VisualReferencer Visual => Main_Referencer.Instance.visual;
+    private readonly HashSet<GameObject> openPopups = new();
+    private VisualReferencer visual;
+    private Coroutine movementBars;
+    private bool targetVisible;
+    private float progress;
+
+    public event Action<bool> VisibilityChanged;
+
+    private void OnEnable()
+    {
+        UpdateVisibility();
+    }
 
     private void Start()
     {
-        SetBarsScale(0);
-        SetBackgroundAlpha(0);
-        SetBackgroundActive(false);
+        UpdateVisibility();
     }
 
-    public void ShowBars()
+    private void OnDisable()
     {
-        if (movementBars != null) StopCoroutine(movementBars);
-        movementBars = StartCoroutine(MoveBars(1, 218));
-    }
-
-    public void HideBars()
-    {
-        if (movementBars != null) StopCoroutine(movementBars);
-        movementBars = StartCoroutine(MoveBars(0, 0));
-    }
-
-    private IEnumerator MoveBars(float targetScale, float targetAlpha)
-    {
-        if (targetAlpha > 0)
+        if (movementBars != null)
         {
-            SetBackgroundActive(true);
+            StopCoroutine(movementBars);
+            movementBars = null;
         }
 
-        float currentAlpha = Visual.background_Bars.color.a * 255;
-
-        while (!Mathf.Approximately(Visual.top_Bars.transform.localScale.y, targetScale) ||
-               !Mathf.Approximately(currentAlpha, targetAlpha))
+        if (visual != null)
         {
-            float velocity = Main_Referencer.Instance.value.velocity_Bars * Time.deltaTime;
-            float scaleY = Mathf.MoveTowards(Visual.top_Bars.transform.localScale.y, targetScale, velocity);
-            SetBarsScale(scaleY);
-            
-            currentAlpha = Mathf.MoveTowards(currentAlpha, targetAlpha, velocity * 255);
-            SetBackgroundAlpha(currentAlpha);
+            ResetAppearance();
+        }
+    }
 
+    public void ShowBars() => SetPopupOpen(gameObject, true);
+
+    public void HideBars() => SetPopupOpen(gameObject, false);
+
+    public void SetPopupOpen(GameObject popup, bool isOpen)
+    {
+        if (popup == null)
+        {
+            return;
+        }
+
+        if (isOpen)
+        {
+            openPopups.Add(popup);
+        }
+        else
+        {
+            openPopups.Remove(popup);
+        }
+
+        UpdateVisibility();
+    }
+
+    private void UpdateVisibility()
+    {
+        if (!isActiveAndEnabled)
+        {
+            return;
+        }
+
+        if (visual == null)
+        {
+            Main_Referencer references = Main_Referencer.Instance;
+            if (references == null || references.visual == null)
+            {
+                return;
+            }
+
+            visual = references.visual;
+            ResetAppearance();
+        }
+
+        bool visible = openPopups.Count > 0;
+        if (visible == targetVisible)
+        {
+            return;
+        }
+
+        targetVisible = visible;
+        if (movementBars != null)
+        {
+            StopCoroutine(movementBars);
+        }
+
+        if (visible)
+        {
+            visual.barsCanvas_Bars.SetActive(true);
+            visual.background_Bars.gameObject.SetActive(true);
+        }
+
+        movementBars = StartCoroutine(MoveBars(visible));
+        VisibilityChanged?.Invoke(visible);
+    }
+
+    private IEnumerator MoveBars(bool visible)
+    {
+        float targetProgress = visible ? 1f : 0f;
+        float speed = Mathf.Max(0.01f, Main_Referencer.Instance.value.velocity_Bars);
+        do
+        {
+            // The journal pauses gameplay while its UI is open.
             yield return null;
+            SetProgress(Mathf.MoveTowards(progress, targetProgress, speed * Time.unscaledDeltaTime));
         }
+        while (progress != targetProgress);
 
-        SetBackgroundAlpha(targetAlpha);
-
-        if (targetAlpha == 0)
+        if (!visible)
         {
-            SetBackgroundActive(false);
+            ResetAppearance();
         }
 
         movementBars = null;
     }
 
-    private void SetBarsScale(float scaleY)
+    private void ResetAppearance()
     {
-        Vector3 topScale = Visual.top_Bars.transform.localScale;
-        Vector3 bottomScale = Visual.bottom_Bars.transform.localScale;
-
-        topScale.y = scaleY;
-        bottomScale.y = scaleY;
-
-        Visual.top_Bars.transform.localScale = topScale;
-        Visual.bottom_Bars.transform.localScale = bottomScale;
+        targetVisible = false;
+        SetProgress(0f);
+        visual.background_Bars.gameObject.SetActive(false);
+        visual.barsCanvas_Bars.SetActive(false);
     }
 
-    private void SetBackgroundAlpha(float alpha)
+    private void SetProgress(float value)
     {
-        Color color = Visual.background_Bars.color;
-        color.a = alpha / 255f;
+        progress = value;
+        SetHeight(visual.top_Bars.transform, value);
+        SetHeight(visual.bottom_Bars.transform, value);
 
-        Visual.background_Bars.color = color;
+        Color color = visual.background_Bars.color;
+        color.a = value * BackgroundOpacity;
+        visual.background_Bars.color = color;
     }
 
-    private void SetBackgroundActive(bool isActive)
+    private static void SetHeight(Transform bar, float height)
     {
-        Visual.background_Bars.gameObject.SetActive(isActive);
+        Vector3 scale = bar.localScale;
+        scale.y = height;
+        bar.localScale = scale;
     }
 }

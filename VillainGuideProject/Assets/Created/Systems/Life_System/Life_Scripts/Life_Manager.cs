@@ -82,8 +82,6 @@ public sealed class LifeManager : MonoBehaviour
         failedSequence?.Kill();
         failedPanelClosing = false;
 
-        Main_Referencer.Instance.manager.barsManager.ShowBars();
-
         RestoreFailedHealth();
         SetLifeContainers(true);
 
@@ -91,7 +89,7 @@ public sealed class LifeManager : MonoBehaviour
 
         failedPanel.anchoredPosition = failedPanelPosition + Vector2.right * FailedPanelDistance();
 
-        failedSequence = DOTween.Sequence();
+        failedSequence = DOTween.Sequence().SetUpdate(true);
 
         failedSequence.Append(DoTweenEffects_Commands.DoTweenAnchorPosX
                 (failedPanel, failedPanelPosition.x, animationDuration, Ease.OutCubic));
@@ -106,9 +104,7 @@ public sealed class LifeManager : MonoBehaviour
         failedSequence?.Kill();
         failedPanelClosing = true;
 
-        Main_Referencer.Instance.manager.barsManager.HideBars();
-
-        failedSequence = DOTween.Sequence();
+        failedSequence = DOTween.Sequence().SetUpdate(true);
         
         failedSequence.Append(DoTweenEffects_Commands.DoTweenAnchorPosX
                 (failedPanel, failedPanelPosition.x - FailedPanelDistance(), animationDuration, Ease.InCubic));
@@ -137,7 +133,7 @@ public sealed class LifeManager : MonoBehaviour
     {
         if (displayedLives <= CurrentLives || failedPanelClosing) return;
 
-        failedSequence = DOTween.Sequence();
+        failedSequence = DOTween.Sequence().SetUpdate(true);
 
         for (int i = displayedLives - 1; i >= CurrentLives; i--)
         {

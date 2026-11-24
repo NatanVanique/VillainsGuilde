@@ -71,7 +71,7 @@ public static class DoTweenEffects_Commands
     
     public static void DoTweenSpin(Transform target, float duration, float angle)
     {
-        target.DOLocalRotate(new Vector3(0, 0, angle), duration).SetEase(Ease.InOutSine);
+        target.DOLocalRotate(new Vector3(0, 0, angle), duration).SetEase(Ease.InOutSine).SetUpdate(true);
     }
     
     public static Tween DoTweenSquash(Transform target, float duration, float intensity)

@@ -30,7 +30,6 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  type: 0
   goodResult:
     m_TableReference:
       m_TableCollectionName: GUID:f80b487d8ae49e7419af8aa439284030
@@ -62,13 +61,12 @@ MonoBehaviour:
     requerimentValue: 0.55
   - requerimenttype: 7
     requerimentValue: 0.35
-  haspopularityXpReward: 0
-  popularityXpEarned: 0
-  hasCharacterXpReward: 0
-  characterXpEarned: 0
-  hasCoinsReward: 0
-  coinsEarned: 0
-  hasCharacterReward: 0
+  haspopularityXpReward: 1
+  popularityXpEarned: 10
+  hasCharacterXpReward: 1
+  characterXpEarned: 25
+  hasCoinsReward: 1
+  coinsEarned: 20
   characterEarned: []
   references:
     version: 2
