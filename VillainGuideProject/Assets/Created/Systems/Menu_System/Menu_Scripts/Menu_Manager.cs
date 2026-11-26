@@ -10,7 +10,6 @@ public sealed class MenuManager : MonoBehaviour
 {
     [Header("Save")]
     [SerializeField] private Button continueButton;
-    [SerializeField] private TMP_Text newGameConfirmLabel;
 
     [Header("Hover Animation")]
     [SerializeField] private float ButtonBigXScale = 1.2f;
@@ -28,6 +27,7 @@ public sealed class MenuManager : MonoBehaviour
     private Dictionary<GameObject, Color> OriginalOutlineColors = new();
     private Dictionary<GameObject, Color> OriginalTextColors = new();
     private Dictionary<GameObject, Material> OriginalTextMaterials = new();
+    private readonly Dictionary<Material, Material> HoverTextMaterials = new();
     private Dictionary<GameObject, Vector3> OriginalScales = new();
     private Dictionary<GameObject, Vector2> OriginalAnchoredPositions = new();
 
@@ -40,8 +40,12 @@ public sealed class MenuManager : MonoBehaviour
         continueButton.interactable = hasSave;
         if (continueButton.TryGetComponent(out EventTrigger hover))
             hover.enabled = hasSave;
-        if (GameSaveSystem.HasExistingSave)
-            newGameConfirmLabel.text = "Overwrite";
+    }
+
+    private void OnDestroy()
+    {
+        foreach (Material material in HoverTextMaterials.Values)
+            Destroy(material);
     }
 
     public void SaveOriginalValues(GameObject button)
@@ -67,7 +71,7 @@ public sealed class MenuManager : MonoBehaviour
             OriginalTextColors.Add(button, text.color);
 
         if (!OriginalTextMaterials.ContainsKey(button))
-            OriginalTextMaterials.Add(button, text.fontMaterial);
+            OriginalTextMaterials.Add(button, text.fontSharedMaterial);
     }
 
     public void ChangeScale(GameObject button)
@@ -163,13 +167,21 @@ public sealed class MenuManager : MonoBehaviour
     public void ChangeTextMaterial(GameObject button)
     {
         SaveOriginalValues(button);
-        button.GetComponentInChildren<TextMeshProUGUI>().fontMaterial = HoverTextMaterial;
+        Material originalMaterial = OriginalTextMaterials[button];
+        if (!HoverTextMaterials.TryGetValue(originalMaterial, out Material hoverMaterial))
+        {
+            hoverMaterial = new Material(originalMaterial);
+            TMP_MaterialManager.CopyMaterialPresetProperties(HoverTextMaterial, hoverMaterial);
+            HoverTextMaterials.Add(originalMaterial, hoverMaterial);
+        }
+
+        button.GetComponentInChildren<TextMeshProUGUI>().fontSharedMaterial = hoverMaterial;
     }
 
     public void RestoreTextMaterial(GameObject button)
     {
         SaveOriginalValues(button);
-        button.GetComponentInChildren<TextMeshProUGUI>().fontMaterial = OriginalTextMaterials[button];
+        button.GetComponentInChildren<TextMeshProUGUI>().fontSharedMaterial = OriginalTextMaterials[button];
     }
 
     public void NewGame()
