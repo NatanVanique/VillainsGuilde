@@ -1765,6 +1765,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8102014023474288347, guid: 00000000000000000000000000000048, type: 3}
   m_PrefabInstance: {fileID: 2027650565}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2027650571 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6883282145157455311, guid: 00000000000000000000000000000048, type: 3}
+  m_PrefabInstance: {fileID: 2027650565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
 --- !u!1 &2027650572 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5692628652861824471, guid: 00000000000000000000000000000048, type: 3}
@@ -1779,8 +1790,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &2027650574 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5692628652861824473, guid: 00000000000000000000000000000048, type: 3}
@@ -1795,19 +1806,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
---- !u!114 &2027650571 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6883282145157455311, guid: 00000000000000000000000000000048, type: 3}
-  m_PrefabInstance: {fileID: 2027650565}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ScrollRect
 --- !u!1 &2037442800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2997,10 +2997,6 @@ PrefabInstance:
       value: Main_Referecer
       objectReference: {fileID: 0}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: barsCanvas_Bars
-      value:
-      objectReference: {fileID: 6203289509136370082}
-    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: top_Bars
       value: 
       objectReference: {fileID: 356717697}
@@ -3045,6 +3041,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 552321758}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: barsCanvas_Bars
+      value: 
+      objectReference: {fileID: 6203289509136370082}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: colorImage_Room
       value: 
       objectReference: {fileID: 236916861}
@@ -3064,6 +3064,10 @@ PrefabInstance:
       propertyPath: tabText_Journal
       value: 
       objectReference: {fileID: 2027650567}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: dayLabel_Journal
+      value: 
+      objectReference: {fileID: 2027650573}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: missionTitleText
       value: 
@@ -3089,25 +3093,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2027650571}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: journalCanvas_Journal
-      value:
-      objectReference: {fileID: 2027650572}
-    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: dayLabel_Journal
-      value:
-      objectReference: {fileID: 2027650573}
-    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: smallNewsDivider_Journal
-      value:
-      objectReference: {fileID: 2027650574}
-    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: scrollRect_Journal
-      value:
-      objectReference: {fileID: 2027650575}
-    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: rewardsNew_Journal
       value: 
       objectReference: {fileID: 1632028460}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: scrollRect_Journal
+      value: 
+      objectReference: {fileID: 2027650575}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: requirementsContent
       value: 
@@ -3137,6 +3129,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6476883213199858471}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: journalCanvas_Journal
+      value: 
+      objectReference: {fileID: 2027650572}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: nextScreenButton_Room
       value: 
       objectReference: {fileID: 483798442}
@@ -3160,6 +3156,10 @@ PrefabInstance:
       propertyPath: nameText_ContractTolltip
       value: 
       objectReference: {fileID: 7213310084915213184}
+    - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: smallNewsDivider_Journal
+      value: 
+      objectReference: {fileID: 2027650574}
     - target: {fileID: 4726212440438625469, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: previousScreenButton_Room
       value: 
@@ -3469,6 +3469,10 @@ PrefabInstance:
       value: GUID:521794ee59605654f9b774b50a6ec8cb
       objectReference: {fileID: 0}
     - target: {fileID: 7618967074502631834, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
+      propertyPath: barsManager
+      value: 
+      objectReference: {fileID: 6203289509136370083}
+    - target: {fileID: 7618967074502631834, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: lifeManager
       value: 
       objectReference: {fileID: 920000010}
@@ -3480,10 +3484,6 @@ PrefabInstance:
       propertyPath: questManager
       value: 
       objectReference: {fileID: 898469211}
-    - target: {fileID: 7618967074502631834, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
-      propertyPath: barsManager
-      value:
-      objectReference: {fileID: 6203289509136370083}
     - target: {fileID: 7618967074502631834, guid: aa1f7400767053e4e8eea7ee40f2a8e3, type: 3}
       propertyPath: journalManager
       value: 
@@ -3760,6 +3760,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4348859139371749232, guid: d0a8818069cb8b54aacff518d994b311, type: 3}
+      propertyPath: m_Color.a
+      value: 0.6431373
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3784,7 +3788,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acbd78a0188a85340ac0d244cd3c0eb3, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bars_Manager
 --- !u!114 &6407644289335739788 stripped
 MonoBehaviour:
@@ -3810,6 +3814,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2037442802}
     m_Modifications:
+    - target: {fileID: 2319763888016769219, guid: 33d77b659d2a1834f9008aac40b6107f, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5653055924938466069, guid: 33d77b659d2a1834f9008aac40b6107f, type: 3}
       propertyPath: m_Name
       value: Fade_Manager

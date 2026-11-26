@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0000000000000000000000000000000b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dayText: {fileID: 1985996032653015025}
 --- !u!1001 &3191934800787074980
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -151,3 +152,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4517647787484666584, guid: 3fe8fcd6506ec2144bec6f64e6a6c16c, type: 3}
   m_PrefabInstance: {fileID: 3191934800787074980}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1985996032653015025 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4018243398027761749, guid: 3fe8fcd6506ec2144bec6f64e6a6c16c, type: 3}
+  m_PrefabInstance: {fileID: 3191934800787074980}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI

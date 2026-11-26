@@ -1,8 +1,11 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public sealed class DaycicleManager : MonoBehaviour
 {
+    [SerializeField] private TMP_Text dayText;
+
     [Header("System Variables")]
     private float curtime;
 
@@ -26,6 +29,16 @@ public sealed class DaycicleManager : MonoBehaviour
             return Mathf.Clamp01(
                 (Main_Referencer.Instance.value.currentHour_HourValues + hourProgress) / 24f);
         }
+    }
+
+    private void Start()
+    {
+        RefreshDayText(Main_Referencer.Instance.value.currentDay_HourValues);
+    }
+
+    internal void RefreshDayText(int day)
+    {
+        dayText.text = $"Day: {day}";
     }
 
     private void Update()
