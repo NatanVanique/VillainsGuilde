@@ -30,6 +30,7 @@ public sealed class Life_Manager : MonoBehaviour
     private Tween defeatArrowTween;
 
     public int CurrentLives { get; private set; }
+    internal bool HasUnshownLifeLoss => displayedLives > CurrentLives;
 
     private VisualReferencer Visual => Main_Referencer.Instance.visual;
 

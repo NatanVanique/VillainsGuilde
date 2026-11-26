@@ -87,10 +87,12 @@ public sealed class JournalManager : MonoBehaviour
 
         publishedDay = day;
         CollectRewards(reports);
+        Life_Manager life = Main_Referencer.Instance.manager.lifeManager;
         if (livesLost > 0)
-        {
-            Life_Manager life = Main_Referencer.Instance.manager.lifeManager;
             life.LoseLife(livesLost);
+
+        if (life.HasUnshownLifeLoss)
+        {
             WaitForFailedPanel(reports);
         }
         else
