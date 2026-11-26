@@ -74,6 +74,7 @@ public sealed class QuestSaveData
     public List<Edition> editions = new();
     public List<Report> pendingReports = new();
     public int publishedDay = -1;
+    public bool waitingForFailedPanel;
     public bool newspaperOpen, rewardsOpen;
     public List<int> newspaperLayouts = new();
     public float journalScroll, timeScaleBeforeJournal;

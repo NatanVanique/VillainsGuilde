@@ -27,7 +27,7 @@ public class ManagerReferencer : MonoBehaviour
     
     [Group("Room")] public RoomManager roomManager;
 
-    [Group("Life")] public LifeManager lifeManager;
+    [Group("Life")] public Life_Manager lifeManager;
 
     [Group("Economy")] public MoneyManager moneyManager;
     [Group("Economy")] public PopularityManager popularityManager;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public sealed class DaycicleManager : MonoBehaviour
 {
+    private const int DefaultMorningHour = 6;
     [SerializeField] private TMP_Text dayText;
 
     [Header("System Variables")]
@@ -38,7 +39,8 @@ public sealed class DaycicleManager : MonoBehaviour
 
     internal void RefreshDayText(int day)
     {
-        dayText.text = $"Day: {day}";
+        if (dayText != null)
+            dayText.text = $"Day: {day}";
     }
 
     private void Update()
@@ -66,7 +68,11 @@ public sealed class DaycicleManager : MonoBehaviour
         else Main_Referencer.Instance.value.currentHour_HourValues++;
         curtime = 0;
         ValuesReferencer values = Main_Referencer.Instance.value;
-        if (values.currentHour_HourValues == values.beforeOfficeDayStartHour_TimeCalls)
+        int morningHour = values.beforeOfficeDayStartHour_TimeCalls;
+        if (morningHour < 1 || morningHour > 23)
+            morningHour = DefaultMorningHour;
+
+        if (values.currentHour_HourValues == morningHour)
         {
             BeforeOfficeDayStart?.Invoke();
         }
@@ -74,8 +80,10 @@ public sealed class DaycicleManager : MonoBehaviour
     
     private void DayAdd()
     {
-        Main_Referencer.Instance.value.currentHour_HourValues = 0;
-        Main_Referencer.Instance.value.currentDay_HourValues++;
+        ValuesReferencer values = Main_Referencer.Instance.value;
+        values.currentHour_HourValues = 0;
+        values.currentDay_HourValues++;
+        RefreshDayText(values.currentDay_HourValues);
         GameSaveSystem.RequestAutosave();
     }
 }

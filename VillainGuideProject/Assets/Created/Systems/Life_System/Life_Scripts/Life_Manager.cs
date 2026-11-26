@@ -1,16 +1,17 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public sealed class LifeManager : MonoBehaviour
+public sealed class Life_Manager : MonoBehaviour
 {
-    [Header("Life")]
-    private int playerLives = 3;
+    [Header("Life")] private int playerLives = 3;
     [SerializeField] private Sprite lostHealthSprite;
 
-    [Header("Animation")]
-    private float animationDuration = 0.4f;
+    [Header("Animation")] private float animationDuration = 0.4f;
+    private const float FailedPanelSlideDuration = 0.6f;
+    private const float FailedPanelHoldDuration = 0.9f;
     private float arrowAnimationDuration = 1.2f;
     private float animationIntensity = 0.6f;
 
@@ -23,11 +24,13 @@ public sealed class LifeManager : MonoBehaviour
     private int displayedLives;
     private Sequence failedSequence;
     private bool failedPanelClosing;
+    private Action<bool> failedPanelFinished;
     private Coroutine defeatRoutine;
     private double defeatAt;
     private Tween defeatArrowTween;
 
     public int CurrentLives { get; private set; }
+    internal bool HasUnshownLifeLoss => displayedLives > CurrentLives;
 
     private VisualReferencer Visual => Main_Referencer.Instance.visual;
 
@@ -58,9 +61,6 @@ public sealed class LifeManager : MonoBehaviour
             healthIconScales[i] = image.transform.localScale;
         }
 
-        RefreshHealth(Visual.healthImages_Life);
-        RefreshHealth(Visual.failedHealthImages_Life);
-
         SetLifeContainers(false);
     }
 
@@ -69,13 +69,16 @@ public sealed class LifeManager : MonoBehaviour
         data.lives = CurrentLives;
         data.displayedLives = displayedLives;
         data.healthPanelOpen = Visual.healthContainer.activeSelf;
-        data.failedPanelOpen = Visual.failedContainer.activeSelf && !failedPanelClosing;
+        data.failedPanelOpen = Visual.failedContainer.activeSelf &&
+                               (!failedPanelClosing || failedPanelFinished != null);
         data.defeatPanelOpen = Visual.defeatContainer.activeSelf;
         data.defeatSecondsRemaining = defeatRoutine == null
-            ? -1f : Mathf.Max(0f, (float)(defeatAt - Time.timeAsDouble));
+            ? -1f
+            : Mathf.Max(0f, (float)(defeatAt - Time.timeAsDouble));
         data.defeatArrowVisible = Visual.arrowDefeatScreen.activeSelf;
         data.defeatArrowElapsed = defeatArrowTween.IsActive()
-            ? defeatArrowTween.Elapsed() : arrowAnimationDuration;
+            ? defeatArrowTween.Elapsed()
+            : arrowAnimationDuration;
     }
 
     internal void RestoreState(GameplaySaveData data)
@@ -91,8 +94,9 @@ public sealed class LifeManager : MonoBehaviour
         {
             Image image = Visual.healthImages_Life[i];
             if (image != null)
-                image.sprite = i < CurrentLives ? regularHudSprites[i] : lostHealthSprite;
+                image.sprite = i < displayedLives ? regularHudSprites[i] : lostHealthSprite;
         }
+
         Visual.healthContainer.SetActive(data.healthPanelOpen);
         failedPanel.anchoredPosition = failedPanelPosition;
         RestoreFailedHealth();
@@ -106,6 +110,7 @@ public sealed class LifeManager : MonoBehaviour
             AnimateDefeatArrow();
             defeatArrowTween.Goto(data.defeatArrowElapsed, true);
         }
+
         if (data.defeatSecondsRemaining >= 0f)
             defeatRoutine = StartCoroutine(GameOverVisualSequence(data.defeatSecondsRemaining));
     }
@@ -116,8 +121,6 @@ public sealed class LifeManager : MonoBehaviour
 
         CurrentLives = Mathf.Max(0, CurrentLives - amount);
         GameSaveSystem.RequestAutosave();
-
-        RefreshHealth(Visual.healthImages_Life);
 
         if (Visual.failedContainer.activeSelf &&
             !failedPanelClosing &&
@@ -144,12 +147,27 @@ public sealed class LifeManager : MonoBehaviour
         failedSequence = DOTween.Sequence().SetUpdate(true);
 
         failedSequence.Append(DoTweenEffects_Commands.DoTweenAnchorPosX
-                (failedPanel, failedPanelPosition.x, animationDuration, Ease.OutCubic));
+            (failedPanel, failedPanelPosition.x, FailedPanelSlideDuration, Ease.OutCubic));
 
         failedSequence.OnComplete(AnimateFailedHealth);
     }
 
+    internal void PlayFailedPanel(Action<bool> onFinished)
+    {
+        failedPanelFinished = onFinished;
+        if (!Visual.failedContainer.activeSelf || failedPanelClosing)
+            ShowFailedPanel();
+        else if (failedSequence == null || !failedSequence.IsActive() || !failedSequence.IsPlaying())
+            AnimateFailedHealth();
+    }
+
     public void HideFailedPanel()
+    {
+        if (failedPanelFinished != null) return;
+        CloseFailedPanel();
+    }
+
+    private void CloseFailedPanel()
     {
         if (!Visual.failedContainer.activeSelf || failedPanelClosing) return;
 
@@ -157,15 +175,26 @@ public sealed class LifeManager : MonoBehaviour
         failedPanelClosing = true;
 
         failedSequence = DOTween.Sequence().SetUpdate(true);
-        
+
+        if (failedPanelFinished != null)
+            failedSequence.AppendInterval(FailedPanelHoldDuration);
+
         failedSequence.Append(DoTweenEffects_Commands.DoTweenAnchorPosX
-                (failedPanel, failedPanelPosition.x - FailedPanelDistance(), animationDuration, Ease.InCubic));
+            (failedPanel, failedPanelPosition.x - FailedPanelDistance(), FailedPanelSlideDuration, Ease.InCubic));
 
         failedSequence.OnComplete(() =>
         {
             SetLifeContainers(false);
             failedPanel.anchoredPosition = failedPanelPosition;
             failedPanelClosing = false;
+
+            Action<bool> finished = failedPanelFinished;
+            failedPanelFinished = null;
+            if (finished == null) return;
+
+            bool survived = CurrentLives > 0;
+            finished(survived);
+            if (!survived) GameOver();
         });
     }
 
@@ -183,7 +212,12 @@ public sealed class LifeManager : MonoBehaviour
 
     private void AnimateFailedHealth()
     {
-        if (displayedLives <= CurrentLives || failedPanelClosing) return;
+        if (failedPanelClosing) return;
+        if (displayedLives <= CurrentLives)
+        {
+            if (failedPanelFinished != null) CloseFailedPanel();
+            return;
+        }
 
         failedSequence = DOTween.Sequence().SetUpdate(true);
 
@@ -191,10 +225,17 @@ public sealed class LifeManager : MonoBehaviour
         {
             int remainingLives = i;
             Image image = i < failedHealthImages.Length ? failedHealthImages[i] : null;
-            
-           failedSequence.Append(DoTweenEffects_Commands.DoTweenLoseHealth
-               (image, lostHealthSprite, healthIconScales[i], animationDuration, animationIntensity));
-            failedSequence.AppendCallback(() => displayedLives = remainingLives);
+
+            if (image != null)
+            {
+                failedSequence.Append(DoTweenEffects_Commands.DoTweenLoseHealth(
+                    image, lostHealthSprite, healthIconScales[i], animationDuration, animationIntensity,
+                    () => RevealLostLife(remainingLives)));
+            }
+            else
+            {
+                failedSequence.AppendCallback(() => RevealLostLife(remainingLives));
+            }
         }
 
         failedSequence.OnComplete(AnimateFailedHealth);
@@ -220,6 +261,7 @@ public sealed class LifeManager : MonoBehaviour
     private void OnDisable()
     {
         failedSequence?.Kill();
+        failedPanelFinished = null;
         if (failedPanel == null) return;
         failedPanel.anchoredPosition = failedPanelPosition;
         failedPanel.gameObject.SetActive(false);
@@ -227,15 +269,13 @@ public sealed class LifeManager : MonoBehaviour
         RestoreFailedHealth();
     }
 
-    private void RefreshHealth(Image[] images)
+    private void RevealLostLife(int remainingLives)
     {
-        if (images == null) return;
-
-        for (int i = 0; i < images.Length; i++)
+        displayedLives = remainingLives;
+        Image[] hudImages = Visual.healthImages_Life;
+        if (remainingLives < hudImages.Length && hudImages[remainingLives] != null)
         {
-            if (images[i] == null || i < CurrentLives) continue;
-
-            images[i].sprite = lostHealthSprite;
+            hudImages[remainingLives].sprite = lostHealthSprite;
         }
     }
 
@@ -264,7 +304,7 @@ public sealed class LifeManager : MonoBehaviour
         Visual.fadeAnimator.SetTrigger("FadeIn");
         defeatAt = Time.timeAsDouble + remaining;
         yield return new WaitForSeconds(remaining);
-        
+
         RectTransform arrow = (RectTransform)Visual.arrowDefeatScreen.transform;
         arrow.DOKill();
         arrow.anchoredPosition = new Vector2(-1691f, 968f);
@@ -273,20 +313,5 @@ public sealed class LifeManager : MonoBehaviour
         Visual.fadeAnimator.SetTrigger("FadeOut");
         AnimateDefeatArrow();
         defeatRoutine = null;
-    }
-
-    // Teste!!
-    // 1 = perder uma vida, 2 = abrir o painel failed,
-    // 3 = fecha painel failed, 4 = game over
-    private void Update()
-    {
-        var keyboard = UnityEngine.InputSystem.Keyboard.current;
-
-        if (keyboard == null) return;
-
-        if (keyboard.digit1Key.wasPressedThisFrame) LoseLife(1);
-        if (keyboard.digit2Key.wasPressedThisFrame) ShowFailedPanel();
-        if (keyboard.digit3Key.wasPressedThisFrame) HideFailedPanel();
-        if (keyboard.digit4Key.wasPressedThisFrame) GameOver();
     }
 }
