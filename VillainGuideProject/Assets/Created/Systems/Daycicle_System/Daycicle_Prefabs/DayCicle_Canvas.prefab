@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Day: ???'
+  m_text: 'Day: 1'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ce3055d8a8d5c1444832414cca37d728, type: 2}
   m_sharedMaterial: {fileID: 8334051911989760554, guid: ce3055d8a8d5c1444832414cca37d728, type: 2}

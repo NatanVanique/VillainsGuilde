@@ -81,6 +81,7 @@ public sealed class JournalManager : MonoBehaviour
         publishedDay = day;
         CollectRewards(reports);
         ShowEdition(reports, day - 1);
+        daycicle.RefreshDayText(day);
 
         Main_Referencer.Instance.manager.questManager.RefreshDiscoveredResults();
         GameSaveSystem.RequestAutosave();
@@ -142,6 +143,7 @@ public sealed class JournalManager : MonoBehaviour
             pendingNews.Add((catalog.Quest(report.questId), catalog.Monster(report.monsterId), report.won, report.attempted));
 
         publishedDay = data.publishedDay;
+        daycicle.RefreshDayText(Mathf.Max(1, publishedDay));
         totalCoins = data.coinsReward;
         totalPopularityXp = data.popularityReward;
         totalRecruits = data.recruitReward;
