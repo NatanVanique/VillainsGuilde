@@ -22,6 +22,13 @@ public class RequestConfirm : MonoBehaviour
         closeRoutine = StartCoroutine(CloseAfterLeavingConfirmation(button));
     }
 
+    public void CancelConfirm(GameObject button)
+    {
+        closeRoutine = null;
+        gameObject.SetActive(false);
+        button.SetActive(true);
+    }
+
     private IEnumerator CloseAfterLeavingConfirmation(GameObject button)
     {
         yield return new WaitForSeconds(optionSwitchGraceTime);
@@ -32,9 +39,7 @@ public class RequestConfirm : MonoBehaviour
             yield break;
         }
 
-        closeRoutine = null;
-        gameObject.SetActive(false);
-        button.SetActive(true);
+        CancelConfirm(button);
     }
 
     private bool PointerIsOverAnOption()

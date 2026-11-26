@@ -58,6 +58,7 @@ public sealed class ContractManager : MonoBehaviour
             {
                 monster.contracted = true;
                 monster.happiness = 1f;
+                GameSaveSystem.RequestAutosave();
                 break;
             }
         }
@@ -69,6 +70,7 @@ public sealed class ContractManager : MonoBehaviour
             if (monster.monstersProfile.monsterName.TableEntryReference.Equals(nameSearch.TableEntryReference))
             {
                 monster.contracted = false;
+                GameSaveSystem.RequestAutosave();
                 break;
             }
         }

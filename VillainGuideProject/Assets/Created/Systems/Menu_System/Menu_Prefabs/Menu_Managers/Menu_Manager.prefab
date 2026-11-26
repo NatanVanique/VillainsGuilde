@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00000000000000000000000000000059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continueButton: {fileID: 4197478946019202948}
   ButtonBigXScale: 1.15
   AnimationDuration: 0.2
   HoverColor: {r: 0.2333001, g: 0.81886786, b: 0.80033726, a: 1}
@@ -585,3 +586,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1953482655229144464, guid: 39ac1738bc0b16b4a940695f22c48ac8, type: 3}
   m_PrefabInstance: {fileID: 2035985981609747635}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4197478946019202948 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2738530152863626039, guid: 39ac1738bc0b16b4a940695f22c48ac8, type: 3}
+  m_PrefabInstance: {fileID: 2035985981609747635}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button

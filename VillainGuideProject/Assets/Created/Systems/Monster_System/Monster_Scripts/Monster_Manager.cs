@@ -103,11 +103,32 @@ public sealed class MonsterManager : MonoBehaviour
         {
             selectedQuest.AssignMonster(null);
             UpdateSendButton(monster);
+            GameSaveSystem.RequestAutosave();
             return;
         }
 
         selectedQuest.AssignMonster(monster);
         CloseSelection();
+        GameSaveSystem.RequestAutosave();
+    }
+
+    internal string GetSelectedMonsterId(QuestMail_Info mail)
+    {
+        return selectedQuest == mail && availableMonsters.Count > 0
+            ? availableMonsters[selectedIndex].monstersProfile.SaveId : null;
+    }
+
+    internal void RestoreSelection(QuestMail_Info mail, MonsterReferencer.Monsters selected)
+    {
+        OpenSelection(mail);
+        if (selectedQuest != mail)
+            return;
+        int index = availableMonsters.IndexOf(selected);
+        if (index >= 0 && index != selectedIndex)
+        {
+            selectedIndex = index;
+            RefreshSelection();
+        }
     }
 
     private bool UpdateSendButton(MonsterReferencer.Monsters monster)
@@ -129,7 +150,7 @@ public sealed class MonsterManager : MonoBehaviour
 
     public void RefreshMissionAvailability()
     {
-        if (Main_Referencer.Instance.visual.selectionCanvas_MonsterSelection.activeSelf)
+        if (selectedQuest != null && Main_Referencer.Instance.visual.selectionCanvas_MonsterSelection.activeSelf)
         {
             UpdateSendButton(availableMonsters[selectedIndex]);
         }

@@ -13,6 +13,22 @@ public sealed class RoomManager : MonoBehaviour
     private int currentScreen;
     private Transform navigationContent;
     private bool navigationHidden;
+
+    internal int CurrentScreen => currentScreen;
+    internal bool NavigationHidden => navigationHidden;
+
+    internal void RestoreScreen(int position, bool hideNavigation)
+    {
+        if (backgroundContent == null || !TryGetRoomScreen(position, out RectTransform screen))
+            return;
+
+        currentScreen = position;
+        backgroundContent.DOKill();
+        Vector2 offset = backgroundContent.anchoredPosition;
+        offset.x = initialContentPositionX - screen.anchoredPosition.x;
+        backgroundContent.anchoredPosition = offset;
+        SetNavigationContent(!hideNavigation);
+    }
     
     private void Start()
     {

@@ -3,7 +3,7 @@
 
 
     [CreateAssetMenu(fileName = "QuestData", menuName = "Scriptable's/New QuestData")]
-    public class CreateQuest_Data : ScriptableObject
+    public class CreateQuest_Data : SavedGameDefinition
     {
         
         [Header("Infos")]

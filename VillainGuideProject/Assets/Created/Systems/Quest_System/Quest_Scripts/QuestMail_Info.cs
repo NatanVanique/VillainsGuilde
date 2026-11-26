@@ -41,8 +41,34 @@ public class QuestMail_Info : MonoBehaviour
     private readonly HashSet<MonsterReferencer.Monsters> badDiscoveries = new();
 
     public MonsterReferencer.Monsters AssignedMonster { get; private set; }
+    internal bool IsResolved => resolved;
+
+    internal QuestSaveData.Mail CaptureProgress()
+    {
+        if (resolved || questData == null)
+            return null;
+        return new QuestSaveData.Mail
+        {
+            questId = questData.SaveId,
+            assignedMonsterId = AssignedMonster?.monstersProfile.SaveId,
+            remaining = Mathf.Max(0f, responseDeadline - Time.time),
+            infoOpen = viewingInfo && Main_Referencer.Instance.visual.infoVision.activeSelf
+        };
+    }
+
+    internal void RestoreProgress(CreateQuest_Data data, MonsterReferencer.Monsters assigned, QuestSaveData.Mail record)
+    {
+        Initialize(data, assigned, record.remaining);
+        if (!resolved && record.infoOpen)
+            OpenInfo(animate: false);
+    }
 
     public void setInfo(CreateQuest_Data data)
+    {
+        Initialize(data, null, data.timeToAcceptSeconds);
+    }
+
+    private void Initialize(CreateQuest_Data data, MonsterReferencer.Monsters assigned, float remaining)
     {
         infoButton.onClick.AddListener(openInfo);
         monstersButton.onClick.AddListener(openMonsters);
@@ -57,8 +83,8 @@ public class QuestMail_Info : MonoBehaviour
         questDescription = questData.questDescription;
         mailName.StringReference = questData.questName;
         mailName.RefreshString();
-        RefreshDiscoveredResults();
-        responseDeadline = Time.time + data.timeToAcceptSeconds;
+        AssignMonster(assigned);
+        responseDeadline = Time.time + remaining;
         Main_Referencer.Instance.manager.questManager.StartResponseTimer(this);
     }
 
@@ -84,11 +110,13 @@ public class QuestMail_Info : MonoBehaviour
         return true;
     }
 
-    public void openInfo()
+    public void openInfo() => OpenInfo(animate: true);
+
+    private void OpenInfo(bool animate)
     {
         viewingInfo = true;
         Main_Referencer.Instance.visual.returnInfoButton.onClick.AddListener(closeInfo);
-        SetInfoState(isInfoOpen: true);
+        SetInfoState(isInfoOpen: true, animate);
         PopulateRequirementsAndRewards();
         RefreshMissionInfo();
         RefreshDiscoveredResults();
@@ -281,7 +309,9 @@ public class QuestMail_Info : MonoBehaviour
         references.manager.monsterManager.OnQuestMailResolved(this);
     }
     
-    public void SetInfoState(bool isInfoOpen)
+    public void SetInfoState(bool isInfoOpen) => SetInfoState(isInfoOpen, animate: true);
+
+    private void SetInfoState(bool isInfoOpen, bool animate)
     {
         VisualReferencer visual = Main_Referencer.Instance.visual;
         RectTransform background = visual.voiceMailBackground.rectTransform;
@@ -311,7 +341,15 @@ public class QuestMail_Info : MonoBehaviour
             targetHeight = mailDefaultHeight;
         }
 
-        DoTweenEffects_Commands.DoTweenAnchorPosYAndHeight(
-            background, targetY, targetHeight, infoTweenDuration, infoTweenEase);
+        if (animate)
+        {
+            DoTweenEffects_Commands.DoTweenAnchorPosYAndHeight(
+                background, targetY, targetHeight, infoTweenDuration, infoTweenEase);
+        }
+        else
+        {
+            background.anchoredPosition = new Vector2(background.anchoredPosition.x, targetY);
+            background.sizeDelta = new Vector2(background.sizeDelta.x, targetHeight);
+        }
     }
 }

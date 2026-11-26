@@ -22,5 +22,6 @@ public sealed class PopularityManager : MonoBehaviour
         values.popularityXp_Popularity = values.popularityLevel_Popularity == maxLevel
             ? ExperiencePerLevel
             : (int)(experience % ExperiencePerLevel);
+        GameSaveSystem.RequestAutosave();
     }
 }

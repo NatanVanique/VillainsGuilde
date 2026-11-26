@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0cb2cdcfd8375468499c03bb35d3ed, type: 3}
   m_Name: DemonicTranslator
   m_EditorClassIdentifier: Assembly-CSharp::CreateQuest_Data
+  saveId: 0c11e1333053b7a448bf4c8c4623bb17
   questName:
     m_TableReference:
       m_TableCollectionName: GUID:33275aad986aaab4ea27a58988ba64f5

@@ -9,6 +9,7 @@ public sealed class JournalManager : MonoBehaviour
     [SerializeField, Min(0f)] private float entranceDuration = 0.5f;
 
     private readonly List<GameObject> instantiatedNews = new();
+    private readonly List<int> smallNewsLayouts = new();
     private readonly List<GameObject> instantiatedCharacterXp = new();
     private readonly List<(MonsterReferencer.Monsters monster, int startLevel, int startXp, int endLevel, int endXp)> monsterRewards = new();
 
@@ -82,16 +83,91 @@ public sealed class JournalManager : MonoBehaviour
         ShowEdition(reports, day - 1);
 
         Main_Referencer.Instance.manager.questManager.RefreshDiscoveredResults();
+        GameSaveSystem.RequestAutosave();
+    }
+
+    internal void CaptureProgress(QuestSaveData data)
+    {
+        data.publishedDay = publishedDay;
+        data.newspaperOpen = timeScaleBeforeJournal.HasValue;
+        data.timeScaleBeforeJournal = timeScaleBeforeJournal.GetValueOrDefault(1f);
+        data.rewardsOpen = rewardsOpen;
+        if (data.newspaperOpen)
+        {
+            data.journalScroll = visual.scrollRect_Journal.verticalNormalizedPosition;
+            data.newspaperLayouts.AddRange(smallNewsLayouts);
+        }
+        data.coinsReward = totalCoins;
+        data.popularityReward = totalPopularityXp;
+        data.recruitReward = totalRecruits;
+        foreach (var day in Main_Referencer.Instance.value.realizedDayRegister)
+        {
+            var edition = new QuestSaveData.Edition();
+            foreach (var report in day)
+                edition.reports.Add(SaveReport(report));
+            data.editions.Add(edition);
+        }
+        foreach (var report in pendingNews)
+            data.pendingReports.Add(SaveReport(report));
+        foreach (var reward in monsterRewards)
+        {
+            data.monsterRewards.Add(new QuestSaveData.MonsterReward
+            {
+                monsterId = reward.monster.monstersProfile.SaveId,
+                startLevel = reward.startLevel, startXp = reward.startXp,
+                endLevel = reward.endLevel, endXp = reward.endXp
+            });
+        }
+    }
+
+    private static QuestSaveData.Report SaveReport(
+        (CreateQuest_Data data, MonsterReferencer.Monsters monster, bool isWinned, bool attempted) report)
+    {
+        return new QuestSaveData.Report
+        {
+            questId = report.data.SaveId, monsterId = report.monster?.monstersProfile.SaveId,
+            won = report.isWinned, attempted = report.attempted
+        };
+    }
+
+    internal void RestoreProgress(QuestSaveData data, QuestSaveData.Catalog catalog)
+    {
+        var editions = Main_Referencer.Instance.value.realizedDayRegister;
+        editions.Clear();
+        foreach (var edition in data.editions)
+            editions.Add(edition.reports.ConvertAll(report =>
+                (catalog.Quest(report.questId), catalog.Monster(report.monsterId), report.won, report.attempted)));
+        pendingNews.Clear();
+        foreach (var report in data.pendingReports)
+            pendingNews.Add((catalog.Quest(report.questId), catalog.Monster(report.monsterId), report.won, report.attempted));
+
+        publishedDay = data.publishedDay;
+        totalCoins = data.coinsReward;
+        totalPopularityXp = data.popularityReward;
+        totalRecruits = data.recruitReward;
+        monsterRewards.Clear();
+        foreach (var reward in data.monsterRewards)
+            monsterRewards.Add((catalog.Monster(reward.monsterId), reward.startLevel, reward.startXp, reward.endLevel, reward.endXp));
+
+        if (data.newspaperOpen)
+        {
+            // The stored edition has already credited its rewards. Only rebuild its presentation.
+            timeScaleBeforeJournal = data.timeScaleBeforeJournal;
+            ShowEdition(editions[publishedDay], publishedDay - 1, data.newspaperLayouts);
+            if (data.rewardsOpen)
+                OpenRewards();
+            visual.scrollRect_Journal.verticalNormalizedPosition = data.journalScroll;
+        }
     }
 
     private void ShowEdition(
         List<(CreateQuest_Data data, MonsterReferencer.Monsters monster, bool isWinned, bool attempted)> reports,
-        int editionDay)
+        int editionDay, List<int> layouts = null)
     {
         visual.dayLabel_Journal.text = $"Day {editionDay:000}";
         ClearRewardRows();
         ShowNewsPage(reports.Count > 0);
-        RenderNews(reports);
+        RenderNews(reports, layouts);
         timeScaleBeforeJournal ??= Time.timeScale;
         Time.timeScale = 0f;
         OpenJournalCanvas();
@@ -176,7 +252,8 @@ public sealed class JournalManager : MonoBehaviour
     }
 
     private void RenderNews(
-        List<(CreateQuest_Data data, MonsterReferencer.Monsters monster, bool isWinned, bool attempted)> reports)
+        List<(CreateQuest_Data data, MonsterReferencer.Monsters monster, bool isWinned, bool attempted)> reports,
+        List<int> layouts = null)
     {
         CleanJournal();
         visual.smallNewsDivider_Journal.SetActive(false);
@@ -192,18 +269,21 @@ public sealed class JournalManager : MonoBehaviour
             featured = reports.FindIndex(report => report.attempted && report.monster != null);
         }
 
-        int smallNewsCount = 0;
+        smallNewsLayouts.Clear();
         for (int index = 0; index < reports.Count; index++)
         {
             var news = reports[index];
             bool isHeadline = index == featured || news.data.type == CreateQuest_Data.QuestType.Route;
+            GameObject prefab = visual.routeNew_Journal;
             if (!isHeadline)
             {
-                smallNewsCount++;
+                int indexInEdition = smallNewsLayouts.Count;
+                int layout = layouts != null && indexInEdition < layouts.Count
+                    ? layouts[indexInEdition]
+                    : Random.Range(0, visual.singleNews_Journal.Length);
+                smallNewsLayouts.Add(layout);
+                prefab = visual.singleNews_Journal[layout];
             }
-            GameObject prefab = isHeadline
-                ? visual.routeNew_Journal
-                : visual.singleNews_Journal[Random.Range(0, visual.singleNews_Journal.Length)];
             Transform container = isHeadline
                 ? visual.routeNewContainer_Journal.transform
                 : visual.singleNewContainer_Journal.transform;
@@ -223,7 +303,7 @@ public sealed class JournalManager : MonoBehaviour
             info.setInfo(news.data, result);
         }
 
-        visual.smallNewsDivider_Journal.SetActive(smallNewsCount > 1);
+        visual.smallNewsDivider_Journal.SetActive(smallNewsLayouts.Count > 1);
     }
 
     public void CleanJournal()
@@ -267,6 +347,7 @@ public sealed class JournalManager : MonoBehaviour
         visual.tabButton_Journal.transform.DOKill();
         ClearRewardRows();
         HideEdition();
+        GameSaveSystem.RequestAutosave();
     }
 
     private void HideEdition()

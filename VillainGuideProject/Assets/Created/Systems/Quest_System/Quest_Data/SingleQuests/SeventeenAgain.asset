@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0cb2cdcfd8375468499c03bb35d3ed, type: 3}
   m_Name: SeventeenAgain
   m_EditorClassIdentifier: Assembly-CSharp::CreateQuest_Data
+  saveId: ef8d0f4275173ec4888a7f853d7d03af
   questName:
     m_TableReference:
       m_TableCollectionName: GUID:a4cd80b71b36c934885926a53300db9b

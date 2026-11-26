@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652e26920880440469b230e61a82851f, type: 3}
   m_Name: CyclopData
   m_EditorClassIdentifier: Assembly-CSharp::CreateMonster_Data
+  saveId: f6679f46fd5ad3f49a8ad24629454a08
   monsterName:
     m_TableReference:
       m_TableCollectionName: 
