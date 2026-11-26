@@ -19,6 +19,7 @@ public sealed class JournalManager : MonoBehaviour
     private VisualReferencer visual;
 
     private int publishedDay = -1;
+    private bool waitingForFailedPanel;
     private float? timeScaleBeforeJournal;
     private Tween entranceTween;
     private bool rewardsOpen;
@@ -75,22 +76,53 @@ public sealed class JournalManager : MonoBehaviour
         }
 
         var reports = values.realizedDayRegister[day];
+        int livesLost = 0;
+        foreach (var report in pendingNews)
+        {
+            if (!report.isWinned && report.data.type == CreateQuest_Data.QuestType.Route)
+                livesLost++;
+        }
         reports.AddRange(pendingNews);
         pendingNews.Clear();
 
         publishedDay = day;
         CollectRewards(reports);
-        ShowEdition(reports, day - 1);
-        daycicle.RefreshDayText(day);
+        if (livesLost > 0)
+        {
+            Life_Manager life = Main_Referencer.Instance.manager.lifeManager;
+            life.LoseLife(livesLost);
+            WaitForFailedPanel(reports);
+        }
+        else
+        {
+            ShowEdition(reports, publishedDay - 1);
+        }
 
         Main_Referencer.Instance.manager.questManager.RefreshDiscoveredResults();
         GameSaveSystem.RequestAutosave();
     }
 
+    private void WaitForFailedPanel(
+        List<(CreateQuest_Data data, MonsterReferencer.Monsters monster, bool isWinned, bool attempted)> reports)
+    {
+        waitingForFailedPanel = true;
+        Main_Referencer.Instance.manager.lifeManager.PlayFailedPanel(survived =>
+        {
+            waitingForFailedPanel = false;
+            if (survived && isActiveAndEnabled)
+                ShowEdition(reports, publishedDay - 1);
+            else
+                HideEdition();
+
+            GameSaveSystem.RequestAutosave();
+        });
+    }
+
     internal void CaptureProgress(QuestSaveData data)
     {
         data.publishedDay = publishedDay;
-        data.newspaperOpen = timeScaleBeforeJournal.HasValue;
+        data.waitingForFailedPanel = waitingForFailedPanel;
+        data.newspaperOpen = timeScaleBeforeJournal.HasValue && !waitingForFailedPanel;
         data.timeScaleBeforeJournal = timeScaleBeforeJournal.GetValueOrDefault(1f);
         data.rewardsOpen = rewardsOpen;
         if (data.newspaperOpen)
@@ -143,7 +175,6 @@ public sealed class JournalManager : MonoBehaviour
             pendingNews.Add((catalog.Quest(report.questId), catalog.Monster(report.monsterId), report.won, report.attempted));
 
         publishedDay = data.publishedDay;
-        daycicle.RefreshDayText(Mathf.Max(1, publishedDay));
         totalCoins = data.coinsReward;
         totalPopularityXp = data.popularityReward;
         totalRecruits = data.recruitReward;
@@ -151,7 +182,11 @@ public sealed class JournalManager : MonoBehaviour
         foreach (var reward in data.monsterRewards)
             monsterRewards.Add((catalog.Monster(reward.monsterId), reward.startLevel, reward.startXp, reward.endLevel, reward.endXp));
 
-        if (data.newspaperOpen)
+        if (data.waitingForFailedPanel)
+        {
+            WaitForFailedPanel(editions[publishedDay]);
+        }
+        else if (data.newspaperOpen)
         {
             // The stored edition has already credited its rewards. Only rebuild its presentation.
             timeScaleBeforeJournal = data.timeScaleBeforeJournal;
@@ -170,10 +205,10 @@ public sealed class JournalManager : MonoBehaviour
         ClearRewardRows();
         ShowNewsPage(reports.Count > 0);
         RenderNews(reports, layouts);
-        timeScaleBeforeJournal ??= Time.timeScale;
-        Time.timeScale = 0f;
         OpenJournalCanvas();
         ResetPageScroll();
+        timeScaleBeforeJournal ??= Time.timeScale;
+        Time.timeScale = 0f;
     }
 
     private void OpenJournalCanvas()

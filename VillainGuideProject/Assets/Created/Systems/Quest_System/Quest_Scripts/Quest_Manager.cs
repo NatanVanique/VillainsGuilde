@@ -45,6 +45,13 @@ public sealed class QuestManager : MonoBehaviour
 
     private void StartMission(CreateQuest_Data quest, MonsterReferencer.Monsters monster, bool accepted, float remaining)
     {
+        if (!accepted && quest.type == CreateQuest_Data.QuestType.Route)
+        {
+            Main_Referencer.Instance.manager.journalManager.RegisterNew(
+                quest, monster, isWinned: false, attempted: false);
+            return;
+        }
+
         if (accepted && !monstersOnTimedMissions.Add(monster))
             return;
 
@@ -209,7 +216,7 @@ public sealed class QuestManager : MonoBehaviour
 
     }
     
-    public void AddQuest(CreateQuest_Data.QuestType type)
+    public bool AddQuest(CreateQuest_Data.QuestType type)
     {
         CreateQuest_Data data = null;
 
@@ -224,11 +231,12 @@ public sealed class QuestManager : MonoBehaviour
 
         if (data == null)
         {
-            return;
+            return false;
         }
 
         CreateMail().setInfo(data);
         GameSaveSystem.RequestAutosave();
+        return true;
     }
 
     private QuestMail_Info CreateMail()

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
@@ -6,11 +7,15 @@ public static class DoTweenEffects_Commands
 {
 
     public static Sequence DoTweenLoseHealth(Image image, Sprite lostSprite, Vector3 originalScale,
-        float duration, float intensity)
+        float duration, float intensity, Action onSpriteChanged)
     {
         Sequence sequence = DOTween.Sequence();
         sequence.Append(image.transform.DOScale(originalScale * 0.6f, duration * 0.5f).SetEase(Ease.InBack));
-        sequence.AppendCallback(() => image.sprite = lostSprite);
+        sequence.AppendCallback(() =>
+        {
+            image.sprite = lostSprite;
+            onSpriteChanged();
+        });
         sequence.Append(image.transform.DOScale(originalScale, duration * 0.5f).SetEase(Ease.OutBack, intensity));
         return sequence;
     }

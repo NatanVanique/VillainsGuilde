@@ -68,6 +68,7 @@ public sealed class GameplaySaveData
         values.currentDay_HourValues = day;
         values.currentHour_HourValues = hour;
         managers.dayCicleManager.SecondsIntoHour = secondsIntoHour;
+        managers.dayCicleManager.RefreshDayText(day);
         managers.moneyManager.RestoreBalance(balance);
         values.popularityLevel_Popularity = popularityLevel;
         values.popularityXp_Popularity = popularityXp;

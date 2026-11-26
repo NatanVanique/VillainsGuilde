@@ -106,15 +106,23 @@ public sealed class TelephoneManager : MonoBehaviour, IPointerEnterHandler, IPoi
 
     private void RingingTelephone()
     {
-        NewQuest();
-        
-        var animator = Main_Referencer.Instance.visual.telephoneAnimator_Telephone;
+        Main_Referencer references = Main_Referencer.Instance;
+        CreateQuest_Data.QuestType type = RouteDayVerify()
+            ? CreateQuest_Data.QuestType.Route
+            : CreateQuest_Data.QuestType.Single;
+        if (!references.manager.questManager.AddQuest(type))
+            return;
+
+        if (type == CreateQuest_Data.QuestType.Route)
+            lastRouteQuestDay = references.value.currentDay_HourValues;
+
+        var animator = references.visual.telephoneAnimator_Telephone;
 
         if (ringRoutine != null) StopCoroutine(ringRoutine);
 
         animator.SetBool("Ringing", true);
 
-        Main_Referencer.Instance.value.telephoneRinging = true;
+        references.value.telephoneRinging = true;
 
         ringRoutine = StartCoroutine(StopRingingAfter(-1f));
         GameSaveSystem.RequestAutosave();
@@ -135,20 +143,6 @@ public sealed class TelephoneManager : MonoBehaviour, IPointerEnterHandler, IPoi
                lastRouteQuestDay != currentDay;
     }   
     
-    private void NewQuest()
-    {
-        if (RouteDayVerify())
-        {
-            Main_Referencer.Instance.manager.questManager.AddQuest(CreateQuest_Data.QuestType.Route);
-
-            lastRouteQuestDay = Main_Referencer.Instance.value.currentDay_HourValues;
-        }
-        else
-        {
-            Main_Referencer.Instance.manager.questManager.AddQuest(CreateQuest_Data.QuestType.Single);
-        }
-    }
-
     private IEnumerator StopRingingAfter(float delay)
     {
         var animator = Main_Referencer.Instance.visual.telephoneAnimator_Telephone;
