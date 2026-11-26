@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652e26920880440469b230e61a82851f, type: 3}
   m_Name: ClownData
   m_EditorClassIdentifier: Assembly-CSharp::CreateMonster_Data
+  saveId: 73cf047be816af94e890201373bc1e5a
   monsterName:
     m_TableReference:
       m_TableCollectionName: 

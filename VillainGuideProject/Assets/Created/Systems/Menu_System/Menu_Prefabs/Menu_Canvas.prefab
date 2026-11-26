@@ -7133,7 +7133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8431519771614002138, guid: 81eed869e847dd041aafdd6ae678a928, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CloseConfirm
+      value: CancelConfirm
       objectReference: {fileID: 0}
     - target: {fileID: 8431519771614002138, guid: 81eed869e847dd041aafdd6ae678a928, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0cb2cdcfd8375468499c03bb35d3ed, type: 3}
   m_Name: ClimateChaos
   m_EditorClassIdentifier: Assembly-CSharp::CreateQuest_Data
+  saveId: 454c4361ea55adc45b94b86f9f1c702e
   questName:
     m_TableReference:
       m_TableCollectionName: GUID:33275aad986aaab4ea27a58988ba64f5

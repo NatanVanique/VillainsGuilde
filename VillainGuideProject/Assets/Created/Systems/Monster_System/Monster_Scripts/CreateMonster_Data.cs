@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Localization;
 
 [CreateAssetMenu(fileName = "MonsterData", menuName = "Scriptable's/New MonsterData")]
-public class CreateMonster_Data : ScriptableObject
+public class CreateMonster_Data : SavedGameDefinition
 {
     [Header("Infos")]
     public LocalizedString monsterName;

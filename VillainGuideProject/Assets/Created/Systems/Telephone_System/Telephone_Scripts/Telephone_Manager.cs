@@ -7,12 +7,47 @@ public sealed class TelephoneManager : MonoBehaviour, IPointerEnterHandler, IPoi
 {
     private int lastRouteQuestDay = -1;
     private bool isMouseOver;
+    private Coroutine tickRoutine;
+    private Coroutine ringRoutine;
+    private double nextTickAt;
+    private double ringEndsAt;
+
+    private float TickInterval => Mathf.Max(0f,
+        Main_Referencer.Instance.value.dayInMinutes_HourValues * 60f / 24f *
+        Main_Referencer.Instance.value.hoursToTryTick_TelephoneValues);
     
     private void Start()
     {
         Main_Referencer.Instance.visual.telephoneAnimator_Telephone.SetBool("Ringing", false);
         SetPhoneState(isOpen: false);
-        StartCoroutine(tickTelephoneRoutine());
+        tickRoutine = StartCoroutine(TickTelephone(TickInterval));
+    }
+
+    internal void CaptureState(GameplaySaveData data)
+    {
+        data.lastRouteQuestDay = lastRouteQuestDay;
+        data.secondsToPhoneTick = SecondsRemaining(nextTickAt);
+        data.phoneOpen = Main_Referencer.Instance.visual.openPhone.activeSelf;
+        data.phoneRinging = Main_Referencer.Instance.value.telephoneRinging;
+        data.ringSecondsRemaining = ringEndsAt < 0 ? -1f : SecondsRemaining(ringEndsAt);
+    }
+
+    internal void RestoreState(GameplaySaveData data)
+    {
+        if (tickRoutine != null) StopCoroutine(tickRoutine);
+        if (ringRoutine != null) StopCoroutine(ringRoutine);
+
+        lastRouteQuestDay = data.lastRouteQuestDay;
+        tickRoutine = StartCoroutine(TickTelephone(data.secondsToPhoneTick));
+        SetPhoneState(data.phoneOpen);
+        Main_Referencer.Instance.value.telephoneRinging = data.phoneRinging;
+        Main_Referencer.Instance.visual.telephoneAnimator_Telephone.SetBool("Ringing", data.phoneRinging);
+        ringRoutine = data.phoneRinging ? StartCoroutine(StopRingingAfter(data.ringSecondsRemaining)) : null;
+    }
+
+    private static float SecondsRemaining(double deadline)
+    {
+        return Mathf.Max(0f, (float)(deadline - Time.timeAsDouble));
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -26,15 +61,14 @@ public sealed class TelephoneManager : MonoBehaviour, IPointerEnterHandler, IPoi
         UpdatePhoneOutline();
     }
 
-    private IEnumerator tickTelephoneRoutine()
+    private IEnumerator TickTelephone(float delay)
     {
         while (true)
         {
-            yield return new WaitForSeconds(
-                (Main_Referencer.Instance.value.dayInMinutes_HourValues * 60f / 24f)
-                * Main_Referencer.Instance.value.hoursToTryTick_TelephoneValues);
-
+            nextTickAt = Time.timeAsDouble + delay;
+            yield return new WaitForSeconds(delay);
             TryRinging();
+            delay = TickInterval;
         }
     }
 
@@ -76,13 +110,14 @@ public sealed class TelephoneManager : MonoBehaviour, IPointerEnterHandler, IPoi
         
         var animator = Main_Referencer.Instance.visual.telephoneAnimator_Telephone;
 
-        StopCoroutine("timeToStopRinging");
+        if (ringRoutine != null) StopCoroutine(ringRoutine);
 
         animator.SetBool("Ringing", true);
 
         Main_Referencer.Instance.value.telephoneRinging = true;
 
-        StartCoroutine("timeToStopRinging");
+        ringRoutine = StartCoroutine(StopRingingAfter(-1f));
+        GameSaveSystem.RequestAutosave();
     }
 
     private bool RouteDayVerify()
@@ -114,19 +149,26 @@ public sealed class TelephoneManager : MonoBehaviour, IPointerEnterHandler, IPoi
         }
     }
 
-    private IEnumerator timeToStopRinging()
+    private IEnumerator StopRingingAfter(float delay)
     {
         var animator = Main_Referencer.Instance.visual.telephoneAnimator_Telephone;
 
-        yield return null;
+        if (delay < 0f)
+        {
+            // The Animator enters the ringing state on its next update.
+            ringEndsAt = -1;
+            yield return null;
+            float duration = animator.GetCurrentAnimatorStateInfo(0).length;
+            int repeats = Mathf.Max(1, Main_Referencer.Instance.value.ringingRepeats_TelephoneValues);
+            delay = duration * repeats;
+        }
 
-        float duration = animator.GetCurrentAnimatorStateInfo(0).length;
-        int repeats = Mathf.Max(1, Main_Referencer.Instance.value.ringingRepeats_TelephoneValues);
-
-        yield return new WaitForSeconds(duration * repeats);
+        ringEndsAt = Time.timeAsDouble + delay;
+        yield return new WaitForSeconds(delay);
 
         animator.SetBool("Ringing", false);
         Main_Referencer.Instance.value.telephoneRinging = false;
+        ringRoutine = null;
     }
     
     private void UpdatePhoneOutline()

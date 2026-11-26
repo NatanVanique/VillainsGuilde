@@ -6,6 +6,12 @@ public sealed class DaycicleManager : MonoBehaviour
     [Header("System Variables")]
     private float curtime;
 
+    internal float SecondsIntoHour
+    {
+        get => curtime;
+        set => curtime = Mathf.Max(0f, value);
+    }
+
     public event Action BeforeOfficeDayStart;
 
     public float NormalizedDayProgress
@@ -57,5 +63,6 @@ public sealed class DaycicleManager : MonoBehaviour
     {
         Main_Referencer.Instance.value.currentHour_HourValues = 0;
         Main_Referencer.Instance.value.currentDay_HourValues++;
+        GameSaveSystem.RequestAutosave();
     }
 }

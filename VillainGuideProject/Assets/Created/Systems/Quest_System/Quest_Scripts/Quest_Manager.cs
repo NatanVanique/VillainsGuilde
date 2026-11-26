@@ -14,6 +14,15 @@ public sealed class QuestManager : MonoBehaviour
     private int nextRouteIndex;
     private readonly List<QuestMail_Info> questMails = new();
     private readonly HashSet<MonsterReferencer.Monsters> monstersOnTimedMissions = new();
+    private readonly List<TimedMission> timedMissions = new();
+
+    private sealed class TimedMission
+    {
+        public CreateQuest_Data quest;
+        public MonsterReferencer.Monsters monster;
+        public bool accepted;
+        public float deadline;
+    }
 
     public void StartResponseTimer(QuestMail_Info mail)
     {
@@ -30,31 +39,38 @@ public sealed class QuestManager : MonoBehaviour
 
     public void ResolveQuest(CreateQuest_Data quest, MonsterReferencer.Monsters monster, bool accepted)
     {
-        if (!accepted || monstersOnTimedMissions.Add(monster))
-        {
-            StartCoroutine(CompleteMissionAfterDelay(quest, monster, accepted));
-        }
+        StartMission(quest, monster, accepted, quest.timeToDoneSeconds);
+        GameSaveSystem.RequestAutosave();
     }
 
-    private IEnumerator CompleteMissionAfterDelay(
-        CreateQuest_Data quest,
-        MonsterReferencer.Monsters monster,
-        bool accepted)
+    private void StartMission(CreateQuest_Data quest, MonsterReferencer.Monsters monster, bool accepted, float remaining)
     {
-        if (quest.timeToDoneSeconds > 0f)
-        {
-            yield return new WaitForSeconds(quest.timeToDoneSeconds);
-        }
+        if (accepted && !monstersOnTimedMissions.Add(monster))
+            return;
+
+        var mission = new TimedMission { quest = quest, monster = monster, accepted = accepted,
+            deadline = Time.time + remaining };
+        timedMissions.Add(mission);
+        StartCoroutine(CompleteMissionAfterDelay(mission));
+    }
+
+    private IEnumerator CompleteMissionAfterDelay(TimedMission mission)
+    {
+        float remaining = mission.deadline - Time.time;
+        if (remaining > 0f)
+            yield return new WaitForSeconds(remaining);
 
         ManagerReferencer managers = Main_Referencer.Instance.manager;
-        bool succeeded = accepted && MeetsQuestRequirements(quest, monster);
-        if (accepted)
+        timedMissions.Remove(mission);
+        bool succeeded = mission.accepted && MeetsQuestRequirements(mission.quest, mission.monster);
+        if (mission.accepted)
         {
-            monstersOnTimedMissions.Remove(monster);
+            monstersOnTimedMissions.Remove(mission.monster);
             managers.monsterManager.RefreshMissionAvailability();
         }
 
-        managers.journalManager.RegisterNew(quest, monster, succeeded, attempted: accepted);
+        managers.journalManager.RegisterNew(mission.quest, mission.monster, succeeded, attempted: mission.accepted);
+        GameSaveSystem.RequestAutosave();
     }
 
     public void RefreshDiscoveredResults()
@@ -211,14 +227,71 @@ public sealed class QuestManager : MonoBehaviour
             return;
         }
 
-        GameObject mailObject = Instantiate(
+        CreateMail().setInfo(data);
+        GameSaveSystem.RequestAutosave();
+    }
+
+    private QuestMail_Info CreateMail()
+    {
+        return Instantiate(
             Main_Referencer.Instance.visual.questMail_VoiceMail,
             Main_Referencer.Instance.visual.questMailContainer_VoiceMail.transform
-        );
+        ).GetComponent<QuestMail_Info>();
+    }
 
-        QuestMail_Info mailInfo = mailObject.GetComponent<QuestMail_Info>();
+    internal void CaptureProgress(QuestSaveData data)
+    {
+        Main_Referencer refs = Main_Referencer.Instance;
+        data.nextRouteIndex = nextRouteIndex;
+        data.voiceMailOpen = refs.visual.openPhone.activeSelf && !refs.visual.selectionCanvas_MonsterSelection.activeSelf;
+        refs.visual.questMailContainer_VoiceMail.GetComponentsInChildren(true, questMails);
+        foreach (var mail in questMails)
+        {
+            var record = mail.CaptureProgress();
+            if (record != null)
+            {
+                record.selectedMonsterId = refs.manager.monsterManager.GetSelectedMonsterId(mail);
+                data.mails.Add(record);
+            }
+        }
+        foreach (var mission in timedMissions)
+        {
+            data.missions.Add(new QuestSaveData.Mission
+            {
+                questId = mission.quest.SaveId,
+                monsterId = mission.monster?.monstersProfile.SaveId,
+                accepted = mission.accepted,
+                remaining = Mathf.Max(0f, mission.deadline - Time.time)
+            });
+        }
+    }
 
-        mailInfo.setInfo(data);
+    internal void RestoreProgress(QuestSaveData data, QuestSaveData.Catalog catalog)
+    {
+        Main_Referencer refs = Main_Referencer.Instance;
+        nextRouteIndex = data.nextRouteIndex;
+        foreach (var mission in data.missions)
+            StartMission(catalog.Quest(mission.questId), catalog.Monster(mission.monsterId), mission.accepted, mission.remaining);
+
+        VisualReferencer visual = refs.visual;
+        visual.voiceMailCanvas_voiceMail.SetActive(data.voiceMailOpen);
+        visual.firstVision.SetActive(true);
+        visual.firstVision.GetComponent<CanvasGroup>().alpha = 1f;
+        visual.infoVision.SetActive(false);
+        QuestMail_Info selectedMail = null;
+        MonsterReferencer.Monsters selection = null;
+        foreach (var record in data.mails)
+        {
+            QuestMail_Info mail = CreateMail();
+            mail.RestoreProgress(catalog.Quest(record.questId), catalog.Monster(record.assignedMonsterId), record);
+            if (!string.IsNullOrEmpty(record.selectedMonsterId) && !mail.IsResolved)
+            {
+                selectedMail = mail;
+                selection = catalog.Monster(record.selectedMonsterId);
+            }
+        }
+        if (selectedMail != null)
+            refs.manager.monsterManager.RestoreSelection(selectedMail, selection);
     }
 
     private CreateQuest_Data GetRandomSingleQuest()

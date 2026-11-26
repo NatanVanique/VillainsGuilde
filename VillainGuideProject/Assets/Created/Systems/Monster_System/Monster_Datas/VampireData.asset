@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652e26920880440469b230e61a82851f, type: 3}
   m_Name: VampireData
   m_EditorClassIdentifier: Assembly-CSharp::CreateMonster_Data
+  saveId: 370b40ad437ec2f40baab17f28fb29f9
   monsterName:
     m_TableReference:
       m_TableCollectionName: 

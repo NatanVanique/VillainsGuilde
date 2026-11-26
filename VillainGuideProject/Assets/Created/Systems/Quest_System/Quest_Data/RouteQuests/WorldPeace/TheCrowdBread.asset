@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0cb2cdcfd8375468499c03bb35d3ed, type: 3}
   m_Name: TheCrowdBread
   m_EditorClassIdentifier: Assembly-CSharp::CreateQuest_Data
+  saveId: 8fd4df5524c788d4a97bb8a87a66a27d
   questName:
     m_TableReference:
       m_TableCollectionName: GUID:33275aad986aaab4ea27a58988ba64f5

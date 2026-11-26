@@ -15,6 +15,7 @@ public class Main_Referencer : MonoBehaviour
         }
 
         Instance = this;
+        gameObject.AddComponent<GameSaveSystem>();
     }
 
     private void OnDestroy()

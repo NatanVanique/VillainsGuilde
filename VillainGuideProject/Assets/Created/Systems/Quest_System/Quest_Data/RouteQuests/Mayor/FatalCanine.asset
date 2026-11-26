@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0cb2cdcfd8375468499c03bb35d3ed, type: 3}
   m_Name: FatalCanine
   m_EditorClassIdentifier: Assembly-CSharp::CreateQuest_Data
+  saveId: 5fb22de2cb5c9ad4582aa21343eca0db
   questName:
     m_TableReference:
       m_TableCollectionName: GUID:33275aad986aaab4ea27a58988ba64f5

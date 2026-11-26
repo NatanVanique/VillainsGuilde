@@ -1,7 +1,6 @@
 
-using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
@@ -9,6 +8,10 @@ using System.Collections.Generic;
 
 public sealed class MenuManager : MonoBehaviour
 {
+    [Header("Save")]
+    [SerializeField] private Button continueButton;
+    [SerializeField] private TMP_Text newGameConfirmLabel;
+
     [Header("Hover Animation")]
     [SerializeField] private float ButtonBigXScale = 1.2f;
     [SerializeField] private float AnimationDuration = 0.2f;
@@ -32,6 +35,13 @@ public sealed class MenuManager : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
+        bool hasSave = GameSaveSystem.HasSave;
+        continueButton.interactable = hasSave;
+        if (continueButton.TryGetComponent(out EventTrigger hover))
+            hover.enabled = hasSave;
+        if (GameSaveSystem.HasExistingSave)
+            newGameConfirmLabel.text = "Overwrite";
     }
 
     public void SaveOriginalValues(GameObject button)
@@ -136,6 +146,7 @@ public sealed class MenuManager : MonoBehaviour
 
     public void RestoreColor(GameObject button)
     {
+        SaveOriginalValues(button);
         Image image = button.GetComponentInChildren<Image>();
         Outline outline = button.GetComponentInChildren<Outline>();
         TextMeshProUGUI text = button.GetComponentInChildren<TextMeshProUGUI>();
@@ -157,17 +168,18 @@ public sealed class MenuManager : MonoBehaviour
 
     public void RestoreTextMaterial(GameObject button)
     {
+        SaveOriginalValues(button);
         button.GetComponentInChildren<TextMeshProUGUI>().fontMaterial = OriginalTextMaterials[button];
     }
 
     public void NewGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GameSaveSystem.StartNewGame();
     }
 
     public void ContinueGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        GameSaveSystem.ContinueGame();
     }
 
     public void ExitGame()

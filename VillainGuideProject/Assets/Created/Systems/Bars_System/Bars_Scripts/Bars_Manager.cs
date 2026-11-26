@@ -15,6 +15,29 @@ public sealed class Bars_Manager : MonoBehaviour
 
     public event Action<bool> VisibilityChanged;
 
+    internal float Progress => progress;
+    internal bool ManuallyOpen => openPopups.Contains(gameObject);
+
+    internal void RestoreProgress(float savedProgress, bool manuallyOpen)
+    {
+        SetPopupOpen(gameObject, manuallyOpen);
+        if (movementBars != null)
+        {
+            StopCoroutine(movementBars);
+            movementBars = null;
+        }
+        if (!targetVisible && savedProgress <= 0f)
+        {
+            ResetAppearance();
+            return;
+        }
+
+        SetProgress(Mathf.Clamp01(savedProgress));
+        visual.barsCanvas_Bars.SetActive(true);
+        visual.background_Bars.gameObject.SetActive(true);
+        movementBars = StartCoroutine(MoveBars(targetVisible));
+    }
+
     private void OnEnable()
     {
         UpdateVisibility();
