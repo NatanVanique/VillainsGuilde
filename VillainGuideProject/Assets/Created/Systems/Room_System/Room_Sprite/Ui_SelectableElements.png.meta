@@ -1,0 +1,333 @@
+fileFormatVersion: 2
+guid: 7113dab88dabfce48a4ab13b08342c4f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2466630973619910213
+    second: Ui_SelectableElements_0
+  - first:
+      213: 5045748127086069270
+    second: Ui_SelectableElements_1
+  - first:
+      213: -6561195271089367112
+    second: Ui_SelectableElements_2
+  - first:
+      213: -7145627233040517607
+    second: Ui_SelectableElements_3
+  - first:
+      213: -3793799765612189467
+    second: Ui_SelectableElements_4
+  - first:
+      213: 838585607925515425
+    second: Ui_SelectableElements_5
+  - first:
+      213: 9086520262240278682
+    second: Ui_SelectableElements_6
+  - first:
+      213: -8134261555179367041
+    second: Ui_SelectableElements_7
+  - first:
+      213: -7753023419220287974
+    second: Ui_SelectableElements_8
+  - first:
+      213: 4153086852024312612
+    second: Ui_SelectableElements_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ui_SelectableElements_0
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 553
+        width: 557
+        height: 507
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb9c861c234c4cdd0800000000000000
+      internalID: -2466630973619910213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_SelectableElements_1
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 619
+        width: 493
+        height: 441
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 616ce052039160640800000000000000
+      internalID: 5045748127086069270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_SelectableElements_2
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 870
+        width: 61
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b7deb4e9a3f1f4a0800000000000000
+      internalID: -6561195271089367112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_SelectableElements_3
+      rect:
+        serializedVersion: 2
+        x: 1451
+        y: 807
+        width: 217
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 916334504e1a5dc90800000000000000
+      internalID: -7145627233040517607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_SelectableElements_4
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 704
+        width: 101
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e8a9bda637b95bc0800000000000000
+      internalID: -3793799765612189467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_SelectableElements_5
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 30
+        width: 387
+        height: 509
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a4c72ada2143ab00800000000000000
+      internalID: 838585607925515425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_SelectableElements_7
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 30
+        width: 387
+        height: 509
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f75da65763c4d1f80800000000000000
+      internalID: -8134261555179367041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui_SelectableElements_8
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 109
+        width: 325
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1e171a074ab76490800000000000000
+      internalID: -7753023419220287974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 424606b19444fe54ea293b7678b07d07
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ui_SelectableElements_0: -2466630973619910213
+      Ui_SelectableElements_1: 5045748127086069270
+      Ui_SelectableElements_2: -6561195271089367112
+      Ui_SelectableElements_3: -7145627233040517607
+      Ui_SelectableElements_4: -3793799765612189467
+      Ui_SelectableElements_5: 838585607925515425
+      Ui_SelectableElements_6: 9086520262240278682
+      Ui_SelectableElements_7: -8134261555179367041
+      Ui_SelectableElements_8: -7753023419220287974
+      Ui_SelectableElements_9: 4153086852024312612
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
