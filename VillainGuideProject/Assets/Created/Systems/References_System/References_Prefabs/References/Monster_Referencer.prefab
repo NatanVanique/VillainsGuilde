@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MonsterReferencer
   monsters:
   - monstersProfile: {fileID: 11400000, guid: 73cf047be816af94e890201373bc1e5a, type: 2}
-    contracted: 1
+    contracted: 0
     monsterLevel: 1
     happiness: 1
     statusUpgrade:
@@ -75,7 +75,7 @@ MonoBehaviour:
       upgradeValue: 0
       upgradeValueperLevel: 0.1
   - monstersProfile: {fileID: 11400000, guid: 20f33b025903b684d905602e1ec1a4c2, type: 2}
-    contracted: 1
+    contracted: 0
     monsterLevel: 1
     happiness: 1
     statusUpgrade:
@@ -104,7 +104,7 @@ MonoBehaviour:
       upgradeValue: 0
       upgradeValueperLevel: 0.1
   - monstersProfile: {fileID: 11400000, guid: f6679f46fd5ad3f49a8ad24629454a08, type: 2}
-    contracted: 1
+    contracted: 0
     monsterLevel: 1
     happiness: 1
     statusUpgrade:
@@ -133,7 +133,7 @@ MonoBehaviour:
       upgradeValue: 0
       upgradeValueperLevel: 0.1
   - monstersProfile: {fileID: 11400000, guid: 5fa2f2d6679c9164196703ff688b2b89, type: 2}
-    contracted: 1
+    contracted: 0
     monsterLevel: 1
     happiness: 1
     statusUpgrade:

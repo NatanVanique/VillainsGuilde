@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0000000000000000000000000000000b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayText: {fileID: 1985996032653015025}
 --- !u!1001 &3191934800787074980
 PrefabInstance:
   m_ObjectHideFlags: 0

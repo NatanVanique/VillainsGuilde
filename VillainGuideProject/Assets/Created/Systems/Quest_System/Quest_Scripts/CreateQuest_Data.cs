@@ -36,6 +36,8 @@
         public int coinsEarned;
         public bool hasCharacterReward;
         public string[] characterEarned = System.Array.Empty<string>();
+
+        public int RecruitChoices => hasCharacterReward ? Mathf.Max(1, characterEarned?.Length ?? 0) : 0;
         
         public enum QuestType
         {

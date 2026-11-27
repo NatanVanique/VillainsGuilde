@@ -18,10 +18,12 @@ using TMPro;
 [DeclareFoldoutGroup("Duck", Expanded = true)]
 [DeclareFoldoutGroup("Life", Expanded = true)]
 [DeclareFoldoutGroup("Fade", Expanded = true)]
+[DeclareFoldoutGroup("Day Cycle", Expanded = true)]
 
 public class VisualReferencer : MonoBehaviour
 {
     [Group("Fade")] public Animator fadeAnimator;
+    [Group("Day Cycle")] public TMP_Text dayText_Daycicle;
     
     [Group("Life")] public GameObject healthContainer;
     [Group("Life")] public GameObject failedContainer;
@@ -68,6 +70,9 @@ public class VisualReferencer : MonoBehaviour
     [Group("Voice Mail")] public RectTransform badDiscoveriesContent;
 
     [Group("Monster Selection")] public GameObject selectionCanvas_MonsterSelection;
+    [Group("Monster Selection")] public GameObject roomMonsters;
+    [Group("Monster Selection")] public GameObject vacationControls_MonsterSelection;
+    [Group("Monster Selection")] public Button vacationButton_MonsterSelection;
     [Group("Monster Selection")] public Image monsterImage_MonsterSelection;
     [Group("Monster Selection")] public TMP_Text monsterNameText_MonsterSelection;
     [Group("Monster Selection")] public TMP_Text specialAbilityText_MonsterSelection;
@@ -89,6 +94,10 @@ public class VisualReferencer : MonoBehaviour
     [Group("Contract Tooltip")] public Canvas contractTooltipCanvas_ContractTolltip;
     [Group("Contract Tooltip")] public Button infoButton_ContractTolltip;
     [Group("Contract Tooltip")] public Button statsButton_ContractTolltip;
+    [Group("Contract Tooltip")] public Button hireButton_ContractTooltip;
+    [Group("Contract Tooltip")] public Button returnButton_ContractTooltip;
+    [Group("Contract Tooltip")] public GameObject infoWindow_ContractTooltip;
+    [Group("Contract Tooltip")] public GameObject statsWindow_ContractTooltip;
     [Group("Contract Tooltip")] public StatSlider[] statsSlider_ContractTolltip;
     [Group("Contract Tooltip")] public Image bigImage_ContractTolltip;
     [Group("Contract Tooltip")] public Image iconImage__ContractTolltip;

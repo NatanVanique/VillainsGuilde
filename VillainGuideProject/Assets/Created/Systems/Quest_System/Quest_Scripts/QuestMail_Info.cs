@@ -158,7 +158,7 @@ public class QuestMail_Info : MonoBehaviour
             AddReward(
                 rewardContent,
                 RewardIcon_Element.RewardType.Character,
-                questData.characterEarned.Length.ToString()
+                questData.RecruitChoices.ToString()
             );
         }
 
@@ -215,8 +215,9 @@ public class QuestMail_Info : MonoBehaviour
 
     public void openMonsters()
     {
-        Main_Referencer.Instance.manager.monsterManager.OpenSelection(this);
-        Main_Referencer.Instance.manager.roomManager.GoToScreen(-1);
+        ManagerReferencer managers = Main_Referencer.Instance.manager;
+        if (managers.monsterManager.OpenSelection(this))
+            managers.roomManager.GoToScreen(-1);
     }
 
     public void AssignMonster(MonsterReferencer.Monsters monster)

@@ -140,6 +140,7 @@ MonoBehaviour:
   hoursToTryTick_TelephoneValues: 3
   ringingRepeats_TelephoneValues: 3
   daysToStartRouteQuest_QuestValues: 2
+  vacationDays_MonsterValues: 2
   DailyNewsText_JournalValues:
     m_TableReference:
       m_TableCollectionName: GUID:521794ee59605654f9b774b50a6ec8cb

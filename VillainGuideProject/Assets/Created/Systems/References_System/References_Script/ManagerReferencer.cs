@@ -16,6 +16,7 @@ public class ManagerReferencer : MonoBehaviour
     [Group("Quest")] public QuestManager questManager;
 
     [Group("Monster")] public MonsterManager monsterManager;
+    [Group("Monster")] public ContractManager contractManager;
 
     [Group("Journal")] public JournalManager journalManager;
 

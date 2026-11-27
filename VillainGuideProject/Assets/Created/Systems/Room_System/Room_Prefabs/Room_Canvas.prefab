@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomMonsterInteraction
   hoverOutline: {fileID: 1754459627653812783}
+  profile: {fileID: 11400000, guid: f6679f46fd5ad3f49a8ad24629454a08, type: 2}
 --- !u!114 &5518928347076465339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -909,6 +910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomMonsterInteraction
   hoverOutline: {fileID: 420941434012297482}
+  profile: {fileID: 11400000, guid: 370b40ad437ec2f40baab17f28fb29f9, type: 2}
 --- !u!114 &4262582840133600518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1370,7 +1372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8855295394459214078
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2092,7 +2094,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6640663442018702322
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2350,6 +2352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomMonsterInteraction
   hoverOutline: {fileID: 1660285633755489171}
+  profile: {fileID: 11400000, guid: 5fa2f2d6679c9164196703ff688b2b89, type: 2}
 --- !u!114 &3380116292408784002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2799,7 +2802,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8538246968303629759
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4395,6 +4398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomMonsterInteraction
   hoverOutline: {fileID: 2540358405920842162}
+  profile: {fileID: 11400000, guid: 20f33b025903b684d905602e1ec1a4c2, type: 2}
 --- !u!114 &7337133977854333848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4710,6 +4714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomMonsterInteraction
   hoverOutline: {fileID: 8037748141286244188}
+  profile: {fileID: 11400000, guid: 73cf047be816af94e890201373bc1e5a, type: 2}
 --- !u!114 &1822416561134199254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5724,7 +5729,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6258591718783836459
 RectTransform:
   m_ObjectHideFlags: 0

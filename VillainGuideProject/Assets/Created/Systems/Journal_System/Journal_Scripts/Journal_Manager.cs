@@ -386,6 +386,7 @@ public sealed class JournalManager : MonoBehaviour
         visual.tabButton_Journal.transform.DOKill();
         ClearRewardRows();
         HideEdition();
+        Main_Referencer.Instance.manager.contractManager.ShowPendingChoices();
         GameSaveSystem.RequestAutosave();
     }
 
@@ -459,10 +460,7 @@ public sealed class JournalManager : MonoBehaviour
                 totalCoins += Mathf.Max(0, news.data.coinsEarned);
             }
 
-            if (news.data.hasCharacterReward)
-            {
-                totalRecruits += news.data.characterEarned?.Length ?? 0;
-            }
+            totalRecruits += news.data.RecruitChoices;
 
             if (news.monster == null || news.data.characterXpEarned <= 0)
             {
@@ -474,6 +472,7 @@ public sealed class JournalManager : MonoBehaviour
         }
 
         ManagerReferencer managers = Main_Referencer.Instance.manager;
+        totalRecruits = managers.contractManager.AddRecruitChoices(totalRecruits);
         managers.popularityManager.GrantExperience(totalPopularityXp);
         managers.moneyManager.Credit(totalCoins);
 
