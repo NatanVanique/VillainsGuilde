@@ -33,6 +33,10 @@ public class MonsterReferencer : MonoBehaviour
         [Group("Progression")]
         public bool contracted = false;
 
+        [Group("Progression")] public int vacationReturnDay;
+
+        public bool IsAvailable(int day) => contracted && monstersProfile != null && day >= vacationReturnDay;
+
         [Group("Progression")]
         public int monsterLevel = 0;
 

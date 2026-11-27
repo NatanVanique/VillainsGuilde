@@ -68,6 +68,7 @@ MonoBehaviour:
   characterXpEarned: 25
   hasCoinsReward: 1
   coinsEarned: 20
+  hasCharacterReward: 1
   characterEarned: []
   references:
     version: 2

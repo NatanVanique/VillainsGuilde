@@ -10,6 +10,7 @@ using System.Collections.Generic;
 [DeclareFoldoutGroup("Popularity", Expanded = true)]
 [DeclareFoldoutGroup("Telephone Values", Expanded = true)]
 [DeclareFoldoutGroup("Quest Values", Expanded = true)]
+[DeclareFoldoutGroup("Monster Values", Expanded = true)]
 [DeclareFoldoutGroup("Journal Values", Expanded = true)]
 
 public class ValuesReferencer : MonoBehaviour
@@ -37,6 +38,8 @@ public class ValuesReferencer : MonoBehaviour
 
     [Group("Quest Values")]
     public int daysToStartRouteQuest_QuestValues;
+
+    [Group("Monster Values")] [Min(1)] public int vacationDays_MonsterValues = 2;
 
     public List<List<(CreateQuest_Data data, MonsterReferencer.Monsters monster, bool isWinned, bool attempted)>> realizedDayRegister = new();
 

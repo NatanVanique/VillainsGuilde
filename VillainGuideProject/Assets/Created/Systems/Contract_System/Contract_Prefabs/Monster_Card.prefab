@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1620061912151580622}
+  - component: {fileID: 9000000000000000301}
   m_Layer: 0
   m_Name: Monster_Card
   m_TagString: Untagged
@@ -16,6 +17,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9000000000000000301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638250967513505782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d73c1aa19443a0bd65f40d96f7ce18, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::ContractMonsterCard
+  monsterName: {fileID: 8852853198358526659}
+  portrait: {fileID: 1814599191862749356}
+  infoButton: {fileID: 8714625678116052248}
 --- !u!224 &1620061912151580622
 RectTransform:
   m_ObjectHideFlags: 0

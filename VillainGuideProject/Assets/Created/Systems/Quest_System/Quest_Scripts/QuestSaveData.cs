@@ -18,6 +18,7 @@ public sealed class QuestSaveData
     {
         public string id;
         public bool contracted;
+        public int vacationReturnDay;
         public int level;
         public int experience;
         public float happiness;
@@ -80,6 +81,8 @@ public sealed class QuestSaveData
     public float journalScroll, timeScaleBeforeJournal;
     public long popularityReward, coinsReward;
     public int recruitReward;
+    public int pendingRecruitChoices;
+    public bool contractChoosing;
     public List<MonsterReward> monsterRewards = new();
 
     public static QuestSaveData Capture(Main_Referencer refs)
@@ -98,6 +101,7 @@ public sealed class QuestSaveData
             {
                 id = monster.monstersProfile.SaveId,
                 contracted = monster.contracted,
+                vacationReturnDay = monster.vacationReturnDay,
                 level = monster.monsterLevel,
                 experience = monster.monsterExperience,
                 happiness = monster.happiness
@@ -110,6 +114,8 @@ public sealed class QuestSaveData
 
         refs.manager.questManager.CaptureProgress(data);
         refs.manager.journalManager.CaptureProgress(data);
+        data.pendingRecruitChoices = refs.manager.contractManager.PendingChoices;
+        data.contractChoosing = refs.manager.contractManager.IsChoosing;
         return data;
     }
 
@@ -124,6 +130,7 @@ public sealed class QuestSaveData
         {
             var monster = catalog.Monster(record.id);
             monster.contracted = record.contracted;
+            monster.vacationReturnDay = record.vacationReturnDay;
             monster.monsterLevel = record.level;
             monster.monsterExperience = record.experience;
             monster.happiness = record.happiness;
@@ -138,7 +145,9 @@ public sealed class QuestSaveData
 
         // Mail cards display discoveries from published editions. Restore the historical records first.
         refs.manager.journalManager.RestoreProgress(this, catalog);
+        refs.manager.monsterManager.RefreshRoster();
         refs.manager.questManager.RestoreProgress(this, catalog);
+        refs.manager.contractManager.RestoreChoices(pendingRecruitChoices, contractChoosing);
     }
 
     private static IEnumerable<QuestReferencer.QuestReference> GetQuestReferences(QuestReferencer referencer)

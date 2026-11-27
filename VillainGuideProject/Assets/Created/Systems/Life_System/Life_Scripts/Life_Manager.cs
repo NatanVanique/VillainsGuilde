@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DG.Tweening;
 
@@ -41,6 +42,9 @@ public sealed class Life_Manager : MonoBehaviour
 
     private void Start()
     {
+        Visual.defeatMenuButton.onClick.AddListener(ReturnToMenu);
+        Visual.defeatNewGameButton.onClick.AddListener(GameSaveSystem.StartNewGame);
+
         failedPanel = (RectTransform)Visual.failedContainer.transform;
         failedPanelPosition = failedPanel.anchoredPosition;
         displayedLives = playerLives;
@@ -62,6 +66,12 @@ public sealed class Life_Manager : MonoBehaviour
         }
 
         SetLifeContainers(false);
+    }
+
+    private void ReturnToMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("01_MenuScene");
     }
 
     internal void CaptureState(GameplaySaveData data)
