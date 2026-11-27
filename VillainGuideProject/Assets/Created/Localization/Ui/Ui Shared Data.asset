@@ -19,6 +19,70 @@ MonoBehaviour:
     m_Key: Developers_Ui
     m_Metadata:
       m_Items: []
+  - m_Id: 3611653400584192
+    m_Key: NewGame_Ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693056
+    m_Key: Continue_Ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693057
+    m_Key: Options_Ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693058
+    m_Key: ExitGame_Ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693059
+    m_Key: Version_Ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693060
+    m_Key: GamePaused_Ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693061
+    m_Key: Languages_Ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693062
+    m_Key: MasterVolume_Ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693063
+    m_Key: MusicVolume_Ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693064
+    m_Key: SoundVolume_Ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693065
+    m_Key: TestSound_Ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693066
+    m_Key: ClickToTest_Ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3613433740025856
+    m_Key: New_Ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3613433740025857
+    m_Key: No_Ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3613433740025858
+    m_Key: Exit_Ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3613678301503488
+    m_Key: Cancel_Ui
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

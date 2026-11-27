@@ -22,6 +22,70 @@ MonoBehaviour:
     m_Localized: 'Desenvolvido por:'
     m_Metadata:
       m_Items: []
+  - m_Id: 3611653400584192
+    m_Localized: Novo Jogo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693056
+    m_Localized: Continuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693057
+    m_Localized: "Op\xE7\xF5es"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693058
+    m_Localized: Sair do Jogo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693059
+    m_Localized: "Vers\xE3o:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693060
+    m_Localized: Jogo Pausado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693061
+    m_Localized: Idiomas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693062
+    m_Localized: Volume Geral
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693063
+    m_Localized: "Volume de M\xFAsicas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693064
+    m_Localized: Volume de Sons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693065
+    m_Localized: Som Teste
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3611653467693066
+    m_Localized: Clique para testar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3613433740025856
+    m_Localized: Novo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3613433740025857
+    m_Localized: "N\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3613433740025858
+    m_Localized: Sair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3613678301503488
+    m_Localized: Cancelar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

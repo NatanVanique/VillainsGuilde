@@ -37,7 +37,7 @@ public sealed class MenuManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
 
         bool hasSave = GameSaveSystem.HasSave;
-        continueButton.interactable = hasSave;
+        continueButton.enabled = hasSave;
         if (continueButton.TryGetComponent(out EventTrigger hover))
             hover.enabled = hasSave;
     }
