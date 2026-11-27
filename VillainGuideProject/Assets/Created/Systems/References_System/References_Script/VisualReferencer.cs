@@ -26,6 +26,8 @@ public class VisualReferencer : MonoBehaviour
     [Group("Life")] public GameObject healthContainer;
     [Group("Life")] public GameObject failedContainer;
     [Group("Life")] public GameObject defeatContainer;
+    [Group("Life")] public Button defeatMenuButton;
+    [Group("Life")] public Button defeatNewGameButton;
     [Group("Life")] public Image[] healthImages_Life = new Image[3];
     [Group("Life")] public Image[] failedHealthImages_Life = new Image[3];
     [Group("Life")] public GameObject arrowDefeatScreen;
