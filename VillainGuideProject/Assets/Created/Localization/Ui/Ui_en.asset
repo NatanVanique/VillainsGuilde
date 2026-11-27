@@ -86,6 +86,14 @@ MonoBehaviour:
     m_Localized: Cancel
     m_Metadata:
       m_Items: []
+  - m_Id: 3621827796426752
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3622430698266624
+    m_Localized: Press ESC to return
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
